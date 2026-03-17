@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | VeraVita Clinic Calgary</title>
+  <meta name="description" content="Learn about VeraVita Clinic — our mission, values, journey, and the team of naturopathic doctors and aesthetic practitioners serving Calgary." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img"
+             onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <div class="logo-icon" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#85fa6d"/></svg>
+        </div>
+        <span class="logo-text" style="display:none;">VeraVita</span>
+      </a>
+      <ul class="navbar-nav">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link active">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down" style="font-size:.65rem;"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="faqs.html">FAQs</a>
+            <a href="book-appointment.html">Book Appointment</a>
+          </div>
+        </li>
+      </ul>
+      <a href="book-appointment.html" class="btn-ihb btn-ihb--dark">
+        <span class="btn-ihb-blob"></span>
+        <span class="btn-ihb-default">Book an appointment</span>
+        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- CINEMATIC TEXT-ZOOM HERO -->
+<div class="ph-cinematic">
+  <!-- Video plays full bleed — visible only through letter cutouts -->
+  <video class="ph-cin-video" autoplay muted loop playsinline>
+    <source src="images/about us - page header.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Canvas overlay injected by JS — handles text cutout compositing -->
+  <p class="ph-cin-label">Naturopathic &amp; Aesthetic Medicine · Calgary</p>
+
+  <!-- Hero content revealed after zoom — slides up from below -->
+  <div class="ph-hero-content">
+    <p class="ph-hero-pre">Naturopathic &amp; Aesthetic Medicine · Calgary</p>
+    <h2 class="ph-hero-heading">Healing the whole<br /><em>person, naturally</em></h2>
+    <p class="ph-hero-sub">Founded to bridge naturopathic wisdom and modern medicine — compassionate, personalised care tailored to you.</p>
+    <a href="services.html" class="btn-ihb btn-ihb--primary">
+      <span class="btn-ihb-blob"></span>
+      <span class="btn-ihb-default">Explore our services</span>
+      <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Explore our services</span>
+    </a>
+  </div>
+</div>
+
+<!-- ABOUT STATEMENT -->
+<section class="about-statement-section">
+  <div class="container">
+    <div class="about-statement-icon">
+      <svg viewBox="0 0 48 52" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="24" cy="8" r="4"/>
+        <path d="M14 20L24 15L34 20"/>
+        <path d="M14 20L9 15M34 20L39 15"/>
+        <path d="M24 15V27"/>
+        <path d="M17 33c0 0 2.5-5 7-5s7 5 7 5"/>
+        <path d="M11 40c0 0 5-8 13-8s13 8 13 8"/>
+      </svg>
+    </div>
+    <h2 class="about-statement-heading js-word-reveal">At VeraVita, we believe healthcare is more than treatment, it's about building trust, fostering hope, and creating healthier lives.</h2>
+    <p class="about-statement-sub reveal">From the very beginning, our mission has been to make world-class naturopathic and aesthetic care accessible to everyone, regardless of their background. Over the years, we've expanded our services, invested in modern treatments, and welcomed some of the best practitioners into our team. But even as we've grown, one thing has remained unchanged — our unwavering commitment to putting patients first.</p>
+    <hr class="about-statement-divider" />
+    <div class="about-statement-pillars reveal">
+      <div class="about-pillar">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <span>Personalised Care</span>
+      </div>
+      <div class="about-pillar">
+        <i class="fa-solid fa-microscope"></i>
+        <span>Trusted Expertise</span>
+      </div>
+      <div class="about-pillar">
+        <i class="fa-solid fa-leaf"></i>
+        <span>Natural Medicine</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES — Curevo-style two-card layout -->
+<section class="about-cards-section">
+  <div class="container">
+
+    <!-- Mission card: photo left, text right -->
+    <div class="asc-card asc-card--green fade-up">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=700&q=85" alt="Our mission" class="asc-card-img" />
+      <div class="asc-card-body">
+        <h3 class="asc-card-title">Our mission</h3>
+        <p>Our mission is simple yet powerful — to deliver compassionate, accessible, and world-class naturopathic care that improves the lives of every patient we serve. We are committed to bridging the gap between naturopathic wisdom and modern medicine, with personalised care at the centre of everything we do.</p>
+      </div>
+    </div>
+
+    <!-- Values card: text left, photo right -->
+    <div class="asc-card asc-card--white fade-up">
+      <div class="asc-card-body">
+        <h3 class="asc-card-title">Our values</h3>
+        <p>At the heart of VeraVita lies a strong set of values that shape everything we do.</p>
+        <div class="asc-value-tags">
+          <span class="asc-value-tag"><i class="fa-solid fa-circle-check"></i> Compassion</span>
+          <span class="asc-value-tag"><i class="fa-solid fa-circle-check"></i> Excellence</span>
+          <span class="asc-value-tag"><i class="fa-solid fa-circle-check"></i> Innovation</span>
+          <span class="asc-value-tag"><i class="fa-solid fa-circle-check"></i> Trust</span>
+          <span class="asc-value-tag"><i class="fa-solid fa-circle-check"></i> Accessibility</span>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1604480132736-44c188fe4d20?w=600&q=85" alt="Our values" class="asc-card-img" />
+    </div>
+
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-label">Our Journey</div>
+      <h2>Our journey through the years</h2>
+    </div>
+    <div class="timeline-inner">
+      <div class="timeline-item fade-up"><div class="timeline-year">2014</div><div class="timeline-dot"></div><div class="timeline-body"><h5>VeraVita Clinic Founded</h5><p>Established in Calgary with a mission to bring holistic, patient-centred naturopathic care to the community.</p></div></div>
+      <div class="timeline-item fade-up"><div class="timeline-year">2016</div><div class="timeline-dot"></div><div class="timeline-body"><h5>IV Therapy &amp; Injectables Launch</h5><p>Expanded services to include IV nutrient therapy and vitamin injections, offering faster results for energy and immune support.</p></div></div>
+      <div class="timeline-item fade-up"><div class="timeline-year">2018</div><div class="timeline-dot"></div><div class="timeline-body"><h5>Aesthetic Medicine Division</h5><p>Launched aesthetic medicine services including neuromodulators and dermal fillers, completing our full-spectrum wellness offering.</p></div></div>
+      <div class="timeline-item fade-up"><div class="timeline-year">2020</div><div class="timeline-dot"></div><div class="timeline-body"><h5>Expanded Team &amp; Fertility Program</h5><p>Grew our practitioner team and launched a dedicated fertility program to support patients on their reproductive health journey.</p></div></div>
+      <div class="timeline-item fade-up"><div class="timeline-year">2023</div><div class="timeline-dot"></div><div class="timeline-body"><h5>5,000+ Patients Milestone</h5><p>Proudly crossed 5,000 patients treated — a testament to our community's trust and our team's dedication.</p></div></div>
+      <div class="timeline-item fade-up"><div class="timeline-year">Today</div><div class="timeline-dot"></div><div class="timeline-body"><h5>Continuing to Grow &amp; Serve</h5><p>We continue expanding our services and team to meet the growing needs of Calgary's health-conscious community.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA VIDEO BANNER -->
+<section class="about-cta-video-section">
+  <video class="about-cta-video" autoplay muted loop playsinline>
+    <source src="images/health.mp4" type="video/mp4" />
+  </video>
+  <div class="about-cta-overlay">
+    <p class="about-cta-label">Your Health, Our Commitment</p>
+    <h2 class="about-cta-heading">Expert care you can trust</h2>
+    <a href="services.html" class="btn-ihb btn-ihb--primary">
+      <span class="btn-ihb-blob"></span>
+      <span class="btn-ihb-default">View our services</span>
+      <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> View our services</span>
+    </a>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="about-partners-section">
+  <div class="container">
+    <div class="about-partners-grid">
+      <div class="about-partner">
+        <div class="about-partner-icon"><i class="fa-solid fa-leaf"></i></div>
+        <span class="about-partner-name">NaturoHealth®</span>
+        <span class="about-partner-quote">"Trusted naturopathic partner"</span>
+      </div>
+      <div class="about-partner">
+        <div class="about-partner-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <span class="about-partner-name">WellCore™</span>
+        <span class="about-partner-quote">"Driving better outcomes with integrative treatments"</span>
+      </div>
+      <div class="about-partner">
+        <div class="about-partner-icon"><i class="fa-solid fa-shield-heart"></i></div>
+        <span class="about-partner-name">VITALIS</span>
+        <span class="about-partner-quote">"Top wellness provider"</span>
+      </div>
+      <div class="about-partner">
+        <div class="about-partner-icon"><i class="fa-solid fa-spa"></i></div>
+        <span class="about-partner-name">Serenova</span>
+        <span class="about-partner-quote">"Trusted holistic healthcare solutions"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="tmd-section">
+  <div class="container">
+
+    <!-- Top block: intro + 2 tall cards -->
+    <div class="tmd-top">
+      <div class="tmd-intro fade-left">
+        <h2>Meet the experts behind your care</h2>
+        <div class="tmd-marquee-wrap">
+          <div class="tmd-marquee-track">
+            <span class="tmd-specialty">Naturopathic</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Aesthetic Medicine</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">IV Therapy</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Acupuncture</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Fertility</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Osteopathy</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Massage Therapy</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Fatigue Treatment</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Hormone Balancing</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Weight Management</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Pain Management</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Mental Wellness</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Skin Rejuvenation</span><span class="tmd-dot">·</span>
+            <!-- duplicate for seamless loop -->
+            <span class="tmd-specialty">Naturopathic</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Aesthetic Medicine</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">IV Therapy</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Acupuncture</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Fertility</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Osteopathy</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Massage Therapy</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Fatigue Treatment</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Hormone Balancing</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Weight Management</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Pain Management</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Mental Wellness</span><span class="tmd-dot">·</span>
+            <span class="tmd-specialty">Skin Rejuvenation</span><span class="tmd-dot">·</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tmd-card fade-up">
+        <div class="tmd-card-header">
+          <h4>Dr. Sarah Mitchell</h4>
+          <span>Naturopathic Doctor, ND</span>
+        </div>
+        <div class="tmd-card-photo">
+          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=85" alt="Dr. Sarah Mitchell" />
+          <div class="tmd-card-socials">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tmd-card fade-up">
+        <div class="tmd-card-header">
+          <h4>Dr. James Chen</h4>
+          <span>Aesthetic Medicine Specialist</span>
+        </div>
+        <div class="tmd-card-photo">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=85" alt="Dr. James Chen" />
+          <div class="tmd-card-socials">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom row: 4 smaller cards -->
+    <div class="tmd-bottom">
+      <div class="tmd-card fade-up">
+        <div class="tmd-card-header">
+          <h4>Dr. Priya Sharma</h4>
+          <span>Naturopathic Doctor, ND</span>
+        </div>
+        <div class="tmd-card-photo">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=85" alt="Dr. Priya Sharma" />
+          <div class="tmd-card-socials">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tmd-card fade-up">
+        <div class="tmd-card-header">
+          <h4>Dr. Michael Torres</h4>
+          <span>IV Therapy &amp; Wellness</span>
+        </div>
+        <div class="tmd-card-photo">
+          <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&q=85" alt="Dr. Michael Torres" />
+          <div class="tmd-card-socials">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tmd-card fade-up">
+        <div class="tmd-card-header">
+          <h4>Dr. Emily Park</h4>
+          <span>Acupuncture Specialist</span>
+        </div>
+        <div class="tmd-card-photo">
+          <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=500&q=85" alt="Dr. Emily Park" />
+          <div class="tmd-card-socials">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tmd-card fade-up">
+        <div class="tmd-card-header">
+          <h4>Dr. Lucas Wright</h4>
+          <span>Fertility &amp; Hormonal Health</span>
+        </div>
+        <div class="tmd-card-photo">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=85" alt="Dr. Lucas Wright" />
+          <div class="tmd-card-socials">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="sf-footer">
+  <div class="sf-fixed">
+    <div class="sf-deco" aria-hidden="true">
+      <div class="sf-deco-1"></div>
+      <div class="sf-deco-2"></div>
+      <div class="sf-deco-3"></div>
+    </div>
+
+    <div class="sf-body">
+      <div class="sf-top">
+
+        <div class="sf-brand sf-anim" style="--sf-delay:0s">
+          <a href="index.html" class="sf-logo">
+            <img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="sf-logo-fallback" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#85fa6d"/></svg>
+              <span>VeraVita</span>
+            </div>
+          </a>
+          <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
+          <div class="sf-social">
+            <a href="#" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+          <h3 class="sf-col-title">Pages</h3>
+          <ul class="sf-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="book-appointment.html">Book Appointment</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+          <h3 class="sf-col-title">Services</h3>
+          <ul class="sf-links">
+            <li><a href="services.html">Naturopathic Care</a></li>
+            <li><a href="services.html">IV Therapy</a></li>
+            <li><a href="services.html">Aesthetic Medicine</a></li>
+            <li><a href="services.html">Fertility Program</a></li>
+            <li><a href="services.html">Acupuncture &amp; Cupping</a></li>
+            <li><a href="services.html">Weight Loss Program</a></li>
+            <li><a href="services.html">Osteopathy</a></li>
+            <li><a href="services.html">Massage Therapy</a></li>
+          </ul>
+        </div>
+
+        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+          <h3 class="sf-col-title">Contact</h3>
+          <ul class="sf-links">
+            <li><i class="fa-solid fa-phone sf-contact-icon"></i> +1 (403) 000-0000</li>
+            <li><i class="fa-solid fa-envelope sf-contact-icon"></i> hello@veravitaclinic.com</li>
+            <li><i class="fa-solid fa-location-dot sf-contact-icon"></i> 123 Wellness Ave, Suite 201<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB, Canada</li>
+          </ul>
+          <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
+          <ul class="sf-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="sf-bottom">
+        <p>&copy; 2025 VeraVita Clinic. All rights reserved.</p>
+        <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

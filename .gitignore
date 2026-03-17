@@ -1,0 +1,16 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Misc
+*.log
+
+# Reference/dev files (not needed for deployment)
+Current build website screenshots/
+screenshots/
+code prompt/
