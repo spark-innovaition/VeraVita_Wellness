@@ -11,9 +11,9 @@
   --dark-2:     #2d5040;
   --body-text:  #3a3a3a;
   --gray-3:     #7a9e8a;
-  --gray-4:     #e5edea;
-  --gray-5:     #c8d9d1;
-  --gray-6:     #f5f0e8;
+  --gray-4:     #dceada;
+  --gray-5:     #c2d4c2;
+  --gray-6:     #eaf2ea;
   --primary:    #1e3d2e;
   --accent:     #3ecf6e;
   --white:      #ffffff;
@@ -875,10 +875,10 @@ section { padding: 6rem 0; }
   background: var(--white);
   transition: background 0.2s;
 }
-.svc-cell:hover { background: #f0ece4; }
+.svc-cell:hover { background: #e3eee3; }
 .svc-cell-img {
   width: 100%;
-  background: #f5f0e8;
+  background: #eaf2ea;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1484,7 +1484,7 @@ section { padding: 6rem 0; }
    CONTACT PAGE
    ======================================== */
 .cth-section {
-  background: #f5f0e8;
+  background: #eaf2ea;
   padding: 5rem 0 6rem;
   min-height: 100vh;
 }
@@ -1555,7 +1555,7 @@ section { padding: 6rem 0; }
   font-family: var(--font-b);
   font-size: 0.9375rem;
   color: #1e3528;
-  background: #edf3ef;
+  background: #e3ede3;
   border: 1.5px solid transparent;
   border-radius: 999px;
   padding: 0.75rem 1.25rem;
@@ -1564,11 +1564,11 @@ section { padding: 6rem 0; }
   width: 100%;
 }
 .cth-inp::placeholder { color: #8aaa98; }
-.cth-inp:focus { border-color: #1e3528; background: #dce9e3; }
+.cth-inp:focus { border-color: #1e3528; background: #d0e8d0; }
 .cth-textarea {
   border-radius: 1.25rem;
   resize: vertical;
-  background: #edf3ef;
+  background: #e3ede3;
   min-height: 140px;
 }
 .cth-submit { margin-top: 0.5rem; }
@@ -1585,9 +1585,9 @@ section { padding: 6rem 0; }
    CONTACT FAQ SECTION
    ======================================== */
 .cfaq-section {
-  background: #f5f0e8;
+  background: #eaf2ea;
   padding: 5rem 0 6rem;
-  border-top: 1px solid #d0dbd4;
+  border-top: 1px solid #c2d4c2;
 }
 .cfaq-inner {
   max-width: 1100px;
@@ -1623,7 +1623,7 @@ section { padding: 6rem 0; }
   font-weight: 500;
   color: var(--dark);
   text-decoration: none;
-  border: 1.5px solid #c0d0c8;
+  border: 1.5px solid #b8ccb8;
   border-radius: 999px;
   padding: 0.5rem 1.25rem;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
@@ -1635,7 +1635,7 @@ section { padding: 6rem 0; }
 }
 /* Accordion */
 .cfaq-list { display: flex; flex-direction: column; }
-.cfaq-item { border-bottom: 1px solid #c0d0c8; }
+.cfaq-item { border-bottom: 1px solid #b8ccb8; }
 .cfaq-q {
   width: 100%;
   display: flex;
@@ -1687,9 +1687,9 @@ section { padding: 6rem 0; }
    VISIT US SECTION
    ======================================== */
 .visit-section {
-  background: #f5f0e8;
+  background: #eaf2ea;
   padding: 5rem 0 6rem;
-  border-top: 1px solid #d0dbd4;
+  border-top: 1px solid #c2d4c2;
 }
 .visit-inner {
   max-width: 1100px;
@@ -1727,7 +1727,7 @@ section { padding: 6rem 0; }
   align-items: center;
 }
 .visit-card {
-  background: #edf3ef;
+  background: #e3ede3;
   padding: 2.5rem 2.75rem;
   border-radius: 1rem;
   display: flex;
@@ -1749,7 +1749,7 @@ section { padding: 6rem 0; }
 }
 .visit-divider {
   border: none;
-  border-top: 1px solid #c0d0c8;
+  border-top: 1px solid #b8ccb8;
   margin: 0 0 1.5rem;
 }
 .visit-details {
@@ -1797,9 +1797,9 @@ section { padding: 6rem 0; }
    FOLLOW US SECTION
    ======================================== */
 .follow-section {
-  background: #f5f0e8;
+  background: #eaf2ea;
   padding: 5rem 0 6rem;
-  border-top: 1px solid #d0dbd4;
+  border-top: 1px solid #c2d4c2;
 }
 .follow-inner {
   max-width: 1100px;
