@@ -2355,6 +2355,15 @@ ul.contact-info-list { padding: 0; margin: 0; }
 
   /* ---- Navbar ---- */
   .navbar { padding: 0.875rem 0; }
+  .navbar-inner { position: relative; justify-content: space-between; }
+  /* Center logo on mobile */
+  .navbar-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* Hide desktop CTA from header — moved to bottom bar */
+  .navbar .btn-ihb { display: none; }
   .navbar-nav {
     display: none;
     position: static; transform: none;
@@ -2368,19 +2377,28 @@ ul.contact-info-list { padding: 0; margin: 0; }
     box-shadow: 0 12px 40px rgba(0,0,0,0.1); z-index: 998;
     max-height: calc(100vh - 64px); overflow-y: auto;
   }
-  /* Navbar CTA button — shrink and show "Book" only */
-  .navbar .btn-ihb {
-    padding: 0.625rem 1.125rem;
-    font-size: 0;          /* hide full text */
-    flex-shrink: 0;
+
+  /* ---- Bottom booking bar (mobile only) ---- */
+  body { padding-bottom: 76px; }
+  .mobile-book-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 997;
+    padding: 0.75rem 1.25rem;
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid var(--gray-5);
+    box-shadow: 0 -4px 24px rgba(38,51,45,0.10);
   }
-  .navbar .btn-ihb .btn-ihb-default::before {
-    content: 'Book';
-    font-size: 0.875rem;
-    font-weight: 500;
-    font-family: var(--font-b);
+  .mobile-book-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.9375rem;
   }
-  .navbar .btn-ihb .btn-ihb-reveal { display: none; }
 
   /* ---- Mobile nav dropdown ---- */
   .nav-dropdown-menu {
@@ -2705,6 +2723,9 @@ ul.contact-info-list { padding: 0; margin: 0; }
   .wcu-cert-card { flex-direction: column; align-items: flex-start; }
   .wcu-cert-right { flex-wrap: wrap; }
 }
+
+/* Mobile bottom booking bar — hidden on desktop */
+.mobile-book-bar { display: none; }
 
 /* ========================================
    SERVICES ACCORDION SECTION (dark)
