@@ -14,7 +14,8 @@
   --gray-4:     #e5edea;
   --gray-5:     #c8d9d1;
   --gray-6:     #f5f0e8;
-  --primary:    #2d5040;
+  --primary:    #1e3d2e;
+  --accent:     #3ecf6e;
   --white:      #ffffff;
 
   --font-h:  'Libre Caslon Text', Georgia, serif;
@@ -95,7 +96,7 @@ section { padding: 6rem 0; }
 }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
 .btn-primary  { background: var(--primary); color: var(--white); border-color: var(--primary); }
-.btn-primary:hover { background: #1e3528; border-color: #1e3528; }
+.btn-primary:hover { background: #122518; border-color: #122518; }
 .btn-dark     { background: var(--dark); color: var(--white); border-color: var(--dark); }
 .btn-dark:hover { background: var(--dark-2); }
 .btn-outline  { background: transparent; color: var(--dark); border-color: var(--dark); }
@@ -684,7 +685,7 @@ section { padding: 6rem 0; }
 }
 .ph-hero-heading em {
   font-style: italic;
-  color: #9abfb0;
+  color: var(--accent);
   text-shadow: 0 2px 24px rgba(0,0,0,0.6);
 }
 .ph-hero-sub {
@@ -839,7 +840,7 @@ section { padding: 6rem 0; }
 }
 .svc-hero-heading em {
   font-style: italic;
-  color: var(--primary);
+  color: var(--accent);
 }
 .svc-hero-sub {
   font-family: var(--font-b);
