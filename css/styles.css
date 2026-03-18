@@ -1661,11 +1661,26 @@ section { padding: 6rem 0; }
 .cth-submit { margin-top: 0.5rem; }
 
 @media (max-width: 860px) {
-  .cth-body { grid-template-columns: 1fr; gap: 2.5rem; }
-  .cth-img { height: 340px; border-radius: 999px 999px 0 0; }
+  /* Let section grow naturally — no fixed height */
+  .cth-section {
+    height: auto;
+    overflow: visible;
+    padding: 3.5rem 0 4rem;
+  }
+  .cth-body {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 var(--gap);
+  }
+  /* Show image as a wide banner above the form */
+  .cth-img-wrap { min-height: 0; }
+  .cth-img { height: 260px; border-radius: 1.5rem; max-height: none; }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+  /* Hide the decorative image on small phones to save space */
+  .cth-img-wrap { display: none; }
   .cth-form-row { grid-template-columns: 1fr; }
+  .cth-section { padding: 2.5rem 0 3rem; }
 }
 
 /* ========================================
@@ -1840,6 +1855,17 @@ section { padding: 6rem 0; }
   color: var(--primary);
   font-size: 0.875rem;
   flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+  .jot-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 0 var(--gap);
+  }
+  .jot-video-wrap { aspect-ratio: 16 / 9; max-height: 320px; }
+  .jot-section { padding: 4rem 0; }
+  .jot-desc { max-width: 100%; }
 }
 
 /* ========================================
@@ -3392,10 +3418,6 @@ body { overflow-x: hidden; }
 }
 
 /* Contact form rows — collapse earlier */
-@media (max-width: 768px) {
-  .cth-form-row { grid-template-columns: 1fr; }
-  .cth-section { padding: 3.5rem 0 4rem; }
-}
 
 /* Follow pills — full width on mobile */
 @media (max-width: 860px) {
