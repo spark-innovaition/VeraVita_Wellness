@@ -2230,6 +2230,38 @@ label {
 /* filter-btn using btn classes */
 .services-filter .btn.filter-btn.active { background: var(--dark) !important; color: var(--white) !important; border-color: var(--dark) !important; }
 
+/* Services categorised sections */
+.svc-section { padding: 5rem 0 0; }
+.svc-section:last-child { padding-bottom: 5rem; }
+.svc-section-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 4rem;
+  align-items: end;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-5);
+}
+.svc-section-header h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin: 0.5rem 0 0;
+  line-height: 1.15;
+}
+.svc-section-header h2 em { color: var(--primary); font-style: italic; }
+.svc-section-header p {
+  font-size: 1rem; color: var(--body-text);
+  line-height: 1.7; margin: 0; align-self: end;
+}
+.svc-grid--top { border-top: 1px solid var(--gray-5); }
+.svc-section-divider {
+  border: none; border-top: 1px solid var(--gray-4);
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .svc-section-header { grid-template-columns: 1fr; gap: 0.75rem; }
+  .svc-section { padding: 3.5rem 0 0; }
+}
+
 /* contact-info ul vs div */
 ul.contact-info-list { padding: 0; margin: 0; }
 
