@@ -399,31 +399,27 @@ ScrollTrigger.batch('.reveal', {
   el.innerHTML = '';
   el.setAttribute('aria-label', text);
 
+  /* Animate per-word (not per-character) — ~10x fewer GSAP targets per frame */
   text.split(' ').forEach((word, wi, arr) => {
     const wordEl = document.createElement('span');
     wordEl.className = 'tgs-word';
-    [...word].forEach(char => {
-      const s = document.createElement('span');
-      s.className = 'tgs-char';
-      s.textContent = char;
-      wordEl.appendChild(s);
-    });
+    wordEl.textContent = word;
     el.appendChild(wordEl);
     if (wi < arr.length - 1) el.appendChild(document.createTextNode(' '));
   });
 
-  const chars = el.querySelectorAll('.tgs-char');
-  gsap.fromTo(chars,
+  const words = el.querySelectorAll('.tgs-word');
+  gsap.fromTo(words,
     { opacity: 0.08 },
     {
       opacity: 1,
-      stagger: { each: 0.018 },
+      stagger: { each: 0.04 },
       ease: 'none',
       scrollTrigger: {
         trigger: el,
         start: 'top 80%',
         end: 'bottom 20%',
-        scrub: 1.2
+        scrub: 1,
       }
     }
   );
@@ -719,6 +715,22 @@ document.querySelectorAll('.team-card').forEach(card => {
 })();
 
 /* ============================================
+   PAUSE BACKGROUND VIDEOS WHEN OFF-SCREEN
+   Reduces GPU load during scroll
+   ============================================ */
+(function initVideoPauseOnScroll() {
+  document.querySelectorAll('.accord-video-bg, .svc-hero-video').forEach(video => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { video.play(); }
+        else { video.pause(); }
+      });
+    }, { threshold: 0.01 });
+    io.observe(video);
+  });
+})();
+
+/* ============================================
    SCROLL WORD REVEAL — .js-word-reveal
    Splits heading into per-word <span>s then
    scrubs opacity 0.12 → 1 as the element
@@ -732,16 +744,17 @@ document.querySelectorAll('.team-card').forEach(card => {
 
     const spans = [...el.querySelectorAll('.word')];
 
+    gsap.set(spans, { opacity: 0.1 });
     gsap.to(spans, {
       opacity: 1,
-      ease: 'none',
-      stagger: { each: 0.06 },
-      duration: 0.25,
+      ease: 'power2.out',
+      stagger: 0.05,
+      duration: 0.5,
       scrollTrigger: {
         trigger: el,
         start: 'top 82%',
-        end: 'bottom 28%',
-        scrub: 0.8,
+        toggleActions: 'play none none none',
+        once: true,
       },
     });
   });

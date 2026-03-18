@@ -364,7 +364,7 @@ section { padding: 6rem 0; }
    TEAM
    ======================================== */
 /* ---- Curevo-style team section ---- */
-.tmd-section { background: var(--gray-6); padding: 6rem 0; }
+.tmd-section { background: var(--gray-6); padding: 6rem 0; contain: layout style; }
 
 /* Top block: intro (left) + 2 tall cards (right) */
 .tmd-top {
@@ -408,7 +408,6 @@ section { padding: 6rem 0; }
   gap: 0.75rem;
   width: max-content;
   animation: tmd-scroll 28s linear infinite;
-  will-change: transform;
 }
 .tmd-marquee-track:hover { animation-play-state: paused; }
 .tmd-specialty {
@@ -2336,6 +2335,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
   background: var(--dark);
   padding: 6rem 0;
   overflow: hidden;
+  contain: layout style;
 }
 
 /* Video background */
@@ -2347,7 +2347,6 @@ ul.contact-info-list { padding: 0; margin: 0; }
   object-fit: cover;
   object-position: center;
   z-index: 0;
-  will-change: transform;
   transform: translateZ(0);
 }
 .accord-video-overlay {
@@ -2362,7 +2361,6 @@ ul.contact-info-list { padding: 0; margin: 0; }
   position: sticky;
   top: calc(50vh - 231px);
   align-self: start;
-  will-change: transform;
 }
 .accord-img {
   width: 100%;

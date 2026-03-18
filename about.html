@@ -48,28 +48,43 @@
   </div>
 </nav>
 
-<!-- CINEMATIC TEXT-ZOOM HERO -->
-<div class="ph-cinematic">
-  <!-- Video plays full bleed — visible only through letter cutouts -->
-  <video class="ph-cin-video" autoplay muted loop playsinline>
-    <source src="images/about us - page header.mp4" type="video/mp4" />
-  </video>
+<!-- ====================================================
+     HERO SPLIT
+     ==================================================== -->
+<section class="hs-section">
 
-  <!-- Canvas overlay injected by JS — handles text cutout compositing -->
-  <p class="ph-cin-label">Naturopathic &amp; Aesthetic Medicine · Calgary</p>
+  <!-- Left: Content -->
+  <div class="hs-left">
+    <header class="hs-header">
+      <span class="hs-eyebrow">Naturopathic &nbsp;·&nbsp; Aesthetic Medicine &nbsp;·&nbsp; Calgary</span>
+    </header>
 
-  <!-- Hero content revealed after zoom — slides up from below -->
-  <div class="ph-hero-content">
-    <p class="ph-hero-pre">Naturopathic &amp; Aesthetic Medicine · Calgary</p>
-    <h2 class="ph-hero-heading">Healing the whole<br /><em>person, naturally</em></h2>
-    <p class="ph-hero-sub">Founded to bridge naturopathic wisdom and modern medicine — compassionate, personalised care tailored to you.</p>
-    <a href="services.html" class="btn-ihb btn-ihb--primary">
-      <span class="btn-ihb-blob"></span>
-      <span class="btn-ihb-default">Explore our services</span>
-      <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Explore our services</span>
-    </a>
+    <main class="hs-main">
+      <h1 class="hs-title">Healing the whole<br /><em>person, naturally</em></h1>
+      <div class="hs-divider"></div>
+      <p class="hs-subtitle">Founded to bridge naturopathic wisdom and modern medicine — compassionate, personalised care tailored to you.</p>
+    </main>
+
+    <footer class="hs-footer">
+      <div class="hs-contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span>veravitaclinic.ca</span>
+      </div>
+      <div class="hs-contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>(403) 475-2688</span>
+      </div>
+      <div class="hs-contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Calgary, Alberta</span>
+      </div>
+    </footer>
   </div>
-</div>
+
+  <!-- Right: Image panel with diagonal clip-path -->
+  <div class="hs-right"></div>
+
+</section>
 
 <!-- ABOUT STATEMENT -->
 <section class="about-statement-section">
