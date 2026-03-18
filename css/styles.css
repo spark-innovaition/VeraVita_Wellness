@@ -3553,15 +3553,16 @@ body { overflow-x: hidden; }
 .sd-card-tab i { font-size: 0.7rem; color: var(--primary); }
 
 /* Related services */
-.sd-related { background: var(--gray-6); padding: 5rem 0; }
+.sd-related { background: var(--white); padding: 5rem 0; }
 .sd-related-header {
   display: flex; align-items: flex-end;
-  justify-content: space-between; gap: 1.5rem;
-  margin-bottom: 3rem;
+  justify-content: space-between; gap: 2rem;
+  margin-bottom: 2.5rem;
 }
 .sd-related-header-text .section-label { display: flex; }
 .sd-related-header-text h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-top: 0.5rem; }
-.sd-related-arrows { display: flex; gap: 0.625rem; flex-shrink: 0; }
+.sd-related-header-text p { font-size: 0.9375rem; color: var(--body-text); margin: 0.75rem 0 0; max-width: 420px; line-height: 1.65; }
+.sd-related-arrows { display: flex; gap: 0.625rem; flex-shrink: 0; padding-bottom: 0.25rem; }
 .sd-arrow {
   width: 46px; height: 46px; border-radius: 50%;
   border: 1.5px solid var(--gray-5); background: var(--white);
@@ -3570,30 +3571,57 @@ body { overflow-x: hidden; }
   transition: background var(--dur), border-color var(--dur), color var(--dur);
 }
 .sd-arrow:hover { background: var(--dark); border-color: var(--dark); color: var(--white); }
-.sd-arrow:disabled { opacity: 0.35; cursor: default; }
+.sd-arrow:disabled { opacity: 0.3; cursor: default; }
+
+/* Overlay-style cards */
 .sd-related-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  display: flex;
+  gap: 1.25rem;
   overflow: hidden;
 }
 .sd-rel-card {
-  background: var(--white); border-radius: var(--r-card); overflow: hidden;
-  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  flex: 0 0 calc(50% - 0.625rem);
+  aspect-ratio: 4/3;
+  background: var(--dark);
+  cursor: pointer;
 }
-.sd-rel-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(30,53,40,0.1); }
-.sd-rel-img-wrap { aspect-ratio: 4/3; overflow: hidden; }
-.sd-rel-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--ease); }
-.sd-rel-card:hover .sd-rel-img { transform: scale(1.04); }
-.sd-rel-body { padding: 1.5rem; }
-.sd-rel-name { font-family: var(--font-h); font-size: 1.1rem; color: var(--dark); margin-bottom: 0.45rem; }
-.sd-rel-desc { font-size: 0.875rem; color: var(--body-text); margin-bottom: 1rem; }
+.sd-rel-img-wrap {
+  position: absolute; inset: 0;
+}
+.sd-rel-img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.6s var(--ease);
+}
+.sd-rel-card:hover .sd-rel-img { transform: scale(1.05); }
+.sd-rel-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,25,15,0.82) 0%, rgba(10,25,15,0.25) 45%, transparent 100%);
+  transition: opacity var(--dur);
+}
+.sd-rel-body {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 2rem; z-index: 1;
+}
+.sd-rel-name {
+  font-family: var(--font-h); font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: var(--white); margin-bottom: 0.5rem; line-height: 1.2;
+}
+.sd-rel-desc { font-size: 0.875rem; color: rgba(255,255,255,0.75); margin-bottom: 1.25rem; line-height: 1.55; }
 .sd-rel-link {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-size: 0.875rem; font-weight: 500; color: var(--primary);
-  transition: gap var(--dur);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 1.375rem; border-radius: 2rem;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(6px);
+  font-size: 0.875rem; font-weight: 500; color: var(--white);
+  transition: background var(--dur), border-color var(--dur);
 }
-.sd-rel-link:hover { gap: 0.65rem; }
+.sd-rel-link:hover { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.5); }
+.sd-rel-link i { font-size: 0.7rem; }
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -3605,9 +3633,9 @@ body { overflow-x: hidden; }
   .sd-body-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .sd-card { position: static; }
   .sd-gallery { grid-template-columns: repeat(2, 1fr); }
-  .sd-related-grid { grid-template-columns: 1fr 1fr; }
+  .sd-rel-card { flex: 0 0 calc(85vw); }
 }
 @media (max-width: 540px) {
   .sd-gallery { grid-template-columns: 1fr 1fr; }
-  .sd-related-grid { grid-template-columns: 1fr; }
+  .sd-related-header { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
 }

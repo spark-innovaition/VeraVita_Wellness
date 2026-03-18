@@ -844,49 +844,46 @@ document.querySelectorAll('.team-card').forEach(card => {
 
 /* ============================================
    SERVICE DETAIL — Related Services Carousel
-   Injects arrow buttons and enables scrolling
+   2-up overlay cards with ← → arrow nav
    ============================================ */
 (function initRelatedCarousel() {
   const header = document.querySelector('.sd-related-header');
   const grid   = document.querySelector('.sd-related-grid');
   if (!header || !grid) return;
 
-  /* Wrap existing header content */
+  /* Wrap existing header content in text div */
   const textWrap = document.createElement('div');
   textWrap.className = 'sd-related-header-text';
   while (header.firstChild) textWrap.appendChild(header.firstChild);
   header.appendChild(textWrap);
 
   /* Arrow buttons */
-  const arrows = document.createElement('div');
-  arrows.className = 'sd-related-arrows';
-  arrows.innerHTML =
-    '<button class="sd-arrow" id="sd-prev" aria-label="Previous services"><i class="fa-solid fa-arrow-left"></i></button>' +
-    '<button class="sd-arrow" id="sd-next" aria-label="Next services"><i class="fa-solid fa-arrow-right"></i></button>';
-  header.appendChild(arrows);
+  const arrowWrap = document.createElement('div');
+  arrowWrap.className = 'sd-related-arrows';
+  arrowWrap.innerHTML =
+    '<button class="sd-arrow" id="sd-prev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>' +
+    '<button class="sd-arrow" id="sd-next" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>';
+  header.appendChild(arrowWrap);
 
-  /* Make grid scrollable */
-  grid.style.overflowX   = 'auto';
+  /* Scrollable grid — CSS already sets display:flex; hide scrollbar */
+  grid.style.overflowX      = 'auto';
   grid.style.scrollSnapType = 'x mandatory';
-  grid.style.display     = 'flex';
-  grid.style.gap         = '1.75rem';
-  grid.style.scrollbarWidth = 'none'; /* Firefox */
-  grid.style.msOverflowStyle = 'none'; /* IE */
+  grid.style.scrollbarWidth = 'none';
+  grid.style.msOverflowStyle = 'none';
 
-  /* Hide scrollbar in WebKit */
-  const style = document.createElement('style');
-  style.textContent = '.sd-related-grid::-webkit-scrollbar{display:none}';
-  document.head.appendChild(style);
+  const styleEl = document.createElement('style');
+  styleEl.textContent = '.sd-related-grid::-webkit-scrollbar{display:none}';
+  document.head.appendChild(styleEl);
 
-  /* Fixed card width */
-  const cards = grid.querySelectorAll('.sd-rel-card');
-  cards.forEach(c => {
-    c.style.minWidth   = 'min(340px, 80vw)';
+  /* Snap each card */
+  grid.querySelectorAll('.sd-rel-card').forEach(c => {
     c.style.scrollSnapAlign = 'start';
-    c.style.flex       = '0 0 auto';
   });
 
-  const scrollAmount = () => (cards[0] ? cards[0].offsetWidth + 28 : 360);
+  const scrollAmount = () => {
+    const card = grid.querySelector('.sd-rel-card');
+    return card ? card.offsetWidth + 20 : grid.clientWidth / 2;
+  };
 
   const prev = document.getElementById('sd-prev');
   const next = document.getElementById('sd-next');
@@ -896,13 +893,8 @@ document.querySelectorAll('.team-card').forEach(card => {
     next.disabled = grid.scrollLeft >= grid.scrollWidth - grid.clientWidth - 4;
   }
 
-  prev.addEventListener('click', () => {
-    grid.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
-  });
-  next.addEventListener('click', () => {
-    grid.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
-  });
-
+  prev.addEventListener('click', () => grid.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+  next.addEventListener('click', () => grid.scrollBy({ left:  scrollAmount(), behavior: 'smooth' }));
   grid.addEventListener('scroll', updateArrows, { passive: true });
   updateArrows();
 })();
