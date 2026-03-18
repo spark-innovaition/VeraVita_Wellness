@@ -522,6 +522,42 @@ section { padding: 6rem 0; }
 }
 .tmd-card-socials a:hover { background: var(--primary); color: #152b1e; border-color: var(--primary); }
 
+/* Card body — description + profile link */
+.tmd-card-body {
+  padding: 1rem 1.375rem 1.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  border-top: 1px solid var(--gray-5);
+}
+.tmd-card-body p {
+  font-size: 0.875rem;
+  color: var(--body-text);
+  line-height: 1.65;
+  margin: 0;
+}
+.tmd-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1e3528;
+  text-decoration: none;
+  font-family: var(--font-b);
+  transition: gap 0.2s ease, color var(--dur);
+  width: fit-content;
+}
+.tmd-card-link:hover { gap: 0.65rem; color: var(--primary); }
+
+/* CTA row below the grid */
+.tmd-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
 @media (max-width: 1024px) {
   .tmd-top { grid-template-columns: 1fr 1fr; }
   .tmd-intro { grid-column: span 2; padding: 1rem 0; }
