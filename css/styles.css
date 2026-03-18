@@ -1479,6 +1479,9 @@ section { padding: 6rem 0; }
   flex-wrap: wrap;
 }
 .sf-bottom p { font-family: var(--font-b); font-size: 0.9rem; color: #222; }
+.sf-powered { margin-left: auto; font-size: 0.8rem !important; color: rgba(30,53,40,0.45) !important; }
+.sf-powered a { color: var(--primary); text-decoration: none; font-weight: 500; }
+.sf-powered a:hover { text-decoration: underline; }
 /* Footer fade-in handled by GSAP in main.js */
 
 /* ========================================
