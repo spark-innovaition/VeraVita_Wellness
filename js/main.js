@@ -328,7 +328,7 @@ if (navToggle && navMenu) {
     } else {
       navToggle.classList.add('open');
       navMenu.classList.add('open');
-      gsap.from(navMenu, { opacity: 0, y: -10, duration: 0.25 });
+      gsap.fromTo(navMenu, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.25 });
     }
   });
 }
