@@ -157,7 +157,7 @@ section { padding: 6rem 0; }
 .nav-dropdown-menu {
   position: absolute; top: calc(100% + 0.75rem); left: 50%; transform: translateX(-50%);
   background: var(--white); border: 1px solid var(--gray-5); border-radius: var(--r-card);
-  padding: 0.5rem; min-width: 180px;
+  padding: 0.5rem; min-width: 220px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.12);
   opacity: 0; visibility: hidden;
   transition: opacity var(--dur), visibility var(--dur), transform var(--dur);
@@ -173,6 +173,23 @@ section { padding: 6rem 0; }
   transition: background var(--dur);
 }
 .nav-dropdown-menu a:hover { background: var(--gray-6); }
+
+/* Enhanced dropdown items with icons */
+.nav-dd-item {
+  display: flex !important; align-items: center; gap: 0.875rem;
+  padding: 0.75rem 1rem !important;
+}
+.nav-dd-item:not(:last-child) { margin-bottom: 0.125rem; }
+.nav-dd-icon {
+  width: 36px; height: 36px; border-radius: 9px; flex-shrink: 0;
+  background: var(--gray-6); display: flex; align-items: center; justify-content: center;
+  color: var(--primary); font-size: 0.875rem;
+  transition: background var(--dur), color var(--dur);
+}
+.nav-dd-item:hover .nav-dd-icon { background: var(--primary); color: var(--white); }
+.nav-dd-text { display: flex; flex-direction: column; gap: 0.15rem; }
+.nav-dd-text strong { font-size: 0.9rem; font-weight: 500; color: var(--dark); line-height: 1; }
+.nav-dd-text span { font-size: 0.775rem; color: var(--body-text); line-height: 1; font-weight: 400; }
 
 /* CTA button */
 .btn-nav {
