@@ -3542,6 +3542,7 @@ body { overflow-x: hidden; }
 .sd-card-btn:hover { background: #4aaa50; transform: translateY(-1px); }
 
 /* Related tabs */
+.sd-card-btn + .sd-card-section-title { margin-top: 2rem; }
 .sd-card-tabs { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
 .sd-card-tab {
   display: flex; align-items: center; justify-content: space-between;
