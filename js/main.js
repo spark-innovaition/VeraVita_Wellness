@@ -41,7 +41,7 @@ lenis.on('scroll', ScrollTrigger.update);
 
   /* Load cloud hero image */
   const heroBg = new Image();
-  heroBg.src = 'images/Hero section.jpg';
+  heroBg.src = 'images/bg-hero-section.jpg';
 
   function resize() {
     canvas.width  = section.clientWidth;
@@ -680,13 +680,15 @@ document.querySelectorAll('.team-card').forEach(card => {
   if (!items.length) return;
 
   /* Preload all service images so switching never causes paint jank */
-  const preview = document.getElementById('accord-preview');
+  const preview     = document.getElementById('accord-preview');
+  const previewName = document.getElementById('accord-preview-name');
+  const previewLink = document.getElementById('accord-preview-link');
   items.forEach(item => {
     const src = item.querySelector('.accord-trigger')?.dataset.image;
     if (src) { const img = new Image(); img.src = src; }
   });
 
-  /* Init: collapse all bodies using max-height (no layout reflow on animate) */
+  /* Init: collapse all bodies */
   items.forEach(item => {
     const body = item.querySelector('.accord-body');
     if (body) gsap.set(body, { maxHeight: 0, overflow: 'hidden' });
@@ -711,7 +713,6 @@ document.querySelectorAll('.team-card').forEach(card => {
       /* Open clicked item */
       if (!isOpen) {
         item.classList.add('open');
-        /* measure natural height once */
         gsap.set(body, { maxHeight: 'none' });
         const h = body.scrollHeight;
         gsap.fromTo(body,
@@ -719,13 +720,17 @@ document.querySelectorAll('.team-card').forEach(card => {
           { maxHeight: h, duration: 0.4, ease: 'power2.inOut' }
         );
 
-        /* Swap service image — images already preloaded, no network lag */
-        const src = trigger.dataset.image;
-        if (src && preview && !preview.src.endsWith(src)) {
+        /* Swap image + update panel footer */
+        const src  = trigger.dataset.image;
+        const name = trigger.dataset.name;
+        const link = trigger.dataset.link;
+        if (src && preview) {
           gsap.to(preview, {
             opacity: 0, duration: 0.2, ease: 'power2.in',
             onComplete: () => {
               preview.src = src;
+              if (previewName && name) previewName.textContent = name.replace(/&amp;/g, '&');
+              if (previewLink && link) previewLink.href = link;
               gsap.to(preview, { opacity: 1, duration: 0.35, ease: 'power2.out' });
             }
           });

@@ -2651,39 +2651,106 @@ ul.contact-info-list { padding: 0; margin: 0; }
   z-index: 1;
 }
 
-.services-accord-inner { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 4rem; align-items: start; }
+.services-accord-inner { display: grid; grid-template-columns: 1fr 0.72fr; gap: 5rem; align-items: start; }
+
+/* Sticky image card */
 .services-accord-img {
   position: sticky;
-  top: calc(50vh - 231px);
+  top: calc(50vh - 260px);
   align-self: start;
+}
+.accord-img-card {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .accord-img {
   width: 100%;
-  max-width: 260px;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: var(--r-card);
-  transition: opacity 0.4s ease;
   display: block;
-  margin-left: auto;
+  transition: opacity 0.3s ease;
 }
-.services-accord-content .section-label { color: var(--gray-3); }
-.services-accord-content h2 { color: var(--white); margin-bottom: 2rem; }
-.accord-list { margin-top: 2rem; }
-.accord-item { border-bottom: 1px solid rgba(255,255,255,0.1); }
-.accord-item:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
-.accord-trigger {
+.accord-img-footer {
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: linear-gradient(rgba(18,28,20,0), rgba(10,20,12,0.95));
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
   display: flex; align-items: center; justify-content: space-between;
-  width: 100%; padding: 1.125rem 0; text-align: left;
-  color: var(--white); font-size: 1rem; font-family: var(--font-b);
-  font-weight: 500; cursor: pointer; background: none; border: none;
+}
+.accord-img-name {
+  font-size: 1rem; font-weight: 600; color: var(--white);
+  font-family: var(--font-b);
+}
+.accord-img-link {
+  display: inline-flex; align-items: center; gap: 0.375rem;
+  font-size: 0.8rem; color: var(--primary); font-weight: 500;
+  text-decoration: none; transition: gap 0.2s ease;
+  font-family: var(--font-b);
+  white-space: nowrap;
+}
+.accord-img-link:hover { gap: 0.6rem; }
+
+/* Header */
+.services-accord-content .section-label { color: rgba(255,255,255,0.45); }
+.services-accord-content h2 { color: var(--white); margin-bottom: 0; }
+.accord-list { margin-top: 2.5rem; }
+.accord-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+.accord-item:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+
+/* Trigger row */
+.accord-trigger {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 2.25rem auto;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%; padding: 1.25rem 0; text-align: left;
+  cursor: pointer; background: none; border: none;
   transition: color var(--dur);
 }
-.accord-trigger:hover { color: var(--primary); }
-.accord-icon { font-size: 0.875rem; color: var(--gray-3); transition: transform 0.4s var(--ease), color var(--dur); flex-shrink: 0; }
+.accord-num {
+  font-size: 0.7rem; font-weight: 600; color: rgba(255,255,255,0.2);
+  font-family: var(--font-b); letter-spacing: 0.06em;
+  transition: color var(--dur);
+}
+.accord-label {
+  color: var(--white); font-size: 1.0625rem; font-family: var(--font-b);
+  font-weight: 500; transition: color var(--dur);
+}
+.accord-svc-icon {
+  width: 2.25rem; height: 2.25rem; border-radius: 9px;
+  background: rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.35); font-size: 0.8rem;
+  transition: background var(--dur), color var(--dur);
+  flex-shrink: 0;
+}
+.accord-item.open .accord-svc-icon,
+.accord-trigger:hover .accord-svc-icon { background: var(--primary); color: var(--dark); }
+.accord-trigger:hover .accord-num,
+.accord-item.open .accord-num { color: var(--primary); }
+.accord-trigger:hover .accord-label,
+.accord-item.open .accord-label { color: var(--primary); }
+
+.accord-icon { font-size: 0.8rem; color: rgba(255,255,255,0.3); transition: transform 0.4s var(--ease), color var(--dur); flex-shrink: 0; }
 .accord-item.open .accord-icon { transform: rotate(45deg); color: var(--primary); }
-.accord-body { overflow: hidden; height: 0; }
-.accord-body p { padding: 0 0 1.25rem; color: var(--gray-3); font-size: 0.9375rem; line-height: 1.7; }
+
+/* Body */
+.accord-body { overflow: hidden; }
+.accord-body-inner {
+  padding: 0 0 1.5rem 3.25rem;
+  display: flex; flex-direction: column; gap: 0.875rem;
+}
+.accord-body-inner p { color: rgba(255,255,255,0.55); font-size: 0.9375rem; line-height: 1.75; margin: 0; }
+.accord-learn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.825rem; font-weight: 600; color: var(--primary);
+  text-decoration: none; font-family: var(--font-b);
+  transition: gap 0.2s ease; width: fit-content;
+}
+.accord-learn:hover { gap: 0.65rem; }
 
 /* ========================================
    TEAM — updated header layout
