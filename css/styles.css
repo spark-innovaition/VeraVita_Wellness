@@ -703,7 +703,7 @@ section { padding: 6rem 0; }
    PAGE HERO (interior pages)
    ======================================== */
 .page-hero {
-  background: linear-gradient(rgba(10,25,15,0.68), rgba(10,25,15,0.68)),
+  background: linear-gradient(rgba(10,25,15,0.75), rgba(10,25,15,0.75)),
               url('../images/bg-hero.jpg') center/cover no-repeat;
   padding: 6rem 0 5rem;
   text-align: center;
@@ -1883,7 +1883,7 @@ section { padding: 6rem 0; }
    PRACTITIONERS PAGE
    ======================================== */
 .prac-hero {
-  background: linear-gradient(rgba(10,25,15,0.68), rgba(10,25,15,0.68)),
+  background: linear-gradient(rgba(10,25,15,0.75), rgba(10,25,15,0.75)),
               url('../images/bg-hero.jpg') center/cover no-repeat;
   padding: 7rem 0 5rem;
   text-align: center;
@@ -3653,7 +3653,7 @@ body { overflow-x: hidden; }
    LEGAL PAGES (privacy-policy, terms, cookies)
    ============================================= */
 .legal-hero {
-  background: linear-gradient(rgba(10,25,15,0.68), rgba(10,25,15,0.68)),
+  background: linear-gradient(rgba(10,25,15,0.75), rgba(10,25,15,0.75)),
               url('../images/bg-hero.jpg') center/cover no-repeat;
   padding: 7rem 0 4.5rem;
   border-bottom: 1px solid rgba(255,255,255,0.07);
