@@ -55,7 +55,7 @@ lenis.on('scroll', ScrollTrigger.update);
     /* 1. Solid overlay */
     ctx.globalCompositeOperation = 'source-over';
     ctx.globalAlpha = s.overlayAlpha;
-    ctx.fillStyle   = '#e6f5e2';
+    ctx.fillStyle   = '#f5f0e8';
     ctx.fillRect(0, 0, w, h);
 
     /* 2. Cut out main heading */
