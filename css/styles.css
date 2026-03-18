@@ -682,7 +682,7 @@ section { padding: 6rem 0; }
   pointer-events: none;
 }
 
-.ph-hero-content > * { pointer-events: auto; }
+.ph-hero-content > * { pointer-events: auto; opacity: 0; }
 .ph-hero-pre {
   font-family: var(--font-b);
   font-size: 0.75rem;
