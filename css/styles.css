@@ -1257,6 +1257,7 @@ section { padding: 6rem 0; }
 .about-partners-section {
   background: var(--gray-6);
   padding: 4.5rem 0;
+  overflow-x: hidden;
 }
 .about-partners-grid {
   display: grid;
@@ -1300,9 +1301,27 @@ section { padding: 6rem 0; }
   max-width: 200px;
 }
 @media (max-width: 768px) {
-  .about-partners-grid { grid-template-columns: repeat(2, 1fr); }
-  .about-partner { border-right: none; border-bottom: 1px solid var(--gray-5); }
+  .about-partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .about-partner {
+    border-right: none;
+    border-bottom: 1px solid var(--gray-5);
+    padding: 1.5rem 1rem;
+  }
+  /* Right column items get a left border as divider */
+  .about-partner:nth-child(even) { border-left: 1px solid var(--gray-5); }
   .about-partner:last-child { border-bottom: none; }
+  /* Second-to-last item also loses bottom border if on same row as last */
+  .about-partner:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+  .about-partner-name { font-size: 1.0625rem; }
+  .about-partner-quote { font-size: 0.8125rem; max-width: 100%; }
+}
+@media (max-width: 480px) {
+  .about-partners-grid { grid-template-columns: 1fr; }
+  .about-partner { border-left: none !important; }
+  .about-partner:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid var(--gray-5); }
 }
 
 /* Timeline */
