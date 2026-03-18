@@ -703,7 +703,7 @@ section { padding: 6rem 0; }
    PAGE HERO (interior pages)
    ======================================== */
 .page-hero {
-  background: linear-gradient(rgba(10,25,15,0.58), rgba(10,25,15,0.58)),
+  background: linear-gradient(rgba(10,25,15,0.68), rgba(10,25,15,0.68)),
               url('../images/bg-hero.jpg') center/cover no-repeat;
   padding: 6rem 0 5rem;
   text-align: center;
@@ -946,11 +946,11 @@ section { padding: 6rem 0; }
 /* Non-video pages keep existing style */
 .page-hero:not(.page-hero--video) .page-hero-content { position: relative; z-index: 1; }
 .page-hero:not(.page-hero--video) h1 { color: var(--white); margin-bottom: 1rem; }
-.page-hero-sub { color: var(--gray-3); font-size: 1.125rem; max-width: 580px; margin: 0 auto; line-height: 1.7; }
-.breadcrumb { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.875rem; color: var(--gray-3); margin-bottom: 1.5rem; }
-.breadcrumb a { color: var(--gray-3); transition: color var(--dur); }
+.page-hero-sub { color: rgba(255,255,255,0.85); font-size: 1.125rem; max-width: 580px; margin: 0 auto; line-height: 1.7; }
+.breadcrumb { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; }
+.breadcrumb a { color: rgba(255,255,255,0.65); transition: color var(--dur); }
 .breadcrumb a:hover { color: var(--primary); }
-.breadcrumb .sep { color: var(--gray-3); font-size: 0.75rem; }
+.breadcrumb .sep { color: rgba(255,255,255,0.4); font-size: 0.75rem; }
 
 /* ========================================
    ABOUT PAGE
@@ -1883,7 +1883,7 @@ section { padding: 6rem 0; }
    PRACTITIONERS PAGE
    ======================================== */
 .prac-hero {
-  background: linear-gradient(rgba(10,25,15,0.58), rgba(10,25,15,0.58)),
+  background: linear-gradient(rgba(10,25,15,0.68), rgba(10,25,15,0.68)),
               url('../images/bg-hero.jpg') center/cover no-repeat;
   padding: 7rem 0 5rem;
   text-align: center;
@@ -1896,7 +1896,9 @@ section { padding: 6rem 0; }
   line-height: 1.1;
   margin: 0.5rem 0 1.25rem;
 }
-.prac-hero .section-label { color: rgba(255,255,255,0.65); }
+.prac-hero .section-label,
+.legal-hero .section-label,
+.page-hero .section-label { color: rgba(255,255,255,0.75); }
 .prac-hero-title em { color: var(--primary); font-style: italic; }
 .prac-hero-sub {
   font-family: var(--font-b);
@@ -3651,7 +3653,7 @@ body { overflow-x: hidden; }
    LEGAL PAGES (privacy-policy, terms, cookies)
    ============================================= */
 .legal-hero {
-  background: linear-gradient(rgba(10,25,15,0.58), rgba(10,25,15,0.58)),
+  background: linear-gradient(rgba(10,25,15,0.68), rgba(10,25,15,0.68)),
               url('../images/bg-hero.jpg') center/cover no-repeat;
   padding: 7rem 0 4.5rem;
   border-bottom: 1px solid rgba(255,255,255,0.07);
@@ -3666,7 +3668,7 @@ body { overflow-x: hidden; }
 .legal-hero-title em { color: var(--primary); font-style: italic; }
 .legal-hero-sub {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.8);
   font-family: var(--font-b);
 }
 
