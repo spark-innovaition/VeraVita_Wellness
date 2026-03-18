@@ -41,7 +41,7 @@ lenis.on('scroll', ScrollTrigger.update);
 
   /* Load cloud hero image */
   const heroBg = new Image();
-  heroBg.src = 'images/Hero section.png';
+  heroBg.src = 'images/Hero section.jpg';
 
   function resize() {
     canvas.width  = section.clientWidth;
