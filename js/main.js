@@ -39,6 +39,10 @@ lenis.on('scroll', ScrollTrigger.update);
   /* Mutable state driven by GSAP */
   const s = { textScale: 1, overlayAlpha: 1, labelAlpha: 0.5 };
 
+  /* Load cloud hero image */
+  const heroBg = new Image();
+  heroBg.src = 'images/Hero section.png';
+
   function resize() {
     canvas.width  = section.clientWidth;
     canvas.height = section.clientHeight;
@@ -52,11 +56,26 @@ lenis.on('scroll', ScrollTrigger.update);
     ctx.clearRect(0, 0, w, h);
     if (s.overlayAlpha < 0.004) return;
 
-    /* 1. Solid overlay */
+    /* 1. Image overlay — draw cloud image scaled to fill, shifted up so
+          the cloud ring (vertical center of image) aligns with the text */
     ctx.globalCompositeOperation = 'source-over';
     ctx.globalAlpha = s.overlayAlpha;
-    ctx.fillStyle   = '#A1F359';
-    ctx.fillRect(0, 0, w, h);
+
+    if (heroBg.complete && heroBg.naturalWidth > 0) {
+      /* Scale to fill canvas width, zoom in 1.15× so clouds frame the text */
+      const zoom   = 1.15;
+      const scale  = Math.max((w * zoom) / heroBg.naturalWidth, (h * zoom) / heroBg.naturalHeight);
+      const drawW  = heroBg.naturalWidth  * scale;
+      const drawH  = heroBg.naturalHeight * scale;
+      const drawX  = (w - drawW) / 2;
+      /* Shift image up slightly so cloud ring sits at vertical center (text position) */
+      const drawY  = (h - drawH) / 2 - h * 0.06;
+      ctx.drawImage(heroBg, drawX, drawY, drawW, drawH);
+    } else {
+      /* Fallback while image loads */
+      ctx.fillStyle = '#1e3528';
+      ctx.fillRect(0, 0, w, h);
+    }
 
     /* 2. Cut out main heading */
     const basePx = Math.min(w * 0.185, 320);
