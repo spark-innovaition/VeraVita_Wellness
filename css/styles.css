@@ -37,7 +37,7 @@
 
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-font-smoothing: antialiased; }
+html { -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 body { font-family: var(--font-b); font-size: 1rem; line-height: 1.65; color: var(--body-text); background: var(--white); overflow-x: hidden; }
 img { display: block; max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
@@ -2424,7 +2424,6 @@ ul.contact-info-list { padding: 0; margin: 0; }
   }
 
   /* ---- Bottom booking bar (mobile only) ---- */
-  body { padding-bottom: 76px; }
   .mobile-book-bar {
     display: flex;
     position: fixed;
@@ -3409,6 +3408,9 @@ body { overflow-x: hidden; }
   .sf-top { flex-wrap: wrap; gap: 2rem; }
   .sf-brand { flex: 0 0 100%; }
   .sf-col { flex: 1 1 140px; }
+}
+@media (max-width: 768px) {
+  .sf-fixed { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
 }
 @media (max-width: 600px) {
   .sf-body { padding: 2rem 1.25rem 1.5rem; }
