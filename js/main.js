@@ -55,7 +55,7 @@ lenis.on('scroll', ScrollTrigger.update);
     /* 1. Solid overlay */
     ctx.globalCompositeOperation = 'source-over';
     ctx.globalAlpha = s.overlayAlpha;
-    ctx.fillStyle   = '#eaf2ea';
+    ctx.fillStyle   = '#A1F359';
     ctx.fillRect(0, 0, w, h);
 
     /* 2. Cut out main heading */
@@ -71,8 +71,8 @@ lenis.on('scroll', ScrollTrigger.update);
 
     /* 3. Cut out label above heading — fades with labelAlpha */
     if (s.labelAlpha > 0.004) {
-      const headingHalfH = basePx * 0.85 / 2;        // approx at scale 1
-      const labelY       = h / 2 - headingHalfH - 32; // 32px clearance above heading
+      const headingHalfH = basePx * 1.1 / 2;          // generous estimate of text half-height
+      const labelY       = h / 2 - headingHalfH - 56; // push label clearly above heading
       const labelPx      = Math.max(Math.round(w * 0.009), 10);
       ctx.globalAlpha    = s.labelAlpha;
       ctx.letterSpacing  = '0.18em';
