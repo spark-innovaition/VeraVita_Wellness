@@ -3443,9 +3443,9 @@ body { overflow-x: hidden; }
   .cfaq-inner { padding: 0 1.25rem; }
 }
 
-/* Navbar dropdown — hide on mobile (use main nav links) */
+/* Navbar dropdown — visible on mobile inside open hamburger menu */
 @media (max-width: 768px) {
-  .nav-dropdown { display: none; }
+  .nav-dropdown { display: block; }
 }
 
 /* ========================================
