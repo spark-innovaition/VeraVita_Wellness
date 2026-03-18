@@ -72,9 +72,8 @@ lenis.on('scroll', ScrollTrigger.update);
       const drawY  = (h - drawH) / 2 - h * 0.06;
       ctx.drawImage(heroBg, drawX, drawY, drawW, drawH);
     } else {
-      /* Fallback while image loads */
-      ctx.fillStyle = '#1e3528';
-      ctx.fillRect(0, 0, w, h);
+      /* Image not yet loaded — leave canvas transparent so CSS background shows */
+      return;
     }
 
     /* 2. Cut out main heading */
