@@ -62,8 +62,8 @@ lenis.on('scroll', ScrollTrigger.update);
     ctx.globalAlpha = s.overlayAlpha;
 
     if (heroBg.complete && heroBg.naturalWidth > 0) {
-      /* Scale to fill canvas width, zoom in 1.15× so clouds frame the text */
-      const zoom   = 1.15;
+      /* Zoom image in sync with textScale (1→18), from 1.15× up to 1.65× */
+      const zoom   = 1.15 + (s.textScale - 1) / 17 * 0.5;
       const scale  = Math.max((w * zoom) / heroBg.naturalWidth, (h * zoom) / heroBg.naturalHeight);
       const drawW  = heroBg.naturalWidth  * scale;
       const drawH  = heroBg.naturalHeight * scale;
