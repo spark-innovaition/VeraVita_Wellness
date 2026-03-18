@@ -88,16 +88,18 @@ lenis.on('scroll', ScrollTrigger.update);
     ctx.fillStyle    = '#000';
     ctx.fillText('VeraVita', w / 2, h / 2);
 
-    /* 3. Cut out label above heading — fades with labelAlpha */
+    /* 3. Draw label above heading as solid readable text (not a cutout) */
     if (s.labelAlpha > 0.004) {
-      const headingHalfH = basePx * 1.1 / 2;          // generous estimate of text half-height
-      const labelY       = h / 2 - headingHalfH - 56; // push label clearly above heading
+      const headingHalfH = basePx * 1.1 / 2;
+      const labelY       = h / 2 - headingHalfH - 56;
       const labelPx      = Math.max(Math.round(w * 0.009), 10);
-      ctx.globalAlpha    = s.labelAlpha;
-      ctx.letterSpacing  = '0.18em';
-      ctx.font           = `500 ${labelPx}px "DM Sans", sans-serif`;
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.globalAlpha  = s.labelAlpha;
+      ctx.fillStyle    = '#1e3528';
+      ctx.letterSpacing = '0.18em';
+      ctx.font         = `600 ${labelPx}px "DM Sans", sans-serif`;
       ctx.fillText('NATUROPATHIC & AESTHETIC MEDICINE · CALGARY', w / 2, labelY);
-      ctx.letterSpacing  = '0px';
+      ctx.letterSpacing = '0px';
     }
   }
 
