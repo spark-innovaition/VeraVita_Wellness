@@ -1379,7 +1379,8 @@ section { padding: 6rem 0; }
   left: 0;
   width: 100%;
   height: 480px;
-  background: #ffffff;
+  background: linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.50)),
+              url('../images/bg-hero-footer.jpg') center/cover no-repeat;
   border-top: 1px solid rgba(30,53,40,0.12);
   color: #1e3528;
   will-change: transform;
