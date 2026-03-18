@@ -703,7 +703,8 @@ section { padding: 6rem 0; }
    PAGE HERO (interior pages)
    ======================================== */
 .page-hero {
-  background: var(--dark);
+  background: linear-gradient(rgba(10,25,15,0.72), rgba(10,25,15,0.72)),
+              url('../images/background - pic.jpg') center/cover no-repeat;
   padding: 6rem 0 5rem;
   text-align: center;
   position: relative;
@@ -1882,7 +1883,8 @@ section { padding: 6rem 0; }
    PRACTITIONERS PAGE
    ======================================== */
 .prac-hero {
-  background: var(--gray-6);
+  background: linear-gradient(rgba(10,25,15,0.72), rgba(10,25,15,0.72)),
+              url('../images/background - pic.jpg') center/cover no-repeat;
   padding: 7rem 0 5rem;
   text-align: center;
 }
@@ -1890,15 +1892,16 @@ section { padding: 6rem 0; }
   font-family: var(--font-h);
   font-size: clamp(2.75rem, 5vw, 4.5rem);
   font-weight: 400;
-  color: var(--dark);
+  color: var(--white);
   line-height: 1.1;
   margin: 0.5rem 0 1.25rem;
 }
+.prac-hero .section-label { color: rgba(255,255,255,0.65); }
 .prac-hero-title em { color: var(--primary); font-style: italic; }
 .prac-hero-sub {
   font-family: var(--font-b);
   font-size: 1.0625rem;
-  color: var(--body-text);
+  color: rgba(255,255,255,0.75);
   line-height: 1.75;
   max-width: 640px;
   margin: 0 auto;
@@ -3648,7 +3651,8 @@ body { overflow-x: hidden; }
    LEGAL PAGES (privacy-policy, terms, cookies)
    ============================================= */
 .legal-hero {
-  background: var(--dark);
+  background: linear-gradient(rgba(10,25,15,0.72), rgba(10,25,15,0.72)),
+              url('../images/background - pic.jpg') center/cover no-repeat;
   padding: 7rem 0 4.5rem;
   border-bottom: 1px solid rgba(255,255,255,0.07);
 }
