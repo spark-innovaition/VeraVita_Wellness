@@ -333,6 +333,16 @@ if (navToggle && navMenu) {
   });
 }
 
+/* Mobile: tap "More" to toggle dropdown inline */
+document.querySelectorAll('.nav-dropdown > .nav-link').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth > 768) return;   // desktop: hover handles it
+    e.preventDefault();
+    const dropdown = link.closest('.nav-dropdown');
+    dropdown.classList.toggle('open');
+  });
+});
+
 /* ===========================
    FORM SUBMISSION
    =========================== */
