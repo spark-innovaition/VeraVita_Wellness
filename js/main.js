@@ -324,6 +324,7 @@ if (navToggle && navMenu) {
     const isOpen = navMenu.classList.contains('open');
     if (isOpen) {
       navToggle.classList.remove('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
       gsap.to(navMenu, { opacity: 0, y: -10, duration: 0.25, onComplete: () => navMenu.classList.remove('open') });
     } else {
       navToggle.classList.add('open');
