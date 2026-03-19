@@ -4010,7 +4010,7 @@ body { overflow-x: hidden; }
 .sd-rel-card::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(10,25,15,0.82) 0%, rgba(10,25,15,0.25) 45%, transparent 100%);
+  background: linear-gradient(to top, rgba(10,25,15,0.95) 0%, rgba(10,25,15,0.6) 50%, rgba(10,25,15,0.1) 100%);
   transition: opacity var(--dur);
 }
 .sd-rel-body {
@@ -4020,8 +4020,9 @@ body { overflow-x: hidden; }
 .sd-rel-name {
   font-family: var(--font-h); font-size: clamp(1.125rem, 2vw, 1.5rem);
   color: var(--white); margin-bottom: 0.5rem; line-height: 1.2;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
 }
-.sd-rel-desc { font-size: 0.875rem; color: rgba(255,255,255,0.75); margin-bottom: 1.25rem; line-height: 1.55; }
+.sd-rel-desc { font-size: 0.875rem; color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; line-height: 1.55; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
 .sd-rel-link {
   display: inline-flex; align-items: center; gap: 0.5rem;
   padding: 0.6rem 1.375rem; border-radius: 2rem;
@@ -4051,7 +4052,6 @@ body { overflow-x: hidden; }
   .sd-related-header { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
   .sd-related { padding: 2.5rem 0; }
   .sd-rel-card { aspect-ratio: 3/2; }
-  .sd-rel-card::after { background: linear-gradient(to top, rgba(10,25,15,0.92) 0%, rgba(10,25,15,0.45) 50%, transparent 100%); }
   .sd-rel-body { padding: 1.25rem; }
   .sd-rel-name { font-size: 1.1rem; }
   .sd-rel-desc { font-size: 0.8125rem; margin-bottom: 0.875rem; }
