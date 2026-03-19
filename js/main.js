@@ -324,6 +324,7 @@ if (navToggle && navMenu) {
     const isOpen = navMenu.classList.contains('open');
     if (isOpen) {
       navToggle.classList.remove('open');
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
       gsap.to(navMenu, { opacity: 0, y: -10, duration: 0.25, onComplete: () => navMenu.classList.remove('open') });
     } else {
       navToggle.classList.add('open');
@@ -332,6 +333,16 @@ if (navToggle && navMenu) {
     }
   });
 }
+
+/* Mobile: tap nav-dropdown parent link to toggle submenu */
+document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth > 768) return;
+    e.preventDefault();
+    const dropdown = link.closest('.nav-dropdown');
+    dropdown.classList.toggle('open');
+  });
+});
 
 /* ===========================
    FORM SUBMISSION

@@ -28,14 +28,19 @@
         </div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
-      <ul class="navbar-nav">
+            <ul class="navbar-nav">
         <li><a href="index.html"          class="nav-link">Home</a></li>
         <li><a href="about.html"          class="nav-link">About</a></li>
         <li><a href="services.html"       class="nav-link active">Services</a></li>
-        <li><a href="contact.html"        class="nav-link">Contact</a></li>
-        <li><a href="practitioners.html" class="nav-link">Practitioners</a></li>
-        <li><a href="faqs.html"           class="nav-link">FAQs</a></li>
-          <li><a href="careers.html"      class="nav-link">Careers</a></li>
+        <li><a href="practitioners.html"  class="nav-link">Practitioners</a></li>
+        <li class="nav-dropdown">
+          <a href="contact.html" class="nav-link">Contact <i class="fa-solid fa-chevron-down" style="font-size:0.65em;margin-left:2px;"></i></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="contact.html" class="nav-dropdown-item">Contact Us</a></li>
+            <li><a href="faqs.html"    class="nav-dropdown-item">FAQs</a></li>
+            <li><a href="careers.html" class="nav-dropdown-item">Careers</a></li>
+          </ul>
+        </li>
       </ul>
       <a href="book-appointment.html" class="btn-ihb btn-ihb--primary">
         <span class="btn-ihb-blob"></span>
