@@ -4049,6 +4049,12 @@ body { overflow-x: hidden; }
 @media (max-width: 540px) {
   .sd-gallery { grid-template-columns: 1fr 1fr; }
   .sd-related-header { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .sd-related { padding: 2.5rem 0; }
+  .sd-rel-card { aspect-ratio: 3/2; }
+  .sd-rel-card::after { background: linear-gradient(to top, rgba(10,25,15,0.92) 0%, rgba(10,25,15,0.45) 50%, transparent 100%); }
+  .sd-rel-body { padding: 1.25rem; }
+  .sd-rel-name { font-size: 1.1rem; }
+  .sd-rel-desc { font-size: 0.8125rem; margin-bottom: 0.875rem; }
 }
 
 /* =============================================
