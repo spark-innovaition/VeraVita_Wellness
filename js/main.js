@@ -3,9 +3,10 @@
    GSAP + ScrollTrigger + Lenis
    =========================== */
 
-/* ---- Lenis Smooth Scroll ---- */
+/* ---- Lenis Smooth Scroll (desktop only) ---- */
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
 const lenis = new Lenis({
-  duration: 0.9,
+  duration: isMobile ? 0 : 0.9,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 });
 
@@ -113,8 +114,8 @@ lenis.on('scroll', ScrollTrigger.update);
     scrollTrigger: {
       trigger: section,
       start: 'top top',
-      end: '+=150%',       // 1.5× viewport — faster reach to video reveal
-      scrub: 1.5,          // slightly less damping to match shorter scroll
+      end: isMobile ? '+=100%' : '+=150%',
+      scrub: isMobile ? 0.3 : 1.5,
       pin: true,
       anticipatePin: 1,
     }
