@@ -3847,6 +3847,11 @@ body { overflow-x: hidden; }
   aspect-ratio: 4/5; background: var(--gray-6);
 }
 .sd-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sd-hero-img--mobile { display: none; }
+@media (max-width: 768px) {
+  .sd-hero-img--desktop { display: none; }
+  .sd-hero-img--mobile { display: block; }
+}
 
 /* Content + Sidebar */
 .sd-body { background: var(--white); padding: 4rem 0 5rem; }
