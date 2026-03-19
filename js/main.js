@@ -113,8 +113,8 @@ lenis.on('scroll', ScrollTrigger.update);
     scrollTrigger: {
       trigger: section,
       start: 'top top',
-      end: '+=300%',       // 3× viewport — plenty of room for a relaxed pace
-      scrub: 2.5,          // heavy damping keeps it buttery
+      end: '+=150%',       // 1.5× viewport — faster reach to video reveal
+      scrub: 1.5,          // slightly less damping to match shorter scroll
       pin: true,
       anticipatePin: 1,
     }
