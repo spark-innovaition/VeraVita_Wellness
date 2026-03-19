@@ -114,8 +114,8 @@ lenis.on('scroll', ScrollTrigger.update);
     scrollTrigger: {
       trigger: section,
       start: 'top top',
-      end: isMobile ? '+=100%' : '+=150%',
-      scrub: isMobile ? 0.3 : 1.5,
+      end: isMobile ? '+=180%' : '+=150%',
+      scrub: isMobile ? 1.2 : 1.5,
       pin: true,
       anticipatePin: 1,
     }
