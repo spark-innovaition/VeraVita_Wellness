@@ -2395,7 +2395,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 }
 @media (max-width: 768px) {
   :root { --gap: 1.25rem; }
-  body { padding-top: 62px; padding-bottom: 76px; }
+  body { padding-top: 62px; }
   h1 { font-size: 2.2rem; }
   h2 { font-size: 1.75rem; }
 
