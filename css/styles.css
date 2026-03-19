@@ -482,16 +482,16 @@ section { padding: 6rem 0; }
 }
 .tmd-card-photo img {
   width: 100%;
-  height: 240px;
+  height: 260px;
   object-fit: cover;
-  object-position: top;
+  object-position: center top;
   display: block;
   transition: transform 0.45s ease;
 }
 .tmd-card:hover .tmd-card-photo img { transform: scale(1.04); }
 
 /* Taller photo for the two top-row cards */
-.tmd-top .tmd-card-photo img { height: 360px; }
+.tmd-top .tmd-card-photo img { height: 400px; object-position: center top; }
 
 /* Social icons fade in on hover */
 .tmd-card-socials {
