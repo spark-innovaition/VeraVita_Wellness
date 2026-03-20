@@ -10,8 +10,16 @@ const lenis = new Lenis({
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 });
 
-/* ---- Slow down background videos ---- */
-document.querySelectorAll('.page-hero-video').forEach(v => { v.playbackRate = 0.65; });
+/* ---- Background videos: slow down + prevent black-flash on loop ---- */
+document.querySelectorAll('.page-hero-video, .ph-cin-video').forEach(v => {
+  if (v.classList.contains('page-hero-video')) v.playbackRate = 0.65;
+  /* Seek back 0.4s before the end so the loop is seamless */
+  v.addEventListener('timeupdate', function () {
+    if (this.duration && this.currentTime >= this.duration - 0.4) {
+      this.currentTime = 0;
+    }
+  });
+});
 
 /* ---- GSAP + ScrollTrigger ---- */
 gsap.registerPlugin(ScrollTrigger);
