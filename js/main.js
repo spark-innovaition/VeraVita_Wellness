@@ -319,6 +319,47 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 
 /* ===========================
+   INTERIOR PAGE HERO ANIMATIONS
+   =========================== */
+
+/* Video-backed heroes: prac-hero, careers-hero, page-hero, legal-hero */
+(function() {
+  const hero = document.querySelector('.prac-hero, .careers-hero, .page-hero, .legal-hero');
+  if (!hero) return;
+  const label   = hero.querySelector('.section-label');
+  const heading = hero.querySelector('h1');
+  const sub     = hero.querySelector('p:not(.breadcrumb *)');
+  const cta     = hero.querySelector('.btn-ihb, .page-hero-cta');
+  const tl = gsap.timeline({ delay: 0.15, defaults: { ease: 'power3.out' } });
+  if (label)   tl.from(label,   { opacity: 0, y: 18, duration: 0.55 });
+  if (heading) tl.from(heading, { opacity: 0, y: 32, duration: 0.65 }, '-=0.25');
+  if (sub)     tl.from(sub,     { opacity: 0, y: 20, duration: 0.55 }, '-=0.35');
+  if (cta)     tl.from(cta,     { opacity: 0, y: 14, duration: 0.45 }, '-=0.25');
+})();
+
+/* Service detail pages: text slides in from left, image from right */
+(function() {
+  const sdContent = document.querySelector('.sd-hero-content');
+  const sdImg     = document.querySelector('.sd-hero-img-wrap');
+  if (!sdContent) return;
+  sdContent.classList.remove('reveal'); // handled manually below
+  const tl = gsap.timeline({ delay: 0.1, defaults: { ease: 'power3.out' } });
+  tl.from(sdContent, { opacity: 0, x: -40, duration: 0.75 });
+  if (sdImg) tl.from(sdImg, { opacity: 0, x: 40, duration: 0.75 }, '-=0.5');
+})();
+
+/* Practitioner profile pages: text from left, photo from right */
+(function() {
+  const pdContent = document.querySelector('.pd-hero-content');
+  const pdPhoto   = document.querySelector('.pd-photo-wrap');
+  if (!pdContent) return;
+  pdContent.classList.remove('reveal');
+  const tl = gsap.timeline({ delay: 0.1, defaults: { ease: 'power3.out' } });
+  tl.from(pdContent, { opacity: 0, x: -35, duration: 0.75 });
+  if (pdPhoto) tl.from(pdPhoto, { opacity: 0, scale: 0.96, duration: 0.75 }, '-=0.45');
+})();
+
+/* ===========================
    MOBILE NAV TOGGLE
    =========================== */
 const navToggle = document.querySelector('.navbar-toggle');
