@@ -741,7 +741,7 @@ section { padding: 6rem 0; }
 }
 .ph-hero-heading em {
   font-style: italic;
-  color: var(--accent);
+  color: #fff;
   text-shadow: 0 2px 24px rgba(0,0,0,0.6);
 }
 .ph-hero-sub {
@@ -892,7 +892,7 @@ section { padding: 6rem 0; }
 }
 .svc-hero-heading em {
   font-style: italic;
-  color: var(--accent);
+  color: #fff;
 }
 .svc-hero-sub {
   font-family: var(--font-b);
@@ -1999,7 +1999,7 @@ section { padding: 6rem 0; }
 .prac-hero .section-label,
 .legal-hero .section-label,
 .page-hero .section-label { color: rgba(255,255,255,0.75); }
-.prac-hero-title em { color: var(--primary); font-style: italic; }
+.prac-hero-title em { color: #fff; font-style: italic; }
 .prac-hero-sub {
   font-family: var(--font-b);
   font-size: 1.0625rem;
@@ -4051,7 +4051,7 @@ body { overflow-x: hidden; }
   line-height: 1.15;
   margin: 0.5rem 0 1rem;
 }
-.legal-hero-title em { color: var(--primary); font-style: italic; }
+.legal-hero-title em { color: #fff; font-style: italic; }
 .legal-hero-sub {
   font-size: 0.9rem;
   color: rgba(255,255,255,0.8);
