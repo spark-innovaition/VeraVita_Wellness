@@ -1990,7 +1990,9 @@ section { padding: 6rem 0; }
   margin: 0.5rem 0 1.25rem;
 }
 .prac-hero .container,
-.legal-hero .container { position: relative; z-index: 2; }
+.prac-hero .container-medium,
+.legal-hero .container,
+.legal-hero .container-medium { position: relative; z-index: 2; }
 .prac-hero .section-label,
 .legal-hero .section-label,
 .page-hero .section-label { color: rgba(255,255,255,0.75); }
