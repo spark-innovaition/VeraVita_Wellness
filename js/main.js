@@ -11,7 +11,7 @@ const lenis = new Lenis({
 });
 
 /* ---- Slow down background videos ---- */
-document.querySelectorAll('.page-hero-video').forEach(v => { v.playbackRate = 0.4; });
+document.querySelectorAll('.page-hero-video').forEach(v => { v.playbackRate = 0.65; });
 
 /* ---- GSAP + ScrollTrigger ---- */
 gsap.registerPlugin(ScrollTrigger);
