@@ -1072,7 +1072,7 @@ section { padding: 6rem 0; }
 .asc-value-tag i { color: var(--primary); font-size: 0.875rem; }
 @media (max-width: 768px) {
   .asc-card { flex-direction: column; }
-  .asc-card-img { width: 100%; height: 220px; }
+  .asc-card-img { width: 100%; height: auto; aspect-ratio: 16/9; }
   .asc-card-body { padding: 2rem; }
 }
 
