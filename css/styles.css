@@ -3183,17 +3183,17 @@ ul.contact-info-list { padding: 0; margin: 0; }
   80%, 100% { --shiny-x: -100%; }
 }
 
-/* Primary = Shiny button (Fern #5DBB63) */
+/* Primary = Shiny button (Chartreuse #B0FC38) */
 .btn-ihb--primary {
-  background: #5DBB63;
-  border-color: #5DBB63;
-  color: rgba(255,255,255,0.92);
+  background: #B0FC38;
+  border-color: #B0FC38;
+  color: #1a2e10;
   --shiny-x: 100%;
   animation: btn-shiny-sweep 2.8s ease-in-out 0.5s infinite;
   transition: box-shadow 0.3s ease, transform 0.15s ease;
 }
 .btn-ihb--primary:hover {
-  box-shadow: 0 0 22px rgba(93,187,99,0.45);
+  box-shadow: 0 0 22px rgba(176,252,56,0.45);
   transform: scale(0.97);
 }
 .btn-ihb--primary:active { transform: scale(0.95); }
@@ -3934,7 +3934,7 @@ body { overflow-x: hidden; }
 }
 .sd-overview-icon {
   width: 34px; height: 34px; border-radius: 9px;
-  background: rgba(93,187,99,0.15); flex-shrink: 0;
+  background: rgba(176,252,56,0.15); flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
   color: var(--primary); font-size: 0.8rem; margin-top: 0.1em;
 }
