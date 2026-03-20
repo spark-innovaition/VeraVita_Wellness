@@ -359,6 +359,21 @@ document.querySelectorAll('.faq-item').forEach(item => {
   if (pdPhoto) tl.from(pdPhoto, { opacity: 0, scale: 0.96, duration: 0.75 }, '-=0.45');
 })();
 
+/* Contact page hero */
+(function() {
+  const cthTop  = document.querySelector('.cth-top');
+  if (!cthTop) return;
+  const title   = cthTop.querySelector('.cth-title');
+  const sub     = cthTop.querySelector('.cth-sub');
+  const imgWrap = document.querySelector('.cth-img-wrap');
+  const form    = document.querySelector('.cth-form-wrap');
+  const tl = gsap.timeline({ delay: 0.1, defaults: { ease: 'power3.out' } });
+  if (title)   tl.from(title,   { opacity: 0, y: 30, duration: 0.65 });
+  if (sub)     tl.from(sub,     { opacity: 0, y: 20, duration: 0.55 }, '-=0.3');
+  if (imgWrap) tl.from(imgWrap, { opacity: 0, x: -40, duration: 0.7 }, '-=0.2');
+  if (form)    tl.from(form,    { opacity: 0, x: 40,  duration: 0.7 }, '-=0.6');
+})();
+
 /* ===========================
    MOBILE NAV TOGGLE
    =========================== */
