@@ -3463,9 +3463,9 @@ body { overflow-x: hidden; }
 .careers-hero-inner {
   max-width: 680px;
 }
-.careers-hero-inner h1 { margin: 0.5rem 0 1rem; color: var(--white); }
-.careers-hero-inner p { font-size: 1.125rem; color: rgba(255,255,255,0.85); line-height: 1.7; }
-.careers-hero .section-label { color: rgba(255,255,255,0.75); }
+.careers-hero .careers-hero-inner h1 { margin: 0.5rem 0 1rem; color: var(--white) !important; }
+.careers-hero .careers-hero-inner p { font-size: 1.125rem; color: rgba(255,255,255,0.85) !important; line-height: 1.7; }
+.careers-hero .section-label { color: rgba(255,255,255,0.75) !important; }
 
 /* Open positions */
 .careers-positions { padding: 5rem 0; }
