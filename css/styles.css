@@ -1982,8 +1982,7 @@ section { padding: 6rem 0; }
    PRACTITIONERS PAGE
    ======================================== */
 .prac-hero {
-  background: linear-gradient(rgba(10,25,15,0.85), rgba(10,25,15,0.85)),
-              url('../images/bg-hero.jpg') center/cover no-repeat;
+  position: relative; overflow: hidden;
   padding: 7rem 0 5rem;
   text-align: center;
 }
@@ -1995,6 +1994,8 @@ section { padding: 6rem 0; }
   line-height: 1.1;
   margin: 0.5rem 0 1.25rem;
 }
+.prac-hero .container,
+.legal-hero .container { position: relative; z-index: 1; }
 .prac-hero .section-label,
 .legal-hero .section-label,
 .page-hero .section-label { color: rgba(255,255,255,0.75); }
@@ -4061,8 +4062,7 @@ body { overflow-x: hidden; }
    LEGAL PAGES (privacy-policy, terms, cookies)
    ============================================= */
 .legal-hero {
-  background: linear-gradient(rgba(10,25,15,0.85), rgba(10,25,15,0.85)),
-              url('../images/bg-hero.jpg') center/cover no-repeat;
+  position: relative; overflow: hidden;
   padding: 7rem 0 4.5rem;
   border-bottom: 1px solid rgba(255,255,255,0.07);
 }
