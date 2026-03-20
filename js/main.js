@@ -10,6 +10,9 @@ const lenis = new Lenis({
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 });
 
+/* ---- Slow down background videos ---- */
+document.querySelectorAll('.page-hero-video').forEach(v => { v.playbackRate = 0.4; });
+
 /* ---- GSAP + ScrollTrigger ---- */
 gsap.registerPlugin(ScrollTrigger);
 

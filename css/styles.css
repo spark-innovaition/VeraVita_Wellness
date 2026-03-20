@@ -787,7 +787,7 @@ section { padding: 6rem 0; }
 .page-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(18,28,20,0.2);
+  background: rgba(18,28,20,0.45);
   z-index: 1;
 }
 .page-hero--video .page-hero-content {
@@ -3463,8 +3463,9 @@ body { overflow-x: hidden; }
 .careers-hero-inner {
   max-width: 680px;
 }
-.careers-hero-inner h1 { margin: 0.5rem 0 1rem; }
-.careers-hero-inner p { font-size: 1.125rem; color: var(--text-2); line-height: 1.7; }
+.careers-hero-inner h1 { margin: 0.5rem 0 1rem; color: var(--white); }
+.careers-hero-inner p { font-size: 1.125rem; color: rgba(255,255,255,0.85); line-height: 1.7; }
+.careers-hero .section-label { color: rgba(255,255,255,0.75); }
 
 /* Open positions */
 .careers-positions { padding: 5rem 0; }
