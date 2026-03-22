@@ -77,53 +77,52 @@
 
 /* ---- Features ---- */
 .v2-features {
-  background: #f9f8f5;
-  padding: 6rem 0;
+  background: #f5f3ee;
+  padding: 0 0 6rem;
+  overflow: hidden;
 }
-.v2-features-header {
-  text-align: center;
-  margin-bottom: 3.5rem;
-}
-.v2-features-header .section-label { justify-content: center; display: flex; }
-.v2-features-header h2 {
-  font-family: var(--font-h);
-  font-size: clamp(1.875rem, 3vw, 2.75rem);
-  color: var(--dark);
-  margin-top: 0.75rem;
+.v2-features-rule {
+  height: 1px;
+  background: #c8c4bb;
+  margin-bottom: 5rem;
+  transform: scaleX(0);
+  transform-origin: left center;
 }
 .v2-features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 4rem 3rem;
 }
 .v2-feat-card {
-  background: var(--white);
-  border-radius: 1.25rem;
-  padding: 2rem 1.75rem;
-  border: 1px solid #ebe9e4;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-.v2-feat-card:hover {
-  box-shadow: 0 8px 32px rgba(30,50,30,0.1);
-  transform: translateY(-4px);
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .v2-feat-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: #f0f4ef;
-  display: flex; align-items: center; justify-content: center;
-  color: #728C69; font-size: 1.25rem;
+  width: auto; height: auto;
+  background: none;
+  border-radius: 0;
+  font-size: 2.25rem;
+  color: #1f2e1f;
   margin-bottom: 1.25rem;
+  display: block;
 }
 .v2-feat-title {
   font-family: var(--font-h);
-  font-size: 1.125rem;
-  color: var(--dark);
-  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #1f2e1f;
+  margin-bottom: 0.625rem;
 }
 .v2-feat-desc {
-  font-size: 0.9rem;
-  color: var(--body-text);
-  line-height: 1.7;
+  font-size: 0.875rem;
+  color: #6b7a6a;
+  line-height: 1.75;
+  max-width: 220px;
 }
 
 /* ---- Stats ---- */
