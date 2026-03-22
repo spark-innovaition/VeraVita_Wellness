@@ -4020,7 +4020,8 @@ body { overflow-x: hidden; }
 }
 @media (max-width: 860px) {
   .sd-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .sd-hero-img-wrap { aspect-ratio: 16/9; max-width: 100%; order: -1; }
+  .sd-hero-img-wrap { aspect-ratio: unset; width: 100%; max-width: 100%; order: -1; }
+  .sd-hero-img-wrap .sd-hero-img { height: auto; object-fit: contain; }
   .sd-body-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .sd-card { position: static; }
   .sd-gallery { grid-template-columns: repeat(2, 1fr); }
