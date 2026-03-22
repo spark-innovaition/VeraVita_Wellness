@@ -210,52 +210,69 @@
 <!-- ====================================================
      SECTION 5: YOUR JOURNEY YOUR MOMENTS
      ==================================================== -->
-<section class="v2-journey">
+<!--
+  JOURNEY SECTION — Pinned scroll collage
+  Outer wrapper is 220vh tall. Inner sticky viewport pins under the nav.
+  One scene artboard (1700px tall) translates upward with scroll.
+  Individual cards have extra per-card offsets creating layered parallax.
+-->
+<section class="v2-journey-outer">
+  <div class="v2-journey-sticky">
+    <div class="v2-journey-scene">
 
-  <!-- Scattered floating images (parallax scroll) -->
-  <div class="v2-jrn-img v2-jrn-img--t1" data-jrn="top">
-    <img src="images/wellness%201.jpg" alt="" />
-  </div>
+      <!-- Card 1: small lotus — upper-left -->
+      <div class="v2-jcard v2-jcard--1">
+        <img src="images/wellness%201.jpg" alt="" />
+      </div>
 
-  <div class="v2-jrn-img v2-jrn-img--m1" data-jrn="mid">
-    <img src="images/wellness%202.jpg" alt="" />
-  </div>
+      <!-- Card 2: narrow portrait — upper-center -->
+      <div class="v2-jcard v2-jcard--2">
+        <img src="images/wellness%202.jpg" alt="" />
+      </div>
 
-  <div class="v2-jrn-img v2-jrn-img--m2" data-jrn="mid">
-    <img src="images/wellness%203.jpg" alt="" />
-  </div>
+      <!-- Card 3: large cup / fabric — upper-right -->
+      <div class="v2-jcard v2-jcard--3">
+        <img src="images/wellness%203.jpg" alt="" />
+      </div>
 
-  <div class="v2-jrn-img v2-jrn-img--t2" data-jrn="top">
-    <img src="images/wellness%207.jpg" alt="" />
-  </div>
+      <!-- Card 4: large seated portrait — left mid -->
+      <div class="v2-jcard v2-jcard--4">
+        <img src="images/wellness%204.jpg" alt="" />
+      </div>
 
-  <div class="v2-jrn-img v2-jrn-img--b1" data-jrn="bot">
-    <img src="images/wellness%204.jpg" alt="" />
-  </div>
+      <!-- Card 5: small woman portrait — right mid -->
+      <div class="v2-jcard v2-jcard--5">
+        <img src="images/wellness%205.jpg" alt="" />
+      </div>
 
-  <div class="v2-jrn-img v2-jrn-img--b2" data-jrn="bot">
-    <img src="images/wellness%205.jpg" alt="" />
-  </div>
+      <!-- Card 6: bottom-left entering card -->
+      <div class="v2-jcard v2-jcard--6">
+        <img src="images/wellness%206.jpg" alt="" />
+      </div>
 
-  <div class="v2-jrn-img v2-jrn-img--b3" data-jrn="bot">
-    <img src="images/wellness%206.jpg" alt="" />
-  </div>
+      <!-- Card 7: large smiling portrait — bottom-center -->
+      <div class="v2-jcard v2-jcard--7">
+        <img src="images/wellness%207.jpg" alt="" />
+      </div>
 
-  <div class="v2-jrn-img v2-jrn-img--b4" data-jrn="bot">
-    <img src="images/wellness%208.jpg" alt="" />
-  </div>
+      <!-- Card 8: warm product / tea — bottom-right -->
+      <div class="v2-jcard v2-jcard--8">
+        <img src="images/wellness%208.jpg" alt="" />
+      </div>
 
-  <!-- Center content -->
-  <div class="v2-jrn-content">
-    <h2 class="v2-jrn-h2">Your Journey,<br /><em>Your Moments</em></h2>
-    <p class="v2-jrn-desc">Every path to wellness is unique. Our practitioners take the time to understand your story and build a plan that is truly yours.</p>
-    <a href="book-appointment.html" class="v2-jrn-btn">
-      Book an Appointment
-      <span class="v2-jrn-btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-    </a>
-  </div>
+      <!-- Centered copy block -->
+      <div class="v2-jcopy">
+        <h2 class="v2-jcopy-h2">Your Journey,<br /><em>Your Moments</em></h2>
+        <p class="v2-jcopy-desc">Every path to wellness is unique. Our practitioners take the time to understand your story and build a plan that is truly yours.</p>
+        <a href="book-appointment.html" class="v2-jcopy-btn">
+          Book an Appointment
+          <span class="v2-jcopy-btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+      </div>
 
-</section>
+    </div><!-- /scene -->
+  </div><!-- /sticky -->
+</section><!-- /journey-outer -->
 
 <!-- ====================================================
      TESTIMONIALS
@@ -554,62 +571,58 @@
   });
 })();
 
-/* V2 Journey — pinned, step-by-step scroll-driven animation */
+/* ============================================================
+   JOURNEY — Pinned scroll collage animation
+   Trigger: outer wrapper. ScrollTrigger scrubs the scene.
+   Global scene translateY + per-card offsets = layered parallax.
+   ease: none throughout — motion is physically attached to scroll.
+   ============================================================ */
 (function () {
-  const section = document.querySelector('.v2-journey');
-  if (!section) return;
+  /* Skip on mobile — section is static there */
+  if (window.innerWidth <= 768) return;
 
-  const topImgs = Array.from(section.querySelectorAll('.v2-jrn-img--t1, .v2-jrn-img--t2'));
-  const midImgs = Array.from(section.querySelectorAll('.v2-jrn-img--m1, .v2-jrn-img--m2'));
-  const botImgs = Array.from(section.querySelectorAll('.v2-jrn-img--b1, .v2-jrn-img--b2, .v2-jrn-img--b3, .v2-jrn-img--b4'));
-  const content = section.querySelector('.v2-jrn-content');
+  const outer = document.querySelector('.v2-journey-outer');
+  const scene = document.querySelector('.v2-journey-scene');
+  if (!outer || !scene) return;
 
   /*
-   * Step 1 (0 – 50%):  top + mid images slide DOWN from above into their positions, then STOP.
-   * Step 2 (35 – 60%): text rises UP from below into center.
-   * Step 3 (50 – 100%): bottom images appear at their spots and slide DOWN with scroll.
+   * Global scene travel: 0 → -440px across the full pinned scroll.
    *
-   * scrub:1 = motion matches scroll speed exactly.
-   * ease:'none' = linear, zero acceleration lag.
+   * Per-card extra y (relative to scene):
+   *   Positive  → card moves DOWN within scene → slower overall (stays visible longer)
+   *   Negative  → card moves UP within scene   → faster overall (exits top sooner / enters sooner)
+   *
+   * Card 1 (lotus, upper-left):          +12  subtle
+   * Card 2 (narrow, upper-center):       +18  subtle-medium
+   * Card 3 (large cup, upper-right):     -28  medium
+   * Card 4 (seated portrait, left):      -42  medium-strong
+   * Card 5 (small woman, right):         -32  medium
+   * Card 6 (bottom-left):                -55  medium  (enters from below)
+   * Card 7 (large portrait, bot-center): -82  strong  (enters from below, rises fastest)
+   * Card 8 (product, bottom-right):      -66  medium-strong
    */
-
-  /* start states */
-  gsap.set([...topImgs, ...midImgs], { y: -200, opacity: 0 }); /* above, hidden */
-  gsap.set(botImgs,                  { y: 0,    opacity: 0 }); /* at position, hidden */
-  gsap.set(content,                  { y: 70,   opacity: 0 }); /* below center */
 
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: section,
-      start: 'top top',
-      end: '+=200%',
-      scrub: 1,
-      pin: true,
-      anticipatePin: 1,
+      trigger: outer,
+      start: 'top top+=72',   /* pins flush under fixed nav */
+      end: 'bottom bottom',
+      scrub: true,             /* perfectly 1:1 with scroll */
     }
   });
 
-  /* Step 1: top + mid slide DOWN from above to their natural position (y: -200 → 0) */
-  tl.to([...topImgs, ...midImgs], {
-    y: 0, opacity: 1,
-    ease: 'none', stagger: 0.025, duration: 0.50
-  }, 0);
+  /* Global scene upward travel */
+  tl.to(scene, { y: -440, ease: 'none', duration: 1 }, 0);
 
-  /* Step 2: text rises UP simultaneously around mid-scroll */
-  tl.to(content, {
-    y: 0, opacity: 1,
-    ease: 'none', duration: 0.30
-  }, 0.35);
-
-  /* Step 3: bottom images appear then slide DOWN */
-  tl.to(botImgs, {
-    opacity: 1,
-    ease: 'none', stagger: 0.04, duration: 0.10
-  }, 0.50);
-  tl.to(botImgs, {
-    y: 100,
-    ease: 'none', stagger: 0.02, duration: 0.50
-  }, 0.50);
+  /* Per-card parallax offsets — all span the full scroll duration */
+  tl.to('.v2-jcard--1', { y:  12, ease: 'none', duration: 1 }, 0);
+  tl.to('.v2-jcard--2', { y:  18, ease: 'none', duration: 1 }, 0);
+  tl.to('.v2-jcard--3', { y: -28, ease: 'none', duration: 1 }, 0);
+  tl.to('.v2-jcard--4', { y: -42, ease: 'none', duration: 1 }, 0);
+  tl.to('.v2-jcard--5', { y: -32, ease: 'none', duration: 1 }, 0);
+  tl.to('.v2-jcard--6', { y: -55, ease: 'none', duration: 1 }, 0);
+  tl.to('.v2-jcard--7', { y: -82, ease: 'none', duration: 1 }, 0);
+  tl.to('.v2-jcard--8', { y: -66, ease: 'none', duration: 1 }, 0);
 })();
 
 /* V2 FAQ accordion */

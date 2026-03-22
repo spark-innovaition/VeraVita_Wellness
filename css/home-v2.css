@@ -254,90 +254,161 @@
   width: 100%; height: 100%; object-fit: cover; display: block;
 }
 
-/* ---- Journey / Your Moments ---- */
-.v2-journey {
+/* ============================================================
+   JOURNEY — Pinned scroll collage
+   ============================================================ */
+
+/* Outer: tall wrapper that creates scroll real-estate */
+.v2-journey-outer {
   position: relative;
-  background: #0f1f14;
-  height: 100svh;
-  min-height: 600px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 220vh;
+  /* background matches surrounding cream sections so the green
+     viewport is the only visible thing while pinned */
 }
 
-/* Floating images */
-.v2-jrn-img {
+/* Sticky green viewport — pins under the fixed navbar */
+.v2-journey-sticky {
+  position: sticky;
+  top: 72px;                      /* flush under fixed nav */
+  height: calc(100vh - 72px);
+  background: #133d34;
+  overflow: hidden;               /* clips cards at top & bottom edges */
+  z-index: 1;
+}
+
+/* Scene artboard — taller than viewport, the whole thing travels upward */
+.v2-journey-scene {
   position: absolute;
-  border-radius: 0.75rem;
-  overflow: hidden;
+  top: 0; left: 0; right: 0;
+  height: 1700px;
   will-change: transform;
 }
-.v2-jrn-img img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-}
-/* top images (enter from top) */
-.v2-jrn-img--t1 { top: 16px;   left: 20%;   width: 220px; height: 200px; }
-.v2-jrn-img--t2 { top: 10px;   right: 18%;  width: 200px; height: 185px; }
-.v2-jrn-img--m1 { top: 6%;     left: 3%;    width: 255px; height: 350px; }
-.v2-jrn-img--m2 { top: 5%;     right: 2%;   width: 195px; height: 280px; }
-/* bottom images (enter from bottom) */
-.v2-jrn-img--b1 { bottom: 12px;  left: 6%;    width: 195px; height: 195px; }
-.v2-jrn-img--b2 { bottom: -8px;  left: calc(50% - 145px); width: 290px; height: 360px; }
-.v2-jrn-img--b3 { bottom: 16px;  right: 4%;   width: 210px; height: 210px; }
-.v2-jrn-img--b4 { bottom: 8px;   right: 21%;  width: 175px; height: 175px; }
 
-/* Center content */
-.v2-jrn-content {
-  position: relative; z-index: 5;
+/* Individual image cards — absolutely placed, editorial collage */
+.v2-jcard {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  will-change: transform;
+  /* no border, no shadow gimmick — let images breathe */
+}
+.v2-jcard img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/*
+ * Card positions — designed so at the "settled" moment
+ * (scene ~35% through its travel) the collage feels balanced
+ * around the centered copy block.
+ *
+ * Scene settled offset ≈ -145px.
+ * A card at scene top T appears at viewport position T − 145.
+ */
+
+/* 1 — small lotus, upper-left */
+.v2-jcard--1 {
+  top: 60px; left: 8%;
+  width: 178px; height: 165px;
+}
+/* 2 — narrow portrait, upper-center-left */
+.v2-jcard--2 {
+  top: 28px; left: 43%;
+  width: 148px; height: 224px;
+}
+/* 3 — large cup / fabric, upper-right */
+.v2-jcard--3 {
+  top: 44px; right: 5%;
+  width: 218px; height: 296px;
+}
+/* 4 — large seated portrait, left */
+.v2-jcard--4 {
+  top: 346px; left: 6%;
+  width: 258px; height: 384px;
+}
+/* 5 — small woman portrait, right-mid */
+.v2-jcard--5 {
+  top: 328px; right: 6%;
+  width: 178px; height: 252px;
+}
+/* 6 — bottom-left entering card */
+.v2-jcard--6 {
+  top: 870px; left: 5%;
+  width: 188px; height: 190px;
+}
+/* 7 — large smiling portrait, bottom-center */
+.v2-jcard--7 {
+  top: 910px; left: calc(50% - 138px);
+  width: 268px; height: 344px;
+}
+/* 8 — warm product / tea, bottom-right */
+.v2-jcard--8 {
+  top: 890px; right: 6%;
+  width: 205px; height: 275px;
+}
+
+/* Copy block — centered both axes, moves with scene */
+.v2-jcopy {
+  position: absolute;
+  left: calc(50% - 250px);
+  width: 500px;
+  top: 455px;
   text-align: center;
-  max-width: 500px;
-  padding: 2rem;
+  z-index: 5;
 }
-.v2-jrn-h2 {
+.v2-jcopy-h2 {
   font-family: var(--font-h);
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(2.25rem, 3.8vw, 3.5rem);
   color: #f5f3ee;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: 1.25rem;
+  font-weight: 400;
 }
-.v2-jrn-h2 em { font-style: italic; color: #f5f3ee; }
-.v2-jrn-desc {
+.v2-jcopy-h2 em { font-style: italic; color: #f5f3ee; }
+.v2-jcopy-desc {
   font-size: 0.9375rem;
-  color: rgba(245,243,238,0.6);
-  line-height: 1.75;
+  color: rgba(245,243,238,0.58);
+  line-height: 1.8;
   margin-bottom: 2rem;
+  max-width: 400px;
+  margin-left: auto; margin-right: auto;
 }
-.v2-jrn-btn {
-  display: inline-flex; align-items: center; gap: 0.875rem;
-  background: rgba(245,243,238,0.1);
-  border: 1px solid rgba(245,243,238,0.22);
+.v2-jcopy-btn {
+  display: inline-flex; align-items: center; gap: 1rem;
+  background: rgba(245,243,238,0.09);
+  border: 1px solid rgba(245,243,238,0.2);
   color: #f5f3ee;
-  padding: 0.8rem 0.8rem 0.8rem 1.5rem;
+  padding: 0.7rem 0.7rem 0.7rem 1.5rem;
   border-radius: 3rem;
   font-size: 0.9375rem;
   text-decoration: none;
-  transition: background 0.25s, border-color 0.25s;
+  transition: background 0.22s, border-color 0.22s;
 }
-.v2-jrn-btn:hover { background: rgba(245,243,238,0.2); border-color: rgba(245,243,238,0.4); }
-.v2-jrn-btn-arrow {
-  width: 34px; height: 34px;
-  background: rgba(245,243,238,0.15);
+.v2-jcopy-btn:hover { background: rgba(245,243,238,0.18); border-color: rgba(245,243,238,0.38); }
+.v2-jcopy-btn-arrow {
+  width: 36px; height: 36px;
+  background: rgba(245,243,238,0.14);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 0.75rem;
+  flex-shrink: 0;
 }
 
+/* Mobile: collapse to a simple static section */
 @media (max-width: 768px) {
-  .v2-journey { height: 100svh; min-height: 500px; }
-  .v2-jrn-img--t1 { width: 115px; height: 105px; left: 15%; }
-  .v2-jrn-img--t2 { width: 105px; height: 96px;  right: 12%; }
-  .v2-jrn-img--m1 { width: 140px; height: 200px; left: 1%; }
-  .v2-jrn-img--m2 { width: 105px; height: 155px; right: 1%; }
-  .v2-jrn-img--b1 { width: 110px; height: 108px; left: 2%; }
-  .v2-jrn-img--b2 { width: 160px; height: 200px; left: calc(50% - 80px); }
-  .v2-jrn-img--b3 { width: 115px; height: 112px; right: 2%; }
-  .v2-jrn-img--b4 { width: 100px; height: 100px; right: 14%; }
+  .v2-journey-outer { height: auto; }
+  .v2-journey-sticky {
+    position: relative; top: 0;
+    height: auto; min-height: 560px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 4rem 1.25rem;
+  }
+  .v2-journey-scene { position: relative; height: auto; }
+  .v2-jcard { display: none; }
+  .v2-jcopy {
+    position: relative; left: auto; width: auto; top: auto;
+    padding: 0;
+  }
 }
 
 /* ---- Testimonials ---- */
