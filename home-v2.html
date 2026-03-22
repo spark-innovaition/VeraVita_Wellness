@@ -554,66 +554,62 @@
   });
 })();
 
-/* V2 Journey — pinned full-screen, sequential entrance + scroll drift */
+/* V2 Journey — pinned, scroll-speed-matched parallax */
 (function () {
   const section = document.querySelector('.v2-journey');
   if (!section) return;
 
-  const topImgs  = Array.from(section.querySelectorAll('.v2-jrn-img--t1, .v2-jrn-img--t2'));
-  const midImgs  = Array.from(section.querySelectorAll('.v2-jrn-img--m1, .v2-jrn-img--m2'));
-  const botImgs  = Array.from(section.querySelectorAll('.v2-jrn-img--b1, .v2-jrn-img--b2, .v2-jrn-img--b3, .v2-jrn-img--b4'));
-  const content  = section.querySelector('.v2-jrn-content');
-  const allImgs  = [...topImgs, ...midImgs, ...botImgs];
-
-  /* Initial hidden state — top/mid fly in from above, bottom from below */
-  gsap.set([...topImgs, ...midImgs], { y: -220, opacity: 0 });
-  gsap.set(botImgs,  { y: 220, opacity: 0 });
-  gsap.set(content,  { y: 80, opacity: 0 });
+  const topImgs = Array.from(section.querySelectorAll('.v2-jrn-img--t1, .v2-jrn-img--t2'));
+  const midImgs = Array.from(section.querySelectorAll('.v2-jrn-img--m1, .v2-jrn-img--m2'));
+  const botImgs = Array.from(section.querySelectorAll('.v2-jrn-img--b1, .v2-jrn-img--b2, .v2-jrn-img--b3, .v2-jrn-img--b4'));
+  const content = section.querySelector('.v2-jrn-content');
 
   /*
-   * Timeline layout (scrubbed, pinned):
+   * All images sit at their CSS positions.
+   * Top/mid: VISIBLE from start — drift DOWN immediately with scroll.
+   * Bottom:  HIDDEN at their positions — reveal then drift DOWN.
+   * Text:    HIDDEN below center — rises UP with scroll.
+   * scrub: 1 = 1:1 with scroll speed. ease:'none' = zero lag.
    *
-   *  0 – 30%  : top + mid images drop in from above (staggered)
-   * 18 – 42%  : center text rises up from below
-   * 25 – 48%  : bottom images rise up from below (staggered)
-   * 50 – 100% : ALL images drift downward (parallax drift phase)
-   *             — scrolling up reverses automatically via scrub
+   *  0 – 0.50  top/mid drift DOWN  +  text rises UP
+   *  0.35–0.60  bottom images fade in (reveal at their positions)
+   *  0.55–1.0   ALL images drift DOWN together
    */
+
+  gsap.set([...topImgs, ...midImgs], { y: 0,  opacity: 1 }); /* visible from start */
+  gsap.set(botImgs,                  { y: 0,  opacity: 0 }); /* at position, hidden */
+  gsap.set(content,                  { y: 65, opacity: 0 }); /* below center */
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: section,
       start: 'top top',
-      end: '+=240%',        /* pin for 2.4× viewport scroll */
-      scrub: 2,
+      end: '+=200%',
+      scrub: 1,
       pin: true,
       anticipatePin: 1,
     }
   });
 
-  /* Phase 1: top + mid images enter from above */
+  /* top + mid drift down immediately as section is visible */
   tl.to([...topImgs, ...midImgs], {
-    y: 0, opacity: 1,
-    stagger: 0.07, duration: 0.3, ease: 'power3.out'
+    y: 80, ease: 'none', stagger: 0.02, duration: 0.50
   }, 0);
 
-  /* Phase 2: text rises from below (center point) */
+  /* text rises up from below simultaneously */
   tl.to(content, {
-    y: 0, opacity: 1,
-    duration: 0.28, ease: 'power3.out'
-  }, 0.18);
+    y: 0, opacity: 1, ease: 'none', duration: 0.50
+  }, 0);
 
-  /* Phase 3: bottom images rise from below (visible at center) */
+  /* bottom images reveal at their positions, then join the drift */
   tl.to(botImgs, {
-    y: 0, opacity: 1,
-    stagger: 0.06, duration: 0.28, ease: 'power3.out'
-  }, 0.25);
+    opacity: 1, ease: 'none', stagger: 0.04, duration: 0.25
+  }, 0.35);
 
-  /* Phase 4: all images drift DOWN together (parallax) — scrub reverses on scroll-up */
-  tl.to(allImgs, {
-    y: 110,
-    stagger: { each: 0.02, from: 'random' },
-    duration: 0.5, ease: 'none'
-  }, 0.52);
+  /* all images continue drifting down through the rest of the scroll */
+  tl.to([...topImgs, ...midImgs, ...botImgs], {
+    y: '+=90', ease: 'none', stagger: 0.015, duration: 0.45
+  }, 0.55);
 })();
 
 /* V2 FAQ accordion */
