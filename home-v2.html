@@ -554,7 +554,7 @@
   });
 })();
 
-/* V2 Journey — pinned, scroll-speed-matched parallax */
+/* V2 Journey — pinned, step-by-step scroll-driven animation */
 (function () {
   const section = document.querySelector('.v2-journey');
   if (!section) return;
@@ -565,20 +565,18 @@
   const content = section.querySelector('.v2-jrn-content');
 
   /*
-   * All images sit at their CSS positions.
-   * Top/mid: VISIBLE from start — drift DOWN immediately with scroll.
-   * Bottom:  HIDDEN at their positions — reveal then drift DOWN.
-   * Text:    HIDDEN below center — rises UP with scroll.
-   * scrub: 1 = 1:1 with scroll speed. ease:'none' = zero lag.
+   * Step 1 (0 – 50%):  top + mid images slide DOWN from above into their positions, then STOP.
+   * Step 2 (35 – 60%): text rises UP from below into center.
+   * Step 3 (50 – 100%): bottom images appear at their spots and slide DOWN with scroll.
    *
-   *  0 – 0.50  top/mid drift DOWN  +  text rises UP
-   *  0.35–0.60  bottom images fade in (reveal at their positions)
-   *  0.55–1.0   ALL images drift DOWN together
+   * scrub:1 = motion matches scroll speed exactly.
+   * ease:'none' = linear, zero acceleration lag.
    */
 
-  gsap.set([...topImgs, ...midImgs], { y: 0,  opacity: 1 }); /* visible from start */
-  gsap.set(botImgs,                  { y: 0,  opacity: 0 }); /* at position, hidden */
-  gsap.set(content,                  { y: 65, opacity: 0 }); /* below center */
+  /* start states */
+  gsap.set([...topImgs, ...midImgs], { y: -200, opacity: 0 }); /* above, hidden */
+  gsap.set(botImgs,                  { y: 0,    opacity: 0 }); /* at position, hidden */
+  gsap.set(content,                  { y: 70,   opacity: 0 }); /* below center */
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -591,25 +589,27 @@
     }
   });
 
-  /* top + mid drift down immediately as section is visible */
+  /* Step 1: top + mid slide DOWN from above to their natural position (y: -200 → 0) */
   tl.to([...topImgs, ...midImgs], {
-    y: 80, ease: 'none', stagger: 0.02, duration: 0.50
+    y: 0, opacity: 1,
+    ease: 'none', stagger: 0.025, duration: 0.50
   }, 0);
 
-  /* text rises up from below simultaneously */
+  /* Step 2: text rises UP simultaneously around mid-scroll */
   tl.to(content, {
-    y: 0, opacity: 1, ease: 'none', duration: 0.50
-  }, 0);
-
-  /* bottom images reveal at their positions, then join the drift */
-  tl.to(botImgs, {
-    opacity: 1, ease: 'none', stagger: 0.04, duration: 0.25
+    y: 0, opacity: 1,
+    ease: 'none', duration: 0.30
   }, 0.35);
 
-  /* all images continue drifting down through the rest of the scroll */
-  tl.to([...topImgs, ...midImgs, ...botImgs], {
-    y: '+=90', ease: 'none', stagger: 0.015, duration: 0.45
-  }, 0.55);
+  /* Step 3: bottom images appear then slide DOWN */
+  tl.to(botImgs, {
+    opacity: 1,
+    ease: 'none', stagger: 0.04, duration: 0.10
+  }, 0.50);
+  tl.to(botImgs, {
+    y: 100,
+    ease: 'none', stagger: 0.02, duration: 0.50
+  }, 0.50);
 })();
 
 /* V2 FAQ accordion */
