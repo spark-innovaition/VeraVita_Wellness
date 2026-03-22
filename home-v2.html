@@ -215,29 +215,29 @@
      ==================================================== -->
 <section class="v2-journey">
 
-  <!-- Scattered floating images (raindrop animation) -->
+  <!-- Scattered floating images (parallax scroll) -->
   <div class="v2-jrn-img v2-jrn-img--t1" data-jrn="top">
-    <img src="images/Testimonails 4.jpg" alt="" />
+    <img src="images/wellness%201.jpg" alt="" />
   </div>
 
   <div class="v2-jrn-img v2-jrn-img--m1" data-jrn="mid">
-    <img src="images/exceptional care.jpg" alt="" />
+    <img src="images/wellness%202.jpg" alt="" />
   </div>
 
   <div class="v2-jrn-img v2-jrn-img--m2" data-jrn="mid">
-    <img src="images/Testimonails 3.jpg" alt="" />
+    <img src="images/wellness%203.jpg" alt="" />
   </div>
 
   <div class="v2-jrn-img v2-jrn-img--b1" data-jrn="bot">
-    <img src="images/Testimonails 1.jpg" alt="" />
+    <img src="images/wellness%204.jpg" alt="" />
   </div>
 
   <div class="v2-jrn-img v2-jrn-img--b2" data-jrn="bot">
-    <img src="images/Testimonails 2.jpg" alt="" />
+    <img src="images/wellness%205.jpg" alt="" />
   </div>
 
   <div class="v2-jrn-img v2-jrn-img--b3" data-jrn="bot">
-    <img src="images/when you need us.png" alt="" />
+    <img src="images/wellness%206.jpg" alt="" />
   </div>
 
   <!-- Center content -->
@@ -537,39 +537,37 @@
   });
 })();
 
-/* V2 Journey — raindrop entrance, bottom images continue falling on exit */
+/* V2 Journey — all 6 images visible, parallax scroll up/down with section */
 (function () {
   const section = document.querySelector('.v2-journey');
   if (!section) return;
 
-  const topImgs = section.querySelectorAll('[data-jrn="top"]');
-  const midImgs = section.querySelectorAll('[data-jrn="mid"]');
-  const botImgs = section.querySelectorAll('[data-jrn="bot"]');
+  const allImgs = section.querySelectorAll('.v2-jrn-img');
   const content = section.querySelector('.v2-jrn-content');
 
-  /* Start: everything above, invisible */
-  gsap.set([topImgs, midImgs, botImgs], { y: -280, opacity: 0 });
-  gsap.set(content, { y: 60, opacity: 0 });
+  /* Each image gets a slightly different parallax speed for natural layering */
+  const speeds = [-55, -35, -70, -45, -60, -30];
 
-  /* Enter: images rain down, then text slides up, then bottom images */
-  const tl = gsap.timeline({
-    scrollTrigger: { trigger: section, start: 'top 78%', once: true }
+  allImgs.forEach((img, i) => {
+    gsap.to(img, {
+      y: speeds[i],
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1.2
+      }
+    });
   });
-  tl.to(topImgs, { y: 0, opacity: 1, duration: 0.75, stagger: 0.12, ease: 'power2.out' })
-    .to(midImgs,  { y: 0, opacity: 1, duration: 0.8,  stagger: 0.18, ease: 'power2.out' }, '-=0.4')
-    .to(content,  { y: 0, opacity: 1, duration: 0.65, ease: 'power2.out' }, '-=0.35')
-    .to(botImgs,  { y: 0, opacity: 1, duration: 0.8,  stagger: 0.14, ease: 'power2.out' }, '-=0.3');
 
-  /* Exit: bottom images continue falling as section scrolls away */
-  gsap.to(botImgs, {
-    y: 140,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: section,
-      start: 'center top',
-      end: 'bottom top',
-      scrub: 1.5
-    }
+  /* Center text fades in once on enter */
+  gsap.set(content, { opacity: 0, y: 30 });
+  ScrollTrigger.create({
+    trigger: section,
+    start: 'top 70%',
+    once: true,
+    onEnter: () => gsap.to(content, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' })
   });
 })();
 
