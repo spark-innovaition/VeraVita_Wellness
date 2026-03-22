@@ -97,52 +97,49 @@
      FEATURES — 6 service cards
      ==================================================== -->
 <section class="v2-features">
-
-  <!-- Animated rule — slides from left -->
-  <div class="v2-features-rule" id="v2-feat-rule"></div>
-
   <div class="container">
-    <div class="v2-features-grid">
 
-      <!-- Row 1 -->
-      <div class="v2-feat-card" data-feat-row="1">
+    <!-- Row 1 -->
+    <div class="v2-features-row" id="v2-feat-row1">
+      <div class="v2-feat-card">
         <div class="v2-feat-icon"><i class="fa-regular fa-leaf"></i></div>
         <h3 class="v2-feat-title">Naturopathic Care</h3>
         <p class="v2-feat-desc">Root-cause medicine that treats the whole person — mind, body, and spirit — using evidence-based natural therapies.</p>
       </div>
-
-      <div class="v2-feat-card" data-feat-row="1">
-        <div class="v2-feat-icon"><i class="fa-regular fa-syringe"></i></div>
+      <div class="v2-feat-card">
+        <div class="v2-feat-icon"><i class="fa-regular fa-droplet"></i></div>
         <h3 class="v2-feat-title">IV Therapy</h3>
         <p class="v2-feat-desc">Precision nutrient infusions delivered directly into the bloodstream for immediate absorption and lasting results.</p>
       </div>
-
-      <div class="v2-feat-card" data-feat-row="1">
-        <div class="v2-feat-icon"><i class="fa-regular fa-spa"></i></div>
+      <div class="v2-feat-card">
+        <div class="v2-feat-icon"><i class="fa-regular fa-sparkles"></i></div>
         <h3 class="v2-feat-title">Aesthetic Medicine</h3>
         <p class="v2-feat-desc">Subtle, natural-looking cosmetic treatments including Botox and dermal fillers tailored to your unique beauty.</p>
       </div>
+    </div>
 
-      <!-- Row 2 -->
-      <div class="v2-feat-card" data-feat-row="2">
-        <div class="v2-feat-icon"><i class="fa-regular fa-hand-sparkles"></i></div>
+    <!-- Animated divider rule -->
+    <div class="v2-features-rule" id="v2-feat-rule"></div>
+
+    <!-- Row 2 -->
+    <div class="v2-features-row" id="v2-feat-row2">
+      <div class="v2-feat-card">
+        <div class="v2-feat-icon"><i class="fa-regular fa-hand-dots"></i></div>
         <h3 class="v2-feat-title">Acupuncture &amp; Cupping</h3>
         <p class="v2-feat-desc">Traditional Chinese medicine techniques to relieve pain, reduce inflammation, and restore energy flow.</p>
       </div>
-
-      <div class="v2-feat-card" data-feat-row="2">
-        <div class="v2-feat-icon"><i class="fa-regular fa-person-pregnant"></i></div>
+      <div class="v2-feat-card">
+        <div class="v2-feat-icon"><i class="fa-regular fa-heart-pulse"></i></div>
         <h3 class="v2-feat-title">Fertility Program</h3>
         <p class="v2-feat-desc">Comprehensive natural and integrative fertility support to help you on your journey to parenthood.</p>
       </div>
-
-      <div class="v2-feat-card" data-feat-row="2">
-        <div class="v2-feat-icon"><i class="fa-regular fa-scale-balanced"></i></div>
+      <div class="v2-feat-card">
+        <div class="v2-feat-icon"><i class="fa-regular fa-infinity"></i></div>
         <h3 class="v2-feat-title">Wellness &amp; Longevity</h3>
         <p class="v2-feat-desc">Holistic programs for weight management, chronic fatigue, hormonal balance, and long-term vitality.</p>
       </div>
-
     </div>
+
   </div>
 </section>
 
@@ -519,29 +516,41 @@
   });
 })();
 
-/* V2 Features — rule slides in, then rows stagger up */
+/* V2 Features — each row triggers independently as it enters viewport */
 (function () {
-  const rule = document.getElementById('v2-feat-rule');
-  const row1 = document.querySelectorAll('[data-feat-row="1"]');
-  const row2 = document.querySelectorAll('[data-feat-row="2"]');
+  const rule  = document.getElementById('v2-feat-rule');
+  const row1  = document.querySelectorAll('#v2-feat-row1 .v2-feat-card');
+  const row2  = document.querySelectorAll('#v2-feat-row2 .v2-feat-card');
 
-  /* Set initial invisible state */
-  gsap.set(rule, { scaleX: 0, transformOrigin: 'left center' });
-  gsap.set([row1, row2], { opacity: 0, y: 30 });
+  gsap.set(rule,        { scaleX: 0, transformOrigin: 'left center' });
+  gsap.set([row1, row2],{ opacity: 0, y: 28 });
 
+  /* Row 1: fires as soon as it enters viewport bottom */
   ScrollTrigger.create({
-    trigger: '.v2-features',
-    start: 'top 75%',
+    trigger: '#v2-feat-row1',
+    start: 'top 88%',
     once: true,
-    onEnter: () => {
-      const tl = gsap.timeline();
-      /* 1. Line sweeps left → right */
-      tl.to(rule, { scaleX: 1, duration: 0.8, ease: 'power2.out' });
-      /* 2. Row 1 fades up with stagger */
-      tl.to(row1, { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' }, '-=0.1');
-      /* 3. Row 2 fades up with stagger */
-      tl.to(row2, { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' }, '-=0.2');
-    }
+    onEnter: () => gsap.to(row1, { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out' })
+  });
+
+  /* Rule: fires when the divider itself reaches 90% of viewport */
+  ScrollTrigger.create({
+    trigger: '#v2-feat-rule',
+    start: 'top 92%',
+    once: true,
+    onEnter: () => gsap.to(rule, { scaleX: 1, duration: 0.75, ease: 'power2.inOut' })
+  });
+
+  /* Row 2: fires as it enters viewport */
+  ScrollTrigger.create({
+    trigger: '#v2-feat-row2',
+    start: 'top 90%',
+    once: true,
+    onEnter: () => gsap.to(row2, { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out' })
+  });
+
+  /* dummy to close the IIFE — original code had an extra closing brace */
+  void 0;
   });
 })();
 

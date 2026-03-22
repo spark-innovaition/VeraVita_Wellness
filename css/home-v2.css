@@ -79,51 +79,49 @@
 /* ---- Features ---- */
 .v2-features {
   background: #f5f3ee;
-  padding: 5rem 0 6rem;
+  padding: 7rem 0 8rem;
   overflow: hidden;
+}
+.v2-features-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 2rem;
+  padding: 4.5rem 0;
 }
 .v2-features-rule {
   height: 1px;
-  background: #c8c4bb;
-  margin-bottom: 5rem;
+  background: #c5c1b7;
   transform: scaleX(0);
   transform-origin: left center;
-}
-.v2-features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem 3rem;
 }
 .v2-feat-card {
   background: none;
   border: none;
   border-radius: 0;
-  padding: 0;
+  padding: 0 1.5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .v2-feat-icon {
-  width: auto; height: auto;
-  background: none;
-  border-radius: 0;
-  font-size: 2.25rem;
+  font-size: 2.75rem;
   color: #1f2e1f;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   display: block;
+  line-height: 1;
 }
 .v2-feat-title {
   font-family: var(--font-h);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: #1f2e1f;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.75rem;
 }
 .v2-feat-desc {
   font-size: 0.875rem;
   color: #6b7a6a;
-  line-height: 1.75;
-  max-width: 220px;
+  line-height: 1.8;
+  max-width: 230px;
 }
 
 /* ---- Stats ---- */
@@ -494,7 +492,7 @@
   .v2-hero-left { padding: 6rem 2rem 3rem; }
   .v2-hero-right { height: 60vw; min-height: 340px; }
   .v2-hero-video-overlay { background: linear-gradient(to bottom, #0f1f14 0%, transparent 30%); }
-  .v2-features-grid { grid-template-columns: repeat(2, 1fr); }
+  .v2-features-row { grid-template-columns: repeat(2, 1fr); padding: 3rem 0; }
   .v2-about-inner { grid-template-columns: 1fr; }
   .v2-about-content { padding: 3rem 2rem; order: 2; }
   .v2-about-imgs { min-height: 420px; order: 1; }
@@ -508,7 +506,7 @@
 @media (max-width: 640px) {
   .v2-hero-left { padding: 5.5rem 1.25rem 2.5rem; }
   .v2-hero-right { height: 70vw; }
-  .v2-features-grid { grid-template-columns: 1fr; }
+  .v2-features-row { grid-template-columns: 1fr; padding: 2.5rem 0; }
   .v2-testi-grid { grid-template-columns: 1fr; }
   .v2-stats-grid { grid-template-columns: 1fr; gap: 1rem; }
   .v2-stat-tile { min-height: 180px; }
