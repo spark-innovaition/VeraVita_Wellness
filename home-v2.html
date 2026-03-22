@@ -228,6 +228,10 @@
     <img src="images/wellness%203.jpg" alt="" />
   </div>
 
+  <div class="v2-jrn-img v2-jrn-img--t2" data-jrn="top">
+    <img src="images/wellness%207.jpg" alt="" />
+  </div>
+
   <div class="v2-jrn-img v2-jrn-img--b1" data-jrn="bot">
     <img src="images/wellness%204.jpg" alt="" />
   </div>
@@ -238,6 +242,10 @@
 
   <div class="v2-jrn-img v2-jrn-img--b3" data-jrn="bot">
     <img src="images/wellness%206.jpg" alt="" />
+  </div>
+
+  <div class="v2-jrn-img v2-jrn-img--b4" data-jrn="bot">
+    <img src="images/wellness%208.jpg" alt="" />
   </div>
 
   <!-- Center content -->
@@ -537,38 +545,53 @@
   });
 })();
 
-/* V2 Journey — all 6 images visible, parallax scroll up/down with section */
+/* V2 Journey — pinned full-screen, sequential entrance + scroll drift */
 (function () {
   const section = document.querySelector('.v2-journey');
   if (!section) return;
 
-  const allImgs = section.querySelectorAll('.v2-jrn-img');
+  const topImgs = Array.from(section.querySelectorAll('.v2-jrn-img--t1, .v2-jrn-img--t2, .v2-jrn-img--m1, .v2-jrn-img--m2'));
+  const botImgs = Array.from(section.querySelectorAll('.v2-jrn-img--b1, .v2-jrn-img--b2, .v2-jrn-img--b3, .v2-jrn-img--b4'));
   const content = section.querySelector('.v2-jrn-content');
 
-  /* Each image gets a slightly different parallax speed for natural layering */
-  const speeds = [-55, -35, -70, -45, -60, -30];
+  /* Initial hidden state */
+  gsap.set(topImgs, { y: -180, opacity: 0 });
+  gsap.set(botImgs, { y: 180, opacity: 0 });
+  gsap.set(content, { y: 70, opacity: 0 });
 
-  allImgs.forEach((img, i) => {
-    gsap.to(img, {
-      y: speeds[i],
-      ease: 'none',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1.2
-      }
-    });
+  /* Pinned scrubbed timeline — section stays on screen while user scrolls 200vh */
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: 'top top',
+      end: '+=200%',
+      scrub: 1.8,
+      pin: true,
+      anticipatePin: 1
+    }
   });
 
-  /* Center text fades in once on enter */
-  gsap.set(content, { opacity: 0, y: 30 });
-  ScrollTrigger.create({
-    trigger: section,
-    start: 'top 70%',
-    once: true,
-    onEnter: () => gsap.to(content, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' })
-  });
+  /* Phase 1 (0–35%): Top/side images slide down from above */
+  tl.to(topImgs, {
+    y: 0, opacity: 1,
+    stagger: 0.1, duration: 0.35, ease: 'power2.out'
+  }, 0);
+
+  /* Phase 2 (25–55%): Center text slides up from below */
+  tl.to(content, {
+    y: 0, opacity: 1,
+    duration: 0.35, ease: 'power2.out'
+  }, 0.22);
+
+  /* Phase 3 (45–75%): Bottom images slide up from below */
+  tl.to(botImgs, {
+    y: 0, opacity: 1,
+    stagger: 0.08, duration: 0.35, ease: 'power2.out'
+  }, 0.42);
+
+  /* Phase 4 (70–100%): All images drift down slowly — continuous parallax feel */
+  tl.to(topImgs, { y: 60, stagger: 0.05, duration: 0.5, ease: 'none' }, 0.65);
+  tl.to(botImgs, { y: 80, stagger: 0.04, duration: 0.5, ease: 'none' }, 0.68);
 })();
 
 /* V2 FAQ accordion */
