@@ -127,34 +127,41 @@
 
 /* ---- Stats ---- */
 .v2-stats {
-  background: #0f1f14;
-  padding: 5rem 0;
+  background: #f5f3ee;
+  padding: 5rem 0 6rem;
 }
 .v2-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  text-align: center;
+  gap: 1.25rem;
 }
-.v2-stat-divider {
-  border-left: 1px solid rgba(255,255,255,0.08);
+.v2-stat-tile {
+  background: #0f1f14;
+  border-radius: 1rem;
+  padding: 2rem 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+}
+.v2-stat-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(245,243,238,0.55);
+  letter-spacing: 0.01em;
 }
 .v2-stat-number {
   font-family: var(--font-h);
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(4rem, 7vw, 6.5rem);
   color: #f5f3ee;
   line-height: 1;
-  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
 }
-.v2-stat-number span {
+.v2-stat-number sup {
+  font-size: 0.4em;
   color: #728C69;
-}
-.v2-stat-label {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(245,243,238,0.45);
+  vertical-align: super;
+  letter-spacing: 0;
 }
 
 /* ---- About / Safe Space ---- */
@@ -402,16 +409,16 @@
   .v2-about-img-wrap { aspect-ratio: 16/9; order: -1; }
   .v2-faq-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .v2-testi-grid { grid-template-columns: 1fr 1fr; }
-  .v2-stats-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
-  .v2-stat-divider { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 3rem; }
+  .v2-stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .v2-stat-tile { min-height: 200px; }
 }
 @media (max-width: 640px) {
   .v2-hero-left { padding: 5.5rem 1.25rem 2.5rem; }
   .v2-hero-right { height: 70vw; }
   .v2-features-grid { grid-template-columns: 1fr; }
   .v2-testi-grid { grid-template-columns: 1fr; }
-  .v2-stats-grid { grid-template-columns: 1fr; }
-  .v2-stat-divider { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2.5rem; }
+  .v2-stats-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .v2-stat-tile { min-height: 180px; }
   .v2-features { padding: 3.5rem 0; }
   .v2-about { padding: 3.5rem 0; }
   .v2-cta-band { min-height: 360px; }

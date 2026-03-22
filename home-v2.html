@@ -153,19 +153,19 @@
   <div class="container">
     <div class="v2-stats-grid">
 
-      <div class="reveal">
-        <div class="v2-stat-number">500<span>+</span></div>
+      <div class="v2-stat-tile" data-stat-tile>
         <div class="v2-stat-label">Patients Served</div>
+        <div class="v2-stat-number">500<sup>+</sup></div>
       </div>
 
-      <div class="v2-stat-divider reveal">
-        <div class="v2-stat-number">13<span>+</span></div>
+      <div class="v2-stat-tile" data-stat-tile>
         <div class="v2-stat-label">Specialist Services</div>
+        <div class="v2-stat-number">13<sup>+</sup></div>
       </div>
 
-      <div class="v2-stat-divider reveal">
-        <div class="v2-stat-number">6<span></span></div>
+      <div class="v2-stat-tile" data-stat-tile>
         <div class="v2-stat-label">Expert Practitioners</div>
+        <div class="v2-stat-number">6</div>
       </div>
 
     </div>
@@ -475,6 +475,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 <script>
+/* V2 Stats — tiles appear one after another */
+(function () {
+  const tiles = document.querySelectorAll('[data-stat-tile]');
+  gsap.set(tiles, { opacity: 0, y: 40 });
+  ScrollTrigger.create({
+    trigger: '.v2-stats',
+    start: 'top 75%',
+    once: true,
+    onEnter: () => {
+      gsap.to(tiles, { opacity: 1, y: 0, duration: 0.65, stagger: 0.18, ease: 'power2.out' });
+    }
+  });
+})();
+
 /* V2 Features — rule slides in, then rows stagger up */
 (function () {
   const rule = document.getElementById('v2-feat-rule');
