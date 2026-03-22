@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8rem 5rem 6rem;
+  padding: 7rem 5rem 4rem;
   position: relative;
   z-index: 1;
 }
@@ -395,7 +395,7 @@
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
   .v2-hero { grid-template-columns: 1fr; min-height: auto; }
-  .v2-hero-left { padding: 7rem 2rem 3rem; }
+  .v2-hero-left { padding: 6rem 2rem 3rem; }
   .v2-hero-right { height: 60vw; min-height: 340px; }
   .v2-hero-video-overlay { background: linear-gradient(to bottom, #0f1f14 0%, transparent 30%); }
   .v2-features-grid { grid-template-columns: repeat(2, 1fr); }
@@ -407,7 +407,7 @@
   .v2-stat-divider { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 3rem; }
 }
 @media (max-width: 640px) {
-  .v2-hero-left { padding: 6rem 1.25rem 2.5rem; }
+  .v2-hero-left { padding: 5.5rem 1.25rem 2.5rem; }
   .v2-hero-right { height: 70vw; }
   .v2-features-grid { grid-template-columns: 1fr; }
   .v2-testi-grid { grid-template-columns: 1fr; }
