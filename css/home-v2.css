@@ -79,7 +79,7 @@
 /* ---- Features ---- */
 .v2-features {
   background: #f5f3ee;
-  padding: 0 0 6rem;
+  padding: 5rem 0 6rem;
   overflow: hidden;
 }
 .v2-features-rule {
@@ -169,11 +169,13 @@
 .v2-about {
   background: #f5f3ee;
   overflow: hidden;
+  padding: 5rem 0;
 }
 .v2-about-inner {
   display: grid;
   grid-template-columns: 45fr 55fr;
   align-items: stretch;
+  gap: 0;
 }
 
 /* Left content */
@@ -181,7 +183,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 7rem 4rem 7rem 5vw;
+  padding: 4rem 4rem 4rem 5vw;
 }
 .v2-about-h2 {
   font-family: var(--font-h);
@@ -221,7 +223,8 @@
 /* Right: staggered images — explicit height container */
 .v2-about-imgs {
   position: relative;
-  min-height: 600px;
+  min-height: 560px;
+  align-self: stretch;
 }
 .v2-about-img-top {
   position: absolute;
