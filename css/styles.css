@@ -1581,7 +1581,9 @@ section { padding: 6rem 0; }
    CONTACT PAGE
    ======================================== */
 .cth-section {
-  background: #eaf2ea;
+  background:
+    linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    url('../images/underlay pic 5.jpg') center / cover fixed;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1706,7 +1708,9 @@ section { padding: 6rem 0; }
    CONTACT FAQ SECTION
    ======================================== */
 .cfaq-section {
-  background: #eaf2ea;
+  background:
+    linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    url('../images/underlay pic 5.jpg') center / cover fixed;
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
@@ -1892,7 +1896,7 @@ section { padding: 6rem 0; }
    VISIT US SECTION
    ======================================== */
 .visit-section {
-  background: #eaf2ea;
+  background: var(--white);
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
@@ -2167,7 +2171,9 @@ section { padding: 6rem 0; }
    FOLLOW US SECTION
    ======================================== */
 .follow-section {
-  background: #eaf2ea;
+  background:
+    linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    url('../images/underlay pic 5.jpg') center / cover fixed;
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
