@@ -1095,7 +1095,7 @@ section { padding: 6rem 0; }
   padding: 8rem 0 6rem;
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 1.jpg') center / cover;
+    url('../images/Underlay pic 1.jpg') center / cover fixed;
   text-align: center;
 }
 .about-statement-icon {
@@ -1344,7 +1344,7 @@ section { padding: 6rem 0; }
 .timeline-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 1.jpg') center / cover;
+    url('../images/Underlay pic 1.jpg') center / cover fixed;
   padding: 6rem 0;
 }
 .timeline-inner { max-width: 800px; margin: 0 auto; position: relative; }
@@ -1417,7 +1417,7 @@ section { padding: 6rem 0; }
 .section--book-green {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/book an appointment overlay pic.jpg') center / cover;
+    url('../images/book an appointment overlay pic.jpg') center / cover fixed;
 }
 .hours-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.5rem; max-width: 860px; margin: 0 auto; text-align: center; }
 .hours-item i { font-size: 1.75rem; color: var(--primary); margin-bottom: 1rem; display: block; }
@@ -1590,7 +1590,7 @@ section { padding: 6rem 0; }
 .cth-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover;
+    url('../images/underlay pic 5.jpg') center / cover fixed;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1717,7 +1717,7 @@ section { padding: 6rem 0; }
 .cfaq-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover;
+    url('../images/underlay pic 5.jpg') center / cover fixed;
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
@@ -2117,7 +2117,7 @@ section { padding: 6rem 0; }
 .prac-cta-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 2.jpg') center / cover;
+    url('../images/Underlay pic 2.jpg') center / cover fixed;
   padding: 6rem 0;
 }
 .prac-cta-inner {
@@ -2182,7 +2182,7 @@ section { padding: 6rem 0; }
 .follow-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover;
+    url('../images/underlay pic 5.jpg') center / cover fixed;
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
@@ -2661,7 +2661,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .hwnu-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.jpg') center / cover;
+    url('../images/underlay pic 11.jpg') center / cover fixed;
   padding: 6rem 0; text-align: center;
 }
 
@@ -3323,7 +3323,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .anim-testimonials {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.jpg') center / cover;
+    url('../images/underlay pic 11.jpg') center / cover fixed;
   padding: 6rem 0;
 }
 .at-wrap {
@@ -3563,7 +3563,7 @@ body { overflow-x: hidden; }
   padding: 5rem 0;
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/careers overlay pic.jpg') center / cover;
+    url('../images/careers overlay pic.jpg') center / cover fixed;
 }
 .careers-why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .careers-why-text h2 { margin: 0.5rem 0 1rem; }
@@ -3738,7 +3738,7 @@ body { overflow-x: hidden; }
 .dr-maya-hassan .pd-services-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    var(--dr-underlay) center / cover;
+    var(--dr-underlay) center / cover fixed;
 }
 
 /* Detail section */
@@ -3927,7 +3927,7 @@ body { overflow-x: hidden; }
 .svc-vitamin-injections  .sd-body {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    var(--svc-underlay) center / cover;
+    var(--svc-underlay) center / cover fixed;
 }
 .svc-botox               { --svc-underlay: url('../images/Underlay pic 3.jpg'); }
 .svc-dermal-fillers      { --svc-underlay: url('../images/underlay pic 6.jpg'); }
@@ -4292,7 +4292,7 @@ body { overflow-x: hidden; }
   .hwnu-section,
   .anim-testimonials {
     background:
-      linear-gradient(rgba(234,242,234,0.75), rgba(234,242,234,0.75)),
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       url('../images/mobile%20overlay%20pic/pexels-alinaskazka-27806125.jpg') center / cover;
   }
 
@@ -4300,7 +4300,7 @@ body { overflow-x: hidden; }
   .about-statement-section,
   .timeline-section {
     background:
-      linear-gradient(rgba(234,242,234,0.75), rgba(234,242,234,0.75)),
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       url('../images/mobile%20overlay%20pic/pexels-allecgomes-3628770.jpg') center / cover;
   }
 
@@ -4309,14 +4309,14 @@ body { overflow-x: hidden; }
   .cfaq-section,
   .follow-section {
     background:
-      linear-gradient(rgba(234,242,234,0.75), rgba(234,242,234,0.75)),
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       url('../images/mobile%20overlay%20pic/pexels-allecgomes-3628770%20(1).jpg') center / cover;
   }
 
   /* PRACTITIONERS LISTING */
   .prac-cta-section {
     background:
-      linear-gradient(rgba(234,242,234,0.75), rgba(234,242,234,0.75)),
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       url('../images/mobile%20overlay%20pic/pexels-ameliacui-11983527.jpg') center / cover;
   }
 
@@ -4342,7 +4342,7 @@ body { overflow-x: hidden; }
   .svc-massage-therapy .sd-body, .svc-fertility-program .sd-body,
   .svc-acupuncture-cupping .sd-body, .svc-vitamin-injections .sd-body {
     background:
-      linear-gradient(rgba(234,242,234,0.75), rgba(234,242,234,0.75)),
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       var(--svc-underlay) center / cover;
   }
 
@@ -4362,21 +4362,54 @@ body { overflow-x: hidden; }
   .dr-elena-morales .pd-detail-section, .dr-elena-morales .pd-services-section,
   .dr-maya-hassan .pd-detail-section, .dr-maya-hassan .pd-services-section {
     background:
-      linear-gradient(rgba(234,242,234,0.75), rgba(234,242,234,0.75)),
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       var(--dr-underlay) center / cover;
   }
 
   /* BOOK APPOINTMENT */
   .section--book-green {
     background:
-      linear-gradient(rgba(234,242,234,0.75), rgba(234,242,234,0.75)),
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       url('../images/mobile%20overlay%20pic/pexels-sedanur-kunuk-78972032-31594864.jpg') center / cover;
   }
 
   /* CAREERS */
   .careers-why {
     background:
-      linear-gradient(rgba(234,242,234,0.75), rgba(234,242,234,0.75)),
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       url('../images/mobile%20overlay%20pic/pexels-sonny-29059167.jpg') center / cover;
+  }
+}
+
+/* ========================================
+   MOBILE PARALLAX SIMULATION
+   iOS/Android can't do background-attachment:fixed
+   so we animate background-position on entry instead
+   ======================================== */
+@keyframes mob-parallax {
+  from { background-position: center 30%; }
+  to   { background-position: center 70%; }
+}
+
+@media (max-width: 860px) {
+  .hwnu-section, .anim-testimonials,
+  .about-statement-section, .timeline-section,
+  .cth-section, .cfaq-section, .follow-section,
+  .prac-cta-section, .section--book-green, .careers-why,
+  .svc-botox .sd-body, .svc-dermal-fillers .sd-body,
+  .svc-lab-testing .sd-body, .svc-naturopathic-care .sd-body,
+  .svc-osteopathy .sd-body, .svc-weight-loss .sd-body,
+  .svc-pediatric-care .sd-body, .svc-iv-therapy .sd-body,
+  .svc-fatigue-treatment .sd-body, .svc-massage-therapy .sd-body,
+  .svc-fertility-program .sd-body, .svc-acupuncture-cupping .sd-body,
+  .svc-vitamin-injections .sd-body,
+  .dr-emma-clarke .pd-detail-section, .dr-emma-clarke .pd-services-section,
+  .dr-amina-rahman .pd-detail-section, .dr-amina-rahman .pd-services-section,
+  .dr-sofia-bennett .pd-detail-section, .dr-sofia-bennett .pd-services-section,
+  .dr-priya-patel .pd-detail-section, .dr-priya-patel .pd-services-section,
+  .dr-elena-morales .pd-detail-section, .dr-elena-morales .pd-services-section,
+  .dr-maya-hassan .pd-detail-section, .dr-maya-hassan .pd-services-section {
+    animation: mob-parallax 6s ease-in-out infinite alternate;
+    background-size: 150% auto;
   }
 }
