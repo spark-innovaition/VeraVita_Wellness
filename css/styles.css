@@ -4282,3 +4282,79 @@ body { overflow-x: hidden; }
 @media (max-width: 1024px) {
   section { background-attachment: scroll !important; }
 }
+
+/* ========================================
+   MOBILE OVERLAY BACKGROUNDS (max-width: 860px)
+   Portrait pics for all green sections
+   ======================================== */
+@media (max-width: 860px) {
+
+  /* HOME — hwnu + testimonials */
+  .hwnu-section,
+  .anim-testimonials {
+    background:
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+      url('../images/mobile overlay pic/pexels-alinaskazka-27806125.jpg') center / cover;
+  }
+
+  /* ABOUT — statement + timeline */
+  .about-statement-section,
+  .timeline-section {
+    background:
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+      url('../images/mobile overlay pic/pexels-allecgomes-3628770.jpg') center / cover;
+  }
+
+  /* CONTACT — form + faq + follow */
+  .cth-section,
+  .cfaq-section,
+  .follow-section {
+    background:
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+      url('../images/mobile overlay pic/pexels-allecgomes-3628770 (1).jpg') center / cover;
+  }
+
+  /* PRACTITIONERS LISTING */
+  .prac-cta-section {
+    background:
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+      url('../images/mobile overlay pic/pexels-ameliacui-11983527.jpg') center / cover;
+  }
+
+  /* SERVICE PAGES — override CSS variable per page */
+  .svc-botox               { --svc-underlay: url('../images/mobile overlay pic/pexels-bharati-mahli-7865119-6483393.jpg'); }
+  .svc-dermal-fillers      { --svc-underlay: url('../images/mobile overlay pic/pexels-cheeseburger-36452123.jpg'); }
+  .svc-lab-testing         { --svc-underlay: url('../images/mobile overlay pic/pexels-chetanvlad-5457362.jpg'); }
+  .svc-naturopathic-care   { --svc-underlay: url('../images/mobile overlay pic/pexels-clickout-pixel-1048032-12847431.jpg'); }
+  .svc-osteopathy          { --svc-underlay: url('../images/mobile overlay pic/pexels-didsss-13214230.jpg'); }
+  .svc-weight-loss         { --svc-underlay: url('../images/mobile overlay pic/pexels-felipealves-9297361.jpg'); }
+  .svc-pediatric-care      { --svc-underlay: url('../images/mobile overlay pic/pexels-igor-milicevic-1095449-8069526.jpg'); }
+  .svc-iv-therapy          { --svc-underlay: url('../images/mobile overlay pic/pexels-karola-g-5978610.jpg'); }
+  .svc-fatigue-treatment   { --svc-underlay: url('../images/mobile overlay pic/pexels-lawlesscapture-17218114.jpg'); }
+  .svc-massage-therapy     { --svc-underlay: url('../images/mobile overlay pic/pexels-leon-e-2160053836-36653171.jpg'); }
+  .svc-fertility-program   { --svc-underlay: url('../images/mobile overlay pic/pexels-maahidphotos-8058776.jpg'); }
+  .svc-acupuncture-cupping { --svc-underlay: url('../images/mobile overlay pic/pexels-magda-ehlers-pexels-9890362.jpg'); }
+  .svc-vitamin-injections  { --svc-underlay: url('../images/mobile overlay pic/pexels-minan1398-1599969.jpg'); }
+
+  /* PRACTITIONER PROFILES — override CSS variable per doctor */
+  .dr-emma-clarke   { --dr-underlay: url('../images/mobile overlay pic/pexels-minan1398-1650032.jpg'); }
+  .dr-amina-rahman  { --dr-underlay: url('../images/mobile overlay pic/pexels-mirza-farhan-140378-12951726.jpg'); }
+  .dr-sofia-bennett { --dr-underlay: url('../images/mobile overlay pic/pexels-photosbyanas-17672394.jpg'); }
+  .dr-priya-patel   { --dr-underlay: url('../images/mobile overlay pic/pexels-plantpool-images-2222972-4039949.jpg'); }
+  .dr-elena-morales { --dr-underlay: url('../images/mobile overlay pic/pexels-plantsandgraphics-10576756.jpg'); }
+  .dr-maya-hassan   { --dr-underlay: url('../images/mobile overlay pic/pexels-sam-lg-12240203.jpg'); }
+
+  /* BOOK APPOINTMENT */
+  .section--book-green {
+    background:
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+      url('../images/mobile overlay pic/pexels-sedanur-kunuk-78972032-31594864.jpg') center / cover;
+  }
+
+  /* CAREERS */
+  .careers-why {
+    background:
+      linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+      url('../images/mobile overlay pic/pexels-sonny-29059167.jpg') center / cover;
+  }
+}
