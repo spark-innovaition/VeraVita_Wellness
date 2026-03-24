@@ -1085,6 +1085,8 @@ section { padding: 6rem 0; }
 @media (max-width: 768px) {
   .asc-card { flex-direction: column; }
   .asc-card-img { width: 100%; height: auto; aspect-ratio: 16/9; }
+  .asc-card--mission picture { width: 100%; height: auto; }
+  .asc-card--mission picture .asc-card-img { height: auto; aspect-ratio: 16/9; }
   .asc-card-body { padding: 2rem; }
 }
 
