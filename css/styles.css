@@ -4022,14 +4022,14 @@ body { overflow-x: hidden; }
 @media (max-width: 860px) {
   .sd-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .sd-hero-img-wrap {
-    aspect-ratio: unset; order: -1;
-    /* break out of container padding for full-bleed on mobile */
-    width: calc(100% + 2 * var(--gap));
-    margin-left: calc(-1 * var(--gap));
-    margin-right: calc(-1 * var(--gap));
-    border-radius: 0;
+    aspect-ratio: 16/9;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: var(--r-card);
+    order: -1;
   }
-  .sd-hero-img-wrap .sd-hero-img { width: 100%; height: auto; object-fit: cover; }
+  .sd-hero-img-wrap .sd-hero-img { width: 100%; height: 100%; object-fit: cover; }
   .sd-body { padding: 2.5rem 0 2rem; }
   .sd-related { padding: 3rem 0 2.5rem; }
   .sd-body-inner { grid-template-columns: 1fr; gap: 2.5rem; }

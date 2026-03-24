@@ -563,7 +563,7 @@ document.querySelectorAll('.team-card').forEach(card => {
 
   const data = [
     {
-      quote: "VeraVita transformed my approach to health. After years of chronic fatigue, Dr. Mitchell identified the root cause and created a plan that actually worked. I feel like a completely new person!",
+      quote: "VeraVita transformed my approach to health. After years of chronic fatigue, Dr. Clarke identified the root cause and created a plan that actually worked. I feel like a completely new person!",
       name: "Jessica L.", role: "Fatigue Treatment · Calgary, AB",
       avatar: "images/Testimonails 1.jpg",
       img: "images/Testimonails 1.jpg"
@@ -575,7 +575,7 @@ document.querySelectorAll('.team-card').forEach(card => {
       img: "images/Testimonails 2.jpg"
     },
     {
-      quote: "I came for dermal fillers and was amazed by the natural-looking results. Dr. Chen listened to exactly what I wanted and delivered beyond my expectations. I won't go anywhere else!",
+      quote: "I came for dermal fillers and was amazed by the natural-looking results. Dr. Rahman listened to exactly what I wanted and delivered beyond my expectations. I won't go anywhere else!",
       name: "Amanda K.", role: "Aesthetic Medicine · Calgary, AB",
       avatar: "images/Testimonails 3.jpg",
       img: "images/Testimonails 3.jpg"
