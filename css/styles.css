@@ -385,7 +385,7 @@ section { padding: 6rem 0; }
    TEAM
    ======================================== */
 /* ---- Curevo-style team section ---- */
-.tmd-section { background: var(--gray-6); padding: 6rem 0; contain: layout style; }
+.tmd-section { background: var(--white); padding: 6rem 0; contain: layout style; }
 
 /* Top block: intro (left) + 2 tall cards (right) */
 .tmd-top {
@@ -1009,7 +1009,7 @@ section { padding: 6rem 0; }
 
 /* About Cards — Curevo-style mission + values split cards */
 .about-cards-section {
-  background: var(--gray-6);
+  background: var(--white);
   padding: 6rem 0;
   display: flex;
   flex-direction: column;
@@ -1091,7 +1091,9 @@ section { padding: 6rem 0; }
 /* About Statement — centered scroll-reveal section */
 .about-statement-section {
   padding: 8rem 0 6rem;
-  background: var(--white);
+  background:
+    linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    url('../images/Underlay pic 1.jpg') center / cover fixed;
   text-align: center;
 }
 .about-statement-icon {
@@ -1337,7 +1339,12 @@ section { padding: 6rem 0; }
 }
 
 /* Timeline */
-.timeline-section { background: var(--gray-6); padding: 6rem 0; }
+.timeline-section {
+  background:
+    linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    url('../images/Underlay pic 1.jpg') center / cover fixed;
+  padding: 6rem 0;
+}
 .timeline-inner { max-width: 800px; margin: 0 auto; position: relative; }
 .timeline-inner::before {
   content: ''; position: absolute; left: 112px; top: 0; bottom: 0;
