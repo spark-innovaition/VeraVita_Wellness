@@ -2108,7 +2108,9 @@ section { padding: 6rem 0; }
 
 /* CTA banner */
 .prac-cta-section {
-  background: var(--gray-6);
+  background:
+    linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    url('../images/Underlay pic 2.jpg') center / cover fixed;
   padding: 6rem 0;
 }
 .prac-cta-inner {
