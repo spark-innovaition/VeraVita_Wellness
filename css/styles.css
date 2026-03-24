@@ -146,6 +146,7 @@ section { padding: 6rem 0; }
   padding: 4px;
   box-shadow: 0 1px 4px rgba(38,51,45,0.05);
   position: absolute; left: 50%; transform: translateX(-50%);
+  overflow: hidden;
 }
 .nav-link {
   padding: 0.5rem 1rem; font-size: 0.9375rem; color: var(--dark);
@@ -4020,10 +4021,17 @@ body { overflow-x: hidden; }
 }
 @media (max-width: 860px) {
   .sd-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .sd-hero-img-wrap { aspect-ratio: unset; width: 100%; max-width: 100%; order: -1; }
-  .sd-hero-img-wrap .sd-hero-img { height: auto; object-fit: contain; }
+  .sd-hero-img-wrap {
+    aspect-ratio: unset; order: -1;
+    /* break out of container padding for full-bleed on mobile */
+    width: calc(100% + 2 * var(--gap));
+    margin-left: calc(-1 * var(--gap));
+    margin-right: calc(-1 * var(--gap));
+    border-radius: 0;
+  }
+  .sd-hero-img-wrap .sd-hero-img { width: 100%; height: auto; object-fit: cover; }
   .sd-body { padding: 2.5rem 0 2rem; }
-  .sd-related { padding: 2rem 0 2.5rem; }
+  .sd-related { padding: 3rem 0 2.5rem; }
   .sd-body-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .sd-card { position: static; }
   .sd-gallery { grid-template-columns: repeat(2, 1fr); }
@@ -4032,7 +4040,7 @@ body { overflow-x: hidden; }
 @media (max-width: 540px) {
   .sd-gallery { grid-template-columns: 1fr 1fr; }
   .sd-body { padding: 2rem 0 1.25rem; }
-  .sd-related { padding: 1.25rem 0 2rem; }
+  .sd-related { padding: 2.5rem 0 2rem; }
   .sd-related-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
   .sd-rel-card { aspect-ratio: 3/2; }
   .sd-rel-body { padding: 1.25rem; }
