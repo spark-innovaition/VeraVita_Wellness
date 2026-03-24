@@ -351,6 +351,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
   const sdImg     = document.querySelector('.sd-hero-img-wrap');
   if (!sdContent) return;
   sdContent.classList.remove('reveal'); // handled manually below
+  if (sdImg) sdImg.classList.remove('reveal');   // prevent batch overwrite killing x-tween
   const tl = gsap.timeline({ delay: 0.1, defaults: { ease: 'power3.out' } });
   tl.from(sdContent, { opacity: 0, x: -40, duration: 0.75 });
   if (sdImg) tl.from(sdImg, { opacity: 0, x: 40, duration: 0.75 }, '-=0.5');
