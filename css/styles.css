@@ -1025,6 +1025,7 @@ section { padding: 6rem 0; }
 }
 .asc-card--green { background: var(--gray-6); }
 .asc-card--white { background: var(--white); }
+.asc-card--mission .asc-card-img { width: 62%; }
 .asc-card-img {
   width: 38%;
   flex-shrink: 0;
