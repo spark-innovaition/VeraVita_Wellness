@@ -1095,7 +1095,7 @@ section { padding: 6rem 0; }
   padding: 8rem 0 6rem;
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 1.jpg') center / cover fixed;
+    url('../images/Underlay pic 1.jpg') center / cover;
   text-align: center;
 }
 .about-statement-icon {
@@ -1344,7 +1344,7 @@ section { padding: 6rem 0; }
 .timeline-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 1.jpg') center / cover fixed;
+    url('../images/Underlay pic 1.jpg') center / cover;
   padding: 6rem 0;
 }
 .timeline-inner { max-width: 800px; margin: 0 auto; position: relative; }
@@ -1417,7 +1417,7 @@ section { padding: 6rem 0; }
 .section--book-green {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/book an appointment overlay pic.jpg') center / cover fixed;
+    url('../images/book an appointment overlay pic.jpg') center / cover;
 }
 .hours-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.5rem; max-width: 860px; margin: 0 auto; text-align: center; }
 .hours-item i { font-size: 1.75rem; color: var(--primary); margin-bottom: 1rem; display: block; }
@@ -1590,7 +1590,7 @@ section { padding: 6rem 0; }
 .cth-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover fixed;
+    url('../images/underlay pic 5.jpg') center / cover;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1717,7 +1717,7 @@ section { padding: 6rem 0; }
 .cfaq-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover fixed;
+    url('../images/underlay pic 5.jpg') center / cover;
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
@@ -2117,7 +2117,7 @@ section { padding: 6rem 0; }
 .prac-cta-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 2.jpg') center / cover fixed;
+    url('../images/Underlay pic 2.jpg') center / cover;
   padding: 6rem 0;
 }
 .prac-cta-inner {
@@ -2182,7 +2182,7 @@ section { padding: 6rem 0; }
 .follow-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover fixed;
+    url('../images/underlay pic 5.jpg') center / cover;
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
@@ -2661,7 +2661,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .hwnu-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.jpg') center / cover fixed;
+    url('../images/underlay pic 11.jpg') center / cover;
   padding: 6rem 0; text-align: center;
 }
 
@@ -3323,7 +3323,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .anim-testimonials {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.jpg') center / cover fixed;
+    url('../images/underlay pic 11.jpg') center / cover;
   padding: 6rem 0;
 }
 .at-wrap {
@@ -3563,7 +3563,7 @@ body { overflow-x: hidden; }
   padding: 5rem 0;
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/careers overlay pic.jpg') center / cover fixed;
+    url('../images/careers overlay pic.jpg') center / cover;
 }
 .careers-why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .careers-why-text h2 { margin: 0.5rem 0 1rem; }
@@ -3738,7 +3738,7 @@ body { overflow-x: hidden; }
 .dr-maya-hassan .pd-services-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    var(--dr-underlay) center / cover fixed;
+    var(--dr-underlay) center / cover;
 }
 
 /* Detail section */
@@ -3927,7 +3927,7 @@ body { overflow-x: hidden; }
 .svc-vitamin-injections  .sd-body {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    var(--svc-underlay) center / cover fixed;
+    var(--svc-underlay) center / cover;
 }
 .svc-botox               { --svc-underlay: url('../images/Underlay pic 3.jpg'); }
 .svc-dermal-fillers      { --svc-underlay: url('../images/underlay pic 6.jpg'); }
