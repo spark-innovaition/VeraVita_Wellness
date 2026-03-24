@@ -4029,9 +4029,10 @@ body { overflow-x: hidden; }
   .sd-hero-img-wrap {
     grid-area: img;
     aspect-ratio: 16/9;
-    width: 100%;
+    width: calc(100% + 2 * var(--gap));
+    margin-left: calc(-1 * var(--gap));
+    margin-right: calc(-1 * var(--gap));
     border-radius: var(--r-card);
-    justify-self: stretch;
   }
   .sd-hero-img-wrap .sd-hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
   .sd-body { padding: 2.5rem 0 2rem; }
