@@ -2651,7 +2651,12 @@ ul.contact-info-list { padding: 0; margin: 0; }
 /* ========================================
    HERE WHEN YOU NEED US (Section 2)
    ======================================== */
-.hwnu-section { background: var(--gray-6); padding: 6rem 0; text-align: center; }
+.hwnu-section {
+  background:
+    linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    url('../images/underlay pic 11.jpg') center / cover fixed;
+  padding: 6rem 0; text-align: center;
+}
 
 .hwnu-eyebrow {
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -2705,7 +2710,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 /* ========================================
    WHY CHOOSE VERAVITA (Section 3)
    ======================================== */
-.wcu-section { background: var(--gray-6); padding: 5rem 0 6rem; }
+.wcu-section { background: var(--white); padding: 5rem 0 6rem; }
 
 /* Header */
 .wcu-header { margin-bottom: 4.5rem; }
@@ -3308,7 +3313,12 @@ ul.contact-info-list { padding: 0; margin: 0; }
    ANIMATED TESTIMONIALS
    Adapted from: testimonal prompt / AnimatedTestimonials
    ======================================== */
-.anim-testimonials { background: var(--gray-6); padding: 6rem 0; }
+.anim-testimonials {
+  background:
+    linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    url('../images/underlay pic 11.jpg') center / cover fixed;
+  padding: 6rem 0;
+}
 .at-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
