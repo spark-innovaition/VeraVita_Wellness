@@ -1025,6 +1025,20 @@ section { padding: 6rem 0; }
 }
 .asc-card--green { background: var(--gray-6); }
 .asc-card--white { background: var(--white); }
+.asc-card--mission {
+  background-image: url('../images/background 4K.png');
+  background-size: cover;
+  background-position: center;
+  border-color: transparent;
+}
+.asc-card--mission .asc-card-body {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.asc-card--mission .asc-card-img {
+  opacity: 0.92;
+}
 .asc-card-img {
   width: 38%;
   flex-shrink: 0;
