@@ -1028,7 +1028,7 @@ section { padding: 6rem 0; }
 /* Mission card — picture element must be an explicit flex item so 4K image fills correctly */
 .asc-card--mission picture {
   display: block;
-  width: 38%;
+  width: 62%;
   flex-shrink: 0;
   align-self: stretch;
   overflow: hidden;
