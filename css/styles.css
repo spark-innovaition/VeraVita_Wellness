@@ -3873,6 +3873,38 @@ body { overflow-x: hidden; }
 
 /* Content + Sidebar */
 .sd-body { background: var(--white); padding: 4rem 0 5rem; }
+
+/* Per-service underlay backgrounds — white/green/white pattern */
+.svc-botox               .sd-body,
+.svc-dermal-fillers      .sd-body,
+.svc-lab-testing         .sd-body,
+.svc-naturopathic-care   .sd-body,
+.svc-osteopathy          .sd-body,
+.svc-weight-loss         .sd-body,
+.svc-pediatric-care      .sd-body,
+.svc-iv-therapy          .sd-body,
+.svc-fatigue-treatment   .sd-body,
+.svc-massage-therapy     .sd-body,
+.svc-fertility-program   .sd-body,
+.svc-acupuncture-cupping .sd-body,
+.svc-vitamin-injections  .sd-body {
+  background:
+    linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    var(--svc-underlay) center / cover fixed;
+}
+.svc-botox               { --svc-underlay: url('../images/Underlay pic 3.jpg'); }
+.svc-dermal-fillers      { --svc-underlay: url('../images/underlay pic 6.jpg'); }
+.svc-lab-testing         { --svc-underlay: url('../images/underlay pic 7.jpg'); }
+.svc-naturopathic-care   { --svc-underlay: url('../images/underlay pic 8.jpg'); }
+.svc-osteopathy          { --svc-underlay: url('../images/underlay pic 9.jpg'); }
+.svc-weight-loss         { --svc-underlay: url('../images/underlay pic 10.jpg'); }
+.svc-pediatric-care      { --svc-underlay: url('../images/underlay pic 12.jpg'); }
+.svc-iv-therapy          { --svc-underlay: url('../images/underlay pic 13.jpg'); }
+.svc-fatigue-treatment   { --svc-underlay: url('../images/Underlay pic 14.jpg'); }
+.svc-massage-therapy     { --svc-underlay: url('../images/underlay pic 15.jpg'); }
+.svc-fertility-program   { --svc-underlay: url('../images/underlay pic 16.jpg'); }
+.svc-acupuncture-cupping { --svc-underlay: url('../images/underlay pic 17.jpg'); }
+.svc-vitamin-injections  { --svc-underlay: url('../images/underlay pic 18.jpg'); }
 .sd-body-inner {
   display: grid;
   grid-template-columns: 1fr 360px;
