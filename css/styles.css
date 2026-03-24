@@ -4029,7 +4029,7 @@ body { overflow-x: hidden; }
   .sd-hero-img-wrap {
     grid-area: img;
     aspect-ratio: 16/9;
-    width: calc(100% + 2 * var(--gap));
+    justify-self: stretch;
     margin-left: calc(-1 * var(--gap));
     margin-right: calc(-1 * var(--gap));
     border-radius: var(--r-card);
