@@ -3704,6 +3704,31 @@ body { overflow-x: hidden; }
   width: 100%; height: 100%; object-fit: cover; display: block;
 }
 
+/* Per-practitioner underlay backgrounds */
+.dr-emma-clarke   { --dr-underlay: url('../images/underlay pic 19.jpg'); }
+.dr-amina-rahman  { --dr-underlay: url('../images/underlay pic 20.jpg'); }
+.dr-sofia-bennett { --dr-underlay: url('../images/underlay pic 21.jpg'); }
+.dr-priya-patel   { --dr-underlay: url('../images/underlay pic 22.jpg'); }
+.dr-elena-morales { --dr-underlay: url('../images/underlay pic 23.jpg'); }
+.dr-maya-hassan   { --dr-underlay: url('../images/underlay pic 24.jpg'); }
+
+.dr-emma-clarke .pd-detail-section,
+.dr-amina-rahman .pd-detail-section,
+.dr-sofia-bennett .pd-detail-section,
+.dr-priya-patel .pd-detail-section,
+.dr-elena-morales .pd-detail-section,
+.dr-maya-hassan .pd-detail-section,
+.dr-emma-clarke .pd-services-section,
+.dr-amina-rahman .pd-services-section,
+.dr-sofia-bennett .pd-services-section,
+.dr-priya-patel .pd-services-section,
+.dr-elena-morales .pd-services-section,
+.dr-maya-hassan .pd-services-section {
+  background:
+    linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    var(--dr-underlay) center / cover fixed;
+}
+
 /* Detail section */
 .pd-detail-section {
   background: var(--gray-6);
