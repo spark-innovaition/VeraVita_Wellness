@@ -609,11 +609,14 @@ document.querySelectorAll('.team-card').forEach(card => {
 
   let current = 0, busy = false;
 
-  // Populate card images — updates on every navigation so cards always reflect current position
+  // Populate card images — front card always shows data[index], subsequent cards follow in order
   function updateCards(index) {
+    const n = cards.length;
+    const frontCard = ((index % n) + n) % n;
     cards.forEach((card, i) => {
       const img = card.querySelector('img');
-      const d = data[(index + i) % data.length];
+      const offset = ((i - frontCard) + n) % n;
+      const d = data[(index + offset) % data.length];
       if (img && d) { img.src = d.img; img.alt = d.name; }
     });
   }
@@ -697,7 +700,8 @@ document.querySelectorAll('.team-card').forEach(card => {
     if (busy || index === current) return;
     busy = true; current = index;
     updateCards(current);
-    layout(current, true, () => { busy = false; });
+    const n = cards.length;
+    layout(((current % n) + n) % n, true, () => { busy = false; });
     updateText(current);
     updateDots(current);
   }
