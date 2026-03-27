@@ -609,11 +609,15 @@ document.querySelectorAll('.team-card').forEach(card => {
 
   let current = 0, busy = false;
 
-  // Populate card images
-  cards.forEach((card, i) => {
-    const img = card.querySelector('img');
-    if (img && data[i]) { img.src = data[i].img; img.alt = data[i].name; }
-  });
+  // Populate card images — updates on every navigation so cards always reflect current position
+  function updateCards(index) {
+    cards.forEach((card, i) => {
+      const img = card.querySelector('img');
+      const d = data[(index + i) % data.length];
+      if (img && d) { img.src = d.img; img.alt = d.name; }
+    });
+  }
+  updateCards(0);
 
   // Build navigation — dots for ≤6 items, counter for more
   if (data.length <= 6) {
@@ -692,6 +696,7 @@ document.querySelectorAll('.team-card').forEach(card => {
   function goTo(index) {
     if (busy || index === current) return;
     busy = true; current = index;
+    updateCards(current);
     layout(current, true, () => { busy = false; });
     updateText(current);
     updateDots(current);
