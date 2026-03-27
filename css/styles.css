@@ -129,6 +129,7 @@ section { padding: 6rem 0; }
 /* Logo */
 .navbar-logo { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
 .logo-img { height: 48px; width: auto; display: block; }
+.logo-img--mobile { display: none; }
 .logo-icon {
   width: 40px; height: 40px; border-radius: 50%;
   background: var(--dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
@@ -2446,6 +2447,8 @@ ul.contact-info-list { padding: 0; margin: 0; }
     left: 50%;
     transform: translateX(-50%);
   }
+  .logo-img--desktop { display: none; }
+  .logo-img--mobile { display: block; height: 48px; width: auto; }
   /* Hide desktop CTA from header — moved to bottom bar */
   .navbar .btn-ihb { display: none; }
   .navbar-nav {
