@@ -45,9 +45,12 @@
 
   <!-- HERO -->
   <section class="careers-hero">
-  <video class="page-hero-video" autoplay muted loop playsinline>
+  <video class="page-hero-video" autoplay muted loop playsinline
+      data-src-desktop="images/background video.mp4"
+      data-src-mobile="images/Background video - Mobile only.mp4">
     <source src="images/background video.mp4" type="video/mp4" />
-  </video>
+    </video>
+    <script>(function(){var v=document.currentScript.previousElementSibling;v.querySelector("source").src=window.matchMedia("(max-width:860px)").matches?v.dataset.srcMobile:v.dataset.srcDesktop;v.load();})();</script>
   <div class="page-hero-overlay"></div>
     <div class="container">
       <div class="careers-hero-inner">
