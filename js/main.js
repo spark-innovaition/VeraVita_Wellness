@@ -564,26 +564,26 @@ document.querySelectorAll('.team-card').forEach(card => {
 
   const data = [
     {
-      quote: "VeraVita transformed my approach to health. After years of chronic fatigue, Dr. Clarke identified the root cause and created a plan that actually worked. I feel like a completely new person!",
-      name: "Jessica L.", role: "Fatigue Treatment · Calgary, AB",
+      quote: "Dr. Jill is kind, knowledgeable, and really takes the time to listen. After her vitamin IV treatment, I felt energized and refreshed — like a much-needed reset! The clinic is warm and professional. Highly recommend VeraVita for anyone looking for holistic, personalized care.",
+      name: "Galiya Burgess", role: "IV Therapy · Google Review",
       avatar: "images/Testimonails 1.jpg",
       img: "images/Testimonails 1.jpg"
     },
     {
-      quote: "The IV therapy sessions have been a game-changer for my energy levels. The team is knowledgeable, the clinic is beautiful, and I always leave feeling incredible. Highly recommend!",
-      name: "Mark R.", role: "IV Therapy · Calgary, AB",
+      quote: "I had a fantastic experience with Dr. Jill Nazar. She helped me develop a sustainable weight loss plan that fit my lifestyle, provided clear guidance, and offered ongoing support. Thanks to her expertise and encouragement, I have made real progress and feel healthier every step of the way.",
+      name: "Dhiraj Verma", role: "Weight Loss · Google Review",
       avatar: "images/Testimonails 2.jpg",
       img: "images/Testimonails 2.jpg"
     },
     {
-      quote: "I came for dermal fillers and was amazed by the natural-looking results. Dr. Rahman listened to exactly what I wanted and delivered beyond my expectations. I won't go anywhere else!",
-      name: "Amanda K.", role: "Aesthetic Medicine · Calgary, AB",
+      quote: "Dr. Jill Nazar is exceptional. She took the time to understand my fatigue, explained possible causes, and created a personalized plan that fit my daily routine. Her clear guidance, empathetic manner, and proactive follow-up made a real difference. I'm feeling more energetic and hopeful thanks to her care.",
+      name: "Natalia Kulikova", role: "Fatigue Treatment · Google Review",
       avatar: "images/Testimonails 3.jpg",
       img: "images/Testimonails 3.jpg"
     },
     {
-      quote: "The holistic care I received at VeraVita was unlike anything I've experienced before. Every detail was considered and the results speak for themselves. Absolutely incredible team.",
-      name: "Sarah M.", role: "Naturopathic Care · Calgary, AB",
+      quote: "I've had the good fortune to find Dr. Jill Nazar. I needed advice on boosting my immune system, and also for weight loss. She is so knowledgeable, generous with her time, and always has solutions for any of my questions. I'm very grateful that I found her — she's such a pleasure to deal with.",
+      name: "Audrey C", role: "Naturopathic Care · Google Review",
       avatar: "images/Testimonails 4.jpg",
       img: "images/Testimonails 4.jpg"
     }
