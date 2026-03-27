@@ -716,6 +716,21 @@ document.querySelectorAll('.team-card').forEach(card => {
   prevBtn.addEventListener('click', () => goTo((current - 1 + data.length) % data.length));
   nextBtn.addEventListener('click', () => goTo((current + 1) % data.length));
 
+  // Touch swipe — mobile only
+  let touchStartX = 0;
+  let touchStartY = 0;
+  section.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  section.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return; // too short or mostly vertical
+    if (dx < 0) goTo((current + 1) % data.length);
+    else        goTo((current - 1 + data.length) % data.length);
+  }, { passive: true });
+
   // Auto-advance — pauses during scroll to avoid mid-frame GSAP collision
   let autoTimer = null;
   function scheduleAdvance() {
