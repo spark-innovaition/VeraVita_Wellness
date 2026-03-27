@@ -563,30 +563,39 @@ document.querySelectorAll('.team-card').forEach(card => {
   if (!section) return;
 
   const data = [
-    {
-      quote: "Dr. Jill is kind, knowledgeable, and really takes the time to listen. After her vitamin IV treatment, I felt energized and refreshed — like a much-needed reset! The clinic is warm and professional. Highly recommend VeraVita for anyone looking for holistic, personalized care.",
-      name: "Galiya Burgess", role: "IV Therapy · Google Review",
-      avatar: "images/Testimonails 1.jpg",
-      img: "images/Testimonails 1.jpg"
-    },
-    {
-      quote: "I had a fantastic experience with Dr. Jill Nazar. She helped me develop a sustainable weight loss plan that fit my lifestyle, provided clear guidance, and offered ongoing support. Thanks to her expertise and encouragement, I have made real progress and feel healthier every step of the way.",
-      name: "Dhiraj Verma", role: "Weight Loss · Google Review",
-      avatar: "images/Testimonails 2.jpg",
-      img: "images/Testimonails 2.jpg"
-    },
-    {
-      quote: "Dr. Jill Nazar is exceptional. She took the time to understand my fatigue, explained possible causes, and created a personalized plan that fit my daily routine. Her clear guidance, empathetic manner, and proactive follow-up made a real difference. I'm feeling more energetic and hopeful thanks to her care.",
-      name: "Natalia Kulikova", role: "Fatigue Treatment · Google Review",
-      avatar: "images/Testimonails 3.jpg",
-      img: "images/Testimonails 3.jpg"
-    },
-    {
-      quote: "I've had the good fortune to find Dr. Jill Nazar. I needed advice on boosting my immune system, and also for weight loss. She is so knowledgeable, generous with her time, and always has solutions for any of my questions. I'm very grateful that I found her — she's such a pleasure to deal with.",
-      name: "Audrey C", role: "Naturopathic Care · Google Review",
-      avatar: "images/Testimonails 4.jpg",
-      img: "images/Testimonails 4.jpg"
-    }
+    { quote: "This naturopath clinic exceeded my expectations. The practitioner took the time to understand my health history, lifestyle, and concerns instead of rushing through the appointment. I felt truly heard and supported.", name: "Cassity TFW Canada", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 1.jpg", img: "images/reviews faces/Women 1.jpg" },
+    { quote: "My husband and I had IV treatment at VeraVita, and we had an excellent experience. Dr. Jill is very kind, professional, and extremely accommodating. She explained everything clearly and made us feel comfortable throughout the treatment.", name: "Ivy", role: "IV Therapy · Google Review", avatar: "images/reviews faces/Women 2.jpg", img: "images/reviews faces/Women 2.jpg" },
+    { quote: "Dr. Jill has been our Naturopath Doctor for the past few months. She exudes the professionalism, empathy, care and personal touch that is rarely seen in doctors these days. She has always been accommodating and informative.", name: "Richard Velante", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Male 1.jpg", img: "images/reviews faces/Male 1.jpg" },
+    { quote: "I had a great experience with VeraVita Naturopathic Clinic. Dr. Jill is very friendly and accommodating. She made great recommendations and explained the process in detail. The treatment was quick, painless, and I felt noticeably better.", name: "Aleah Sapitanan", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 3.jpg", img: "images/reviews faces/Women 3.jpg" },
+    { quote: "My wife and I have both done IV treatments here, and the experience has been excellent every time. Dr. Jill is incredibly knowledgeable, honest, and takes the time to explain things clearly without pressure.", name: "Dominique Fournier", role: "IV Therapy · Google Review", avatar: "images/reviews faces/Male 2.jpg", img: "images/reviews faces/Male 2.jpg" },
+    { quote: "Dr. Jill Nazar is an exceptional naturopath. She is extremely knowledgeable, professional, and truly committed to understanding the root causes of health concerns rather than just treating symptoms.", name: "Gerardo Savo", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Male 3.jpg", img: "images/reviews faces/Male 3.jpg" },
+    { quote: "I visited Dr. Jill Nazar for an immune boost IV therapy, and I was amazed at how quickly I felt the difference. After just my first session, I already started noticing more energy and felt so much better overall.", name: "Andrei Crupco", role: "IV Therapy · Google Review", avatar: "images/reviews faces/Male 4.jpg", img: "images/reviews faces/Male 4.jpg" },
+    { quote: "Dr. Jill was extremely helpful! I had stomach pain for a few months and after just a few days of her prescribed treatment, I felt so much better. My friend recommended her and I am so grateful she did.", name: "Olga Koroleva", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 4.jpg", img: "images/reviews faces/Women 4.jpg" },
+    { quote: "I had the pleasure of seeing Dr. Jill Nazar recently, and I can't recommend her enough! From the moment I walked in, I felt welcomed by the positive energy and cozy, clean atmosphere. Dr. Nazar is incredibly pleasant and attentive.", name: "Ana", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 5.jpg", img: "images/reviews faces/Women 5.jpg" },
+    { quote: "I am very grateful to Dr. Jill Nazar for her professional advice and attention to detail. A treatment plan was immediately put in place. She is a wonderful person and doctor, and I recommend her to everyone!", name: "Yulia Palamarchuk", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 6.jpg", img: "images/reviews faces/Women 6.jpg" },
+    { quote: "Dr. Jill is very accommodating with scheduling and gives excellent patient care service. Answers all our questions professionally; hence we come regularly.", name: "Janet Harlea", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 7.jpg", img: "images/reviews faces/Women 7.jpg" },
+    { quote: "I've had the good fortune to find Dr. Jill Nazar. I needed advice on boosting my immune system, and also for weight loss. She is so knowledgeable, generous with her time, and always has solutions for any of my questions. I'm very grateful that I found her.", name: "Audrey C", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 8.jpg", img: "images/reviews faces/Women 8.jpg" },
+    { quote: "Dr. Jill is very warm and accommodating to her clients especially to kids. She talks casually without making my daughter hesitant to speak and share her health concerns. Her clinic is well maintained and very clean!", name: "Maria Cecilia Dulfo", role: "Pediatric Care · Google Review", avatar: "images/reviews faces/Women 9.jpg", img: "images/reviews faces/Women 9.jpg" },
+    { quote: "I had a wonderful experience with Dr. Jill Nazar for my weight loss journey. She is highly professional, knowledgeable, and caring. The IV treatment she provided was comfortable and effective.", name: "Vladlena Kravchuk", role: "Weight Loss · Google Review", avatar: "images/reviews faces/Women 10.jpg", img: "images/reviews faces/Women 10.jpg" },
+    { quote: "This wasn't my first experience with Naturopathy Doctors — but Dr. Jill was on a completely different level. I've never met a doctor who was so respectful, attentive and genuinely focused on me as a patient.", name: "Chingiz Tulegenov", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Male 5.jpg", img: "images/reviews faces/Male 5.jpg" },
+    { quote: "She is a very accommodating and kind doctor who took the time to educate us on the proper way of taking vitamins. We will definitely come back for IV vitamin infusion.", name: "Nice Petralba", role: "IV Therapy · Google Review", avatar: "images/reviews faces/Women 11.jpg", img: "images/reviews faces/Women 11.jpg" },
+    { quote: "I had a fantastic experience with Dr. Jill Nazar. She helped me develop a sustainable weight loss plan that fit my lifestyle, provided clear guidance, and offered ongoing support. Thanks to her expertise and encouragement, I have made real progress and feel healthier every step of the way.", name: "Dhiraj Verma", role: "Weight Loss · Google Review", avatar: "images/reviews faces/Male 6.jpg", img: "images/reviews faces/Male 6.jpg" },
+    { quote: "I had an excellent experience with Dr. Jill Nazar for cholesterol and blood pressure management. She is professional, caring, and makes IV therapy so comfortable. The clinic is clean, welcoming, and calming.", name: "Aza Javed", role: "IV Therapy · Google Review", avatar: "images/reviews faces/Women 12.jpg", img: "images/reviews faces/Women 12.jpg" },
+    { quote: "Very accommodating and Dr. Jill Nazar is very helpful. She explains everything in detail. Highly recommended.", name: "Fatima Escandor", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 13.jpg", img: "images/reviews faces/Women 13.jpg" },
+    { quote: "Great professional service. Highly recommend. Clean and tidy clinic with very positive environment. The treatments were very precise and professional, with an individual approach tailored to the patient's needs.", name: "Galina Arhipova", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 14.jpg", img: "images/reviews faces/Women 14.jpg" },
+    { quote: "Dr. Jill is kind, knowledgeable, and really takes the time to listen. After her vitamin IV treatment, I felt energized and refreshed — like a much-needed reset! The clinic is warm and professional. Highly recommend VeraVita for anyone looking for holistic, personalized care.", name: "Galiya Burgess", role: "IV Therapy · Google Review", avatar: "images/reviews faces/Women 15.jpg", img: "images/reviews faces/Women 15.jpg" },
+    { quote: "Dr. Jill Nazar has changed my life totally. Best decision I made to come and see her. I first went for immune boost, then carried on for weight loss, cravings and sleep. I have more energy, better sleep, and feel incredible.", name: "Barb B", role: "Weight Loss · Google Review", avatar: "images/reviews faces/Women 16.jpg", img: "images/reviews faces/Women 16.jpg" },
+    { quote: "I really liked the clinic and its convenient location. Dr. Nazar is clearly very passionate about naturopathic medicine — exactly what I was looking for in my treatment. I truly enjoyed my visits!", name: "Marina Fourman", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 17.jpg", img: "images/reviews faces/Women 17.jpg" },
+    { quote: "Dr. Jill Nazar is exceptional. She took the time to understand my fatigue, explained possible causes, and created a personalized plan that fit my daily routine. Her clear guidance, empathetic manner, and proactive follow-up made a real difference. I'm feeling more energetic and hopeful.", name: "Natalia Kulikova", role: "Fatigue Treatment · Google Review", avatar: "images/reviews faces/Women 18.jpg", img: "images/reviews faces/Women 18.jpg" },
+    { quote: "We all know how important it is to trust your doctor and find one who is knowledgeable, compassionate and encouraging. Dr. Jill Nazar is the One! I highly recommend her to anyone looking for a more natural approach to health.", name: "Mila Iron", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 19.jpg", img: "images/reviews faces/Women 19.jpg" },
+    { quote: "I had a very positive experience at VeraVita. The naturopath was professional, caring, and really took the time to listen. I felt supported throughout the process and noticed real improvements in my overall well-being. Highly recommend this clinic.", name: "Andrea Nguyen", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 20.jpg", img: "images/reviews faces/Women 20.jpg" },
+    { quote: "Very helpful doctor, feel better after just 1 session.", name: "Yulia Deg", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 21.jpg", img: "images/reviews faces/Women 21.jpg" },
+    { quote: "Dr. Jill is fantastic. The treatments worked very well every time.", name: "Jack Zydron", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Male 7.jpg", img: "images/reviews faces/Male 7.jpg" },
+    { quote: "Best service and amazing experience! Totally recommend Dr. Jill!", name: "Nadiia Konchukovska", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 22.jpg", img: "images/reviews faces/Women 22.jpg" },
+    { quote: "I had a very positive experience with Dr. Jill Nazar — she took the time to truly listen and understand my concerns, offered a thoughtful and holistic approach, and provided clear, personalized recommendations that fit my lifestyle.", name: "Olena Tanasescu", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Women 23.jpg", img: "images/reviews faces/Women 23.jpg" },
+    { quote: "Exceptional! Highly recommend — everyone needs to do this. It is life changing for the better.", name: "Ace O", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Male 8.jpg", img: "images/reviews faces/Male 8.jpg" },
+    { quote: "Jill has exceptional experience and amazing competency with Naturopathy.", name: "Dean Leblanc", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Male 9.jpg", img: "images/reviews faces/Male 9.jpg" },
+    { quote: "Dr. Jill is very accommodating and whatever she does with my spine problem it helps ease the discomfort and pain. Highly recommended.", name: "J. Roetag", role: "Naturopathic Care · Google Review", avatar: "images/reviews faces/Male 10.jpg", img: "images/reviews faces/Male 10.jpg" }
   ];
 
   const cards     = section.querySelectorAll('.at-card');
@@ -606,14 +615,19 @@ document.querySelectorAll('.team-card').forEach(card => {
     if (img && data[i]) { img.src = data[i].img; img.alt = data[i].name; }
   });
 
-  // Build navigation dots
-  data.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'at-dot' + (i === 0 ? ' at-dot--active' : '');
-    dot.setAttribute('aria-label', 'Testimonial ' + (i + 1));
-    dot.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(dot);
-  });
+  // Build navigation — dots for ≤6 items, counter for more
+  if (data.length <= 6) {
+    data.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'at-dot' + (i === 0 ? ' at-dot--active' : '');
+      dot.setAttribute('aria-label', 'Testimonial ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+  } else {
+    dotsWrap.classList.add('at-counter');
+    dotsWrap.textContent = '1 / ' + data.length;
+  }
 
   // Stack positions: [front, mid, back]
   const POS = [
@@ -666,9 +680,13 @@ document.querySelectorAll('.team-card').forEach(card => {
   }
 
   function updateDots(active) {
-    dotsWrap.querySelectorAll('.at-dot').forEach((d, i) =>
-      d.classList.toggle('at-dot--active', i === active)
-    );
+    if (dotsWrap.classList.contains('at-counter')) {
+      dotsWrap.textContent = (active + 1) + ' / ' + data.length;
+    } else {
+      dotsWrap.querySelectorAll('.at-dot').forEach((d, i) =>
+        d.classList.toggle('at-dot--active', i === active)
+      );
+    }
   }
 
   function goTo(index) {

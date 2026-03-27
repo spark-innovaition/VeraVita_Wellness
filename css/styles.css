@@ -3388,6 +3388,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
   transition: background var(--dur), transform var(--dur);
 }
 .at-dot--active { background: var(--dark); transform: scale(1.3); }
+.at-counter { font-size: 0.875rem; font-weight: 500; color: var(--dark); letter-spacing: 0.05em; min-width: 3.5rem; text-align: center; }
 
 /* ========================================
    RESPONSIVE — ENHANCEMENTS
