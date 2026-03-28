@@ -2494,15 +2494,21 @@ ul.contact-info-list { padding: 0; margin: 0; }
   }
 
   /* ---- Mobile nav dropdown ---- */
-  .nav-dropdown-menu {
-    position: static; transform: none; opacity: 1; visibility: visible;
+  .nav-dropdown-menu,
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+    opacity: 1; visibility: visible;
     box-shadow: none; border: none; border-radius: 0;
     padding: 0.25rem 0 0.25rem 0.75rem; background: none; min-width: unset;
     display: none;
     border-left: 2px solid var(--gray-4);
     margin: 0.25rem 0 0.5rem;
   }
-  .nav-dropdown.open .nav-dropdown-menu { display: block; }
+  .nav-dropdown.open .nav-dropdown-menu { display: block !important; }
   .nav-dd-item {
     padding: 0.625rem 0.75rem !important;
     gap: 0 !important;
