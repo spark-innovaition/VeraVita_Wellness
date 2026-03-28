@@ -2718,7 +2718,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
   gap: 0.875rem;
   will-change: transform;
   width: max-content;
-  animation: hwnu-scroll 28s linear infinite;
+  animation: hwnu-scroll 60s linear infinite;
 }
 .hwnu-img {
   width: 280px;
