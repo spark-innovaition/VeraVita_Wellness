@@ -3132,22 +3132,9 @@ ul.contact-info-list { padding: 0; margin: 0; }
 }
 /* Scrolling doctor marquee */
 .about-home-profiles {
-  overflow: hidden;
-  margin-top: 2rem;
-  width: calc(100% + 6rem);
-  margin-left: -6rem;
-}
-.about-profiles-track {
   display: flex;
   gap: 0.875rem;
-  will-change: transform;
-  width: max-content;
-  animation: about-scroll 18s linear infinite;
-  padding-left: 6rem;
-}
-@keyframes about-scroll {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  margin-top: 2rem;
 }
 .about-profile-thumb {
   width: 90px;
