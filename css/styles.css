@@ -395,17 +395,24 @@ section { padding: 6rem 0; }
 /* ---- Curevo-style team section ---- */
 .tmd-section { background: var(--white); padding: 6rem 0; contain: layout style; }
 
-/* Layout: intro (left) + 2×2 cards (right) */
-.tmd-layout {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1.25rem;
-  align-items: start;
+/* Intro above cards */
+.tmd-intro-top {
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
+.tmd-intro-top h2 {
+  font-family: var(--font-h);
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.2;
+  margin: 0;
+}
+/* 4 cards in one row */
 .tmd-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 /* Keep .tmd-top alias for any other pages using it */
 .tmd-top {
@@ -474,76 +481,83 @@ section { padding: 6rem 0; }
   gap: 1.25rem;
 }
 
-/* Card */
+/* Card — full photo with gradient overlay */
 .tmd-card {
-  background: var(--white);
+  position: relative;
+  display: block;
   border-radius: var(--r-card);
   overflow: hidden;
-  border: 1px solid var(--gray-5);
-  transition: box-shadow var(--dur), transform var(--dur);
+  aspect-ratio: 9 / 16;
+  text-decoration: none;
+  transition: transform var(--dur), box-shadow var(--dur);
 }
-.tmd-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(38,51,45,0.12); }
-.tmd-card-header {
-  padding: 1.125rem 1.375rem 1rem;
-}
-.tmd-card-header h4 {
-  font-family: var(--font-h);
-  font-size: 1.0625rem;
-  font-weight: 400;
-  color: var(--dark);
-  margin: 0 0 0.2rem;
-}
-.tmd-card-header span {
-  font-family: var(--font-b);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: #1e3528;
-}
-.tmd-card-photo {
-  position: relative;
-  overflow: hidden;
-}
-.tmd-card-photo img {
+.tmd-card:hover { transform: translateY(-4px); box-shadow: 0 20px 56px rgba(38,51,45,0.18); }
+.tmd-card-img {
   width: 100%;
-  height: 260px;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
-  transition: transform 0.45s ease;
+  transition: transform 0.5s ease;
 }
-.tmd-card:hover .tmd-card-photo img { transform: scale(1.04); }
-
-/* Uniform photo height for all cards */
-.tmd-cards .tmd-card-photo img { height: 340px; object-position: center top; }
-
-/* Social icons fade in on hover */
-.tmd-card-socials {
+.tmd-card:hover .tmd-card-img { transform: scale(1.04); }
+/* Gradient overlay at bottom */
+.tmd-card-overlay {
   position: absolute;
-  bottom: 0.875rem;
-  right: 0.875rem;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,25,15,0.88) 0%, rgba(10,25,15,0.3) 45%, transparent 72%);
   display: flex;
-  gap: 0.5rem;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.3s, transform 0.3s;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem 1.25rem 1.25rem;
+  transition: background 0.4s ease;
 }
-.tmd-card:hover .tmd-card-socials { opacity: 1; transform: translateY(0); }
-.tmd-card-socials a {
-  width: 38px;
-  height: 38px;
-  background: rgba(200,225,215,0.88);
-  border: 1.5px solid rgba(45,80,64,0.35);
-  border-radius: 10px;
+.tmd-card:hover .tmd-card-overlay {
+  background: linear-gradient(to top, rgba(10,25,15,0.95) 0%, rgba(10,25,15,0.45) 55%, transparent 78%);
+}
+.tmd-card-overlay h4 {
+  font-family: var(--font-h);
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 0.2rem;
+  line-height: 1.25;
+}
+.tmd-card-overlay span {
+  font-family: var(--font-b);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(168,201,158,1);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.tmd-card-overlay p {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+  margin: 0 0 0.875rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+.tmd-card:hover .tmd-card-overlay p {
+  max-height: 6rem;
+  opacity: 1;
+}
+.tmd-card-cta {
+  font-family: var(--font-b);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #ffffff;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #1e3528;
-  font-size: 0.875rem;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-  backdrop-filter: blur(6px);
+  gap: 0.4rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.tmd-card-socials a:hover { background: var(--primary); color: #152b1e; border-color: var(--primary); }
+.tmd-card:hover .tmd-card-cta { opacity: 1; transform: translateY(0); }
 
 /* Card body — description + profile link */
 .tmd-card-body {
@@ -582,17 +596,11 @@ section { padding: 6rem 0; }
 }
 
 @media (max-width: 1024px) {
-  .tmd-layout { grid-template-columns: 1fr; }
-  .tmd-intro { padding: 1rem 0; }
-  .tmd-top { grid-template-columns: 1fr 1fr; }
-  .tmd-intro-top { grid-column: span 2; padding: 1rem 0; }
-  .tmd-bottom { grid-template-columns: repeat(2, 1fr); }
+  .tmd-cards { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
-  .tmd-cards { grid-template-columns: 1fr; }
-  .tmd-top { grid-template-columns: 1fr; }
-  .tmd-intro-top { grid-column: span 1; }
-  .tmd-bottom { grid-template-columns: 1fr; }
+  .tmd-cards { grid-template-columns: repeat(2, 1fr); gap: 0.625rem; }
+  .tmd-card-overlay { padding: 1rem 0.875rem 0.875rem; }
 }
 
 /* Legacy team styles (used on other pages) */
