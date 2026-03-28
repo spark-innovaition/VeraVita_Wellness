@@ -49,7 +49,7 @@ lenis.on('scroll', ScrollTrigger.update);
   const ctx = canvas.getContext('2d');
 
   /* Mutable state driven by GSAP */
-  const s = { textScale: 1, overlayAlpha: 1, labelAlpha: 0.5 };
+  const s = { textScale: 1, overlayAlpha: 1, labelAlpha: 0.5, sectionAlpha: 1 };
   let lastDrawn = {};
 
   /* Load cloud hero image */
@@ -129,7 +129,7 @@ lenis.on('scroll', ScrollTrigger.update);
     scrollTrigger: {
       trigger: section,
       start: 'top top',
-      end: isMobile ? '+=180%' : '+=150%',
+      end: isMobile ? '+=220%' : '+=200%',
       scrub: isMobile ? 0.4 : 0.6,
       pin: true,
       anticipatePin: 1,
@@ -137,20 +137,32 @@ lenis.on('scroll', ScrollTrigger.update);
   });
 
   tl
-    .to(s, { labelAlpha: 0,     duration: 0.08, ease: 'none'      },  0   )
-    .to(s, { textScale: 18,     duration: 0.78, ease: 'none'      },  0   )
-    .to(s, { overlayAlpha: 0,   duration: 0.22, ease: 'power2.in' },  0.78);
+    .to(s, { labelAlpha: 0,     duration: 0.06, ease: 'none'      },  0   )
+    .to(s, { textScale: 18,     duration: 0.60, ease: 'none'      },  0   )
+    .to(s, { overlayAlpha: 0,   duration: 0.18, ease: 'power2.in' },  0.60);
 
-  /* Hero content slides up — long, staggered, unhurried */
+  /* Hero content slides up */
   if (heroItems.length) {
     tl.to(heroItems, {
       opacity: 1,
       y: 0,
-      stagger: 0.12,
+      stagger: 0.10,
       ease: 'power3.out',
-      duration: 0.50,
-    }, 0.88);
+      duration: 0.40,
+    }, 0.70);
+
+    /* Hold, then fade out hero content before pin releases */
+    tl.to(heroItems, {
+      opacity: 0,
+      y: -30,
+      stagger: 0.06,
+      ease: 'power2.in',
+      duration: 0.20,
+    }, 0.85);
   }
+
+  /* Fade entire section to black as pin releases — smooth exit */
+  tl.to(section, { opacity: 0, duration: 0.12, ease: 'power1.in' }, 0.90);
 
   ScrollTrigger.refresh();
 })();
