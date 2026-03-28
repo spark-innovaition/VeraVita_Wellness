@@ -455,10 +455,10 @@ section { padding: 6rem 0; }
   opacity: 0.4;
 }
 
-/* Bottom block: 4 cards in a row */
+/* Bottom block: 2 cards */
 .tmd-bottom {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
 }
 
@@ -501,8 +501,9 @@ section { padding: 6rem 0; }
 }
 .tmd-card:hover .tmd-card-photo img { transform: scale(1.04); }
 
-/* Taller photo for the two top-row cards */
-.tmd-top .tmd-card-photo img { height: 400px; object-position: center top; }
+/* Taller photo for all cards */
+.tmd-top .tmd-card-photo img,
+.tmd-bottom .tmd-card-photo img { height: 380px; object-position: center top; }
 
 /* Social icons fade in on hover */
 .tmd-card-socials {
