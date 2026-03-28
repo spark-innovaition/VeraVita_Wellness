@@ -161,8 +161,6 @@ lenis.on('scroll', ScrollTrigger.update);
     }, 0.85);
   }
 
-  /* Fade entire section to black as pin releases — smooth exit */
-  tl.to(section, { opacity: 0, duration: 0.12, ease: 'power1.in' }, 0.90);
 
   ScrollTrigger.refresh();
 })();
