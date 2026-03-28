@@ -50,6 +50,7 @@ lenis.on('scroll', ScrollTrigger.update);
 
   /* Mutable state driven by GSAP */
   const s = { textScale: 1, overlayAlpha: 1, labelAlpha: 0.5 };
+  let lastDrawn = {};
 
   /* Load cloud hero image */
   const heroBg = new Image();
@@ -65,6 +66,9 @@ lenis.on('scroll', ScrollTrigger.update);
   /* Draw overlay colour + both text cutouts each GSAP tick */
   function drawFrame() {
     const w = canvas.width, h = canvas.height;
+    /* Skip redraw if nothing changed */
+    if (lastDrawn.textScale === s.textScale && lastDrawn.overlayAlpha === s.overlayAlpha && lastDrawn.labelAlpha === s.labelAlpha) return;
+    lastDrawn = { textScale: s.textScale, overlayAlpha: s.overlayAlpha, labelAlpha: s.labelAlpha };
     ctx.clearRect(0, 0, w, h);
     if (s.overlayAlpha < 0.004) return;
 
@@ -126,7 +130,7 @@ lenis.on('scroll', ScrollTrigger.update);
       trigger: section,
       start: 'top top',
       end: isMobile ? '+=180%' : '+=150%',
-      scrub: isMobile ? 1.2 : 1.5,
+      scrub: isMobile ? 0.4 : 0.6,
       pin: true,
       anticipatePin: 1,
     }

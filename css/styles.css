@@ -715,6 +715,8 @@ section { padding: 6rem 0; }
   object-fit: cover;
   object-position: center;
   z-index: 0;
+  will-change: transform;
+  transform: translateZ(0);
 }
 /* Canvas overlay — injected by JS, draws the coloured mask + text cutout */
 .ph-cin-canvas {
@@ -724,6 +726,8 @@ section { padding: 6rem 0; }
   height: 100%;
   z-index: 1;
   pointer-events: none;
+  will-change: transform;
+  transform: translateZ(0);
 }
 .ph-cin-label {
   /* Hidden — rendered by canvas so it composites correctly with the cutout */
