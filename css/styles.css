@@ -395,7 +395,19 @@ section { padding: 6rem 0; }
 /* ---- Curevo-style team section ---- */
 .tmd-section { background: var(--white); padding: 6rem 0; contain: layout style; }
 
-/* Top block: intro (left) + 2 tall cards (right) */
+/* Layout: intro (left) + 2×2 cards (right) */
+.tmd-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+.tmd-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+/* Keep .tmd-top alias for any other pages using it */
 .tmd-top {
   display: grid;
   grid-template-columns: 2fr 1.5fr 1.5fr;
@@ -501,9 +513,8 @@ section { padding: 6rem 0; }
 }
 .tmd-card:hover .tmd-card-photo img { transform: scale(1.04); }
 
-/* Taller photo for all cards */
-.tmd-top .tmd-card-photo img,
-.tmd-bottom .tmd-card-photo img { height: 380px; object-position: center top; }
+/* Uniform photo height for all cards */
+.tmd-cards .tmd-card-photo img { height: 340px; object-position: center top; }
 
 /* Social icons fade in on hover */
 .tmd-card-socials {
@@ -571,13 +582,16 @@ section { padding: 6rem 0; }
 }
 
 @media (max-width: 1024px) {
+  .tmd-layout { grid-template-columns: 1fr; }
+  .tmd-intro { padding: 1rem 0; }
   .tmd-top { grid-template-columns: 1fr 1fr; }
-  .tmd-intro { grid-column: span 2; padding: 1rem 0; }
+  .tmd-intro-top { grid-column: span 2; padding: 1rem 0; }
   .tmd-bottom { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
+  .tmd-cards { grid-template-columns: 1fr; }
   .tmd-top { grid-template-columns: 1fr; }
-  .tmd-intro { grid-column: span 1; }
+  .tmd-intro-top { grid-column: span 1; }
   .tmd-bottom { grid-template-columns: 1fr; }
 }
 
