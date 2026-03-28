@@ -4,39 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/faviconm.png" />
-  <title>Violeta | Clinical Esthetician | VeraVita Clinic Calgary</title>
-  <meta name="description" content="Advanced skin rejuvenation in Calgary with Violeta. Specialized in custom facials, derma-needling, exosome therapy, and professional chemical peels at VeraVita." />
+  <title>Violeta | VeraVita Clinic Calgary</title>
+  <meta name="description" content="Meet Violeta — Advanced Clinical Esthetician at VeraVita Clinic Calgary. 25+ years of nursing experience in dermatology and women's health, specialising in advanced facials and skin treatments." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="violeta-esthetician">
+<body class="violeta">
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <div class="navbar-inner">
       <a href="index.html" class="navbar-logo">
-        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img"
-             onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
-        <div class="logo-icon" style="display:none;">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/>
-            <circle cx="12" cy="7" r="1.5" fill="#1e3528"/>
-          </svg>
-        </div>
+        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
       <ul class="navbar-nav">
-        <li><a href="index.html"         class="nav-link">Home</a></li>
-        <li><a href="services.html"      class="nav-link">Services</a></li>
-        <li><a href="about.html"         class="nav-link">About</a></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="cat-naturopathic.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+            </a>
+            <a href="cat-iv-therapy.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
+              <div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+            </a>
+            <a href="cat-acupuncture.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+              <div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div>
+            </a>
+            <a href="cat-medical-aesthetics.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+              <div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div>
+            </a>
+            <a href="cat-clinical-esthetics.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div>
+              <div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Lead: Violeta</span></div>
+            </a>
+            <a href="cat-massage-therapy.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div>
+            </a>
+            <a href="cat-osteopathy.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
+              <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div>
+            </a></div>
+        </li>
+        <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="practitioners.html" class="nav-link active">Practitioners</a></li>
-        <li><a href="contact.html"       class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
-      <a href="book-appointment.html" class="btn-ihb btn-ihb--primary">
+      <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
         <span class="btn-ihb-blob"></span>
         <span class="btn-ihb-default">Book an appointment</span>
         <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
@@ -60,31 +85,28 @@
   <div class="container-medium">
     <div class="pd-hero-inner">
       <div class="pd-hero-content reveal">
-        <span class="pd-label">Clinical Esthetics &amp; Facials</span>
+        <span class="pd-label">Expert Practitioner</span>
         <h1 class="pd-name">Violeta</h1>
         <p class="pd-specialty">Advanced Clinical Esthetician</p>
-        <p class="pd-short-bio">Violeta is VeraVita's dedicated Advanced Clinical Esthetician, bringing years of specialised skin-care expertise to every treatment. She blends European skincare traditions with cutting-edge technology — including derma needling, exosome therapy, and professional-grade chemical peels — to deliver visible, lasting results for every skin type and concern.</p>
+        <p class="pd-short-bio">Violeta brings her positive energy and over 25 years of comprehensive nursing experience in dermatology and women's health to every treatment at VeraVita. A graduate of the Esthetic Institute Training Center in Calgary with an Advanced Clinical Esthetician diploma, she combines clinical precision with a genuine passion for transformative skin care.</p>
 
         <div class="pd-meta-grid">
           <div class="pd-meta-block">
             <h4>Areas of Expertise</h4>
             <ul class="pd-expertise-list">
-              <li>Custom &amp; European Facial Treatments</li>
-              <li>Derma Needling &amp; Micro-Needling</li>
-              <li>Exosome Therapy (Skin &amp; Scalp)</li>
-              <li>Chemical Peels (Sea-Nergy Green Peel)</li>
-              <li>Dermaplaning &amp; Microdermabrasion</li>
-              <li>Acne Treatment &amp; Skin Corrections</li>
+              <li>Advanced Facials &amp; Custom Skin Treatments</li>
+              <li>Derma Needling (Microneedling)</li>
+              <li>Exosome Therapy</li>
+              <li>Sea-Nergy Green Peel</li>
+              <li>Dermatology &amp; Women's Health Skincare</li>
             </ul>
           </div>
           <div class="pd-meta-block">
-            <h4>Credentials &amp; Training</h4>
+            <h4>Credentials &amp; Education</h4>
             <ul class="pd-cred-list">
-              <li>Advanced Clinical Esthetics Certification</li>
-              <li>Derma Needling &amp; Micro-Needling Certification</li>
-              <li>Exosome Therapy &amp; Regenerative Skin Training</li>
-              <li>Sea-Nergy Green Peel Certified Practitioner</li>
-              <li>European Skincare &amp; Facial Massage Training</li>
+              <li>Advanced Clinical Esthetician Diploma — Esthetic Institute Calgary</li>
+              <li>25+ Years as a Dermatology &amp; Women's Health Nurse</li>
+              <li>Ongoing advanced treatment certifications</li>
             </ul>
           </div>
         </div>
@@ -97,7 +119,7 @@
       </div>
 
       <div class="pd-photo-wrap reveal">
-        <img src="images/practioner/Doctor 4 900x1200px- practitioner page.png" alt="Violeta — Advanced Clinical Esthetician" class="pd-photo" />
+        <img src="images/practioner/Doctor 4 900x1200px- practitioner page.png" alt="Violeta" class="pd-photo" />
       </div>
     </div>
   </div>
@@ -108,28 +130,28 @@
   <div class="container-medium">
     <div class="pd-detail-inner reveal">
       <h2>About Violeta</h2>
-      <p>Violeta has dedicated her career to the art and science of skin health. With advanced training in clinical esthetics, regenerative skin technology, and European skincare traditions, she brings a uniquely sophisticated approach to every treatment — one that combines deep technical skill with a genuine passion for helping clients feel confident in their skin.</p>
-      <p>At VeraVita Clinic, Violeta offers a full spectrum of skin services, from deeply relaxing custom facials to advanced derma needling and next-generation exosome therapy. She takes the time to assess each client's skin type, concerns, and goals before creating a personalised treatment plan — whether that means a single restorative facial or a multi-treatment skin transformation journey.</p>
-      <p>Violeta is one of the few estheticians in Calgary certified in Sea-Nergy Green Peel — a powerful, natural herbal peel that stimulates skin renewal without synthetic chemicals. She is also trained in exosome therapy, including Exo-Hair scalp rejuvenation, making her a sought-after practitioner for both facial and hair-restoration treatments.</p>
+      <p>Violeta brings her positive energy and over 25 years of comprehensive nursing experience in dermatology and women's health to the VeraVita team. She has had a passion for esthetics and the beauty industry since an early age, and as a nurse she particularly enjoyed assisting doctors during various cosmetic procedures — seeing her clients' magical transformations firsthand.</p>
+      <p>After landing in Calgary in 2019, she successfully graduated from the Esthetic Institute Training Center in Calgary with an Advanced Clinical Esthetician diploma. She continuously applies her professional knowledge and practical nursing skills to carefully assess each client's skin needs and provide effective, innovative treatments that make every visit enjoyable and every result flawlessly beautiful.</p>
+      <p>Violeta's background in clinical nursing gives her a uniquely informed approach to skin — she understands the physiology behind skin conditions and uses this knowledge to select and tailor the most effective treatments for each individual client.</p>
 
       <h3 class="pd-help-heading">What Violeta Can Help With:</h3>
       <ul class="pd-help-list">
-        <li>Dull, tired, or dehydrated skin — custom relaxation and European facials</li>
-        <li>Fine lines and loss of elasticity — anti-aging LED facials and derma needling</li>
-        <li>Acne, congestion, and breakouts — extraction facials and high-frequency treatment</li>
-        <li>Hyperpigmentation and uneven skin tone — dermaplaning and chemical peels</li>
-        <li>Advanced skin rejuvenation — exosome derma needling ($350)</li>
-        <li>Hair and scalp health — Exo-Hair exosome therapy</li>
-        <li>Skin tags and age spot removal</li>
+        <li>Dull, uneven, or congested skin in need of deep renewal</li>
+        <li>Fine lines and early signs of ageing</li>
+        <li>Acne, post-acne scarring, and hyperpigmentation</li>
+        <li>Dehydration, sensitivity, and compromised skin barrier</li>
+        <li>Anti-ageing and collagen-stimulating treatments</li>
+        <li>Brow and lash services for polished, defined features</li>
       </ul>
 
       <h3 class="pd-approach-heading">Her Approach:</h3>
       <ul class="pd-approach-list">
-        <li>Thorough skin assessment before every treatment to personalise your protocol</li>
-        <li>A full treatment menu from $80 relaxation facials to $350 exosome therapy</li>
-        <li>European and clinical techniques combined for maximum visible results</li>
-        <li>Safe, professional-grade products and equipment at every visit</li>
-        <li>Ongoing skin care guidance and home care recommendations between appointments</li>
+        <li>Thorough skin assessment before selecting any treatment protocol</li>
+        <li>Advanced clinical techniques rooted in her nursing and dermatology background</li>
+        <li>Derma needling to stimulate collagen production and skin renewal</li>
+        <li>Exosome therapy for cutting-edge cellular regeneration</li>
+        <li>Sea-Nergy Green Peel for deep resurfacing and skin revitalisation</li>
+        <li>A warm, personalised experience that makes every client feel truly cared for</li>
       </ul>
     </div>
   </div>
@@ -140,32 +162,32 @@
   <div class="container-medium">
     <div class="pd-booking-inner">
       <div class="reveal">
-        <span class="section-label">Book a Treatment</span>
-        <h2 class="pd-booking-heading">Begin Your<br /><em>Skin Journey</em></h2>
-        <p class="pd-booking-sub">Every skin story is different. Book with Violeta to begin your personalised skin care journey — from your first facial to advanced rejuvenation.</p>
+        <span class="section-label">Book a Visit</span>
+        <h2 class="pd-booking-heading">Schedule Your<br /><em>Treatment</em></h2>
+        <p class="pd-booking-sub">Ready to experience a transformation? Fill in your details and we'll confirm your appointment with Violeta within one business day.</p>
       </div>
-      <form class="pd-form reveal" action="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener">
+      <form class="pd-form reveal" action="https://veravitanaturopathicclinic.janeapp.com/" target="_blank">
         <div class="pd-form-row">
           <div class="pd-field">
-            <label for="vi-fname">First Name</label>
-            <input type="text" id="vi-fname" name="first_name" placeholder="Jane" required />
+            <label for="vio-fname">First Name</label>
+            <input type="text" id="vio-fname" name="first_name" placeholder="Jane" required />
           </div>
           <div class="pd-field">
-            <label for="vi-lname">Last Name</label>
-            <input type="text" id="vi-lname" name="last_name" placeholder="Doe" required />
+            <label for="vio-lname">Last Name</label>
+            <input type="text" id="vio-lname" name="last_name" placeholder="Doe" required />
           </div>
         </div>
         <div class="pd-field">
-          <label for="vi-email">Email Address</label>
-          <input type="email" id="vi-email" name="email" placeholder="jane@example.com" required />
+          <label for="vio-email">Email Address</label>
+          <input type="email" id="vio-email" name="email" placeholder="jane@example.com" required />
         </div>
         <div class="pd-field">
-          <label for="vi-phone">Phone Number</label>
-          <input type="tel" id="vi-phone" name="phone" placeholder="+1 (403) 000-0000" />
+          <label for="vio-phone">Phone Number</label>
+          <input type="tel" id="vio-phone" name="phone" placeholder="+1 (403) 000-0000" />
         </div>
         <div class="pd-field">
-          <label for="vi-date">Preferred Date</label>
-          <input type="date" id="vi-date" name="date" />
+          <label for="vio-date">Preferred Date</label>
+          <input type="date" id="vio-date" name="date" />
         </div>
         <div class="pd-form-submit">
           <button type="submit" class="btn-ihb btn-ihb--primary">
@@ -189,32 +211,29 @@
     <div class="pd-services-grid">
       <div class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/massage therapy service/massage therapy 4-5.png" alt="Custom Facials" class="pd-svc-img" />
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=75" alt="Advanced Facials" class="pd-svc-img" />
         </div>
         <div class="pd-svc-body">
-          <h3 class="pd-svc-title">Custom Facials</h3>
-          <p class="pd-svc-desc">From $80 relaxation to $150 anti-aging deluxe — every facial is tailored to your skin type and concerns for exceptional results each visit.</p>
-          <a href="service-clinical-esthetics.html" class="svc-cell-link">View Pricing <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="pd-svc-title">Advanced Facials</h3>
+          <p class="pd-svc-desc">Custom clinical facial treatments tailored to your unique skin type and concerns — from deep cleansing to anti-ageing and brightening protocols.</p>
         </div>
       </div>
       <div class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/massage therapy service/massage therapy 1.png" alt="Derma Needling and Exosomes" class="pd-svc-img" />
+          <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=75" alt="Derma Needling" class="pd-svc-img" />
         </div>
         <div class="pd-svc-body">
-          <h3 class="pd-svc-title">Derma Needling &amp; Exosomes</h3>
-          <p class="pd-svc-desc">Collagen-stimulating micro-needling ($250) and next-generation exosome therapy ($350) for deep cellular renewal and visible skin transformation.</p>
-          <a href="service-clinical-esthetics.html" class="svc-cell-link">View Pricing <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="pd-svc-title">Derma Needling</h3>
+          <p class="pd-svc-desc">Microneedling to stimulate collagen production, improve skin texture, reduce scarring, and restore a youthful, radiant complexion.</p>
         </div>
       </div>
       <div class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/massage therapy service/massage therapy 2.png" alt="Green Peel and Peels" class="pd-svc-img" />
+          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=75" alt="Exosome Therapy" class="pd-svc-img" />
         </div>
         <div class="pd-svc-body">
-          <h3 class="pd-svc-title">Peels &amp; Skin Corrections</h3>
-          <p class="pd-svc-desc">Sea-Nergy Green Peel ($150), dermaplaning, microdermabrasion, and targeted skin tag and age spot removal for a clear, refined complexion.</p>
-          <a href="service-clinical-esthetics.html" class="svc-cell-link">View Pricing <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="pd-svc-title">Exosome Therapy</h3>
+          <p class="pd-svc-desc">Cutting-edge cellular regeneration therapy that harnesses the power of exosomes to deeply repair, regenerate, and rejuvenate skin at a biological level.</p>
         </div>
       </div>
     </div>
@@ -224,19 +243,13 @@
 <!-- FOOTER -->
 <footer class="sf-footer">
   <div class="sf-fixed">
-    <div class="sf-deco" aria-hidden="true">
-      <div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div>
-    </div>
+    <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
     <div class="sf-body">
       <div class="sf-top">
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
           <a href="index.html" class="sf-logo">
-            <img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="sf-logo-fallback" style="display:none;">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg>
-              <span>VeraVita</span>
-            </div>
+            <img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
           </a>
           <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social">
@@ -248,24 +261,22 @@
         <div class="sf-col sf-anim" style="--sf-delay:0.1s">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="practitioners.html">Our Practitioners</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="faqs.html">FAQs</a></li>
-            <li><a href="careers.html">Careers</a></li>
+            <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+            <li><a href="practitioners.html">Our Practitioners</a></li><li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li>
           </ul>
         </div>
         <div class="sf-col sf-anim" style="--sf-delay:0.2s">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
-            <li><a href="service-naturopathic-care.html">Naturopathic Medicine</a></li>
-            <li><a href="service-iv-therapy.html">IV Therapy &amp; Injections</a></li>
-            <li><a href="service-acupuncture-cupping.html">Acupuncture &amp; TCM</a></li>
-            <li><a href="service-botox.html">Medical Aesthetics</a></li>
-            <li><a href="service-clinical-esthetics.html">Clinical Esthetics &amp; Facials</a></li>
+            <li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li>
+            <li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li>
+            <li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li>
+            <li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li>
+            <li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li>
+            <li><a href="cat-massage-therapy.html">Massage Therapy</a></li>
+            <li><a href="cat-osteopathy.html">Osteopathy</a></li>
           </ul>
         </div>
         <div class="sf-col sf-anim" style="--sf-delay:0.3s">
@@ -296,12 +307,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
-<!-- MOBILE BOTTOM BOOKING BAR -->
 <div class="mobile-book-bar">
   <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book with Violeta</span>
+    <span class="btn-ihb-default">Book an appointment</span>
   </a>
 </div>
-
 </body>
 </html>

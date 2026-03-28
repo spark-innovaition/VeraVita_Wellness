@@ -28,7 +28,39 @@
         </a>
               <ul class="navbar-nav">
         <li><a href="index.html"          class="nav-link">Home</a></li>
-        <li><a href="services.html"       class="nav-link active">Services</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link active">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="cat-naturopathic.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+            </a>
+            <a href="cat-iv-therapy.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
+              <div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+            </a>
+            <a href="cat-acupuncture.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+              <div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div>
+            </a>
+            <a href="cat-medical-aesthetics.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+              <div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div>
+            </a>
+            <a href="cat-clinical-esthetics.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div>
+              <div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Lead: Violeta</span></div>
+            </a>
+            <a href="cat-massage-therapy.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div>
+            </a>
+            <a href="cat-osteopathy.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
+              <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div>
+            </a>
+          </div>
+        </li>
         <li><a href="about.html"          class="nav-link">About</a></li>
         <li><a href="practitioners.html"  class="nav-link">Practitioners</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -78,94 +110,110 @@
     </div>
   </section>
 
-  <!-- SERVICES THEME CARDS -->
+  <!-- SERVICES CATEGORY CARDS -->
   <div id="services-grid">
     <section class="svc-section" style="padding-bottom:5rem">
       <div class="container">
         <div class="svc-section-header reveal">
           <h2>Our Care<br /><em>Disciplines</em></h2>
-          <p>Five specialist-led disciplines under one roof — each led by a dedicated practitioner, each built around a complete, personalised care experience.</p>
+          <p>Seven specialist-led disciplines under one roof — each led by a dedicated practitioner, each built around a complete, personalised care experience.</p>
         </div>
+
+        <div class="svc-grid svc-grid--hub stagger-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5)">
+
+          <!-- 1 Naturopathic Medicine -->
+          <div class="svc-cell svc-cell--hub stagger-item">
+            <div class="svc-cell-img">
+              <img src="images/nathuropathy - services page.png" alt="Naturopathic Medicine" loading="lazy" />
+            </div>
+            <div class="svc-cell-body">
+              <span class="svc-cell-prac"><i class="fa-solid fa-leaf"></i> Provided by Dr. Jill Nazar, ND</span>
+              <h3 class="svc-cell-name">Naturopathic <em>Medicine</em></h3>
+              <p class="svc-cell-desc">Whole-body care addressing the root causes of fatigue, fertility challenges, weight, and chronic conditions — through evidence-based natural medicine.</p>
+              <a href="cat-naturopathic.html" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- 2 Lab Testing & IV Therapy -->
+          <div class="svc-cell svc-cell--hub stagger-item">
+            <div class="svc-cell-img">
+              <img src="images/IV therapy - services page.png" alt="Lab Testing and IV Therapy" loading="lazy" />
+            </div>
+            <div class="svc-cell-body">
+              <span class="svc-cell-prac"><i class="fa-solid fa-droplet"></i> Provided by Dr. Jill Nazar, ND</span>
+              <h3 class="svc-cell-name">Lab Testing &amp; <em>IV Therapy</em></h3>
+              <p class="svc-cell-desc">Functional lab testing, food sensitivity panels, NAD⁺ infusions, and customised IV drips — delivered directly into your bloodstream for maximum absorption.</p>
+              <a href="cat-iv-therapy.html" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- 3 Acupuncture & TCM -->
+          <div class="svc-cell svc-cell--hub stagger-item">
+            <div class="svc-cell-img">
+              <img src="images/acupunture - services page.png" alt="Acupuncture and TCM" loading="lazy" />
+            </div>
+            <div class="svc-cell-body">
+              <span class="svc-cell-prac"><i class="fa-solid fa-hand-sparkles"></i> Provided by Dr. Viktoriia Taylor, DTCM</span>
+              <h3 class="svc-cell-name">Acupuncture <em>&amp; TCM</em></h3>
+              <p class="svc-cell-desc">Traditional and cosmetic acupuncture, Korean needling, Tui Na, cupping, and paediatric care — a complete Traditional Chinese Medicine practice.</p>
+              <a href="cat-acupuncture.html" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- 4 Medical Aesthetics -->
+          <div class="svc-cell svc-cell--hub stagger-item">
+            <div class="svc-cell-img">
+              <img src="images/botox - services page.png" alt="Medical Aesthetics" loading="lazy" />
+            </div>
+            <div class="svc-cell-body">
+              <span class="svc-cell-prac"><i class="fa-solid fa-wand-sparkles"></i> Provided by Dr. Susan Mankaeeva, MD</span>
+              <h3 class="svc-cell-name">Medical <em>Aesthetics</em></h3>
+              <p class="svc-cell-desc">Physician-led Botox and dermal filler treatments designed to refresh your natural appearance with precision — results that look effortlessly you.</p>
+              <a href="cat-medical-aesthetics.html" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- 5 Clinical Esthetics -->
+          <div class="svc-cell svc-cell--hub stagger-item">
+            <div class="svc-cell-img">
+              <img src="images/massage therapy - services page.jpg" alt="Clinical Esthetics and Facials" loading="lazy" />
+            </div>
+            <div class="svc-cell-body">
+              <span class="svc-cell-prac"><i class="fa-solid fa-spa"></i> Provided by Violeta</span>
+              <h3 class="svc-cell-name">Clinical Esthetics <em>&amp; Facials</em></h3>
+              <p class="svc-cell-desc">Advanced skin rejuvenation with custom facials, dermaplaning, derma needling, exosome therapy, and professional peels — tailored to your skin by an expert esthetician.</p>
+              <a href="cat-clinical-esthetics.html" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- 6 Massage Therapy -->
+          <div class="svc-cell svc-cell--hub stagger-item">
+            <div class="svc-cell-img">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&q=80" alt="Massage Therapy" loading="lazy" />
+            </div>
+            <div class="svc-cell-body">
+              <span class="svc-cell-prac"><i class="fa-solid fa-hand-holding-heart"></i> Provided by our RMT — Joining Soon</span>
+              <h3 class="svc-cell-name">Massage <em>Therapy</em></h3>
+              <p class="svc-cell-desc">Therapeutic, lymphatic, hot stone, prenatal, and paediatric massage — a full clinical massage program led by a Registered Massage Therapist joining the VeraVita team.</p>
+              <a href="cat-massage-therapy.html" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- 7 Osteopathy (full width) -->
+          <div class="svc-cell svc-cell--hub stagger-item">
+            <div class="svc-cell-img">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80" alt="Osteopathy" loading="lazy" />
+            </div>
+            <div class="svc-cell-body">
+              <span class="svc-cell-prac"><i class="fa-solid fa-person-rays"></i> Provided by our Osteopathic Practitioner — Joining Soon</span>
+              <h3 class="svc-cell-name">Osteopathic <em>Manual Therapy</em></h3>
+              <p class="svc-cell-desc">Holistic structural integration, alignment, mobility restoration, and paediatric osteopathy — expanding VeraVita's manual therapy department with a dedicated Osteopathic Manual Therapist.</p>
+              <a href="cat-osteopathy.html" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div><!-- /svc-grid -->
       </div>
-
-      <div class="svc-theme-grid stagger-grid">
-
-        <!-- 1 Naturopathic Medicine -->
-        <div class="svc-theme-card stagger-item">
-          <img src="images/nathuropathy - services page.png" class="svc-theme-card-bg-img" alt="Naturopathic Medicine" loading="lazy" />
-          <div class="svc-theme-card-overlay"></div>
-          <div class="svc-theme-card-body">
-            <span class="svc-theme-card-prac"><i class="fa-solid fa-leaf"></i> Dr. Jill Nazar, ND</span>
-            <h2 class="svc-theme-card-title">Naturopathic<br /><em>Medicine</em></h2>
-            <p class="svc-theme-card-desc">Comprehensive whole-body care addressing the root causes of fatigue, fertility challenges, weight, and chronic health conditions — through evidence-based natural medicine.</p>
-            <div class="svc-theme-card-actions">
-              <a href="service-naturopathic-care.html" class="svc-theme-card-link">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
-              <span class="svc-theme-card-price">From $215 · Initial Consult 60 min</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2 IV Therapy & Injections -->
-        <div class="svc-theme-card stagger-item">
-          <img src="images/IV therapy - services page.png" class="svc-theme-card-bg-img" alt="IV Therapy and Injections" loading="lazy" />
-          <div class="svc-theme-card-overlay"></div>
-          <div class="svc-theme-card-body">
-            <span class="svc-theme-card-prac"><i class="fa-solid fa-droplet"></i> Dr. Jill Nazar, ND</span>
-            <h2 class="svc-theme-card-title">IV Therapy &amp;<br /><em>Injections</em></h2>
-            <p class="svc-theme-card-desc">Customised intravenous infusions and vitamin injections — from Myers' Cocktail to NAD⁺ and high-dose Vitamin C — delivering nutrients directly into your bloodstream.</p>
-            <div class="svc-theme-card-actions">
-              <a href="service-iv-therapy.html" class="svc-theme-card-link">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
-              <span class="svc-theme-card-price">From $65 · Follow-up 15 min</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3 Acupuncture & TCM -->
-        <div class="svc-theme-card stagger-item">
-          <img src="images/acupunture - services page.png" class="svc-theme-card-bg-img" alt="Acupuncture and TCM" loading="lazy" />
-          <div class="svc-theme-card-overlay"></div>
-          <div class="svc-theme-card-body">
-            <span class="svc-theme-card-prac"><i class="fa-solid fa-hand-sparkles"></i> Dr. Viktoriia Taylor</span>
-            <h2 class="svc-theme-card-title">Acupuncture<br /><em>&amp; TCM</em></h2>
-            <p class="svc-theme-card-desc">Traditional Chinese Medicine, acupuncture, cosmetic needling, herbal therapy, and paediatric care — a complete TCM practice dedicated to your whole-body balance.</p>
-            <div class="svc-theme-card-actions">
-              <a href="service-acupuncture-cupping.html" class="svc-theme-card-link">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
-              <span class="svc-theme-card-price">From $75 · Children · $140 Initial</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4 Medical Aesthetics -->
-        <div class="svc-theme-card stagger-item">
-          <img src="images/botox - services page.png" class="svc-theme-card-bg-img" alt="Medical Aesthetics" loading="lazy" />
-          <div class="svc-theme-card-overlay"></div>
-          <div class="svc-theme-card-body">
-            <span class="svc-theme-card-prac"><i class="fa-solid fa-wand-sparkles"></i> Dr. Susan Mankaeeva, MD</span>
-            <h2 class="svc-theme-card-title">Medical<br /><em>Aesthetics</em></h2>
-            <p class="svc-theme-card-desc">Physician-led Botox and dermal filler treatments designed to refresh your natural appearance with precision — results that look effortlessly you.</p>
-            <div class="svc-theme-card-actions">
-              <a href="service-botox.html" class="svc-theme-card-link">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
-              <span class="svc-theme-card-price">Pricing upon consultation</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5 Clinical Esthetics (wide) -->
-        <div class="svc-theme-card svc-theme-card--wide stagger-item">
-          <img src="images/massage therapy - services page.jpg" class="svc-theme-card-bg-img" alt="Clinical Esthetics and Facials" loading="lazy" />
-          <div class="svc-theme-card-overlay"></div>
-          <div class="svc-theme-card-body">
-            <span class="svc-theme-card-prac"><i class="fa-solid fa-spa"></i> Violeta</span>
-            <h2 class="svc-theme-card-title">Clinical Esthetics<br /><em>&amp; Facials</em></h2>
-            <p class="svc-theme-card-desc">Advanced skin rejuvenation with custom facials, dermaplaning, derma needling, exosome therapy, chemical peels, and more — professional results tailored to your skin.</p>
-            <div class="svc-theme-card-actions">
-              <a href="service-clinical-esthetics.html" class="svc-theme-card-link">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
-              <span class="svc-theme-card-price">From $80 · Relaxation Facial 60 min</span>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /svc-theme-grid -->
     </section>
   </div><!-- /services-grid -->
 
@@ -209,16 +257,15 @@
           </div>
           <div class="sf-col sf-anim" style="--sf-delay:0.2s">
             <h3 class="sf-col-title">Services</h3>
-            <ul class="sf-links">
-              <li><a href="service-naturopathic-care.html">Naturopathic Care</a></li>
-              <li><a href="service-iv-therapy.html">IV Therapy</a></li>
-              <li><a href="service-botox.html">Aesthetic Medicine</a></li>
-              <li><a href="service-fertility-program.html">Fertility Program</a></li>
-              <li><a href="service-acupuncture-cupping.html">Acupuncture &amp; Cupping</a></li>
-              <li><a href="service-weight-loss.html">Weight Loss Program</a></li>
-              <li><a href="service-osteopathy.html">Osteopathy</a></li>
-              <li><a href="service-massage-therapy.html">Massage Therapy</a></li>
-            </ul>
+          <ul class="sf-links">
+            <li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li>
+            <li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li>
+            <li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li>
+            <li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li>
+            <li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li>
+            <li><a href="cat-massage-therapy.html">Massage Therapy</a></li>
+            <li><a href="cat-osteopathy.html">Osteopathy</a></li>
+          </ul>
           </div>
           <div class="sf-col sf-anim" style="--sf-delay:0.3s">
             <h3 class="sf-col-title">Contact</h3>

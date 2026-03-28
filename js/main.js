@@ -403,13 +403,14 @@ if (navToggle && navMenu) {
   });
 }
 
-/* Mobile: tap nav-dropdown parent link to toggle submenu */
+/* Nav-dropdown parent link: prevent navigation, toggle on mobile */
 document.querySelectorAll('.nav-dropdown > a').forEach(link => {
   link.addEventListener('click', e => {
-    if (window.innerWidth > 768) return;
     e.preventDefault();
-    const dropdown = link.closest('.nav-dropdown');
-    dropdown.classList.toggle('open');
+    if (window.innerWidth <= 768) {
+      const dropdown = link.closest('.nav-dropdown');
+      dropdown.classList.toggle('open');
+    }
   });
 });
 
