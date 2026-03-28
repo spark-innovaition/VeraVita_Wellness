@@ -1025,3 +1025,19 @@ document.querySelectorAll('.team-card').forEach(card => {
   grid.addEventListener('scroll', updateArrows, { passive: true });
   updateArrows();
 })();
+
+// Shuffle hwnu marquee images on page load
+(function() {
+  var track = document.getElementById('hwnu-track');
+  if (!track) return;
+  var imgs = Array.from(track.querySelectorAll('img[aria-hidden="true"]'));
+  var originals = Array.from(track.querySelectorAll('img:not([aria-hidden])'));
+  // Shuffle originals
+  for (var i = originals.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = originals[i].src; originals[i].src = originals[j].src;
+    originals[j].src = tmp;
+  }
+  // Mirror shuffle to duplicates
+  originals.forEach(function(img, idx) { imgs[idx].src = img.src; });
+})();
