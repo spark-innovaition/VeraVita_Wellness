@@ -4417,3 +4417,190 @@ body { overflow-x: hidden; }
     background-size: 150% auto;
   }
 }
+
+/* ========================================
+   SERVICES — THEME CARDS (hub page)
+   ======================================== */
+.svc-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--gray-5);
+  border-left: 1px solid var(--gray-5);
+}
+.svc-theme-card {
+  position: relative;
+  border-right: 1px solid var(--gray-5);
+  border-bottom: 1px solid var(--gray-5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+.svc-theme-card--wide { grid-column: 1 / -1; min-height: 380px; }
+.svc-theme-card-bg-img {
+  position: absolute;
+  inset: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.svc-theme-card:hover .svc-theme-card-bg-img { transform: scale(1.05); }
+.svc-theme-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,25,15,0.88) 0%, rgba(10,25,15,0.45) 55%, rgba(10,25,15,0.18) 100%);
+}
+.svc-theme-card-body {
+  position: relative; z-index: 2;
+  margin-top: auto; padding: 2.5rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.svc-theme-card-prac {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--font-b); font-size: 0.725rem; font-weight: 500;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  color: #a8c99e; background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px); border: 1px solid rgba(168,201,158,0.35);
+  border-radius: 100px; padding: 0.3rem 0.875rem; width: fit-content;
+}
+.svc-theme-card-title {
+  font-family: var(--font-h); font-weight: 400; color: var(--white);
+  font-size: clamp(1.5rem, 2.2vw, 2.125rem); line-height: 1.15; margin: 0;
+}
+.svc-theme-card-title em { font-style: italic; }
+.svc-theme-card-desc {
+  font-family: var(--font-b); font-size: 0.9375rem;
+  color: rgba(255,255,255,0.75); line-height: 1.65; max-width: 500px; margin: 0;
+}
+.svc-theme-card-actions {
+  display: flex; align-items: center; gap: 1.5rem;
+  flex-wrap: wrap; margin-top: 0.5rem;
+}
+.svc-theme-card-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--font-b); font-size: 0.875rem; font-weight: 600;
+  color: var(--white); text-decoration: none; transition: gap 0.2s;
+}
+.svc-theme-card-link:hover { gap: 0.75rem; }
+.svc-theme-card-price {
+  font-family: var(--font-b); font-size: 0.8125rem;
+  color: rgba(255,255,255,0.5);
+}
+@media (max-width: 760px) {
+  .svc-theme-grid { grid-template-columns: 1fr; }
+  .svc-theme-card { min-height: 380px; }
+  .svc-theme-card--wide { min-height: 320px; }
+  .svc-theme-card-body { padding: 1.75rem; }
+}
+
+/* ========================================
+   PRICING PAGE
+   ======================================== */
+.pricing-hero {
+  background: linear-gradient(rgba(10,25,15,0.82), rgba(10,25,15,0.82)),
+    url('../images/background%204K.png') center / cover no-repeat;
+  padding: 8rem 0 6rem; text-align: center;
+}
+.pricing-hero h1 { color: var(--white); font-size: clamp(2.5rem,5vw,4rem); margin-bottom: 1rem; }
+.pricing-hero p { color: rgba(255,255,255,0.8); font-size: 1.125rem; max-width: 580px; margin: 0 auto; }
+
+.pricing-subnav {
+  position: sticky; top: 72px; z-index: 50;
+  background: var(--white); border-bottom: 1px solid var(--gray-5);
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.pricing-subnav::-webkit-scrollbar { display: none; }
+.pricing-subnav-inner {
+  display: flex; gap: 0; padding: 0 var(--gap);
+  max-width: var(--max-w); margin: 0 auto; min-width: max-content;
+}
+.pricing-subnav-link {
+  display: block; padding: 1rem 1.375rem;
+  font-family: var(--font-b); font-size: 0.875rem; font-weight: 500;
+  color: var(--body-text); text-decoration: none;
+  border-bottom: 2px solid transparent; white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+.pricing-subnav-link:hover { color: var(--dark); border-bottom-color: var(--gray-4); }
+.pricing-subnav-link.active { color: var(--dark); border-bottom-color: var(--primary); }
+
+.pricing-section { padding: 5rem 0; border-bottom: 1px solid var(--gray-5); }
+.pricing-section:last-of-type { border-bottom: none; }
+.pricing-section-hd {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; gap: 2rem;
+  margin-bottom: 2.5rem; flex-wrap: wrap;
+}
+.pricing-section-hd h2 {
+  font-size: clamp(1.625rem, 2.5vw, 2.25rem); margin: 0 0 0.375rem; line-height: 1.15;
+}
+.pricing-section-hd h2 em { color: var(--primary); font-style: italic; }
+.pricing-prac-badge {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: var(--font-b); font-size: 0.8rem; font-weight: 500;
+  color: var(--primary); background: var(--gray-6);
+  border: 1px solid var(--gray-5); border-radius: 100px;
+  padding: 0.4rem 1.1rem; flex-shrink: 0;
+}
+
+.price-table-wrap {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--gray-5); border-radius: var(--r-card);
+}
+.price-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-b); font-size: 0.9375rem;
+}
+.price-table thead { background: var(--dark); }
+.price-table thead th {
+  padding: 1rem 1.5rem; text-align: left;
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+.price-table thead th:last-child { text-align: right; }
+.price-table tbody tr {
+  border-bottom: 1px solid var(--gray-5); transition: background 0.15s;
+}
+.price-table tbody tr:last-child { border-bottom: none; }
+.price-table tbody tr:hover { background: var(--gray-6); }
+.price-table td {
+  padding: 1rem 1.5rem; color: var(--body-text); vertical-align: middle;
+}
+.price-table td:first-child { color: var(--dark); font-weight: 500; }
+.price-table .td-dur { color: var(--body-text); font-size: 0.875rem; }
+.price-table .td-price { font-weight: 700; color: var(--dark); white-space: nowrap; }
+.price-table .td-consult { font-style: italic; color: var(--body-text); font-size: 0.875rem; }
+.price-table .td-book { text-align: right; }
+.price-table .td-book a {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.4rem 1.125rem; font-size: 0.8rem; font-weight: 600;
+  color: var(--dark); border: 1.5px solid var(--gray-5);
+  border-radius: 100px; text-decoration: none; white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.price-table .td-book a:hover {
+  background: var(--dark); border-color: var(--dark); color: var(--white);
+}
+
+.pricing-disclaimer {
+  background: var(--gray-6); border: 1px solid var(--gray-5);
+  border-radius: var(--r-card); padding: 1.5rem 2rem;
+  display: flex; align-items: flex-start; gap: 1rem; margin-top: 4rem;
+}
+.pricing-disclaimer-icon { font-size: 1.25rem; color: var(--primary); flex-shrink: 0; margin-top: 0.1rem; }
+.pricing-disclaimer p { font-size: 0.9375rem; color: var(--body-text); line-height: 1.6; margin: 0; }
+.pricing-disclaimer a { color: var(--primary); font-weight: 500; }
+
+/* clinical esthetics service page */
+.svc-clinical-esthetics .sd-body {
+  background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+    url('../images/Underlay%20pic%2024.jpg') center / cover fixed;
+}
+
+@media (max-width: 768px) {
+  .pricing-subnav { top: 62px; }
+  .pricing-section { padding: 3.5rem 0; }
+  .pricing-section-hd { flex-direction: column; align-items: flex-start; gap: 0.875rem; }
+  .price-table thead th, .price-table td { padding: 0.875rem 1rem; font-size: 0.875rem; }
+  .pricing-disclaimer { flex-direction: column; }
+}
