@@ -3137,7 +3137,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
   margin-top: 2rem;
 }
 .about-profile-thumb {
-  width: 130px;
+  width: 160px;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: top center;
