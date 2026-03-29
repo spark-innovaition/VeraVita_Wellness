@@ -4276,6 +4276,128 @@ body { overflow-x: hidden; }
 .sd-rel-link:hover { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.5); }
 .sd-rel-link i { font-size: 0.7rem; }
 
+/* ── New overlay-hero template (TMJ, Hot Stone, Prenatal, Paediatric etc.) ── */
+
+/* Page wrapper */
+.sd-wrap { display: flex; flex-direction: column; }
+
+/* Back bar */
+.sd-back-bar { padding: 1rem 0; background: var(--white); border-bottom: 1px solid var(--gray-5); }
+.sd-back-bar .sd-back {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.875rem; color: var(--body-text); font-weight: 500;
+  transition: color var(--dur);
+}
+.sd-back-bar .sd-back:hover { color: var(--primary); }
+.sd-back-bar .sd-back i { font-size: 0.7rem; }
+
+/* Full-width hero with image + overlay */
+.sd-hero-img-wrap {
+  position: relative; width: 100%; height: 420px; overflow: hidden;
+}
+.sd-hero-img-wrap .sd-hero-img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
+}
+.sd-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(10,25,15,0.35) 0%, rgba(10,25,15,0.65) 100%);
+}
+.sd-hero-content {
+  padding: 2.5rem 0 3rem;
+}
+.sd-hero-label {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--primary); margin-bottom: 0.875rem;
+}
+.sd-hero-title { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.1; margin-bottom: 1rem; }
+.sd-hero-title em { color: var(--primary); font-style: italic; }
+.sd-hero-intro { font-size: 1.0625rem; color: var(--body-text); line-height: 1.7; max-width: 640px; margin-bottom: 2rem; }
+
+/* Body sections */
+.sd-section { margin-bottom: 2.5rem; }
+.sd-section-title {
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-family: var(--font-h); color: var(--dark);
+  margin-bottom: 1rem; padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gray-5);
+}
+.sd-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.sd-list li {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  font-size: 1rem; color: var(--body-text); line-height: 1.6;
+}
+.sd-list li i { color: var(--primary); flex-shrink: 0; margin-top: 0.25rem; }
+.sd-text { font-size: 1rem; color: var(--body-text); line-height: 1.75; }
+
+/* Gallery grid */
+.sd-gallery-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-top: 1rem;
+}
+.sd-gallery-img {
+  width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.75rem; display: block;
+}
+
+/* Sidebar card inner structure */
+.sd-card-inner { display: flex; flex-direction: column; gap: 0; }
+.sd-card-list { list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 1.5rem; }
+.sd-card-list li {
+  display: flex; flex-direction: column; gap: 0.25rem;
+  padding: 0.875rem 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.sd-card-list li:first-child { padding-top: 0.5rem; }
+.sd-card-label {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.07em;
+  color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 0.4rem;
+}
+.sd-card-label i { font-size: 0.7rem; }
+.sd-card-value { font-size: 0.9375rem; color: var(--white); font-weight: 500; line-height: 1.4; }
+.sd-card-enquire {
+  display: block; text-align: center; margin-top: 0.875rem;
+  font-size: 0.8125rem; color: rgba(255,255,255,0.45);
+  transition: color var(--dur);
+}
+.sd-card-enquire:hover { color: rgba(255,255,255,0.8); }
+
+/* btn-ihb inside sd-card */
+.sd-card .btn-ihb { width: 100%; justify-content: center; }
+
+/* Related section — new link-card style */
+.sd-related-title {
+  font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem;
+}
+.sd-related-title em { color: var(--primary); font-style: italic; }
+.sd-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.sd-related-card {
+  display: block; border-radius: 1.25rem; overflow: hidden;
+  background: var(--dark); position: relative; aspect-ratio: 4/3;
+  transition: transform 0.4s var(--ease);
+}
+.sd-related-card:hover { transform: translateY(-4px); }
+.sd-related-img-wrap { position: absolute; inset: 0; }
+.sd-related-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s var(--ease); }
+.sd-related-card:hover .sd-related-img { transform: scale(1.05); }
+.sd-related-card::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,25,15,0.95) 0%, rgba(10,25,15,0.5) 55%, rgba(10,25,15,0.1) 100%);
+}
+.sd-related-body {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  z-index: 1; padding: 1.5rem 1.25rem;
+  display: flex; flex-direction: column; gap: 0.35rem;
+}
+.sd-related-cat {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--primary); font-weight: 600;
+}
+.sd-related-name { font-size: 1.125rem; color: var(--white); font-family: var(--font-h); line-height: 1.2; }
+.sd-related-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8125rem; color: rgba(255,255,255,0.65);
+  margin-top: 0.25rem; transition: color var(--dur);
+}
+.sd-related-card:hover .sd-related-link { color: var(--white); }
+
 /* Responsive */
 @media (max-width: 1024px) {
   .sd-hero-inner { grid-template-columns: 1fr 380px; }
