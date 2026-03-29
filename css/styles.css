@@ -655,10 +655,29 @@ section { padding: 6rem 0; }
 
 @media (max-width: 1024px) {
   .tmd-cards { grid-template-columns: repeat(2, 1fr); }
+  .tmd-top { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  /* Stack intro above cards, cards side by side */
+  .tmd-top {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .tmd-intro {
+    grid-column: 1 / -1;
+    padding: 0 0 1rem 0;
+    gap: 1.25rem;
+  }
+  .tmd-intro h2 { font-size: clamp(1.75rem, 5vw, 2.25rem); }
+  /* Bottom row: 2x2 grid */
+  .tmd-bottom { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 }
 @media (max-width: 600px) {
   .tmd-cards { grid-template-columns: repeat(2, 1fr); gap: 0.625rem; }
   .tmd-card-overlay { padding: 1rem 0.875rem 0.875rem; }
+  .tmd-top { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .tmd-bottom { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .tmd-section { padding: 4rem 0; }
 }
 
 /* Legacy team styles (used on other pages) */
