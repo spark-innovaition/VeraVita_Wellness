@@ -3228,27 +3228,27 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .about-home-profiles {
   overflow: hidden;
   margin-top: 2rem;
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 .about-profiles-track {
   display: flex;
-  gap: 0.875rem;
   width: max-content;
-  animation: profiles-scroll 10s linear infinite;
+  animation: profiles-scroll 14s linear infinite;
 }
 @keyframes profiles-scroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(calc(-50% - 0.4375rem)); }
+  to   { transform: translateX(-50%); }
 }
 .about-profile-thumb {
-  width: 110px;
+  width: 150px;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: top center;
   border-radius: 14px;
   border: 2px solid rgba(255,255,255,0.15);
   flex-shrink: 0;
+  margin-right: 1rem;
 }
 /* Video panel + green fade overlay */
 .about-home-video-wrap {
