@@ -4796,6 +4796,25 @@ body { overflow-x: hidden; }
    CAT PAGE — MOBILE
    ======================================== */
 
+/* Cat-hero video background */
+.cat-hero {
+  position: relative;
+  overflow: hidden;
+}
+.cat-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.35;
+}
+.cat-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
 /* Hero */
 @media (max-width: 768px) {
   .cat-hero { padding: 3.5rem 0 2.75rem !important; }
