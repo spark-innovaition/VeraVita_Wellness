@@ -3168,12 +3168,23 @@ ul.contact-info-list { padding: 0; margin: 0; }
 }
 /* Scrolling doctor marquee */
 .about-home-profiles {
+  overflow: hidden;
+  margin-top: 2rem;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.about-profiles-track {
   display: flex;
   gap: 0.875rem;
-  margin-top: 2rem;
+  width: max-content;
+  animation: profiles-scroll 10s linear infinite;
+}
+@keyframes profiles-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 0.4375rem)); }
 }
 .about-profile-thumb {
-  width: 160px;
+  width: 110px;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: top center;
