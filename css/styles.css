@@ -2196,6 +2196,7 @@ section { padding: 6rem 0; }
   object-position: top center;
   display: block;
   transition: transform 0.5s var(--ease);
+  will-change: transform;
 }
 .prac-card:hover .prac-photo { transform: scale(1.04); }
 .prac-info {
@@ -3855,6 +3856,7 @@ body { overflow-x: hidden; }
 }
 .pd-photo {
   width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
+  will-change: transform;
 }
 
 /* Per-practitioner underlay backgrounds */
