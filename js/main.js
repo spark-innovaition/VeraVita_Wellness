@@ -3,8 +3,17 @@
    GSAP + ScrollTrigger + Lenis
    =========================== */
 
-/* ---- Lenis Smooth Scroll (desktop only) ---- */
+/* ---- Responsive video source swap ---- */
 const isMobile = window.matchMedia('(max-width: 768px)').matches;
+document.querySelectorAll('video[data-src-mobile]').forEach(v => {
+  const src = isMobile ? v.dataset.srcMobile : v.dataset.srcDesktop;
+  if (src) {
+    v.querySelector('source').src = src;
+    v.load();
+  }
+});
+
+/* ---- Lenis Smooth Scroll (desktop only) ---- */
 const lenis = new Lenis({
   duration: isMobile ? 0 : 0.9,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
