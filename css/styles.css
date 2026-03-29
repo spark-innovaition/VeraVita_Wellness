@@ -4524,15 +4524,9 @@ body { overflow-x: hidden; }
 }
 
 /* ========================================
-   MOBILE PARALLAX SIMULATION
+   MOBILE: static background (no animation)
    iOS/Android can't do background-attachment:fixed
-   so we animate background-position on entry instead
    ======================================== */
-@keyframes mob-parallax {
-  from { background-position: center 30%; }
-  to   { background-position: center 70%; }
-}
-
 @media (max-width: 860px) {
   .hwnu-section, .anim-testimonials,
   .about-statement-section, .timeline-section,
@@ -4551,8 +4545,9 @@ body { overflow-x: hidden; }
   .dr-priya-patel .pd-detail-section, .dr-priya-patel .pd-services-section,
   .dr-elena-morales .pd-detail-section, .dr-elena-morales .pd-services-section,
   .dr-maya-hassan .pd-detail-section, .dr-maya-hassan .pd-services-section {
-    animation: mob-parallax 6s ease-in-out infinite alternate;
-    background-size: 150% auto;
+    animation: none;
+    background-position: center center;
+    background-size: cover;
   }
 }
 
