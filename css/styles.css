@@ -396,7 +396,7 @@ section { padding: 6rem 0; }
 .tmd-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 1.jpg') center / cover;
+    url('../images/Underlay pic 1.jpg') center / cover fixed;
   padding: 6rem 0;
   contain: layout style;
 }
@@ -1220,7 +1220,7 @@ section { padding: 6rem 0; }
   padding: 8rem 0 6rem;
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 1.jpg') center / cover;
+    url('../images/Underlay pic 1.jpg') center / cover fixed;
   text-align: center;
 }
 .about-statement-icon {
@@ -1469,7 +1469,7 @@ section { padding: 6rem 0; }
 .timeline-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 1.jpg') center / cover;
+    url('../images/Underlay pic 1.jpg') center / cover fixed;
   padding: 6rem 0;
 }
 .timeline-inner { max-width: 800px; margin: 0 auto; position: relative; }
@@ -1542,7 +1542,7 @@ section { padding: 6rem 0; }
 .section--book-green {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/book an appointment overlay pic.jpg') center / cover;
+    url('../images/book an appointment overlay pic.jpg') center / cover fixed;
 }
 .hours-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.5rem; max-width: 860px; margin: 0 auto; text-align: center; }
 .hours-item i { font-size: 1.75rem; color: var(--primary); margin-bottom: 1rem; display: block; }
@@ -1715,7 +1715,7 @@ section { padding: 6rem 0; }
 .cth-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover;
+    url('../images/underlay pic 5.jpg') center / cover fixed;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1842,7 +1842,7 @@ section { padding: 6rem 0; }
 .cfaq-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover;
+    url('../images/underlay pic 5.jpg') center / cover fixed;
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
@@ -2242,7 +2242,7 @@ section { padding: 6rem 0; }
 .prac-cta-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 2.jpg') center / cover;
+    url('../images/Underlay pic 2.jpg') center / cover fixed;
   padding: 6rem 0;
 }
 .prac-cta-inner {
@@ -2307,7 +2307,7 @@ section { padding: 6rem 0; }
 .follow-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover;
+    url('../images/underlay pic 5.jpg') center / cover fixed;
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
@@ -2803,7 +2803,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .hwnu-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.jpg') center / cover;
+    url('../images/underlay pic 11.jpg') center / cover fixed;
   padding: 6rem 0; text-align: center;
 }
 
@@ -3463,7 +3463,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .anim-testimonials {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.jpg') center / cover;
+    url('../images/underlay pic 11.jpg') center / cover fixed;
   padding: 6rem 0;
 }
 .at-wrap {
@@ -3704,7 +3704,7 @@ body { overflow-x: hidden; }
   padding: 5rem 0;
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/careers overlay pic.jpg') center / cover;
+    url('../images/careers overlay pic.jpg') center / cover fixed;
 }
 .careers-why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .careers-why-text h2 { margin: 0.5rem 0 1rem; }
@@ -3858,25 +3858,19 @@ body { overflow-x: hidden; }
 }
 
 /* Per-practitioner underlay backgrounds */
-.dr-emma-clarke   { --dr-underlay: url('../images/underlay pic 19.jpg'); }
-.dr-amina-rahman  { --dr-underlay: url('../images/underlay pic 20.jpg'); }
-.dr-sofia-bennett { --dr-underlay: url('../images/underlay pic 21.jpg'); }
-.dr-priya-patel   { --dr-underlay: url('../images/underlay pic 22.jpg'); }
-.dr-elena-morales { --dr-underlay: url('../images/underlay pic 23.jpg'); }
-.dr-maya-hassan   { --dr-underlay: url('../images/underlay pic 24.jpg'); }
+.dr-jill-nazar       { --dr-underlay: url('../images/underlay pic 19.jpg'); }
+.dr-susan-mankaeeva  { --dr-underlay: url('../images/underlay pic 20.jpg'); }
+.dr-viktoriia-taylor { --dr-underlay: url('../images/underlay pic 21.jpg'); }
+.vialeta-bhharvani   { --dr-underlay: url('../images/underlay pic 22.jpg'); }
 
-.dr-emma-clarke .pd-detail-section,
-.dr-amina-rahman .pd-detail-section,
-.dr-sofia-bennett .pd-detail-section,
-.dr-priya-patel .pd-detail-section,
-.dr-elena-morales .pd-detail-section,
-.dr-maya-hassan .pd-detail-section,
-.dr-emma-clarke .pd-services-section,
-.dr-amina-rahman .pd-services-section,
-.dr-sofia-bennett .pd-services-section,
-.dr-priya-patel .pd-services-section,
-.dr-elena-morales .pd-services-section,
-.dr-maya-hassan .pd-services-section {
+.dr-jill-nazar .pd-detail-section,
+.dr-susan-mankaeeva .pd-detail-section,
+.dr-viktoriia-taylor .pd-detail-section,
+.vialeta-bhharvani .pd-detail-section,
+.dr-jill-nazar .pd-services-section,
+.dr-susan-mankaeeva .pd-services-section,
+.dr-viktoriia-taylor .pd-services-section,
+.vialeta-bhharvani .pd-services-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
     var(--dr-underlay) center / cover;
@@ -4086,7 +4080,7 @@ body { overflow-x: hidden; }
 .svc-vitamin-injections  .sd-body {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    var(--svc-underlay) center / cover;
+    var(--svc-underlay) center / cover fixed;
 }
 .svc-botox               { --svc-underlay: url('../images/Underlay pic 3.jpg'); }
 .svc-dermal-fillers      { --svc-underlay: url('../images/underlay pic 6.jpg'); }
@@ -4438,7 +4432,9 @@ body { overflow-x: hidden; }
    MOBILE: disable fixed background attachment
    (not supported on iOS/Android)
    ======================================== */
-
+@media (max-width: 1024px) {
+  section { background-attachment: scroll !important; }
+}
 
 /* ========================================
    MOBILE OVERLAY BACKGROUNDS (max-width: 860px)
@@ -4505,20 +4501,16 @@ body { overflow-x: hidden; }
   }
 
   /* PRACTITIONER PROFILES */
-  .dr-emma-clarke   { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-minan1398-1650032.jpg'); }
-  .dr-amina-rahman  { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-mirza-farhan-140378-12951726.jpg'); }
-  .dr-sofia-bennett { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-photosbyanas-17672394.jpg'); }
-  .dr-priya-patel   { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-plantpool-images-2222972-4039949.jpg'); }
-  .dr-elena-morales { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-plantsandgraphics-10576756.jpg'); }
-  .dr-maya-hassan   { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-sam-lg-12240203.jpg'); }
+  .dr-jill-nazar       { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-minan1398-1650032.jpg'); }
+  .dr-susan-mankaeeva  { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-mirza-farhan-140378-12951726.jpg'); }
+  .dr-viktoriia-taylor { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-photosbyanas-17672394.jpg'); }
+  .vialeta-bhharvani   { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-plantpool-images-2222972-4039949.jpg'); }
 
   /* Also override pd sections opacity */
-  .dr-emma-clarke .pd-detail-section, .dr-emma-clarke .pd-services-section,
-  .dr-amina-rahman .pd-detail-section, .dr-amina-rahman .pd-services-section,
-  .dr-sofia-bennett .pd-detail-section, .dr-sofia-bennett .pd-services-section,
-  .dr-priya-patel .pd-detail-section, .dr-priya-patel .pd-services-section,
-  .dr-elena-morales .pd-detail-section, .dr-elena-morales .pd-services-section,
-  .dr-maya-hassan .pd-detail-section, .dr-maya-hassan .pd-services-section {
+  .dr-jill-nazar .pd-detail-section, .dr-jill-nazar .pd-services-section,
+  .dr-susan-mankaeeva .pd-detail-section, .dr-susan-mankaeeva .pd-services-section,
+  .dr-viktoriia-taylor .pd-detail-section, .dr-viktoriia-taylor .pd-services-section,
+  .vialeta-bhharvani .pd-detail-section, .vialeta-bhharvani .pd-services-section {
     background:
       linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       var(--dr-underlay) center / cover;
@@ -4555,12 +4547,10 @@ body { overflow-x: hidden; }
   .svc-fatigue-treatment .sd-body, .svc-massage-therapy .sd-body,
   .svc-fertility-program .sd-body, .svc-acupuncture-cupping .sd-body,
   .svc-vitamin-injections .sd-body,
-  .dr-emma-clarke .pd-detail-section, .dr-emma-clarke .pd-services-section,
-  .dr-amina-rahman .pd-detail-section, .dr-amina-rahman .pd-services-section,
-  .dr-sofia-bennett .pd-detail-section, .dr-sofia-bennett .pd-services-section,
-  .dr-priya-patel .pd-detail-section, .dr-priya-patel .pd-services-section,
-  .dr-elena-morales .pd-detail-section, .dr-elena-morales .pd-services-section,
-  .dr-maya-hassan .pd-detail-section, .dr-maya-hassan .pd-services-section {
+  .dr-jill-nazar .pd-detail-section, .dr-jill-nazar .pd-services-section,
+  .dr-susan-mankaeeva .pd-detail-section, .dr-susan-mankaeeva .pd-services-section,
+  .dr-viktoriia-taylor .pd-detail-section, .dr-viktoriia-taylor .pd-services-section,
+  .vialeta-bhharvani .pd-detail-section, .vialeta-bhharvani .pd-services-section {
     animation: none;
     background-position: center center;
     background-size: cover;
@@ -4793,7 +4783,7 @@ body { overflow-x: hidden; }
 /* clinical esthetics service page */
 .svc-clinical-esthetics .sd-body {
   background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay%20pic%2024.jpg') center / cover;
+    url('../images/Underlay%20pic%2024.jpg') center / cover fixed;
 }
 
 @media (max-width: 768px) {
