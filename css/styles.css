@@ -4077,7 +4077,27 @@ body { overflow-x: hidden; }
 .svc-massage-therapy     .sd-body,
 .svc-fertility-program   .sd-body,
 .svc-acupuncture-cupping .sd-body,
-.svc-vitamin-injections  .sd-body {
+.svc-vitamin-injections  .sd-body,
+.svc-acupuncture-traditional .sd-body,
+.svc-acupuncture-korean      .sd-body,
+.svc-acupuncture-childrens   .sd-body,
+.svc-acupuncture-scalp-electro .sd-body,
+.svc-acupuncture-tui-na      .sd-body,
+.svc-acupuncture-cosmetic    .sd-body,
+.svc-acupuncture-tcm         .sd-body,
+.svc-clinical-esthetics      .sd-body,
+.svc-facial-acne             .sd-body,
+.svc-facial-anti-aging       .sd-body,
+.svc-facial-dermaplaning     .sd-body,
+.svc-facial-european         .sd-body,
+.svc-facial-extraction       .sd-body,
+.svc-facial-green-peel       .sd-body,
+.svc-facial-relaxation       .sd-body,
+.svc-microdermabrasion       .sd-body,
+.svc-derma-needling          .sd-body,
+.svc-exosome-needling        .sd-body,
+.svc-exo-hair                .sd-body,
+.svc-skin-tag-removal        .sd-body {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
     var(--svc-underlay) center / cover fixed;
@@ -4095,6 +4115,28 @@ body { overflow-x: hidden; }
 .svc-fertility-program   { --svc-underlay: url('../images/underlay pic 16.jpg'); }
 .svc-acupuncture-cupping { --svc-underlay: url('../images/underlay pic 17.jpg'); }
 .svc-vitamin-injections  { --svc-underlay: url('../images/underlay pic 18.jpg'); }
+/* Acupuncture & TCM pages */
+.svc-acupuncture-traditional { --svc-underlay: url('../images/underlay pic 23.jpg'); }
+.svc-acupuncture-korean      { --svc-underlay: url('../images/underlay pic 23.jpg'); }
+.svc-acupuncture-childrens   { --svc-underlay: url('../images/underlay pic 23.jpg'); }
+.svc-acupuncture-scalp-electro { --svc-underlay: url('../images/underlay pic 23.jpg'); }
+.svc-acupuncture-tui-na      { --svc-underlay: url('../images/underlay pic 23.jpg'); }
+.svc-acupuncture-cosmetic    { --svc-underlay: url('../images/underlay pic 23.jpg'); }
+.svc-acupuncture-tcm         { --svc-underlay: url('../images/underlay pic 23.jpg'); }
+/* Clinical Esthetics pages */
+.svc-clinical-esthetics  { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-facial-acne         { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-facial-anti-aging   { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-facial-dermaplaning { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-facial-european     { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-facial-extraction   { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-facial-green-peel   { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-facial-relaxation   { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-microdermabrasion   { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-derma-needling      { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-exosome-needling    { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-exo-hair            { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-skin-tag-removal    { --svc-underlay: url('../images/underlay pic 24.jpg'); }
 .sd-body-inner {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -4610,13 +4652,46 @@ body { overflow-x: hidden; }
   .svc-fertility-program   { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-maahidphotos-8058776.jpg'); }
   .svc-acupuncture-cupping { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-magda-ehlers-pexels-9890362.jpg'); }
   .svc-vitamin-injections  { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-minan1398-1599969.jpg'); }
+  /* Acupuncture & TCM — mobile */
+  .svc-acupuncture-traditional,
+  .svc-acupuncture-korean,
+  .svc-acupuncture-childrens,
+  .svc-acupuncture-scalp-electro,
+  .svc-acupuncture-tui-na,
+  .svc-acupuncture-cosmetic,
+  .svc-acupuncture-tcm         { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-minan1398-1650032.jpg'); }
+  /* Clinical Esthetics — mobile */
+  .svc-clinical-esthetics,
+  .svc-facial-acne,
+  .svc-facial-anti-aging,
+  .svc-facial-dermaplaning,
+  .svc-facial-european,
+  .svc-facial-extraction,
+  .svc-facial-green-peel,
+  .svc-facial-relaxation,
+  .svc-microdermabrasion,
+  .svc-derma-needling,
+  .svc-exosome-needling,
+  .svc-exo-hair,
+  .svc-skin-tag-removal        { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-vickievj-5092641.jpg'); }
 
   /* Also override sd-body opacity for service pages on mobile */
   .svc-botox .sd-body, .svc-dermal-fillers .sd-body, .svc-lab-testing .sd-body,
   .svc-naturopathic-care .sd-body, .svc-osteopathy .sd-body, .svc-weight-loss .sd-body,
   .svc-pediatric-care .sd-body, .svc-iv-therapy .sd-body, .svc-fatigue-treatment .sd-body,
   .svc-massage-therapy .sd-body, .svc-fertility-program .sd-body,
-  .svc-acupuncture-cupping .sd-body, .svc-vitamin-injections .sd-body {
+  .svc-acupuncture-cupping .sd-body, .svc-vitamin-injections .sd-body,
+  .svc-acupuncture-traditional .sd-body, .svc-acupuncture-korean .sd-body,
+  .svc-acupuncture-childrens .sd-body, .svc-acupuncture-scalp-electro .sd-body,
+  .svc-acupuncture-tui-na .sd-body, .svc-acupuncture-cosmetic .sd-body,
+  .svc-acupuncture-tcm .sd-body,
+  .svc-clinical-esthetics .sd-body, .svc-facial-acne .sd-body,
+  .svc-facial-anti-aging .sd-body, .svc-facial-dermaplaning .sd-body,
+  .svc-facial-european .sd-body, .svc-facial-extraction .sd-body,
+  .svc-facial-green-peel .sd-body, .svc-facial-relaxation .sd-body,
+  .svc-microdermabrasion .sd-body, .svc-derma-needling .sd-body,
+  .svc-exosome-needling .sd-body, .svc-exo-hair .sd-body,
+  .svc-skin-tag-removal .sd-body {
     background:
       linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       var(--svc-underlay) center / cover;
