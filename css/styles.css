@@ -793,7 +793,7 @@ section { padding: 6rem 0; }
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: #0d1a10 url('../images/bg-hero-section.jpg') center/cover no-repeat;
+  background: #0d1a10 url('../images/bg-hero-section.webp') center/cover no-repeat;
 }
 /* Dark curtain that shows behind hero during pin — prevents white flash on release */
 .ph-cinematic::after {
@@ -2803,7 +2803,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .hwnu-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.jpg') center / cover fixed;
+    url('../images/underlay pic 11.webp') center / cover fixed;
   padding: 6rem 0; text-align: center;
 }
 
@@ -3463,7 +3463,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .anim-testimonials {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.jpg') center / cover fixed;
+    url('../images/underlay pic 11.webp') center / cover fixed;
   padding: 6rem 0;
 }
 .at-wrap {
