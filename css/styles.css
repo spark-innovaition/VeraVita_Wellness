@@ -3831,7 +3831,7 @@ body { overflow-x: hidden; }
   position: sticky; top: 6rem;
 }
 .pd-photo {
-  width: 100%; height: 100%; object-fit: cover; display: block;
+  width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
 }
 
 /* Per-practitioner underlay backgrounds */
