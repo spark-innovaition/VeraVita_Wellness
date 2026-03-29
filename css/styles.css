@@ -450,6 +450,10 @@ section { padding: 6rem 0; }
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+@keyframes tmd-scroll-ltr {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
 .tmd-marquee-track {
   display: flex;
   align-items: center;
@@ -458,6 +462,10 @@ section { padding: 6rem 0; }
   animation: tmd-scroll 28s linear infinite;
 }
 .tmd-marquee-track:hover { animation-play-state: paused; }
+.tmd-marquee-track--ltr {
+  animation: tmd-scroll-ltr 18s linear infinite;
+}
+.tmd-marquee-track--ltr:hover { animation-play-state: paused; }
 .tmd-specialty {
   font-family: var(--font-b);
   font-size: 0.875rem;
