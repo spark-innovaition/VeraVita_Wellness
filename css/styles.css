@@ -563,15 +563,17 @@ section { padding: 6rem 0; }
 .tmd-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10,25,15,0.85) 0%, rgba(10,25,15,0.2) 30%, transparent 52%);
+  background: linear-gradient(to top, rgba(10,25,15,0.85) 0%, rgba(10,25,15,0.15) 24%, transparent 42%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.25rem 1.25rem 1rem;
+  padding: 1.25rem 1.25rem 0.625rem;
   transition: background 0.4s ease;
 }
-.tmd-card:hover .tmd-card-overlay {
-  background: linear-gradient(to top, rgba(10,25,15,0.92) 0%, rgba(10,25,15,0.35) 40%, transparent 62%);
+/* Active/hover state — solid dark bottom half for readability */
+.tmd-card:hover .tmd-card-overlay,
+.tmd-card:focus-within .tmd-card-overlay {
+  background: linear-gradient(to top, rgba(8,20,12,0.97) 0%, rgba(8,20,12,0.85) 40%, rgba(8,20,12,0.4) 65%, transparent 85%);
 }
 .tmd-card-overlay h4 {
   font-family: var(--font-h);
@@ -580,6 +582,7 @@ section { padding: 6rem 0; }
   color: #ffffff;
   margin: 0 0 0.2rem;
   line-height: 1.25;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
 }
 .tmd-card-overlay span {
   font-family: var(--font-b);
@@ -588,10 +591,11 @@ section { padding: 6rem 0; }
   color: rgba(168,201,158,1);
   display: block;
   margin-bottom: 0.6rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 .tmd-card-overlay p {
   font-size: 0.8125rem;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.88);
   line-height: 1.5;
   margin: 0 0 0.875rem;
   max-height: 0;
