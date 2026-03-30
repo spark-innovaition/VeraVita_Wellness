@@ -149,7 +149,7 @@ lenis.on('scroll', ScrollTrigger.update);
       trigger: section,
       start: 'top top',
       end: isMobile ? '+=180%' : '+=150%',
-      scrub: isMobile ? 0.4 : 0.6,
+      scrub: isMobile ? 0.3 : 0.4,
       pin: true,
       anticipatePin: 1,
     }
@@ -544,7 +544,7 @@ ScrollTrigger.batch('.reveal', {
         trigger: el,
         start: 'top 80%',
         end: 'bottom 20%',
-        scrub: 1,
+        scrub: 0.5,
       }
     }
   );
@@ -1104,7 +1104,7 @@ document.querySelectorAll('.team-card').forEach(card => {
           trigger: section,
           start: 'top bottom',
           end: 'bottom top',
-          scrub: true,
+          scrub: 0.5,
         }
       }
     );
