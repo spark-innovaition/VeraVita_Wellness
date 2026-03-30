@@ -3867,10 +3867,10 @@ body { overflow-x: hidden; }
 }
 
 /* Per-practitioner underlay backgrounds */
-.dr-jill-nazar       { --dr-underlay: url('../images/underlay pic 19.jpg'); }
-.dr-susan-mankaeeva  { --dr-underlay: url('../images/underlay pic 20.jpg'); }
-.dr-viktoriia-taylor { --dr-underlay: url('../images/underlay pic 21.jpg'); }
-.vialeta-bhharvani   { --dr-underlay: url('../images/underlay pic 22.jpg'); }
+.dr-jill-nazar       { --dr-underlay: url('../images/underlay pic desktop/underlay pic 19.webp'); }
+.dr-susan-mankaeeva  { --dr-underlay: url('../images/underlay pic desktop/underlay pic 20.webp'); }
+.dr-viktoriia-taylor { --dr-underlay: url('../images/underlay pic desktop/underlay pic 21.webp'); }
+.vialeta-bhharvani   { --dr-underlay: url('../images/underlay pic desktop/underlay pic 22.webp'); }
 
 .dr-jill-nazar .pd-detail-section,
 .dr-susan-mankaeeva .pd-detail-section,
@@ -4113,39 +4113,39 @@ body { overflow-x: hidden; }
 }
 .svc-botox               { --svc-underlay: url('../images/underlay pic desktop/Underlay pic 3.webp'); }
 .svc-dermal-fillers      { --svc-underlay: url('../images/underlay pic desktop/underlay pic 6.webp'); }
-.svc-lab-testing         { --svc-underlay: url('../images/underlay pic 7.jpg'); }
-.svc-naturopathic-care   { --svc-underlay: url('../images/underlay pic 8.jpg'); }
-.svc-osteopathy          { --svc-underlay: url('../images/underlay pic 9.jpg'); }
-.svc-weight-loss         { --svc-underlay: url('../images/underlay pic 10.jpg'); }
-.svc-pediatric-care      { --svc-underlay: url('../images/underlay pic 12.jpg'); }
-.svc-iv-therapy          { --svc-underlay: url('../images/underlay pic 13.jpg'); }
-.svc-fatigue-treatment   { --svc-underlay: url('../images/Underlay pic 14.jpg'); }
-.svc-massage-therapy     { --svc-underlay: url('../images/underlay pic 15.jpg'); }
-.svc-fertility-program   { --svc-underlay: url('../images/underlay pic 16.jpg'); }
-.svc-acupuncture-cupping { --svc-underlay: url('../images/underlay pic 17.jpg'); }
-.svc-vitamin-injections  { --svc-underlay: url('../images/underlay pic 18.jpg'); }
+.svc-lab-testing         { --svc-underlay: url('../images/underlay pic desktop/underlay pic 7.webp'); }
+.svc-naturopathic-care   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 8.webp'); }
+.svc-osteopathy          { --svc-underlay: url('../images/underlay pic desktop/underlay pic 9.webp'); }
+.svc-weight-loss         { --svc-underlay: url('../images/underlay pic desktop/underlay pic 10.webp'); }
+.svc-pediatric-care      { --svc-underlay: url('../images/underlay pic desktop/underlay pic 12.webp'); }
+.svc-iv-therapy          { --svc-underlay: url('../images/underlay pic desktop/underlay pic 13.webp'); }
+.svc-fatigue-treatment   { --svc-underlay: url('../images/underlay pic desktop/Underlay pic 14.webp'); }
+.svc-massage-therapy     { --svc-underlay: url('../images/underlay pic desktop/underlay pic 15.webp'); }
+.svc-fertility-program   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 16.webp'); }
+.svc-acupuncture-cupping { --svc-underlay: url('../images/underlay pic desktop/underlay pic 17.webp'); }
+.svc-vitamin-injections  { --svc-underlay: url('../images/underlay pic desktop/underlay pic 18.webp'); }
 /* Acupuncture & TCM pages */
-.svc-acupuncture-traditional { --svc-underlay: url('../images/underlay pic 23.jpg'); }
-.svc-acupuncture-korean      { --svc-underlay: url('../images/underlay pic 23.jpg'); }
-.svc-acupuncture-childrens   { --svc-underlay: url('../images/underlay pic 23.jpg'); }
-.svc-acupuncture-scalp-electro { --svc-underlay: url('../images/underlay pic 23.jpg'); }
-.svc-acupuncture-tui-na      { --svc-underlay: url('../images/underlay pic 23.jpg'); }
-.svc-acupuncture-cosmetic    { --svc-underlay: url('../images/underlay pic 23.jpg'); }
-.svc-acupuncture-tcm         { --svc-underlay: url('../images/underlay pic 23.jpg'); }
+.svc-acupuncture-traditional { --svc-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
+.svc-acupuncture-korean      { --svc-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
+.svc-acupuncture-childrens   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
+.svc-acupuncture-scalp-electro { --svc-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
+.svc-acupuncture-tui-na      { --svc-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
+.svc-acupuncture-cosmetic    { --svc-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
+.svc-acupuncture-tcm         { --svc-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
 /* Clinical Esthetics pages */
-.svc-clinical-esthetics  { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-facial-acne         { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-facial-anti-aging   { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-facial-dermaplaning { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-facial-european     { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-facial-extraction   { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-facial-green-peel   { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-facial-relaxation   { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-microdermabrasion   { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-derma-needling      { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-exosome-needling    { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-exo-hair            { --svc-underlay: url('../images/underlay pic 24.jpg'); }
-.svc-skin-tag-removal    { --svc-underlay: url('../images/underlay pic 24.jpg'); }
+.svc-clinical-esthetics  { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-facial-acne         { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-facial-anti-aging   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-facial-dermaplaning { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-facial-european     { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-facial-extraction   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-facial-green-peel   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-facial-relaxation   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-microdermabrasion   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-derma-needling      { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-exosome-needling    { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-exo-hair            { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-skin-tag-removal    { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
 .sd-body-inner {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -4989,7 +4989,7 @@ body { overflow-x: hidden; }
 /* clinical esthetics service page */
 .svc-clinical-esthetics .sd-body {
   background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay%20pic%2024.jpg') center / cover scroll;
+    url('../images/underlay%20pic%20desktop/underlay%20pic%2024.webp') center / cover scroll;
 }
 
 @media (max-width: 768px) {

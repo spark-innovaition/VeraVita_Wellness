@@ -1093,6 +1093,9 @@ document.querySelectorAll('.team-card').forEach(card => {
     '.prac-cta-section',
     '.section--book-green',
     '.careers-why',
+    '.sd-body',
+    '.pd-detail-section',
+    '.pd-services-section',
   ].join(', ');
 
   document.querySelectorAll(SELECTORS).forEach(section => {
