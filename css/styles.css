@@ -37,17 +37,7 @@
   --dur:     0.35s;
 }
 
-/* ---- Font Awesome font-display override ---- */
-@font-face {
-  font-family: 'Font Awesome 6 Free';
-  font-display: swap;
-  src: local('Font Awesome 6 Free');
-}
-@font-face {
-  font-family: 'Font Awesome 6 Brands';
-  font-display: swap;
-  src: local('Font Awesome 6 Brands');
-}
+/* Font Awesome loaded async in HTML (media="print" onload pattern) — no font-display override needed */
 
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
