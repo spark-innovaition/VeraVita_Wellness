@@ -12,43 +12,7 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" /></noscript>
-  <!-- Critical above-fold CSS inlined to avoid render-blocking -->
-  <style>
-    :root{--dark:#1e3528;--dark-2:#2d5040;--body-text:#3a3a3a;--gray-3:#7a9e8a;--gray-4:#dceada;--gray-5:#c2d4c2;--gray-6:#eaf2ea;--primary:#728C69;--accent:#728C69;--green:#728C69;--green-pale:#eef3ec;--white:#fff;--font-h:'Libre Caslon Text',Georgia,serif;--font-b:'DM Sans',Arial,sans-serif;--max-w:1460px;--mid-w:1220px;--inn-w:980px;--gap:1.875rem;--r-btn:6.25rem;--r-sm:0.375rem;--r-inp:0.625rem;--r-card:1.25rem;--ease:cubic-bezier(.25,.46,.45,.94);--dur:0.35s}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    body{font-family:var(--font-b);font-size:1rem;line-height:1.65;color:var(--body-text);background:var(--white);overflow-x:hidden;padding-top:72px}
-    img{display:block;max-width:100%;height:auto}
-    a{text-decoration:none;color:inherit}
-    ul{list-style:none}
-    button{cursor:pointer;border:none;background:none;font-family:inherit}
-    h1,h2,h3,h4,h5,h6{font-family:var(--font-h);font-weight:400;line-height:1.12;color:var(--dark)}
-    h1{font-size:clamp(2.8rem,5.5vw,4.5rem)}
-    .container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--gap)}
-    section{padding:6rem 0}
-    .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;padding:1.125rem 0;transition:border-color var(--dur),box-shadow var(--dur),padding var(--dur)}
-    .navbar-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;position:relative}
-    .navbar-logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
-    .logo-img{height:48px;width:auto;display:block}
-    .logo-img--mobile{display:none}
-    .navbar-toggle{display:none;flex-direction:column;gap:5px;padding:.5rem;background:none;border:none;cursor:pointer}
-    .navbar-toggle span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px}
-    .hero{background:var(--gray-6);padding:5rem 0 0;overflow:visible;min-height:calc(100vh - 80px);display:flex;align-items:center}
-    .hero>.container{width:100%}
-    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end}
-    .hero-content{padding:5rem 0 5rem}
-    @media(max-width:768px){
-      :root{--gap:1.25rem}body{padding-top:62px}h1{font-size:2.2rem}
-      .navbar{padding:.875rem 0}.navbar-inner{position:relative;justify-content:space-between}
-      .navbar-logo{position:absolute;left:50%;transform:translateX(-50%)}
-      .logo-img--desktop{display:none}.logo-img--mobile{display:block;height:48px;width:auto}
-      .navbar-toggle{display:flex}
-      .hero-inner{grid-template-columns:1fr}
-    }
-  </style>
-  <!-- Full stylesheet loaded async to avoid render-blocking -->
-  <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="css/styles.css" /></noscript>
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="preload" as="image" href="images/bg-hero-section.webp" fetchpriority="high" />
   <!-- Font Awesome loaded async — icons are non-critical for first paint -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
