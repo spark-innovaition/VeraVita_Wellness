@@ -2803,8 +2803,10 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .hwnu-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.webp') center / cover fixed;
+    url('../images/underlay pic 11.webp') center / cover scroll;
   padding: 6rem 0; text-align: center;
+  contain: layout style paint;
+  transform: translateZ(0);
 }
 
 .hwnu-eyebrow {
@@ -2846,8 +2848,8 @@ ul.contact-info-list { padding: 0; margin: 0; }
 }
 
 @keyframes hwnu-scroll {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  from { transform: translate3d(-50%, 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
 }
 
 .hwnu-cta-wrap { display: flex; justify-content: center; }
