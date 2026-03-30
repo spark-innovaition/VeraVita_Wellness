@@ -396,7 +396,7 @@ section { padding: 6rem 0; }
 .tmd-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 1.jpg') center / cover scroll;
+    url('../images/underlay pic desktop/Underlay pic 1.webp') center / cover scroll;
   padding: 6rem 0;
   contain: layout style;
 }
@@ -1220,7 +1220,7 @@ section { padding: 6rem 0; }
   padding: 8rem 0 6rem;
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 1.jpg') center / cover scroll;
+    url('../images/underlay pic desktop/Underlay pic 1.webp') center / cover scroll;
   text-align: center;
 }
 .about-statement-icon {
@@ -1469,7 +1469,7 @@ section { padding: 6rem 0; }
 .timeline-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 1.jpg') center / cover scroll;
+    url('../images/underlay pic desktop/Underlay pic 1.webp') center / cover scroll;
   padding: 6rem 0;
 }
 .timeline-inner { max-width: 800px; margin: 0 auto; position: relative; }
@@ -1542,7 +1542,7 @@ section { padding: 6rem 0; }
 .section--book-green {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/book an appointment overlay pic.jpg') center / cover scroll;
+    url('../images/underlay pic desktop/book an appointment overlay pic.jpg') center / cover scroll;
 }
 .hours-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.5rem; max-width: 860px; margin: 0 auto; text-align: center; }
 .hours-item i { font-size: 1.75rem; color: var(--primary); margin-bottom: 1rem; display: block; }
@@ -1715,7 +1715,7 @@ section { padding: 6rem 0; }
 .cth-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover scroll;
+    url('../images/underlay pic desktop/underlay pic 5.webp') center / cover scroll;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1842,7 +1842,7 @@ section { padding: 6rem 0; }
 .cfaq-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover scroll;
+    url('../images/underlay pic desktop/underlay pic 5.webp') center / cover scroll;
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
@@ -2242,7 +2242,7 @@ section { padding: 6rem 0; }
 .prac-cta-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/Underlay pic 2.jpg') center / cover scroll;
+    url('../images/underlay pic desktop/Underlay pic 2.webp') center / cover scroll;
   padding: 6rem 0;
 }
 .prac-cta-inner {
@@ -2307,7 +2307,7 @@ section { padding: 6rem 0; }
 .follow-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 5.jpg') center / cover scroll;
+    url('../images/underlay pic desktop/underlay pic 5.webp') center / cover scroll;
   padding: 5rem 0 6rem;
   border-top: 1px solid #c2d4c2;
 }
@@ -2803,7 +2803,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .hwnu-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.webp') center / cover scroll;
+    url('../images/underlay pic desktop/underlay pic 11.webp') center / cover scroll;
   padding: 6rem 0; text-align: center;
   contain: layout style paint;
   transform: translateZ(0);
@@ -3472,7 +3472,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .anim-testimonials {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-    url('../images/underlay pic 11.webp') center / cover scroll;
+    url('../images/underlay pic desktop/underlay pic 11.webp') center / cover scroll;
   padding: 6rem 0;
 }
 .at-wrap {
@@ -4111,8 +4111,8 @@ body { overflow-x: hidden; }
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
     var(--svc-underlay) center / cover scroll;
 }
-.svc-botox               { --svc-underlay: url('../images/Underlay pic 3.jpg'); }
-.svc-dermal-fillers      { --svc-underlay: url('../images/underlay pic 6.jpg'); }
+.svc-botox               { --svc-underlay: url('../images/underlay pic desktop/Underlay pic 3.webp'); }
+.svc-dermal-fillers      { --svc-underlay: url('../images/underlay pic desktop/underlay pic 6.webp'); }
 .svc-lab-testing         { --svc-underlay: url('../images/underlay pic 7.jpg'); }
 .svc-naturopathic-care   { --svc-underlay: url('../images/underlay pic 8.jpg'); }
 .svc-osteopathy          { --svc-underlay: url('../images/underlay pic 9.jpg'); }
