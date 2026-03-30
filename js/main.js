@@ -3,23 +3,25 @@
    GSAP + ScrollTrigger + Lenis
    =========================== */
 
-/* ---- Responsive video source swap ---- */
+/* ---- Hero video source injection (device-aware) ---- */
 const isMobile = window.matchMedia('(max-width: 768px)').matches;
-if (isMobile) {
-  /* On mobile: replace desktop sources with mobile WebM + MP4 from CDN */
-  document.querySelectorAll('video[data-src-mobile]').forEach(v => {
-    v.querySelectorAll('source').forEach(s => s.remove());
-    const webm = document.createElement('source');
-    webm.src  = 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20hero%20-%20mobile-PleWFG3tCvg8uwSUUMlaugxd5s72Nm.webm';
-    webm.type = 'video/webm';
-    const mp4  = document.createElement('source');
-    mp4.src   = 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20hero%20-%20mobile-6rFpNjklIcpde3tcSz4BeWbGkB8Uvm.mp4';
-    mp4.type  = 'video/mp4';
-    v.append(webm, mp4);
-    v.load();
+(function () {
+  const v = document.getElementById('hero-video');
+  if (!v) return;
+  const sources = isMobile ? [
+    { src: 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20hero%20-%20mobile-PleWFG3tCvg8uwSUUMlaugxd5s72Nm.webm', type: 'video/webm' },
+    { src: 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20hero%20-%20mobile-6rFpNjklIcpde3tcSz4BeWbGkB8Uvm.mp4',  type: 'video/mp4'  },
+  ] : [
+    { src: 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20page%20video-nwPBStcnMK5z9Je4jfug9K9dbWy0nc.webm',     type: 'video/webm' },
+    { src: 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20page%20video-fGvS07yOovrctZg7ec4hsrQjfeTiQD.mp4',      type: 'video/mp4'  },
+  ];
+  sources.forEach(({ src, type }) => {
+    const s = document.createElement('source');
+    s.src = src; s.type = type;
+    v.appendChild(s);
   });
-}
-/* On desktop: sources are already in the HTML — browser picks WebM first, falls back to MP4 */
+  v.load();
+})();
 
 /* ---- Lenis Smooth Scroll (desktop only) ---- */
 const lenis = new Lenis({

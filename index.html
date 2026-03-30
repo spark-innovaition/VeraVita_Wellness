@@ -8,10 +8,13 @@
   <meta name="description" content="VeraVita Clinic offers personalized naturopathic and aesthetic medicine in Calgary. Elevated care, renewed confidence." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://mzfl2thxotn4vvap.public.blob.vercel-storage.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preload" as="image" href="images/bg-hero-section.webp" />
+  <!-- Font Awesome loaded async — icons are non-critical for first paint -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
 </head>
 <body>
 
@@ -92,11 +95,7 @@
 <!-- CINEMATIC TEXT-ZOOM HERO -->
 <div class="ph-cinematic">
   <!-- Video plays full bleed — visible only through letter cutouts -->
-  <video class="ph-cin-video" autoplay muted loop playsinline
-    data-src-mobile="images/Home hero - mobile.mp4">
-    <source src="https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20page%20video-nwPBStcnMK5z9Je4jfug9K9dbWy0nc.webm" type="video/webm" />
-    <source src="https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20page%20video-fGvS07yOovrctZg7ec4hsrQjfeTiQD.mp4" type="video/mp4" />
-  </video>
+  <video class="ph-cin-video" autoplay muted loop playsinline id="hero-video"></video>
 
   <!-- Canvas overlay injected by JS — handles text cutout compositing -->
   <p class="ph-cin-label">Naturopathic &amp; Aesthetic Medicine · Calgary</p>
