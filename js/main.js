@@ -642,7 +642,7 @@ document.querySelectorAll('.team-card').forEach(card => {
       const img = card.querySelector('img');
       const offset = ((i - frontCard) + n) % n;
       const d = data[(index + offset) % data.length];
-      if (img && d) { img.src = d.img; img.alt = d.name; img.width = 500; img.height = 602; img.loading = 'lazy'; img.decoding = 'async'; }
+      if (img && d) { img.src = d.img; img.alt = d.name; }
     });
   }
   updateCards(0);

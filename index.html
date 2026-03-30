@@ -9,10 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://mzfl2thxotn4vvap.public.blob.vercel-storage.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="preload" as="image" href="images/bg-hero-section.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/bg-hero-section.webp" />
   <!-- Font Awesome loaded async — icons are non-critical for first paint -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
@@ -27,9 +26,9 @@
     <div class="navbar-inner">
 
       <a href="index.html" class="navbar-logo">
-        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img logo-img--desktop" width="203" height="60"
+        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img logo-img--desktop"
              onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
-        <img src="images/Header%20-%20Mobile.png" alt="VeraVita" class="logo-img logo-img--mobile" width="48" height="48" />
+        <img src="images/Header%20-%20Mobile.png" alt="VeraVita" class="logo-img logo-img--mobile" />
         <div class="logo-icon" style="display:none;">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/>
@@ -96,9 +95,7 @@
 <!-- CINEMATIC TEXT-ZOOM HERO -->
 <div class="ph-cinematic">
   <!-- Video plays full bleed — visible only through letter cutouts -->
-  <video class="ph-cin-video" autoplay muted loop playsinline id="hero-video">
-    <track kind="captions" label="English" srclang="en" default />
-  </video>
+  <video class="ph-cin-video" autoplay muted loop playsinline id="hero-video"></video>
 
   <!-- Canvas overlay injected by JS — handles text cutout compositing -->
   <p class="ph-cin-label">Naturopathic &amp; Aesthetic Medicine · Calgary</p>
@@ -134,53 +131,53 @@
     <!-- Infinite scrolling image strip -->
     <div class="hwnu-marquee">
       <div class="hwnu-track" id="hwnu-track">
-        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-8313177.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-tima-miroshnichenko-8376162.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-anntarazevich-6560288.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-karola-g-4084639.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-yankrukov-5793684.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-8312866.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447003.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-ivan-s-6436272.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-arina-krasnikova-6663359.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506163.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-hannah-barata-776560167-27925591.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-omarmedinaoficial-16131210.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-8313197.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" />
+        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-rdne-8313177.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-tima-miroshnichenko-8376162.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-anntarazevich-6560288.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-karola-g-4084639.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-yankrukov-5793684.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-rdne-8312866.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-gustavo-fring-7447003.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-ivan-s-6436272.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-arina-krasnikova-6663359.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-karola-g-4506163.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-hannah-barata-776560167-27925591.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-omarmedinaoficial-16131210.webp" alt="" class="hwnu-img" />
+        <img src="images/Home page - marquee/pexels-rdne-8313197.webp" alt="" class="hwnu-img" />
         <!-- Duplicated for seamless loop -->
-        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-rdne-8313177.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-tima-miroshnichenko-8376162.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-anntarazevich-6560288.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-karola-g-4084639.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-yankrukov-5793684.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-rdne-8312866.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447003.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-ivan-s-6436272.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-arina-krasnikova-6663359.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506163.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-hannah-barata-776560167-27925591.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-omarmedinaoficial-16131210.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-rdne-8313197.webp" alt="" class="hwnu-img" width="560" height="380" loading="lazy" decoding="async" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-8313177.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-tima-miroshnichenko-8376162.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-anntarazevich-6560288.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-karola-g-4084639.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-yankrukov-5793684.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-8312866.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-gustavo-fring-7447003.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-ivan-s-6436272.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-arina-krasnikova-6663359.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-karola-g-4506163.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-hannah-barata-776560167-27925591.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-omarmedinaoficial-16131210.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-8313197.webp" alt="" class="hwnu-img" aria-hidden="true" loading="lazy" />
       </div>
     </div>
 
@@ -219,7 +216,7 @@
           <path d="M16 36c-3 2-5 3-5 3M32 36c3 2 5 3 5 3M24 44v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
           <path d="M18 26c2 3 4 5 6 6 2-1 4-3 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         </svg>
-        <h3 class="wcu-item-title">Patient-Centred Approach</h3>
+        <h4 class="wcu-item-title">Patient-Centred Approach</h4>
         <p class="wcu-item-text">We tailor every treatment to fit your unique health needs, lifestyle, and goals — no one-size-fits-all solutions.</p>
       </div>
       <div class="wcu-item stagger-item">
@@ -230,7 +227,7 @@
           <circle cx="30" cy="38" r="4" stroke="currentColor" stroke-width="1.8"/>
           <path d="M10 36h6M32 38h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         </svg>
-        <h3 class="wcu-item-title">Advanced Diagnostic Tools</h3>
+        <h4 class="wcu-item-title">Advanced Diagnostic Tools</h4>
         <p class="wcu-item-text">State-of-the-art functional lab testing and technology ensures precise, early, and accurate detection.</p>
       </div>
       <div class="wcu-item stagger-item">
@@ -239,7 +236,7 @@
           <path d="M14 34l-2 8h24l-2-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M18 34h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         </svg>
-        <h3 class="wcu-item-title">Safety &amp; Hygiene Standards</h3>
+        <h4 class="wcu-item-title">Safety &amp; Hygiene Standards</h4>
         <p class="wcu-item-text">Strict clinical protocols to ensure your health and safety are always protected at every visit.</p>
       </div>
     </div>
@@ -427,7 +424,7 @@
       <!-- Service image panel -->
       <div class="services-accord-img">
         <div class="accord-img-card">
-          <img id="accord-preview" src="images/Treatments/Nathuropathic care.webp" alt="" class="accord-img" width="423" height="634" loading="lazy" decoding="async" />
+          <img id="accord-preview" src="images/Treatments/Nathuropathic care.webp" alt="" class="accord-img" />
           <div class="accord-img-footer">
             <span class="accord-img-name" id="accord-preview-name">Naturopathic Care</span>
             <a href="service-naturopathic-care.html" class="accord-img-link" id="accord-preview-link">
@@ -462,7 +459,7 @@
           <span class="team-tooltip-name">Dr. Emma Clarke</span>
           <span class="team-tooltip-role">Naturopathic Doctor, ND</span>
         </div>
-        <img src="images/practioner/Doctor 1 900x1200px- practitioner page.png" alt="Dr. Emma Clarke" class="team-card-img" width="900" height="1200" loading="lazy" decoding="async" />
+        <img src="images/practioner/Doctor 1 900x1200px- practitioner page.png" alt="Dr. Emma Clarke" class="team-card-img" />
         <div class="team-card-body">
           <h4>Dr. Emma Clarke</h4>
           <span class="team-card-role">Naturopathic Doctor, ND</span>
@@ -475,7 +472,7 @@
           <span class="team-tooltip-name">Dr. Amina Rahman</span>
           <span class="team-tooltip-role">Aesthetic Medicine Specialist</span>
         </div>
-        <img src="images/practioner/Doctor 2 900x1200px- practitioner page.png" alt="Dr. Amina Rahman" class="team-card-img" width="900" height="1200" loading="lazy" decoding="async" />
+        <img src="images/practioner/Doctor 2 900x1200px- practitioner page.png" alt="Dr. Amina Rahman" class="team-card-img" />
         <div class="team-card-body">
           <h4>Dr. Amina Rahman</h4>
           <span class="team-card-role">Aesthetic Medicine Specialist</span>
@@ -488,7 +485,7 @@
           <span class="team-tooltip-name">Dr. Sofia Bennett</span>
           <span class="team-tooltip-role">Naturopathic Doctor, ND</span>
         </div>
-        <img src="images/practioner/Doctor 3 900x1200px- practitioner page.png" alt="Dr. Sofia Bennett" class="team-card-img" width="900" height="1200" loading="lazy" decoding="async" />
+        <img src="images/practioner/Doctor 3 900x1200px- practitioner page.png" alt="Dr. Sofia Bennett" class="team-card-img" />
         <div class="team-card-body">
           <h4>Dr. Sofia Bennett</h4>
           <span class="team-card-role">Naturopathic Doctor, ND</span>
@@ -501,7 +498,7 @@
           <span class="team-tooltip-name">Dr. Priya Patel</span>
           <span class="team-tooltip-role">IV Therapy &amp; Wellness Specialist</span>
         </div>
-        <img src="images/practioner/Doctor 4 900x1200px- practitioner page.png" alt="Dr. Priya Patel" class="team-card-img" width="900" height="1200" loading="lazy" decoding="async" />
+        <img src="images/practioner/Doctor 4 900x1200px- practitioner page.png" alt="Dr. Priya Patel" class="team-card-img" />
         <div class="team-card-body">
           <h4>Dr. Priya Patel</h4>
           <span class="team-card-role">IV Therapy &amp; Wellness Specialist</span>
@@ -620,7 +617,7 @@
         <!-- Brand -->
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
           <a href="index.html" class="sf-logo">
-            <img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img" width="169" height="113" loading="lazy" decoding="async"
+            <img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="sf-logo-fallback" style="display:none;">
               <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg>
