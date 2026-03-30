@@ -525,13 +525,16 @@ ScrollTrigger.batch('.reveal', {
   el.setAttribute('aria-label', text);
 
   /* Animate per-word (not per-character) — ~10x fewer GSAP targets per frame */
+  const frag = document.createDocumentFragment();
   text.split(' ').forEach((word, wi, arr) => {
     const wordEl = document.createElement('span');
     wordEl.className = 'tgs-word';
+    wordEl.style.opacity = '0.08';
     wordEl.textContent = word;
-    el.appendChild(wordEl);
-    if (wi < arr.length - 1) el.appendChild(document.createTextNode(' '));
+    frag.appendChild(wordEl);
+    if (wi < arr.length - 1) frag.appendChild(document.createTextNode(' '));
   });
+  el.appendChild(frag);
 
   const words = el.querySelectorAll('.tgs-word');
   gsap.fromTo(words,
@@ -545,6 +548,7 @@ ScrollTrigger.batch('.reveal', {
         start: 'top 80%',
         end: 'bottom 20%',
         scrub: 0.5,
+        fastScrollEnd: true,
       }
     }
   );
