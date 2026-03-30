@@ -6,15 +6,16 @@
 /* ---- Responsive video source swap ---- */
 const isMobile = window.matchMedia('(max-width: 768px)').matches;
 if (isMobile) {
-  /* On mobile: replace all <source> elements with the single mobile MP4 */
+  /* On mobile: replace desktop sources with mobile WebM + MP4 from CDN */
   document.querySelectorAll('video[data-src-mobile]').forEach(v => {
-    const src = v.dataset.srcMobile;
-    if (!src) return;
     v.querySelectorAll('source').forEach(s => s.remove());
-    const s = document.createElement('source');
-    s.src = src;
-    s.type = 'video/mp4';
-    v.appendChild(s);
+    const webm = document.createElement('source');
+    webm.src  = 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20hero%20-%20mobile-PleWFG3tCvg8uwSUUMlaugxd5s72Nm.webm';
+    webm.type = 'video/webm';
+    const mp4  = document.createElement('source');
+    mp4.src   = 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20hero%20-%20mobile-6rFpNjklIcpde3tcSz4BeWbGkB8Uvm.mp4';
+    mp4.type  = 'video/mp4';
+    v.append(webm, mp4);
     v.load();
   });
 }
