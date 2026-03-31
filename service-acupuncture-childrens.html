@@ -11,16 +11,49 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* Override the static CSS background so we can use the parallax div instead */
+    .svc-acupuncture-childrens .sd-body {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-bg-parallax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 0;
+      background:
+        linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 26.webp') center / cover no-repeat;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    .sd-body .container-medium {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body class="svc-acupuncture-childrens">
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <div class="navbar-inner">
       <a href="index.html" class="navbar-logo">
-        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
-        <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/><circle cx="12" cy="7" r="1.5" fill="#1e3528"/></svg></div>
+        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img"
+            onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <div class="logo-icon" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/>
+            <circle cx="12" cy="7" r="1.5" fill="#1e3528"/>
+          </svg>
+        </div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
       <ul class="navbar-nav">
@@ -28,13 +61,34 @@
         <li class="nav-dropdown">
           <a href="#" class="nav-link active">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
           <div class="nav-dropdown-menu">
-            <a href="cat-naturopathic.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div><div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div></a>
-            <a href="cat-iv-therapy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div><div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div></a>
-            <a href="cat-acupuncture.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div><div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div></a>
-            <a href="cat-medical-aesthetics.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div><div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div></a>
-            <a href="cat-clinical-esthetics.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div><div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Lead: Vialeta Bkharvani</span></div></a>
-            <a href="cat-massage-therapy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div></a>
-            <a href="cat-osteopathy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div><div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div></a>
+            <a href="cat-naturopathic.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+            </a>
+            <a href="cat-iv-therapy.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
+              <div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+            </a>
+            <a href="cat-acupuncture.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+              <div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div>
+            </a>
+            <a href="cat-medical-aesthetics.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+              <div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div>
+            </a>
+            <a href="cat-clinical-esthetics.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div>
+              <div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Lead: Vialeta Bkharvani</span></div>
+            </a>
+            <a href="cat-massage-therapy.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div>
+            </a>
+            <a href="cat-osteopathy.html" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
+              <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div>
+            </a>
           </div>
         </li>
         <li><a href="about.html" class="nav-link">About</a></li>
@@ -51,14 +105,12 @@
   </div>
 </nav>
 
-<!-- BACK LINK -->
 <div class="sd-back">
   <div class="container-medium">
     <a href="cat-acupuncture.html" class="sd-back-link"><i class="fa-solid fa-arrow-left"></i> Back to Acupuncture &amp; TCM</a>
   </div>
 </div>
 
-<!-- HERO -->
 <section class="sd-hero">
   <div class="container-medium">
     <div class="sd-hero-inner">
@@ -74,59 +126,70 @@
         </a>
       </div>
       <div class="sd-hero-img-wrap reveal">
-        <img src="images/Sub services images/Children's Needleless Acupuncture/4-5.webp" alt="Children's Needleless Acupuncture" class="sd-hero-img sd-hero-img--desktop" />
-        <img src="images/Sub services images/Children's Needleless Acupuncture/16-9.webp" alt="Children's Needleless Acupuncture" class="sd-hero-img sd-hero-img--mobile" />
+        <img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/4-5.webp" alt="Children's Needleless Acupuncture" class="sd-hero-img sd-hero-img--desktop" />
+        <img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/16-9.webp" alt="Children's Needleless Acupuncture" class="sd-hero-img sd-hero-img--mobile" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- BODY -->
 <section class="sd-body">
+  <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="sd-body-inner">
       <div class="sd-main">
-        <h3>What to Expect</h3>
-        <ul class="sd-bullet-list">
-          <li>Child-friendly intake with parent consultation</li>
-          <li>Non-needle tools including laser, Shonishin, and acupressure</li>
-          <li>Gentle stimulation of key paediatric points</li>
-          <li>Parent guidance on home support strategies</li>
+        <h3 class="reveal">What to Expect</h3>
+        <p class="reveal">Pediatric treatments are quick, gentle, and often entirely needle-free. Using non-invasive tools from the Japanese Shonishin tradition, we stimulate specific acupuncture points to regulate the child’s developing nervous and immune systems.</p>
+        <ul class="sd-bullet-list reveal">
+          <li>Detailed intake covering birth history, digestion, and sleep</li>
+          <li>Gentle tapping or stroking of meridians using traditional Shonishin tools</li>
+          <li>Cold laser or acupressure for targeted point stimulation</li>
+          <li>A calm, child-centered environment</li>
+          <li>Home care guidance for parents (massage or lifestyle)</li>
         </ul>
-        <h3>Who It's For</h3>
-        <ul class="sd-bullet-list">
-          <li>Children aged 0–12 with digestive concerns, sleep difficulties, immune challenges, or developmental support needs</li>
-          <li>Parents seeking gentle, natural care for their children</li>
+        <h3 class="reveal">Common Conditions Treated</h3>
+        <ul class="sd-bullet-list reveal">
+          <li>Immune support (frequent colds, allergies, asthma)</li>
+          <li>Digestive wellness (colic, constipation, reflux)</li>
+          <li>Nervous system balance (anxiety, sleep issues, ADHD support)</li>
+          <li>Eczema and other inflammatory skin conditions</li>
         </ul>
-        <h3>Why Children's Acupuncture</h3>
-        <p>Children respond remarkably well to gentle TCM stimulation. Dr. Viktoriia Taylor creates a calm, nurturing environment where children feel safe — and parents can trust the clinical expertise behind every session.</p>
+        <div class="sd-gallery reveal">
+          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/Image%201.webp" alt="Children's Acupuncture 1" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/Image%202.webp" alt="Children's Acupuncture 2" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/Image%203.webp" alt="Children's Acupuncture 3" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/Image%204.webp" alt="Children's Acupuncture 4" /></div>
+        </div>
       </div>
       <aside class="sd-card reveal">
-        <h4 class="sd-card-title">Service Details</h4>
-        <p class="sd-card-intro">Gentle, non-invasive TCM for children using laser, Shonishin, and acupressure techniques.</p>
-        <h5 class="sd-card-section-title">Session Overview</h5>
+        <h3 class="sd-card-title">Service Details</h3>
+        <p class="sd-card-intro">Specialised pediatric care focused on safety, comfort, and natural developmental support.</p>
+        <h4 class="sd-card-section-title">Session Overview</h4>
         <ul class="sd-overview-list">
           <li class="sd-overview-item">
-            <div class="sd-overview-icon"><i class="fa-solid fa-clock"></i></div>
+            <span class="sd-overview-icon"><i class="fa-regular fa-clock"></i></span>
             <div><span class="sd-overview-label">Duration</span><span class="sd-overview-value">30–45 min</span></div>
           </li>
           <li class="sd-overview-item">
-            <div class="sd-overview-icon"><i class="fa-solid fa-user"></i></div>
-            <div><span class="sd-overview-label">Session Type</span><span class="sd-overview-value">1-on-1 private</span></div>
+            <span class="sd-overview-icon"><i class="fa-solid fa-user-group"></i></span>
+            <div><span class="sd-overview-label">Session Type</span><span class="sd-overview-value">Pediatric Private</span></div>
           </li>
           <li class="sd-overview-item">
-            <div class="sd-overview-icon"><i class="fa-solid fa-list-check"></i></div>
-            <div><span class="sd-overview-label">Practitioner</span><span class="sd-overview-value">Dr. Viktoriia Taylor, DTCM</span></div>
+            <span class="sd-overview-icon"><i class="fa-solid fa-wand-sparkles"></i></span>
+            <div><span class="sd-overview-label">Technique</span><span class="sd-overview-value">Needleless/Laser</span></div>
           </li>
         </ul>
         <hr class="sd-card-divider" />
-        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="sd-card-btn">Book an Appointment <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary sd-card-btn">
+          <span class="btn-ihb-blob"></span>
+          <span class="btn-ihb-default">Book for your Child</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book for your Child</span>
+        </a>
       </aside>
     </div>
   </div>
 </section>
 
-<!-- RELATED -->
 <section class="sd-related">
   <div class="container-medium">
     <div class="sd-related-header reveal">
@@ -135,47 +198,40 @@
     </div>
     <div class="sd-related-grid">
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/Sub services images/Traditional Acupuncture/16-9.webp" alt="Traditional Acupuncture" class="sd-rel-img" />
-        </div>
+        <div class="sd-rel-img-wrap"><img src="images/massage therapy - services page.jpg" alt="Massage Therapy" class="sd-rel-img" /></div>
         <div class="sd-rel-body">
-          <h4 class="sd-rel-name">Traditional Acupuncture</h4>
-          <p class="sd-rel-desc">Classical Chinese needling to restore energetic balance and support the body's healing capacity.</p>
-          <a href="service-acupuncture-traditional.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="sd-rel-name">Massage Therapy</h3>
+          <p class="sd-rel-desc">Therapeutic massage techniques to relieve muscle tension, improve circulation, and support recovery from injury or chronic pain.</p>
+          <a href="service-massage-therapy.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/Pediatric Nathuropathy care/Pediatric Naturopathic Care 16-9.png" alt="Pediatric Naturopathic Care" class="sd-rel-img" />
-        </div>
+        <div class="sd-rel-img-wrap"><img src="images/fertility program - services page.png" alt="Fertility Program" class="sd-rel-img" /></div>
         <div class="sd-rel-body">
-          <h4 class="sd-rel-name">Pediatric Naturopathic Care</h4>
-          <p class="sd-rel-desc">Natural, evidence-based naturopathic care tailored for children's unique health needs.</p>
-          <a href="service-pediatric-care.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="sd-rel-name">Fertility Program</h3>
+          <p class="sd-rel-desc">Comprehensive naturopathic fertility support addressing hormonal balance, cycle regulation, and reproductive health optimisation.</p>
+          <a href="service-fertility-program.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/acupunture - services page.png" alt="Acupuncture &amp; TCM" class="sd-rel-img" />
-        </div>
+        <div class="sd-rel-img-wrap"><img src="images/osteopathy - services page.png" alt="Osteopathy" class="sd-rel-img" /></div>
         <div class="sd-rel-body">
-          <h4 class="sd-rel-name">Acupuncture &amp; TCM</h4>
-          <p class="sd-rel-desc">Explore our full range of acupuncture and Traditional Chinese Medicine services.</p>
-          <a href="cat-acupuncture.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="sd-rel-name">Osteopathy</h3>
+          <p class="sd-rel-desc">Hands-on osteopathic manual therapy to improve mobility, relieve musculoskeletal pain, and restore the body's structural balance.</p>
+          <a href="service-osteopathy.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="sf-footer">
   <div class="sf-fixed">
     <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
     <div class="sf-body">
       <div class="sf-top">
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
-          <a href="index.html" class="sf-logo"><img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div></a>
+          <a href="index.html" class="sf-logo"><img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div></a>
           <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social"><a href="#" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
         </div>
@@ -188,7 +244,7 @@
         <div class="sf-col sf-anim" style="--sf-delay:0.2s">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
-            <li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li><li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li><li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li>
+            <li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li> <li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li><li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li>
           </ul>
         </div>
         <div class="sf-col sf-anim" style="--sf-delay:0.3s">
@@ -215,6 +271,37 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
-<div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    var section = document.querySelector(".sd-body");
+    var bg = document.querySelector(".section-bg-parallax");
+    if (!section || !bg) return;
+
+    gsap.fromTo(bg,
+      { y: function () { return -window.innerHeight; } },
+      {
+        y: function () { return section.offsetHeight; },
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  });
+</script>
+
+<div class="mobile-book-bar">
+  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
+    <span class="btn-ihb-default">Book an appointment</span>
+  </a>
+</div>
+
 </body>
 </html>
