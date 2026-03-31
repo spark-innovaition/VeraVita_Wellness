@@ -4,45 +4,118 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/faviconm.png" />
-  <title>Naturopathic Medicine | VeraVita Clinic Calgary</title>
-  <meta name="description" content="Naturopathic care in Calgary with Dr. Jill Nazar, ND. Addressing fatigue, fertility, weight management, pediatric health, and chronic conditions through evidence-based natural medicine." />
+  <title>Naturopathic Medicine Services | VeraVita Clinic Calgary</title>
+  <meta name="description" content="Explore VeraVita's full naturopathic medicine services led by Dr. Jill Nazar, ND — naturopathic care, fatigue treatment, fertility, weight loss, and pediatric health in Calgary." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "VeraVita Wellness & Aesthetics",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Wellness Ave, Suite 201",
-      "addressLocality": "Calgary",
-      "addressRegion": "AB",
-      "addressCountry": "CA"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Naturopathic Medicine Services",
-      "itemListElement": [
-        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Naturopathic Initial Consultation","provider":{"@type":"Person","name":"Dr. Jill Nazar, ND"}},"price":"215.00","priceCurrency":"CAD"},
-        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Pediatric Initial Consultation","provider":{"@type":"Person","name":"Dr. Jill Nazar, ND"}},"price":"180.00","priceCurrency":"CAD"}
-      ]
+  <link rel="stylesheet" href="css/styles.css?v=2" />
+
+  <style>
+    /* LEAD DOCTOR SECTION STYLES */
+    .dr-showcase {
+      padding: 8rem 0;
+      background: #fff;
     }
-  }
-  </script>
+    .dr-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .dr-portrait-wrap {
+      position: relative;
+    }
+    .dr-portrait-img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    }
+    .dr-badge {
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+      background: var(--primary);
+      color: white;
+      padding: 2.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 15px 30px rgba(114, 140, 105, 0.3);
+    }
+    .dr-badge strong {
+      display: block;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.8rem;
+    }
+    .dr-expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .dr-expertise-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+    .dr-expertise-item i { color: var(--primary); }
+
+    /* CLINICAL GALLERY - 3:2 RATIO FIX */
+    .dr-clinical-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+    .dr-gallery-tab {
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background: #f9fbf9;
+    }
+    .dr-gallery-tab img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dr-gallery-tab:hover img { transform: scale(1.05); }
+
+    /* SERVICE CARD REFINEMENT */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--gray-5);
+      border-left: 1px solid var(--gray-5);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .svc-cell {
+      padding: 3.5rem;
+      background: #fff;
+      border-right: 1px solid var(--gray-5);
+      border-bottom: 1px solid var(--gray-5);
+    }
+
+    @media (max-width: 991px) {
+      .dr-showcase-grid { grid-template-columns: 1fr; gap: 4rem; }
+      .dr-clinical-gallery { grid-template-columns: 1fr 1fr; }
+      .svc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <div class="navbar-inner">
       <a href="index.html" class="navbar-logo">
-        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img"
-             onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
@@ -51,34 +124,14 @@
         <li class="nav-dropdown">
           <a href="#" class="nav-link active">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
           <div class="nav-dropdown-menu">
-            <a href="cat-naturopathic.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
-              <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Dr. Jill Nazar, ND</span></div>
-            </a>
-            <a href="cat-iv-therapy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
-              <div class="nav-dd-text"><strong>Lab Testing &amp; IV Therapy</strong><span>Dr. Jill Nazar, ND</span></div>
-            </a>
-            <a href="cat-acupuncture.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
-              <div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Dr. Viktoriia Taylor, DTCM</span></div>
-            </a>
-            <a href="cat-medical-aesthetics.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
-              <div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Dr. Susan Mankaeeva, MD</span></div>
-            </a>
-            <a href="cat-clinical-esthetics.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div>
-              <div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Vialeta Bkharvani</span></div>
-            </a>
-            <a href="cat-massage-therapy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div>
-            </a>
-            <a href="cat-osteopathy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
-              <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div>
-            </a></div>
+            <a href="cat-naturopathic.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div><div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div></a>
+            <a href="cat-iv-therapy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div><div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div></a>
+            <a href="cat-acupuncture.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div><div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div></a>
+            <a href="cat-medical-aesthetics.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div><div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div></a>
+            <a href="cat-clinical-esthetics.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div><div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Lead: Vialeta Bkharvani</span></div></a>
+            <a href="cat-massage-therapy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div></a>
+            <a href="cat-osteopathy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div><div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div></a>
+          </div>
         </li>
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="practitioners.html" class="nav-link">Practitioners</a></li>
@@ -94,192 +147,143 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="svc-hero">
-  <video class="svc-hero-video" autoplay muted loop playsinline
-    data-src-desktop="images/background video.mp4"
-    data-src-mobile="images/Background video - Mobile only.mp4">
-    <source src="images/background video.mp4" type="video/mp4" />
-  </video>
-  <script>
-    (function() {
-      var v = document.currentScript.previousElementSibling;
-      var src = window.matchMedia('(max-width: 860px)').matches ? v.dataset.srcMobile : v.dataset.srcDesktop;
-      v.querySelector('source').src = src;
-      v.load();
-    })();
-  </script>
-  <div class="svc-hero-overlay"></div>
-  <div class="svc-hero-content">
-    <p class="svc-hero-eyebrow">Naturopathic Medicine &nbsp;·&nbsp; Calgary</p>
-    <h1 class="svc-hero-heading">Heal from<br /><em>the root up</em></h1>
-    <p class="svc-hero-sub">Evidence-based naturopathic care for fatigue, hormonal balance, fertility, weight management, and long-term whole-body wellness — led by Dr. Jill Nazar, ND.</p>
-    <div class="svc-hero-btns">
-      <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-        <span class="btn-ihb-blob"></span>
-        <span class="btn-ihb-default">Book a consultation</span>
-        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book a consultation</span>
-      </a>
-      <a href="#pricing" class="btn-ihb btn-ihb--outline-light">
-        <span class="btn-ihb-blob"></span>
-        <span class="btn-ihb-default">View pricing</span>
-        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-down"></i> View pricing</span>
-      </a>
+<section class="cat-hero" style="background:var(--dark);padding:5rem 0 4rem">
+  <video class="cat-hero-video" autoplay muted loop playsinline><source src="images/Service Hero section video/Nathuropathy hero section.mp4" type="video/mp4" /></video>
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--primary)">Service Category</span>
+      <h1 style="color:var(--white);margin-bottom:1rem">Naturopathic <em style="color:#a8c99e">Medicine</em></h1>
+      <p style="color:rgba(255,255,255,0.75);max-width:620px;line-height:1.75;margin-bottom:1.5rem">Evidence-based natural medicine addressing the root causes of chronic illness — from fatigue and hormonal imbalance to fertility, weight management, and children's health.</p>
+      <div class="svc-cell-prac" style="display:block;font-size:0.9375rem;color:#a8c99e"><i class="fa-solid fa-leaf"></i> Led by Dr. Jill Nazar, ND &mdash; Naturopathic Doctor &amp; Founder</div>
+      <a href="#pricing" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.625rem 1.375rem;border:1.5px solid rgba(255,255,255,0.55);border-radius:4rem;color:#ffffff;font-size:0.875rem;font-weight:500;text-decoration:none;background:rgba(255,255,255,0.08);backdrop-filter:blur(4px)"><i class="fa-solid fa-tag" style="font-size:0.775rem"></i> View Pricing&#160;&#160;<i class="fa-solid fa-arrow-down" style="font-size:0.7rem;opacity:0.7"></i></a>
     </div>
   </div>
 </section>
 
-<!-- PRACTITIONER INTRO -->
-<section class="sd-body" style="background:var(--white);padding:5rem 0">
+<section class="svc-section" style="padding:6rem 0; background: var(--gray-6);">
   <div class="container">
-    <div class="split-inner reveal">
-      <div class="split-img-wrap">
-        <img src="images/nathuropathy - services page.png" alt="Naturopathic Medicine — Dr. Jill Nazar, ND" class="split-img" loading="lazy" />
-      </div>
-      <div class="split-content">
-        <span class="section-label">Your Naturopathic Doctor</span>
-        <h2>Meet <em>Dr. Jill Nazar, ND</em></h2>
-        <p style="color:var(--body-text);line-height:1.75;margin-bottom:1.25rem">Dr. Jill Nazar is VeraVita's Founder and Lead Naturopathic Physician. She takes a comprehensive, root-cause approach to health — combining the best of conventional diagnostics with evidence-informed natural therapies to address each patient's unique biology and goals.</p>
-        <p style="color:var(--body-text);line-height:1.75;margin-bottom:2rem">Whether you're struggling with chronic fatigue, hormonal imbalance, fertility concerns, weight challenges, or supporting your child's health — Dr. Nazar builds a personalised care plan that evolves with you.</p>
-        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-          <span class="btn-ihb-blob"></span>
-          <span class="btn-ihb-default">Book with Dr. Nazar</span>
-          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Dr. Nazar</span>
-        </a>
-      </div>
+    <div class="svc-section-header reveal" style="margin-bottom:3rem">
+      <h2>Select a <em>Service</em></h2>
+      <p>Choose a service below to learn more — what it treats, what to expect, and how to book.</p>
     </div>
-  </div>
-</section>
-
-<!-- WHAT WE TREAT -->
-<section class="sd-body" style="padding:5rem 0">
-  <div class="container">
-    <div class="section-header text-center reveal" style="margin-bottom:3rem">
-      <span class="section-label">Areas of Care</span>
-      <h2>What We <em>Treat</em></h2>
-      <p>A personalised naturopathic approach to common and complex health concerns — grounded in evidence and centred around you.</p>
-    </div>
-    <div class="svc-grid stagger-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5)">
-
+    <div class="svc-grid stagger-grid">
       <div class="svc-cell stagger-item">
         <div class="svc-cell-body">
-          <div class="svc-cell-icon"><i class="fa-solid fa-bolt"></i></div>
-          <h3 class="svc-cell-name">Fatigue &amp; Energy</h3>
-          <p class="svc-cell-desc">Chronic fatigue, low energy, and burnout addressed through nutrient repletion, hormone balancing, and targeted lifestyle interventions to restore your vitality.</p>
+          <div class="svc-cell-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3 class="svc-cell-name">Naturopathic Care</h3>
+          <p class="svc-cell-desc">Comprehensive whole-body assessments and personalised treatment plans — addressing the root causes of complex, chronic health conditions using evidence-based natural medicine.</p>
+          <a href="service-naturopathic-care.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-
+      <div class="svc-cell stagger-item">
+        <div class="svc-cell-body">
+          <div class="svc-cell-icon"><i class="fa-solid fa-battery-half"></i></div>
+          <h3 class="svc-cell-name">Fatigue Treatment</h3>
+          <p class="svc-cell-desc">In-depth evaluation of hormonal imbalances, nutrient deficiencies, thyroid function, and adrenal health to restore your energy and vitality for the long term.</p>
+          <a href="service-fatigue-treatment.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
       <div class="svc-cell stagger-item">
         <div class="svc-cell-body">
           <div class="svc-cell-icon"><i class="fa-solid fa-heart"></i></div>
-          <h3 class="svc-cell-name">Fertility &amp; Hormones</h3>
-          <p class="svc-cell-desc">Preconception support, menstrual irregularities, PCOS, thyroid imbalance, and perimenopause — natural hormonal restoration for every stage of life.</p>
+          <h3 class="svc-cell-name">Fertility Program</h3>
+          <p class="svc-cell-desc">Personalised preconception care and fertility support for individuals and couples — addressing hormonal, nutritional, and lifestyle factors that affect reproductive health.</p>
+          <a href="service-fertility-program.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-
       <div class="svc-cell stagger-item">
         <div class="svc-cell-body">
           <div class="svc-cell-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-          <h3 class="svc-cell-name">Weight Management</h3>
-          <p class="svc-cell-desc">Sustainable, medically-guided weight loss programs addressing underlying metabolic drivers — not just calorie restriction — for lasting results.</p>
+          <h3 class="svc-cell-name">Weight Loss Program</h3>
+          <p class="svc-cell-desc">Medically guided, sustainable weight management addressing the metabolic, hormonal, and lifestyle drivers of weight gain — not just calorie restriction.</p>
+          <a href="service-weight-loss.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-
       <div class="svc-cell stagger-item">
         <div class="svc-cell-body">
           <div class="svc-cell-icon"><i class="fa-solid fa-child"></i></div>
-          <h3 class="svc-cell-name">Pediatric Health</h3>
-          <p class="svc-cell-desc">Gentle, evidence-based naturopathic care for children — from immune support and digestive concerns to developmental wellness and allergies.</p>
+          <h3 class="svc-cell-name">Pediatric Care</h3>
+          <p class="svc-cell-desc">Gentle, evidence-based naturopathic care for children — supporting immune health, digestion, developmental wellness, and allergies from infancy through adolescence.</p>
+          <a href="service-pediatric-care.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-
-      <div class="svc-cell stagger-item">
-        <div class="svc-cell-body">
-          <div class="svc-cell-icon"><i class="fa-solid fa-lungs"></i></div>
-          <h3 class="svc-cell-name">Chronic Illness</h3>
-          <p class="svc-cell-desc">Comprehensive management of chronic conditions including autoimmune disease, inflammatory conditions, and complex multi-system presentations.</p>
-        </div>
-      </div>
-
-      <div class="svc-cell stagger-item">
-        <div class="svc-cell-body">
-          <div class="svc-cell-icon"><i class="fa-solid fa-seedling"></i></div>
-          <h3 class="svc-cell-name">Digestive Health</h3>
-          <p class="svc-cell-desc">IBS, bloating, food sensitivities, and gut dysbiosis treated with functional approaches — restoring your digestive foundation for whole-body health.</p>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- PRICING TABLE -->
-<section id="pricing" class="sd-body" style="padding:5rem 0;background:var(--gray-6)">
+<section class="dr-showcase">
   <div class="container">
-    <div class="pricing-section-hd reveal">
-      <div>
-        <span class="section-label">Transparent Pricing</span>
-        <h2>Consultation <em>Fees</em></h2>
+    <div class="dr-showcase-grid">
+      <div class="dr-portrait-wrap reveal">
+        <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="dr-portrait-img">
+        <div class="dr-badge">
+          <strong>15+ Years</strong>
+          <span>Clinical Excellence</span>
+        </div>
       </div>
-      <span class="pricing-prac-badge"><i class="fa-solid fa-leaf"></i> Dr. Jill Nazar, ND &mdash; Naturopathic Doctor</span>
+      <div class="dr-info reveal">
+        <div class="section-label">Your Lead Doctor</div>
+        <h2>Meet <em>Dr. Jill Nazar, ND</em></h2>
+        <p style="font-size:1.15rem; line-height:1.8; margin: 1.5rem 0; color:var(--body-text);">Dr. Jill Nazar is VeraVita's Founder and Lead Naturopathic Physician. She believes in a "biological investigative" approach to medicine—uncovering the specific imbalances that prevent optimal health.</p>
+        <p style="line-height:1.75; color:var(--body-text);">Combining rigorous diagnostics with botanical medicine, Dr. Nazar provides a bridge between conventional knowledge and natural healing protocols for the entire family.</p>
+        
+        <div class="dr-expertise-grid">
+          <div class="dr-expertise-item"><i class="fa-solid fa-check-circle"></i> <span>Hormonal Optimization</span></div>
+          <div class="dr-expertise-item"><i class="fa-solid fa-check-circle"></i> <span>Complex Chronic Care</span></div>
+          <div class="dr-expertise-item"><i class="fa-solid fa-check-circle"></i> <span>Functional Diagnostics</span></div>
+          <div class="dr-expertise-item"><i class="fa-solid fa-check-circle"></i> <span>Family Medicine</span></div>
+        </div>
+
+        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary" style="margin-top:2.5rem;">
+          <span class="btn-ihb-blob"></span><span class="btn-ihb-default">Book with Dr. Nazar</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-calendar-check"></i> Book with Dr. Nazar</span>
+        </a>
+      </div>
     </div>
-    <div class="price-table-wrap">
+
+    <div class="dr-clinical-gallery reveal">
+      <div class="dr-gallery-tab"><img src="images/nathuropathy - services page.png" alt="Clinical Botanicals"></div>
+      <div class="dr-gallery-tab"><img src="images/IV therapy - services page.png" alt="In-Clinic Diagnostics"></div>
+      <div class="dr-gallery-tab"><img src="images/vitamin injections - service page.png" alt="Personalised Protocols"></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="padding:4rem 0 6.5rem; background: var(--gray-6);">
+  <div class="container">
+    <div class="svc-section-header reveal" style="margin-bottom:3rem">
+      <p class="section-tag" style="margin-bottom:0.75rem"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
+      <h2>Service <em>Pricing</em></h2>
+      <p>All prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" style="color:var(--primary)">booking portal</a> for current rates and availability.</p>
+    </div>
+    <div class="price-table-wrap reveal">
       <table class="price-table">
-        <thead>
-          <tr>
-            <th>Service</th>
-            <th>Duration</th>
-            <th>Price</th>
-            <th>Book</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
         <tbody>
-          <tr><td>Naturopathic Initial Consultation</td><td class="td-dur">60 min</td><td class="td-price">$215</td><td class="td-book"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener">Book Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a></td></tr>
-          <tr><td>Pediatric Initial Consultation</td><td class="td-dur">60 min</td><td class="td-price">$180</td><td class="td-book"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener">Book Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a></td></tr>
-          <tr><td>Acute / Injection Follow-Up</td><td class="td-dur">15 min</td><td class="td-price">$50</td><td class="td-book"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener">Book Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a></td></tr>
-          <tr><td>Short Follow-Up</td><td class="td-dur">30 min</td><td class="td-price">$130</td><td class="td-book"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener">Book Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a></td></tr>
-          <tr><td>Standard Follow-Up</td><td class="td-dur">45 min</td><td class="td-price">$170</td><td class="td-book"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener">Book Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a></td></tr>
-          <tr><td>Long Follow-Up</td><td class="td-dur">60 min</td><td class="td-price">$220</td><td class="td-book"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener">Book Now <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a></td></tr>
+          <tr><td>Naturopathic Initial Consultation</td><td class="td-dur">60 min</td><td class="td-price">$215.00</td></tr>
+          <tr><td>Naturopathic Pediatric Consult (under 12)</td><td class="td-dur">60 min</td><td class="td-price">$180.00</td></tr>
+          <tr><td>Telemedicine</td><td class="td-dur">60 min</td><td class="td-price">$215.00</td></tr>
+          <tr><td>Initial IV Appointment</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr>
+          <tr><td>Follow-Up Consultation (60 min)</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr>
+          <tr><td>Follow-Up Consultation (45 min)</td><td class="td-dur">45 min</td><td class="td-price">$170.00</td></tr>
+          <tr><td>Follow-Up Consultation (30 min)</td><td class="td-dur">30 min</td><td class="td-price">$130.00</td></tr>
+          <tr><td>Follow-Up Consultation (15 min)</td><td class="td-dur">15 min</td><td class="td-price">$50.00</td></tr>
+          <tr><td>Lab Test Visit</td><td class="td-dur">15 min</td><td class="td-price td-consult">Offered by Dr. Jill Nazar</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="pricing-disclaimer" style="margin-top:2rem">
-      <div class="pricing-disclaimer-icon"><i class="fa-solid fa-circle-info"></i></div>
-      <p>Prices are subject to change. Please refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener">JaneApp Portal</a> for the most current rates and availability.</p>
-    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section style="background:var(--dark);padding:5rem 0;text-align:center">
-  <div class="container">
-    <p class="svc-hero-eyebrow" style="color:var(--primary)">Ready to Begin?</p>
-    <h2 style="color:var(--white);margin-bottom:1rem">Book your naturopathic <em style="color:#a8c99e;font-style:italic">consultation</em></h2>
-    <p style="color:rgba(255,255,255,0.75);max-width:520px;margin:0 auto 2rem;line-height:1.7">Every patient journey begins with a thorough initial consultation — so Dr. Nazar can understand your full health picture and build the right plan for you.</p>
-    <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-      <span class="btn-ihb-blob"></span>
-      <span class="btn-ihb-default">Book with Dr. Nazar</span>
-      <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Dr. Nazar</span>
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer class="sf-footer">
   <div class="sf-fixed">
-    <div class="sf-deco" aria-hidden="true">
-      <div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div>
-    </div>
+    <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
     <div class="sf-body">
       <div class="sf-top">
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
           <a href="index.html" class="sf-logo">
-            <img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="sf-logo-fallback" style="display:none;">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg>
-              <span>VeraVita</span>
-            </div>
+            <img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
           </a>
           <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social">
@@ -291,14 +295,10 @@
         <div class="sf-col sf-anim" style="--sf-delay:0.1s">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="practitioners.html">Our Practitioners</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="faqs.html">FAQs</a></li>
-            <li><a href="careers.html">Careers</a></li>
+            <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+            <li><a href="practitioners.html">Our Practitioners</a></li><li><a href="faqs.html">FAQs</a></li>
+            <li><a href="careers.html">Careers</a></li><li><a href="pricing.html">Pricing</a></li>
           </ul>
         </div>
         <div class="sf-col sf-anim" style="--sf-delay:0.2s">
@@ -316,23 +316,15 @@
         <div class="sf-col sf-anim" style="--sf-delay:0.3s">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
-            <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
-            <li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:Info@veravitawellness.ca">Info@veravitawellness.ca</a></li>
-            <li><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</li>
+            <li><i class="fa-solid fa-phone"></i> (587) 585-2524</li>
+            <li><i class="fa-solid fa-envelope"></i> Info@veravitawellness.ca</li>
+            <li><i class="fa-solid fa-location-dot"></i> Unit 104 – 14505 Bannister Road SE, Calgary</li>
           </ul>
           <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
-          <ul class="sf-links">
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms of Service</a></li>
-            <li><a href="cookie-policy.html">Cookie Policy</a></li>
-          </ul>
+          <ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul>
         </div>
       </div>
-      <div class="sf-bottom">
-        <p>&copy; 2026 VeraVita Wellness &amp; Aesthetics. All rights reserved.</p>
-        <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
-        <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
-      </div>
+      <div class="sf-bottom"><p>&copy; 2026 VeraVita Wellness & Aesthetics. All rights reserved.</p></div>
     </div>
   </div>
 </footer>
@@ -341,12 +333,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
-<!-- MOBILE BOTTOM BOOKING BAR -->
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book a consultation</span>
-  </a>
-</div>
-
 </body>
 </html>

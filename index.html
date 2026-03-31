@@ -12,15 +12,89 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preload" as="image" href="images/bg-hero-section.webp" />
-  <!-- Font Awesome loaded async — icons are non-critical for first paint -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
+  
+  <style>
+    /* STUTTER-FIX PERFORMANCE OVERRIDES */
+    
+    .hwnu-section {
+      /* Total rendering isolation from the Hero section */
+      transform: translate3d(0,0,0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+      z-index: 10;
+      position: relative;
+      /* Forces browser to treat this section as a separate paint layer */
+      contain: paint layout; 
+      background: #eaf2ea; /* Match background to prevent white flash */
+    }
+
+    .hwnu-marquee {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      overflow: hidden;
+      /* Optimization: Force a fixed box for the marquee so scroll doesn't re-calculate height */
+      contain: strict;
+      margin-bottom: 3.5rem;
+    }
+
+    /* Edge fades using GPU-friendly static gradients */
+    .hwnu-marquee::before,
+    .hwnu-marquee::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 120px;
+      height: 100%;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .hwnu-marquee::before {
+      left: 0;
+      background: linear-gradient(to right, #eaf2ea 15%, transparent);
+    }
+    .hwnu-marquee::after {
+      right: 0;
+      background: linear-gradient(to left, #eaf2ea 15%, transparent);
+    }
+
+    .hwnu-track {
+      display: flex;
+      gap: 1.5rem;
+      width: max-content;
+      will-change: transform;
+      /* Hardware acceleration to keep animation off the Main Thread */
+      transform: translate3d(0,0,0);
+      animation: hwnu-scroll-optimized 45s linear infinite;
+    }
+
+    @keyframes hwnu-scroll-optimized {
+      from { transform: translate3d(0, 0, 0); }
+      to   { transform: translate3d(-50%, 0, 0); } 
+    }
+
+    /* Prevent decoding lag by keeping images in the GPU cache */
+    .hwnu-img {
+      width: 280px;
+      height: 190px;
+      aspect-ratio: 280 / 190;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 1.25rem;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      decoding: async; /* Offloads decoding from Main Thread */
+    }
+
+    @media (hover: hover) {
+      .hwnu-marquee:hover .hwnu-track { animation-play-state: paused; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ====================================================
-     NAVBAR
-     ==================================================== -->
 <nav class="navbar">
   <div class="container">
     <div class="navbar-inner">
@@ -38,8 +112,8 @@
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
 
-            <ul class="navbar-nav">
-        <li><a href="index.html"          class="nav-link active">Home</a></li>
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
         <li class="nav-dropdown">
           <a href="#" class="nav-link">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
           <div class="nav-dropdown-menu">
@@ -73,8 +147,8 @@
             </a>
           </div>
         </li>
-        <li><a href="about.html"          class="nav-link">About</a></li>
-        <li><a href="practitioners.html"  class="nav-link">Practitioners</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="practitioners.html" class="nav-link">Practitioners</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
@@ -92,15 +166,9 @@
   </div>
 </nav>
 
-<!-- CINEMATIC TEXT-ZOOM HERO -->
 <div class="ph-cinematic">
-  <!-- Video plays full bleed — visible only through letter cutouts -->
   <video class="ph-cin-video" autoplay muted loop playsinline id="hero-video"></video>
-
-  <!-- Canvas overlay injected by JS — handles text cutout compositing -->
   <p class="ph-cin-label">Naturopathic &amp; Aesthetic Medicine · Calgary</p>
-
-  <!-- Hero content revealed after zoom — slides up from below -->
   <div class="ph-hero-content">
     <p class="ph-hero-pre">Naturopathic &amp; Aesthetic Medicine · Calgary</p>
     <h2 class="ph-hero-heading">Elevated care,<br /><em>renewed confidence</em></h2>
@@ -113,75 +181,41 @@
   </div>
 </div>
 
-<!-- ====================================================
-     SECTION 2: HERE WHEN YOU NEED US
-     ==================================================== -->
 <section class="hwnu-section">
   <div class="container">
 
-    <!-- Eyebrow label -->
     <div class="hwnu-eyebrow reveal">
       <i class="fa-solid fa-heart-pulse"></i>
       <span>Here when you need us</span>
     </div>
 
-    <!-- Large text gradient scroll paragraph -->
     <p class="hwnu-statement" id="intro-tgs">At VeraVita, we believe healthcare is more than just treating symptoms — it's a commitment to improving lives. With a team of compassionate experts and state-of-the-art facilities.</p>
 
-    <!-- Infinite scrolling image strip -->
     <div class="hwnu-marquee">
       <div class="hwnu-track" id="hwnu-track">
-        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-8313177.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-tima-miroshnichenko-8376162.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-anntarazevich-6560288.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-karola-g-4084639.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-yankrukov-5793684.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-8312866.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447003.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-ivan-s-6436272.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-arina-krasnikova-6663359.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506163.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-hannah-barata-776560167-27925591.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-omarmedinaoficial-16131210.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-8313197.webp" alt="" class="hwnu-img" width="280" height="190" loading="lazy" decoding="async" />
-        <!-- Duplicated for seamless loop -->
-        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-8313177.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-tima-miroshnichenko-8376162.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-anntarazevich-6560288.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-karola-g-4084639.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-yankrukov-5793684.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-8312866.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447003.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-ivan-s-6436272.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-arina-krasnikova-6663359.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506163.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-hannah-barata-776560167-27925591.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-omarmedinaoficial-16131210.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-8313197.webp" alt="" class="hwnu-img" width="280" height="190" aria-hidden="true" loading="lazy" decoding="async" />
+        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Aesthetics" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="Health" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="Patient Care" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="Lab Testing" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="Wellness Support" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" class="hwnu-img" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" class="hwnu-img" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" class="hwnu-img" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Aesthetics" class="hwnu-img" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="Health" class="hwnu-img" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="Patient Care" class="hwnu-img" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="Lab Testing" class="hwnu-img" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="Wellness Support" class="hwnu-img" aria-hidden="true" />
       </div>
     </div>
 
-    <!-- CTA -->
     <div class="hwnu-cta-wrap reveal">
       <a href="about.html" class="btn-ihb btn-ihb--primary">
         <span class="btn-ihb-blob"></span>
@@ -193,13 +227,9 @@
   </div>
 </section>
 
-<!-- ====================================================
-     SECTION 3: WHY CHOOSE VERAVITA
-     ==================================================== -->
 <section class="wcu-section">
   <div class="container">
 
-    <!-- Header -->
     <div class="wcu-header reveal">
       <div class="wcu-eyebrow">
         <i class="fa-solid fa-heart-pulse"></i>
@@ -208,7 +238,6 @@
       <h2 class="wcu-heading">Why choose VeraVita<br />for your health</h2>
     </div>
 
-    <!-- 3-column features -->
     <div class="wcu-grid stagger-grid">
       <div class="wcu-item stagger-item">
         <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,7 +270,6 @@
       </div>
     </div>
 
-    <!-- Certified care card -->
     <div class="wcu-cert-card reveal">
       <div class="wcu-cert-left">
         <h3 class="wcu-cert-title">Certified care you can rely on</h3>
@@ -273,12 +301,8 @@
   </div>
 </section>
 
-<!-- ====================================================
-     SECTION 4: DARK SERVICES ACCORDION
-     ==================================================== -->
 <section class="services-accord-section">
 
-  <!-- Video background -->
   <video class="accord-video-bg" autoplay muted loop playsinline preload="metadata">
     <source src="https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/specialities-6IE9uiADyoMjyDmnU365aDI462oqrs.webm" type="video/webm" />
     <source src="https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/specialities-dg7i95d4UHe4wCKyURmPotOL8PhyWG.mp4" type="video/mp4" />
@@ -421,7 +445,6 @@
         </a>
       </div>
 
-      <!-- Service image panel -->
       <div class="services-accord-img">
         <div class="accord-img-card">
           <img id="accord-preview" src="images/Treatments/Nathuropathic care.webp" alt="" class="accord-img" width="400" height="533" loading="lazy" decoding="async" />
@@ -437,85 +460,10 @@
   </div>
 </section>
 
-<!-- SECTION 5: TEAM — removed
-<section class="team-section">
-  <div class="container">
-    <div class="team-header">
-      <div class="reveal">
-        <div class="section-label">Meet the Specialists</div>
-        <h2>Caring professionals,<br /><em>advanced solutions</em></h2>
-      </div>
-      <a href="about.html" class="btn-ihb btn-ihb--primary reveal">
-        <span class="btn-ihb-blob"></span>
-        <span class="btn-ihb-default">See our full team</span>
-        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> See our full team</span>
-      </a>
-    </div>
-    <div class="team-grid stagger-grid">
-      <div class="team-card stagger-item">
-        <div class="team-tooltip">
-          <div class="team-tooltip-line-1"></div>
-          <div class="team-tooltip-line-2"></div>
-          <span class="team-tooltip-name">Dr. Emma Clarke</span>
-          <span class="team-tooltip-role">Naturopathic Doctor, ND</span>
-        </div>
-        <img src="images/practioner/Doctor 1 900x1200px- practitioner page.png" alt="Dr. Emma Clarke" class="team-card-img" />
-        <div class="team-card-body">
-          <h4>Dr. Emma Clarke</h4>
-          <span class="team-card-role">Naturopathic Doctor, ND</span>
-        </div>
-      </div>
-      <div class="team-card stagger-item">
-        <div class="team-tooltip">
-          <div class="team-tooltip-line-1"></div>
-          <div class="team-tooltip-line-2"></div>
-          <span class="team-tooltip-name">Dr. Amina Rahman</span>
-          <span class="team-tooltip-role">Aesthetic Medicine Specialist</span>
-        </div>
-        <img src="images/practioner/Doctor 2 900x1200px- practitioner page.png" alt="Dr. Amina Rahman" class="team-card-img" />
-        <div class="team-card-body">
-          <h4>Dr. Amina Rahman</h4>
-          <span class="team-card-role">Aesthetic Medicine Specialist</span>
-        </div>
-      </div>
-      <div class="team-card stagger-item">
-        <div class="team-tooltip">
-          <div class="team-tooltip-line-1"></div>
-          <div class="team-tooltip-line-2"></div>
-          <span class="team-tooltip-name">Dr. Sofia Bennett</span>
-          <span class="team-tooltip-role">Naturopathic Doctor, ND</span>
-        </div>
-        <img src="images/practioner/Doctor 3 900x1200px- practitioner page.png" alt="Dr. Sofia Bennett" class="team-card-img" />
-        <div class="team-card-body">
-          <h4>Dr. Sofia Bennett</h4>
-          <span class="team-card-role">Naturopathic Doctor, ND</span>
-        </div>
-      </div>
-      <div class="team-card stagger-item">
-        <div class="team-tooltip">
-          <div class="team-tooltip-line-1"></div>
-          <div class="team-tooltip-line-2"></div>
-          <span class="team-tooltip-name">Dr. Priya Patel</span>
-          <span class="team-tooltip-role">IV Therapy &amp; Wellness Specialist</span>
-        </div>
-        <img src="images/practioner/Doctor 4 900x1200px- practitioner page.png" alt="Dr. Priya Patel" class="team-card-img" />
-        <div class="team-card-body">
-          <h4>Dr. Priya Patel</h4>
-          <span class="team-card-role">IV Therapy &amp; Wellness Specialist</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-<!-- ====================================================
-     SECTION 6: ANIMATED TESTIMONIALS
-     ==================================================== -->
 <section class="anim-testimonials">
   <div class="container">
     <div class="at-wrap">
 
-      <!-- Stacked Image Cards -->
       <div class="at-stack-wrap">
         <div class="at-stack">
           <div class="at-card"><img src="" alt="" width="400" height="480" loading="lazy" decoding="async" /></div>
@@ -525,7 +473,6 @@
         </div>
       </div>
 
-      <!-- Nav arrows — between image and text so mobile users don't lose sight of image -->
       <div class="at-nav">
         <button class="at-btn at-prev" aria-label="Previous testimonial">
           <i class="fa-solid fa-arrow-left"></i>
@@ -536,7 +483,6 @@
         </button>
       </div>
 
-      <!-- Text Content -->
       <div class="at-text">
         <div class="section-label reveal">Patient Reviews</div>
         <h2 class="heading-wrap"><span class="heading-inner">Real patients,<br /><em>real results</em></span></h2>
@@ -557,11 +503,6 @@
   </div>
 </section>
 
-
-
-<!-- ====================================================
-     ABOUT US
-     ==================================================== -->
 <section class="about-home-section">
   <div class="about-home-left">
     <div class="about-home-label reveal">
@@ -574,14 +515,12 @@
       <span class="btn-ihb-default">Meet our team</span>
       <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Meet our team</span>
     </a>
-    <!-- 4 practitioner photos — scrolling marquee -->
     <div class="about-home-profiles">
       <div class="about-profiles-track">
         <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" class="about-profile-thumb" width="150" height="200" loading="lazy" decoding="async" />
         <img src="images/Practitioner%20Main%20page/Dr.%20Susan%20Mankaeeva,%20MD.webp" alt="Dr. Susan Mankaeeva, MD" class="about-profile-thumb" width="150" height="200" loading="lazy" decoding="async" />
         <img src="images/Practitioner%20Main%20page/Dr.%20Viktoriia%20Taylor,%20DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="about-profile-thumb" width="150" height="200" loading="lazy" decoding="async" />
         <img src="images/Practitioner%20Main%20page/Vialeta%20Bkharvani.webp" alt="Vialeta Bkharvani" class="about-profile-thumb" width="150" height="200" loading="lazy" decoding="async" />
-        <!-- duplicates for seamless loop -->
         <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" class="about-profile-thumb" width="150" height="200" aria-hidden="true" loading="lazy" decoding="async" />
         <img src="images/Practitioner%20Main%20page/Dr.%20Susan%20Mankaeeva,%20MD.webp" alt="Dr. Susan Mankaeeva, MD" class="about-profile-thumb" width="150" height="200" aria-hidden="true" loading="lazy" decoding="async" />
         <img src="images/Practitioner%20Main%20page/Dr.%20Viktoriia%20Taylor,%20DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="about-profile-thumb" width="150" height="200" aria-hidden="true" loading="lazy" decoding="async" />
@@ -590,31 +529,19 @@
     </div>
   </div>
   <div class="about-home-video-wrap">
-    <video class="about-home-video" autoplay muted loop playsinline preload="none">
-      <source src="https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/about%20us-TOoc2QQxKFlQJrW6qVkLaSF5orYIZ3.webm" type="video/webm" />
-      <source src="https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/about%20us-aQBzJx6BsEtQucZDCtRXOTB2zEiNA5.mp4" type="video/mp4" />
-    </video>
+    <img src="images/meet our experts.webp" alt="VeraVita expert team" class="about-home-video" width="800" height="600" loading="lazy" decoding="async" />
   </div>
 </section>
 
-
-<!-- ====================================================
-     FOOTER (Sticky reveal footer)
-     ==================================================== -->
 <footer class="sf-footer">
   <div class="sf-fixed">
-    <!-- Decorative radial gradients -->
     <div class="sf-deco" aria-hidden="true">
       <div class="sf-deco-1"></div>
       <div class="sf-deco-2"></div>
       <div class="sf-deco-3"></div>
     </div>
-
     <div class="sf-body">
-      <!-- Top row: brand + link columns -->
       <div class="sf-top">
-
-        <!-- Brand -->
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
           <a href="index.html" class="sf-logo">
             <img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy" decoding="async"
@@ -631,23 +558,19 @@
             <a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
-
-        <!-- Pages -->
         <div class="sf-col sf-anim" style="--sf-delay:0.1s">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="practitioners.html">Our Practitioners</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="practitioners.html">Our Practitioners</a></li>
             <li><a href="faqs.html">FAQs</a></li>
             <li><a href="careers.html">Careers</a></li>
             <li><a href="pricing.html">Pricing</a></li>
           </ul>
         </div>
-
-        <!-- Services -->
         <div class="sf-col sf-anim" style="--sf-delay:0.2s">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
@@ -660,8 +583,6 @@
             <li><a href="cat-osteopathy.html">Osteopathy</a></li>
           </ul>
         </div>
-
-        <!-- Contact -->
         <div class="sf-col sf-anim" style="--sf-delay:0.3s">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
@@ -676,28 +597,20 @@
             <li><a href="cookie-policy.html">Cookie Policy</a></li>
           </ul>
         </div>
-
       </div>
-
-      <!-- Bottom bar -->
       <div class="sf-bottom">
         <p>&copy; 2026 VeraVita Wellness & Aesthetics. All rights reserved.</p>
-        <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
         <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- ====================================================
-     SCRIPTS — Lenis + GSAP + ScrollTrigger
-     ==================================================== -->
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 
-<!-- MOBILE BOTTOM BOOKING BAR -->
 <div class="mobile-book-bar">
   <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
     <span class="btn-ihb-default">Book an appointment</span>
