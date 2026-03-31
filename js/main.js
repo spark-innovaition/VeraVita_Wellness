@@ -151,7 +151,10 @@ lenis.on('scroll', ScrollTrigger.update);
       end: isMobile ? '+=180%' : '+=150%',
       scrub: isMobile ? 0.3 : 0.4,
       pin: true,
+      pinSpacing: true,
       anticipatePin: 1,
+      fastScrollEnd: true,
+      preventOverlaps: true,
     }
   });
 
@@ -171,6 +174,8 @@ lenis.on('scroll', ScrollTrigger.update);
     }, 0.88);
   }
 
+  /* Small hold at end so hero content is visible before unpin */
+  tl.to({}, { duration: 0.15 });
 
   ScrollTrigger.refresh();
 })();
