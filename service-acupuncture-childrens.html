@@ -23,7 +23,7 @@
       .sd-hero-img--mobile { display: none !important; }
     }
 
-    /* Override the static CSS background so we can use the parallax div instead */
+    /* Parallax background window logic */
     .svc-acupuncture-childrens .sd-body {
       background: transparent !important;
       position: relative;
@@ -49,32 +49,70 @@
       z-index: 1;
     }
 
-    /* Related Services Slider UI */
-    .sd-rel-nav {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
-    .sd-rel-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1px solid #e0e0e0;
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #728C69;
-      transition: all 0.3s ease;
-    }
-    .sd-rel-btn:hover {
-      background: #728C69;
-      color: white;
-      border-color: #728C69;
+    /* Explicitly hide navigation arrows from global styles */
+    .sd-rel-nav, .sd-rel-btn {
+      display: none !important;
     }
 
-    /* Fix mobile hero & Related Services Overlay */
+    /* Overlay Card Logic */
+    .sd-rel-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      display: block;
+      aspect-ratio: 16/9;
+    }
+    
+    .sd-rel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .sd-rel-card:hover .sd-rel-img {
+      transform: scale(1.05);
+    }
+    
+    /* Gradient overlay for text readability */
+    .sd-rel-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 40%);
+      z-index: 1;
+    }
+
+    .sd-rel-overlay-title {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      margin: 0;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.1rem;
+      z-index: 10;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .sd-rel-overlay-btn {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(5px);
+      padding: 8px 20px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.9rem;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* Mobile Responsive Fixes */
     @media (max-width: 860px) {
       .sd-hero-img-wrap {
         height: auto !important;
@@ -88,27 +126,26 @@
         overflow-y: hidden !important;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: 0.5rem;
+        padding-bottom: 1rem;
+        gap: 1rem;
       }
       .sd-rel-card {
         flex: 0 0 calc(85vw) !important;
         scroll-snap-align: start;
-        position: relative;
-        overflow: hidden;
-        border-radius: 20px;
+        aspect-ratio: 1.5;
       }
-      .sd-rel-overlay-btn {
-        position: absolute;
-        bottom: 15px;
-        right: 15px;
-        background: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(5px);
-        padding: 8px 20px;
-        border-radius: 30px;
-        color: white;
-        font-weight: 500;
-        text-decoration: none;
-        font-size: 0.9rem;
+      .sd-rel-overlay-title {
+        font-size: 1rem;
+        bottom: 18px;
+        left: 15px;
+      }
+    }
+
+    @media (min-width: 861px) {
+      .sd-related-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
       }
     }
   </style>
@@ -228,37 +265,49 @@
 <section class="sd-related">
   <div class="container-medium">
     <div class="sd-related-header reveal">
-      <span class="section-label"><i class="fa-solid fa-circle" style="font-size:0.5rem; margin-right:0.5rem"></i> EXPLORE MORE</span>
-      <h2>Related <em>Services</em></h2>
+      <div>
+        <span class="section-label">EXPLORE MORE</span>
+        <h2>Related <em>Services</em></h2>
+      </div>
     </div>
     
-    <div class="sd-rel-nav">
-      <button class="sd-rel-btn"><i class="fa-solid fa-arrow-left"></i></button>
-      <button class="sd-rel-btn"><i class="fa-solid fa-arrow-right"></i></button>
-    </div>
-
     <div class="sd-related-grid">
-      <div class="sd-rel-card reveal">
-        <img src="images/Sub services images/Paediatric Massage/16-9.webp" alt="Paediatric Massage" class="sd-rel-img" />
-        <a href="service-paediatric-massage.html" class="sd-rel-overlay-btn">More</a>
-      </div>
-      <div class="sd-rel-card reveal">
-        <img src="images/Sub services images/Pediatric care/16-9.webp" alt="Pediatric Care" class="sd-rel-img" />
-        <a href="service-pediatric-care.html" class="sd-rel-overlay-btn">More</a>
-      </div>
-      <div class="sd-rel-card reveal">
+      <a href="service-massage-therapeutic.html" class="sd-rel-card reveal">
+        <img src="images/Sub services images/Standard Therapeutic Massage/16-9.webp" alt="Therapeutic Massage" class="sd-rel-img" />
+        <h3 class="sd-rel-overlay-title">Therapeutic Massage</h3>
+        <span class="sd-rel-overlay-btn">More</span>
+      </a>
+      <a href="service-acupuncture-tui-na.html" class="sd-rel-card reveal">
+        <img src="images/Sub services images/Tui Na Massage/16-9.webp" alt="Tui Na Massage" class="sd-rel-img" />
+        <h3 class="sd-rel-overlay-title">Tui Na Massage</h3>
+        <span class="sd-rel-overlay-btn">More</span>
+      </a>
+      <a href="service-acupuncture-traditional.html" class="sd-rel-card reveal">
         <img src="images/Sub services images/Traditional Acupuncture/16-9.webp" alt="Traditional Acupuncture" class="sd-rel-img" />
-        <a href="service-acupuncture-traditional.html" class="sd-rel-overlay-btn">More</a>
-      </div>
+        <h3 class="sd-rel-overlay-title">Traditional Acupuncture</h3>
+        <span class="sd-rel-overlay-btn">More</span>
+      </a>
     </div>
   </div>
 </section>
 
 <footer class="sf-footer">
   <div class="sf-fixed">
+    <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
     <div class="sf-body">
+      <div class="sf-top">
+        <div class="sf-brand sf-anim" style="--sf-delay:0s">
+          <a href="index.html" class="sf-logo"><img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div></a>
+          <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
+          <div class="sf-social"><a href="#" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
+        </div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.1s"><h3 class="sf-col-title">Pages</h3><ul class="sf-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="practitioners.html">Our Practitioners</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.2s"><h3 class="sf-col-title">Services</h3><ul class="sf-links"><li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li><li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li><li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li></ul></div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.3s"><h3 class="sf-col-title">Contact</h3><ul class="sf-links"><li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li><li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:Info@veravitawellness.ca">Info@veravitawellness.ca</a></li><li><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</li></ul><h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3><ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul></div>
+      </div>
       <div class="sf-bottom">
-        <p>&copy; 2026 VeraVita Wellness &amp; Aesthetics. All rights reserved.</p>
+        <p>&copy; 2026 VeraVita Wellness & Aesthetics. All rights reserved.</p>
+        <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
         <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
       </div>
     </div>
