@@ -38,6 +38,31 @@
       position: relative;
       z-index: 1;
     }
+
+    /* Fix mobile hero: reset fixed height so aspect-ratio 16/9 takes effect */
+    @media (max-width: 860px) {
+      .sd-hero-img-wrap {
+        height: auto !important;
+        aspect-ratio: 16/9 !important;
+      }
+    }
+
+    /* Fix Related Services cards on mobile — prevent cropping */
+    @media (max-width: 860px) {
+      .sd-rel-card {
+        flex: 0 0 calc(85vw);
+        min-height: auto;
+      }
+      .sd-rel-img-wrap {
+        height: auto;
+        aspect-ratio: 16/9;
+      }
+      .sd-rel-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   </style>
 </head>
 <body class="svc-acupuncture-cosmetic">
