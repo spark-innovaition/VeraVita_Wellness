@@ -11,6 +11,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* Override the static CSS background so we can use the parallax div instead */
+    .svc-acupuncture-cupping .sd-body {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-bg-parallax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 0;
+      background:
+        linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 25.webp') center / cover no-repeat;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    .sd-body .container-medium {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body class="svc-acupuncture-cupping">
 
@@ -28,8 +56,8 @@
         </div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
-            <ul class="navbar-nav">
-        <li><a href="index.html"          class="nav-link">Home</a></li>
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="nav-link">Home</a></li>
         <li class="nav-dropdown">
           <a href="#" class="nav-link active">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
           <div class="nav-dropdown-menu">
@@ -60,10 +88,11 @@
             <a href="cat-osteopathy.html" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
               <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div>
-            </a></div>
+            </a>
+          </div>
         </li>
-        <li><a href="about.html"          class="nav-link">About</a></li>
-        <li><a href="practitioners.html"  class="nav-link">Practitioners</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="practitioners.html" class="nav-link">Practitioners</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
       <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
@@ -87,11 +116,8 @@
 <section class="sd-hero">
   <div class="container-medium">
     <div class="sd-hero-inner">
-
       <div class="sd-hero-content reveal">
-        <div class="sd-hero-icon">
-          <i class="fa-solid fa-hand-sparkles"></i>
-        </div>
+        <div class="sd-hero-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
         <span class="sd-hero-label">Traditional Chinese Medicine</span>
         <h1 class="sd-hero-title">Acupuncture &amp;<br /><em>Cupping</em></h1>
         <p class="sd-hero-intro">Traditional acupuncture and myofascial cupping therapy to relieve chronic pain, reduce inflammation, manage stress, and support the body's natural healing response.</p>
@@ -101,22 +127,19 @@
           <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book a Session</span>
         </a>
       </div>
-
       <div class="sd-hero-img-wrap reveal">
         <img src="images/Sub services images/Korean Acupuncture/4-5.webp" alt="Acupuncture & Cupping" class="sd-hero-img sd-hero-img--desktop" />
         <img src="images/Sub services images/Korean Acupuncture/16-9.webp" alt="Acupuncture & Cupping" class="sd-hero-img sd-hero-img--mobile" />
       </div>
-
     </div>
   </div>
 </section>
 
 <section class="sd-body">
+  <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="sd-body-inner">
-
       <div class="sd-main">
-
         <h3 class="reveal">What to Expect</h3>
         <ul class="sd-bullet-list reveal">
           <li>Initial tongue and pulse diagnosis alongside modern health intake</li>
@@ -136,61 +159,39 @@
         <h3 class="reveal">Why Cupping Therapy</h3>
         <p class="reveal">Our practitioners blend thousands of years of Chinese medicine wisdom with modern diagnostic thinking. Treatments are precisely tailored — never generic — ensuring you receive the most effective combination of modalities for your condition.</p>
 
-<div class="sd-gallery reveal">
-          <div class="sd-gallery-item">
-            <img src="images/Sub services images/Korean Acupuncture/Image 1.webp" alt="Acupuncture gallery image 1" />
-          </div>
-          <div class="sd-gallery-item">
-            <img src="images/Sub services images/Korean Acupuncture/Image 2.webp" alt="Acupuncture gallery image 2" />
-          </div>
-          <div class="sd-gallery-item">
-            <img src="images/Sub services images/Korean Acupuncture/Image 3.webp" alt="Acupuncture gallery image 3" />
-          </div>
-          <div class="sd-gallery-item">
-            <img src="images/Sub services images/Korean Acupuncture/Image 4.webp" alt="Acupuncture gallery image 4" />
-          </div>
+        <div class="sd-gallery reveal">
+          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 1.webp" alt="Acupuncture gallery image 1" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 2.webp" alt="Acupuncture gallery image 2" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 3.webp" alt="Acupuncture gallery image 3" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 4.webp" alt="Acupuncture gallery image 4" /></div>
         </div>
-
       </div>
 
       <aside class="sd-card">
         <h3 class="sd-card-title">Session Details</h3>
         <p class="sd-card-intro">A tailored Chinese medicine treatment combining acupuncture and adjunct therapies for your unique health goals.</p>
-
         <h4 class="sd-card-section-title">Session Overview</h4>
         <ul class="sd-overview-list">
           <li class="sd-overview-item">
             <span class="sd-overview-icon"><i class="fa-regular fa-clock"></i></span>
-            <div>
-              <span class="sd-overview-label">Duration</span>
-              <span class="sd-overview-value">60 min</span>
-            </div>
+            <div><span class="sd-overview-label">Duration</span><span class="sd-overview-value">60 min</span></div>
           </li>
           <li class="sd-overview-item">
             <span class="sd-overview-icon"><i class="fa-solid fa-user"></i></span>
-            <div>
-              <span class="sd-overview-label">Session Type</span>
-              <span class="sd-overview-value">1-on-1 private</span>
-            </div>
+            <div><span class="sd-overview-label">Session Type</span><span class="sd-overview-value">1-on-1 private</span></div>
           </li>
           <li class="sd-overview-item">
             <span class="sd-overview-icon"><i class="fa-solid fa-circle-check"></i></span>
-            <div>
-              <span class="sd-overview-label">Includes</span>
-              <span class="sd-overview-value">Assessment, needles/cups, herbal recommendations</span>
-            </div>
+            <div><span class="sd-overview-label">Includes</span><span class="sd-overview-value">Assessment, needles/cups, herbal recommendations</span></div>
           </li>
         </ul>
-
         <hr class="sd-card-divider" />
-
         <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary sd-card-btn">
-  <span class="btn-ihb-blob"></span>
-  <span class="btn-ihb-default">Book This Service</span>
-  <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book This Service</span>
-</a>
+          <span class="btn-ihb-blob"></span>
+          <span class="btn-ihb-default">Book This Service</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book This Service</span>
+        </a>
       </aside>
-
     </div>
   </div>
 </section>
@@ -202,99 +203,56 @@
       <h2>Related <em>Services</em></h2>
     </div>
     <div class="sd-related-grid">
-
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/massage therapy - services page.jpg" alt="Massage Therapy" class="sd-rel-img" />
-        </div>
+        <div class="sd-rel-img-wrap"><img src="images/massage therapy - services page.jpg" alt="Massage Therapy" class="sd-rel-img" /></div>
         <div class="sd-rel-body">
           <h3 class="sd-rel-name">Massage Therapy</h3>
           <p class="sd-rel-desc">Therapeutic massage techniques to relieve muscle tension, improve circulation, and support recovery from injury or chronic pain.</p>
           <a href="service-massage-therapy.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/fertility program - services page.png" alt="Fertility Program" class="sd-rel-img" />
-        </div>
+        <div class="sd-rel-img-wrap"><img src="images/fertility program - services page.png" alt="Fertility Program" class="sd-rel-img" /></div>
         <div class="sd-rel-body">
           <h3 class="sd-rel-name">Fertility Program</h3>
           <p class="sd-rel-desc">Comprehensive naturopathic fertility support addressing hormonal balance, cycle regulation, and reproductive health optimisation.</p>
           <a href="service-fertility-program.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/osteopathy - services page.png" alt="Osteopathy" class="sd-rel-img" />
-        </div>
+        <div class="sd-rel-img-wrap"><img src="images/osteopathy - services page.png" alt="Osteopathy" class="sd-rel-img" /></div>
         <div class="sd-rel-body">
           <h3 class="sd-rel-name">Osteopathy</h3>
           <p class="sd-rel-desc">Hands-on osteopathic manual therapy to improve mobility, relieve musculoskeletal pain, and restore the body's structural balance.</p>
           <a href="service-osteopathy.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <footer class="sf-footer">
   <div class="sf-fixed">
-    <div class="sf-deco" aria-hidden="true">
-      <div class="sf-deco-1"></div>
-      <div class="sf-deco-2"></div>
-      <div class="sf-deco-3"></div>
-    </div>
-
+    <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
     <div class="sf-body">
       <div class="sf-top">
-
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
-          <a href="index.html" class="sf-logo">
-            <img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="sf-logo-fallback" style="display:none;">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg>
-              <span>VeraVita</span>
-            </div>
-          </a>
+          <a href="index.html" class="sf-logo"><img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div></a>
           <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
-          <div class="sf-social">
-            <a href="#" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          </div>
+          <div class="sf-social"><a href="#" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
         </div>
-
         <div class="sf-col sf-anim" style="--sf-delay:0.1s">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="practitioners.html">Our Practitioners</a></li>
-            <li><a href="faqs.html">FAQs</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="practitioners.html">Our Practitioners</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li><li><a href="pricing.html">Pricing</a></li>
           </ul>
         </div>
-
         <div class="sf-col sf-anim" style="--sf-delay:0.2s">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
-            <li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li>
-            <li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li>
-            <li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li>
-            <li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li>
-            <li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li>
-            <li><a href="cat-massage-therapy.html">Massage Therapy</a></li>
-            <li><a href="cat-osteopathy.html">Osteopathy</a></li>
+            <li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li><li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li><li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li>
           </ul>
         </div>
-
         <div class="sf-col sf-anim" style="--sf-delay:0.3s">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
@@ -303,17 +261,11 @@
             <li><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</li>
           </ul>
           <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
-          <ul class="sf-links">
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms of Service</a></li>
-            <li><a href="cookie-policy.html">Cookie Policy</a></li>
-          </ul>
+          <ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul>
         </div>
-
       </div>
-
       <div class="sf-bottom">
-        <p>&copy; 2026 VeraVita Wellness & Aesthetics. All rights reserved.</p>
+        <p>&copy; 2026 VeraVita Wellness &amp; Aesthetics. All rights reserved.</p>
         <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
         <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
       </div>
@@ -325,6 +277,38 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    var section = document.querySelector(".sd-body");
+    var bg = document.querySelector(".section-bg-parallax");
+    if (!section || !bg) return;
+
+    // Simulate background-attachment:fixed using GSAP.
+    // The bg div is 100vh tall. As the section scrolls through the viewport,
+    // we counter its movement so the bg stays fixed in place.
+    // At start (section top at viewport bottom): bg y = -viewportHeight (pushed up, hidden)
+    // At end (section bottom at viewport top): bg y = sectionHeight (pushed down, hidden)
+    // In between, the bg appears stationary — the section acts as a window.
+    gsap.fromTo(bg,
+      { y: function () { return -window.innerHeight; } },
+      {
+        y: function () { return section.offsetHeight; },
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  });
+</script>
+
 <div class="mobile-book-bar">
   <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
     <span class="btn-ihb-default">Book an appointment</span>
