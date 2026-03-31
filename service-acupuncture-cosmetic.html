@@ -11,10 +11,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* Override the static CSS background so we can use the parallax div instead */
+    .svc-acupuncture-cosmetic .sd-body {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-bg-parallax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 0;
+      background:
+        linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 27.webp') center / cover no-repeat;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    .sd-body .container-medium {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body class="svc-acupuncture-cosmetic">
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <div class="navbar-inner">
@@ -51,14 +78,12 @@
   </div>
 </nav>
 
-<!-- BACK LINK -->
 <div class="sd-back">
   <div class="container-medium">
     <a href="cat-acupuncture.html" class="sd-back-link"><i class="fa-solid fa-arrow-left"></i> Back to Acupuncture &amp; TCM</a>
   </div>
 </div>
 
-<!-- HERO -->
 <section class="sd-hero">
   <div class="container-medium">
     <div class="sd-hero-inner">
@@ -74,61 +99,71 @@
         </a>
       </div>
       <div class="sd-hero-img-wrap reveal">
-        <img src="images/Sub services images/Cosmetic Acupuncture/4-5.webp" alt="Cosmetic Acupuncture" class="sd-hero-img sd-hero-img--desktop" />
-        <img src="images/Sub services images/Cosmetic Acupuncture/16-9.webp" alt="Cosmetic Acupuncture" class="sd-hero-img sd-hero-img--mobile" />
+        <img src="images/Sub%20services%20images/Cosmetic%20Acupuncture/4-5.webp" alt="Cosmetic Acupuncture" class="sd-hero-img sd-hero-img--desktop" />
+        <img src="images/Sub%20services%20images/Cosmetic%20Acupuncture/16-9.webp" alt="Cosmetic Acupuncture" class="sd-hero-img sd-hero-img--mobile" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- BODY -->
 <section class="sd-body">
+  <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="sd-body-inner">
       <div class="sd-main">
-        <h3>What to Expect</h3>
-        <ul class="sd-bullet-list">
+        <h3 class="reveal">What to Expect</h3>
+        <ul class="sd-bullet-list reveal">
           <li>Facial assessment and skin mapping</li>
           <li>Constitutional acupuncture points for systemic support</li>
           <li>Fine facial needling targeting wrinkles and muscle tone</li>
           <li>Gua sha or jade roller finishing</li>
           <li>Home care guidance</li>
         </ul>
-        <h3>Who It's For</h3>
-        <ul class="sd-bullet-list">
+        <h3 class="reveal">Who It's For</h3>
+        <ul class="sd-bullet-list reveal">
           <li>People seeking natural anti-aging without injectables</li>
           <li>Those with fine lines, sagging, dull skin, or uneven tone</li>
           <li>Anyone wanting to complement aesthetic treatments naturally</li>
         </ul>
-        <h3>Why Cosmetic Acupuncture</h3>
-        <p>Cosmetic acupuncture works from within — addressing the underlying constitution while stimulating local collagen and circulation. Dr. Viktoriia Taylor combines systemic and facial needling for whole-body rejuvenation.</p>
+        <h3 class="reveal">Why Cosmetic Acupuncture</h3>
+        <p class="reveal">Cosmetic acupuncture works from within — addressing the underlying constitution while stimulating local collagen and circulation. Dr. Viktoriia Taylor combines systemic and facial needling for whole-body rejuvenation.</p>
+
+        <div class="sd-gallery reveal">
+          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Cosmetic%20Acupuncture/Image%201.webp" alt="Cosmetic Acupuncture gallery image 1" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Cosmetic%20Acupuncture/Image%202.webp" alt="Cosmetic Acupuncture gallery image 2" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Cosmetic%20Acupuncture/Image%203.webp" alt="Cosmetic Acupuncture gallery image 3" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Cosmetic%20Acupuncture/Image%204.webp" alt="Cosmetic Acupuncture gallery image 4" /></div>
+        </div>
       </div>
       <aside class="sd-card reveal">
-        <h4 class="sd-card-title">Service Details</h4>
+        <h3 class="sd-card-title">Session Details</h3>
         <p class="sd-card-intro">Natural facial rejuvenation through targeted needling — stimulates collagen and lifts facial muscles without injectables.</p>
-        <h5 class="sd-card-section-title">Session Overview</h5>
+        <h4 class="sd-card-section-title">Session Overview</h4>
         <ul class="sd-overview-list">
           <li class="sd-overview-item">
-            <div class="sd-overview-icon"><i class="fa-solid fa-clock"></i></div>
+            <span class="sd-overview-icon"><i class="fa-regular fa-clock"></i></span>
             <div><span class="sd-overview-label">Duration</span><span class="sd-overview-value">75 min</span></div>
           </li>
           <li class="sd-overview-item">
-            <div class="sd-overview-icon"><i class="fa-solid fa-user"></i></div>
+            <span class="sd-overview-icon"><i class="fa-solid fa-user"></i></span>
             <div><span class="sd-overview-label">Session Type</span><span class="sd-overview-value">1-on-1 private</span></div>
           </li>
           <li class="sd-overview-item">
-            <div class="sd-overview-icon"><i class="fa-solid fa-list-check"></i></div>
+            <span class="sd-overview-icon"><i class="fa-solid fa-circle-check"></i></span>
             <div><span class="sd-overview-label">Practitioner</span><span class="sd-overview-value">Dr. Viktoriia Taylor, DTCM</span></div>
           </li>
         </ul>
         <hr class="sd-card-divider" />
-        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="sd-card-btn">Book an Appointment <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary sd-card-btn">
+          <span class="btn-ihb-blob"></span>
+          <span class="btn-ihb-default">Book This Service</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book This Service</span>
+        </a>
       </aside>
     </div>
   </div>
 </section>
 
-<!-- RELATED -->
 <section class="sd-related">
   <div class="container-medium">
     <div class="sd-related-header reveal">
@@ -137,40 +172,33 @@
     </div>
     <div class="sd-related-grid">
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/Sub services images/Traditional Acupuncture/16-9.webp" alt="Traditional Acupuncture" class="sd-rel-img" />
-        </div>
+        <div class="sd-rel-img-wrap"><img src="images/massage%20therapy%20-%20services%20page.jpg" alt="Massage Therapy" class="sd-rel-img" /></div>
         <div class="sd-rel-body">
-          <h4 class="sd-rel-name">Traditional Acupuncture</h4>
-          <p class="sd-rel-desc">Classical Chinese needling to restore energetic balance and support the body's healing capacity.</p>
-          <a href="service-acupuncture-traditional.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="sd-rel-name">Massage Therapy</h3>
+          <p class="sd-rel-desc">Therapeutic massage techniques to relieve muscle tension, improve circulation, and support recovery from injury or chronic pain.</p>
+          <a href="service-massage-therapy.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/acupunture - services page.png" alt="Clinical Esthetics &amp; Facials" class="sd-rel-img" />
-        </div>
+        <div class="sd-rel-img-wrap"><img src="images/fertility%20program%20-%20services%20page.png" alt="Fertility Program" class="sd-rel-img" /></div>
         <div class="sd-rel-body">
-          <h4 class="sd-rel-name">Clinical Esthetics &amp; Facials</h4>
-          <p class="sd-rel-desc">Explore our full range of clinical esthetics and facial treatments.</p>
-          <a href="cat-clinical-esthetics.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="sd-rel-name">Fertility Program</h3>
+          <p class="sd-rel-desc">Comprehensive naturopathic fertility support addressing hormonal balance, cycle regulation, and reproductive health optimisation.</p>
+          <a href="service-fertility-program.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/acupunture - services page.png" alt="Acupuncture &amp; TCM" class="sd-rel-img" />
-        </div>
+        <div class="sd-rel-img-wrap"><img src="images/osteopathy%20-%20services%20page.png" alt="Osteopathy" class="sd-rel-img" /></div>
         <div class="sd-rel-body">
-          <h4 class="sd-rel-name">Acupuncture &amp; TCM</h4>
-          <p class="sd-rel-desc">Explore our full range of acupuncture and Traditional Chinese Medicine services.</p>
-          <a href="cat-acupuncture.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="sd-rel-name">Osteopathy</h3>
+          <p class="sd-rel-desc">Hands-on osteopathic manual therapy to improve mobility, relieve musculoskeletal pain, and restore the body's structural balance.</p>
+          <a href="service-osteopathy.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="sf-footer">
   <div class="sf-fixed">
     <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
@@ -217,6 +245,32 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    var section = document.querySelector(".sd-body");
+    var bg = document.querySelector(".section-bg-parallax");
+    if (!section || !bg) return;
+
+    gsap.fromTo(bg,
+      { y: function () { return -window.innerHeight; } },
+      {
+        y: function () { return section.offsetHeight; },
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  });
+</script>
+
 <div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
 </body>
 </html>
