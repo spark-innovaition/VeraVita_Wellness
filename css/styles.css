@@ -803,14 +803,8 @@ section { padding: 6rem 0; }
   position: relative;
   width: 100%;
   height: 100vh;
-  height: 100dvh;
   overflow: hidden;
   background: #0d1a10 url('../images/bg-hero-section.webp') center/cover no-repeat;
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  z-index: 2;
 }
 /* Dark curtain that shows behind hero during pin — prevents white flash on release */
 .ph-cinematic::after {
@@ -832,8 +826,6 @@ section { padding: 6rem 0; }
   z-index: 0;
   will-change: transform;
   transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 /* Canvas overlay — injected by JS, draws the coloured mask + text cutout */
 .ph-cin-canvas {
@@ -845,8 +837,6 @@ section { padding: 6rem 0; }
   pointer-events: none;
   will-change: transform;
   transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 .ph-cin-label {
   /* Hidden — rendered by canvas so it composites correctly with the cutout */
@@ -2829,19 +2819,14 @@ ul.contact-info-list { padding: 0; margin: 0; }
    HERE WHEN YOU NEED US (Section 2)
    ======================================== */
 .hwnu-section {
-  position: relative;
-  z-index: 1;
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
     url('../images/underlay pic desktop/underlay pic 11.webp') center / cover scroll;
   padding: 6rem 0; text-align: center;
   contain: layout style paint;
   transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   content-visibility: auto;
   contain-intrinsic-size: auto 1px auto 700px;
-  margin-top: -1px;
 }
 
 .hwnu-eyebrow {
