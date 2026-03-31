@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/faviconm.png" />
-  <title>Acupuncture &amp; Cupping | VeraVita Clinic Calgary</title>
-  <meta name="description" content="Traditional acupuncture and myofascial cupping therapy to relieve chronic pain, reduce inflammation, manage stress, and support the body's natural healing response." />
+  <title>Korean Acupuncture | VeraVita Clinic Calgary</title>
+  <meta name="description" content="Specialized Korean acupuncture techniques including constitutional balancing and Sa'am four-needle protocols to support full-body wellness and recovery." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
@@ -13,8 +13,18 @@
   <link rel="stylesheet" href="css/styles.css" />
 
   <style>
+    /* Hero Image Ratio Fix */
+    @media (max-width: 767px) {
+      .sd-hero-img--desktop { display: none !important; }
+      .sd-hero-img--mobile { display: block !important; }
+    }
+    @media (min-width: 768px) {
+      .sd-hero-img--desktop { display: block !important; }
+      .sd-hero-img--mobile { display: none !important; }
+    }
+
     /* Override the static CSS background so we can use the parallax div instead */
-    .svc-acupuncture-cupping .sd-body {
+    .svc-acupuncture-korean .sd-body {
       background: transparent !important;
       position: relative;
       overflow: hidden;
@@ -38,9 +48,32 @@
       position: relative;
       z-index: 1;
     }
+
+    /* Fix mobile hero: reset fixed height so aspect-ratio 16/9 takes effect */
+    @media (max-width: 860px) {
+      .sd-hero-img-wrap {
+        height: auto !important;
+        aspect-ratio: 16/9 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      /* Fix Related Services: restore horizontal scroll instead of grid squish */
+      .sd-related-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+      }
+      .sd-rel-card {
+        flex: 0 0 calc(85vw) !important;
+        scroll-snap-align: start;
+      }
+    }
   </style>
 </head>
-<body class="svc-acupuncture-cupping">
+<body class="svc-acupuncture-korean">
 
 <nav class="navbar">
   <div class="container">
@@ -61,34 +94,13 @@
         <li class="nav-dropdown">
           <a href="#" class="nav-link active">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
           <div class="nav-dropdown-menu">
-            <a href="cat-naturopathic.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
-              <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
-            </a>
-            <a href="cat-iv-therapy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
-              <div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
-            </a>
-            <a href="cat-acupuncture.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
-              <div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div>
-            </a>
-            <a href="cat-medical-aesthetics.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
-              <div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div>
-            </a>
-            <a href="cat-clinical-esthetics.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div>
-              <div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Lead: Vialeta Bkharvani</span></div>
-            </a>
-            <a href="cat-massage-therapy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div>
-            </a>
-            <a href="cat-osteopathy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
-              <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div>
-            </a>
+            <a href="cat-naturopathic.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div><div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div></a>
+            <a href="cat-iv-therapy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div><div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div></a>
+            <a href="cat-acupuncture.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div><div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div></a>
+            <a href="cat-medical-aesthetics.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div><div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div></a>
+            <a href="cat-clinical-esthetics.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div><div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Lead: Vialeta Bkharvani</span></div></a>
+            <a href="cat-massage-therapy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div></a>
+            <a href="cat-osteopathy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div><div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div></a>
           </div>
         </li>
         <li><a href="about.html" class="nav-link">About</a></li>
@@ -100,9 +112,7 @@
         <span class="btn-ihb-default">Book an appointment</span>
         <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
       </a>
-      <button class="navbar-toggle" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="navbar-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
@@ -119,8 +129,8 @@
       <div class="sd-hero-content reveal">
         <div class="sd-hero-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
         <span class="sd-hero-label">Traditional Chinese Medicine</span>
-        <h1 class="sd-hero-title">Acupuncture &amp;<br /><em>Cupping</em></h1>
-        <p class="sd-hero-intro">Traditional acupuncture and myofascial cupping therapy to relieve chronic pain, reduce inflammation, manage stress, and support the body's natural healing response.</p>
+        <h1 class="sd-hero-title">Korean<br /><em>Acupuncture</em></h1>
+        <p class="sd-hero-intro">Specialized Korean acupuncture techniques including constitutional balancing and Sa'am four-needle protocols to support full-body wellness and recovery.</p>
         <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
           <span class="btn-ihb-blob"></span>
           <span class="btn-ihb-default">Book a Session</span>
@@ -128,8 +138,8 @@
         </a>
       </div>
       <div class="sd-hero-img-wrap reveal">
-        <img src="images/Sub services images/Korean Acupuncture/4-5.webp" alt="Acupuncture & Cupping" class="sd-hero-img sd-hero-img--desktop" />
-        <img src="images/Sub services images/Korean Acupuncture/16-9.webp" alt="Acupuncture & Cupping" class="sd-hero-img sd-hero-img--mobile" />
+        <img src="images/Sub services images/Korean Acupuncture/4-5.webp" alt="Korean Acupuncture" class="sd-hero-img sd-hero-img--desktop" />
+        <img src="images/Sub services images/Korean Acupuncture/16-9.webp" alt="Korean Acupuncture" class="sd-hero-img sd-hero-img--mobile" />
       </div>
     </div>
   </div>
@@ -142,9 +152,9 @@
       <div class="sd-main">
         <h3 class="reveal">What to Expect</h3>
         <ul class="sd-bullet-list reveal">
-          <li>Initial tongue and pulse diagnosis alongside modern health intake</li>
-          <li>Personalised acupuncture point selection</li>
-          <li>Cupping, moxibustion, or gua sha added as needed</li>
+          <li>Constitutional assessment based on Korean Traditional Medicine</li>
+          <li>Personalised point selection using Sa'am techniques</li>
+          <li>Adjunct therapies including cupping or moxibustion as needed</li>
           <li>Herbal medicine recommendations</li>
           <li>Progressive treatment series for lasting results</li>
         </ul>
@@ -156,20 +166,17 @@
           <li>Individuals seeking fertility support or menstrual regulation</li>
         </ul>
 
-        <h3 class="reveal">Why Cupping Therapy</h3>
-        <p class="reveal">Our practitioners blend thousands of years of Chinese medicine wisdom with modern diagnostic thinking. Treatments are precisely tailored — never generic — ensuring you receive the most effective combination of modalities for your condition.</p>
-
         <div class="sd-gallery reveal">
-          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 1.webp" alt="Acupuncture gallery image 1" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 2.webp" alt="Acupuncture gallery image 2" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 3.webp" alt="Acupuncture gallery image 3" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 4.webp" alt="Acupuncture gallery image 4" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 1.webp" alt="Korean Acupuncture 1" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 2.webp" alt="Korean Acupuncture 2" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 3.webp" alt="Korean Acupuncture 3" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Korean Acupuncture/Image 4.webp" alt="Korean Acupuncture 4" /></div>
         </div>
       </div>
 
-      <aside class="sd-card">
+      <aside class="sd-card reveal">
         <h3 class="sd-card-title">Session Details</h3>
-        <p class="sd-card-intro">A tailored Chinese medicine treatment combining acupuncture and adjunct therapies for your unique health goals.</p>
+        <p class="sd-card-intro">A tailored Korean medicine treatment focused on your unique constitutional health goals.</p>
         <h4 class="sd-card-section-title">Session Overview</h4>
         <ul class="sd-overview-list">
           <li class="sd-overview-item">
@@ -182,7 +189,7 @@
           </li>
           <li class="sd-overview-item">
             <span class="sd-overview-icon"><i class="fa-solid fa-circle-check"></i></span>
-            <div><span class="sd-overview-label">Includes</span><span class="sd-overview-value">Assessment, needles/cups, herbal recommendations</span></div>
+            <div><span class="sd-overview-label">Includes</span><span class="sd-overview-value">Assessment &amp; Sa'am techniques</span></div>
           </li>
         </ul>
         <hr class="sd-card-divider" />
@@ -204,27 +211,33 @@
     </div>
     <div class="sd-related-grid">
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap"><img src="images/massage therapy - services page.jpg" alt="Massage Therapy" class="sd-rel-img" /></div>
+        <div class="sd-rel-img-wrap">
+          <img src="images/Sub services images/Traditional Acupuncture/16-9.webp" alt="Traditional Acupuncture" class="sd-rel-img" />
+        </div>
         <div class="sd-rel-body">
-          <h3 class="sd-rel-name">Massage Therapy</h3>
-          <p class="sd-rel-desc">Therapeutic massage techniques to relieve muscle tension, improve circulation, and support recovery from injury or chronic pain.</p>
-          <a href="service-massage-therapy.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="sd-rel-name">Traditional Acupuncture</h3>
+          <p class="sd-rel-desc">Classical Chinese needling to restore energetic balance and support innate healing.</p>
+          <a href="service-acupuncture-traditional.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap"><img src="images/fertility program - services page.png" alt="Fertility Program" class="sd-rel-img" /></div>
+        <div class="sd-rel-img-wrap">
+          <img src="images/Sub services images/Cupping therapy/16-9.webp" alt="Cupping Therapy" class="sd-rel-img" />
+        </div>
         <div class="sd-rel-body">
-          <h3 class="sd-rel-name">Fertility Program</h3>
-          <p class="sd-rel-desc">Comprehensive naturopathic fertility support addressing hormonal balance, cycle regulation, and reproductive health optimisation.</p>
-          <a href="service-fertility-program.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="sd-rel-name">Cupping Therapy</h3>
+          <p class="sd-rel-desc">Myofascial decompression to relieve chronic pain and reduce inflammation.</p>
+          <a href="service-acupuncture-cupping.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap"><img src="images/osteopathy - services page.png" alt="Osteopathy" class="sd-rel-img" /></div>
+        <div class="sd-rel-img-wrap">
+          <img src="images/Sub services images/Tui Na Massage/16-9.webp" alt="Tui Na Massage" class="sd-rel-img" />
+        </div>
         <div class="sd-rel-body">
-          <h3 class="sd-rel-name">Osteopathy</h3>
-          <p class="sd-rel-desc">Hands-on osteopathic manual therapy to improve mobility, relieve musculoskeletal pain, and restore the body's structural balance.</p>
-          <a href="service-osteopathy.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="sd-rel-name">Tui Na Massage</h3>
+          <p class="sd-rel-desc">Therapeutic Chinese bodywork techniques to address musculoskeletal tension.</p>
+          <a href="service-acupuncture-tui-na.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -241,34 +254,11 @@
           <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social"><a href="#" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
-          <h3 class="sf-col-title">Pages</h3>
-          <ul class="sf-links">
-            <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="practitioners.html">Our Practitioners</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li><li><a href="pricing.html">Pricing</a></li>
-          </ul>
-        </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
-          <h3 class="sf-col-title">Services</h3>
-          <ul class="sf-links">
-            <li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li><li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li><li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li>
-          </ul>
-        </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
-          <h3 class="sf-col-title">Contact</h3>
-          <ul class="sf-links">
-            <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
-            <li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:Info@veravitawellness.ca">Info@veravitawellness.ca</a></li>
-            <li><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</li>
-          </ul>
-          <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
-          <ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul>
-        </div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.1s"><h3 class="sf-col-title">Pages</h3><ul class="sf-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="practitioners.html">Our Practitioners</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.2s"><h3 class="sf-col-title">Services</h3><ul class="sf-links"><li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li><li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li><li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li></ul></div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.3s"><h3 class="sf-col-title">Contact</h3><ul class="sf-links"><li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li><li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:Info@veravitawellness.ca">Info@veravitawellness.ca</a></li><li><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</li></ul><h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3><ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul></div>
       </div>
-      <div class="sf-bottom">
-        <p>&copy; 2026 VeraVita Wellness &amp; Aesthetics. All rights reserved.</p>
-        <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
-        <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
-      </div>
+      <div class="sf-bottom"><p>&copy; 2026 VeraVita Wellness & Aesthetics. All rights reserved.</p><p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p><p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p></div>
     </div>
   </div>
 </footer>
@@ -286,12 +276,6 @@
     var bg = document.querySelector(".section-bg-parallax");
     if (!section || !bg) return;
 
-    // Simulate background-attachment:fixed using GSAP.
-    // The bg div is 100vh tall. As the section scrolls through the viewport,
-    // we counter its movement so the bg stays fixed in place.
-    // At start (section top at viewport bottom): bg y = -viewportHeight (pushed up, hidden)
-    // At end (section bottom at viewport top): bg y = sectionHeight (pushed down, hidden)
-    // In between, the bg appears stationary — the section acts as a window.
     gsap.fromTo(bg,
       { y: function () { return -window.innerHeight; } },
       {
@@ -309,11 +293,6 @@
   });
 </script>
 
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book an appointment</span>
-  </a>
-</div>
-
+<div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
 </body>
 </html>
