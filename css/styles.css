@@ -3,7 +3,7 @@
    Based on Curevo Webflow Template
    ======================================== */
 
-/* @import removed — fonts loaded via <link> in HTML <head> to avoid render-blocking */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
 
 /* ---- Variables ---- */
 :root {
@@ -45,16 +45,6 @@ img { display: block; max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
-
-/* ---- Focus-visible (keyboard navigation) ---- */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
 
 /* ---- Typography ---- */
 h1,h2,h3,h4,h5,h6 { font-family: var(--font-h); font-weight: 400; line-height: 1.12; color: var(--dark); }
@@ -135,7 +125,6 @@ section { padding: 6rem 0; }
   border-bottom: 1px solid transparent;
   padding: 1.125rem 0;
   transition: border-color var(--dur), box-shadow var(--dur), padding var(--dur);
-  transform: translateZ(0);
 }
 .navbar--scrolled {
   border-color: var(--gray-5);
@@ -1606,8 +1595,6 @@ section { padding: 6rem 0; }
   clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
   will-change: transform;
   transform: translateZ(0);
-  content-visibility: auto;
-  contain-intrinsic-size: auto 1px auto 480px;
 }
 .sf-fixed {
   position: fixed;
@@ -2610,16 +2597,11 @@ ul.contact-info-list { padding: 0; margin: 0; }
     z-index: 997;
     padding: 0.75rem 1.25rem;
     padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
-    background: #f5f5f5;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-top: 1px solid var(--gray-5);
     box-shadow: 0 -4px 24px rgba(38,51,45,0.10);
-  }
-  @supports (backdrop-filter: blur(14px)) or (-webkit-backdrop-filter: blur(14px)) {
-    .mobile-book-bar {
-      background: rgba(255,255,255,0.96);
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-    }
   }
   .mobile-book-btn {
     width: 100%;
@@ -2825,8 +2807,6 @@ ul.contact-info-list { padding: 0; margin: 0; }
   padding: 6rem 0; text-align: center;
   contain: layout style paint;
   transform: translateZ(0);
-  content-visibility: auto;
-  contain-intrinsic-size: auto 1px auto 700px;
 }
 
 .hwnu-eyebrow {
@@ -2881,7 +2861,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 /* ========================================
    WHY CHOOSE VERAVITA (Section 3)
    ======================================== */
-.wcu-section { background: var(--white); padding: 5rem 0 6rem; content-visibility: auto; contain-intrinsic-size: auto 1px auto 800px; }
+.wcu-section { background: var(--white); padding: 5rem 0 6rem; }
 
 /* Header */
 .wcu-header { margin-bottom: 4.5rem; }
@@ -2988,8 +2968,6 @@ ul.contact-info-list { padding: 0; margin: 0; }
   padding: 6rem 0;
   overflow: hidden;
   contain: layout style;
-  content-visibility: auto;
-  contain-intrinsic-size: auto 1px auto 900px;
 }
 
 /* Video background */
@@ -3228,8 +3206,6 @@ ul.contact-info-list { padding: 0; margin: 0; }
   min-height: 560px;
   padding: 0;
   background: var(--dark);
-  content-visibility: auto;
-  contain-intrinsic-size: auto 1px auto 100vh;
   overflow: hidden;
   contain: layout style paint;
   transform: translateZ(0);
@@ -3498,8 +3474,6 @@ ul.contact-info-list { padding: 0; margin: 0; }
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
     url('../images/underlay pic desktop/underlay pic 11.webp') center / cover scroll;
   padding: 6rem 0;
-  content-visibility: auto;
-  contain-intrinsic-size: auto 1px auto 700px;
 }
 .at-wrap {
   display: grid;

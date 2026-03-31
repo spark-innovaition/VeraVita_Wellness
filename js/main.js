@@ -855,8 +855,6 @@ document.querySelectorAll('.team-card').forEach(card => {
       /* Close all open items */
       document.querySelectorAll('.accord-item.open').forEach(openItem => {
         openItem.classList.remove('open');
-        const openTrigger = openItem.querySelector('.accord-trigger');
-        if (openTrigger) openTrigger.setAttribute('aria-expanded', 'false');
         gsap.to(openItem.querySelector('.accord-body'), {
           maxHeight: 0, duration: 0.35, ease: 'power2.inOut'
         });
@@ -865,7 +863,6 @@ document.querySelectorAll('.team-card').forEach(card => {
       /* Open clicked item */
       if (!isOpen) {
         item.classList.add('open');
-        trigger.setAttribute('aria-expanded', 'true');
         gsap.set(body, { maxHeight: 'none' });
         const h = body.scrollHeight;
         gsap.fromTo(body,
