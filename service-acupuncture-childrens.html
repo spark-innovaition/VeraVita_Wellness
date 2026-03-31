@@ -13,6 +13,16 @@
   <link rel="stylesheet" href="css/styles.css" />
 
   <style>
+    /* Hero Image Ratio Fix */
+    @media (max-width: 767px) {
+      .sd-hero-img--desktop { display: none !important; }
+      .sd-hero-img--mobile { display: block !important; }
+    }
+    @media (min-width: 768px) {
+      .sd-hero-img--desktop { display: block !important; }
+      .sd-hero-img--mobile { display: none !important; }
+    }
+
     /* Override the static CSS background so we can use the parallax div instead */
     .svc-acupuncture-childrens .sd-body {
       background: transparent !important;
@@ -38,6 +48,29 @@
       position: relative;
       z-index: 1;
     }
+
+    /* Fix mobile hero: reset fixed height so aspect-ratio 16/9 takes effect */
+    @media (max-width: 860px) {
+      .sd-hero-img-wrap {
+        height: auto !important;
+        aspect-ratio: 16/9 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      /* Fix Related Services: restore horizontal scroll instead of grid squish */
+      .sd-related-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+      }
+      .sd-rel-card {
+        flex: 0 0 calc(85vw) !important;
+        scroll-snap-align: start;
+      }
+    }
   </style>
 </head>
 <body class="svc-acupuncture-childrens">
@@ -47,7 +80,7 @@
     <div class="navbar-inner">
       <a href="index.html" class="navbar-logo">
         <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img"
-            onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+             onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         <div class="logo-icon" style="display:none;">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/>
@@ -126,8 +159,8 @@
         </a>
       </div>
       <div class="sd-hero-img-wrap reveal">
-        <img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/4-5.webp" alt="Children's Needleless Acupuncture" class="sd-hero-img sd-hero-img--desktop" />
-        <img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/16-9.webp" alt="Children's Needleless Acupuncture" class="sd-hero-img sd-hero-img--mobile" />
+        <img src="images/Sub services images/Children's Needleless Acupuncture/4-5.webp" alt="Children's Needleless Acupuncture" class="sd-hero-img sd-hero-img--desktop" />
+        <img src="images/Sub services images/Children's Needleless Acupuncture/16-9.webp" alt="Children's Needleless Acupuncture" class="sd-hero-img sd-hero-img--mobile" />
       </div>
     </div>
   </div>
@@ -155,10 +188,10 @@
           <li>Eczema and other inflammatory skin conditions</li>
         </ul>
         <div class="sd-gallery reveal">
-          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/Image%201.webp" alt="Children's Acupuncture 1" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/Image%202.webp" alt="Children's Acupuncture 2" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/Image%203.webp" alt="Children's Acupuncture 3" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub%20services%20images/Children's%20Needleless%20Acupuncture/Image%204.webp" alt="Children's Acupuncture 4" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Children's Needleless Acupuncture/Image 1.webp" alt="Children's Acupuncture 1" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Children's Needleless Acupuncture/Image 2.webp" alt="Children's Acupuncture 2" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Children's Needleless Acupuncture/Image 3.webp" alt="Children's Acupuncture 3" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Children's Needleless Acupuncture/Image 4.webp" alt="Children's Acupuncture 4" /></div>
         </div>
       </div>
       <aside class="sd-card reveal">
