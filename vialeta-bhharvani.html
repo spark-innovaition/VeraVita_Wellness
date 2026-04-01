@@ -128,10 +128,13 @@
 <!-- PARALLAX OVERRIDE -->
 <style>
   .vialeta-bhharvani .pd-detail-section,
-  .vialeta-bhharvani .pd-services-section {
+  .vialeta-bhharvani .pd-booking-section {
     background: transparent !important;
     position: relative;
     overflow: hidden;
+  }
+  .vialeta-bhharvani .pd-services-section {
+    background: var(--white) !important;
   }
   .section-bg-parallax {
     position: absolute; top: 0; left: 0;
@@ -142,12 +145,12 @@
     background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       url('images/underlay pic desktop/underlay pic 22.webp') center / cover no-repeat;
   }
-  .pd-services-section .section-bg-parallax {
+  .pd-booking-section .section-bg-parallax {
     background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       url('images/underlay pic desktop/underlay pic 23.webp') center / cover no-repeat;
   }
   .pd-detail-section .container-medium,
-  .pd-services-section .container-medium { position: relative; z-index: 1; }
+  .pd-booking-section .container-medium { position: relative; z-index: 1; }
 </style>
 
 <!-- DETAIL -->
@@ -183,38 +186,8 @@
   </div>
 </section>
 
-<!-- BOOKING -->
-<section class="pd-booking-section">
-  <div class="container-medium">
-    <div class="pd-booking-inner">
-      <div class="reveal">
-        <span class="section-label">Book a Visit</span>
-        <h2 class="pd-booking-heading">Ready to Book<br /><em>Your Appointment?</em></h2>
-        <p class="pd-booking-sub">We use Jane App for seamless online booking \u2014 choose your preferred time, service, and practitioner in just a few clicks.</p>
-        <ul class="pd-booking-perks">
-          <li><i class="fa-solid fa-circle-check"></i> Real-time availability</li>
-          <li><i class="fa-solid fa-circle-check"></i> Instant confirmation</li>
-          <li><i class="fa-solid fa-circle-check"></i> Easy rescheduling &amp; reminders</li>
-        </ul>
-      </div>
-      <div class="pd-jane-card reveal">
-        <div class="pd-jane-icon"><i class="fa-solid fa-calendar-check"></i></div>
-        <h3 class="pd-jane-title">Book with Vialeta Bkharvani</h3>
-        <p class="pd-jane-desc">Select your service, date, and time directly through our secure booking portal.</p>
-        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary pd-jane-btn">
-          <span class="btn-ihb-blob"></span>
-          <span class="btn-ihb-default">Open Booking Portal</span>
-          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Open Booking Portal</span>
-        </a>
-        <p class="pd-jane-note"><i class="fa-solid fa-lock"></i> Secure &nbsp;&middot;&nbsp; Powered by Jane App</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- RELATED SERVICES -->
 <section class="pd-services-section">
-  <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="pd-services-header reveal">
       <span class="section-label">Related Services</span>
@@ -248,6 +221,36 @@
           <p class="pd-svc-desc">Cutting-edge cellular regeneration therapy that harnesses the power of exosomes to deeply repair, regenerate, and rejuvenate skin at a biological level.</p>
         </div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="pd-booking-section">
+  <div class="section-bg-parallax"></div>
+  <div class="container-medium">
+    <div class="pd-booking-inner">
+      <div class="reveal">
+        <span class="section-label">Book a Visit</span>
+        <h2 class="pd-booking-heading">Ready to Book<br /><em>Your Appointment?</em></h2>
+        <p class="pd-booking-sub">We use Jane App for seamless online booking \u2014 choose your preferred time, service, and practitioner in just a few clicks.</p>
+        <ul class="pd-booking-perks">
+          <li><i class="fa-solid fa-circle-check"></i> Real-time availability</li>
+          <li><i class="fa-solid fa-circle-check"></i> Instant confirmation</li>
+          <li><i class="fa-solid fa-circle-check"></i> Easy rescheduling &amp; reminders</li>
+        </ul>
+      </div>
+      <div class="pd-jane-card reveal">
+        <div class="pd-jane-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <h3 class="pd-jane-title">Book with Vialeta Bkharvani</h3>
+        <p class="pd-jane-desc">Select your service, date, and time directly through our secure booking portal.</p>
+        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary pd-jane-btn">
+          <span class="btn-ihb-blob"></span>
+          <span class="btn-ihb-default">Open Booking Portal</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Open Booking Portal</span>
+        </a>
+        <p class="pd-jane-note"><i class="fa-solid fa-lock"></i> Secure &nbsp;&middot;&nbsp; Powered by Jane App</p>
+      </div>
     </div>
   </div>
 </section>
@@ -329,7 +332,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   gsap.registerPlugin(ScrollTrigger);
-  document.querySelectorAll('.pd-detail-section, .pd-services-section').forEach(function (section) {
+  document.querySelectorAll('.pd-detail-section, .pd-booking-section').forEach(function (section) {
     var bg = section.querySelector('.section-bg-parallax');
     if (!bg) return;
     gsap.fromTo(bg,
