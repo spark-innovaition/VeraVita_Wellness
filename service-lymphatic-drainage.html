@@ -11,15 +11,171 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* Hero Image Ratio Fix */
+    @media (max-width: 767px) {
+      .sd-hero-img--desktop { display: none !important; }
+      .sd-hero-img--mobile { display: block !important; }
+    }
+    @media (min-width: 768px) {
+      .sd-hero-img--desktop { display: block !important; }
+      .sd-hero-img--mobile { display: none !important; }
+    }
+
+    /* Parallax background window logic */
+    .svc-lymphatic-drainage .sd-body {
+      background: transparent !important;
+      position: relative;
+      overflow: visible;
+    }
+
+    .section-bg-parallax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      background:
+        linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 42.webp') center / cover no-repeat;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    .sd-body .container-medium {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Aggressive Hide: Arrows and Navigation Dots */
+    .sd-rel-nav, .sd-rel-btn, .sd-related-header .fa-circle, .sd-related-header::before, .sd-related-header::after {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    /* Overlay Card Style Alignment */
+    .sd-rel-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      display: block;
+      aspect-ratio: 4/3;
+      background: #1e3528;
+      text-decoration: none;
+    }
+    
+    .sd-rel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .sd-rel-card:hover .sd-rel-img {
+      transform: scale(1.08);
+    }
+    
+    /* READABILITY FIX: Enhanced gradient mask */
+    .sd-rel-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0) 100%);
+      z-index: 1;
+    }
+
+    .sd-rel-overlay-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px;
+      z-index: 10;
+      color: white;
+    }
+
+    .sd-rel-overlay-title {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.6rem;
+      margin: 0 0 10px 0;
+      font-weight: 500;
+      color: #ffffff !important;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .sd-rel-overlay-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0 0 20px 0;
+      color: #ffffff !important;
+      opacity: 0.95;
+      max-width: 95%;
+    }
+
+    .sd-rel-overlay-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 10px 22px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Mobile Responsive Grid Fixes */
+    @media (max-width: 860px) {
+      .sd-hero-img-wrap {
+        height: auto !important;
+        aspect-ratio: 16/9 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .sd-related-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        padding-bottom: 2rem;
+        gap: 1.2rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .sd-rel-card {
+        flex: 0 0 calc(85vw) !important;
+        scroll-snap-align: start;
+        aspect-ratio: 1/1.1;
+      }
+      .sd-rel-overlay-content {
+        padding: 20px;
+      }
+      .sd-rel-overlay-title {
+        font-size: 1.35rem;
+      }
+    }
+
+    @media (min-width: 861px) {
+      .sd-related-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body class="svc-lymphatic-drainage">
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <div class="navbar-inner">
       <a href="index.html" class="navbar-logo">
-        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img"
+             onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/><circle cx="12" cy="7" r="1.5" fill="#1e3528"/></svg></div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
@@ -42,8 +198,7 @@
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
       <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-        <span class="btn-ihb-blob"></span>
-        <span class="btn-ihb-default">Book an appointment</span>
+        <span class="btn-ihb-blob"></span><span class="btn-ihb-default">Book an appointment</span>
         <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
       </a>
       <button class="navbar-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -51,14 +206,12 @@
   </div>
 </nav>
 
-<!-- BACK LINK -->
 <div class="sd-back">
   <div class="container-medium">
     <a href="cat-massage-therapy.html" class="sd-back-link"><i class="fa-solid fa-arrow-left"></i> Back to Massage Therapy</a>
   </div>
 </div>
 
-<!-- HERO -->
 <section class="sd-hero">
   <div class="container-medium">
     <div class="sd-hero-inner">
@@ -68,131 +221,104 @@
         <h1 class="sd-hero-title">Lymphatic<br /><em>Drainage</em></h1>
         <p class="sd-hero-intro">Gentle, rhythmic massage to stimulate lymphatic flow, reduce oedema, support detoxification, and enhance immune function — available as full-body, facial, and Brazilian lymphatic drainage.</p>
         <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-          <span class="btn-ihb-blob"></span>
-          <span class="btn-ihb-default">Book an Appointment</span>
+          <span class="btn-ihb-blob"></span><span class="btn-ihb-default">Book an Appointment</span>
           <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an Appointment</span>
         </a>
       </div>
       <div class="sd-hero-img-wrap reveal">
-        <img src="images/Sub services images/Lymphatic Drainage/4-5.webp" alt="Lymphatic Drainage Massage" class="sd-hero-img sd-hero-img--desktop" />
-        <img src="images/Sub services images/Lymphatic Drainage/16-9.webp" alt="Lymphatic Drainage Massage" class="sd-hero-img sd-hero-img--mobile" />
+        <img src="images/Sub services images/Lymphatic Drainage/4-5.webp" alt="Lymphatic Drainage" class="sd-hero-img sd-hero-img--desktop" />
+        <img src="images/Sub services images/Lymphatic Drainage/16-9.webp" alt="Lymphatic Drainage" class="sd-hero-img sd-hero-img--mobile" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- BODY -->
 <section class="sd-body">
-  <div class="container">
+  <div class="section-bg-parallax"></div>
+  <div class="container-medium">
     <div class="sd-body-inner">
       <div class="sd-main">
-
-        <div class="sd-section">
-          <h2 class="sd-section-title">What to Expect</h2>
-          <ul class="sd-list">
-            <li><i class="fa-solid fa-check"></i> Lymphatic health intake</li>
-            <li><i class="fa-solid fa-check"></i> Light rhythmic manual lymphatic drainage (MLD) technique</li>
-            <li><i class="fa-solid fa-check"></i> Specific focus on face, neck, abdomen, or full body as needed</li>
-            <li><i class="fa-solid fa-check"></i> Post-treatment hydration and movement guidance</li>
-          </ul>
+        <h3 class="reveal">What to Expect</h3>
+        <ul class="sd-bullet-list reveal">
+          <li>Detailed lymphatic health assessment and intake</li>
+          <li>Light rhythmic manual lymphatic drainage (MLD) technique</li>
+          <li>Specific clinical focus on face, neck, or body zones</li>
+          <li>Calming, non-invasive therapeutic environment</li>
+          <li>Detailed post-treatment hydration and movement guidance</li>
+        </ul>
+        <h3 class="reveal">Who It's For</h3>
+        <ul class="sd-bullet-list reveal">
+          <li>People with oedema, post-surgical swelling, or lymphedema</li>
+          <li>Those seeking proactive immune support or detoxification</li>
+          <li>Clients wanting facial depuffing or Brazilian lymphatic contouring</li>
+        </ul>
+        <h3 class="reveal">Why Lymphatic Drainage</h3>
+        <p class="reveal">Lymphatic drainage requires precise pressure and rhythm to be effective. Our RMT applies certified MLD technique to safely stimulate lymphatic vessels and support your body's natural drainage system at a cellular level.</p>
+        
+        <div class="sd-gallery reveal">
+          <div class="sd-gallery-item"><img src="images/Sub services images/Lymphatic Drainage/Image 1.webp" alt="Lymphatic 1" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Lymphatic Drainage/Image 2.webp" alt="Lymphatic 2" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Lymphatic Drainage/Image 3.webp" alt="Lymphatic 3" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Lymphatic Drainage/Image 4.webp" alt="Lymphatic 4" /></div>
         </div>
-
-        <div class="sd-section">
-          <h2 class="sd-section-title">Who It's For</h2>
-          <ul class="sd-list">
-            <li><i class="fa-solid fa-user-check"></i> People with oedema, post-surgical swelling, or lymphedema</li>
-            <li><i class="fa-solid fa-user-check"></i> Those seeking immune support or detoxification</li>
-            <li><i class="fa-solid fa-user-check"></i> Clients wanting facial depuffing or Brazilian lymphatic contouring</li>
-          </ul>
-        </div>
-
-        <div class="sd-section">
-          <h2 class="sd-section-title">Why Lymphatic Drainage</h2>
-          <p class="sd-text">Lymphatic drainage requires precise pressure and rhythm to be effective. Our RMT applies certified MLD technique to safely stimulate lymphatic vessels and support your body's natural drainage system.</p>
-        </div>
-
-        <div class="sd-gallery">
-          <h2 class="sd-section-title">Gallery</h2>
-          <div class="sd-gallery-grid">
-            <img src="images/massage therapy service/massage therapy 1.png" alt="Massage Therapy" class="sd-gallery-img" />
-            <img src="images/massage therapy service/massage therapy 2.png" alt="Massage Therapy" class="sd-gallery-img" />
-            <img src="images/massage therapy service/massage therapy 3.png" alt="Massage Therapy" class="sd-gallery-img" />
-            <img src="images/massage therapy service/massage therapy 4.png" alt="Massage Therapy" class="sd-gallery-img" />
-          </div>
-        </div>
-
       </div>
-
-      <aside class="sd-card">
-        <div class="sd-card-inner">
-          <h3 class="sd-card-title">Service Details</h3>
-          <ul class="sd-card-list">
-            <li>
-              <span class="sd-card-label"><i class="fa-solid fa-clock"></i> Duration</span>
-              <span class="sd-card-value">60–90 min</span>
-            </li>
-            <li>
-              <span class="sd-card-label"><i class="fa-solid fa-user"></i> Session Type</span>
-              <span class="sd-card-value">1-on-1 private</span>
-            </li>
-            <li>
-              <span class="sd-card-label"><i class="fa-solid fa-list-check"></i> Includes</span>
-              <span class="sd-card-value">MLD technique, targeted focus area, hydration &amp; movement guidance</span>
-            </li>
-          </ul>
-          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary sd-card-btn">
-            <span class="btn-ihb-blob"></span>
-            <span class="btn-ihb-default">Book now</span>
-            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book now</span>
-          </a>
-          <a href="contact.html" class="sd-card-enquire">Have questions? Contact us</a>
-        </div>
+      <aside class="sd-card reveal">
+        <h3 class="sd-card-title">Session Details</h3>
+        <p class="sd-card-intro">Gentle, rhythmic MLD technique to stimulate flow and support natural detoxification.</p>
+        <h4 class="sd-card-section-title">Session Overview</h4>
+        <ul class="sd-overview-list">
+          <li class="sd-overview-item"><span class="sd-overview-icon"><i class="fa-regular fa-clock"></i></span><div><span class="sd-overview-label">Duration</span><span class="sd-overview-value">60–90 min</span></div></li>
+          <li class="sd-overview-item"><span class="sd-overview-icon"><i class="fa-solid fa-user"></i></span><div><span class="sd-overview-label">Session Type</span><span class="sd-overview-value">1-on-1 private</span></div></li>
+          <li class="sd-overview-item"><span class="sd-overview-icon"><i class="fa-solid fa-circle-check"></i></span><div><span class="sd-overview-label">Includes</span><span class="sd-overview-value">MLD & hydration guide</span></div></li>
+        </ul>
+        <hr class="sd-card-divider" />
+        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary sd-card-btn">
+          <span class="btn-ihb-blob"></span><span class="btn-ihb-default">Book This Session</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book This Session</span>
+        </a>
       </aside>
-
     </div>
   </div>
 </section>
 
-<!-- RELATED -->
 <section class="sd-related">
-  <div class="container">
-    <h2 class="sd-related-title">Related Services</h2>
+  <div class="container-medium">
+    <div class="sd-related-header reveal">
+      <div>
+        <span class="section-label">EXPLORE MORE</span>
+        <h2>Related <em>Services</em></h2>
+      </div>
+    </div>
+    
     <div class="sd-related-grid">
-      <a href="service-massage-therapeutic.html" class="sd-related-card">
-        <div class="sd-related-img-wrap">
-          <img src="images/massage therapy - services page.jpg" alt="Standard Therapeutic Massage" class="sd-related-img" />
-        </div>
-        <div class="sd-related-body">
-          <span class="sd-related-cat">Massage Therapy</span>
-          <h3 class="sd-related-name">Standard Therapeutic Massage</h3>
-          <span class="sd-related-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+      <a href="service-massage-therapeutic.html" class="sd-rel-card reveal">
+        <img src="images/Sub services images/Standard Therapeutic Massage/16-9.webp" alt="Therapeutic Massage" class="sd-rel-img" />
+        <div class="sd-rel-overlay-content">
+          <h3 class="sd-rel-overlay-title">Therapeutic Massage</h3>
+          <p class="sd-rel-overlay-desc">Clinical techniques to relieve muscle tension and support structural balance.</p>
+          <span class="sd-rel-overlay-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
-      <a href="service-prenatal-massage.html" class="sd-related-card">
-        <div class="sd-related-img-wrap">
-          <img src="images/massage therapy - services page.jpg" alt="Pre &amp; Post Natal Massage" class="sd-related-img" />
-        </div>
-        <div class="sd-related-body">
-          <span class="sd-related-cat">Massage Therapy</span>
-          <h3 class="sd-related-name">Pre &amp; Post Natal Massage</h3>
-          <span class="sd-related-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+      <a href="service-prenatal-massage.html" class="sd-rel-card reveal">
+        <img src="images/Sub services images/Pre & Post Natal Massage/16-9.webp" alt="Prenatal Massage" class="sd-rel-img" />
+        <div class="sd-rel-overlay-content">
+          <h3 class="sd-rel-overlay-title">Prenatal Massage</h3>
+          <p class="sd-rel-overlay-desc">Safe, restorative support for pregnancy-related discomfort and postpartum recovery.</p>
+          <span class="sd-rel-overlay-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
-      <a href="service-tmj-massage.html" class="sd-related-card">
-        <div class="sd-related-img-wrap">
-          <img src="images/massage therapy - services page.jpg" alt="TMJ Massage" class="sd-related-img" />
-        </div>
-        <div class="sd-related-body">
-          <span class="sd-related-cat">Massage Therapy</span>
-          <h3 class="sd-related-name">TMJ Massage</h3>
-          <span class="sd-related-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+      <a href="service-tmj-massage.html" class="sd-rel-card reveal">
+        <img src="images/Sub services images/TMJ Massage/16-9.webp" alt="TMJ Massage" class="sd-rel-img" />
+        <div class="sd-rel-overlay-content">
+          <h3 class="sd-rel-overlay-title">TMJ Massage</h3>
+          <p class="sd-rel-overlay-desc">Targeted intra-oral and external release for jaw tension and related headaches.</p>
+          <span class="sd-rel-overlay-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="sf-footer">
   <div class="sf-fixed">
     <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
@@ -203,31 +329,12 @@
           <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social"><a href="#" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
-          <h3 class="sf-col-title">Pages</h3>
-          <ul class="sf-links">
-            <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="practitioners.html">Our Practitioners</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li><li><a href="pricing.html">Pricing</a></li>
-          </ul>
-        </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
-          <h3 class="sf-col-title">Services</h3>
-          <ul class="sf-links">
-            <li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li><li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li><li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li>
-          </ul>
-        </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
-          <h3 class="sf-col-title">Contact</h3>
-          <ul class="sf-links">
-            <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
-            <li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:Info@veravitawellness.ca">Info@veravitawellness.ca</a></li>
-            <li><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</li>
-          </ul>
-          <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
-          <ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul>
-        </div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.1s"><h3 class="sf-col-title">Pages</h3><ul class="sf-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="practitioners.html">Our Practitioners</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.2s"><h3 class="sf-col-title">Services</h3><ul class="sf-links"><li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li><li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li><li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li></ul></div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.3s"><h3 class="sf-col-title">Contact</h3><ul class="sf-links"><li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li><li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:Info@veravitawellness.ca">Info@veravitawellness.ca</a></li><li><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</li></ul><h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3><ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul></div>
       </div>
       <div class="sf-bottom">
-        <p>&copy; 2026 VeraVita Wellness &amp; Aesthetics. All rights reserved.</p>
+        <p>&copy; 2026 VeraVita Wellness & Aesthetics. All rights reserved.</p>
         <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
         <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
       </div>
@@ -239,6 +346,32 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    var section = document.querySelector(".sd-body");
+    var bg = document.querySelector(".section-bg-parallax");
+    if (!section || !bg) return;
+
+    gsap.fromTo(bg,
+      { y: function () { return -window.innerHeight; } },
+      {
+        y: function () { return section.offsetHeight; },
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  });
+</script>
+
 <div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
 </body>
 </html>
