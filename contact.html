@@ -11,6 +11,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .cth-section,
+    .cfaq-section,
+    .follow-section {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden !important;
+    }
+    .section-bg-parallax {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100vh; z-index: 0;
+      will-change: transform; pointer-events: none;
+    }
+    .cth-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 5.webp') center / cover no-repeat;
+    }
+    .cfaq-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 10.webp') center / cover no-repeat;
+    }
+    .cth-section .cth-top,
+    .cth-section .cth-body,
+    .cfaq-section .cfaq-inner,
+    .follow-section .follow-inner { position: relative; z-index: 1; }
+    .follow-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 12.webp') center / cover no-repeat;
+    }
+
+    @media (max-width: 860px) {
+      .cth-section .section-bg-parallax {
+        background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+          url('images/mobile overlay pic/pexels-allecgomes-3628770 (1).webp') center / cover no-repeat;
+      }
+      .cfaq-section .section-bg-parallax {
+        background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+          url('images/mobile overlay pic/pexels-didsss-13214230.webp') center / cover no-repeat;
+      }
+      .follow-section .section-bg-parallax {
+        background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+          url('images/mobile overlay pic/pexels-allecgomes-3628770 (1).webp') center / cover no-repeat;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -76,6 +121,7 @@
 
   <!-- CONTACT SECTION -->
   <section class="cth-section">
+    <div class="section-bg-parallax"></div>
 
     <!-- Top: Heading -->
     <div class="cth-top">
@@ -163,6 +209,7 @@
 
   <!-- FAQ SECTION -->
   <section class="cfaq-section">
+    <div class="section-bg-parallax"></div>
     <div class="cfaq-inner">
 
       <!-- Left -->
@@ -269,6 +316,7 @@
 
   <!-- FOLLOW US SECTION -->
   <section class="follow-section">
+    <div class="section-bg-parallax"></div>
     <div class="follow-inner">
 
       <!-- Left: 3 pill videos -->
@@ -421,5 +469,28 @@
   </a>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll('.cth-section, .cfaq-section, .follow-section').forEach(function (section) {
+    var bg = section.querySelector('.section-bg-parallax');
+    if (!bg) return;
+    gsap.fromTo(bg,
+      { y: function () { return -window.innerHeight; } },
+      {
+        y: function () { return section.offsetHeight; },
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  });
+});
+</script>
 </body>
 </html>
