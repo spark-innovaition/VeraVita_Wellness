@@ -91,6 +91,29 @@
     @media (hover: hover) {
       .hwnu-marquee:hover .hwnu-track { animation-play-state: paused; }
     }
+
+    /* Fixed-background parallax for green sections */
+    .hwnu-section,
+    .anim-testimonials {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-bg-parallax {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100vh; z-index: 0;
+      will-change: transform; pointer-events: none;
+    }
+    .hwnu-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 15.webp') center / cover no-repeat;
+    }
+    .anim-testimonials .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 18.webp') center / cover no-repeat;
+    }
+    .hwnu-section .container,
+    .anim-testimonials .container { position: relative; z-index: 1; }
   </style>
 </head>
 <body>
@@ -182,6 +205,7 @@
 </div>
 
 <section class="hwnu-section">
+  <div class="section-bg-parallax"></div>
   <div class="container">
 
     <div class="hwnu-eyebrow reveal">
@@ -461,6 +485,7 @@
 </section>
 
 <section class="anim-testimonials">
+  <div class="section-bg-parallax"></div>
   <div class="container">
     <div class="at-wrap">
 
@@ -617,5 +642,28 @@
   </a>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll('.hwnu-section, .anim-testimonials').forEach(function (section) {
+    var bg = section.querySelector('.section-bg-parallax');
+    if (!bg) return;
+    gsap.fromTo(bg,
+      { y: function () { return -window.innerHeight; } },
+      {
+        y: function () { return section.offsetHeight; },
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  });
+});
+</script>
 </body>
 </html>
