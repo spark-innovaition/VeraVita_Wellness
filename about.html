@@ -11,10 +11,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ====================================================
+       PARALLAX ENGINE STYLES
+       ==================================================== */
+    .about-statement-section, 
+    .timeline-section, 
+    .tmd-section {
+      position: relative;
+      background: transparent !important;
+      overflow: hidden;
+    }
+
+    .section-bg-parallax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    /* Assign unique background images to each section */
+    .about-statement-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.92), rgba(234,242,234,0.92)),
+                  url('images/underlay pic desktop/underlay pic 2.webp') center / cover no-repeat;
+    }
+
+    .timeline-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.92), rgba(234,242,234,0.92)),
+                  url('images/underlay pic desktop/underlay pic 5.webp') center / cover no-repeat;
+    }
+
+    .tmd-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.92), rgba(234,242,234,0.92)),
+                  url('images/underlay pic desktop/underlay pic 8.webp') center / cover no-repeat;
+    }
+
+    /* Ensure content stays above the parallax */
+    .about-statement-section .container,
+    .timeline-section .container,
+    .tmd-section .container {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <div class="navbar-inner">
@@ -75,12 +122,7 @@
   </div>
 </nav>
 
-<!-- ====================================================
-     HERO SPLIT
-     ==================================================== -->
 <section class="hs-section">
-
-  <!-- Left: Content -->
   <div class="hs-left">
     <header class="hs-header">
       <span class="hs-eyebrow">Naturopathic &nbsp;·&nbsp; Aesthetic Medicine &nbsp;·&nbsp; Calgary</span>
@@ -107,14 +149,11 @@
       </div>
     </footer>
   </div>
-
-  <!-- Right: Image panel with diagonal clip-path -->
   <div class="hs-right"></div>
-
 </section>
 
-<!-- ABOUT STATEMENT -->
 <section class="about-statement-section">
+  <div class="section-bg-parallax"></div>
   <div class="container">
     <div class="about-statement-icon">
       <svg viewBox="0 0 48 52" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -146,11 +185,8 @@
   </div>
 </section>
 
-<!-- VALUES — Curevo-style two-card layout -->
 <section class="about-cards-section">
   <div class="container">
-
-    <!-- Mission card: photo left, text right -->
     <div class="asc-card asc-card--white asc-card--mission fade-up">
       <picture>
         <img src="images/background 4K.png" alt="Our mission" class="asc-card-img" />
@@ -161,7 +197,6 @@
       </div>
     </div>
 
-    <!-- Values card: text left, photo right -->
     <div class="asc-card asc-card--white fade-up">
       <div class="asc-card-body">
         <h3 class="asc-card-title">Our values</h3>
@@ -176,12 +211,11 @@
       </div>
       <img src="images/core values.png" alt="Our values" class="asc-card-img" />
     </div>
-
   </div>
 </section>
 
-<!-- TIMELINE -->
 <section class="timeline-section">
+  <div class="section-bg-parallax"></div>
   <div class="container">
     <div class="section-header fade-up">
       <div class="section-label">Our Journey</div>
@@ -199,7 +233,6 @@
   </div>
 </section>
 
-<!-- CTA VIDEO BANNER -->
 <section class="about-cta-video-section">
   <video class="about-cta-video" autoplay muted loop playsinline>
     <source src="images/health.mp4" type="video/mp4" />
@@ -215,14 +248,10 @@
   </div>
 </section>
 
-
-<!-- TEAM -->
 <section class="tmd-section">
+  <div class="section-bg-parallax"></div>
   <div class="container">
-
-    <!-- Top row: intro text left + 2 senior doctors right -->
     <div class="tmd-top">
-
       <div class="tmd-intro reveal">
         <h2>Meet the experts behind your care</h2>
         <div class="tmd-marquee-wrap tmd-marquee-wrap--ltr">
@@ -235,7 +264,6 @@
             <span class="tmd-specialty">WELLNESS</span><span class="tmd-dot">·</span>
             <span class="tmd-specialty">TCM</span><span class="tmd-dot">·</span>
             <span class="tmd-specialty">ESTHETICS</span><span class="tmd-dot">·</span>
-            <!-- duplicate for seamless loop -->
             <span class="tmd-specialty">NATUROPATHIC</span><span class="tmd-dot">·</span>
             <span class="tmd-specialty">ACUPUNCTURE</span><span class="tmd-dot">·</span>
             <span class="tmd-specialty">AESTHETICS</span><span class="tmd-dot">·</span>
@@ -249,7 +277,7 @@
       </div>
 
       <a href="dr-jill-nazar.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.png" alt="Dr. Jill Nazar, ND" class="tmd-card-img" />
+        <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="tmd-card-img" />
         <div class="tmd-card-overlay">
           <h4>Dr. Jill Nazar, ND</h4>
           <span>Naturopathic Doctor</span>
@@ -259,7 +287,7 @@
       </a>
 
       <a href="dr-susan-mankaeeva.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Dr. Susan Mankaeeva, MD.png" alt="Dr. Susan Mankaeeva, MD" class="tmd-card-img" />
+        <img src="images/Practitioner Main page/Dr. Susan Mankaeeva, MD.webp" alt="Dr. Susan Mankaeeva, MD" class="tmd-card-img" />
         <div class="tmd-card-overlay">
           <h4>Dr. Susan Mankaeeva, MD</h4>
           <span>Medical Aesthetics Specialist</span>
@@ -267,14 +295,11 @@
           <div class="tmd-card-cta">View Profile <i class="fa-solid fa-arrow-right"></i></div>
         </div>
       </a>
+    </div>
 
-    </div><!-- /.tmd-top -->
-
-    <!-- Bottom row: 4 cards -->
     <div class="tmd-bottom">
-
       <a href="dr-viktoriia-taylor.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.png" alt="Dr. Viktoriia Taylor, DTCM" class="tmd-card-img" />
+        <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="tmd-card-img" />
         <div class="tmd-card-overlay">
           <h4>Dr. Viktoriia Taylor, DTCM</h4>
           <span>Registered Dr. of Acupuncture</span>
@@ -284,7 +309,7 @@
       </a>
 
       <a href="vialeta-bhharvani.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Vialeta Bkharvani.png" alt="Vialeta Bkharvani" class="tmd-card-img" />
+        <img src="images/Practitioner Main page/Vialeta Bkharvani.webp" alt="Vialeta Bkharvani" class="tmd-card-img" />
         <div class="tmd-card-overlay">
           <h4>Vialeta Bkharvani</h4>
           <span>Advanced Clinical Esthetician</span>
@@ -308,24 +333,15 @@
           <span>Osteopathic Manual Therapist</span>
         </div>
       </div>
-
-    </div><!-- /.tmd-bottom -->
-
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="sf-footer">
   <div class="sf-fixed">
-    <div class="sf-deco" aria-hidden="true">
-      <div class="sf-deco-1"></div>
-      <div class="sf-deco-2"></div>
-      <div class="sf-deco-3"></div>
-    </div>
-
+    <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
     <div class="sf-body">
       <div class="sf-top">
-
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
           <a href="index.html" class="sf-logo">
             <img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img"
@@ -342,7 +358,6 @@
             <a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
-
         <div class="sf-col sf-anim" style="--sf-delay:0.1s">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
@@ -356,7 +371,6 @@
             <li><a href="pricing.html">Pricing</a></li>
           </ul>
         </div>
-
         <div class="sf-col sf-anim" style="--sf-delay:0.2s">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
@@ -369,7 +383,6 @@
             <li><a href="cat-osteopathy.html">Osteopathy</a></li>
           </ul>
         </div>
-
         <div class="sf-col sf-anim" style="--sf-delay:0.3s">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
@@ -384,9 +397,7 @@
             <li><a href="cookie-policy.html">Cookie Policy</a></li>
           </ul>
         </div>
-
       </div>
-
       <div class="sf-bottom">
         <p>&copy; 2026 VeraVita Wellness & Aesthetics. All rights reserved.</p>
         <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
@@ -400,12 +411,36 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
-<!-- MOBILE BOTTOM BOOKING BAR -->
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book an appointment</span>
-  </a>
-</div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Triple Stationary Parallax Engine
+    const parallaxContainers = document.querySelectorAll('.about-statement-section, .timeline-section, .tmd-section');
+    
+    parallaxContainers.forEach(container => {
+      const bg = container.querySelector('.section-bg-parallax');
+      if (!bg) return;
+
+      gsap.fromTo(bg,
+        { y: function() { return -window.innerHeight; } },
+        {
+          y: function() { return container.offsetHeight; },
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+            invalidateOnRefresh: true
+          }
+        }
+      );
+    });
+  });
+</script>
+
+<div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
 </body>
 </html>
