@@ -11,15 +11,171 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* Hero Image Ratio Fix */
+    @media (max-width: 767px) {
+      .sd-hero-img--desktop { display: none !important; }
+      .sd-hero-img--mobile { display: block !important; }
+    }
+    @media (min-width: 768px) {
+      .sd-hero-img--desktop { display: block !important; }
+      .sd-hero-img--mobile { display: none !important; }
+    }
+
+    /* Parallax background window logic */
+    .svc-facial-relaxation .sd-body {
+      background: transparent !important;
+      position: relative;
+      overflow: visible;
+    }
+
+    .section-bg-parallax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      background:
+        linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 40.webp') center / cover no-repeat;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    .sd-body .container-medium {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Aggressive Hide: Arrows and Navigation Dots */
+    .sd-rel-nav, .sd-rel-btn, .sd-related-header .fa-circle, .sd-related-header::before, .sd-related-header::after {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    /* Overlay Card Style Alignment */
+    .sd-rel-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      display: block;
+      aspect-ratio: 4/3;
+      background: #1e3528;
+      text-decoration: none;
+    }
+    
+    .sd-rel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .sd-rel-card:hover .sd-rel-img {
+      transform: scale(1.08);
+    }
+    
+    /* READABILITY FIX: Enhanced gradient mask */
+    .sd-rel-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0) 100%);
+      z-index: 1;
+    }
+
+    .sd-rel-overlay-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px;
+      z-index: 10;
+      color: white;
+    }
+
+    .sd-rel-overlay-title {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.6rem;
+      margin: 0 0 10px 0;
+      font-weight: 500;
+      color: #ffffff !important;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .sd-rel-overlay-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0 0 20px 0;
+      color: #ffffff !important;
+      opacity: 0.95;
+      max-width: 95%;
+    }
+
+    .sd-rel-overlay-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 10px 22px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Mobile Responsive Grid Fixes */
+    @media (max-width: 860px) {
+      .sd-hero-img-wrap {
+        height: auto !important;
+        aspect-ratio: 16/9 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .sd-related-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        padding-bottom: 2rem;
+        gap: 1.2rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .sd-rel-card {
+        flex: 0 0 calc(85vw) !important;
+        scroll-snap-align: start;
+        aspect-ratio: 1/1.1;
+      }
+      .sd-rel-overlay-content {
+        padding: 20px;
+      }
+      .sd-rel-overlay-title {
+        font-size: 1.35rem;
+      }
+    }
+
+    @media (min-width: 861px) {
+      .sd-related-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body class="svc-facial-relaxation">
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <div class="navbar-inner">
       <a href="index.html" class="navbar-logo">
-        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <img src="Logo/Header logo.png" alt="VeraVita" class="logo-img"
+             onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/><circle cx="12" cy="7" r="1.5" fill="#1e3528"/></svg></div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
@@ -42,8 +198,7 @@
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
       <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-        <span class="btn-ihb-blob"></span>
-        <span class="btn-ihb-default">Book an appointment</span>
+        <span class="btn-ihb-blob"></span><span class="btn-ihb-default">Book an appointment</span>
         <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
       </a>
       <button class="navbar-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -51,14 +206,12 @@
   </div>
 </nav>
 
-<!-- BACK LINK -->
 <div class="sd-back">
   <div class="container-medium">
     <a href="cat-clinical-esthetics.html" class="sd-back-link"><i class="fa-solid fa-arrow-left"></i> Back to Clinical Esthetics &amp; Facials</a>
   </div>
 </div>
 
-<!-- HERO -->
 <section class="sd-hero">
   <div class="container-medium">
     <div class="sd-hero-inner">
@@ -68,110 +221,105 @@
         <h1 class="sd-hero-title">Custom Relaxation<br /><em>Facial</em></h1>
         <p class="sd-hero-intro">A deeply restorative 60-minute facial tailored to your skin type — cleanse, exfoliate, mask, and moisture infusion for an instant glow.</p>
         <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-          <span class="btn-ihb-blob"></span>
-          <span class="btn-ihb-default">Book an Appointment</span>
+          <span class="btn-ihb-blob"></span><span class="btn-ihb-default">Book an Appointment</span>
           <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an Appointment</span>
         </a>
       </div>
       <div class="sd-hero-img-wrap reveal">
-        <img src="images/Sub services images/Custom Relaxation Facial/4-5.webp" alt="Custom Relaxation Facial" class="sd-hero-img sd-hero-img--desktop" />
-        <img src="images/Sub services images/Custom Relaxation Facial/16-9.webp" alt="Custom Relaxation Facial" class="sd-hero-img sd-hero-img--mobile" />
+        <img src="images/Sub services images/Custom Relaxation Facial/4-5.webp" alt="Relaxation Facial" class="sd-hero-img sd-hero-img--desktop" />
+        <img src="images/Sub services images/Custom Relaxation Facial/16-9.webp" alt="Relaxation Facial" class="sd-hero-img sd-hero-img--mobile" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- BODY -->
 <section class="sd-body">
+  <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="sd-body-inner">
       <div class="sd-main">
-        <h3>What to Expect</h3>
-        <ul class="sd-bullet-list">
-          <li>Skin analysis and consultation</li>
-          <li>Gentle double cleanse</li>
-          <li>Customised exfoliation</li>
-          <li>Steam and extraction if needed</li>
-          <li>Hydrating mask</li>
-          <li>Serums and moisturiser tailored to your skin</li>
+        <h3 class="reveal">What to Expect</h3>
+        <ul class="sd-bullet-list reveal">
+          <li>Personalised skin analysis and consultation</li>
+          <li>Gentle double cleanse to refresh the canvas</li>
+          <li>Customised exfoliation based on your skin profile</li>
+          <li>Calming steam and targeted extractions if required</li>
+          <li>Restorative hydrating mask application</li>
+          <li>Molecular serums and moisturiser tailored to your unique skin</li>
         </ul>
-        <h3>Who It's For</h3>
-        <ul class="sd-bullet-list">
-          <li>Anyone seeking a relaxing, results-driven facial</li>
-          <li>People with dry, dehydrated, or sensitive skin</li>
-          <li>Those new to professional facial treatments</li>
+        <h3 class="reveal">Who It's For</h3>
+        <ul class="sd-bullet-list reveal">
+          <li>Anyone seeking a deeply relaxing, clinically-informed facial</li>
+          <li>People with dry, dehydrated, or sensitive skin profiles</li>
+          <li>Those looking for a restorative maintenance treatment between procedures</li>
         </ul>
-        <h3>Why Relaxation Facial</h3>
-        <p>Every relaxation facial at VeraVita is customised by Vialeta Bkharvani — drawing on 25+ years of clinical skin experience to select the ideal products and techniques for your unique skin profile.</p>
+        <h3 class="reveal">Why Relaxation Facial</h3>
+        <p class="reveal">Every relaxation facial at VeraVita is customised by Vialeta Bkharvani — drawing on 25+ years of clinical skin experience to select the ideal products and techniques for your unique skin profile. It's where clinical precision meets restorative wellness.</p>
+        
+        <div class="sd-gallery reveal">
+          <div class="sd-gallery-item"><img src="images/Sub services images/Custom Relaxation Facial/Image 1.webp" alt="Facial 1" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Custom Relaxation Facial/Image 2.webp" alt="Facial 2" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Custom Relaxation Facial/Image 3.webp" alt="Facial 3" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Custom Relaxation Facial/Image 4.webp" alt="Facial 4" /></div>
+        </div>
       </div>
       <aside class="sd-card reveal">
-        <h4 class="sd-card-title">Service Details</h4>
+        <h3 class="sd-card-title">Session Details</h3>
         <p class="sd-card-intro">A restorative facial tailored to your skin type for an instant glow and lasting hydration.</p>
-        <h5 class="sd-card-section-title">Session Overview</h5>
+        <h4 class="sd-card-section-title">Session Overview</h4>
         <ul class="sd-overview-list">
-          <li class="sd-overview-item">
-            <div class="sd-overview-icon"><i class="fa-solid fa-clock"></i></div>
-            <div><span class="sd-overview-label">Duration</span><span class="sd-overview-value">60 min</span></div>
-          </li>
-          <li class="sd-overview-item">
-            <div class="sd-overview-icon"><i class="fa-solid fa-user"></i></div>
-            <div><span class="sd-overview-label">Session Type</span><span class="sd-overview-value">1-on-1 private</span></div>
-          </li>
-          <li class="sd-overview-item">
-            <div class="sd-overview-icon"><i class="fa-solid fa-list-check"></i></div>
-            <div><span class="sd-overview-label">Practitioner</span><span class="sd-overview-value">Vialeta Bkharvani</span></div>
-          </li>
+          <li class="sd-overview-item"><span class="sd-overview-icon"><i class="fa-regular fa-clock"></i></span><div><span class="sd-overview-label">Duration</span><span class="sd-overview-value">60 min</span></div></li>
+          <li class="sd-overview-item"><span class="sd-overview-icon"><i class="fa-solid fa-user"></i></span><div><span class="sd-overview-label">Session Type</span><span class="sd-overview-value">1-on-1 private</span></div></li>
+          <li class="sd-overview-item"><span class="sd-overview-icon"><i class="fa-solid fa-circle-check"></i></span><div><span class="sd-overview-label">Practitioner</span><span class="sd-overview-value">Vialeta Bkharvani</span></div></li>
         </ul>
         <hr class="sd-card-divider" />
-        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="sd-card-btn">Book an Appointment <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary sd-card-btn">
+          <span class="btn-ihb-blob"></span><span class="btn-ihb-default">Book This Session</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book This Session</span>
+        </a>
       </aside>
     </div>
   </div>
 </section>
 
-<!-- RELATED -->
 <section class="sd-related">
   <div class="container-medium">
     <div class="sd-related-header reveal">
-      <span class="section-label">Explore More</span>
-      <h2>Related <em>Services</em></h2>
+      <div>
+        <span class="section-label">EXPLORE MORE</span>
+        <h2>Related <em>Services</em></h2>
+      </div>
     </div>
+    
     <div class="sd-related-grid">
-      <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/Sub services images/European Facial + Lift Massage/16-9.webp" alt="European Facial + Lift Massage" class="sd-rel-img" />
+      <a href="service-facial-european.html" class="sd-rel-card reveal">
+        <img src="images/Sub services images/European Facial + Lift Massage/16-9.webp" alt="European Facial" class="sd-rel-img" />
+        <div class="sd-rel-overlay-content">
+          <h3 class="sd-rel-overlay-title">European Facial</h3>
+          <p class="sd-rel-overlay-desc">Signature 90-minute facial with lymphatic lift massage for visible contouring.</p>
+          <span class="sd-rel-overlay-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
         </div>
-        <div class="sd-rel-body">
-          <h4 class="sd-rel-name">European Facial + Lift Massage</h4>
-          <p class="sd-rel-desc">A 90-minute European-style facial combined with lymphatic lift massage for visible contouring and radiance.</p>
-          <a href="service-facial-european.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </a>
+      <a href="service-facial-anti-aging.html" class="sd-rel-card reveal">
+        <img src="images/Sub services images/Anti-Aging Deluxe + LED Therapy/16-9.webp" alt="Anti-Aging Deluxe" class="sd-rel-img" />
+        <div class="sd-rel-overlay-content">
+          <h3 class="sd-rel-overlay-title">Anti-Aging Deluxe</h3>
+          <p class="sd-rel-overlay-desc">Comprehensive treatment combining advanced actives and clinical LED light therapy.</p>
+          <span class="sd-rel-overlay-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
         </div>
-      </div>
-      <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/Sub services images/Anti-Aging Deluxe + LED Therapy/16-9.webp" alt="Anti-Aging Deluxe + LED" class="sd-rel-img" />
+      </a>
+      <a href="service-aesthetic-consultation.html" class="sd-rel-card reveal">
+        <img src="images/Sub services images/Aesthetic Consultation/16-9.webp" alt="Aesthetic Consultation" class="sd-rel-img" />
+        <div class="sd-rel-overlay-content">
+          <h3 class="sd-rel-overlay-title">Aesthetic Consultation</h3>
+          <p class="sd-rel-overlay-desc">Professional clinical assessment of your aesthetic goals and treatment planning.</p>
+          <span class="sd-rel-overlay-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
         </div>
-        <div class="sd-rel-body">
-          <h4 class="sd-rel-name">Anti-Aging Deluxe + LED</h4>
-          <p class="sd-rel-desc">A comprehensive 120-minute anti-aging treatment combining advanced actives and LED light therapy.</p>
-          <a href="service-facial-anti-aging.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap">
-          <img src="images/ashtetic medicine.png" alt="Clinical Esthetics &amp; Facials" class="sd-rel-img" />
-        </div>
-        <div class="sd-rel-body">
-          <h4 class="sd-rel-name">Clinical Esthetics &amp; Facials</h4>
-          <p class="sd-rel-desc">Explore our full range of clinical esthetics and facial treatments.</p>
-          <a href="cat-clinical-esthetics.html" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="sf-footer">
   <div class="sf-fixed">
     <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
@@ -182,31 +330,12 @@
           <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social"><a href="#" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
-          <h3 class="sf-col-title">Pages</h3>
-          <ul class="sf-links">
-            <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="practitioners.html">Our Practitioners</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li><li><a href="pricing.html">Pricing</a></li>
-          </ul>
-        </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
-          <h3 class="sf-col-title">Services</h3>
-          <ul class="sf-links">
-            <li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li><li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li><li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li>
-          </ul>
-        </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
-          <h3 class="sf-col-title">Contact</h3>
-          <ul class="sf-links">
-            <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
-            <li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:Info@veravitawellness.ca">Info@veravitawellness.ca</a></li>
-            <li><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</li>
-          </ul>
-          <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
-          <ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul>
-        </div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.1s"><h3 class="sf-col-title">Pages</h3><ul class="sf-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="practitioners.html">Our Practitioners</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.2s"><h3 class="sf-col-title">Services</h3><ul class="sf-links"><li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li><li><a href="cat-medical-aesthetics.html">Medical Aesthetics</a></li><li><a href="cat-clinical-esthetics.html">Clinical Esthetics</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li></ul></div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.3s"><h3 class="sf-col-title">Contact</h3><ul class="sf-links"><li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li><li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:Info@veravitawellness.ca">Info@veravitawellness.ca</a></li><li><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</li></ul><h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3><ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul></div>
       </div>
       <div class="sf-bottom">
-        <p>&copy; 2026 VeraVita Wellness &amp; Aesthetics. All rights reserved.</p>
+        <p>&copy; 2026 VeraVita Wellness & Aesthetics. All rights reserved.</p>
         <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
         <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
       </div>
@@ -218,6 +347,32 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    var section = document.querySelector(".sd-body");
+    var bg = document.querySelector(".section-bg-parallax");
+    if (!section || !bg) return;
+
+    gsap.fromTo(bg,
+      { y: function () { return -window.innerHeight; } },
+      {
+        y: function () { return section.offsetHeight; },
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  });
+</script>
+
 <div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
 </body>
 </html>
