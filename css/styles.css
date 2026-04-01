@@ -832,6 +832,17 @@ section { padding: 6rem 0; }
   display: none;
 }
 
+/* Dark gradient scrim — readable text over busy video backgrounds */
+.ph-cinematic::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 65%;
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 50%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* Post-zoom hero content — slides up after overlay fades */
 .ph-hero-content {
   position: absolute;
@@ -3343,8 +3354,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
   .team-header { flex-direction: column; align-items: flex-start; }
   .about-home-section { flex-direction: column; height: auto; }
   .about-home-left { flex: none; padding: 4rem 2rem 3rem; }
-  .about-home-video-wrap { flex: none; height: 400px; }
-  .about-home-video-wrap::before { width: 100px; }
+  .about-home-video-wrap { display: none; }
 }
 @media (max-width: 600px) {
   .reviews-dark-badges { grid-template-columns: 1fr 1fr; }
