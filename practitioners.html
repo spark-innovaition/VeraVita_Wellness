@@ -11,6 +11,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .prac-cta-section {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .prac-cta-section .section-bg-parallax {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100vh; z-index: 0;
+      will-change: transform; pointer-events: none;
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/Underlay pic 2.webp') center / cover no-repeat;
+    }
+    .prac-cta-section .prac-cta-inner { position: relative; z-index: 1; }
+
+    @media (max-width: 860px) {
+      .prac-cta-section .section-bg-parallax {
+        background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+          url('images/mobile overlay pic/pexels-ameliacui-11983527.webp') center / cover no-repeat;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -182,6 +204,7 @@
 
 <!-- CTA BANNER -->
 <section class="prac-cta-section">
+  <div class="section-bg-parallax"></div>
   <div class="prac-cta-inner container-medium">
     <div class="prac-cta-content reveal">
       <span class="section-label">Get Started</span>
@@ -322,5 +345,27 @@
   </a>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.registerPlugin(ScrollTrigger);
+  var section = document.querySelector('.prac-cta-section');
+  var bg = section ? section.querySelector('.section-bg-parallax') : null;
+  if (!section || !bg) return;
+  gsap.fromTo(bg,
+    { y: function () { return -window.innerHeight; } },
+    {
+      y: function () { return section.offsetHeight; },
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    }
+  );
+});
+</script>
 </body>
 </html>
