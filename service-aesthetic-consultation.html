@@ -50,9 +50,11 @@
     }
 
     /* Aggressive Hide: Arrows and Navigation Dots */
-    .sd-rel-nav, .sd-rel-btn, .sd-related-header .fa-circle, .sd-related-header::before, .sd-related-header::after {
+    .sd-rel-nav, .sd-rel-btn, .sd-related-header .fa-circle, .sd-related-header button, .sd-related-header .sd-rel-nav {
       display: none !important;
       visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
 
     /* Overlay Card Style Alignment */
@@ -255,6 +257,13 @@
         </ul>
         <h3 class="reveal">Why Aesthetic Consultation</h3>
         <p class="reveal">Dr. Mankaeeva takes time to truly understand your goals before recommending any treatment. There is never any pressure — our consultations are designed to educate and empower you. You leave with a clear plan and full confidence in every step forward.</p>
+
+        <div class="sd-gallery reveal">
+          <div class="sd-gallery-item"><img src="images/Sub services images/Aesthetic Consultation/Image 1.webp" alt="Aesthetic Consultation 1" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Aesthetic Consultation/Image 2.webp" alt="Aesthetic Consultation 2" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Aesthetic Consultation/Image 3.webp" alt="Aesthetic Consultation 3" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Aesthetic Consultation/Image 4.webp" alt="Aesthetic Consultation 4" /></div>
+        </div>
       </div>
       <aside class="sd-card reveal">
         <h3 class="sd-card-title">Session Overview</h3>
@@ -318,7 +327,7 @@
     <div class="sf-body">
       <div class="sf-top">
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
-          <a href="index.html" class="sf-logo"><img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div></a>
+          <a href="index.html" class="sf-logo"><img src="Logo/Footer logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/><circle cx="12" cy="7" r="1.5" fill="#1e3528"/></svg><span>VeraVita</span></div></a>
           <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social"><a href="#" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" class="sf-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
         </div>
