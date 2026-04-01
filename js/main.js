@@ -122,19 +122,11 @@ lenis.on('scroll', ScrollTrigger.update);
     ctx.fillStyle    = '#000';
     ctx.fillText('VeraVita', w / 2, h / 2);
 
-    /* 2b. Outline around cutout text so it's readable against light video */
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.globalAlpha = s.overlayAlpha * 0.35;
-    ctx.strokeStyle = '#1e3528';
-    ctx.lineWidth   = Math.max(1, fontPx * 0.012);
-    ctx.font        = `italic bold ${fontPx}px "Libre Caslon Text", serif`;
-    ctx.strokeText('VeraVita', w / 2, h / 2);
-
     /* 3. Draw label above heading as solid readable text (not a cutout) */
     if (s.labelAlpha > 0.004) {
       const headingHalfH = basePx * 1.1 / 2;
       const labelY       = h / 2 - headingHalfH - 56;
-      const labelPx      = Math.max(Math.round(w * 0.009), 11);
+      const labelPx      = Math.max(Math.round(w * 0.009), 10);
       ctx.globalCompositeOperation = 'source-over';
       ctx.globalAlpha  = s.labelAlpha;
       ctx.fillStyle    = '#1e3528';
