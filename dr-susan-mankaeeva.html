@@ -11,10 +11,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ====================================================
+       STATIONARY PARALLAX ENGINE
+       ==================================================== */
+    .dr-susan-mankaeeva .pd-detail-section,
+    .dr-susan-mankaeeva .pd-services-section {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-bg-parallax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 0;
+      will-change: transform;
+      pointer-events: none;
+    }
+    /* Unique Assets for Dr. Mankaeeva */
+    .pd-detail-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 27.webp') center / cover no-repeat;
+    }
+    .pd-services-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 28.webp') center / cover no-repeat;
+    }
+    .pd-detail-section .container-medium,
+    .pd-services-section .container-medium {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body class="dr-susan-mankaeeva">
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <div class="navbar-inner">
@@ -28,34 +63,13 @@
         <li class="nav-dropdown">
           <a href="#" class="nav-link">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
           <div class="nav-dropdown-menu">
-            <a href="cat-naturopathic.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
-              <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
-            </a>
-            <a href="cat-iv-therapy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
-              <div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
-            </a>
-            <a href="cat-acupuncture.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
-              <div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div>
-            </a>
-            <a href="cat-medical-aesthetics.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
-              <div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div>
-            </a>
-            <a href="cat-clinical-esthetics.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div>
-              <div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Lead: Vialeta Bkharvani</span></div>
-            </a>
-            <a href="cat-massage-therapy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div>
-            </a>
-            <a href="cat-osteopathy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
-              <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div>
-            </a></div>
+            <a href="cat-naturopathic.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div><div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div></a>
+            <a href="cat-iv-therapy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div><div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div></a>
+            <a href="cat-acupuncture.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div><div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div></a>
+            <a href="cat-medical-aesthetics.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div><div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div></a>
+            <a href="cat-clinical-esthetics.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div><div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Lead: Vialeta Bkharvani</span></div></a>
+            <a href="cat-massage-therapy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div></a>
+            <a href="cat-osteopathy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div><div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div></a></div>
         </li>
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="practitioners.html" class="nav-link active">Practitioners</a></li>
@@ -71,7 +85,6 @@
   </div>
 </nav>
 
-<!-- BACK LINK -->
 <div class="pd-back">
   <div class="container-medium">
     <a href="practitioners.html" class="pd-back-link">
@@ -80,7 +93,6 @@
   </div>
 </div>
 
-<!-- HERO -->
 <section class="pd-hero">
   <div class="container-medium">
     <div class="pd-hero-inner">
@@ -126,8 +138,8 @@
   </div>
 </section>
 
-<!-- DETAIL -->
 <section class="pd-detail-section">
+  <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="pd-detail-inner reveal">
       <h2>About Dr. Mankaeeva</h2>
@@ -157,7 +169,6 @@
   </div>
 </section>
 
-<!-- BOOKING -->
 <section class="pd-booking-section">
   <div class="container-medium">
     <div class="pd-booking-inner">
@@ -186,46 +197,45 @@
   </div>
 </section>
 
-<!-- RELATED SERVICES -->
 <section class="pd-services-section">
+  <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="pd-services-header reveal">
       <span class="section-label">Related Services</span>
       <h2>Dr. Mankaeeva's<br /><em>Speciality Areas</em></h2>
     </div>
     <div class="pd-services-grid">
-      <div class="pd-svc-card reveal">
+      <a href="service-botox.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=75" alt="Botox & Neuromodulators" class="pd-svc-img" />
+          <img src="images/Botox service/Botox 16-9.png" alt="Botox & Neuromodulators" class="pd-svc-img" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Botox &amp; Neuromodulators</h3>
-          <p class="pd-svc-desc">Precision injections to soften dynamic wrinkles for a refreshed, natural result — physician-administered with Health Canada-approved products.</p>
+          <p class="pd-svc-desc">Precision injections to soften dynamic wrinkles for a refreshed result — physician-administered with Health Canada-approved products.</p>
         </div>
-      </div>
-      <div class="pd-svc-card reveal">
+      </a>
+      <a href="service-dermal-fillers.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=75" alt="Dermal Fillers" class="pd-svc-img" />
+          <img src="images/Dermal filler service/dermal filler 16-9.png" alt="Dermal Fillers" class="pd-svc-img" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Dermal Fillers</h3>
           <p class="pd-svc-desc">Hyaluronic acid fillers to restore volume, define lips and jawline, and lift cheeks — delivering a balanced, youthful appearance.</p>
         </div>
-      </div>
-      <div class="pd-svc-card reveal">
+      </a>
+      <a href="service-aesthetic-consultation.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=75" alt="Aesthetic Consultation" class="pd-svc-img" />
+          <img src="images/Sub services images/Aesthetic Consultation/16-9.webp" alt="Aesthetic Consultation" class="pd-svc-img" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Aesthetic Consultation</h3>
-          <p class="pd-svc-desc">A thorough one-on-one assessment where Dr. Mankaeeva evaluates your anatomy and builds a personalised treatment plan with transparent pricing.</p>
+          <p class="pd-svc-desc">A thorough assessment where Dr. Mankaeeva evaluates your anatomy and builds a personalised treatment plan for your goals.</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="sf-footer">
   <div class="sf-fixed">
     <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
@@ -250,7 +260,6 @@
             <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
             <li><a href="practitioners.html">Our Practitioners</a></li><li><a href="pricing.html">Pricing</a></li>
             <li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
           </ul>
         </div>
         <div class="sf-col sf-anim" style="--sf-delay:0.2s">
@@ -293,6 +302,31 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll('.pd-detail-section, .pd-services-section').forEach(function (section) {
+    var bg = section.querySelector('.section-bg-parallax');
+    if (!bg) return;
+    gsap.fromTo(bg,
+      { y: function () { return -window.innerHeight; } },
+      {
+        y: function () { return section.offsetHeight; },
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  });
+});
+</script>
+
 <div class="mobile-book-bar">
   <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
     <span class="btn-ihb-default">Book an appointment</span>
