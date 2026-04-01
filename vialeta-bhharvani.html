@@ -125,8 +125,34 @@
   </div>
 </section>
 
+<!-- PARALLAX OVERRIDE -->
+<style>
+  .vialeta-bhharvani .pd-detail-section,
+  .vialeta-bhharvani .pd-services-section {
+    background: transparent !important;
+    position: relative;
+    overflow: hidden;
+  }
+  .section-bg-parallax {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100vh; z-index: 0;
+    will-change: transform; pointer-events: none;
+  }
+  .pd-detail-section .section-bg-parallax {
+    background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+      url('images/underlay pic desktop/underlay pic 22.webp') center / cover no-repeat;
+  }
+  .pd-services-section .section-bg-parallax {
+    background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+      url('images/underlay pic desktop/underlay pic 23.webp') center / cover no-repeat;
+  }
+  .pd-detail-section .container-medium,
+  .pd-services-section .container-medium { position: relative; z-index: 1; }
+</style>
+
 <!-- DETAIL -->
 <section class="pd-detail-section">
+  <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="pd-detail-inner reveal">
       <h2>About Vialeta Bkharvani</h2>
@@ -188,39 +214,40 @@
 
 <!-- RELATED SERVICES -->
 <section class="pd-services-section">
+  <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="pd-services-header reveal">
       <span class="section-label">Related Services</span>
       <h2>Vialeta Bkharvani's<br /><em>Speciality Areas</em></h2>
     </div>
     <div class="pd-services-grid">
-      <div class="pd-svc-card reveal">
+      <a href="service-facial-relaxation.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=75" alt="Advanced Facials" class="pd-svc-img" />
+          <img src="images/Sub services images/Custom Relaxation Facial/16-9.webp" alt="Custom Relaxation Facial" class="pd-svc-img" />
         </div>
         <div class="pd-svc-body">
-          <h3 class="pd-svc-title">Advanced Facials</h3>
-          <p class="pd-svc-desc">Custom clinical facial treatments tailored to your unique skin type and concerns — from deep cleansing to anti-ageing and brightening protocols.</p>
+          <h3 class="pd-svc-title">Custom Relaxation Facial</h3>
+          <p class="pd-svc-desc">A deeply restorative 60-minute facial tailored to your skin type for an instant glow.</p>
         </div>
-      </div>
-      <div class="pd-svc-card reveal">
+      </a>
+      <a href="service-derma-needling.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=75" alt="Derma Needling" class="pd-svc-img" />
+          <img src="images/Sub services images/Derma Needling/16-9.webp" alt="Derma Needling" class="pd-svc-img" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Derma Needling</h3>
           <p class="pd-svc-desc">Microneedling to stimulate collagen production, improve skin texture, reduce scarring, and restore a youthful, radiant complexion.</p>
         </div>
-      </div>
-      <div class="pd-svc-card reveal">
+      </a>
+      <a href="service-exosome-needling.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=75" alt="Exosome Therapy" class="pd-svc-img" />
+          <img src="images/Sub services images/Exosome Derma Needling/16-9.webp" alt="Exosome Derma Needling" class="pd-svc-img" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Exosome Therapy</h3>
           <p class="pd-svc-desc">Cutting-edge cellular regeneration therapy that harnesses the power of exosomes to deeply repair, regenerate, and rejuvenate skin at a biological level.</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -298,5 +325,29 @@
     <span class="btn-ihb-default">Book an appointment</span>
   </a>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll('.pd-detail-section, .pd-services-section').forEach(function (section) {
+    var bg = section.querySelector('.section-bg-parallax');
+    if (!bg) return;
+    gsap.fromTo(bg,
+      { y: function () { return -window.innerHeight; } },
+      {
+        y: function () { return section.offsetHeight; },
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      }
+    );
+  });
+});
+</script>
 </body>
 </html>
