@@ -8,12 +8,9 @@ const isMobile = window.matchMedia('(max-width: 768px)').matches;
 (function () {
   const v = document.getElementById('hero-video');
   if (!v) return;
-  const sources = isMobile ? [
-    { src: 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20hero%20-%20mobile-PleWFG3tCvg8uwSUUMlaugxd5s72Nm.webm', type: 'video/webm' },
-    { src: 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20hero%20-%20mobile-6rFpNjklIcpde3tcSz4BeWbGkB8Uvm.mp4',  type: 'video/mp4'  },
-  ] : [
-    { src: 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20page%20video-nwPBStcnMK5z9Je4jfug9K9dbWy0nc.webm',     type: 'video/webm' },
-    { src: 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20page%20video-fGvS07yOovrctZg7ec4hsrQjfeTiQD.mp4',      type: 'video/mp4'  },
+  const heroVideoUrl = 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20Page%20Video-wHEpxF62d0sp1tBvznXD2H51DAANJp.webm';
+  const sources = [
+    { src: heroVideoUrl, type: 'video/webm' },
   ];
   sources.forEach(({ src, type }) => {
     const s = document.createElement('source');
@@ -137,50 +134,44 @@ lenis.on('scroll', ScrollTrigger.update);
     }
   }
 
-  /* Create spacer div after the hero to preserve scroll height */
-  const spacer = document.createElement('div');
-  spacer.className = 'ph-cinematic-spacer';
-  section.parentNode.insertBefore(spacer, section.nextSibling);
-  /* Set spacer height to match the old pin duration */
-  const pinDuration = isMobile ? 4.5 : 4.0;
-  spacer.style.height = (100 * (1 + pinDuration)) + 'vh';
-
-  /* Drive canvas from GSAP ticker — only while hero is active */
-  let heroActive = true;
-  gsap.ticker.add(function heroTick() {
-    if (heroActive) drawFrame();
-  });
+  /* Drive canvas from GSAP ticker */
+  gsap.ticker.add(drawFrame);
 
   /* Init hero items hidden */
   if (heroItems.length) gsap.set(heroItems, { opacity: 0, y: 80 });
 
-  /* ScrollTrigger-scrubbed timeline — NO pin, hero is already position:fixed */
+  /* ScrollTrigger-pinned timeline
+     +=1800 keeps the zoom snappy; the 0.30 "read buffer" at the end
+     holds the pin with fully-visible text before unpin. */
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: spacer,
+      trigger: section,
       start: 'top top',
-      end: 'bottom top',
-      scrub: isMobile ? 0.3 : 0.4,
-      onLeave: function() { heroActive = false; },
-      onEnterBack: function() { heroActive = true; },
+      end: isMobile ? '+=1600' : '+=1800',
+      scrub: 0.4,
+      pin: true,
+      anticipatePin: 1,
     }
   });
 
+  /* Phase 1 (0–0.35): Logo zoom-through */
   tl
     .to(s, { labelAlpha: 0,     duration: 0.05, ease: 'none'      },  0   )
-    .to(s, { textScale: 18,     duration: 0.40, ease: 'none'      },  0   )
-    .to(s, { overlayAlpha: 0,   duration: 0.10, ease: 'power2.in' },  0.40);
+    .to(s, { textScale: 18,     duration: 0.35, ease: 'none'      },  0   )
+    .to(s, { overlayAlpha: 0,   duration: 0.12, ease: 'power2.in' },  0.28);
 
-  /* Hero content slides up — finishes by 0.65, rest is hold time */
+  /* Phase 2 (0.35–0.65): Hero content fades in while zoom finishes */
   if (heroItems.length) {
     tl.to(heroItems, {
       opacity: 1,
       y: 0,
-      stagger: 0.06,
+      stagger: 0.08,
       ease: 'power3.out',
-      duration: 0.18,
-    }, 0.48);
+      duration: 0.25,
+    }, 0.38);
   }
+
+  /* Phase 3 (0.65–1.0): Read buffer — nothing moves, section stays pinned */
 
 
   ScrollTrigger.refresh();
