@@ -142,7 +142,7 @@ lenis.on('scroll', ScrollTrigger.update);
   spacer.className = 'ph-cinematic-spacer';
   section.parentNode.insertBefore(spacer, section.nextSibling);
   /* Set spacer height to match the old pin duration */
-  const pinDuration = isMobile ? 3.0 : 2.8;
+  const pinDuration = isMobile ? 4.5 : 4.0;
   spacer.style.height = (100 * (1 + pinDuration)) + 'vh';
 
   /* Drive canvas from GSAP ticker — only while hero is active */
