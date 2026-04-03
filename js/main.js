@@ -137,8 +137,11 @@ lenis.on('scroll', ScrollTrigger.update);
     }
   }
 
-  /* Drive canvas from GSAP ticker — stays in sync with ScrollTrigger scrub */
-  gsap.ticker.add(drawFrame);
+  /* Drive canvas from GSAP ticker — only while hero is active */
+  let heroActive = true;
+  gsap.ticker.add(function heroTick() {
+    if (heroActive) drawFrame();
+  });
 
   /* Init hero items hidden */
   if (heroItems.length) gsap.set(heroItems, { opacity: 0, y: 80 });
@@ -153,6 +156,8 @@ lenis.on('scroll', ScrollTrigger.update);
       pin: true,
       pinType: 'transform',
       anticipatePin: 1,
+      onLeave: function() { heroActive = false; },
+      onEnterBack: function() { heroActive = true; },
     }
   });
 
@@ -896,7 +901,7 @@ document.querySelectorAll('.team-card').forEach(card => {
    Reduces GPU load during scroll
    ============================================ */
 (function initVideoPauseOnScroll() {
-  document.querySelectorAll('.accord-video-bg, .svc-hero-video').forEach(video => {
+  document.querySelectorAll('.ph-cin-video, .accord-video-bg, .svc-hero-video').forEach(video => {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) { video.play(); }

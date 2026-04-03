@@ -27,14 +27,13 @@
     }
     
     .hwnu-section {
-      transform: translate3d(0,0,0);
+      transform: translateZ(0);
       backface-visibility: hidden;
-      perspective: 1000px;
       z-index: 10;
       position: relative;
-      contain: paint layout; 
-      background: #eaf2ea; 
-      overflow-anchor: none; /* Prevents snap on entry */
+      contain: layout style paint;
+      background: #eaf2ea;
+      overflow-anchor: none;
     }
 
     .hwnu-marquee {
