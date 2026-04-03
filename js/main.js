@@ -142,7 +142,7 @@ lenis.on('scroll', ScrollTrigger.update);
   spacer.className = 'ph-cinematic-spacer';
   section.parentNode.insertBefore(spacer, section.nextSibling);
   /* Set spacer height to match the old pin duration */
-  const pinDuration = isMobile ? 2.2 : 2.0;
+  const pinDuration = isMobile ? 3.0 : 2.8;
   spacer.style.height = (100 * (1 + pinDuration)) + 'vh';
 
   /* Drive canvas from GSAP ticker — only while hero is active */
@@ -167,19 +167,19 @@ lenis.on('scroll', ScrollTrigger.update);
   });
 
   tl
-    .to(s, { labelAlpha: 0,     duration: 0.06, ease: 'none'      },  0   )
-    .to(s, { textScale: 18,     duration: 0.55, ease: 'none'      },  0   )
-    .to(s, { overlayAlpha: 0,   duration: 0.15, ease: 'power2.in' },  0.55);
+    .to(s, { labelAlpha: 0,     duration: 0.05, ease: 'none'      },  0   )
+    .to(s, { textScale: 18,     duration: 0.40, ease: 'none'      },  0   )
+    .to(s, { overlayAlpha: 0,   duration: 0.10, ease: 'power2.in' },  0.40);
 
-  /* Hero content slides up — starts earlier, finishes by 0.85 so user can read */
+  /* Hero content slides up — finishes by 0.65, rest is hold time */
   if (heroItems.length) {
     tl.to(heroItems, {
       opacity: 1,
       y: 0,
-      stagger: 0.08,
+      stagger: 0.06,
       ease: 'power3.out',
-      duration: 0.25,
-    }, 0.65);
+      duration: 0.18,
+    }, 0.48);
   }
 
 
