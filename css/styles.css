@@ -847,7 +847,7 @@ section { padding: 6rem 0; }
 /* Post-zoom hero content — slides up after overlay fades */
 .ph-hero-content {
   position: absolute;
-  bottom: 10%;
+  bottom: 18%;
   left: 8%;
   z-index: 2;
   max-width: 540px;
