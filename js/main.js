@@ -137,6 +137,14 @@ lenis.on('scroll', ScrollTrigger.update);
     }
   }
 
+  /* Create spacer div after the hero to preserve scroll height */
+  const spacer = document.createElement('div');
+  spacer.className = 'ph-cinematic-spacer';
+  section.parentNode.insertBefore(spacer, section.nextSibling);
+  /* Set spacer height to match the old pin duration */
+  const pinDuration = isMobile ? 1.8 : 1.5;
+  spacer.style.height = (100 * (1 + pinDuration)) + 'vh';
+
   /* Drive canvas from GSAP ticker — only while hero is active */
   let heroActive = true;
   gsap.ticker.add(function heroTick() {
@@ -146,16 +154,13 @@ lenis.on('scroll', ScrollTrigger.update);
   /* Init hero items hidden */
   if (heroItems.length) gsap.set(heroItems, { opacity: 0, y: 80 });
 
-  /* ScrollTrigger-scrubbed timeline */
+  /* ScrollTrigger-scrubbed timeline — NO pin, hero is already position:fixed */
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: section,
+      trigger: spacer,
       start: 'top top',
-      end: isMobile ? '+=180%' : '+=150%',
+      end: 'bottom top',
       scrub: isMobile ? 0.3 : 0.4,
-      pin: true,
-      pinType: 'transform',
-      anticipatePin: 1,
       onLeave: function() { heroActive = false; },
       onEnterBack: function() { heroActive = true; },
     }
