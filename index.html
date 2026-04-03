@@ -16,18 +16,22 @@
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   
   <style>
+    /* Desktop-only swap: Our Promise before Here when you need us */
+    .hp-swap-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 861px) {
+      .hp-swap-wrap .hwnu-section { display: none; }
+      .hp-swap-wrap .wcu-section { order: 1; }
+    }
+
     /* STUTTER-FIX PERFORMANCE OVERRIDES */
     
     .hwnu-section {
-      /* Total rendering isolation from the Hero section */
-      transform: translate3d(0,0,0);
-      backface-visibility: hidden;
-      perspective: 1000px;
-      z-index: 10;
       position: relative;
-      /* Forces browser to treat this section as a separate paint layer */
-      contain: paint layout; 
-      background: #eaf2ea; /* Match background to prevent white flash */
+      z-index: 10;
+      contain: layout style paint;
     }
 
     .hwnu-marquee {
@@ -96,10 +100,9 @@
       .hwnu-marquee:hover .hwnu-track { animation-play-state: paused; }
     }
 
-    /* hwnu: static background — no parallax to avoid stutter after hero */
+    /* hwnu: solid background — no image/gradient to avoid repaint stutter */
     .hwnu-section {
-      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-        url('images/underlay pic desktop/underlay pic 15.webp') center / cover no-repeat !important;
+      background: #eaf2ea !important;
     }
     /* Testimonials: parallax background */
     .anim-testimonials {
@@ -204,6 +207,7 @@
   </div>
 </div>
 
+<div class="hp-swap-wrap">
 <section class="hwnu-section">
   <div class="container">
 
@@ -222,20 +226,12 @@
         <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" loading="lazy" />
         <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Aesthetics" class="hwnu-img" loading="lazy" />
         <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" loading="lazy" />
-        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="Health" class="hwnu-img" loading="lazy" />
-        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="Patient Care" class="hwnu-img" loading="lazy" />
-        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="Lab Testing" class="hwnu-img" loading="lazy" />
-        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="Wellness Support" class="hwnu-img" loading="lazy" />
-        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" class="hwnu-img" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" class="hwnu-img" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" class="hwnu-img" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Aesthetics" class="hwnu-img" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="Health" class="hwnu-img" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="Patient Care" class="hwnu-img" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="Lab Testing" class="hwnu-img" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="Wellness Support" class="hwnu-img" aria-hidden="true" />
+        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Aesthetics" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" aria-hidden="true" loading="lazy" />
       </div>
     </div>
 
@@ -323,6 +319,7 @@
 
   </div>
 </section>
+</div>
 
 <section class="services-accord-section">
 

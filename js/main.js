@@ -22,8 +22,9 @@ const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
 /* ---- Lenis Smooth Scroll (desktop only) ---- */
 const lenis = new Lenis({
-  duration: isMobile ? 0 : 0.9,
+  duration: isMobile ? 0 : 0.5,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  lerp: 0.15,
 });
 
 /* ---- Background videos: slow down + prevent black-flash on loop ---- */
@@ -1090,7 +1091,6 @@ document.querySelectorAll('.team-card').forEach(card => {
     '.tmd-section',
     '.about-statement-section',
     '.timeline-section',
-    '.hwnu-section',
     '.anim-testimonials',
     '.cth-section',
     '.cfaq-section',
