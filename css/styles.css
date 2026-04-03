@@ -845,7 +845,7 @@ section { padding: 6rem 0; }
 /* Post-zoom hero content — slides up after overlay fades */
 .ph-hero-content {
   position: absolute;
-  bottom: 16%;
+  bottom: 28%;
   left: 8%;
   z-index: 2;
   max-width: 540px;
@@ -2658,7 +2658,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
   .ph-hero-content {
     left: var(--gap);
     right: var(--gap);
-    bottom: 8%;
+    bottom: 22%;
     max-width: 100%;
   }
   .ph-hero-heading { font-size: clamp(2rem, 8vw, 3rem); text-shadow: 0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.5); }
