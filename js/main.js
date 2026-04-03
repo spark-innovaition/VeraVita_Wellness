@@ -160,9 +160,18 @@ lenis.on('scroll', ScrollTrigger.update);
       trigger: spacer,
       start: 'top top',
       end: 'bottom top',
-      scrub: isMobile ? 0.3 : 0.4,
-      onLeave: function() { heroActive = false; },
-      onEnterBack: function() { heroActive = true; },
+      scrub: true,
+      onLeave: function() {
+        heroActive = false;
+        section.style.visibility = 'hidden';   /* Stop compositing the fixed hero */
+        section.style.willChange = 'auto';
+        canvas.style.willChange = 'auto';
+      },
+      onEnterBack: function() {
+        heroActive = true;
+        section.style.visibility = 'visible';
+        canvas.style.willChange = 'transform';
+      },
     }
   });
 
