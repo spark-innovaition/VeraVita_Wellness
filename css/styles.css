@@ -135,7 +135,7 @@ section { padding: 6rem 0; }
 
 /* Logo */
 .navbar-logo { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
-.logo-img { height: 48px; width: auto; display: block; }
+.logo-img { height: 40px; width: auto; display: block; }
 .logo-img--mobile { display: none; }
 .logo-icon {
   width: 40px; height: 40px; border-radius: 50%;
