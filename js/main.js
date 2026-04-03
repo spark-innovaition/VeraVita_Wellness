@@ -532,20 +532,36 @@ ScrollTrigger.batch('.reveal', {
 });
 
 /* ============================================
-   TEXT GRADIENT SCROLL (lightweight)
-   Single-element fade instead of per-word scrub
+   TEXT GRADIENT SCROLL (per-word reveal)
+   Words light up one by one as you scroll
    ============================================ */
 (function initTextGradientScroll() {
   const el = document.getElementById('intro-tgs');
   if (!el) return;
-  gsap.fromTo(el,
-    { opacity: 0, y: 24 },
-    {
-      opacity: 1, y: 0,
-      duration: 0.8, ease: 'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+
+  /* Split text into spans per word */
+  var text = el.textContent.trim();
+  var words = text.split(/\s+/);
+  el.innerHTML = words.map(function(w) {
+    return '<span class="tgs-word">' + w + '</span>';
+  }).join(' ');
+
+  var wordEls = el.querySelectorAll('.tgs-word');
+
+  /* Style: start dim, reveal to full color on scroll */
+  gsap.set(wordEls, { opacity: 0.2 });
+
+  gsap.to(wordEls, {
+    opacity: 1,
+    stagger: { each: 1 / wordEls.length },
+    ease: 'none',
+    scrollTrigger: {
+      trigger: el,
+      start: 'top 80%',
+      end: 'bottom 50%',
+      scrub: 0.3,
     }
-  );
+  });
 })();
 
 /* ============================================
@@ -1090,6 +1106,7 @@ document.querySelectorAll('.team-card').forEach(card => {
   if (window.matchMedia('(max-width: 860px)').matches) return;
 
   const SELECTORS = [
+    '.hwnu-section',
     '.tmd-section',
     '.about-statement-section',
     '.timeline-section',

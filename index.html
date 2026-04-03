@@ -22,8 +22,8 @@
       flex-direction: column;
     }
     @media (min-width: 861px) {
-      .hp-swap-wrap .hwnu-section { display: none; }
-      .hp-swap-wrap .wcu-section { order: 1; }
+      .hp-swap-wrap .hwnu-section { order: 1; }
+      .hp-swap-wrap .wcu-section { order: 2; }
     }
 
     /* STUTTER-FIX PERFORMANCE OVERRIDES */
@@ -31,57 +31,11 @@
     .hwnu-section {
       position: relative;
       z-index: 10;
-      contain: layout style paint;
     }
 
-    .hwnu-marquee {
-      position: relative;
-      width: 100%;
-      height: 190px;
-      overflow: hidden;
-      /* Optimization: Force a fixed box for the marquee so scroll doesn't re-calculate height */
-      contain: strict;
-      margin-bottom: 3.5rem;
-    }
+    /* Marquee styles from styles.css */
 
-    /* Edge fades using GPU-friendly static gradients */
-    .hwnu-marquee::before,
-    .hwnu-marquee::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      width: 120px;
-      height: 100%;
-      z-index: 5;
-      pointer-events: none;
-    }
-    .hwnu-marquee::before {
-      left: 0;
-      background: linear-gradient(to right, #eaf2ea 15%, transparent);
-    }
-    .hwnu-marquee::after {
-      right: 0;
-      background: linear-gradient(to left, #eaf2ea 15%, transparent);
-    }
-
-    .hwnu-track {
-      display: flex;
-      gap: 1.5rem;
-      width: max-content;
-      will-change: transform;
-      /* Hardware acceleration to keep animation off the Main Thread */
-      transform: translate3d(0,0,0);
-      animation: hwnu-scroll-optimized 45s linear infinite;
-      animation-play-state: paused;
-    }
-    .hwnu-track.is-visible {
-      animation-play-state: running;
-    }
-
-    @keyframes hwnu-scroll-optimized {
-      from { transform: translate3d(0, 0, 0); }
-      to   { transform: translate3d(-50%, 0, 0); } 
-    }
+    /* Marquee play state handled by JS IntersectionObserver */
 
     /* Prevent decoding lag by keeping images in the GPU cache */
     .hwnu-img {
@@ -100,10 +54,9 @@
       .hwnu-marquee:hover .hwnu-track { animation-play-state: paused; }
     }
 
-    /* hwnu: solid background — no image/gradient to avoid repaint stutter */
-    .hwnu-section {
-      background: #eaf2ea !important;
-    }
+    .tgs-word { display: inline; }
+
+    /* hwnu: use original background from styles.css (parallax bg image) */
     /* Testimonials: parallax background */
     .anim-testimonials {
       background: transparent !important;
@@ -226,12 +179,47 @@
         <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" loading="lazy" />
         <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Aesthetics" class="hwnu-img" loading="lazy" />
         <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-anntarazevich-6560288.webp" alt="Wellness" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-arina-krasnikova-6663359.webp" alt="Treatment" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="Healthcare" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-gustavo-fring-7447003.webp" alt="Consultation" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-hannah-barata-776560167-27925591.webp" alt="Care" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-ivan-s-6436272.webp" alt="Recovery" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-karola-g-4084639.webp" alt="Healing" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-karola-g-4506163.webp" alt="Therapy Room" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="Patient Care" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-omarmedinaoficial-16131210.webp" alt="Medical" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="Clinic" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-8312866.webp" alt="Practice" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-8313177.webp" alt="Health" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-8313197.webp" alt="Wellness Center" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="Holistic" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-tima-miroshnichenko-8376162.webp" alt="Natural Medicine" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-yankrukov-5793684.webp" alt="Wellbeing" class="hwnu-img" loading="lazy" />
+        <!-- Duplicate set for seamless loop -->
         <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" class="hwnu-img" aria-hidden="true" loading="lazy" />
         <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" class="hwnu-img" aria-hidden="true" loading="lazy" />
         <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" class="hwnu-img" aria-hidden="true" loading="lazy" />
         <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" aria-hidden="true" loading="lazy" />
         <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Aesthetics" class="hwnu-img" aria-hidden="true" loading="lazy" />
         <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-anntarazevich-6560288.webp" alt="Wellness" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-arina-krasnikova-6663359.webp" alt="Treatment" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="Healthcare" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-gustavo-fring-7447003.webp" alt="Consultation" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-hannah-barata-776560167-27925591.webp" alt="Care" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-ivan-s-6436272.webp" alt="Recovery" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-karola-g-4084639.webp" alt="Healing" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-karola-g-4506163.webp" alt="Therapy Room" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="Patient Care" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-omarmedinaoficial-16131210.webp" alt="Medical" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="Clinic" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-8312866.webp" alt="Practice" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-8313177.webp" alt="Health" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-8313197.webp" alt="Wellness Center" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="Holistic" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-tima-miroshnichenko-8376162.webp" alt="Natural Medicine" class="hwnu-img" aria-hidden="true" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-yankrukov-5793684.webp" alt="Wellbeing" class="hwnu-img" aria-hidden="true" loading="lazy" />
       </div>
     </div>
 
