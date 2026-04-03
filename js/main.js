@@ -138,10 +138,19 @@ lenis.on('scroll', ScrollTrigger.update);
   const spacer = document.createElement('div');
   spacer.className = 'ph-cinematic-spacer';
   section.parentNode.insertBefore(spacer, section.nextSibling);
-  spacer.style.height = isMobile ? '260vh' : '280vh';
+  spacer.style.height = isMobile ? '300vh' : '320vh';
 
-  /* Drive canvas from GSAP ticker */
-  gsap.ticker.add(drawFrame);
+  /* Drive canvas from GSAP ticker — stop when hero is off-screen */
+  let heroActive = true;
+  gsap.ticker.add(function() { if (heroActive) drawFrame(); });
+
+  /* Hide hero entirely when scrolled past to free GPU compositing */
+  new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      heroActive = e.isIntersecting;
+      section.style.visibility = e.isIntersecting ? 'visible' : 'hidden';
+    });
+  }, { threshold: 0 }).observe(spacer);
 
   /* Init hero items hidden */
   if (heroItems.length) gsap.set(heroItems, { opacity: 0, y: 80 });
@@ -517,45 +526,18 @@ ScrollTrigger.batch('.reveal', {
 });
 
 /* ============================================
-   TEXT GRADIENT SCROLL
-   Adapted from: TextGradientScroll (framer-motion → GSAP scrub)
-   Splits the intro paragraph into characters and drives opacity
-   via ScrollTrigger scrub as the user scrolls through the section.
+   TEXT GRADIENT SCROLL (lightweight)
+   Single-element fade instead of per-word scrub
    ============================================ */
 (function initTextGradientScroll() {
   const el = document.getElementById('intro-tgs');
   if (!el) return;
-
-  const text = el.textContent.trim();
-  el.innerHTML = '';
-  el.setAttribute('aria-label', text);
-
-  /* Animate per-word (not per-character) — ~10x fewer GSAP targets per frame */
-  const frag = document.createDocumentFragment();
-  text.split(' ').forEach((word, wi, arr) => {
-    const wordEl = document.createElement('span');
-    wordEl.className = 'tgs-word';
-    wordEl.style.opacity = '0.08';
-    wordEl.textContent = word;
-    frag.appendChild(wordEl);
-    if (wi < arr.length - 1) frag.appendChild(document.createTextNode(' '));
-  });
-  el.appendChild(frag);
-
-  const words = el.querySelectorAll('.tgs-word');
-  gsap.fromTo(words,
-    { opacity: 0.08 },
+  gsap.fromTo(el,
+    { opacity: 0, y: 24 },
     {
-      opacity: 1,
-      stagger: { each: 0.04 },
-      ease: 'none',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: 0.5,
-        fastScrollEnd: true,
-      }
+      opacity: 1, y: 0,
+      duration: 0.8, ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top 85%', once: true }
     }
   );
 })();
@@ -910,6 +892,20 @@ document.querySelectorAll('.team-card').forEach(card => {
     }, { threshold: 0.01 });
     io.observe(video);
   });
+})();
+
+/* ============================================
+   LAZY-START MARQUEE — paused until visible
+   ============================================ */
+(function initLazyMarquee() {
+  var track = document.getElementById('hwnu-track');
+  if (!track) return;
+  new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) track.classList.add('is-visible');
+      else track.classList.remove('is-visible');
+    });
+  }, { threshold: 0.01 }).observe(track);
 })();
 
 /* ============================================
