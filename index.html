@@ -16,18 +16,25 @@
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   
   <style>
-    /* STUTTER-FIX PERFORMANCE OVERRIDES */
+    /* ADVANCED STUTTER & SNAP FIX PERFORMANCE OVERRIDES */
+
+    .ph-cinematic {
+      will-change: transform;
+      transform: translate3d(0,0,0);
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      overflow-anchor: none; /* Prevents browser scroll-anchoring snap */
+    }
     
     .hwnu-section {
-      /* Total rendering isolation from the Hero section */
       transform: translate3d(0,0,0);
       backface-visibility: hidden;
       perspective: 1000px;
       z-index: 10;
       position: relative;
-      /* Forces browser to treat this section as a separate paint layer */
       contain: paint layout; 
-      background: #eaf2ea; /* Match background to prevent white flash */
+      background: #eaf2ea; 
+      overflow-anchor: none; /* Prevents snap on entry */
     }
 
     .hwnu-marquee {
@@ -35,7 +42,6 @@
       width: 100%;
       height: 190px;
       overflow: hidden;
-      /* Optimization: Force a fixed box for the marquee so scroll doesn't re-calculate height */
       contain: strict;
       margin-bottom: 3.5rem;
     }
@@ -65,7 +71,6 @@
       gap: 1.5rem;
       width: max-content;
       will-change: transform;
-      /* Hardware acceleration to keep animation off the Main Thread */
       transform: translate3d(0,0,0);
       animation: hwnu-scroll-optimized 45s linear infinite;
     }
@@ -75,7 +80,6 @@
       to   { transform: translate3d(-50%, 0, 0); } 
     }
 
-    /* Prevent decoding lag by keeping images in the GPU cache */
     .hwnu-img {
       width: 280px;
       height: 190px;
@@ -85,14 +89,14 @@
       border-radius: 1.25rem;
       transform: translateZ(0);
       backface-visibility: hidden;
-      decoding: async; /* Offloads decoding from Main Thread */
+      decoding: async; 
     }
 
     @media (hover: hover) {
       .hwnu-marquee:hover .hwnu-track { animation-play-state: paused; }
     }
 
-    /* Fixed-background parallax for green sections */
+    /* Optimized Parallax Window with Transition Buffer */
     .hwnu-section,
     .anim-testimonials {
       background: transparent !important;
@@ -100,9 +104,15 @@
       overflow: hidden;
     }
     .section-bg-parallax {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100vh; z-index: 0;
-      will-change: transform; pointer-events: none;
+      position: absolute; 
+      top: -15%; /* Increased buffer to hide entry edges */
+      left: 0;
+      width: 100%; 
+      height: 130%; /* Taller for smoother movement */
+      z-index: 0;
+      will-change: transform; 
+      pointer-events: none;
+      contain: strict;
     }
     .hwnu-section .section-bg-parallax {
       background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
@@ -190,7 +200,9 @@
 </nav>
 
 <div class="ph-cinematic">
-  <video class="ph-cin-video" autoplay muted loop playsinline id="hero-video"></video>
+  <video class="ph-cin-video" autoplay muted loop playsinline id="hero-video">
+    <source src="images/background video.mp4" type="video/mp4">
+  </video>
   <p class="ph-cin-label">Naturopathic &amp; Aesthetic Medicine · Calgary</p>
   <div class="ph-hero-content">
     <p class="ph-hero-pre">Naturopathic &amp; Aesthetic Medicine · Calgary</p>
@@ -634,16 +646,17 @@ document.addEventListener('DOMContentLoaded', function () {
     var bg = section.querySelector('.section-bg-parallax');
     if (!bg) return;
     gsap.fromTo(bg,
-      { y: function () { return -window.innerHeight; } },
+      { y: function () { return -window.innerHeight * 0.2; } },
       {
-        y: function () { return section.offsetHeight; },
+        y: function () { return section.offsetHeight * 0.2; },
         ease: 'none',
         scrollTrigger: {
           trigger: section,
-          start: 'top bottom',
+          start: 'top 105%', /* Starts calculation before entry to eliminate snap */
           end: 'bottom top',
           scrub: true,
-          invalidateOnRefresh: true
+          invalidateOnRefresh: true,
+          force3D: true
         }
       }
     );

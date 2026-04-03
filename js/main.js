@@ -151,6 +151,7 @@ lenis.on('scroll', ScrollTrigger.update);
       end: isMobile ? '+=180%' : '+=150%',
       scrub: isMobile ? 0.3 : 0.4,
       pin: true,
+      pinType: 'transform',
       anticipatePin: 1,
     }
   });
