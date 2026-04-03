@@ -65,9 +65,12 @@
       gap: 1.5rem;
       width: max-content;
       will-change: transform;
-      /* Hardware acceleration to keep animation off the Main Thread */
       transform: translate3d(0,0,0);
       animation: hwnu-scroll-optimized 45s linear infinite;
+      animation-play-state: paused; /* Start paused — JS activates when visible */
+    }
+    .hwnu-track.is-visible {
+      animation-play-state: running;
     }
 
     @keyframes hwnu-scroll-optimized {
@@ -216,16 +219,16 @@
 
     <div class="hwnu-marquee">
       <div class="hwnu-track" id="hwnu-track">
-        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" class="hwnu-img" loading="eager" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" class="hwnu-img" loading="eager" />
-        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" class="hwnu-img" loading="eager" />
-        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" loading="eager" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Aesthetics" class="hwnu-img" loading="eager" />
-        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" loading="eager" />
-        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="Health" class="hwnu-img" loading="eager" />
-        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="Patient Care" class="hwnu-img" loading="eager" />
-        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="Lab Testing" class="hwnu-img" loading="eager" />
-        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="Wellness Support" class="hwnu-img" loading="eager" />
+        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Aesthetics" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="Health" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-olly-3757952.webp" alt="Patient Care" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-rdne-6129233.webp" alt="Lab Testing" class="hwnu-img" loading="lazy" />
+        <img src="images/Home page - marquee/pexels-thirdman-6193357.webp" alt="Wellness Support" class="hwnu-img" loading="lazy" />
         <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" class="hwnu-img" aria-hidden="true" />
         <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" class="hwnu-img" aria-hidden="true" />
         <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" class="hwnu-img" aria-hidden="true" />
