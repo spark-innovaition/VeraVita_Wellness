@@ -8,9 +8,9 @@ const isMobile = window.matchMedia('(max-width: 768px)').matches;
 (function () {
   const v = document.getElementById('hero-video');
   if (!v) return;
-  const heroVideoUrl = 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20Page%20Video%20-%20MP4%20version-nu9V0dzQA7X7NHEZHCYcAHP16UlYMd.webm';
+  const heroVideoUrl = 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/9273840-uhd_3840_2160_30fps-KusfuDNppy6quqNUIDukDAYGQfR0Iv.mp4';
   const sources = [
-    { src: heroVideoUrl, type: 'video/webm' },
+    { src: heroVideoUrl, type: 'video/mp4' },
   ];
   sources.forEach(({ src, type }) => {
     const s = document.createElement('source');
