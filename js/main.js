@@ -138,7 +138,7 @@ lenis.on('scroll', ScrollTrigger.update);
   const spacer = document.createElement('div');
   spacer.className = 'ph-cinematic-spacer';
   section.parentNode.insertBefore(spacer, section.nextSibling);
-  spacer.style.height = isMobile ? '300vh' : '320vh';
+  spacer.style.height = isMobile ? '350vh' : '380vh';
 
   /* Drive canvas from GSAP ticker — stop when hero is off-screen */
   let heroActive = true;
@@ -167,24 +167,24 @@ lenis.on('scroll', ScrollTrigger.update);
     }
   });
 
-  /* Phase 1 (0–0.35): Logo zoom-through */
+  /* Phase 1 (0–0.25): Logo zoom-through */
   tl
-    .to(s, { labelAlpha: 0,     duration: 0.05, ease: 'none'      },  0   )
-    .to(s, { textScale: 18,     duration: 0.35, ease: 'none'      },  0   )
-    .to(s, { overlayAlpha: 0,   duration: 0.12, ease: 'power2.in' },  0.28);
+    .to(s, { labelAlpha: 0,     duration: 0.04, ease: 'none'      },  0   )
+    .to(s, { textScale: 18,     duration: 0.25, ease: 'none'      },  0   )
+    .to(s, { overlayAlpha: 0,   duration: 0.10, ease: 'power2.in' },  0.20);
 
-  /* Phase 2 (0.35–0.65): Hero content fades in */
+  /* Phase 2 (0.25–0.45): Hero content fades in */
   if (heroItems.length) {
     tl.to(heroItems, {
       opacity: 1,
       y: 0,
-      stagger: 0.08,
+      stagger: 0.06,
       ease: 'power3.out',
-      duration: 0.25,
-    }, 0.38);
+      duration: 0.18,
+    }, 0.27);
   }
 
-  /* Phase 3 (0.65–1.0): Read buffer — nothing moves, next section slides over */
+  /* Phase 3 (0.45–1.0): Read buffer — everything visible, one more scroll to continue */
 
 
   ScrollTrigger.refresh();
