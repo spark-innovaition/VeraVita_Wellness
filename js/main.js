@@ -8,7 +8,7 @@ const isMobile = window.matchMedia('(max-width: 768px)').matches;
 (function () {
   const v = document.getElementById('hero-video');
   if (!v) return;
-  const heroVideoUrl = 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20Page%20Video-wHEpxF62d0sp1tBvznXD2H51DAANJp.webm';
+  const heroVideoUrl = 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/Home%20Page%20Video%20-%20MP4%20version-nu9V0dzQA7X7NHEZHCYcAHP16UlYMd.webm';
   const sources = [
     { src: heroVideoUrl, type: 'video/webm' },
   ];
@@ -138,17 +138,19 @@ lenis.on('scroll', ScrollTrigger.update);
   const spacer = document.createElement('div');
   spacer.className = 'ph-cinematic-spacer';
   section.parentNode.insertBefore(spacer, section.nextSibling);
-  spacer.style.height = isMobile ? '350vh' : '380vh';
+  spacer.style.height = isMobile ? '350vh' : '350vh';
 
   /* Drive canvas from GSAP ticker — stop when hero is off-screen */
   let heroActive = true;
   gsap.ticker.add(function() { if (heroActive) drawFrame(); });
 
-  /* Hide hero entirely when scrolled past to free GPU compositing */
+  /* Keep hero above content while spacer is visible, hide when done */
+  section.style.zIndex = '2';
   new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       heroActive = e.isIntersecting;
       section.style.visibility = e.isIntersecting ? 'visible' : 'hidden';
+      section.style.zIndex = e.isIntersecting ? '2' : '0';
     });
   }, { threshold: 0 }).observe(spacer);
 
@@ -158,33 +160,36 @@ lenis.on('scroll', ScrollTrigger.update);
   /* ScrollTrigger timeline — NO pin, hero is already fixed.
      Spacer height controls total scroll distance.
      Zoom is snappy (done by 35%), text appears at 38%, rest is read buffer. */
+  /* Animation scroll = 1.5 viewport heights for the zoom */
+  var animEnd = Math.round(window.innerHeight * 1.5);
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: spacer,
       start: 'top top',
-      end: 'bottom top',
+      end: '+=' + animEnd,
       scrub: 0.4,
     }
   });
 
-  /* Phase 1 (0–0.25): Logo zoom-through */
+  /* Phase 1 (0–0.65): Logo zoom-through */
   tl
-    .to(s, { labelAlpha: 0,     duration: 0.04, ease: 'none'      },  0   )
-    .to(s, { textScale: 18,     duration: 0.25, ease: 'none'      },  0   )
-    .to(s, { overlayAlpha: 0,   duration: 0.10, ease: 'power2.in' },  0.20);
+    .to(s, { labelAlpha: 0,     duration: 0.10, ease: 'none'      },  0   )
+    .to(s, { textScale: 18,     duration: 0.65, ease: 'none'      },  0   )
+    .to(s, { overlayAlpha: 0,   duration: 0.15, ease: 'power2.in' },  0.55);
 
-  /* Phase 2 (0.25–0.45): Hero content fades in */
+  /* Phase 2 (0.65–1.0): Hero content fades in */
   if (heroItems.length) {
     tl.to(heroItems, {
       opacity: 1,
       y: 0,
       stagger: 0.06,
       ease: 'power3.out',
-      duration: 0.18,
-    }, 0.27);
+      duration: 0.30,
+    }, 0.68);
   }
 
-  /* Phase 3 (0.45–1.0): Read buffer — everything visible, one more scroll to continue */
+  /* Remaining spacer height after animation = read buffer */
 
 
   ScrollTrigger.refresh();
