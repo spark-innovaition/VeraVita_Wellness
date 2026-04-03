@@ -134,23 +134,27 @@ lenis.on('scroll', ScrollTrigger.update);
     }
   }
 
+  /* Create spacer — hero is position:fixed, content slides over it */
+  const spacer = document.createElement('div');
+  spacer.className = 'ph-cinematic-spacer';
+  section.parentNode.insertBefore(spacer, section.nextSibling);
+  spacer.style.height = isMobile ? '260vh' : '280vh';
+
   /* Drive canvas from GSAP ticker */
   gsap.ticker.add(drawFrame);
 
   /* Init hero items hidden */
   if (heroItems.length) gsap.set(heroItems, { opacity: 0, y: 80 });
 
-  /* ScrollTrigger-pinned timeline
-     +=1800 keeps the zoom snappy; the 0.30 "read buffer" at the end
-     holds the pin with fully-visible text before unpin. */
+  /* ScrollTrigger timeline — NO pin, hero is already fixed.
+     Spacer height controls total scroll distance.
+     Zoom is snappy (done by 35%), text appears at 38%, rest is read buffer. */
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: section,
+      trigger: spacer,
       start: 'top top',
-      end: isMobile ? '+=1600' : '+=1800',
+      end: 'bottom top',
       scrub: 0.4,
-      pin: true,
-      anticipatePin: 1,
     }
   });
 
@@ -160,7 +164,7 @@ lenis.on('scroll', ScrollTrigger.update);
     .to(s, { textScale: 18,     duration: 0.35, ease: 'none'      },  0   )
     .to(s, { overlayAlpha: 0,   duration: 0.12, ease: 'power2.in' },  0.28);
 
-  /* Phase 2 (0.35–0.65): Hero content fades in while zoom finishes */
+  /* Phase 2 (0.35–0.65): Hero content fades in */
   if (heroItems.length) {
     tl.to(heroItems, {
       opacity: 1,
@@ -171,7 +175,7 @@ lenis.on('scroll', ScrollTrigger.update);
     }, 0.38);
   }
 
-  /* Phase 3 (0.65–1.0): Read buffer — nothing moves, section stays pinned */
+  /* Phase 3 (0.65–1.0): Read buffer — nothing moves, next section slides over */
 
 
   ScrollTrigger.refresh();

@@ -789,11 +789,21 @@ section { padding: 6rem 0; }
    CINEMATIC TEXT-ZOOM HERO (about page)
    ======================================== */
 .ph-cinematic {
-  position: relative;
+  position: fixed;
+  top: 0; left: 0;
   width: 100%;
   height: 100vh;
   overflow: hidden;
   background: #0d1a10 url('../images/bg-hero-section.webp') center/cover no-repeat;
+  z-index: 0;
+}
+.ph-cinematic-spacer {
+  position: relative;
+  height: 100vh;
+}
+.ph-cinematic-spacer ~ * {
+  position: relative;
+  z-index: 1;
 }
 /* Dark curtain behind hero */
 .ph-cinematic::after {
