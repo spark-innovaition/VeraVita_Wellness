@@ -144,13 +144,11 @@ lenis.on('scroll', ScrollTrigger.update);
   let heroActive = true;
   gsap.ticker.add(function() { if (heroActive) drawFrame(); });
 
-  /* Keep hero above content while spacer is visible, hide when done */
-  section.style.zIndex = '2';
+  /* Hide hero when spacer is fully scrolled past */
   new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       heroActive = e.isIntersecting;
       section.style.visibility = e.isIntersecting ? 'visible' : 'hidden';
-      section.style.zIndex = e.isIntersecting ? '2' : '0';
     });
   }, { threshold: 0 }).observe(spacer);
 
