@@ -3095,7 +3095,8 @@ ul.contact-info-list { padding: 0; margin: 0; }
 .accord-item.open .accord-icon { transform: rotate(45deg); color: var(--primary); }
 
 /* Body */
-.accord-body { overflow: hidden; }
+.accord-body { overflow: hidden; max-height: 0; transition: max-height 0.4s ease; }
+.accord-item.open .accord-body { max-height: 500px; }
 .accord-body-inner {
   padding: 0 0 1.5rem 3.25rem;
   display: flex; flex-direction: column; gap: 0.875rem;
