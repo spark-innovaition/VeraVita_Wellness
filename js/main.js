@@ -8,9 +8,9 @@ const isMobile = window.matchMedia('(max-width: 768px)').matches;
 (function () {
   const v = document.getElementById('hero-video');
   if (!v) return;
-  const sources = isMobile
-    ? [{ src: 'images/Home hero - mobile.mp4', type: 'video/mp4' }]
-    : [{ src: 'images/Home Page Video.webm', type: 'video/webm' }];
+  const sources = [
+    { src: 'images/Home Page Video.webm', type: 'video/webm' },
+  ];
   sources.forEach(({ src, type }) => {
     const s = document.createElement('source');
     s.src = src; s.type = type;
