@@ -8,9 +8,8 @@ const isMobile = window.matchMedia('(max-width: 768px)').matches;
 (function () {
   const v = document.getElementById('hero-video');
   if (!v) return;
-  const heroVideoUrl = 'https://mzfl2thxotn4vvap.public.blob.vercel-storage.com/9273840-uhd_3840_2160_30fps-KusfuDNppy6quqNUIDukDAYGQfR0Iv.mp4';
   const sources = [
-    { src: heroVideoUrl, type: 'video/mp4' },
+    { src: 'images/Home Page Video.webm', type: 'video/webm' },
   ];
   sources.forEach(({ src, type }) => {
     const s = document.createElement('source');
@@ -44,7 +43,7 @@ gsap.registerPlugin(ScrollTrigger);
 /* Drive Lenis from GSAP ticker only — never double-call */
 if (lenis) {
   gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-  gsap.ticker.lagSmoothing(0);
+  gsap.ticker.lagSmoothing(500, 33);
   lenis.on('scroll', ScrollTrigger.update);
 }
 
@@ -143,9 +142,12 @@ if (lenis) {
   section.parentNode.insertBefore(spacer, section.nextSibling);
   spacer.style.height = isMobile ? '350vh' : '350vh';
 
-  /* Drive canvas from GSAP ticker — stop when hero is off-screen */
+  /* Drive canvas from GSAP ticker — only during scroll, stop when hero is off-screen */
   let heroActive = true;
-  gsap.ticker.add(function() { if (heroActive) drawFrame(); });
+  let needsDraw = true;
+  ScrollTrigger.addEventListener('scrollStart', () => { needsDraw = true; });
+  ScrollTrigger.addEventListener('scrollEnd', () => { needsDraw = false; drawFrame(); });
+  gsap.ticker.add(function() { if (heroActive && needsDraw) drawFrame(); });
 
   /* Hide hero when spacer is fully scrolled past */
   new IntersectionObserver(function(entries) {

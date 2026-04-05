@@ -39,7 +39,18 @@
 
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+html { -webkit-font-smoothing: antialiased; overflow-x: hidden; scroll-behavior: smooth; }
+
+/* Desktop perf: skip rendering off-screen sections until near viewport */
+@media (min-width: 861px) {
+  .services-accord-section,
+  .anim-testimonials,
+  .about-home-section,
+  .sf-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+  }
+}
 body { font-family: var(--font-b); font-size: 1rem; line-height: 1.65; color: var(--body-text); background: var(--white); overflow-x: hidden; padding-top: 72px; }
 img { display: block; max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
@@ -2857,7 +2868,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
   gap: 0.875rem;
   will-change: transform;
   width: max-content;
-  animation: hwnu-scroll 60s linear infinite;
+  animation: hwnu-scroll 30s linear infinite;
 }
 .hwnu-img {
   width: 280px;
@@ -3449,7 +3460,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
    TEXT GRADIENT SCROLL
    Adapted from: text gradient scroll / TextGradientScroll
    ======================================== */
-.tgs-word { display: inline; white-space: nowrap; will-change: opacity; contain: layout style; }
+.tgs-word { display: inline; white-space: nowrap; contain: layout style; }
 .tgs-char { display: inline; }
 
 /* ========================================
