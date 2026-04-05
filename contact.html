@@ -139,7 +139,11 @@
 
       <!-- Right: Form -->
       <div class="cth-form-wrap">
-        <form class="cth-form" action="#" method="post">
+        <form class="cth-form" action="https://api.web3forms.com/submit" method="post">
+          <input type="hidden" name="access_key" value="b2dca55f-755c-443b-b6f8-1a72201fc6fb" />
+          <input type="hidden" name="subject" value="New Contact Form Submission — VeraVita" />
+          <input type="hidden" name="redirect" value="https://veravitawellness.ca/contact.html?submitted=true" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
           <div class="cth-form-row">
             <div class="cth-field">
               <label for="c-name">Name</label>
@@ -169,7 +173,16 @@
             <span class="btn-ihb-default">Send Message</span>
             <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Send Message</span>
           </button>
+          <div class="cth-success" style="display:none; margin-top:1.25rem; padding:1rem 1.5rem; background:var(--green-pale); border-radius:0.75rem; color:var(--dark); font-weight:500;">
+            Thank you! Your message has been sent. We'll get back to you soon.
+          </div>
         </form>
+        <script>
+          if (window.location.search.includes('submitted=true')) {
+            document.querySelector('.cth-success').style.display = 'block';
+            document.querySelector('.cth-form').reset();
+          }
+        </script>
       </div>
 
     </div>

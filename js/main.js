@@ -452,6 +452,8 @@ document.querySelectorAll('.nav-dropdown > a').forEach(link => {
    FORM SUBMISSION
    =========================== */
 document.querySelectorAll('form').forEach(form => {
+  /* Skip forms with a real action (e.g. Web3Forms) */
+  if (form.action && form.action !== '#' && !form.action.endsWith(window.location.pathname)) return;
   form.addEventListener('submit', e => {
     e.preventDefault();
     const btn = form.querySelector('[type="submit"]');
