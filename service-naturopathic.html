@@ -436,7 +436,7 @@
     if (!section || !bg) return;
     gsap.fromTo(bg, { y: -300 }, {
       y: 300, ease: "none",
-      scrollTrigger: { trigger: section, start: "top bottom", end: "bottom top", scrub: true }
+      scrollTrigger: { trigger: section, start: "top bottom", end: "bottom top", scrub: 1.5 }
     });
   });
 </script>
