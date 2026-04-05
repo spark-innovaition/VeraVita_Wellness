@@ -608,22 +608,12 @@ document.querySelectorAll('.accord-trigger').forEach(function(btn) {
   });
 });
 
-/* Marquee images: staggered train reveal when section enters viewport */
+/* Marquee images: staggered train reveal on page load */
 (function() {
-  var marquee = document.querySelector('.hwnu-marquee');
-  if (!marquee) return;
-  var imgs = marquee.querySelectorAll('.hwnu-img');
-  var revealed = false;
-  new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting && !revealed) {
-        revealed = true;
-        imgs.forEach(function(img, i) {
-          setTimeout(function() { img.classList.add('loaded'); }, i * 250);
-        });
-      }
-    });
-  }, { threshold: 0.1 }).observe(marquee);
+  var imgs = document.querySelectorAll('.hwnu-img');
+  imgs.forEach(function(img, i) {
+    setTimeout(function() { img.classList.add('loaded'); }, i * 100);
+  });
 })();
 </script>
 
