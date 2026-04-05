@@ -313,15 +313,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var bg = section.querySelector('.section-bg-parallax');
     if (!bg) return;
     gsap.fromTo(bg,
-      { y: function () { return -window.innerHeight; } },
+      { y: -60 },
       {
-        y: function () { return section.offsetHeight; },
+        y: 60,
         ease: 'none',
         scrollTrigger: {
           trigger: section,
           start: 'top bottom',
           end: 'bottom top',
-          scrub: 1.5,
+          scrub: 3,
           invalidateOnRefresh: true
         }
       }

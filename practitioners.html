@@ -18,9 +18,9 @@
       overflow: hidden;
     }
     .prac-cta-section .section-bg-parallax {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100vh; z-index: 0;
-      will-change: transform; pointer-events: none;
+      position: absolute; top: -60px; left: 0;
+      width: 100%; height: calc(100% + 120px); z-index: 0;
+      pointer-events: none;
       background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
         url('images/underlay pic desktop/Underlay pic 2.webp') center / cover no-repeat;
     }
@@ -352,15 +352,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var bg = section ? section.querySelector('.section-bg-parallax') : null;
   if (!section || !bg) return;
   gsap.fromTo(bg,
-    { y: function () { return -window.innerHeight; } },
+    { y: -60 },
     {
-      y: function () { return section.offsetHeight; },
+      y: 60,
       ease: 'none',
       scrollTrigger: {
         trigger: section,
         start: 'top bottom',
         end: 'bottom top',
-        scrub: 1.5,
+        scrub: 3,
         invalidateOnRefresh: true
       }
     }

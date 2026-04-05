@@ -8,9 +8,11 @@
   <meta name="description" content="VeraVita Clinic offers personalized naturopathic and aesthetic medicine in Calgary. Elevated care, renewed confidence." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preload" as="image" href="images/bg-hero-section.webp" />
+  <link rel="preload" as="video" href="images/Home Page Video.mp4" type="video/mp4" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   
@@ -55,17 +57,15 @@
 
     .tgs-word { display: inline; }
 
-    /* hwnu: use original background from styles.css (parallax bg image) */
-    /* Testimonials: parallax background */
+    /* Testimonials: subtle parallax background */
     .anim-testimonials {
-      background: transparent !important;
       position: relative;
       overflow: hidden;
     }
     .section-bg-parallax {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100vh; z-index: 0;
-      will-change: transform; pointer-events: none;
+      position: absolute; top: -60px; left: 0;
+      width: 100%; height: calc(100% + 120px); z-index: 0;
+      pointer-events: none;
     }
     .anim-testimonials .section-bg-parallax {
       background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
@@ -614,20 +614,10 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.anim-testimonials').forEach(function (section) {
     var bg = section.querySelector('.section-bg-parallax');
     if (!bg) return;
-    gsap.fromTo(bg,
-      { y: function () { return -window.innerHeight; } },
-      {
-        y: function () { return section.offsetHeight; },
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1.5,
-          invalidateOnRefresh: true
-        }
-      }
-    );
+    gsap.fromTo(bg, { y: -60 }, {
+      y: 60, ease: 'none',
+      scrollTrigger: { trigger: section, start: 'top bottom', end: 'bottom top', scrub: 3, invalidateOnRefresh: true }
+    });
   });
 });
 </script>

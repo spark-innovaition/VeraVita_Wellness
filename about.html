@@ -26,12 +26,11 @@
 
     .section-bg-parallax {
       position: absolute;
-      top: 0;
+      top: -60px;
       left: 0;
       width: 100%;
-      height: 100vh;
+      height: calc(100% + 120px);
       z-index: 0;
-      will-change: transform;
       pointer-events: none;
     }
 
@@ -438,15 +437,15 @@
       if (!bg) return;
 
       gsap.fromTo(bg,
-        { y: function() { return -window.innerHeight; } },
+        { y: -60 },
         {
-          y: function() { return container.offsetHeight; },
+          y: 60,
           ease: "none",
           scrollTrigger: {
             trigger: container,
             start: "top bottom",
             end: "bottom top",
-            scrub: 1.5,
+            scrub: 3,
             invalidateOnRefresh: true
           }
         }

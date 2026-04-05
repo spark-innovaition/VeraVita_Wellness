@@ -9,7 +9,7 @@ const isMobile = window.matchMedia('(max-width: 768px)').matches;
   const v = document.getElementById('hero-video');
   if (!v) return;
   const sources = [
-    { src: 'images/Home Page Video.webm', type: 'video/webm' },
+    { src: 'images/Home Page Video.mp4', type: 'video/mp4' },
   ];
   sources.forEach(({ src, type }) => {
     const s = document.createElement('source');
@@ -19,13 +19,6 @@ const isMobile = window.matchMedia('(max-width: 768px)').matches;
   v.load();
 })();
 
-/* ---- Lenis Smooth Scroll (desktop only) ---- */
-const lenis = typeof Lenis !== 'undefined' ? new Lenis({
-  duration: isMobile ? 0 : 0.5,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  lerp: 0.15,
-}) : null;
-
 /* ---- Background videos: slow down + prevent black-flash on loop ---- */
 document.querySelectorAll('.page-hero-video, .ph-cin-video').forEach(v => {
   if (v.classList.contains('page-hero-video')) v.playbackRate = 0.65;
@@ -34,18 +27,12 @@ document.querySelectorAll('.page-hero-video, .ph-cin-video').forEach(v => {
     if (this.duration && this.currentTime >= this.duration - 0.4) {
       this.currentTime = 0;
     }
-  });
+  }, { passive: true });
 });
 
 /* ---- GSAP + ScrollTrigger ---- */
 gsap.registerPlugin(ScrollTrigger);
-
-/* Drive Lenis from GSAP ticker only — never double-call */
-if (lenis) {
-  gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-  gsap.ticker.lagSmoothing(500, 33);
-  lenis.on('scroll', ScrollTrigger.update);
-}
+gsap.ticker.lagSmoothing(500, 33);
 
 /* ============================================
    CINEMATIC TEXT-ZOOM HERO (about page)

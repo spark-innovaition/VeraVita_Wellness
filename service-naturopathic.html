@@ -23,15 +23,14 @@
 
     .section-bg-parallax {
       position: absolute;
-      top: 0;
+      top: -60px;
       left: 0;
       width: 100%;
-      height: 100vh;
+      height: calc(100% + 120px);
       z-index: -1;
       background:
         linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
         url('images/underlay pic desktop/underlay pic 29.webp') center / cover no-repeat;
-      will-change: transform;
       pointer-events: none;
     }
 
@@ -434,9 +433,9 @@
     var section = document.querySelector(".dr-showcase");
     var bg = document.querySelector(".section-bg-parallax");
     if (!section || !bg) return;
-    gsap.fromTo(bg, { y: -300 }, {
-      y: 300, ease: "none",
-      scrollTrigger: { trigger: section, start: "top bottom", end: "bottom top", scrub: 1.5 }
+    gsap.fromTo(bg, { y: -60 }, {
+      y: 60, ease: "none",
+      scrollTrigger: { trigger: section, start: "top bottom", end: "bottom top", scrub: 3 }
     });
   });
 </script>
