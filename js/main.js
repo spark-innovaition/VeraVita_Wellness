@@ -127,7 +127,7 @@ gsap.ticker.lagSmoothing(500, 33);
   const spacer = document.createElement('div');
   spacer.className = 'ph-cinematic-spacer';
   section.parentNode.insertBefore(spacer, section.nextSibling);
-  spacer.style.height = isMobile ? '350vh' : '350vh';
+  spacer.style.height = isMobile ? '300vh' : '280vh';
 
   /* Drive canvas from GSAP ticker — only during scroll, stop when hero is off-screen */
   let heroActive = true;
