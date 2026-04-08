@@ -811,6 +811,7 @@ section { padding: 6rem 0; }
 .ph-cinematic-spacer {
   position: relative;
   height: 100vh;
+  pointer-events: none;
 }
 .ph-cinematic-spacer ~ * {
   position: relative;
