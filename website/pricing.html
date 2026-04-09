@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/Logo/Favicion.webp" />
+  <title>Pricing | VeraVita Clinic Calgary</title>
+  <meta name="description" content="Transparent pricing for all VeraVita Clinic services — naturopathic consultations, IV therapy, acupuncture, medical aesthetics, and clinical esthetics in Calgary." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "VeraVita Wellness & Aesthetics",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Wellness Ave, Suite 201",
+      "addressLocality": "Calgary",
+      "addressRegion": "AB",
+      "addressCountry": "CA"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Clinic Services",
+      "itemListElement": [
+        {"@type":"Offer","itemOffered":{"@type":"MedicalTherapy","name":"Naturopathic Initial Consultation","provider":{"@type":"Person","name":"Dr. Jill Nazar, ND"}},"price":"215.00","priceCurrency":"CAD"},
+        {"@type":"Offer","itemOffered":{"@type":"MedicalTherapy","name":"Acupuncture Initial Consultation","provider":{"@type":"Person","name":"Dr. Viktoriia Taylor"}},"price":"140.00","priceCurrency":"CAD"},
+        {"@type":"Offer","itemOffered":{"@type":"MedicalTherapy","name":"IV Multivitamin Drip","provider":{"@type":"Person","name":"Dr. Jill Nazar, ND"}},"price":"180.00","priceCurrency":"CAD"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Relaxation Facial","provider":{"@type":"Person","name":"Vialeta Bkharvani"}},"price":"80.00","priceCurrency":"CAD"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Derma Needling","provider":{"@type":"Person","name":"Vialeta Bkharvani"}},"price":"250.00","priceCurrency":"CAD"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Exosome Derma Needling","provider":{"@type":"Person","name":"Vialeta Bkharvani"}},"price":"350.00","priceCurrency":"CAD"}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo">
+        <img src="images/Logo/Navbar logo.webp" alt="VeraVita" class="logo-img"
+             onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
+        <span class="logo-text" style="display:none;">VeraVita</span>
+      </a>
+      <ul class="navbar-nav">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="/cat-naturopathic" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+            </a>
+            <a href="/cat-iv-therapy" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
+              <div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+            </a>
+            <a href="/cat-acupuncture" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+              <div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div>
+            </a>
+            <a href="/cat-medical-aesthetics" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+              <div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div>
+            </a>
+            <a href="/cat-clinical-esthetics" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div>
+              <div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Vialeta Bkharvani</span></div>
+            </a>
+            <a href="/cat-massage-therapy" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>RMT Team</span></div>
+            </a>
+            <a href="/cat-osteopathy" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
+              <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div>
+            </a></div>
+        </li>
+        <li><a href="/about" class="nav-link">About</a></li>
+        <li><a href="/practitioners" class="nav-link">Practitioners</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+        <span class="btn-ihb-blob"></span>
+        <span class="btn-ihb-default">Book an appointment</span>
+        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="ptab-hero">
+  <div class="container">
+    <p class="section-tag" style="margin-bottom:1rem"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
+    <h1 style="font-size:clamp(2.25rem,5vw,3.75rem);margin-bottom:1rem;color:var(--dark)">Transparent and <em style="color:var(--primary);font-style:italic">flexible</em> options</h1>
+    <p style="color:var(--body-text);font-size:1.0625rem;max-width:520px;line-height:1.7">Clear pricing across all our services. Aesthetic and consultation-based treatments are priced upon assessment.</p>
+  </div>
+</section>
+
+<!-- TAB SECTION -->
+<section class="ptab-section">
+  <div class="container">
+
+    <!-- Tab nav -->
+    <div class="ptab-nav" role="tablist">
+      <button class="ptab-btn active" data-tab="naturopathic" role="tab">Naturopathic</button>
+      <button class="ptab-btn" data-tab="iv-therapy" role="tab">IV Therapy</button>
+      <button class="ptab-btn" data-tab="acupuncture" role="tab">Acupuncture &amp; TCM</button>
+      <button class="ptab-btn" data-tab="aesthetics" role="tab">Medical Aesthetics</button>
+      <button class="ptab-btn" data-tab="esthetics" role="tab">Clinical Esthetics</button>
+      <button class="ptab-btn" data-tab="massage" role="tab">Massage Therapy</button>
+      <button class="ptab-btn" data-tab="osteopathy" role="tab">Osteopathy</button>
+    </div>
+
+    <!-- ===== PANEL 1: Naturopathic ===== -->
+    <div class="ptab-panel active" id="tab-naturopathic" role="tabpanel">
+      <div class="ptab-card">
+        <div class="ptab-panel-hd">
+          <h2><em>Naturopathic</em> Medicine</h2>
+          <div class="ptab-badge">
+            <i class="fa-solid fa-leaf" style="color:var(--primary);margin-right:0.4rem"></i>
+            <span>Dr. Jill Nazar, ND</span>
+          </div>
+        </div>
+        <div class="ptab-grid">
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Initial Consultation</span>
+              <span class="ptab-item-price">$215.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Pediatric Consult</span>
+              <span class="ptab-item-price">$180.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Telemedicine</span>
+              <span class="ptab-item-price">$215.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Follow-Up (15 min)</span>
+              <span class="ptab-item-price">$50.00</span>
+            </div>
+            <div class="ptab-item-dur">15 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Follow-Up (30 min)</span>
+              <span class="ptab-item-price">$130.00</span>
+            </div>
+            <div class="ptab-item-dur">30 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Follow-Up (45 min)</span>
+              <span class="ptab-item-price">$170.00</span>
+            </div>
+            <div class="ptab-item-dur">45 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Follow-Up (60 min)</span>
+              <span class="ptab-item-price">$220.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Initial IV Visit</span>
+              <span class="ptab-item-price">$220.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Lab Test Visit</span>
+              <span class="ptab-item-price consult">Offered by Dr. Jill Nazar</span>
+            </div>
+            <div class="ptab-item-dur">15 min</div>
+          </div>
+        </div>
+        <div class="ptab-cta">
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book an appointment</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PANEL 2: IV Therapy ===== -->
+    <div class="ptab-panel" id="tab-iv-therapy" role="tabpanel">
+      <div class="ptab-card">
+        <div class="ptab-panel-hd">
+          <h2><em>IV Therapy</em> &amp; Injections</h2>
+          <div class="ptab-badge">
+            <i class="fa-solid fa-droplet" style="color:var(--primary);margin-right:0.4rem"></i>
+            <span>Dr. Jill Nazar, ND</span>
+          </div>
+        </div>
+        <div class="ptab-grid">
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Naturopathic IV Adapted Treatment</span>
+              <span class="ptab-item-price">$250.00</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Naturopathic IV Treatment</span>
+              <span class="ptab-item-price">$220.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">MultiVitamin + Glutathione IV</span>
+              <span class="ptab-item-price">$200.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Naturopathic IV Multivitamin</span>
+              <span class="ptab-item-price">$180.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Glutathione &amp; Vit C IV</span>
+              <span class="ptab-item-price">$130.00</span>
+            </div>
+            <div class="ptab-item-dur">30 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Vitamin Injection Follow-up</span>
+              <span class="ptab-item-price">$65.00</span>
+            </div>
+            <div class="ptab-item-dur">15 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">NAD+ IM</span>
+              <span class="ptab-item-price">$65.00</span>
+            </div>
+            <div class="ptab-item-dur">15 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Vitamin D3</span>
+              <span class="ptab-item-price">$45.00</span>
+            </div>
+            <div class="ptab-item-dur">15 min</div>
+          </div>
+        </div>
+        <div class="ptab-cta">
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book an appointment</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PANEL 3: Acupuncture & TCM ===== -->
+    <div class="ptab-panel" id="tab-acupuncture" role="tabpanel">
+      <div class="ptab-card">
+        <div class="ptab-panel-hd">
+          <h2><em>Acupuncture</em> &amp; TCM</h2>
+          <div class="ptab-badge">
+            <i class="fa-solid fa-hand-sparkles" style="color:var(--primary);margin-right:0.4rem"></i>
+            <span>Dr. Viktoriia Taylor, DTCM</span>
+          </div>
+        </div>
+        <div class="ptab-grid">
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Initial Consultation</span>
+              <span class="ptab-item-price">$140.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Follow-Up Visit</span>
+              <span class="ptab-item-price">$99.95</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Combination Treatment</span>
+              <span class="ptab-item-price">$135.00</span>
+            </div>
+            <div class="ptab-item-dur">75 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Cosmetic Acupuncture — Initial</span>
+              <span class="ptab-item-price">$160.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Herbal Follow-Up</span>
+              <span class="ptab-item-price">$50.00</span>
+            </div>
+            <div class="ptab-item-dur">15 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Children (0–9 yrs) Initial/Follow-Up</span>
+              <span class="ptab-item-price">$75.00</span>
+            </div>
+            <div class="ptab-item-dur">30 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Cupping (Standalone)</span>
+              <span class="ptab-item-price">$55–$90</span>
+            </div>
+            <div class="ptab-item-dur">15–45 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Acupressure</span>
+              <span class="ptab-item-price">$80.00</span>
+            </div>
+            <div class="ptab-item-dur">30 min</div>
+          </div>
+        </div>
+        <div class="ptab-cta">
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book an appointment</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PANEL 4: Medical Aesthetics ===== -->
+    <div class="ptab-panel" id="tab-aesthetics" role="tabpanel">
+      <div class="ptab-card">
+        <div class="ptab-panel-hd">
+          <h2><em>Medical</em> Aesthetics</h2>
+          <div class="ptab-badge">
+            <i class="fa-solid fa-wand-sparkles" style="color:var(--primary);margin-right:0.4rem"></i>
+            <span>Dr. Susan Mankaeeva, MD</span>
+          </div>
+        </div>
+        <div class="ptab-grid">
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Botox &amp; Fillers Consultation</span>
+              <span class="ptab-item-price">Complimentary</span>
+            </div>
+            <div class="ptab-item-dur">45 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Neuromodulators / Botox</span>
+              <span class="ptab-item-price consult">Upon consultation</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Dermal Fillers</span>
+              <span class="ptab-item-price consult">Upon consultation</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+        </div>
+        <div class="ptab-note">
+          Pricing is provided during your consultation based on the number of units or vials required.
+        </div>
+        <div class="ptab-cta">
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book an appointment</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PANEL 5: Clinical Esthetics ===== -->
+    <div class="ptab-panel" id="tab-esthetics" role="tabpanel">
+      <div class="ptab-card">
+        <div class="ptab-panel-hd">
+          <h2><em>Clinical</em> Esthetics</h2>
+          <div class="ptab-badge">
+            <i class="fa-solid fa-spa" style="color:var(--primary);margin-right:0.4rem"></i>
+            <span>Vialeta Bkharvani</span>
+          </div>
+        </div>
+        <div class="ptab-grid">
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Custom Relaxation Facial</span>
+              <span class="ptab-item-price">$80.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">European Facial and Lift Massage</span>
+              <span class="ptab-item-price">$100.00</span>
+            </div>
+            <div class="ptab-item-dur">90 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Anti-Aging Deluxe + LED</span>
+              <span class="ptab-item-price">$150.00</span>
+            </div>
+            <div class="ptab-item-dur">120 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Facial Deep Extraction</span>
+              <span class="ptab-item-price">$100.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Acne Treatment and High Frequency</span>
+              <span class="ptab-item-price">$100.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Dermaplaning and Collagen Mask</span>
+              <span class="ptab-item-price">$100.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Sea-Nergy Green Peel</span>
+              <span class="ptab-item-price">$150.00</span>
+            </div>
+            <div class="ptab-item-dur">70 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Microdermabrasion</span>
+              <span class="ptab-item-price">$120–$150</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Derma Needling</span>
+              <span class="ptab-item-price">$250.00</span>
+            </div>
+            <div class="ptab-item-dur">120 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Exosome Derma Needling</span>
+              <span class="ptab-item-price">$350.00</span>
+            </div>
+            <div class="ptab-item-dur">120 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Exo-Hair (Scalp Rejuvenation)</span>
+              <span class="ptab-item-price">$350.00</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Skin Tag Removal</span>
+              <span class="ptab-item-price">$15.00/tag</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Age Spots</span>
+              <span class="ptab-item-price">$90.00</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+        </div>
+        <div class="ptab-cta">
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book an appointment</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PANEL 6: Massage Therapy ===== -->
+    <div class="ptab-panel" id="tab-massage" role="tabpanel">
+
+      <!-- Jean-Wilson Raymond, RMT -->
+      <div class="ptab-card">
+        <div class="ptab-panel-hd">
+          <h2><em>Massage</em> Therapy</h2>
+          <div class="ptab-badge">
+            <i class="fa-solid fa-hand-holding-heart" style="color:var(--primary);margin-right:0.4rem"></i>
+            <span>Jean-Wilson Raymond, RMT</span>
+          </div>
+        </div>
+        <div class="ptab-grid">
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Massage</span>
+              <span class="ptab-item-price">$70.00</span>
+            </div>
+            <div class="ptab-item-dur">30 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Massage</span>
+              <span class="ptab-item-price">$90.00</span>
+            </div>
+            <div class="ptab-item-dur">45 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Massage</span>
+              <span class="ptab-item-price">$115.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Massage</span>
+              <span class="ptab-item-price">$150.00</span>
+            </div>
+            <div class="ptab-item-dur">90 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Massage</span>
+              <span class="ptab-item-price">$190.00</span>
+            </div>
+            <div class="ptab-item-dur">120 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Hot Stone Massage</span>
+              <span class="ptab-item-price">$130.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Hot Stone Massage</span>
+              <span class="ptab-item-price">$170.00</span>
+            </div>
+            <div class="ptab-item-dur">90 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Lymphatic Massage</span>
+              <span class="ptab-item-price">$120.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Lymphatic Massage</span>
+              <span class="ptab-item-price">$160.00</span>
+            </div>
+            <div class="ptab-item-dur">90 min</div>
+          </div>
+        </div>
+        <div class="ptab-cta">
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book with Jean-Wilson Raymond</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Jean-Wilson Raymond</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Zachary Kerr, RMT -->
+      <div class="ptab-card" style="margin-top:2.5rem">
+        <div class="ptab-panel-hd">
+          <h2><em>Massage</em> Therapy</h2>
+          <div class="ptab-badge">
+            <i class="fa-solid fa-hand-holding-heart" style="color:var(--primary);margin-right:0.4rem"></i>
+            <span>Zachary Kerr, RMT</span>
+          </div>
+        </div>
+        <div class="ptab-grid">
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Massage</span>
+              <span class="ptab-item-price">$70.00</span>
+            </div>
+            <div class="ptab-item-dur">30 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Massage</span>
+              <span class="ptab-item-price">$90.00</span>
+            </div>
+            <div class="ptab-item-dur">45 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Massage</span>
+              <span class="ptab-item-price">$115.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Massage</span>
+              <span class="ptab-item-price">$150.00</span>
+            </div>
+            <div class="ptab-item-dur">90 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Massage</span>
+              <span class="ptab-item-price">$190.00</span>
+            </div>
+            <div class="ptab-item-dur">120 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Hot Stone Massage</span>
+              <span class="ptab-item-price">$130.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Hot Stone Massage</span>
+              <span class="ptab-item-price">$170.00</span>
+            </div>
+            <div class="ptab-item-dur">90 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Lymphatic Massage</span>
+              <span class="ptab-item-price">$120.00</span>
+            </div>
+            <div class="ptab-item-dur">60 min</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Lymphatic Massage</span>
+              <span class="ptab-item-price">$160.00</span>
+            </div>
+            <div class="ptab-item-dur">90 min</div>
+          </div>
+        </div>
+        <div class="ptab-cta">
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book with Zachary Kerr</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Zachary Kerr</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PANEL 7: Osteopathy ===== -->
+    <div class="ptab-panel" id="tab-osteopathy" role="tabpanel">
+      <div class="ptab-card">
+        <div class="ptab-panel-hd">
+          <h2><em>Osteopathy</em></h2>
+          <div class="ptab-badge">
+            <i class="fa-solid fa-person-rays" style="color:var(--primary);margin-right:0.4rem"></i>
+            <span>Osteopathic Practitioner — Joining Soon</span>
+          </div>
+        </div>
+        <div class="ptab-grid">
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Osteopathic Manual Therapy</span>
+              <span class="ptab-item-price consult">Pricing upon consultation</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Structural Integration</span>
+              <span class="ptab-item-price consult">Pricing upon consultation</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Alignment &amp; Mobility</span>
+              <span class="ptab-item-price consult">Pricing upon consultation</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+          <div class="ptab-item">
+            <div class="ptab-item-row">
+              <span class="ptab-item-name">Paediatric Osteopathy</span>
+              <span class="ptab-item-price consult">Pricing upon consultation</span>
+            </div>
+            <div class="ptab-item-dur">&mdash;</div>
+          </div>
+        </div>
+        <div class="ptab-cta">
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book an appointment</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="container" style="padding-bottom:4rem">
+  <div class="pricing-disclaimer reveal">
+    <div class="pricing-disclaimer-icon"><i class="fa-solid fa-circle-info"></i></div>
+    <p><strong>Live Disclaimer:</strong> Prices are subject to change without notice. Please refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener">JaneApp Portal</a> for the most current rates, availability, and booking options. All prices are in CAD and do not include applicable taxes.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="sf-footer">
+  <div class="sf-fixed">
+    <div class="sf-deco" aria-hidden="true">
+      <div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div>
+    </div>
+    <div class="sf-body">
+      <div class="sf-top">
+        <div class="sf-brand sf-anim" style="--sf-delay:0s">
+          <a href="/" class="sf-logo">
+            <img src="images/Logo/Footer logo.webp" alt="VeraVita" class="sf-logo-img"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="sf-logo-fallback" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg>
+              <span>VeraVita</span>
+            </div>
+          </a>
+          <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
+          <div class="sf-social">
+            <a href="https://www.facebook.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+          <h3 class="sf-col-title">Pages</h3>
+          <ul class="sf-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/practitioners">Our Practitioners</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/faqs">FAQs</a></li>
+            <li><a href="/careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+          <h3 class="sf-col-title">Services</h3>
+          <ul class="sf-links">
+            <li><a href="/cat-naturopathic">Naturopathic Medicine</a></li>
+            <li><a href="/cat-iv-therapy">Testing &amp; IV Therapy</a></li>
+            <li><a href="/cat-acupuncture">Acupuncture &amp; TCM</a></li>
+            <li><a href="/cat-medical-aesthetics">Medical Aesthetics</a></li>
+            <li><a href="/cat-clinical-esthetics">Clinical Esthetics</a></li>
+            <li><a href="/cat-massage-therapy">Massage Therapy</a></li>
+            <li><a href="/cat-osteopathy">Osteopathy</a></li>
+          </ul>
+        </div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+          <h3 class="sf-col-title">Contact</h3>
+          <ul class="sf-links">
+            <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
+            <li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:info@veravitaclinic.com">info@veravitaclinic.com</a></li>
+            <li><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</a></li>
+          </ul>
+          <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
+          <ul class="sf-links">
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sf-bottom">
+        <p>&copy; 2026 VeraVita Wellness &amp; Aesthetics. All rights reserved.</p>
+        <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
+        <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<!-- Tab switching -->
+<script>
+(function() {
+  var btns = document.querySelectorAll('.ptab-btn');
+  var panels = document.querySelectorAll('.ptab-panel');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      var panel = document.getElementById('tab-' + btn.dataset.tab);
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+</script>
+<!-- MOBILE BOTTOM BOOKING BAR -->
+<div class="mobile-book-bar">
+  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
+    <span class="btn-ihb-default">Book an appointment</span>
+  </a>
+</div>
+
+</body>
+</html>

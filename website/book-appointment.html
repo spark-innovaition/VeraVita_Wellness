@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/Logo/Favicion.webp" />
+  <title>Book an Appointment | VeraVita Clinic Calgary</title>
+  <meta name="description" content="Book your naturopathic or aesthetic medicine appointment at VeraVita Clinic in Calgary. Choose your service, select a time, and start your wellness journey." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="/" class="navbar-logo">
+          <picture>
+          <source media="(max-width: 860px)" srcset="images/Header - Mobile.png" />
+          <img src="images/Logo/Navbar logo.webp" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        </picture>
+          <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
+          <span class="logo-text" style="display:none;">VeraVita</span>
+        </a>
+              <ul class="navbar-nav">
+        <li><a href="/"          class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="/cat-naturopathic" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+            </a>
+            <a href="/cat-iv-therapy" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
+              <div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+            </a>
+            <a href="/cat-acupuncture" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+              <div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor</span></div>
+            </a>
+            <a href="/cat-medical-aesthetics" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+              <div class="nav-dd-text"><strong>Medical Aesthetics</strong><span>Lead: Dr. Susan Mankaeeva, MD</span></div>
+            </a>
+            <a href="/cat-clinical-esthetics" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-spa"></i></div>
+              <div class="nav-dd-text"><strong>Clinical Esthetics &amp; Facials</strong><span>Lead: Vialeta Bkharvani</span></div>
+            </a>
+            <a href="/cat-massage-therapy" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>RMT Team</span></div>
+            </a>
+            <a href="/cat-osteopathy" class="nav-dd-item">
+              <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
+              <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Osteopathic Practitioner — Joining Soon</span></div>
+            </a>
+          </div>
+        </li>
+        <li><a href="/about"          class="nav-link">About</a></li>
+        <li><a href="/practitioners"  class="nav-link">Practitioners</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+          <span class="btn-ihb-blob"></span>
+          <span class="btn-ihb-default">Book an appointment</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+        </a>
+        <button class="navbar-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <video class="page-hero-video" autoplay muted loop playsinline
+      data-src-desktop="images/background video.mp4"
+      data-src-mobile="images/Background video - Mobile only.mp4">
+    <source src="images/background video.mp4" type="video/mp4" />
+    </video>
+    <script>(function(){var v=document.currentScript.previousElementSibling;v.querySelector("source").src=window.matchMedia("(max-width:860px)").matches?v.dataset.srcMobile:v.dataset.srcDesktop;v.load();})();</script>
+  <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb">
+          <a href="/">Home</a><span class="sep"><i class="fa-solid fa-chevron-right" style="font-size:.65rem;"></i></span><span>Book an Appointment</span>
+        </nav>
+        <h1>Book an <em>appointment</em></h1>
+        <p class="page-hero-sub">Take the first step toward better health. Select your service, pick a time, and we'll take care of the rest.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING MAIN SECTION -->
+  <section class="section section--book-green">
+    <div class="container">
+      <div class="booking-grid">
+
+        <!-- Left: Booking Info -->
+        <div class="booking-info fade-left">
+          <span class="section-label">Schedule your visit</span>
+          <h2>Ready to start your wellness journey?</h2>
+          <p>Book your appointment online and one of our practitioners will confirm your slot within one business day. We offer flexible scheduling to fit your busy lifestyle, including early morning and Saturday appointments.</p>
+          <p>Not sure which service is right for you? Call or email us and we'll help you choose the best starting point for your health goals.</p>
+
+          <div class="booking-contact-list">
+            <div class="booking-contact-item">
+              <div class="booking-contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <strong>Email Us</strong>
+                <span>info@veravitaclinic.com</span>
+              </div>
+            </div>
+            <div class="booking-contact-item">
+              <div class="booking-contact-icon"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <strong>Working Hours</strong>
+                <span>Mon – Fri: 9:00 am – 6:00 pm<br />Sat: 10:00 am – 4:00 pm</span>
+              </div>
+            </div>
+            <div class="booking-contact-item">
+              <div class="booking-contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <strong>Call Us</strong>
+                <span>(587) 585-2524</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Booking Form Card -->
+        <div class="booking-form-card fade-right">
+          <div class="booking-form-title">Book Your Appointment</div>
+          <div class="booking-form-sub">Fill in your details below and we'll be in touch to confirm your booking.</div>
+          <form class="form-stack" action="#" method="post">
+            <div class="form-row">
+              <div>
+                <label for="b-fname">Full Name</label>
+                <input type="text" id="b-fname" name="full_name" class="inp-light" placeholder="Jane Doe" required />
+              </div>
+              <div>
+                <label for="b-email">Email Address</label>
+                <input type="email" id="b-email" name="email" class="inp-light" placeholder="jane@email.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="b-phone">Phone Number</label>
+                <input type="tel" id="b-phone" name="phone" class="inp-light" placeholder="(587) 585-2524" />
+              </div>
+              <div>
+                <label for="b-service">Select Service</label>
+                <select id="b-service" name="service" class="inp-light" required>
+                  <option value="" disabled selected>Choose a service</option>
+                  <option>General Naturopathic Care</option>
+                  <option>Fatigue Treatment</option>
+                  <option>Fertility Program</option>
+                  <option>Weight Loss Program</option>
+                  <option>Pediatric Naturopathic Care</option>
+                  <option>Acupuncture &amp; Cupping</option>
+                  <option>Functional Lab Testing</option>
+                  <option>IV Therapy</option>
+                  <option>Vitamin Injections</option>
+                  <option>Neuromodulators / Botox</option>
+                  <option>Dermal Fillers</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="b-date">Preferred Date</label>
+                <input type="date" id="b-date" name="date" class="inp-light" />
+              </div>
+              <div>
+                <label for="b-time">Preferred Time</label>
+                <select id="b-time" name="time" class="inp-light">
+                  <option value="" disabled selected>Select a time</option>
+                  <option>9:00 am</option>
+                  <option>9:30 am</option>
+                  <option>10:00 am</option>
+                  <option>10:30 am</option>
+                  <option>11:00 am</option>
+                  <option>11:30 am</option>
+                  <option>12:00 pm</option>
+                  <option>1:00 pm</option>
+                  <option>1:30 pm</option>
+                  <option>2:00 pm</option>
+                  <option>2:30 pm</option>
+                  <option>3:00 pm</option>
+                  <option>3:30 pm</option>
+                  <option>4:00 pm</option>
+                  <option>4:30 pm</option>
+                  <option>5:00 pm</option>
+                  <option>5:30 pm</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="b-notes">Additional Notes</label>
+              <textarea id="b-notes" name="notes" class="inp-textarea-light" rows="4" placeholder="Share any relevant health history, current medications, or specific concerns..."></textarea>
+            </div>
+            <button type="submit" class="btn-ihb btn-ihb--primary btn-lg" style="width:100%;">
+              <span class="btn-ihb-blob"></span>
+              <span class="btn-ihb-default">Confirm Appointment Request</span>
+              <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Confirm Appointment Request</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS SECTION -->
+  <section class="hours-section section">
+    <div class="container">
+      <div class="fade-up" style="text-align:center; margin-bottom:2.5rem;">
+        <span class="section-label">Clinic hours</span>
+        <h2>When we're here for you</h2>
+        <p>We offer flexible scheduling to accommodate your lifestyle.</p>
+      </div>
+      <div class="hours-grid stagger-grid">
+
+        <div class="hours-item stagger-item">
+          <div class="hours-item-icon"><i class="fa-solid fa-envelope"></i></div>
+          <h4>Email</h4>
+          <p>info@veravitaclinic.com</p>
+          <span>We respond within one business day</span>
+        </div>
+
+        <div class="hours-item stagger-item">
+          <div class="hours-item-icon"><i class="fa-solid fa-clock"></i></div>
+          <h4>Working Hours</h4>
+          <p>Mon – Fri: 9:00 am – 6:00 pm</p>
+          <span>Sat: 10:00 am – 4:00 pm &nbsp;|&nbsp; Sun: Closed</span>
+        </div>
+
+        <div class="hours-item stagger-item">
+          <div class="hours-item-icon"><i class="fa-solid fa-phone"></i></div>
+          <h4>Call Us</h4>
+          <p>(587) 585-2524</p>
+          <span>Available during clinic hours</span>
+        </div>
+
+      </div>
+
+      <div class="emergency-bar fade-up">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span><strong>Medical Emergency?</strong> Please call 911 or visit your nearest emergency room. VeraVita Clinic is not an emergency medical facility.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section section--book-green">
+    <div class="container container-medium">
+      <div class="fade-up" style="text-align:center; margin-bottom:2.5rem;">
+        <span class="section-label">Need to know</span>
+        <h2>Booking questions answered</h2>
+        <p>Everything you need to know before your first visit.</p>
+      </div>
+
+      <div class="faq-list fade-up">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I confirm my appointment?</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Once you submit the booking form, our team will review your request and send a confirmation email or call within one business day. You will receive a reminder 24 hours before your scheduled visit.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need a referral to see a naturopathic doctor?</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>No referral is needed. You can book directly with VeraVita Clinic. However, if you have existing lab results or reports from another healthcare provider, please bring them along — they are very helpful during your initial assessment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is my extended health insurance accepted?</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Many extended health benefit plans in Alberta cover naturopathic medicine. We recommend confirming with your insurer prior to your appointment. We provide itemised receipts for all services so you can submit claims directly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Are aesthetic treatments safe? What should I expect?</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>All aesthetic procedures at VeraVita Clinic are performed by trained medical professionals using approved Health Canada products. During your consultation, we review your medical history, discuss realistic expectations, and outline any possible side effects so you can make a fully informed decision.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I access my health records through a patient portal?</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. VeraVita Clinic uses a secure patient portal where you can review your visit notes, lab results, treatment plans, and upcoming appointments. Login credentials are provided after your first visit. Your information is kept strictly confidential in accordance with Alberta's Health Information Act.</p>
+          </div>
+        </div>
+
+      </div><!-- /faq-list -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="sf-footer">
+    <div class="sf-fixed">
+      <div class="sf-deco" aria-hidden="true">
+        <div class="sf-deco-1"></div>
+        <div class="sf-deco-2"></div>
+        <div class="sf-deco-3"></div>
+      </div>
+      <div class="sf-body">
+        <div class="sf-top">
+          <div class="sf-brand sf-anim" style="--sf-delay:0s">
+            <a href="/" class="sf-logo">
+              <img src="images/Logo/Footer logo.webp" alt="VeraVita" class="sf-logo-img"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="sf-logo-fallback" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg>
+                <span>VeraVita</span>
+              </div>
+            </a>
+            <p class="sf-desc">Naturopathic &amp; Aesthetic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
+            <div class="sf-social">
+              <a href="https://www.facebook.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+          <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+            <h3 class="sf-col-title">Pages</h3>
+            <ul class="sf-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/practitioners">Our Practitioners</a></li>
+            <li><a href="/faqs">FAQs</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+            <h3 class="sf-col-title">Services</h3>
+          <ul class="sf-links">
+            <li><a href="/cat-naturopathic">Naturopathic Medicine</a></li>
+            <li><a href="/cat-iv-therapy">Testing &amp; IV Therapy</a></li>
+            <li><a href="/cat-acupuncture">Acupuncture &amp; TCM</a></li>
+            <li><a href="/cat-medical-aesthetics">Medical Aesthetics</a></li>
+            <li><a href="/cat-clinical-esthetics">Clinical Esthetics</a></li>
+            <li><a href="/cat-massage-therapy">Massage Therapy</a></li>
+            <li><a href="/cat-osteopathy">Osteopathy</a></li>
+          </ul>
+          </div>
+          <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+            <h3 class="sf-col-title">Contact</h3>
+            <ul class="sf-links">
+              <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
+              <li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:info@veravitaclinic.com">info@veravitaclinic.com</a></li>
+              <li><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</a></li>
+            </ul>
+            <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
+            <ul class="sf-links">
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/terms-of-service">Terms of Service</a></li>
+              <li><a href="/cookie-policy">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sf-bottom">
+        <p>&copy; 2026 VeraVita Wellness & Aesthetics. All rights reserved.</p>
+        <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
+        <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
+      </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+<!-- MOBILE BOTTOM BOOKING BAR -->
+<div class="mobile-book-bar">
+  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
+    <span class="btn-ihb-default">Book an appointment</span>
+  </a>
+</div>
+
+</body>
+</html>
