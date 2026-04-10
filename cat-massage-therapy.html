@@ -11,6 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css?v=2" />
+  <style>
+    @media (max-width: 640px) {
+      .cat-therapists-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
 </head>
 <body>
 
@@ -50,7 +55,7 @@
             </a>
             <a href="/cat-massage-therapy" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: RMT — Joining Soon</span></div>
+              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>RMT Team</span></div>
             </a>
             <a href="/cat-osteopathy" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
@@ -85,8 +90,8 @@
     <div class="reveal">
       <span class="section-label" style="color:var(--primary)">Service Category</span>
       <h1 style="color:var(--white);margin-bottom:1rem">Massage <em style="color:#a8c99e">Therapy</em></h1>
-      <p style="color:rgba(255,255,255,0.75);max-width:620px;line-height:1.75;margin-bottom:1.5rem">A full clinical massage program — therapeutic, lymphatic drainage, hot stone, prenatal, and paediatric care — delivered by a Registered Massage Therapist joining the VeraVita team.</p>
-      <div class="svc-cell-prac" style="display:block;font-size:0.9375rem;color:#a8c99e"><i class="fa-solid fa-hand-holding-heart"></i> Led by our Clinical Massage Specialist &mdash; Registered Massage Therapist (RMT)</div>
+      <p style="color:rgba(255,255,255,0.75);max-width:620px;line-height:1.75;margin-bottom:1.5rem">A full clinical massage program — therapeutic, lymphatic drainage, hot stone, prenatal, and paediatric care — delivered by our dedicated Registered Massage Therapists at VeraVita.</p>
+      <div class="svc-cell-prac" style="display:block;font-size:0.9375rem;color:#a8c99e"><i class="fa-solid fa-hand-holding-heart"></i> Jean-Wilson Raymond, RMT &amp; Zachary Kerr, RMT</div>
       <a href="#pricing" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.625rem 1.375rem;border:1.5px solid rgba(255,255,255,0.55);border-radius:4rem;color:#ffffff;font-size:0.875rem;font-weight:500;text-decoration:none;background:rgba(255,255,255,0.08);backdrop-filter:blur(4px)"><i class="fa-solid fa-tag" style="font-size:0.775rem"></i> View Pricing&#160;&#160;<i class="fa-solid fa-arrow-down" style="font-size:0.7rem;opacity:0.7"></i></a>
     </div>
   </div>
@@ -171,6 +176,36 @@
         </div>
       </a>
 
+    </div>
+  </div>
+</section>
+
+<!-- MEET YOUR THERAPISTS -->
+<section style="padding:4rem 0 2rem">
+  <div class="container">
+    <div class="svc-section-header reveal" style="margin-bottom:3rem">
+      <h2>Meet Your <em>Therapists</em></h2>
+      <p>Our Registered Massage Therapists bring unique expertise and a shared commitment to your well-being.</p>
+    </div>
+    <div class="cat-therapists-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:800px;margin:0 auto">
+      <a href="/jean-wilson-raymond" class="pd-svc-card reveal" style="text-decoration:none;color:inherit">
+        <div class="pd-svc-img-wrap">
+          <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="pd-svc-img" />
+        </div>
+        <div class="pd-svc-body">
+          <h3 class="pd-svc-title">Jean-Wilson Raymond, RMT</h3>
+          <p class="pd-svc-desc">Specialising in deep tissue, relaxation, hot stone therapy, cupping, lymphatic drainage, sports massage, and prenatal care.</p>
+        </div>
+      </a>
+      <a href="/zachary-kerr" class="pd-svc-card reveal" style="text-decoration:none;color:inherit">
+        <div class="pd-svc-img-wrap">
+          <img src="images/Practitioner Main page/Zachary Kerr.webp" alt="Zachary Kerr, RMT" class="pd-svc-img" />
+        </div>
+        <div class="pd-svc-body">
+          <h3 class="pd-svc-title">Zachary Kerr, RMT</h3>
+          <p class="pd-svc-desc">Combining athletic therapeutic expertise with a calming holistic approach for healing, recovery, and preventive care.</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
