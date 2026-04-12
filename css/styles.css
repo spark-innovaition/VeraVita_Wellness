@@ -4697,6 +4697,30 @@ body { overflow-x: hidden; }
       url('../images/mobile%20overlay%20pic/pexels-ameliacui-11983527.jpg') center / cover;
   }
 
+   /* PASTE THE NEW FIX HERE */
+    .tmd-bottom {
+      grid-template-columns: repeat(2, 1fr) !important; 
+      gap: 15px;
+    }
+
+    .tmd-bottom .tmd-card-overlay {
+      padding: 15px 10px;
+    }
+
+    .tmd-bottom .tmd-card-overlay h4 {
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .tmd-bottom .tmd-card-overlay span {
+      font-size: 0.8rem;
+    }
+
+    .tmd-bottom .tmd-card-overlay p,
+    .tmd-bottom .tmd-card-overlay .tmd-card-cta {
+      display: none; 
+    }
+
   /* SERVICE PAGES */
   .svc-botox               { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-bharati-mahli-7865119-6483393.jpg'); }
   .svc-dermal-fillers      { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-cheeseburger-36452123.jpg'); }
