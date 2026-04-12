@@ -434,7 +434,7 @@ section { padding: 6rem 0; }
 /* Keep .tmd-top alias for any other pages using it */
 .tmd-top {
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1.5fr;
+  grid-template-columns: 2.5fr 1fr 1fr;
   gap: 1.25rem;
   align-items: start;
   margin-bottom: 1.25rem;
