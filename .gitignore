@@ -14,3 +14,10 @@ desktop.ini
 Current build website screenshots/
 screenshots/
 code prompt/
+curevo-wbs.webflow.io_*.png
+.claude/
+gen_pages.py
+style code.txt
+
+# Large video files
+images/Home page video - 2.mp4
