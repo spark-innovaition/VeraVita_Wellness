@@ -68,8 +68,8 @@
     }
     @media (max-width: 540px) {
       #inline-svkQIwsvqmRNMwaDEgZz {
-        height: 1280px !important;
-        min-height: 1280px !important;
+        height: 1380px !important;
+        min-height: 1380px !important;
       }
     }
   </style>
@@ -174,36 +174,6 @@
           title="Form 1">
         </iframe>
         <script src="https://spark.innovaition.ca/js/form_embed.js"></script>
-        <script>
-          /* Watchdog: GHL's form_embed.js auto-resizes the iframe based on its
-             internal height calculation, which under-reports the form and clips
-             the Submit button. This script re-locks the height continuously so
-             form_embed.js can't shrink it. */
-          (function () {
-            var DESKTOP_H = 1300;
-            var MOBILE_H = 1280;
-            var iframe = document.getElementById('inline-svkQIwsvqmRNMwaDEgZz');
-            if (!iframe) return;
-
-            function targetHeight() {
-              return (window.innerWidth <= 540 ? MOBILE_H : DESKTOP_H) + 'px';
-            }
-            function lockHeight() {
-              var h = targetHeight();
-              iframe.style.setProperty('height', h, 'important');
-              iframe.style.setProperty('min-height', h, 'important');
-            }
-
-            lockHeight();
-            setInterval(lockHeight, 150);
-
-            var observer = new MutationObserver(lockHeight);
-            observer.observe(iframe, { attributes: true, attributeFilter: ['style', 'height'] });
-
-            window.addEventListener('resize', lockHeight);
-            window.addEventListener('load', lockHeight);
-          })();
-        </script>
       </div>
 
     </div>
