@@ -3922,16 +3922,16 @@ body { overflow-x: hidden; }
 .dr-jill-nazar       { --dr-underlay: url('../images/underlay pic desktop/underlay pic 19.webp'); }
 .dr-susan-mankaeeva  { --dr-underlay: url('../images/underlay pic desktop/underlay pic 20.webp'); }
 .dr-viktoriia-taylor { --dr-underlay: url('../images/underlay pic desktop/underlay pic 21.webp'); }
-.vialeta-bhharvani   { --dr-underlay: url('../images/underlay pic desktop/underlay pic 22.webp'); }
+.vialeta-bkharvani   { --dr-underlay: url('../images/underlay pic desktop/underlay pic 22.webp'); }
 
 .dr-jill-nazar .pd-detail-section,
 .dr-susan-mankaeeva .pd-detail-section,
 .dr-viktoriia-taylor .pd-detail-section,
-.vialeta-bhharvani .pd-detail-section,
+.vialeta-bkharvani .pd-detail-section,
 .dr-jill-nazar .pd-services-section,
 .dr-susan-mankaeeva .pd-services-section,
 .dr-viktoriia-taylor .pd-services-section,
-.vialeta-bhharvani .pd-services-section {
+.vialeta-bkharvani .pd-services-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
     var(--dr-underlay) center / cover scroll;
@@ -4795,13 +4795,13 @@ body { overflow-x: hidden; }
   .dr-jill-nazar       { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-minan1398-1650032.jpg'); }
   .dr-susan-mankaeeva  { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-mirza-farhan-140378-12951726.jpg'); }
   .dr-viktoriia-taylor { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-photosbyanas-17672394.jpg'); }
-  .vialeta-bhharvani   { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-plantpool-images-2222972-4039949.jpg'); }
+  .vialeta-bkharvani   { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-plantpool-images-2222972-4039949.jpg'); }
 
   /* Also override pd sections opacity */
   .dr-jill-nazar .pd-detail-section, .dr-jill-nazar .pd-services-section,
   .dr-susan-mankaeeva .pd-detail-section, .dr-susan-mankaeeva .pd-services-section,
   .dr-viktoriia-taylor .pd-detail-section, .dr-viktoriia-taylor .pd-services-section,
-  .vialeta-bhharvani .pd-detail-section, .vialeta-bhharvani .pd-services-section {
+  .vialeta-bkharvani .pd-detail-section, .vialeta-bkharvani .pd-services-section {
     background:
       linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       var(--dr-underlay) center / cover;
@@ -4841,7 +4841,7 @@ body { overflow-x: hidden; }
   .dr-jill-nazar .pd-detail-section, .dr-jill-nazar .pd-services-section,
   .dr-susan-mankaeeva .pd-detail-section, .dr-susan-mankaeeva .pd-services-section,
   .dr-viktoriia-taylor .pd-detail-section, .dr-viktoriia-taylor .pd-services-section,
-  .vialeta-bhharvani .pd-detail-section, .vialeta-bhharvani .pd-services-section {
+  .vialeta-bkharvani .pd-detail-section, .vialeta-bkharvani .pd-services-section {
     animation: none;
     background-position: center center;
     background-size: cover;
