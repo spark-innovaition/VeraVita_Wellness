@@ -58,13 +58,18 @@
 
     /* Lock GHL iframe height so form_embed.js can't shrink it and clip the Send button */
     #inline-svkQIwsvqmRNMwaDEgZz {
-      height: 1100px !important;
-      min-height: 1100px !important;
+      height: 1300px !important;
+      min-height: 1300px !important;
+    }
+    /* Ensure parent containers don't clip the iframe */
+    .cth-form-wrap,
+    .cth-body {
+      overflow: visible !important;
     }
     @media (max-width: 540px) {
       #inline-svkQIwsvqmRNMwaDEgZz {
-        height: 1180px !important;
-        min-height: 1180px !important;
+        height: 1380px !important;
+        min-height: 1380px !important;
       }
     }
   </style>
@@ -153,7 +158,7 @@
       <div class="cth-form-wrap">
         <iframe
           src="https://spark.innovaition.ca/widget/form/svkQIwsvqmRNMwaDEgZz"
-          style="width:100%;height:1100px;min-height:1100px;border:none;border-radius:8px;display:block"
+          style="width:100%;height:1300px;min-height:1300px;border:none;border-radius:8px;display:block"
           id="inline-svkQIwsvqmRNMwaDEgZz"
           data-layout="{'id':'INLINE'}"
           data-trigger-type="alwaysShow"
@@ -163,12 +168,42 @@
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
           data-form-name="Form 1"
-          data-height="1100"
+          data-height="1300"
           data-layout-iframe-id="inline-svkQIwsvqmRNMwaDEgZz"
           data-form-id="svkQIwsvqmRNMwaDEgZz"
           title="Form 1">
         </iframe>
         <script src="https://spark.innovaition.ca/js/form_embed.js"></script>
+        <script>
+          /* Watchdog: GHL's form_embed.js auto-resizes the iframe based on its
+             internal height calculation, which under-reports the form and clips
+             the Submit button. This script re-locks the height continuously so
+             form_embed.js can't shrink it. */
+          (function () {
+            var DESKTOP_H = 1100;
+            var MOBILE_H = 1280;
+            var iframe = document.getElementById('inline-svkQIwsvqmRNMwaDEgZz');
+            if (!iframe) return;
+
+            function targetHeight() {
+              return (window.innerWidth <= 540 ? MOBILE_H : DESKTOP_H) + 'px';
+            }
+            function lockHeight() {
+              var h = targetHeight();
+              iframe.style.setProperty('height', h, 'important');
+              iframe.style.setProperty('min-height', h, 'important');
+            }
+
+            lockHeight();
+            setInterval(lockHeight, 150);
+
+            var observer = new MutationObserver(lockHeight);
+            observer.observe(iframe, { attributes: true, attributeFilter: ['style', 'height'] });
+
+            window.addEventListener('resize', lockHeight);
+            window.addEventListener('load', lockHeight);
+          })();
+        </script>
       </div>
 
     </div>
