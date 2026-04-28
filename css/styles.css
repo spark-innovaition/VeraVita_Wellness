@@ -3920,16 +3920,16 @@ body { overflow-x: hidden; }
 
 /* Per-practitioner underlay backgrounds */
 .dr-jill-nazar       { --dr-underlay: url('../images/underlay pic desktop/underlay pic 19.webp'); }
-.dr-susan-mankaeeva  { --dr-underlay: url('../images/underlay pic desktop/underlay pic 20.webp'); }
+.dr-susan-mankaeva  { --dr-underlay: url('../images/underlay pic desktop/underlay pic 20.webp'); }
 .dr-viktoriia-taylor { --dr-underlay: url('../images/underlay pic desktop/underlay pic 21.webp'); }
 .vialeta-bkharvani   { --dr-underlay: url('../images/underlay pic desktop/underlay pic 22.webp'); }
 
 .dr-jill-nazar .pd-detail-section,
-.dr-susan-mankaeeva .pd-detail-section,
+.dr-susan-mankaeva .pd-detail-section,
 .dr-viktoriia-taylor .pd-detail-section,
 .vialeta-bkharvani .pd-detail-section,
 .dr-jill-nazar .pd-services-section,
-.dr-susan-mankaeeva .pd-services-section,
+.dr-susan-mankaeva .pd-services-section,
 .dr-viktoriia-taylor .pd-services-section,
 .vialeta-bkharvani .pd-services-section {
   background:
@@ -4793,13 +4793,13 @@ body { overflow-x: hidden; }
 
   /* PRACTITIONER PROFILES */
   .dr-jill-nazar       { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-minan1398-1650032.jpg'); }
-  .dr-susan-mankaeeva  { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-mirza-farhan-140378-12951726.jpg'); }
+  .dr-susan-mankaeva  { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-mirza-farhan-140378-12951726.jpg'); }
   .dr-viktoriia-taylor { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-photosbyanas-17672394.jpg'); }
   .vialeta-bkharvani   { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-plantpool-images-2222972-4039949.jpg'); }
 
   /* Also override pd sections opacity */
   .dr-jill-nazar .pd-detail-section, .dr-jill-nazar .pd-services-section,
-  .dr-susan-mankaeeva .pd-detail-section, .dr-susan-mankaeeva .pd-services-section,
+  .dr-susan-mankaeva .pd-detail-section, .dr-susan-mankaeva .pd-services-section,
   .dr-viktoriia-taylor .pd-detail-section, .dr-viktoriia-taylor .pd-services-section,
   .vialeta-bkharvani .pd-detail-section, .vialeta-bkharvani .pd-services-section {
     background:
@@ -4839,7 +4839,7 @@ body { overflow-x: hidden; }
   .svc-fertility-program .sd-body, .svc-acupuncture-cupping .sd-body,
   .svc-vitamin-injections .sd-body,
   .dr-jill-nazar .pd-detail-section, .dr-jill-nazar .pd-services-section,
-  .dr-susan-mankaeeva .pd-detail-section, .dr-susan-mankaeeva .pd-services-section,
+  .dr-susan-mankaeva .pd-detail-section, .dr-susan-mankaeva .pd-services-section,
   .dr-viktoriia-taylor .pd-detail-section, .dr-viktoriia-taylor .pd-services-section,
   .vialeta-bkharvani .pd-detail-section, .vialeta-bkharvani .pd-services-section {
     animation: none;
