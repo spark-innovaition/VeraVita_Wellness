@@ -56,22 +56,6 @@
       }
     }
 
-    /* Lock GHL iframe height so form_embed.js can't shrink it and clip the Send button */
-    #inline-svkQIwsvqmRNMwaDEgZz {
-      height: 1300px !important;
-      min-height: 1300px !important;
-    }
-    /* Ensure parent containers don't clip the iframe */
-    .cth-form-wrap,
-    .cth-body {
-      overflow: visible !important;
-    }
-    @media (max-width: 540px) {
-      #inline-svkQIwsvqmRNMwaDEgZz {
-        height: 1380px !important;
-        min-height: 1380px !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -154,26 +138,52 @@
         <img src="images/contact.jpg" alt="VeraVita wellness" class="cth-img" />
       </div>
 
-      <!-- Right: Form (GoHighLevel embed) -->
+      <!-- Right: Form -->
       <div class="cth-form-wrap">
-        <iframe
-          src="https://spark.innovaition.ca/widget/form/svkQIwsvqmRNMwaDEgZz"
-          style="width:100%;height:1300px;min-height:1300px;border:none;border-radius:8px;display:block"
-          id="inline-svkQIwsvqmRNMwaDEgZz"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Form 1"
-          data-height="1300"
-          data-layout-iframe-id="inline-svkQIwsvqmRNMwaDEgZz"
-          data-form-id="svkQIwsvqmRNMwaDEgZz"
-          title="Form 1">
-        </iframe>
-        <script src="https://spark.innovaition.ca/js/form_embed.js"></script>
+        <form class="cth-form" action="https://api.web3forms.com/submit" method="post">
+          <input type="hidden" name="access_key" value="b2dca55f-755c-443b-b6f8-1a72201fc6fb" />
+          <input type="hidden" name="subject" value="New Contact Form Submission — VeraVita" />
+          <input type="hidden" name="redirect" value="https://veravitaclinic.com/contact?submitted=true" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+          <div class="cth-form-row">
+            <div class="cth-field">
+              <label for="c-name">Name</label>
+              <input type="text" id="c-name" name="full_name" class="cth-inp" placeholder="Jane Doe" required />
+            </div>
+            <div class="cth-field">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" name="email" class="cth-inp" placeholder="example@youremail.com" required />
+            </div>
+          </div>
+          <div class="cth-form-row">
+            <div class="cth-field">
+              <label for="c-phone">Phone</label>
+              <input type="tel" id="c-phone" name="phone" class="cth-inp" placeholder="(587) 585-2524" />
+            </div>
+            <div class="cth-field">
+              <label for="c-subject">Subject</label>
+              <input type="text" id="c-subject" name="subject" class="cth-inp" placeholder="ex. IV Therapy" />
+            </div>
+          </div>
+          <div class="cth-field">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" name="message" class="cth-inp cth-textarea" rows="5" placeholder="Please type your message here..." required></textarea>
+          </div>
+          <button type="submit" class="btn-ihb btn-ihb--primary cth-submit">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Send Message</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Send Message</span>
+          </button>
+          <div class="cth-success" style="display:none; margin-top:1.25rem; padding:1rem 1.5rem; background:var(--green-pale); border-radius:0.75rem; color:var(--dark); font-weight:500;">
+            Thank you! Your message has been sent. We'll get back to you soon.
+          </div>
+        </form>
+        <script>
+          if (window.location.search.includes('submitted=true')) {
+            document.querySelector('.cth-success').style.display = 'block';
+            document.querySelector('.cth-form').reset();
+          }
+        </script>
       </div>
 
     </div>

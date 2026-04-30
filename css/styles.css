@@ -1749,11 +1749,10 @@ section { padding: 6rem 0; }
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
     url('../images/underlay pic desktop/underlay pic 5.webp') center / cover scroll;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 4rem 0;
   box-sizing: border-box;
   overflow: hidden;
 }
