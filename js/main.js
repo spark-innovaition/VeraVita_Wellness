@@ -422,19 +422,33 @@ document.querySelectorAll('.faq-item').forEach(item => {
    =========================== */
 const navToggle = document.querySelector('.navbar-toggle');
 const navMenu   = document.querySelector('.navbar-nav');
+
+function closeMobileNav() {
+  if (!navMenu || !navMenu.classList.contains('open')) return;
+  if (navToggle) navToggle.classList.remove('open');
+  document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+  gsap.to(navMenu, { opacity: 0, y: -10, duration: 0.25, onComplete: () => navMenu.classList.remove('open') });
+}
+
 if (navToggle && navMenu) {
-  navToggle.addEventListener('click', () => {
+  navToggle.addEventListener('click', e => {
+    e.stopPropagation();
     const isOpen = navMenu.classList.contains('open');
     if (isOpen) {
-      navToggle.classList.remove('open');
-      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
-      gsap.to(navMenu, { opacity: 0, y: -10, duration: 0.25, onComplete: () => navMenu.classList.remove('open') });
+      closeMobileNav();
     } else {
       navToggle.classList.add('open');
       navMenu.classList.add('open');
       gsap.fromTo(navMenu, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.25 });
     }
   });
+
+  /* Don't close when tapping inside the menu itself */
+  navMenu.addEventListener('click', e => e.stopPropagation());
+
+  /* Tap/click anywhere outside the menu to close it */
+  document.addEventListener('click', () => closeMobileNav());
+  document.addEventListener('touchstart', () => closeMobileNav(), { passive: true });
 }
 
 /* Nav-dropdown parent link: prevent navigation, toggle on mobile */

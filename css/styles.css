@@ -5180,10 +5180,54 @@ body { overflow-x: hidden; }
   .price-table .td-price { font-size: 0.9375rem; }
 }
 
-/* Hide Duration column on very small phones to avoid table overflow */
+/* On small phones, stack duration under the service name instead of hiding it */
 @media (max-width: 420px) {
-  .price-table th:nth-child(2),
-  .price-table td:nth-child(2) { display: none; }
+  /* Hide duration column header (we'll show duration inline under service name) */
+  .price-table thead th:nth-child(2) { display: none; }
+  /* Convert each row to a flex container so we can re-position cells */
+  .price-table tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    padding: 0.6rem 0.875rem;
+    column-gap: 0.75rem;
+  }
+  .price-table tbody td {
+    border: none;
+    padding: 0;
+  }
+  /* Service name on the left */
+  .price-table tbody td:first-child {
+    flex: 1 1 auto;
+    order: 1;
+    font-size: 0.9375rem;
+    line-height: 1.3;
+  }
+  /* Price stays on the right of the first row */
+  .price-table tbody td.td-price {
+    order: 2;
+    flex: 0 0 auto;
+    margin-left: auto;
+    font-size: 0.9375rem;
+  }
+  /* Duration drops to a new line, sits under the service name in the clinic green */
+  .price-table tbody td.td-dur {
+    order: 3;
+    flex: 0 0 100%;
+    display: block;
+    font-size: 0.75rem;
+    color: var(--primary);
+    font-weight: 500;
+    padding-top: 0.15rem;
+    text-align: left;
+  }
+  /* For tables that include a Book button column */
+  .price-table tbody td.td-book {
+    order: 4;
+    flex: 0 0 100%;
+    text-align: right;
+    padding-top: 0.35rem;
+  }
 }
 
 /* ========================================

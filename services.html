@@ -88,8 +88,16 @@
     }
 
     @media (max-width: 860px) {
-      .svc-grid--hub { grid-template-columns: 1fr; } /* 1 column for mobile */
-      .svc-cell--hub { padding: 2rem; }
+      .svc-grid--hub {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+        border-left: none;
+        border-top: none;
+      }
+      .svc-cell--hub {
+        padding: 2rem 0;
+        border-right: none;
+      }
+      .svc-cell--hub:last-child { border-bottom: none; }
       .svc-hero { height: 70vh; }
     }
   </style>
@@ -136,9 +144,9 @@
 
   <section class="svc-hero">
     <video class="svc-hero-video" autoplay muted loop playsinline
-      data-src-desktop="images/Service page - Hero section.mp4"
-      data-src-mobile="images/Services hero section - mobile only.mp4">
-      <source src="images/Service page - Hero section.mp4" type="video/mp4" />
+      data-src-desktop="images/main service page - desktop.mp4"
+      data-src-mobile="images/main service page - mobile.mp4">
+      <source src="images/main service page - desktop.mp4" type="video/mp4" />
     </video>
     <script>
       (function() {
@@ -197,9 +205,9 @@
           </div>
 
           <div class="svc-cell svc-cell--hub stagger-item">
-            <div class="svc-cell-img"><img src="images/acupunture - services page.png" alt="Acupuncture" /></div>
+            <div class="svc-cell-img"><img src="images/Accupuncture service tab.webp" alt="Acupuncture" /></div>
             <div class="svc-cell-body">
-              <span class="svc-cell-prac"><i class="fa-solid fa-hand-sparkles"></i> Dr. Viktoriia Taylor, DTCM</span>
+              <span class="svc-cell-prac"><i class="fa-solid fa-hand-sparkles"></i> Dr. Viktoriia Taylor &amp; Dr. Janna Sitovska</span>
               <h3 class="svc-cell-name">Acupuncture <em>&amp; TCM</em></h3>
               <p class="svc-cell-desc">Traditional and facial acupuncture — a complete Traditional Chinese Medicine practice.</p>
               <a href="/cat-acupuncture" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
@@ -217,7 +225,7 @@
           </div>
 
           <div class="svc-cell svc-cell--hub stagger-item">
-            <div class="svc-cell-img"><img src="images/massage%20therapy%20-%20services%20page.jpg" alt="Clinical Esthetics" /></div>
+            <div class="svc-cell-img"><img src="images/Clinical Esthetics &amp; Facials - Main page.webp" alt="Clinical Esthetics" /></div>
             <div class="svc-cell-body">
               <span class="svc-cell-prac"><i class="fa-solid fa-spa"></i> Vialeta Bkharvani</span>
               <h3 class="svc-cell-name">Clinical Esthetics <em>&amp; Facials</em></h3>
@@ -227,17 +235,17 @@
           </div>
 
           <div class="svc-cell svc-cell--hub stagger-item">
-            <div class="svc-cell-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&q=80" alt="Massage" /></div>
+            <div class="svc-cell-img"><img src="images/massage therapy - services page.jpg" alt="Massage Therapy" /></div>
             <div class="svc-cell-body">
-              <span class="svc-cell-prac"><i class="fa-solid fa-hand-holding-heart"></i> Jean-Wilson Raymond, RMT</span>
+              <span class="svc-cell-prac"><i class="fa-solid fa-hand-holding-heart"></i> Jean-Wilson Raymond &amp; Svetlana Rusu</span>
               <h3 class="svc-cell-name">Massage <em>Therapy</em></h3>
               <p class="svc-cell-desc">Therapeutic and prenatal massage program led by our Registered Massage Therapists.</p>
-              <a href="/cat-massage-therapy" class="svc-cell-link">Explore <cite class="fa-solid fa-arrow-right"></cite></a>
+              <a href="/cat-massage-therapy" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
           <div class="svc-cell svc-cell--hub stagger-item">
-            <div class="svc-cell-img"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80" alt="Osteopathy" /></div>
+            <div class="svc-cell-img"><img src="images/osteopathy - services page.png" alt="Osteopathy" /></div>
             <div class="svc-cell-body">
               <span class="svc-cell-prac"><i class="fa-solid fa-person-rays"></i> Amy Lutz, MOMSc</span>
               <h3 class="svc-cell-name">Osteopathic <em>Manual Therapy</em></h3>
@@ -275,7 +283,11 @@
             <ul class="sf-links"><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/terms-of-service">Terms of Service</a></li><li><a href="/cookie-policy">Cookie Policy</a></li></ul>
           </div>
         </div>
-        <div class="sf-bottom"><p>&copy; 2026 VeraVita Wellness & Aesthetics. All rights reserved.</p></div>
+        <div class="sf-bottom">
+          <p>&copy; 2026 VeraVita Wellness &amp; Aesthetics. All rights reserved.</p>
+          <p>Calgary, AB &middot; Naturopathic &amp; Aesthetic Medicine</p>
+          <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
+        </div>
       </div>
     </div>
   </footer>
