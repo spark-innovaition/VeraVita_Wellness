@@ -23,7 +23,9 @@
   <url><loc>https://www.veravitaclinic.com/dr-jill-nazar</loc></url>
   <url><loc>https://www.veravitaclinic.com/dr-susan-mankaeva</loc></url>
   <url><loc>https://www.veravitaclinic.com/dr-viktoriia-taylor</loc></url>
+  <url><loc>https://www.veravitaclinic.com/dr-janna-sitovska</loc></url>
   <url><loc>https://www.veravitaclinic.com/vialeta-bkharvani</loc></url>
+  <url><loc>https://www.veravitaclinic.com/svetlana-rusu</loc></url>
 
   <!-- Naturopathic Services -->
   <url><loc>https://www.veravitaclinic.com/service-naturopathic</loc></url>
@@ -49,6 +51,8 @@
   <url><loc>https://www.veravitaclinic.com/service-acupuncture-childrens</loc></url>
   <url><loc>https://www.veravitaclinic.com/service-acupuncture-cupping</loc></url>
   <url><loc>https://www.veravitaclinic.com/service-acupuncture-tui-na</loc></url>
+  <url><loc>https://www.veravitaclinic.com/service-acupuncture-ear-seed</loc></url>
+  <url><loc>https://www.veravitaclinic.com/service-acupuncture-telemedicine</loc></url>
 
   <!-- Medical Aesthetics Services -->
   <url><loc>https://www.veravitaclinic.com/service-aesthetics</loc></url>
@@ -57,9 +61,11 @@
   <url><loc>https://www.veravitaclinic.com/service-dermal-fillers</loc></url>
   <url><loc>https://www.veravitaclinic.com/service-skin-tag-removal</loc></url>
   <url><loc>https://www.veravitaclinic.com/service-exosome-needling</loc></url>
-  <url><loc>https://www.veravitaclinic.com/service-exo-hair</loc></url>
   <url><loc>https://www.veravitaclinic.com/service-derma-needling</loc></url>
   <url><loc>https://www.veravitaclinic.com/service-microdermabrasion</loc></url>
+  <url><loc>https://www.veravitaclinic.com/service-forehead-refresh</loc></url>
+  <url><loc>https://www.veravitaclinic.com/service-eye-refresh</loc></url>
+  <url><loc>https://www.veravitaclinic.com/service-jawline-masseter</loc></url>
 
   <!-- Clinical Esthetics & Facials -->
   <url><loc>https://www.veravitaclinic.com/service-clinical-esthetics</loc></url>
@@ -70,7 +76,7 @@
   <url><loc>https://www.veravitaclinic.com/service-facial-relaxation</loc></url>
   <url><loc>https://www.veravitaclinic.com/service-facial-extraction</loc></url>
   <url><loc>https://www.veravitaclinic.com/service-facial-dermaplaning</loc></url>
-  <url><loc>https://www.veravitaclinic.com/service-facial-green-peel</loc></url>
+  <url><loc>https://www.veravitaclinic.com/service-elevated-skin-renewal</loc></url>
 
   <!-- Massage Therapy Services -->
   <url><loc>https://www.veravitaclinic.com/service-massage-therapy</loc></url>
@@ -81,6 +87,10 @@
   <url><loc>https://www.veravitaclinic.com/service-tmj-massage</loc></url>
   <url><loc>https://www.veravitaclinic.com/service-paediatric-massage</loc></url>
   <url><loc>https://www.veravitaclinic.com/service-massage-addons</loc></url>
+  <url><loc>https://www.veravitaclinic.com/service-craniosacral-massage</loc></url>
+  <url><loc>https://www.veravitaclinic.com/service-reflexology-massage</loc></url>
+  <url><loc>https://www.veravitaclinic.com/service-anti-cellulite-massage</loc></url>
+  <url><loc>https://www.veravitaclinic.com/service-visceral-massage</loc></url>
 
   <!-- Osteopathy Services -->
   <url><loc>https://www.veravitaclinic.com/service-osteopathy</loc></url>

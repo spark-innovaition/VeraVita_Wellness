@@ -3922,15 +3922,21 @@ body { overflow-x: hidden; }
 .dr-susan-mankaeva  { --dr-underlay: url('../images/underlay pic desktop/underlay pic 20.webp'); }
 .dr-viktoriia-taylor { --dr-underlay: url('../images/underlay pic desktop/underlay pic 21.webp'); }
 .vialeta-bkharvani   { --dr-underlay: url('../images/underlay pic desktop/underlay pic 22.webp'); }
+.dr-janna-sitovska   { --dr-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
+.svetlana-rusu       { --dr-underlay: url('../images/underlay pic desktop/underlay pic 36.webp'); }
 
 .dr-jill-nazar .pd-detail-section,
 .dr-susan-mankaeva .pd-detail-section,
 .dr-viktoriia-taylor .pd-detail-section,
 .vialeta-bkharvani .pd-detail-section,
+.dr-janna-sitovska .pd-detail-section,
+.svetlana-rusu .pd-detail-section,
 .dr-jill-nazar .pd-services-section,
 .dr-susan-mankaeva .pd-services-section,
 .dr-viktoriia-taylor .pd-services-section,
-.vialeta-bkharvani .pd-services-section {
+.vialeta-bkharvani .pd-services-section,
+.dr-janna-sitovska .pd-services-section,
+.svetlana-rusu .pd-services-section {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
     var(--dr-underlay) center / cover scroll;
@@ -4145,18 +4151,26 @@ body { overflow-x: hidden; }
 .svc-acupuncture-tui-na      .sd-body,
 .svc-acupuncture-cosmetic    .sd-body,
 .svc-acupuncture-tcm         .sd-body,
+.svc-acupuncture-ear-seed    .sd-body,
+.svc-acupuncture-telemedicine .sd-body,
+.svc-craniosacral-massage    .sd-body,
+.svc-reflexology-massage     .sd-body,
+.svc-anti-cellulite-massage  .sd-body,
+.svc-visceral-massage        .sd-body,
+.svc-forehead-refresh        .sd-body,
+.svc-eye-refresh             .sd-body,
+.svc-jawline-masseter        .sd-body,
 .svc-clinical-esthetics      .sd-body,
 .svc-facial-acne             .sd-body,
 .svc-facial-anti-aging       .sd-body,
 .svc-facial-dermaplaning     .sd-body,
 .svc-facial-european         .sd-body,
 .svc-facial-extraction       .sd-body,
-.svc-facial-green-peel       .sd-body,
 .svc-facial-relaxation       .sd-body,
 .svc-microdermabrasion       .sd-body,
 .svc-derma-needling          .sd-body,
 .svc-exosome-needling        .sd-body,
-.svc-exo-hair                .sd-body,
+.svc-elevated-skin-renewal   .sd-body,
 .svc-skin-tag-removal        .sd-body {
   background:
     linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
@@ -4183,6 +4197,17 @@ body { overflow-x: hidden; }
 .svc-acupuncture-tui-na      { --svc-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
 .svc-acupuncture-cosmetic    { --svc-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
 .svc-acupuncture-tcm         { --svc-underlay: url('../images/underlay pic desktop/underlay pic 23.webp'); }
+.svc-acupuncture-ear-seed    { --svc-underlay: url('../images/underlay pic desktop/underlay pic 35.webp'); }
+.svc-acupuncture-telemedicine { --svc-underlay: url('../images/underlay pic desktop/underlay pic 38.webp'); }
+/* Massage Therapy specialty pages */
+.svc-craniosacral-massage    { --svc-underlay: url('../images/underlay pic desktop/underlay pic 41.webp'); }
+.svc-reflexology-massage     { --svc-underlay: url('../images/underlay pic desktop/underlay pic 42.webp'); }
+.svc-anti-cellulite-massage  { --svc-underlay: url('../images/underlay pic desktop/underlay pic 43.webp'); }
+.svc-visceral-massage        { --svc-underlay: url('../images/underlay pic desktop/underlay pic 44.webp'); }
+/* Medical Aesthetics — Dr. Mankaeva named treatments */
+.svc-forehead-refresh        { --svc-underlay: url('../images/underlay pic desktop/underlay pic 49.webp'); }
+.svc-eye-refresh             { --svc-underlay: url('../images/underlay pic desktop/underlay pic 50.webp'); }
+.svc-jawline-masseter        { --svc-underlay: url('../images/underlay pic desktop/underlay pic 51.webp'); }
 /* Clinical Esthetics pages */
 .svc-clinical-esthetics  { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
 .svc-facial-acne         { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
@@ -4190,12 +4215,11 @@ body { overflow-x: hidden; }
 .svc-facial-dermaplaning { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
 .svc-facial-european     { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
 .svc-facial-extraction   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
-.svc-facial-green-peel   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
 .svc-facial-relaxation   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
 .svc-microdermabrasion   { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
 .svc-derma-needling      { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
 .svc-exosome-needling    { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
-.svc-exo-hair            { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
+.svc-elevated-skin-renewal { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
 .svc-skin-tag-removal    { --svc-underlay: url('../images/underlay pic desktop/underlay pic 24.webp'); }
 .sd-body-inner {
   display: grid;
@@ -4760,12 +4784,11 @@ body { overflow-x: hidden; }
   .svc-facial-dermaplaning,
   .svc-facial-european,
   .svc-facial-extraction,
-  .svc-facial-green-peel,
   .svc-facial-relaxation,
   .svc-microdermabrasion,
   .svc-derma-needling,
   .svc-exosome-needling,
-  .svc-exo-hair,
+  .svc-elevated-skin-renewal,
   .svc-skin-tag-removal        { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-vickievj-5092641.jpg'); }
 
   /* Also override sd-body opacity for service pages on mobile */
@@ -4781,9 +4804,10 @@ body { overflow-x: hidden; }
   .svc-clinical-esthetics .sd-body, .svc-facial-acne .sd-body,
   .svc-facial-anti-aging .sd-body, .svc-facial-dermaplaning .sd-body,
   .svc-facial-european .sd-body, .svc-facial-extraction .sd-body,
-  .svc-facial-green-peel .sd-body, .svc-facial-relaxation .sd-body,
+  .svc-facial-relaxation .sd-body,
   .svc-microdermabrasion .sd-body, .svc-derma-needling .sd-body,
-  .svc-exosome-needling .sd-body, .svc-exo-hair .sd-body,
+  .svc-exosome-needling .sd-body,
+  .svc-elevated-skin-renewal .sd-body,
   .svc-skin-tag-removal .sd-body {
     background:
       linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
@@ -4795,12 +4819,16 @@ body { overflow-x: hidden; }
   .dr-susan-mankaeva  { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-mirza-farhan-140378-12951726.jpg'); }
   .dr-viktoriia-taylor { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-photosbyanas-17672394.jpg'); }
   .vialeta-bkharvani   { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-plantpool-images-2222972-4039949.jpg'); }
+  .dr-janna-sitovska   { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-photosbyanas-17672394.jpg'); }
+  .svetlana-rusu       { --dr-underlay: url('../images/mobile%20overlay%20pic/pexels-plantpool-images-2222972-4039949.jpg'); }
 
   /* Also override pd sections opacity */
   .dr-jill-nazar .pd-detail-section, .dr-jill-nazar .pd-services-section,
   .dr-susan-mankaeva .pd-detail-section, .dr-susan-mankaeva .pd-services-section,
   .dr-viktoriia-taylor .pd-detail-section, .dr-viktoriia-taylor .pd-services-section,
-  .vialeta-bkharvani .pd-detail-section, .vialeta-bkharvani .pd-services-section {
+  .vialeta-bkharvani .pd-detail-section, .vialeta-bkharvani .pd-services-section,
+  .dr-janna-sitovska .pd-detail-section, .dr-janna-sitovska .pd-services-section,
+  .svetlana-rusu .pd-detail-section, .svetlana-rusu .pd-services-section {
     background:
       linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
       var(--dr-underlay) center / cover;
@@ -4840,7 +4868,9 @@ body { overflow-x: hidden; }
   .dr-jill-nazar .pd-detail-section, .dr-jill-nazar .pd-services-section,
   .dr-susan-mankaeva .pd-detail-section, .dr-susan-mankaeva .pd-services-section,
   .dr-viktoriia-taylor .pd-detail-section, .dr-viktoriia-taylor .pd-services-section,
-  .vialeta-bkharvani .pd-detail-section, .vialeta-bkharvani .pd-services-section {
+  .vialeta-bkharvani .pd-detail-section, .vialeta-bkharvani .pd-services-section,
+  .dr-janna-sitovska .pd-detail-section, .dr-janna-sitovska .pd-services-section,
+  .svetlana-rusu .pd-detail-section, .svetlana-rusu .pd-services-section {
     animation: none;
     background-position: center center;
     background-size: cover;
