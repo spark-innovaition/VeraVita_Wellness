@@ -5180,51 +5180,74 @@ body { overflow-x: hidden; }
   .price-table .td-price { font-size: 0.9375rem; }
 }
 
-/* On small phones, stack duration under the service name instead of hiding it */
-@media (max-width: 420px) {
-  /* Hide duration column header (we'll show duration inline under service name) */
+/* On phones, stack duration under the service name as a subtitle */
+@media (max-width: 500px) {
+  /* Break out of table layout so flex on rows fills the full width predictably */
+  .price-table,
+  .price-table thead,
+  .price-table tbody { display: block; width: 100%; }
+  /* Header bar — span full width with Service on the left, Price on the right */
+  .price-table thead tr {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .price-table thead th {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+  }
+  .price-table thead th:last-child {
+    flex: 0 0 auto;
+    text-align: right;
+  }
+  /* Hide duration column header (duration shown inline under each name instead) */
   .price-table thead th:nth-child(2) { display: none; }
-  /* Convert each row to a flex container so we can re-position cells */
+  /* Each row becomes a flex container that fills the row width */
   .price-table tbody tr {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
-    padding: 0.6rem 0.875rem;
-    column-gap: 0.75rem;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
   }
   .price-table tbody td {
+    display: block;
     border: none;
     padding: 0;
   }
-  /* Service name on the left */
+  /* Service name on the left — grows from 0 so the row always fills its container */
   .price-table tbody td:first-child {
-    flex: 1 1 auto;
+    flex: 1 1 0;
+    min-width: 0;
     order: 1;
     font-size: 0.9375rem;
     line-height: 1.3;
+    padding-right: 0.75rem;
+    overflow-wrap: anywhere;
   }
-  /* Price stays on the right of the first row */
+  /* Price flush to the right of the first row */
   .price-table tbody td.td-price {
-    order: 2;
     flex: 0 0 auto;
-    margin-left: auto;
+    order: 2;
     font-size: 0.9375rem;
+    text-align: right;
   }
   /* Duration drops to a new line, sits under the service name in the clinic green */
   .price-table tbody td.td-dur {
-    order: 3;
     flex: 0 0 100%;
-    display: block;
+    order: 3;
     font-size: 0.75rem;
     color: var(--primary);
     font-weight: 500;
-    padding-top: 0.15rem;
+    padding-top: 0.2rem;
     text-align: left;
   }
   /* For tables that include a Book button column */
   .price-table tbody td.td-book {
-    order: 4;
     flex: 0 0 100%;
+    order: 4;
     text-align: right;
     padding-top: 0.35rem;
   }

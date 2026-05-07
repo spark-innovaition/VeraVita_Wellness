@@ -443,12 +443,24 @@ if (navToggle && navMenu) {
     }
   });
 
-  /* Don't close when tapping inside the menu itself */
+  /* Don't close when interacting inside the menu itself */
   navMenu.addEventListener('click', e => e.stopPropagation());
 
-  /* Tap/click anywhere outside the menu to close it */
+  /* Tap/click anywhere outside the menu closes it */
   document.addEventListener('click', () => closeMobileNav());
-  document.addEventListener('touchstart', () => closeMobileNav(), { passive: true });
+
+  /* Closing the menu on scroll — record the scroll position when the menu opens
+     so accidental sub-pixel scroll on tap doesn't immediately close it */
+  let openScrollY = 0;
+  const observeOpen = new MutationObserver(() => {
+    if (navMenu.classList.contains('open')) openScrollY = window.scrollY;
+  });
+  observeOpen.observe(navMenu, { attributes: true, attributeFilter: ['class'] });
+
+  window.addEventListener('scroll', () => {
+    if (!navMenu.classList.contains('open')) return;
+    if (Math.abs(window.scrollY - openScrollY) > 10) closeMobileNav();
+  }, { passive: true });
 }
 
 /* Nav-dropdown parent link: prevent navigation, toggle on mobile */
