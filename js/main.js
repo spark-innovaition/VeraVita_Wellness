@@ -118,7 +118,7 @@ gsap.ticker.lagSmoothing(500, 33);
       ctx.fillStyle    = '#1e3528';
       ctx.letterSpacing = '0.18em';
       ctx.font         = `600 ${labelPx}px "DM Sans", sans-serif`;
-      ctx.fillText('NATUROPATHIC & AESTHETIC MEDICINE · CALGARY', w / 2, labelY);
+      ctx.fillText('NATUROPATHIC MEDICINE · CALGARY', w / 2, labelY);
       ctx.letterSpacing = '0px';
     }
   }
