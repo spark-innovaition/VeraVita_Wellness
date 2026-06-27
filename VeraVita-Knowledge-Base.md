@@ -139,6 +139,15 @@ Licensed Family Physician practising in Canada since 2007; CBAM, CPSA, CCFP memb
 ACATCM Calgary graduate, licensed with the College of Acupuncturists of Alberta. Former Western MD in Ukraine (10+ years).
 **Helps with:** women's health/hormones/fertility, pain management, cosmetic facial acupuncture, digestive disorders, trauma recovery, anxiety/depression/stress/sleep, complex chronic presentations.
 
+### Joseph Wei, Dr. Ac. — Registered Acupuncturist
+
+**Profile URL:** https://www.veravitaclinic.com/joseph-wei
+**Direct booking:** https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/18
+
+Registered Acupuncturist with 20+ years of clinical experience integrating Traditional Chinese Medicine (TCM) and modern diagnostics.
+**Helps with:** comprehensive pain management (headaches, migraines, sciatica, sports/work injuries), weight management & detoxification, women's health & fertility, vision & eye health (children & adults), stress, anxiety, insomnia, and digestive wellness.
+**Languages Spoken:** English, Mandarin, Cantonese, Italian, and French.
+
 ### Vialeta Bkharvani — Advanced Clinical Esthetician
 
 **Profile URL:** https://www.veravitaclinic.com/vialeta-bkharvani
