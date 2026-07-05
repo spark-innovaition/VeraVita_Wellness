@@ -3,7 +3,79 @@
    GSAP + ScrollTrigger + Lenis
    =========================== */
 
-/* ---- Hero video source injection (device-aware) ---- */
+/* ============================================
+   DYNAMIC NAVBAR INJECTION (Site-wide)
+   Centralized navigation for easy updating
+   ============================================ */
+(function injectNavbar() {
+  const navbarElement = document.querySelector('.navbar');
+  if (!navbarElement) return;
+
+  const currentPath = window.location.pathname;
+  const isHome = currentPath === '/' || currentPath.endsWith('index.html');
+  
+  navbarElement.innerHTML = `
+    <div class="container">
+      <div class="navbar-inner">
+
+        <a href="/" class="navbar-logo">
+          <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img logo-img--desktop"
+               onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+          <img src="images/Logo/favicon.png" alt="VeraVita" class="logo-img logo-img--mobile" />
+          <div class="logo-icon" style="display:none;">
+            <img src="images/Logo/favicon.png" alt="VeraVita" style="width:100%;height:100%;object-fit:contain;" />
+          </div>
+          <span class="logo-text" style="display:none;">VeraVita</span>
+        </a>
+
+        <ul class="navbar-nav">
+          <li><a href="/" class="nav-link ${isHome ? 'active' : ''}">Home</a></li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link ${currentPath.includes('cat-') || currentPath.includes('services') ? 'active' : ''}">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
+            <div class="nav-dropdown-menu">
+              <a href="/cat-naturopathic.html" class="nav-dd-item">
+                <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
+                <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+              </a>
+              <a href="/cat-iv-therapy.html" class="nav-dd-item">
+                <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
+                <div class="nav-dd-text"><strong>Testing & IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
+              </a>
+              <a href="/cat-acupuncture.html" class="nav-dd-item">
+                <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+                <div class="nav-dd-text"><strong>Acupuncture & TCM</strong><span>Leads: Dr. Viktoriia Taylor & Joseph Wei</span></div>
+              </a>
+              <a href="/cat-massage-therapy.html" class="nav-dd-item">
+                <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Leads: Jean-Wilson, Lisseth & Johnvel</span></div>
+              </a>
+              <a href="/cat-osteopathy.html" class="nav-dd-item">
+                <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
+                <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Amy Lutz, MOMSc</span></div>
+              </a>
+            </div>
+          </li>
+          <li><a href="/about.html" class="nav-link ${currentPath.includes('about') ? 'active' : ''}">About</a></li>
+          <li><a href="/practitioners.html" class="nav-link ${currentPath.includes('practitioners') ? 'active' : ''}">Practitioners</a></li>
+          <li><a href="/contact.html" class="nav-link ${currentPath.includes('contact') ? 'active' : ''}">Contact</a></li>
+        </ul>
+
+        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+          <span class="btn-ihb-blob"></span>
+          <span class="btn-ihb-default">Book an appointment</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+        </a>
+
+        <button class="navbar-toggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+    </div>
+  `;
+})();
+
+   /* ---- Hero video source injection (device-aware) ---- */
 const isMobile = window.matchMedia('(max-width: 768px)').matches;
 (function () {
   const v = document.getElementById('hero-video');
@@ -651,7 +723,19 @@ document.querySelectorAll('.team-card').forEach(card => {
     { quote: "I had a very positive experience with Dr. Jill Nazar — she took the time to truly listen and understand my concerns, offered a thoughtful and holistic approach, and provided clear, personalized recommendations that fit my lifestyle.", name: "Olena Tanasescu", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 30.webp", img: "images/Review images/Review 30.webp" },
     { quote: "Exceptional! Highly recommend — everyone needs to do this. It is life changing for the better.", name: "Ace O", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 31.webp", img: "images/Review images/Review 31.webp" },
     { quote: "Jill has exceptional experience and amazing competency with Naturopathy.", name: "Dean Leblanc", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 32.webp", img: "images/Review images/Review 32.webp" },
-    { quote: "Dr. Jill is very accommodating and whatever she does with my spine problem it helps ease the discomfort and pain. Highly recommended.", name: "J. Roetag", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 33.webp", img: "images/Review images/Review 33.webp" }
+    { quote: "Dr. Jill is very accommodating and whatever she does with my spine problem it helps ease the discomfort and pain. Highly recommended.", name: "J. Roetag", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 33.webp", img: "images/Review images/Review 33.webp" },
+    { quote: "Highly recommend Veravita Naturopathic Clinic! Dr. Jill Navar is knowledgeable, caring, and takes the time to understand your concerns. Aisha is always friendly, helpful, and makes every visit seamless.", name: "Liberty Bustos", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 34.webp", img: "images/Review images/Review 34.webp" },
+    { quote: "Dr. Jill was such a sweetheart! She made the whole cozy vibe even more comfortable. It's very easy to communicate with all the doctors. Messages come back with replies almost immediately.", name: "Oksana Meheriuk", role: "IV Therapy · Google Review", avatar: "images/Review images/Review 35.webp", img: "images/Review images/Review 35.webp" },
+    { quote: "Dr. Jill is amazing- only doctor I will let give me an IV and it’s never a traumatizing experience. Thank you for everything!", name: "Kali Rempel", role: "IV Therapy · Google Review", avatar: "images/Review images/Review 36.webp", img: "images/Review images/Review 36.webp" },
+    { quote: "Dr. Jill is both friendly and highly professional. She is incredibly accommodating and sets realistic goals that are easy to achieve. With her guidance, you can truly see the progress and watch your goals become a reality.", name: "Anu Rajappan", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 37.webp", img: "images/Review images/Review 37.webp" },
+    { quote: "I’ve been seeing this naturopath for about a year now, and I’m very happy with my experience. She is knowledgeable, attentive, and truly takes the time to listen and understand my concerns.", name: "Anna", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 38.webp", img: "images/Review images/Review 38.webp" },
+    { quote: "Dr. Nazar was genuine and took the time to listen to my concerns and health history. She asked for details and clarifications as we went along, too. It was my initial visit at the clinic and I felt welcome and comfortable.", name: "R M", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 39.webp", img: "images/Review images/Review 39.webp" },
+    { quote: "Massage therapist is really experienced and skilled. Every time I can feel the difference between before & after my sessions with him! I strongly recommend him.", name: "M. R.", role: "Massage Therapy · Google Review", avatar: "images/Review images/Review 40.webp", img: "images/Review images/Review 40.webp" },
+    { quote: "Dr. Jill is extremely knowledgeable, professional, and truly cares about her patients’ well-being. Her guidance and encouragement motivated my husband to adopt a healthier lifestyle, and the results have been amazing.", name: "Natalia Alaev", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 41.webp", img: "images/Review images/Review 41.webp" },
+    { quote: "I had a great experience at my naturopath visit. I felt listened to, and the care was thoughtful and personalized. I’m very happy with Dr.Jill Nazar and would definitely recommend her.", name: "Maryna Kravchenko", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 42.webp", img: "images/Review images/Review 42.webp" },
+    { quote: "Very helpful and highly knowledgeable. Highly recommended.", name: "Janice Cruz", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 43.webp", img: "images/Review images/Review 43.webp" },
+    { quote: "Amazing first visit. Great vibe, super helpful team, and honestly the best naturopath clinic I’ve been to!", name: "John Remiel Yamson", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 44.webp", img: "images/Review images/Review 44.webp" },
+    { quote: "First time visiting this clinic and it was such a good experience. Everyone was warm, professional, and genuinely caring. Definitely feels like the best naturopath clinic around!!", name: "ANISSA JOY PEREZ", role: "Naturopathic Care · Google Review", avatar: "images/Review images/Review 45.webp", img: "images/Review images/Review 45.webp" }
   ];
 
   const cards     = section.querySelectorAll('.at-card');
