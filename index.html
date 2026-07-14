@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="preload" as="image" href="images/bg-hero-section.webp" />
+  <!-- UPDATED PRELOAD PATH -->
+  <link rel="preload" as="image" href="images/Home page/Desktop 21-9 - Home page hero.webp" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   
   <style>
@@ -25,24 +26,42 @@
       animation: subtleFade 1s ease-out forwards;
     }
 
-    /* STATIC EDITORIAL HERO */
+    /* STICKY NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Subtle shadow to separate from content */
+      width: 100%;
+    }
+
+    /* LIGHT & CLEAN EDITORIAL HERO */
     .ph-standard-hero {
       position: relative; 
-      height: 100vh;
+      /* Adjust height slightly to account for sticky navbar so it doesn't get cut off */
+      height: calc(100vh - 80px); 
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(to bottom, rgba(30, 53, 40, 0.5), rgba(30, 53, 40, 0.85)), url('images/bg-hero-section.webp') center/cover no-repeat;
+      /* UPDATED HERO IMAGE PATH */
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.85)), url('images/Home page/Desktop 21-9 - Home page hero.webp') center/cover no-repeat;
       background-attachment: fixed;
+    }
+    @media (max-width: 768px) {
+      .ph-standard-hero {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), url('images/Home page/Mobile - Home page hero.webp') center/cover no-repeat;
+        background-attachment: scroll;
+      }
     }
     .ph-standard-hero .hero-content {
       position: relative;
       z-index: 2; 
       max-width: 800px;
       padding: 0 20px;
-      color: #fff;
+      color: #1e3528;
     }
     .ph-standard-hero .hero-eyebrow {
       font-family: 'DM Sans', sans-serif; 
@@ -51,18 +70,32 @@
       text-transform: uppercase;
       font-size: 0.85rem;
       margin-bottom: 1rem;
+      color: #4a6b53;
     }
     .ph-standard-hero .hero-heading {
       font-family: 'Libre Caslon Text', serif; 
       font-size: clamp(2.5rem, 6vw, 4.5rem);
       line-height: 1.1;
       margin-bottom: 1.5rem;
+      color: #1e3528;
     }
     .ph-standard-hero .hero-sub {
       font-family: 'DM Sans', sans-serif; 
       font-size: clamp(1rem, 2vw, 1.125rem);
       margin-bottom: 2rem;
-      opacity: 0.9;
+      opacity: 0.85;
+      color: #333333;
+    }
+
+    /* ALTERNATING SECTION BACKGROUNDS */
+    .hwnu-section {
+      background-color: #ffffff; /* White */
+      padding: 5rem 0;
+    }
+    
+    .wcu-section {
+      background-color: #f7faf8; /* Soft Off-White/Green */
+      padding: 5rem 0;
     }
 
     /* BENTO GRID */
@@ -130,11 +163,19 @@
     .testi-author-info strong { display: block; font-size: 0.95rem; color: #1e3528; }
     .testi-author-info span { font-size: 0.8rem; color: #666; }
 
-    /* STATIC SERVICES ACCORDION BACKGROUND */
+    /* CLEAN SERVICES ACCORDION BACKGROUND */
     .services-accord-section {
       position: relative;
-      background: #1e3528 url('images/bg-hero-section.webp') center/cover no-repeat;
-      background-blend-mode: overlay;
+      background: #ffffff; /* White (Alternating) */
+      padding: 5rem 0;
+      border-top: 1px solid #eaeaea;
+    }
+    .accord-video-overlay {
+      display: none;
+    }
+    .services-accord-content .section-label,
+    .services-accord-content .heading-wrap {
+      color: #1e3528 !important; 
     }
 
     /* Desktop-only swap: Our Promise before Here when you need us */
@@ -144,10 +185,10 @@
       .hp-swap-wrap .wcu-section { order: 2; }
     }
 
-    /* FULL-WIDTH TEAM SECTION (Fit 7 Cards) */
+    /* CLEAN TEAM SECTION */
     .team-section {
       padding: 6rem 0 7rem 0;
-      background-color: #1e3528; 
+      background-color: #ffffff; /* White (Alternating) */
       overflow: hidden;
     }
     .team-header-center {
@@ -165,37 +206,37 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-bottom: 1rem;
-      color: #b0c4b1;
+      color: #4a6b53;
     }
     .team-header-center h2 {
       font-family: 'Libre Caslon Text', serif;
       font-size: clamp(2.5rem, 5vw, 3.5rem);
       line-height: 1.1;
       margin-bottom: 1.5rem;
-      color: #ffffff !important; /* Force white to override styles.css */
+      color: #1e3528 !important; 
     }
     .team-header-center p {
       font-family: 'DM Sans', sans-serif;
       font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.85) !important; /* Force readable white */
+      color: #4a4a4a !important; 
       margin-bottom: 2.5rem;
       line-height: 1.6;
     }
     
     .full-width-track {
       display: flex;
-      gap: 1vw; /* Responsive gap */
-      padding: 0 2vw; /* Slight edge padding */
+      gap: 1vw; 
+      padding: 0 2vw; 
       width: 100%;
-      max-width: 1600px; /* Constrain slightly on massive 4k monitors */
+      max-width: 1600px; 
       margin: 0 auto;
     }
     
     .team-card-large {
       position: relative;
-      flex: 1 1 0; /* Forces all 7 cards to share width equally */
-      min-width: 0; /* Required for flex shrinking to work correctly */
-      height: 420px; /* Beautiful tall portrait proportions */
+      flex: 1 1 0; 
+      min-width: 0; 
+      height: 420px; 
       border-radius: 1.5rem;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
@@ -228,7 +269,7 @@
     .tc-name {
       display: block;
       font-family: 'Libre Caslon Text', serif;
-      font-size: clamp(1rem, 1.5vw, 1.25rem); /* Responsive font sizing */
+      font-size: clamp(1rem, 1.5vw, 1.25rem); 
       margin-bottom: 0.25rem;
     }
     .tc-title {
@@ -252,8 +293,6 @@
     .snap-track::-webkit-scrollbar { display: none; }
     .snap-item { scroll-snap-align: center; flex-shrink: 0; }
 
-    /* MOBILE GRACEFUL DEGRADATION: 
-       Reverts to scroll-snap if screen is too narrow to fit 7 columns beautifully */
     @media (max-width: 1024px) {
       .full-width-track {
         overflow-x: auto;
@@ -263,9 +302,38 @@
       }
       .full-width-track::-webkit-scrollbar { display: none; }
       .team-card-large {
-        flex: 0 0 280px; /* Restores fixed width for mobile scrolling */
+        flex: 0 0 280px; 
         scroll-snap-align: center;
       }
+    }
+
+    /* MOBILE NAV & BOOKING VISIBILITY */
+    .mobile-book-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      padding: 1rem;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* Hide the bottom mobile book bar on desktop since the top nav is now sticky */
+    @media (min-width: 769px) {
+      .mobile-book-bar {
+        display: none;
+      }
+    }
+
+    .navbar-nav.open {
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .navbar-nav.open a {
+      color: #1e3528;
     }
   </style>
 </head>
@@ -392,13 +460,13 @@
 </div>
 
 <section class="services-accord-section">
-  <div class="accord-video-overlay" style="background: rgba(30, 53, 40, 0.75);"></div>
+  <div class="accord-video-overlay"></div>
 
   <div class="container" style="position:relative;z-index:1;">
     <div class="services-accord-inner">
       <div class="services-accord-content">
-        <div class="section-label" style="color:var(--gray-3)">What We Offer</div>
-        <h2 class="heading-wrap" style="color:var(--white)"><span class="heading-inner">Treatments centred<br />around your needs</span></h2>
+        <div class="section-label">What We Offer</div>
+        <h2 class="heading-wrap"><span class="heading-inner">Treatments centred<br />around your needs</span></h2>
         <div class="accord-list">
 
           <div class="accord-item">
@@ -500,7 +568,7 @@
   </div>
 </section>
 
-<!-- SCROLL-SNAP TESTIMONIALS -->
+<!-- SCROLL-SNAP TESTIMONIALS (Alternating Background) -->
 <section style="padding: 5rem 0; background-color: #f7faf8;">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
@@ -567,13 +635,12 @@
     <div class="section-label">
       <i class="fa-solid fa-heart"></i> Here When You Need Us
     </div>
-    <!-- Added inline colors to force visibility over any global style conflicts -->
-    <h2 style="color: #ffffff !important;">Caring professionals,<br /><em>Advanced solutions</em></h2>
-    <p style="color: rgba(255,255,255,0.85) !important;">Each practitioner brings years of experience, specialised knowledge, and a compassionate approach to help you achieve optimal health.</p>
-    <a href="/about.html" class="btn-ihb btn-ihb--primary" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
-      <span class="btn-ihb-blob" style="background: #fff;"></span>
+    <h2>Caring professionals,<br /><em>Advanced solutions</em></h2>
+    <p>Each practitioner brings years of experience, specialised knowledge, and a compassionate approach to help you achieve optimal health.</p>
+    <a href="/about.html" class="btn-ihb btn-ihb--primary">
+      <span class="btn-ihb-blob"></span>
       <span class="btn-ihb-default">Meet our entire team</span>
-      <span class="btn-ihb-reveal" style="color: #1e3528;"><i class="fa-solid fa-arrow-right"></i> Meet our entire team</span>
+      <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Meet our entire team</span>
     </a>
   </div>
   
