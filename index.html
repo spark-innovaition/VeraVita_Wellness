@@ -6,195 +6,306 @@
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
   <title>VeraVita Naturopathic Clinic | Naturopathic Medicine Calgary</title>
   <meta name="description" content="VeraVita Naturopathic Clinic offers personalized naturopathic medicine in Calgary. Elevated care, renewed confidence." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preload" as="image" href="images/bg-hero-section.webp" />
-  <link rel="preload" as="video" href="images/Home Page Video.mp4" type="video/mp4" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   
   <style>
-    /* Desktop-only swap: Our Promise before Here when you need us */
-    .hp-swap-wrap {
+    /* SOFT FADE-IN ON LOAD */
+    @keyframes subtleFade {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-load {
+      animation: subtleFade 1s ease-out forwards;
+    }
+
+    /* STATIC EDITORIAL HERO */
+    .ph-standard-hero {
+      position: relative; 
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(to bottom, rgba(30, 53, 40, 0.5), rgba(30, 53, 40, 0.85)), url('images/bg-hero-section.webp') center/cover no-repeat;
+      background-attachment: fixed;
+    }
+    .ph-standard-hero .hero-content {
+      position: relative;
+      z-index: 2; 
+      max-width: 800px;
+      padding: 0 20px;
+      color: #fff;
+    }
+    .ph-standard-hero .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif; 
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .ph-standard-hero .hero-heading {
+      font-family: 'Libre Caslon Text', serif; 
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .ph-standard-hero .hero-sub {
+      font-family: 'DM Sans', sans-serif; 
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    /* BENTO GRID */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .bento-item {
+      width: 100%;
+      height: 250px;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .bento-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .bento-item:hover img {
+      transform: scale(1.05);
+    }
+    @media (min-width: 768px) {
+      .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 200px);
+        gap: 1.5rem;
+      }
+      .bento-item:nth-child(1) { grid-column: span 2; grid-row: span 2; height: 100%; }
+      .bento-item:nth-child(2) { grid-column: span 1; grid-row: span 1; height: 100%; }
+      .bento-item:nth-child(3) { grid-column: span 1; grid-row: span 1; height: 100%; }
+    }
+
+    /* MICRO-INTERACTIONS (Cards) */
+    .wcu-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      background: transparent;
+    }
+    .wcu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+
+    /* TESTIMONIAL CARDS */
+    .testi-card {
+      width: 320px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(0,0,0,0.05);
     }
+    .testi-quote { font-style: italic; color: #4a4a4a; margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+    .testi-author { display: flex; align-items: center; gap: 1rem; }
+    .testi-author img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+    .testi-author-info strong { display: block; font-size: 0.95rem; color: #1e3528; }
+    .testi-author-info span { font-size: 0.8rem; color: #666; }
+
+    /* STATIC SERVICES ACCORDION BACKGROUND */
+    .services-accord-section {
+      position: relative;
+      background: #1e3528 url('images/bg-hero-section.webp') center/cover no-repeat;
+      background-blend-mode: overlay;
+    }
+
+    /* Desktop-only swap: Our Promise before Here when you need us */
+    .hp-swap-wrap { display: flex; flex-direction: column; }
     @media (min-width: 861px) {
       .hp-swap-wrap .hwnu-section { order: 1; }
       .hp-swap-wrap .wcu-section { order: 2; }
     }
 
-    /* STUTTER-FIX PERFORMANCE OVERRIDES */
-    
-    .hwnu-section {
-      position: relative;
-      z-index: 10;
-    }
-
-    /* Marquee styles from styles.css */
-
-    /* Marquee play state handled by JS IntersectionObserver */
-
-    /* Keep marquee images GPU-composited */
-    .hwnu-img {
-      width: 280px;
-      height: 190px;
-      aspect-ratio: 280 / 190;
-      object-fit: cover;
-      flex-shrink: 0;
-      border-radius: 1.25rem;
-      transform: translateZ(0) scale(0.95);
-      backface-visibility: hidden;
-      opacity: 0;
-      filter: blur(6px);
-      transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
-    }
-    .hwnu-img.loaded {
-      opacity: 1;
-      filter: blur(0);
-      transform: translateZ(0) scale(1);
-    }
-
-    @media (hover: hover) {
-      .hwnu-marquee:hover .hwnu-track { animation-play-state: paused; }
-    }
-
-    .tgs-word { display: inline; }
-
-    /* Testimonials: subtle parallax background */
-    .anim-testimonials {
-      position: relative;
+    /* FULL-WIDTH TEAM SECTION (Fit 7 Cards) */
+    .team-section {
+      padding: 6rem 0 7rem 0;
+      background-color: #1e3528; 
       overflow: hidden;
     }
-    .section-bg-parallax {
-      position: absolute; top: -60px; left: 0;
-      width: 100%; height: calc(100% + 120px); z-index: 0;
+    .team-header-center {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem auto;
+      padding: 0 20px;
+    }
+    .team-header-center .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      color: #b0c4b1;
+    }
+    .team-header-center h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: #ffffff !important; /* Force white to override styles.css */
+    }
+    .team-header-center p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85) !important; /* Force readable white */
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    
+    .full-width-track {
+      display: flex;
+      gap: 1vw; /* Responsive gap */
+      padding: 0 2vw; /* Slight edge padding */
+      width: 100%;
+      max-width: 1600px; /* Constrain slightly on massive 4k monitors */
+      margin: 0 auto;
+    }
+    
+    .team-card-large {
+      position: relative;
+      flex: 1 1 0; /* Forces all 7 cards to share width equally */
+      min-width: 0; /* Required for flex shrinking to work correctly */
+      height: 420px; /* Beautiful tall portrait proportions */
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background: #fff;
+    }
+    .team-card-large:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    .team-card-large img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s ease;
+    }
+    .team-card-large:hover img {
+      transform: scale(1.05);
+    }
+    .tc-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 4rem 1rem 1.5rem 1rem;
+      background: linear-gradient(to top, rgba(30,53,40,0.95), transparent);
+      color: #fff;
       pointer-events: none;
+      text-align: center;
     }
-    .anim-testimonials .section-bg-parallax {
-      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-        url('images/underlay pic desktop/underlay pic 18.webp') center / cover no-repeat;
+    .tc-name {
+      display: block;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(1rem, 1.5vw, 1.25rem); /* Responsive font sizing */
+      margin-bottom: 0.25rem;
     }
-    .anim-testimonials .container { position: relative; z-index: 1; }
+    .tc-title {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.7rem, 1vw, 0.85rem);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.9;
+    }
+
+    /* SCROLL-SNAP FOR TESTIMONIALS */
+    .snap-track {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding: 1rem 0 2rem 0;
+    }
+    .snap-track::-webkit-scrollbar { display: none; }
+    .snap-item { scroll-snap-align: center; flex-shrink: 0; }
+
+    /* MOBILE GRACEFUL DEGRADATION: 
+       Reverts to scroll-snap if screen is too narrow to fit 7 columns beautifully */
+    @media (max-width: 1024px) {
+      .full-width-track {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 1rem 5vw 3rem 5vw;
+        scrollbar-width: none;
+      }
+      .full-width-track::-webkit-scrollbar { display: none; }
+      .team-card-large {
+        flex: 0 0 280px; /* Restores fixed width for mobile scrolling */
+        scroll-snap-align: center;
+      }
+    }
   </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="container">
-    <div class="navbar-inner">
+<nav class="navbar"></nav>
 
-      <a href="/" class="navbar-logo">
-        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img logo-img--desktop"
-             onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
-        <img src="images/Logo/favicon.png" alt="VeraVita" class="logo-img logo-img--mobile" />
-        <div class="logo-icon" style="display:none;">
-          <img src="images/Logo/favicon.png" alt="VeraVita" style="width:100%;height:100%;object-fit:contain;" />
-        </div>
-        <span class="logo-text" style="display:none;">VeraVita</span>
-      </a>
-
-      <ul class="navbar-nav">
-        <li><a href="/" class="nav-link active">Home</a></li>
-        <li class="nav-dropdown">
-          <a href="#" class="nav-link">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
-          <div class="nav-dropdown-menu">
-            <a href="/cat-naturopathic.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
-              <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
-            </a>
-            <a href="/cat-iv-therapy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
-              <div class="nav-dd-text"><strong>Testing & IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
-            </a>
-            <a href="/cat-acupuncture.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
-              <div class="nav-dd-text"><strong>Acupuncture & TCM</strong><span>Leads: Dr. Taylor & Joseph Wei</span></div>
-            </a>
-            <a href="/cat-massage-therapy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Leads: Jean-Wilson, Lisseth & Johnvel</span></div>
-            </a>
-            <a href="/cat-osteopathy.html" class="nav-dd-item">
-              <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
-              <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Amy Lutz, MOMSc</span></div>
-            </a>
-          </div>
-        </li>
-        <li><a href="/about.html" class="nav-link">About</a></li>
-        <li><a href="/practitioners.html" class="nav-link">Practitioners</a></li>
-        <li><a href="/contact.html" class="nav-link">Contact</a></li>
-      </ul>
-
-      <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-        <span class="btn-ihb-blob"></span>
-        <span class="btn-ihb-default">Book an appointment</span>
-        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
-      </a>
-
-      <button class="navbar-toggle" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-
-    </div>
-  </div>
-</nav>
-
-<div class="ph-cinematic">
-  <video class="ph-cin-video" autoplay muted loop playsinline id="hero-video"></video>
-  <p class="ph-cin-label">Naturopathic Medicine · Calgary</p>
-  <div class="ph-hero-content">
-    <p class="ph-hero-pre">Naturopathic Medicine · Calgary</p>
-    <h2 class="ph-hero-heading">Elevated care,<br /><em>renewed confidence</em></h2>
-    <p class="ph-hero-sub">At VeraVita, we believe true wellness is more than treating symptoms — it's about uncovering root causes, restoring balance, and helping you feel your absolute best, inside and out.</p>
+<!-- EDITORIAL HERO SECTION -->
+<header class="ph-standard-hero">
+  <div class="container hero-content fade-in-load">
+    <p class="hero-eyebrow">Naturopathic Medicine · Calgary</p>
+    <h1 class="hero-heading">Elevated care,<br /><em>renewed confidence</em></h1>
+    <p class="hero-sub">At VeraVita, we believe true wellness is more than treating symptoms — it's about uncovering root causes, restoring balance, and helping you feel your absolute best, inside and out.</p>
     <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
       <span class="btn-ihb-blob"></span>
       <span class="btn-ihb-default">Book an appointment</span>
       <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
     </a>
   </div>
-</div>
+</header>
 
 <div class="hp-swap-wrap">
 <section class="hwnu-section">
   <div class="container">
 
-    <div class="hwnu-eyebrow reveal">
+    <div class="hwnu-eyebrow">
       <i class="fa-solid fa-heart-pulse"></i>
       <span>Here when you need us</span>
     </div>
 
-    <p class="hwnu-statement" id="intro-tgs">At VeraVita, we believe healthcare is more than just treating symptoms — it's a commitment to improving lives. With a team of compassionate experts and state-of-the-art facilities.</p>
+    <p class="hwnu-statement">At VeraVita, we believe healthcare is more than just treating symptoms — it's a commitment to improving lives. With a team of compassionate experts and state-of-the-art facilities.</p>
 
-    <div class="hwnu-marquee">
-      <div class="hwnu-track" id="hwnu-track">
-        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" class="hwnu-img" decoding="async" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" class="hwnu-img" decoding="async" />
-        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" class="hwnu-img" decoding="async" />
-        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" decoding="async" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Wellness" class="hwnu-img" decoding="async" />
-        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" decoding="async" />
-        <img src="images/Home page - marquee/pexels-anntarazevich-6560288.webp" alt="Wellness" class="hwnu-img" decoding="async" />
-        <img src="images/Home page - marquee/pexels-arina-krasnikova-6663359.webp" alt="Treatment" class="hwnu-img" decoding="async" />
-        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="Healthcare" class="hwnu-img" decoding="async" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447003.webp" alt="Consultation" class="hwnu-img" decoding="async" />
-        <img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" class="hwnu-img" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" class="hwnu-img" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" class="hwnu-img" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-anete-lusina-5240675.webp" alt="Naturopathy" class="hwnu-img" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-karola-g-4506109.webp" alt="Wellness" class="hwnu-img" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-elly-fairytale-3865796.webp" alt="Specialist" class="hwnu-img" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-anntarazevich-6560288.webp" alt="Wellness" class="hwnu-img" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-arina-krasnikova-6663359.webp" alt="Treatment" class="hwnu-img" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-cristian-rojas-8460032.webp" alt="Healthcare" class="hwnu-img" decoding="async" aria-hidden="true" />
-        <img src="images/Home page - marquee/pexels-gustavo-fring-7447003.webp" alt="Consultation" class="hwnu-img" decoding="async" aria-hidden="true" />
-      </div>
+    <!-- BENTO GRID -->
+    <div class="bento-grid">
+      <div class="bento-item"><img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" loading="eager" /></div>
+      <div class="bento-item"><img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" loading="eager" /></div>
+      <div class="bento-item"><img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" loading="eager" /></div>
     </div>
 
-    <div class="hwnu-cta-wrap reveal">
+    <div class="hwnu-cta-wrap" style="margin-top: 3rem;">
       <a href="/about.html" class="btn-ihb btn-ihb--primary">
         <span class="btn-ihb-blob"></span>
         <span class="btn-ihb-default">More about VeraVita</span>
@@ -208,7 +319,7 @@
 <section class="wcu-section">
   <div class="container">
 
-    <div class="wcu-header reveal">
+    <div class="wcu-header">
       <div class="wcu-eyebrow">
         <i class="fa-solid fa-heart-pulse"></i>
         <span>Our Promise</span>
@@ -216,8 +327,8 @@
       <h2 class="wcu-heading">Why choose VeraVita<br />for your health</h2>
     </div>
 
-    <div class="wcu-grid stagger-grid">
-      <div class="wcu-item stagger-item">
+    <div class="wcu-grid">
+      <div class="wcu-item">
         <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M24 38s-14-9-14-19a8 8 0 0 1 14-5.3A8 8 0 0 1 38 19c0 10-14 19-14 19z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M16 36c-3 2-5 3-5 3M32 36c3 2 5 3 5 3M24 44v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -226,7 +337,7 @@
         <h4 class="wcu-item-title">Patient-Centred Approach</h4>
         <p class="wcu-item-text">We tailor every treatment to fit your unique health needs, lifestyle, and goals — no one-size-fits-all solutions.</p>
       </div>
-      <div class="wcu-item stagger-item">
+      <div class="wcu-item">
         <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="24" cy="12" r="7" stroke="currentColor" stroke-width="1.8"/>
           <path d="M17 12c0 10 4 18 7 18s7-8 7-18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -237,7 +348,7 @@
         <h4 class="wcu-item-title">Advanced Diagnostic Tools</h4>
         <p class="wcu-item-text">State-of-the-art functional lab testing and technology ensures precise, early, and accurate detection.</p>
       </div>
-      <div class="wcu-item stagger-item">
+      <div class="wcu-item">
         <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M24 8l3.5 7 7.5 1.1-5.5 5.3 1.3 7.6L24 25.5l-6.8 3.5 1.3-7.6L13 16.1l7.5-1.1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M14 34l-2 8h24l-2-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -248,7 +359,7 @@
       </div>
     </div>
 
-    <div class="wcu-cert-card reveal">
+    <div class="wcu-cert-card">
       <div class="wcu-cert-left">
         <h3 class="wcu-cert-title">Certified care you can rely on</h3>
         <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary" style="margin-top:1.5rem;">
@@ -281,11 +392,7 @@
 </div>
 
 <section class="services-accord-section">
-
-  <video class="accord-video-bg" autoplay muted loop playsinline preload="metadata">
-    <source src="images/specialities.mp4" type="video/mp4" />
-  </video>
-  <div class="accord-video-overlay"></div>
+  <div class="accord-video-overlay" style="background: rgba(30, 53, 40, 0.75);"></div>
 
   <div class="container" style="position:relative;z-index:1;">
     <div class="services-accord-inner">
@@ -340,7 +447,7 @@
           </div>
 
           <div class="accord-item">
-            <button class="accord-trigger" data-image="images/Treatments/massage therapy.webp" data-name="Massage Therapy" data-link="cat-massage-therapy.html">
+           <button class="accord-trigger" data-image="images/Treatments/massage therapy.webp" data-name="Massage Therapy" data-link="cat-massage-therapy.html">
               <span class="accord-num">04</span>
               <span class="accord-label">Massage Therapy</span>
               <span class="accord-svc-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
@@ -351,7 +458,7 @@
                 <p>Registered massage therapy for pain relief, stress reduction, injury recovery, and relaxation — tailored to your body's specific needs by experienced RMTs.</p>
                 <a href="/cat-massage-therapy.html" class="accord-learn">Explore service <i class="fa-solid fa-arrow-right"></i></a>
               </div>
-            </div>
+             </div>
           </div>
 
           <div class="accord-item">
@@ -380,7 +487,7 @@
 
       <div class="services-accord-img">
         <div class="accord-img-card">
-          <img id="accord-preview" src="images/Treatments/Nathuropathic care.webp" alt="" class="accord-img" width="400" height="533" loading="lazy" />
+          <img id="accord-preview" src="images/Treatments/Nathuropathic care.webp" alt="Service Preview" class="accord-img" width="400" height="533" loading="lazy" />
           <div class="accord-img-footer">
             <span class="accord-img-name" id="accord-preview-name">Naturopathic Medicine</span>
             <a href="/cat-naturopathic.html" class="accord-img-link" id="accord-preview-link">
@@ -393,85 +500,133 @@
   </div>
 </section>
 
-<section class="anim-testimonials">
-  <div class="section-bg-parallax"></div>
+<!-- SCROLL-SNAP TESTIMONIALS -->
+<section style="padding: 5rem 0; background-color: #f7faf8;">
   <div class="container">
-    <div class="at-wrap">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <div class="section-label">Patient Reviews</div>
+      <h2 class="heading-wrap"><span class="heading-inner">Real patients,<br /><em>real results</em></span></h2>
+    </div>
 
-      <div class="at-stack-wrap">
-        <div class="at-stack">
-          <div class="at-card"><img src="" alt="" width="400" height="480" loading="lazy" /></div>
-          <div class="at-card"><img src="" alt="" width="400" height="480" loading="lazy" /></div>
-          <div class="at-card"><img src="" alt="" width="400" height="480" loading="lazy" /></div>
-          <div class="at-card"><img src="" alt="" width="400" height="480" loading="lazy" /></div>
-        </div>
-      </div>
-
-      <div class="at-nav">
-        <button class="at-btn at-prev" aria-label="Previous testimonial">
-          <i class="fa-solid fa-arrow-left"></i>
-        </button>
-        <div class="at-dots"></div>
-        <button class="at-btn at-next" aria-label="Next testimonial">
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
-
-      <div class="at-text">
-        <div class="section-label reveal">Patient Reviews</div>
-        <h2 class="heading-wrap"><span class="heading-inner">Real patients,<br /><em>real results</em></span></h2>
-        <div class="at-quote-area">
-          <div class="at-stars">★★★★★</div>
-          <blockquote class="at-quote"></blockquote>
-          <div class="at-author">
-            <img class="at-author-avatar" src="" alt="" width="44" height="44" loading="lazy" />
-            <div>
-              <strong class="at-author-name"></strong>
-              <span class="at-author-role"></span>
-            </div>
+    <div class="snap-track">
+      <div class="snap-item testi-card">
+        <div style="color: #eab308; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
+        <p class="testi-quote">"Highly recommend Veravita Naturopathic Clinic! Dr. Jill Navar is knowledgeable, caring, and takes the time to understand your concerns... Excellent care!"</p>
+        <div class="testi-author">
+          <img src="images/Review images/Review 1.webp" alt="Liberty Bustos" loading="lazy" />
+          <div class="testi-author-info">
+            <strong>Liberty Bustos</strong>
+            <span>Google Review</span>
           </div>
         </div>
-        <a href="https://www.google.com/search?q=veravita+clinic&sca_esv=9742a2327d159ecf&rlz=1C1HKFL_enCA1196CA1196&biw=1920&bih=945&sxsrf=APpeQnuBQaTyMbJNbWxVeUNOIIbrLvGwHQ%3A1783231990135&ei=9vVJavjqB7yDm9cP5bDW-Ao&ved=0ahUKEwj4vcvq8LqVAxW8weYEHWWYFa8Q4dUDCBI&uact=5&oq=veravita+clinic&gs_lp=Egxnd3Mtd2l6LXNlcnAiD3ZlcmF2aXRhIGNsaW5pYzIJEAAYgAQYChgLMg8QLhgKGAsYrwEYxwEYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yCBAAGBYYHhgKMgUQABjvBTIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBEjuE1D7CFjEEnABeACQAQCYAWCgAfcDqgEBNrgBA8gBAPgBAZgCB6ACtwTCAg0QABiABBiKBRhDGLADwgIKEAAYgAQYDRiwA8ICCxAAGAgYHhgNGLADwgIOEAAYgAQYigUYhgMYsAPCAgsQABiABBiiBBiwA8ICCBAAGO8FGLADwgIFEAAYgATCAgsQABiABBiKBRiRAsICDBAuGIAEGAoYCxjlBJgDAOIDBRIBMSBAiAYBkAYKkgcDNi4xoAfOOLIHAzUuMbgHrgTCBwUyLTYuMcgHMoAIAQ&sclient=gws-wiz-serp#lrd=0x5371779e2f8d72e3:0xd238a1cc973ea437,1,,,," class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google" style="margin-right:0.5rem;"></i> Read Our Reviews</a>
       </div>
-
+      <div class="snap-item testi-card">
+        <div style="color: #eab308; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
+        <p class="testi-quote">"Dr. Jill was such a sweetheart! She made the whole cozy vibe even more comfortable. It's very easy to communicate with all the doctors. I highly recommend this place!"</p>
+        <div class="testi-author">
+          <img src="images/Review images/Review 2.webp" alt="Oksana Meheriuk" loading="lazy" />
+          <div class="testi-author-info">
+            <strong>Oksana Meheriuk</strong>
+            <span>Google Review</span>
+          </div>
+        </div>
+      </div>
+      <div class="snap-item testi-card">
+        <div style="color: #eab308; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
+        <p class="testi-quote">"Dr. Jill is both friendly and highly professional. She sets realistic goals that are easy to achieve. I highly recommend her practice to anyone."</p>
+        <div class="testi-author">
+          <img src="images/Review images/Review 4.webp" alt="Anu Rajappan" loading="lazy" />
+          <div class="testi-author-info">
+            <strong>Anu Rajappan</strong>
+            <span>Google Review</span>
+          </div>
+        </div>
+      </div>
+      <div class="snap-item testi-card">
+        <div style="color: #eab308; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
+        <p class="testi-quote">"She is knowledgeable, attentive, and truly takes the time to listen. I always feel supported and cared for during my appointments."</p>
+        <div class="testi-author">
+          <img src="images/Review images/Review 5.webp" alt="Anna" loading="lazy" />
+          <div class="testi-author-info">
+            <strong>Anna</strong>
+            <span>Google Review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://www.google.com/search?q=veravita+clinic" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google" style="margin-right:0.5rem;"></i> Read All Reviews</a>
     </div>
   </div>
 </section>
 
-<section class="about-home-section">
-  <div class="about-home-left">
-    <div class="about-home-label reveal">
+<!-- FULL WIDTH EDITORIAL TEAM GALLERY (Fit 7 Layout) -->
+<section class="team-section">
+  <div class="team-header-center">
+    <div class="section-label">
       <i class="fa-solid fa-heart"></i> Here When You Need Us
     </div>
-    <h2 class="about-home-heading reveal">Caring professionals,<br /><em>Advanced solutions</em></h2>
-    <p class="about-home-sub reveal">Each practitioner brings years of experience, specialised knowledge, and a compassionate approach to help you achieve optimal health.</p>
-    <a href="/about.html" class="btn-ihb btn-ihb--primary reveal">
-      <span class="btn-ihb-blob"></span>
-      <span class="btn-ihb-default">Meet our team</span>
-      <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Meet our team</span>
+    <!-- Added inline colors to force visibility over any global style conflicts -->
+    <h2 style="color: #ffffff !important;">Caring professionals,<br /><em>Advanced solutions</em></h2>
+    <p style="color: rgba(255,255,255,0.85) !important;">Each practitioner brings years of experience, specialised knowledge, and a compassionate approach to help you achieve optimal health.</p>
+    <a href="/about.html" class="btn-ihb btn-ihb--primary" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+      <span class="btn-ihb-blob" style="background: #fff;"></span>
+      <span class="btn-ihb-default">Meet our entire team</span>
+      <span class="btn-ihb-reveal" style="color: #1e3528;"><i class="fa-solid fa-arrow-right"></i> Meet our entire team</span>
     </a>
-    <div class="about-home-profiles">
-      <div class="about-profiles-track">
-        <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" class="about-profile-thumb" width="150" height="200" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Dr.%20Viktoriia%20Taylor,%20DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="about-profile-thumb" width="150" height="200" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" class="about-profile-thumb" width="150" height="200" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Jean-Wilson%20Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="about-profile-thumb" width="150" height="200" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Lisseth%20Pabon%20Velez.webp" alt="Lisseth Pabon Velez, RMT" class="about-profile-thumb" width="150" height="200" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Johnvel%20Sabturani.webp" alt="Johnvel Sabturani, RMT" class="about-profile-thumb" width="150" height="200" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Amy%20lutz%20Main%20page.webp" alt="Amy Lutz, MOMSc" class="about-profile-thumb" width="150" height="200" loading="lazy" />
-        
-        <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" class="about-profile-thumb" width="150" height="200" aria-hidden="true" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Dr.%20Viktoriia%20Taylor,%20DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="about-profile-thumb" width="150" height="200" aria-hidden="true" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" class="about-profile-thumb" width="150" height="200" aria-hidden="true" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Jean-Wilson%20Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="about-profile-thumb" width="150" height="200" aria-hidden="true" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Lisseth%20Pabon%20Velez.webp" alt="Lisseth Pabon Velez, RMT" class="about-profile-thumb" width="150" height="200" aria-hidden="true" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Johnvel%20Sabturani.webp" alt="Johnvel Sabturani, RMT" class="about-profile-thumb" width="150" height="200" aria-hidden="true" loading="lazy" />
-        <img src="images/Practitioner%20Main%20page/Amy%20lutz%20Main%20page.webp" alt="Amy Lutz, MOMSc" class="about-profile-thumb" width="150" height="200" aria-hidden="true" loading="lazy" />
+  </div>
+  
+  <div class="full-width-track">
+    <div class="team-card-large">
+      <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" loading="lazy" />
+      <div class="tc-info">
+        <span class="tc-name">Dr. Jill Nazar</span>
+        <span class="tc-title">Naturopathic Doctor</span>
       </div>
     </div>
-  </div>
-  <div class="about-home-video-wrap">
-    <img src="images/meet our experts.webp" alt="VeraVita expert team" class="about-home-video" width="800" height="600" loading="lazy" />
+    <div class="team-card-large">
+      <img src="images/Practitioner%20Main%20page/Dr.%20Viktoriia%20Taylor,%20DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" loading="lazy" />
+      <div class="tc-info">
+        <span class="tc-name">Dr. Viktoriia Taylor</span>
+        <span class="tc-title">DTCM</span>
+      </div>
+    </div>
+    <div class="team-card-large">
+      <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" loading="lazy" />
+      <div class="tc-info">
+        <span class="tc-name">Joseph Wei</span>
+        <span class="tc-title">Acupuncturist</span>
+      </div>
+    </div>
+    <div class="team-card-large">
+      <img src="images/Practitioner%20Main%20page/Jean-Wilson%20Raymond.webp" alt="Jean-Wilson Raymond, RMT" loading="lazy" />
+      <div class="tc-info">
+        <span class="tc-name">Jean-Wilson</span>
+        <span class="tc-title">RMT</span>
+      </div>
+    </div>
+    <div class="team-card-large">
+      <img src="images/Practitioner%20Main%20page/Lisseth%20Pabon%20Velez.webp" alt="Lisseth Pabon Velez, RMT" loading="lazy" />
+      <div class="tc-info">
+        <span class="tc-name">Lisseth Pabon</span>
+        <span class="tc-title">RMT</span>
+      </div>
+    </div>
+    <div class="team-card-large">
+      <img src="images/Practitioner%20Main%20page/Johnvel%20Sabturani.webp" alt="Johnvel Sabturani, RMT" loading="lazy" />
+      <div class="tc-info">
+        <span class="tc-name">Johnvel Sabturani</span>
+        <span class="tc-title">RMT</span>
+      </div>
+    </div>
+    <div class="team-card-large">
+      <img src="images/Practitioner%20Main%20page/Amy%20lutz%20Main%20page.webp" alt="Amy Lutz, MOMSc" loading="lazy" />
+      <div class="tc-info">
+        <span class="tc-name">Amy Lutz</span>
+        <span class="tc-title">MOMSc</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -484,7 +639,7 @@
     </div>
     <div class="sf-body">
       <div class="sf-top">
-        <div class="sf-brand sf-anim" style="--sf-delay:0s">
+        <div class="sf-brand">
           <a href="/" class="sf-logo">
             <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
@@ -500,7 +655,7 @@
             <a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           </div>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
             <li><a href="/">Home</a></li>
@@ -513,7 +668,7 @@
             <li><a href="/pricing.html">Pricing</a></li>
           </ul>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
             <li><a href="/cat-naturopathic.html">Naturopathic Medicine</a></li>
@@ -523,7 +678,7 @@
             <li><a href="/cat-osteopathy.html">Osteopathy</a></li>
           </ul>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
             <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
@@ -546,12 +701,10 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 
 <script>
-/* Fallback accordion init */
+/* Simple Accordion Logic */
 document.querySelectorAll('.accord-trigger').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var item = btn.closest('.accord-item');
@@ -574,14 +727,6 @@ document.querySelectorAll('.accord-trigger').forEach(function(btn) {
     }
   });
 });
-
-/* Marquee images: staggered train reveal on page load */
-(function() {
-  var imgs = document.querySelectorAll('.hwnu-img');
-  imgs.forEach(function(img, i) {
-    setTimeout(function() { img.classList.add('loaded'); }, i * 100);
-  });
-})();
 </script>
 
 <div class="mobile-book-bar">
@@ -590,18 +735,5 @@ document.querySelectorAll('.accord-trigger').forEach(function(btn) {
   </a>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  gsap.registerPlugin(ScrollTrigger);
-  document.querySelectorAll('.anim-testimonials').forEach(function (section) {
-    var bg = section.querySelector('.section-bg-parallax');
-    if (!bg) return;
-    gsap.fromTo(bg, { y: -60 }, {
-      y: 60, ease: 'none',
-      scrollTrigger: { trigger: section, start: 'top bottom', end: 'bottom top', scrub: 3, invalidateOnRefresh: true }
-    });
-  });
-});
-</script>
 </body>
 </html>

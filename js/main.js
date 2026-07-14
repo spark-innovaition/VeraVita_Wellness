@@ -75,7 +75,7 @@
   `;
 })();
 
-   /* ---- Hero video source injection (device-aware) ---- */
+/* ---- Hero video source injection (device-aware) ---- */
 const isMobile = window.matchMedia('(max-width: 768px)').matches;
 (function () {
   const v = document.getElementById('hero-video');
@@ -201,7 +201,7 @@ gsap.ticker.lagSmoothing(500, 33);
   section.parentNode.insertBefore(spacer, section.nextSibling);
   spacer.style.height = isMobile ? '300vh' : '280vh';
 
-  /* Drive canvas from GSAP ticker — only during scroll, stop when hero is off-screen */
+  /* Drive canvas from GSAP ticker — fully optimized to ignore calls when offscreen */
   let heroActive = true;
   let needsDraw = true;
   ScrollTrigger.addEventListener('scrollStart', () => { needsDraw = true; });
@@ -251,9 +251,6 @@ gsap.ticker.lagSmoothing(500, 33);
     }, 0.68);
   }
 
-  /* Remaining spacer height after animation = read buffer */
-
-
   ScrollTrigger.refresh();
 })();
 
@@ -270,8 +267,6 @@ ScrollTrigger.create({
 
 /* ===========================
    HERO SPLIT — entrance animations
-   Left: stagger y:20 opacity:0 → y:0 opacity:1 (matches itemVariants)
-   Right: clip-path reveal polygon (matches circOut transition)
    =========================== */
 (function () {
   const item = { y: 20, opacity: 0, duration: 0.5, ease: 'power2.out' };
@@ -887,11 +882,14 @@ document.querySelectorAll('.team-card').forEach(card => {
   }
   scheduleAdvance();
   let scrollPauseTimer = null;
-  lenis.on('scroll', () => {
-    clearTimeout(autoTimer);
-    clearTimeout(scrollPauseTimer);
-    scrollPauseTimer = setTimeout(scheduleAdvance, 1200);
-  });
+  // Ensure 'lenis' is defined before binding to it
+  if (typeof lenis !== 'undefined') {
+    lenis.on('scroll', () => {
+      clearTimeout(autoTimer);
+      clearTimeout(scrollPauseTimer);
+      scrollPauseTimer = setTimeout(scheduleAdvance, 1200);
+    });
+  }
 })();
 
 /* ============================================
@@ -1115,21 +1113,6 @@ document.querySelectorAll('.team-card').forEach(card => {
   updateArrows();
 })();
 
-// Shuffle hwnu marquee images on page load
-(function() {
-  var track = document.getElementById('hwnu-track');
-  if (!track) return;
-  var imgs = Array.from(track.querySelectorAll('img[aria-hidden="true"]'));
-  var originals = Array.from(track.querySelectorAll('img:not([aria-hidden])'));
-  // Shuffle originals
-  for (var i = originals.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var tmp = originals[i].src; originals[i].src = originals[j].src;
-    originals[j].src = tmp;
-  }
-  // Mirror shuffle to duplicates
-  originals.forEach(function(img, idx) { imgs[idx].src = img.src; });
-})();
 
 /* ============================================
    BG PARALLAX — green sections
