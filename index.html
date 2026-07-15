@@ -331,7 +331,7 @@
       transform: translateX(-50%);
       width: 90%;
       max-width: 350px;
-      background: transparent;
+      background: transparent !important;
       padding: 0;
       z-index: 999;
       display: flex;
@@ -340,10 +340,20 @@
     
     .mobile-book-bar .btn-ihb {
       width: 100%;
-      box-shadow: 0 8px 25px rgba(74, 107, 83, 0.35); /* Soft green drop shadow */
-      border-radius: 50px; /* Force pill shape */
+      box-shadow: 0 8px 25px rgba(74, 107, 83, 0.35) !important; 
+      border-radius: 50px !important; 
       padding: 1rem 2rem;
       text-align: center;
+      border: none !important; 
+      
+      /* THIS CLIPS THE SQUARE EDGES LEAKING FROM EXTERNAL CSS */
+      overflow: hidden !important; 
+    }
+    
+    /* Ensuring pseudo-elements don't override the pill shape */
+    .mobile-book-bar .btn-ihb::before,
+    .mobile-book-bar .btn-ihb::after {
+      border-radius: 50px !important;
     }
 
     /* Hide the floating button on desktop since top nav is sticky */
@@ -366,6 +376,7 @@
 
 <nav class="navbar"></nav>
 
+<!-- EDITORIAL HERO SECTION -->
 <header class="ph-standard-hero">
   <div class="container hero-content fade-in-load">
     <p class="hero-eyebrow">Naturopathic Medicine · Calgary</p>
@@ -390,6 +401,7 @@
 
     <p class="hwnu-statement">At VeraVita, we believe healthcare is more than just treating symptoms — it's a commitment to improving lives. With a team of compassionate experts and state-of-the-art facilities.</p>
 
+    <!-- BENTO GRID -->
     <div class="bento-grid">
       <div class="bento-item"><img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" loading="eager" /></div>
       <div class="bento-item"><img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" loading="eager" /></div>
@@ -591,6 +603,7 @@
   </div>
 </section>
 
+<!-- SCROLL-SNAP TESTIMONIALS (Alternating Background) -->
 <section style="padding: 5rem 0; background-color: #f7faf8;">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
@@ -651,6 +664,7 @@
   </div>
 </section>
 
+<!-- FULL WIDTH EDITORIAL TEAM GALLERY (Fit 7 Layout) -->
 <section class="team-section">
   <div class="team-header-center">
     <div class="section-label">
