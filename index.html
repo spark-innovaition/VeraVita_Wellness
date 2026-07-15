@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- UPDATED PRELOAD PATH -->
   <link rel="preload" as="image" href="images/Home page/Desktop 21-9 - Home page hero.webp" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   
@@ -26,34 +25,37 @@
       animation: subtleFade 1s ease-out forwards;
     }
 
-    /* STICKY NAVBAR */
+    /* FIXED NAVBAR (Allows image to slide underneath) */
     .navbar {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
       z-index: 1000;
-      background-color: #ffffff;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Subtle shadow to separate from content */
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
       width: 100%;
     }
 
     /* LIGHT & CLEAN EDITORIAL HERO */
     .ph-standard-hero {
       position: relative; 
-      /* Adjust height slightly to account for sticky navbar so it doesn't get cut off */
-      height: calc(100vh - 80px); 
+      height: 100vh; 
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      /* UPDATED HERO IMAGE PATH */
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.85)), url('images/Home page/Desktop 21-9 - Home page hero.webp') center/cover no-repeat;
+      padding-top: 80px; /* Prevents text from hiding under the navbar */
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9)), url('images/Home page/Desktop 21-9 - Home page hero.webp') top center/cover no-repeat;
       background-attachment: fixed;
     }
     @media (max-width: 768px) {
       .ph-standard-hero {
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), url('images/Home page/Mobile - Home page hero.webp') center/cover no-repeat;
+        /* Lightened the top gradient and anchored to 'top center' to fix the gap */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.95)), url('images/Home page/Mobile - Home page hero.webp') top center/cover no-repeat;
         background-attachment: scroll;
+        height: 90vh; /* Slightly shorter on mobile so the next section peeks up */
       }
     }
     .ph-standard-hero .hero-content {
@@ -89,12 +91,12 @@
 
     /* ALTERNATING SECTION BACKGROUNDS */
     .hwnu-section {
-      background-color: #ffffff; /* White */
+      background-color: #ffffff; 
       padding: 5rem 0;
     }
     
     .wcu-section {
-      background-color: #f7faf8; /* Soft Off-White/Green */
+      background-color: #f7faf8; 
       padding: 5rem 0;
     }
 
@@ -166,7 +168,7 @@
     /* CLEAN SERVICES ACCORDION BACKGROUND */
     .services-accord-section {
       position: relative;
-      background: #ffffff; /* White (Alternating) */
+      background: #ffffff; 
       padding: 5rem 0;
       border-top: 1px solid #eaeaea;
     }
@@ -176,6 +178,20 @@
     .services-accord-content .section-label,
     .services-accord-content .heading-wrap {
       color: #1e3528 !important; 
+    }
+
+    /* OVERRIDE ACCORDION COLORS FOR LIGHT BACKGROUND */
+    .accord-trigger {
+      border-bottom: 1px solid #eaeaea !important;
+    }
+    .accord-label, .accord-num, .accord-icon, .accord-svc-icon {
+      color: #1e3528 !important;
+    }
+    .accord-body-inner p {
+      color: #4a4a4a !important;
+    }
+    .accord-learn {
+      color: #4a6b53 !important;
     }
 
     /* Desktop-only swap: Our Promise before Here when you need us */
@@ -188,7 +204,7 @@
     /* CLEAN TEAM SECTION */
     .team-section {
       padding: 6rem 0 7rem 0;
-      background-color: #ffffff; /* White (Alternating) */
+      background-color: #ffffff; 
       overflow: hidden;
     }
     .team-header-center {
@@ -307,21 +323,30 @@
       }
     }
 
-    /* MOBILE NAV & BOOKING VISIBILITY */
+    /* SLEEK FLOATING MOBILE BOOKING PILL */
     .mobile-book-bar {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #ffffff;
-      padding: 1rem;
-      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 350px;
+      background: transparent;
+      padding: 0;
       z-index: 999;
       display: flex;
       justify-content: center;
     }
     
-    /* Hide the bottom mobile book bar on desktop since the top nav is now sticky */
+    .mobile-book-bar .btn-ihb {
+      width: 100%;
+      box-shadow: 0 8px 25px rgba(74, 107, 83, 0.35); /* Soft green drop shadow */
+      border-radius: 50px; /* Force pill shape */
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    /* Hide the floating button on desktop since top nav is sticky */
     @media (min-width: 769px) {
       .mobile-book-bar {
         display: none;
@@ -341,7 +366,6 @@
 
 <nav class="navbar"></nav>
 
-<!-- EDITORIAL HERO SECTION -->
 <header class="ph-standard-hero">
   <div class="container hero-content fade-in-load">
     <p class="hero-eyebrow">Naturopathic Medicine · Calgary</p>
@@ -366,7 +390,6 @@
 
     <p class="hwnu-statement">At VeraVita, we believe healthcare is more than just treating symptoms — it's a commitment to improving lives. With a team of compassionate experts and state-of-the-art facilities.</p>
 
-    <!-- BENTO GRID -->
     <div class="bento-grid">
       <div class="bento-item"><img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" loading="eager" /></div>
       <div class="bento-item"><img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" loading="eager" /></div>
@@ -568,7 +591,6 @@
   </div>
 </section>
 
-<!-- SCROLL-SNAP TESTIMONIALS (Alternating Background) -->
 <section style="padding: 5rem 0; background-color: #f7faf8;">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
@@ -629,7 +651,6 @@
   </div>
 </section>
 
-<!-- FULL WIDTH EDITORIAL TEAM GALLERY (Fit 7 Layout) -->
 <section class="team-section">
   <div class="team-header-center">
     <div class="section-label">
