@@ -6,11 +6,118 @@
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
   <title>Joseph Wei, Dr. Ac. | VeraVita Naturopathic Clinic Calgary</title>
   <meta name="description" content="Meet Joseph Wei — Registered Acupuncturist at VeraVita Naturopathic Clinic Calgary. Specialising in pain management, women's health, weight management, vision health, and Traditional Chinese Medicine." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- PERFORMANCE UPGRADE 1: PRECONNECT & HERO IMAGE PRELOAD -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/Practitioner%20Main%20page/Joseph%20Wei.webp" />
+
+  <style>
+    .joseph-wei .pd-detail-section,
+    .joseph-wei .pd-booking-section {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .joseph-wei .pd-services-section {
+      background: var(--white) !important;
+    }
+    .joseph-wei .pd-pricing-section {
+      background: var(--white) !important;
+    }
+    .section-bg-parallax {
+      position: absolute; top: -60px; left: 0;
+      width: 100%; height: calc(100% + 120px); z-index: 0;
+      pointer-events: none;
+      will-change: transform; /* PERFORMANCE UPGRADE: Enforce GPU acceleration */
+    }
+    .pd-detail-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 22.webp') center / cover no-repeat;
+    }
+    .pd-booking-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 23.webp') center / cover no-repeat;
+    }
+    .pd-detail-section .container-medium,
+    .pd-booking-section .container-medium { position: relative; z-index: 1; }
+
+    /* PRICING TABLE */
+    .pd-pricing-section {
+      padding: 5rem 0;
+    }
+    .pd-pricing-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .pd-pricing-header h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin-top: 0.75rem;
+    }
+    .pd-pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .pd-pricing-card {
+      background: var(--gray-6, #eaf2ea);
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+    .pd-pricing-card h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.25rem;
+      color: var(--dark);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(114,140,105,0.2);
+    }
+    .pd-pricing-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .pd-pricing-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--dark);
+      border-bottom: 1px solid rgba(114,140,105,0.1);
+    }
+    .pd-pricing-list li:last-child {
+      border-bottom: none;
+    }
+    .pd-pricing-duration {
+      color: #728C69;
+      font-size: 0.85rem;
+      margin-left: 0.25rem;
+    }
+    .pd-pricing-amount {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .pd-pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      .pd-pricing-header h2 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
 </head>
 <body class="joseph-wei">
 
@@ -116,107 +223,6 @@
   </div>
 </section>
 
-<style>
-  .joseph-wei .pd-detail-section,
-  .joseph-wei .pd-booking-section {
-    background: transparent !important;
-    position: relative;
-    overflow: hidden;
-  }
-  .joseph-wei .pd-services-section {
-    background: var(--white) !important;
-  }
-  .joseph-wei .pd-pricing-section {
-    background: var(--white) !important;
-  }
-  .section-bg-parallax {
-    position: absolute; top: -60px; left: 0;
-    width: 100%; height: calc(100% + 120px); z-index: 0;
-    pointer-events: none;
-  }
-  .pd-detail-section .section-bg-parallax {
-    background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-      url('images/underlay pic desktop/underlay pic 22.webp') center / cover no-repeat;
-  }
-  .pd-booking-section .section-bg-parallax {
-    background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-      url('images/underlay pic desktop/underlay pic 23.webp') center / cover no-repeat;
-  }
-  .pd-detail-section .container-medium,
-  .pd-booking-section .container-medium { position: relative; z-index: 1; }
-
-  /* PRICING TABLE */
-  .pd-pricing-section {
-    padding: 5rem 0;
-  }
-  .pd-pricing-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  .pd-pricing-header h2 {
-    font-family: 'Libre Caslon Text', serif;
-    font-size: 2.2rem;
-    color: var(--dark);
-    margin-top: 0.75rem;
-  }
-  .pd-pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .pd-pricing-card {
-    background: var(--gray-6, #eaf2ea);
-    border-radius: 1rem;
-    padding: 2rem;
-  }
-  .pd-pricing-card h3 {
-    font-family: 'Libre Caslon Text', serif;
-    font-size: 1.25rem;
-    color: var(--dark);
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(114,140,105,0.2);
-  }
-  .pd-pricing-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .pd-pricing-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.6rem 0;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    color: var(--dark);
-    border-bottom: 1px solid rgba(114,140,105,0.1);
-  }
-  .pd-pricing-list li:last-child {
-    border-bottom: none;
-  }
-  .pd-pricing-duration {
-    color: #728C69;
-    font-size: 0.85rem;
-    margin-left: 0.25rem;
-  }
-  .pd-pricing-amount {
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  @media (max-width: 640px) {
-    .pd-pricing-grid {
-      grid-template-columns: 1fr;
-    }
-    .pd-pricing-header h2 {
-      font-size: 1.75rem;
-    }
-  }
-</style>
-
 <section class="pd-detail-section">
   <div class="section-bg-parallax"></div>
   <div class="container-medium">
@@ -286,7 +292,8 @@
       
       <a href="/service-acupuncture-traditional.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/Sub services images/Traditional Acupuncture/16-9.webp" alt="Traditional Acupuncture" class="pd-svc-img" />
+          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+          <img src="images/Sub services images/Traditional Acupuncture/16-9.webp" alt="Traditional Acupuncture" class="pd-svc-img" loading="lazy" decoding="async" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Traditional Acupuncture</h3>
@@ -296,7 +303,8 @@
 
       <a href="/service-acupuncture-tui-na.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/Sub services images/Tui Na Massage/16-9.webp" alt="Tui Na Massage" class="pd-svc-img" />
+          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+          <img src="images/Sub services images/Tui Na Massage/16-9.webp" alt="Tui Na Massage" class="pd-svc-img" loading="lazy" decoding="async" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Tui Na Massage</h3>
@@ -306,7 +314,8 @@
 
       <a href="/service-acupuncture-cupping.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/Sub services images/Cupping therapy/16-9.webp" alt="Cupping & Moxibustion" class="pd-svc-img" />
+          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+          <img src="images/Sub services images/Cupping therapy/16-9.webp" alt="Cupping & Moxibustion" class="pd-svc-img" loading="lazy" decoding="async" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Cupping & Moxibustion</h3>
@@ -316,7 +325,8 @@
 
       <a href="/service-weight-loss.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/Weightloss service/Weight loss 16-9.png" alt="Weight Management" class="pd-svc-img" onerror="this.src='images/Sub services images/Traditional Acupuncture/16-9.webp'" />
+          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+          <img src="images/Weightloss service/Weight loss 16-9.png" alt="Weight Management" class="pd-svc-img" onerror="this.src='images/Sub services images/Traditional Acupuncture/16-9.webp'" loading="lazy" decoding="async" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Weight Management</h3>
@@ -364,7 +374,8 @@
       <div class="sf-top">
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
           <a href="/" class="sf-logo">
-            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
           </a>
           <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
@@ -417,37 +428,39 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/#/staff_member/24" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book an appointment</span>
-  </a>
-</div>
+<!-- PERFORMANCE UPGRADE 3: DEFERRED SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
+<!-- PERFORMANCE UPGRADE 4: MOBILE GSAP OPTIMIZATION -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   gsap.registerPlugin(ScrollTrigger);
-  document.querySelectorAll('.pd-detail-section, .pd-booking-section').forEach(function (section) {
-    var bg = section.querySelector('.section-bg-parallax');
-    if (!bg) return;
-    gsap.fromTo(bg,
-      { y: -60 },
-      {
-        y: 60,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 3,
-          invalidateOnRefresh: true
+  
+  let mm = gsap.matchMedia();
+  mm.add("(min-width: 861px)", () => {
+    document.querySelectorAll('.pd-detail-section, .pd-booking-section').forEach(function (section) {
+      var bg = section.querySelector('.section-bg-parallax');
+      if (!bg) return;
+      gsap.fromTo(bg,
+        { y: -60 },
+        {
+          y: 60,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1, // Reduced scrub weight for CPU efficiency
+            invalidateOnRefresh: true
+          }
         }
-      }
-    );
+      );
+    });
   });
 });
 </script>
+
 </body>
 </html>
