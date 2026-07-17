@@ -14,6 +14,39 @@
 
   <style>
     /* ====================================================
+       FIXED NAVBAR (Consistent with Home Page)
+       ==================================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+      width: 100%;
+    }
+
+    body {
+      padding-top: 80px; /* Prevents hero from hiding under the fixed navbar */
+    }
+
+    /* ====================================================
+       HERO SECTION IMAGES
+       ==================================================== */
+    .hs-right {
+      background-image: url('images/About page hero - Desktop.webp');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    @media (max-width: 768px) {
+      .hs-right {
+        background-image: url('images/About page hero - Mobile.webp');
+      }
+    }
+
+    /* ====================================================
        PARALLAX ENGINE STYLES
        ==================================================== */
     .about-statement-section, 
@@ -32,6 +65,9 @@
       height: calc(100% + 120px);
       z-index: 0;
       pointer-events: none;
+      
+      /* GPU ACCELERATION FOR SMOOTH SCROLLING */
+      will-change: transform; 
     }
 
     /* Assign unique background images to each section */
@@ -195,7 +231,7 @@
   <div class="container">
     <div class="asc-card asc-card--white asc-card--mission fade-up">
       <picture>
-        <img src="images/background 4K.png" alt="Our mission" class="asc-card-img" />
+        <img src="images/background 4K.png" alt="Our mission" class="asc-card-img" loading="lazy" />
       </picture>
       <div class="asc-card-body">
         <h3 class="asc-card-title">Our mission</h3>
@@ -215,7 +251,7 @@
           <span class="asc-value-tag"><i class="fa-solid fa-circle-check"></i> Accessibility</span>
         </div>
       </div>
-      <img src="images/core values.png" alt="Our values" class="asc-card-img" />
+      <img src="images/core values.png" alt="Our values" class="asc-card-img" loading="lazy" />
     </div>
   </div>
 </section>
@@ -239,7 +275,7 @@
 </section>
 
 <section class="about-cta-video-section">
-  <video class="about-cta-video" autoplay muted loop playsinline>
+  <video class="about-cta-video" autoplay muted loop playsinline poster="images/About page hero - Desktop.webp">
     <source src="images/health.mp4" type="video/mp4" />
   </video>
   <div class="about-cta-overlay">
@@ -280,7 +316,7 @@
       </div>
 
       <a href="/dr-jill-nazar.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="tmd-card-img" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Dr. Jill Nazar, ND</h4>
           <span>Naturopathic Doctor</span>
@@ -290,7 +326,7 @@
       </a>
 
       <a href="/dr-viktoriia-taylor.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="tmd-card-img" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Dr. Viktoriia Taylor, DTCM</h4>
           <span>Registered Dr. of Acupuncture</span>
@@ -304,7 +340,7 @@
     <div class="tmd-bottom" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
       
       <a href="/joseph-wei.html" class="tmd-card fade-up">
-        <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" class="tmd-card-img" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Joseph Wei</h4>
           <span>Registered Acupuncturist</span>
@@ -314,7 +350,7 @@
       </a>
 
       <a href="/jean-wilson-raymond.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="tmd-card-img" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Jean-Wilson Raymond</h4>
           <span>Registered Massage Therapist</span>
@@ -324,7 +360,7 @@
       </a>
 
       <a href="/lisseth-pabon-velez.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Lisseth Pabon Velez.webp" alt="Lisseth Pabon Velez, RMT" class="tmd-card-img" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <img src="images/Practitioner Main page/Lisseth Pabon Velez.webp" alt="Lisseth Pabon Velez, RMT" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Lisseth Pabon Velez</h4>
           <span>Registered Massage Therapist</span>
@@ -334,7 +370,7 @@
       </a>
 
       <a href="/johnvel-sabturani.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="tmd-card-img" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Johnvel Sabturani</h4>
           <span>Registered Massage Therapist</span>
@@ -344,7 +380,7 @@
       </a>
 
       <a href="/amy-lutz.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="tmd-card-img" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Amy Lutz</h4>
           <span>Manual Osteopathic Therapist</span>
@@ -433,31 +469,34 @@
   document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Triple Stationary Parallax Engine
-    const parallaxContainers = document.querySelectorAll('.about-statement-section, .timeline-section, .tmd-section');
-    
-    parallaxContainers.forEach(container => {
-      const bg = container.querySelector('.section-bg-parallax');
-      if (!bg) return;
+    // Use matchMedia so heavy parallax calculations ONLY run on desktop displays.
+    let mm = gsap.matchMedia();
 
-      gsap.fromTo(bg,
-        { y: -60 },
-        {
-          y: 60,
-          ease: "none",
-          scrollTrigger: {
-            trigger: container,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 3,
-            invalidateOnRefresh: true
+    mm.add("(min-width: 861px)", () => {
+      const parallaxContainers = document.querySelectorAll('.about-statement-section, .timeline-section, .tmd-section');
+      
+      parallaxContainers.forEach(container => {
+        const bg = container.querySelector('.section-bg-parallax');
+        if (!bg) return;
+
+        gsap.fromTo(bg,
+          { y: -60 },
+          {
+            y: 60,
+            ease: "none",
+            scrollTrigger: {
+              trigger: container,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1, // Reduced scrub weight from 3 to 1 to drastically improve CPU performance
+              invalidateOnRefresh: true
+            }
           }
-        }
-      );
+        );
+      });
     });
   });
 </script>
 
-<div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
 </body>
 </html>
