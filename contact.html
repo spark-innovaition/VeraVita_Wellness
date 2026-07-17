@@ -12,48 +12,103 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <style>
-    .cth-section,
-    .cfaq-section,
-    .follow-section {
-      background: transparent !important;
+    /* FIXED NAVBAR (Consistent with other pages) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+      width: 100%;
+    }
+
+    body {
+      padding-top: 80px; 
+    }
+
+    /* CLEAN BACKGROUND OVERRIDES */
+    .cth-section, .cfaq-section, .follow-section, .visit-section, .jot-section {
+      background-color: #ffffff !important;
       position: relative;
       overflow: hidden !important;
     }
+    .cfaq-section, .jot-section {
+      background-color: #f7faf8 !important; /* Soft alternating background */
+    }
+
+    /* Force text colors to be readable on light backgrounds */
+    .cth-title, .cfaq-title, .visit-heading, .follow-heading, .jot-title {
+      color: #1e3528 !important;
+    }
+    .cth-sub, .visit-top-desc, .follow-desc, .jot-desc {
+      color: #4a4a4a !important;
+    }
+    .cth-form label { color: #1e3528; }
+    .cth-inp { background-color: #f9f9f9; border: 1px solid #eaeaea; color: #1e3528; }
+
+    /* PARALLAX FIXES */
     .section-bg-parallax {
       position: absolute; top: -60px; left: 0;
       width: 100%; height: calc(100% + 120px); z-index: 0;
       pointer-events: none;
+      will-change: transform; /* GPU Acceleration */
     }
     .cth-section .section-bg-parallax {
-      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+      background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
         url('images/underlay pic desktop/underlay pic 5.webp') center / cover no-repeat;
     }
     .cfaq-section .section-bg-parallax {
-      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+      background: linear-gradient(rgba(247,250,248,0.92), rgba(247,250,248,0.92)),
         url('images/underlay pic desktop/underlay pic 10.webp') center / cover no-repeat;
     }
+    .follow-section .section-bg-parallax {
+      background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+        url('images/underlay pic desktop/underlay pic 12.webp') center / cover no-repeat;
+    }
+
     .cth-section .cth-top,
     .cth-section .cth-body,
     .cfaq-section .cfaq-inner,
     .follow-section .follow-inner { position: relative; z-index: 1; }
-    .follow-section .section-bg-parallax {
-      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-        url('images/underlay pic desktop/underlay pic 12.webp') center / cover no-repeat;
-    }
 
     @media (max-width: 860px) {
+      .cth-section .section-bg-parallax,
+      .cfaq-section .section-bg-parallax,
+      .follow-section .section-bg-parallax {
+        background-attachment: scroll !important;
+      }
       .cth-section .section-bg-parallax {
-        background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        background: linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
           url('images/mobile overlay pic/pexels-allecgomes-3628770 (1).webp') center / cover no-repeat;
       }
       .cfaq-section .section-bg-parallax {
-        background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        background: linear-gradient(rgba(247,250,248,0.90), rgba(247,250,248,0.90)),
           url('images/mobile overlay pic/pexels-didsss-13214230.webp') center / cover no-repeat;
       }
       .follow-section .section-bg-parallax {
-        background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        background: linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
           url('images/mobile overlay pic/pexels-allecgomes-3628770 (1).webp') center / cover no-repeat;
       }
+    }
+
+    /* CAREERS STATIC IMAGE REPLACEMENT */
+    .jot-image-wrap {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+    }
+    .jot-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
   </style>
@@ -77,30 +132,30 @@
         <li class="nav-dropdown">
           <a href="#" class="nav-link">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
           <div class="nav-dropdown-menu">
-            <a href="/cat-naturopathic" class="nav-dd-item">
+            <a href="/cat-naturopathic.html" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div>
               <div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
             </a>
-            <a href="/cat-iv-therapy" class="nav-dd-item">
+            <a href="/cat-iv-therapy.html" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div>
               <div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div>
             </a>
-            <a href="/cat-acupuncture" class="nav-dd-item">
+            <a href="/cat-acupuncture.html" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
               <div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Lead: Dr. Viktoriia Taylor, DTCM</span></div>
             </a>
-            <a href="/cat-massage-therapy" class="nav-dd-item">
+            <a href="/cat-massage-therapy.html" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
               <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: Jean-Wilson Raymond, RMT</span></div>
             </a>
-            <a href="/cat-osteopathy" class="nav-dd-item">
+            <a href="/cat-osteopathy.html" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
               <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Amy Lutz, MOMSc</span></div>
             </a></div>
         </li>
-        <li><a href="/about"          class="nav-link">About</a></li>
-        <li><a href="/practitioners"  class="nav-link">Practitioners</a></li>
-        <li><a href="/contact" class="nav-link active">Contact</a></li>
+        <li><a href="/about.html"          class="nav-link">About</a></li>
+        <li><a href="/practitioners.html"  class="nav-link">Practitioners</a></li>
+        <li><a href="/contact.html" class="nav-link active">Contact</a></li>
       </ul>
         <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
           <span class="btn-ihb-blob"></span>
@@ -185,25 +240,23 @@
   <section class="jot-section">
     <div class="jot-inner">
 
-      <!-- Left: Video -->
-      <div class="jot-video-wrap">
-        <video class="jot-video" autoplay muted loop playsinline>
-          <source src="images/join our team.mp4" type="video/mp4" />
-        </video>
+      <!-- Left: Replaced Video with Image -->
+      <div class="jot-image-wrap">
+        <img src="images/careers.webp" alt="Join the VeraVita Clinic Team" loading="lazy" />
       </div>
 
       <!-- Right: Content -->
       <div class="jot-content">
-        <span class="section-label"><i class="fa-solid fa-seedling"></i> &nbsp;Careers</span>
+        <span class="section-label" style="color: #4a6b53;"><i class="fa-solid fa-seedling"></i> &nbsp;Careers</span>
         <h2 class="jot-title">Interested in<br /><em>joining us?</em></h2>
         <p class="jot-desc">We don't have any open roles at the moment, but we welcome introductions from passionate practitioners and support staff who share our commitment to holistic, patient-centred care. Send us your CV and we'll reach out when a suitable opportunity opens up.</p>
-        <ul class="jot-perks">
-          <li><i class="fa-solid fa-check"></i> Collaborative & supportive clinic culture</li>
-          <li><i class="fa-solid fa-check"></i> Competitive compensation & benefits</li>
-          <li><i class="fa-solid fa-check"></i> Ongoing professional development</li>
-          <li><i class="fa-solid fa-check"></i> Beautiful, modern Calgary clinic</li>
+        <ul class="jot-perks" style="color: #1e3528;">
+          <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Collaborative & supportive clinic culture</li>
+          <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Competitive compensation & benefits</li>
+          <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Ongoing professional development</li>
+          <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Beautiful, modern Calgary clinic</li>
         </ul>
-        <a href="/careers" class="btn-ihb btn-ihb--primary">
+        <a href="/careers.html" class="btn-ihb btn-ihb--primary">
           <span class="btn-ihb-blob"></span>
           <span class="btn-ihb-default">Learn more</span>
           <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Learn more</span>
@@ -222,8 +275,8 @@
       <div class="cfaq-left">
         <h2 class="cfaq-title">Frequently asked questions</h2>
         <div class="cfaq-support">
-          <span>Need more support?</span>
-          <a href="mailto:vnc@veravitaclinic.com" class="cfaq-email-btn">
+          <span style="color:#4a4a4a;">Need more support?</span>
+          <a href="mailto:vnc@veravitaclinic.com" class="cfaq-email-btn" style="color:#4a6b53;">
             Email Us <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -232,53 +285,53 @@
       <!-- Right: accordion -->
       <div class="cfaq-list">
 
-        <div class="cfaq-item">
-          <button class="cfaq-q" aria-expanded="false">
+        <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
+          <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
             <span>How do I book an appointment at VeraVita?</span>
             <span class="cfaq-icon">+</span>
           </button>
           <div class="cfaq-a">
-            <p>You can book online using our booking form, call us at (587) 585-2524, or send us an email at vnc@veravitaclinic.com. We confirm all appointments within one business day.</p>
+            <p style="color:#4a4a4a;">You can book online using our booking form, call us at (587) 585-2524, or send us an email at vnc@veravitaclinic.com. We confirm all appointments within one business day.</p>
           </div>
         </div>
 
-        <div class="cfaq-item">
-          <button class="cfaq-q" aria-expanded="false">
+        <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
+          <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
             <span>Do I need a referral to see a naturopathic doctor?</span>
             <span class="cfaq-icon">+</span>
           </button>
           <div class="cfaq-a">
-            <p>No referral is needed. You can book directly with any of our naturopathic doctors. If you have existing lab results or medical history, bringing those along helps us provide better care from your very first visit.</p>
+            <p style="color:#4a4a4a;">No referral is needed. You can book directly with any of our naturopathic doctors. If you have existing lab results or medical history, bringing those along helps us provide better care from your very first visit.</p>
           </div>
         </div>
 
-        <div class="cfaq-item">
-          <button class="cfaq-q" aria-expanded="false">
+        <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
+          <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
             <span>What insurance plans do you accept?</span>
             <span class="cfaq-icon">+</span>
           </button>
           <div class="cfaq-a">
-            <p>Many extended health benefit plans in Alberta cover naturopathic services. We recommend checking with your insurer before your visit. We provide detailed receipts for all services to support reimbursement claims.</p>
+            <p style="color:#4a4a4a;">Many extended health benefit plans in Alberta cover naturopathic services. We recommend checking with your insurer before your visit. We provide detailed receipts for all services to support reimbursement claims.</p>
           </div>
         </div>
 
-        <div class="cfaq-item">
-          <button class="cfaq-q" aria-expanded="false">
+        <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
+          <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
             <span>What should I expect during my first visit?</span>
             <span class="cfaq-icon">+</span>
           </button>
           <div class="cfaq-a">
-            <p>Your first appointment is a comprehensive 60–90 minute consultation. We'll review your full health history, lifestyle, and goals, then build a personalised treatment plan. Please bring any recent lab results and a list of current medications.</p>
+            <p style="color:#4a4a4a;">Your first appointment is a comprehensive 60–90 minute consultation. We'll review your full health history, lifestyle, and goals, then build a personalised treatment plan. Please bring any recent lab results and a list of current medications.</p>
           </div>
         </div>
 
-        <div class="cfaq-item">
-          <button class="cfaq-q" aria-expanded="false">
+        <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
+          <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
             <span>Do you offer virtual or telehealth consultations?</span>
             <span class="cfaq-icon">+</span>
           </button>
           <div class="cfaq-a">
-            <p>Yes. We offer secure video consultations for follow-up appointments, general health questions, and select initial consultations. Contact us to check eligibility for your specific concern.</p>
+            <p style="color:#4a4a4a;">Yes. We offer secure video consultations for follow-up appointments, general health questions, and select initial consultations. Contact us to check eligibility for your specific concern.</p>
           </div>
         </div>
 
@@ -298,22 +351,22 @@
 
       <!-- Bottom row: card + image -->
       <div class="visit-body">
-        <div class="visit-card">
-          <h3 class="visit-city">Calgary, AB</h3>
-          <p class="visit-card-desc">Our clinic is conveniently located in Calgary, offering a peaceful space where every visit feels personal, unhurried, and focused entirely on you.</p>
-          <hr class="visit-divider" />
-          <ul class="visit-details">
-            <li><span class="visit-dot"></span><strong><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Unit 104 – 14505 Bannister Road SE, Calgary, AB T2X&nbsp;3J3</a></strong></li>
-            <li><span class="visit-dot"></span>(587) 585-2524</li>
-            <li><span class="visit-dot"></span>vnc@veravitaclinic.com</li>
+        <div class="visit-card" style="background:#f7faf8;">
+          <h3 class="visit-city" style="color:#1e3528;">Calgary, AB</h3>
+          <p class="visit-card-desc" style="color:#4a4a4a;">Our clinic is conveniently located in Calgary, offering a peaceful space where every visit feels personal, unhurried, and focused entirely on you.</p>
+          <hr class="visit-divider" style="border-color:#eaeaea;"/>
+          <ul class="visit-details" style="color:#1e3528;">
+            <li><span class="visit-dot" style="background:#4a6b53;"></span><strong><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Unit 104 – 14505 Bannister Road SE, Calgary, AB T2X&nbsp;3J3</a></strong></li>
+            <li><span class="visit-dot" style="background:#4a6b53;"></span>(587) 585-2524</li>
+            <li><span class="visit-dot" style="background:#4a6b53;"></span>vnc@veravitaclinic.com</li>
             <li>
-              <span class="visit-dot"></span>
+              <span class="visit-dot" style="background:#4a6b53;"></span>
               <span><strong>Hours:</strong>&nbsp; Monday – Saturday &nbsp;8:00 am – 9:00 pm &nbsp;|&nbsp; Sunday &nbsp;10:00 am – 5:00 pm</span>
             </li>
           </ul>
         </div>
         <div class="visit-img-wrap">
-          <img src="images/clinic - contact page.png" alt="VeraVita Naturopathic Clinic Calgary" class="visit-img" />
+          <img src="images/building image.webp" alt="VeraVita Naturopathic Clinic Calgary" class="visit-img" loading="lazy" />
         </div>
       </div>
 
@@ -348,7 +401,7 @@
       <div class="follow-content">
         <h2 class="follow-heading">Follow us on<br />Instagram</h2>
         <p class="follow-desc">Stay inspired with wellness tips, behind-the-scenes moments, and the latest updates from our clinic — all on Instagram.</p>
-        <a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="follow-handle">
+        <a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="follow-handle" style="color:#4a6b53;">
           <i class="fa-brands fa-instagram"></i> @veravitaclinic
         </a>
       </div>
@@ -386,23 +439,23 @@
             <h3 class="sf-col-title">Pages</h3>
             <ul class="sf-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/practitioners">Our Practitioners</a></li>
-            <li><a href="/faqs">FAQs</a></li>
-            <li><a href="/careers">Careers</a></li>
-            <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/practitioners.html">Our Practitioners</a></li>
+            <li><a href="/faqs.html">FAQs</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+            <li><a href="/pricing.html">Pricing</a></li>
             </ul>
           </div>
           <div class="sf-col sf-anim" style="--sf-delay:0.2s">
             <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
-            <li><a href="/cat-naturopathic">Naturopathic Medicine</a></li>
-            <li><a href="/cat-iv-therapy">Testing &amp; IV Therapy</a></li>
-            <li><a href="/cat-acupuncture">Acupuncture &amp; TCM</a></li>
-            <li><a href="/cat-massage-therapy">Massage Therapy</a></li>
-            <li><a href="/cat-osteopathy">Osteopathy</a></li>
+            <li><a href="/cat-naturopathic.html">Naturopathic Medicine</a></li>
+            <li><a href="/cat-iv-therapy.html">Testing &amp; IV Therapy</a></li>
+            <li><a href="/cat-acupuncture.html">Acupuncture &amp; TCM</a></li>
+            <li><a href="/cat-massage-therapy.html">Massage Therapy</a></li>
+            <li><a href="/cat-osteopathy.html">Osteopathy</a></li>
           </ul>
           </div>
           <div class="sf-col sf-anim" style="--sf-delay:0.3s">
@@ -414,9 +467,9 @@
             </ul>
             <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
             <ul class="sf-links">
-              <li><a href="/privacy-policy">Privacy Policy</a></li>
-              <li><a href="/terms-of-service">Terms of Service</a></li>
-              <li><a href="/cookie-policy">Cookie Policy</a></li>
+              <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="/terms-of-service.html">Terms of Service</a></li>
+              <li><a href="/cookie-policy.html">Cookie Policy</a></li>
             </ul>
           </div>
         </div>
@@ -429,7 +482,6 @@
     </div>
   </footer>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
@@ -465,36 +517,33 @@
         }
       });
     });
-  </script>
-<!-- MOBILE BOTTOM BOOKING BAR -->
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book an appointment</span>
-  </a>
-</div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  gsap.registerPlugin(ScrollTrigger);
-  document.querySelectorAll('.cth-section, .cfaq-section, .follow-section').forEach(function (section) {
-    var bg = section.querySelector('.section-bg-parallax');
-    if (!bg) return;
-    gsap.fromTo(bg,
-      { y: -60 },
-      {
-        y: 60,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 3,
-          invalidateOnRefresh: true
-        }
-      }
-    );
-  });
-});
-</script>
+    // Smart Mobile Parallax Optimization
+    document.addEventListener('DOMContentLoaded', function () {
+      gsap.registerPlugin(ScrollTrigger);
+      
+      let mm = gsap.matchMedia();
+      mm.add("(min-width: 861px)", () => {
+        document.querySelectorAll('.cth-section, .cfaq-section, .follow-section').forEach(function (section) {
+          var bg = section.querySelector('.section-bg-parallax');
+          if (!bg) return;
+          gsap.fromTo(bg,
+            { y: -60 },
+            {
+              y: 60,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: section,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1, // Reduced scrub weight for better performance
+                invalidateOnRefresh: true
+              }
+            }
+          );
+        });
+      });
+    });
+  </script>
 </body>
 </html>
