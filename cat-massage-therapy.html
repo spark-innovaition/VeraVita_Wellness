@@ -11,6 +11,112 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css?v=2" />
+
+  <!-- Preload the new hero image for faster loading -->
+  <link rel="preload" as="image" href="images/Service Hero secion images/Massage 16-9.webp" />
+
+  <style>
+    /* FIXED NAVBAR (Consistent with Home/About) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+      width: 100%;
+    }
+
+    body {
+      padding-top: 80px; /* Prevents hero from hiding under the fixed navbar */
+    }
+
+    /* CLEAN & LIGHT CATEGORY HERO */
+    .cat-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      padding: 4rem 0;
+      /* Uses desktop image by default with a soft gradient for text readability */
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 100%), url('images/Service Hero secion images/Massage 16-9.webp') center/cover no-repeat;
+    }
+    
+    @media (max-width: 768px) {
+      .cat-hero {
+        /* Swaps to mobile portrait image */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%), url('images/Service Hero secion images/Massage 9-16.webp') center/cover no-repeat;
+      }
+    }
+
+    .cat-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+    }
+
+    .cat-hero-title {
+      color: #1e3528;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .cat-hero-desc {
+      color: #4a4a4a;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .cat-hero-lead {
+      color: #4a6b53;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-link {
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.5rem;
+      padding: 0.625rem 1.375rem; 
+      border: 1.5px solid #4a6b53;
+      border-radius: 4rem; 
+      color: #4a6b53; 
+      font-size: 0.875rem;
+      font-weight: 600; 
+      text-decoration: none; 
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .pricing-link:hover {
+      background: #4a6b53; 
+      color: #ffffff;
+    }
+
+    /* ALTERNATING SECTION BACKGROUNDS */
+    .svc-section {
+      background-color: #ffffff;
+    }
+    .prac-grid-section {
+      background-color: #f7faf8;
+    }
+    #pricing {
+      background-color: #ffffff;
+    }
+    
+    /* Ensure text reads well on light background */
+    .price-table th, .price-table td, .svc-section-header h2, .prac-name, .prac-role {
+      color: #1e3528;
+    }
+    .svc-section-header p, .prac-desc {
+      color: #4a4a4a;
+    }
+  </style>
 </head>
 <body>
 
@@ -63,29 +169,23 @@
   </div>
 </nav>
 
-<div class="sd-back">
-  <div class="container-medium">
-  </div>
-</div>
-
-<section class="cat-hero" style="background:var(--dark);padding:5rem 0 4rem">
-  <video class="cat-hero-video" autoplay muted loop playsinline><source src="images/Service Hero section video/Massage therapy hero section.mp4" type="video/mp4" /></video>
+<section class="cat-hero">
   <div class="container">
-    <div class="reveal">
-      <span class="section-label" style="color:var(--primary)">Service Category</span>
-      <h1 style="color:var(--white);margin-bottom:1rem">Massage <em style="color:#a8c99e">Therapy</em></h1>
-      <p style="color:rgba(255,255,255,0.75);max-width:620px;line-height:1.75;margin-bottom:1.5rem">A full clinical massage program — therapeutic, lymphatic drainage, hot stone, cupping, and prenatal care — delivered by our dedicated Registered Massage Therapists at VeraVita.</p>
-      <div class="svc-cell-prac" style="display:block;font-size:0.9375rem;color:#a8c99e"><i class="fa-solid fa-hand-holding-heart"></i> Led by Jean-Wilson Raymond, Lisseth Pabon Velez & Johnvel Sabturani</div>
-      <a href="#pricing" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.625rem 1.375rem;border:1.5px solid rgba(255,255,255,0.55);border-radius:4rem;color:#ffffff;font-size:0.875rem;font-weight:500;text-decoration:none;background:rgba(255,255,255,0.08);backdrop-filter:blur(4px)"><i class="fa-solid fa-tag" style="font-size:0.775rem"></i> View Pricing&nbsp;&nbsp;<i class="fa-solid fa-arrow-down" style="font-size:0.7rem;opacity:0.7"></i></a>
+    <div class="cat-hero-content reveal">
+      <span class="section-label" style="color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem; display:block; margin-bottom:1rem;">Service Category</span>
+      <h1 class="cat-hero-title">Massage <em>Therapy</em></h1>
+      <p class="cat-hero-desc">A full clinical massage program — therapeutic, lymphatic drainage, hot stone, cupping, and prenatal care — delivered by our dedicated Registered Massage Therapists at VeraVita.</p>
+      <div class="cat-hero-lead"><i class="fa-solid fa-hand-holding-heart"></i> Led by Jean-Wilson Raymond, Lisseth Pabon Velez & Johnvel Sabturani</div>
+      <a href="#pricing" class="pricing-link"><i class="fa-solid fa-tag" style="font-size:0.8rem"></i> View Pricing <i class="fa-solid fa-arrow-down" style="font-size:0.75rem; margin-left:0.25rem;"></i></a>
     </div>
   </div>
 </section>
 
 <section class="svc-section" style="padding:4rem 0 6rem">
   <div class="container">
-    <div class="svc-section-header reveal" style="margin-bottom:3rem">
+    <div class="svc-section-header reveal" style="margin-bottom:3rem; text-align:center;">
       <h2>Select a <em>Service</em></h2>
-      <p>Choose a service below to learn more — the technique, conditions treated, and what to expect from your appointment.</p>
+      <p style="color:#4a4a4a;">Choose a service below to learn more — the technique, conditions treated, and what to expect from your appointment.</p>
     </div>
     <div class="svc-grid stagger-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5)">
 
@@ -147,10 +247,10 @@
   </div>
 </section>
 
-<section class="prac-grid-section" id="therapists" style="padding:4rem 0 5rem;background:linear-gradient(rgba(234,242,234,0.92), rgba(234,242,234,0.92)), url('images/underlay pic desktop/underlay pic 36.webp') center / cover no-repeat">
+<section class="prac-grid-section" id="therapists" style="padding:4rem 0 5rem;">
   <div class="container-medium">
     <div class="svc-section-header reveal" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none">
-      <p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 0 0.75rem"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Meet Your Therapists</p>
+      <p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 0 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Meet Your Therapists</p>
       <h2>Our Registered <em>Massage Therapists</em></h2>
     </div>
 
@@ -160,13 +260,13 @@
         <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
           <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
-        <div class="prac-info" style="align-items:center">
+        <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
           <h3 class="prac-name">Jean-Wilson Raymond</h3>
           <span class="prac-role">Registered Massage Therapist (RMT)</span>
-          <p class="prac-desc">Offers a bespoke approach to bodywork, specializing in deep tissue, relaxation, hot stone therapy, cupping, lymphatic drainage, sports massage, and prenatal care with assisted stretching.</p>
+          <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Offers a bespoke approach to bodywork, specializing in deep tissue, relaxation, hot stone therapy, cupping, lymphatic drainage, sports massage, and prenatal care with assisted stretching.</p>
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
-            <a href="/jean-wilson-raymond.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/11" target="_blank" rel="noopener" class="prac-link" style="color:var(--primary);font-weight:600"><i class="fa-solid fa-calendar-check"></i> Book</a>
+            <a href="/jean-wilson-raymond.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/11" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book</a>
           </div>
         </div>
       </div>
@@ -175,13 +275,13 @@
         <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
           <img src="images/Practitioner Main page/Lisseth Pabon Velez.webp" alt="Lisseth Pabon Velez, RMT" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
-        <div class="prac-info" style="align-items:center">
+        <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
           <h3 class="prac-name">Lisseth Pabon Velez</h3>
           <span class="prac-role">Registered Massage Therapist (RMT)</span>
-          <p class="prac-desc">A dedicated therapist with a background in Physiotherapy, integrating advanced techniques like cupping therapy, hot stone cupping, Swedish massage, and pre/postnatal care to support recovery.</p>
+          <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">A dedicated therapist with a background in Physiotherapy, integrating advanced techniques like cupping therapy, hot stone cupping, Swedish massage, and pre/postnatal care to support recovery.</p>
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
-            <a href="/lisseth-pabon-velez.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="prac-link" style="color:var(--primary);font-weight:600"><i class="fa-solid fa-calendar-check"></i> Book</a>
+            <a href="/lisseth-pabon-velez.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book</a>
           </div>
         </div>
       </div>
@@ -190,13 +290,13 @@
         <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
           <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
-        <div class="prac-info" style="align-items:center">
+        <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
           <h3 class="prac-name">Johnvel Sabturani</h3>
           <span class="prac-role">Registered Massage Therapist (RMT)</span>
-          <p class="prac-desc">Dedicated to helping clients reduce pain and improve mobility through deep tissue, hot stone therapy, sports massage, prenatal techniques, and specialized assisted stretching.</p>
+          <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Dedicated to helping clients reduce pain and improve mobility through deep tissue, hot stone therapy, sports massage, prenatal techniques, and specialized assisted stretching.</p>
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
-            <a href="/johnvel-sabturani.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="prac-link" style="color:var(--primary);font-weight:600"><i class="fa-solid fa-calendar-check"></i> Book</a>
+            <a href="/johnvel-sabturani.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book</a>
           </div>
         </div>
       </div>
@@ -207,10 +307,10 @@
 
 <section id="pricing" style="padding:4rem 0 6.5rem">
   <div class="container">
-    <div class="svc-section-header reveal" style="margin-bottom:3rem">
-      <p class="section-tag" style="margin-bottom:0.75rem"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
+    <div class="svc-section-header reveal" style="margin-bottom:3rem; text-align:center;">
+      <p class="section-tag" style="margin-bottom:0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
       <h2>Service <em>Pricing</em></h2>
-      <p>All prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" style="color:var(--primary)">booking portal</a> for current rates and specific practitioner availability.</p>
+      <p style="color:#4a4a4a;">All prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" style="color:#4a6b53; font-weight:600;">booking portal</a> for current rates and specific practitioner availability.</p>
     </div>
 
     <div class="price-table-wrap reveal">
@@ -237,7 +337,7 @@
       </table>
     </div>
 
-    <div class="reveal" style="margin-top:1.5rem;text-align:center">
+    <div class="reveal" style="margin-top:2.5rem;text-align:center">
       <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
         <span class="btn-ihb-blob"></span>
         <span class="btn-ihb-default">Book Massage Therapy</span>
@@ -311,10 +411,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book an appointment</span>
-  </a>
-</div>
+
 </body>
 </html>

@@ -277,18 +277,30 @@
   </div>
 </section>
 
-<section class="about-cta-video-section" style="position: relative; overflow: hidden;">
-  <!-- Replaced video with the static Expert care image -->
-  <img src="images/Expert care.webp" alt="Expert care you can trust" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;" />
+<section class="about-cta-video-section" style="position: relative; overflow: hidden; background-color: #1e3528; display: flex; align-items: center; justify-content: center; min-height: 60vh;">
   
-  <div class="about-cta-overlay" style="position: relative; z-index: 1;">
-    <p class="about-cta-label">Your Health, Our Commitment</p>
-    <h2 class="about-cta-heading">Expert care you can trust</h2>
+  <!-- The background image lowered to 40% opacity so it blends into the dark green background -->
+  <img src="images/Expert care.webp" alt="Expert care you can trust" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.4;" />
+  
+  <!-- The overlay container -->
+  <div class="about-cta-overlay" style="position: relative; z-index: 1; text-align: center; padding: 4rem 20px; width: 100%;">
+    
+    <!-- Forced light green/grey for the eyebrow text -->
+    <p class="about-cta-label" style="color: #b0c4b1 !important; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 1rem;">
+      Your Health, Our Commitment
+    </p>
+    
+    <!-- Forced pure white for the main heading -->
+    <h2 class="about-cta-heading" style="color: #ffffff !important; font-family: 'Libre Caslon Text', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 2.5rem; text-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      Expert care you can trust
+    </h2>
+    
     <a href="/services.html" class="btn-ihb btn-ihb--primary">
       <span class="btn-ihb-blob"></span>
       <span class="btn-ihb-default">View our services</span>
       <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> View our services</span>
     </a>
+    
   </div>
 </section>
 
