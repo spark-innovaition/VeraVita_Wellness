@@ -32,7 +32,7 @@
       padding-top: 80px; 
     }
 
-    /* CLEAN & LIGHT HERO */
+    /* CINEMATIC HERO (Centered with Dark Overlay & White Text) */
     .prac-hero {
       position: relative;
       min-height: 60vh;
@@ -41,13 +41,14 @@
       justify-content: center;
       text-align: center;
       padding: 4rem 20px;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), url('images/Practitioner Hero - Desktop.webp') center/cover no-repeat;
+      /* Dark green overlay pushes the photo back so white text pops */
+      background: linear-gradient(rgba(30, 53, 40, 0.65), rgba(30, 53, 40, 0.65)), url('images/Practitioner Hero - Desktop.webp') center/cover no-repeat;
       background-attachment: fixed;
     }
     
     @media (max-width: 768px) {
       .prac-hero {
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.95)), url('images/Practitioner Hero - Mobile.webp') center/cover no-repeat;
+        background: linear-gradient(rgba(30, 53, 40, 0.65), rgba(30, 53, 40, 0.65)), url('images/Practitioner Hero - Mobile.webp') center/cover no-repeat;
         background-attachment: scroll;
       }
     }
@@ -58,9 +59,9 @@
     }
 
     .prac-hero .section-label {
-      color: #4a6b53;
+      color: #b0c4b1; /* Light sage green */
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       font-size: 0.85rem;
       margin-bottom: 1rem;
@@ -68,15 +69,16 @@
     }
 
     .prac-hero-title {
-      color: #1e3528;
+      color: #ffffff; /* Pure white text */
       font-family: 'Libre Caslon Text', serif;
       font-size: clamp(2.5rem, 6vw, 4.5rem);
       line-height: 1.1;
       margin-bottom: 1.5rem;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Soft shadow for extra separation */
     }
 
     .prac-hero-sub {
-      color: #4a4a4a;
+      color: rgba(255, 255, 255, 0.9); /* Soft white */
       font-size: 1.1rem;
       line-height: 1.6;
       max-width: 700px;
