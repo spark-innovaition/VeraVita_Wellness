@@ -323,46 +323,6 @@
       }
     }
 
-    /* SLEEK FLOATING MOBILE BOOKING PILL */
-    .mobile-book-bar {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 350px;
-      background: transparent !important;
-      padding: 0;
-      z-index: 999;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .mobile-book-bar .btn-ihb {
-      width: 100%;
-      box-shadow: 0 8px 25px rgba(74, 107, 83, 0.35) !important; 
-      border-radius: 50px !important; 
-      padding: 1rem 2rem;
-      text-align: center;
-      border: none !important; 
-      
-      /* THIS CLIPS THE SQUARE EDGES LEAKING FROM EXTERNAL CSS */
-      overflow: hidden !important; 
-    }
-    
-    /* Ensuring pseudo-elements don't override the pill shape */
-    .mobile-book-bar .btn-ihb::before,
-    .mobile-book-bar .btn-ihb::after {
-      border-radius: 50px !important;
-    }
-
-    /* Hide the floating button on desktop since top nav is sticky */
-    @media (min-width: 769px) {
-      .mobile-book-bar {
-        display: none;
-      }
-    }
-
     .navbar-nav.open {
       background: #ffffff;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -830,12 +790,6 @@ document.querySelectorAll('.accord-trigger').forEach(function(btn) {
   });
 });
 </script>
-
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book an appointment</span>
-  </a>
-</div>
 
 </body>
 </html>
