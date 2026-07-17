@@ -12,8 +12,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
   
-  <!-- Preload the new hero image for faster loading -->
-  <link rel="preload" as="image" href="images/Practitioner Hero - Desktop.webp" />
+  <!-- Preconnect to CDN for faster asset fetching -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- Smart Preload: Only loads the exact image needed for the user's specific device -->
+  <link rel="preload" as="image" href="images/Practitioner Hero - Desktop.webp" media="(min-width: 769px)" />
+  <link rel="preload" as="image" href="images/Practitioner Hero - Mobile.webp" media="(max-width: 768px)" />
 
   <style>
     /* FIXED NAVBAR */
@@ -218,7 +222,7 @@
 
       <div class="prac-card reveal">
         <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
         <div class="prac-info">
           <h3 class="prac-name">Dr. Jill Nazar, ND</h3>
@@ -230,7 +234,7 @@
 
       <div class="prac-card reveal">
         <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="prac-photo" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
         <div class="prac-info">
           <h3 class="prac-name">Dr. Viktoriia Taylor, DTCM</h3>
@@ -242,7 +246,7 @@
 
       <div class="prac-card reveal">
         <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Joseph Wei.webp" alt="Joseph Wei" class="prac-photo" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner Main page/Joseph Wei.webp" alt="Joseph Wei" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
         <div class="prac-info">
           <h3 class="prac-name">Joseph Wei</h3>
@@ -254,7 +258,7 @@
 
       <div class="prac-card reveal">
         <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="prac-photo" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
         <div class="prac-info">
           <h3 class="prac-name">Jean-Wilson Raymond</h3>
@@ -266,7 +270,7 @@
 
       <div class="prac-card reveal">
         <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Lisseth Pabon Velez.webp" alt="Lisseth Pabon Velez, RMT" class="prac-photo" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner Main page/Lisseth Pabon Velez.webp" alt="Lisseth Pabon Velez, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
         <div class="prac-info">
           <h3 class="prac-name">Lisseth Pabon Velez</h3>
@@ -278,7 +282,7 @@
 
       <div class="prac-card reveal">
         <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="prac-photo" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
         <div class="prac-info">
           <h3 class="prac-name">Johnvel Sabturani</h3>
@@ -290,7 +294,7 @@
 
       <div class="prac-card reveal">
         <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="prac-photo" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
         <div class="prac-info">
           <h3 class="prac-name">Amy Lutz, MOMSc</h3>
@@ -321,7 +325,7 @@
       </div>
     </div>
     <div class="prac-cta-img-wrap reveal">
-      <img src="images/exceptional care.jpg" alt="Exceptional care at VeraVita" class="prac-cta-img" loading="lazy" />
+      <img src="images/exceptional care.jpg" alt="Exceptional care at VeraVita" class="prac-cta-img" loading="lazy" decoding="async" />
     </div>
   </div>
 </section>
@@ -332,7 +336,7 @@
 
     <!-- Left: Replaced Video with Image -->
     <div class="jot-image-wrap">
-      <img src="images/careers.webp" alt="Join the VeraVita Clinic Team" loading="lazy" />
+      <img src="images/careers.webp" alt="Join the VeraVita Clinic Team" loading="lazy" decoding="async" />
     </div>
 
     <!-- Right: Content -->
@@ -435,9 +439,9 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
 <script>
 // Smart Mobile Parallax Optimization
