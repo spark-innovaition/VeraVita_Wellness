@@ -12,8 +12,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <link rel="stylesheet" href="css/styles.css?v=2" />
 
-<!-- Preload the new hero image for faster loading -->
-<link rel="preload" as="image" href="images/Service Hero secion images/IV 16-9.webp" />
+<!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT PRELOADING & PRECONNECT -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+<link rel="preload" as="image" href="images/Service Hero secion images/IV 16-9.webp" media="(min-width: 769px)" />
+<link rel="preload" as="image" href="images/Service Hero secion images/IV 9-16.webp" media="(max-width: 768px)" />
 
 <style>
   /* FIXED NAVBAR (Consistent with Home/About) */
@@ -237,7 +239,7 @@
 </div>
 </section>
 
-<!-- NEW LEAD PRACTITIONER SECTION -->
+<!-- LEAD PRACTITIONER SECTION -->
 <section class="prac-grid-section" id="practitioners" style="padding:4rem 0 5rem;">
   <div class="container-medium">
     <div class="svc-section-header reveal" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none">
@@ -248,7 +250,8 @@
     <div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:450px;margin:0 auto">
       <div class="prac-card reveal" style="text-align:center">
         <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
-          <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" FOR SMOOTH SCROLLING -->
+          <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
         <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
           <h3 class="prac-name">Dr. Jill Nazar, ND</h3>
@@ -362,9 +365,10 @@
 </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
+<!-- PERFORMANCE UPGRADE 3: ADDED DEFER ATTRIBUTE TO SCRIPTS TO PREVENT RENDERING BLOCKS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
 </body>
 </html>

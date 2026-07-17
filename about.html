@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
 
+  <!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT PRELOADING & PRECONNECT -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/About page hero - Desktop.webp" media="(min-width: 769px)" />
+  <link rel="preload" as="image" href="images/About page hero - Mobile.webp" media="(max-width: 768px)" />
+
   <style>
     /* ====================================================
        FIXED NAVBAR (Consistent with Home Page)
@@ -185,7 +190,7 @@
         <span>veravitaclinic.com</span>
       </div>
       <div class="hs-contact-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span>(587) 585-2524</span>
       </div>
       <div class="hs-contact-item">
@@ -234,7 +239,8 @@
   <div class="container">
     <div class="asc-card asc-card--white asc-card--mission fade-up">
       <picture>
-        <img src="images/background 4K.png" alt="Our mission" class="asc-card-img" loading="lazy" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" -->
+        <img src="images/background 4K.png" alt="Our mission" class="asc-card-img" loading="lazy" decoding="async" />
       </picture>
       <div class="asc-card-body">
         <h3 class="asc-card-title">Our mission</h3>
@@ -254,7 +260,8 @@
           <span class="asc-value-tag"><i class="fa-solid fa-circle-check"></i> Accessibility</span>
         </div>
       </div>
-      <img src="images/core values.png" alt="Our values" class="asc-card-img" loading="lazy" />
+      <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" -->
+      <img src="images/core values.png" alt="Our values" class="asc-card-img" loading="lazy" decoding="async" />
     </div>
   </div>
 </section>
@@ -272,35 +279,28 @@
       <div class="timeline-item fade-up"><div class="timeline-year">Mid 2024</div><div class="timeline-dot"></div><div class="timeline-body"><h5>Expanded Team & Fertility Program</h5><p>Grew our practitioner team and launched a dedicated fertility program to support patients on their reproductive health journey.</p></div></div>
       <div class="timeline-item fade-up"><div class="timeline-year">2025</div><div class="timeline-dot"></div><div class="timeline-body"><h5>Acupuncture & TCM</h5><p>Added Acupuncture & Traditional Chinese Medicine to our roster, bringing a complete integrative wellness offering under one roof.</p></div></div>
       <div class="timeline-item fade-up"><div class="timeline-year">2026</div><div class="timeline-dot"></div><div class="timeline-body"><h5>New Clinic & Expanded Team</h5><p>Opening a new VeraVita location in Calgary, welcoming a Registered Massage Therapist and Osteopathic Manual Therapist to the team — bringing our full integrative vision to life.</p></div></div>
-      <div class="timeline-item fade-up"><div class="timeline-year">Today</div><div class="timeline-dot"></div><div class="timeline-body"><h5>Continuing to Grow & Serve</h5><p>We continue expanding our services and team to meet the growing needs of Calgary's health-conscious community.</p></div></div>
+      <div class="timeline-item fade-up"><div class="timeline-year">Today</div><div class="timeline-dot"></div><div class="timeline-body"><h5>Continuing to Grow & Serve</h5><p> We continue expanding our services and team to meet the growing needs of Calgary's health-conscious community.</p></div></div>
     </div>
   </div>
 </section>
 
 <section class="about-cta-video-section" style="position: relative; overflow: hidden; background-color: #1e3528; display: flex; align-items: center; justify-content: center; min-height: 60vh;">
   
-  <!-- The background image lowered to 40% opacity so it blends into the dark green background -->
-  <img src="images/Expert care.webp" alt="Expert care you can trust" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.4;" />
+  <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" -->
+  <img src="images/Expert care.webp" alt="Expert care you can trust" loading="lazy" decoding="async" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.4;" />
   
-  <!-- The overlay container -->
   <div class="about-cta-overlay" style="position: relative; z-index: 1; text-align: center; padding: 4rem 20px; width: 100%;">
-    
-    <!-- Forced light green/grey for the eyebrow text -->
     <p class="about-cta-label" style="color: #b0c4b1 !important; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 1rem;">
       Your Health, Our Commitment
     </p>
-    
-    <!-- Forced pure white for the main heading -->
     <h2 class="about-cta-heading" style="color: #ffffff !important; font-family: 'Libre Caslon Text', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 2.5rem; text-shadow: 0 4px 15px rgba(0,0,0,0.3);">
       Expert care you can trust
     </h2>
-    
     <a href="/services.html" class="btn-ihb btn-ihb--primary">
       <span class="btn-ihb-blob"></span>
       <span class="btn-ihb-default">View our services</span>
       <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> View our services</span>
     </a>
-    
   </div>
 </section>
 
@@ -331,7 +331,8 @@
       </div>
 
       <a href="/dr-jill-nazar.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" TO CLINIC PROFILES -->
+        <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Dr. Jill Nazar, ND</h4>
           <span>Naturopathic Doctor</span>
@@ -341,7 +342,8 @@
       </a>
 
       <a href="/dr-viktoriia-taylor.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" TO CLINIC PROFILES -->
+        <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Dr. Viktoriia Taylor, DTCM</h4>
           <span>Registered Dr. of Acupuncture</span>
@@ -355,7 +357,8 @@
     <div class="tmd-bottom" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
       
       <a href="/joseph-wei.html" class="tmd-card fade-up">
-        <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" TO CLINIC PROFILES -->
+        <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Joseph Wei</h4>
           <span>Registered Acupuncturist</span>
@@ -365,7 +368,8 @@
       </a>
 
       <a href="/jean-wilson-raymond.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" TO CLINIC PROFILES -->
+        <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Jean-Wilson Raymond</h4>
           <span>Registered Massage Therapist</span>
@@ -375,7 +379,8 @@
       </a>
 
       <a href="/lisseth-pabon-velez.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Lisseth Pabon Velez.webp" alt="Lisseth Pabon Velez, RMT" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" TO CLINIC PROFILES -->
+        <img src="images/Practitioner Main page/Lisseth Pabon Velez.webp" alt="Lisseth Pabon Velez, RMT" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Lisseth Pabon Velez</h4>
           <span>Registered Massage Therapist</span>
@@ -385,7 +390,8 @@
       </a>
 
       <a href="/johnvel-sabturani.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" TO CLINIC PROFILES -->
+        <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Johnvel Sabturani</h4>
           <span>Registered Massage Therapist</span>
@@ -395,7 +401,8 @@
       </a>
 
       <a href="/amy-lutz.html" class="tmd-card fade-up">
-        <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="tmd-card-img" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" TO CLINIC PROFILES -->
+        <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         <div class="tmd-card-overlay">
           <h4>Amy Lutz</h4>
           <span>Manual Osteopathic Therapist</span>
@@ -476,9 +483,10 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
+<!-- PERFORMANCE UPGRADE 3: ADDED DEFER ATTRIBUTE TO SCRIPTS TO PREVENT RENDERING BLOCKS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
