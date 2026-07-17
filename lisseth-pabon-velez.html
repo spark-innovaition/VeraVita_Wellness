@@ -6,11 +6,118 @@
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
   <title>Lisseth Pabon Velez, RMT | VeraVita Naturopathic Clinic Calgary</title>
   <meta name="description" content="Meet Lisseth Pabon Velez — Registered Massage Therapist at VeraVita Naturopathic Clinic Calgary. Offering therapeutic massage, deep tissue, prenatal, hot stone, and cupping therapy." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- PERFORMANCE UPGRADE 1: PRECONNECT & HERO IMAGE PRELOAD -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/Practitioner%20Main%20page/Lisseth%20Pabon%20Velez.webp" />
+
+  <style>
+    .lisseth-pabon-velez .pd-detail-section,
+    .lisseth-pabon-velez .pd-booking-section {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .lisseth-pabon-velez .pd-services-section {
+      background: var(--white) !important;
+    }
+    .lisseth-pabon-velez .pd-pricing-section {
+      background: var(--white) !important;
+    }
+    .section-bg-parallax {
+      position: absolute; top: -60px; left: 0;
+      width: 100%; height: calc(100% + 120px); z-index: 0;
+      pointer-events: none;
+      will-change: transform; /* PERFORMANCE UPGRADE: Enforce GPU acceleration */
+    }
+    .pd-detail-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 22.webp') center / cover no-repeat;
+    }
+    .pd-booking-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 23.webp') center / cover no-repeat;
+    }
+    .pd-detail-section .container-medium,
+    .pd-booking-section .container-medium { position: relative; z-index: 1; }
+
+    /* PRICING TABLE */
+    .pd-pricing-section {
+      padding: 5rem 0;
+    }
+    .pd-pricing-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .pd-pricing-header h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin-top: 0.75rem;
+    }
+    .pd-pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .pd-pricing-card {
+      background: var(--gray-6, #eaf2ea);
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+    .pd-pricing-card h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.25rem;
+      color: var(--dark);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(114,140,105,0.2);
+    }
+    .pd-pricing-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .pd-pricing-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--dark);
+      border-bottom: 1px solid rgba(114,140,105,0.1);
+    }
+    .pd-pricing-list li:last-child {
+      border-bottom: none;
+    }
+    .pd-pricing-duration {
+      color: #728C69;
+      font-size: 0.85rem;
+      margin-left: 0.25rem;
+    }
+    .pd-pricing-amount {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .pd-pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      .pd-pricing-header h2 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
 </head>
 <body class="lisseth-pabon-velez">
 
@@ -77,7 +184,7 @@
         <span class="pd-label">Expert Practitioner</span>
         <h1 class="pd-name">Lisseth <em>Pabon Velez</em>, RMT</h1>
         <p class="pd-specialty">Registered Massage Therapist</p>
-        <p class="pd-short-bio">Lisseth is a dedicated and compassionate Registered Massage Therapist with a background in Physiotherapy and Kinesiology[cite: 2]. She is passionate about helping clients reduce pain, restore mobility, and improve their overall quality of life through evidence-informed, therapeutic care[cite: 4].</p>
+        <p class="pd-short-bio">Lisseth is a dedicated and compassionate Registered Massage Therapist with a background in Physiotherapy and Kinesiology. She is passionate about helping clients reduce pain, restore mobility, and improve their overall quality of life through evidence-informed, therapeutic care.</p>
 
         <div class="pd-meta-grid">
           <div class="pd-meta-block">
@@ -114,134 +221,33 @@
   </div>
 </section>
 
-<style>
-  .lisseth-pabon-velez .pd-detail-section,
-  .lisseth-pabon-velez .pd-booking-section {
-    background: transparent !important;
-    position: relative;
-    overflow: hidden;
-  }
-  .lisseth-pabon-velez .pd-services-section {
-    background: var(--white) !important;
-  }
-  .lisseth-pabon-velez .pd-pricing-section {
-    background: var(--white) !important;
-  }
-  .section-bg-parallax {
-    position: absolute; top: -60px; left: 0;
-    width: 100%; height: calc(100% + 120px); z-index: 0;
-    pointer-events: none;
-  }
-  .pd-detail-section .section-bg-parallax {
-    background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-      url('images/underlay pic desktop/underlay pic 22.webp') center / cover no-repeat;
-  }
-  .pd-booking-section .section-bg-parallax {
-    background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-      url('images/underlay pic desktop/underlay pic 23.webp') center / cover no-repeat;
-  }
-  .pd-detail-section .container-medium,
-  .pd-booking-section .container-medium { position: relative; z-index: 1; }
-
-  /* PRICING TABLE */
-  .pd-pricing-section {
-    padding: 5rem 0;
-  }
-  .pd-pricing-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  .pd-pricing-header h2 {
-    font-family: 'Libre Caslon Text', serif;
-    font-size: 2.2rem;
-    color: var(--dark);
-    margin-top: 0.75rem;
-  }
-  .pd-pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  .pd-pricing-card {
-    background: var(--gray-6, #eaf2ea);
-    border-radius: 1rem;
-    padding: 2rem;
-  }
-  .pd-pricing-card h3 {
-    font-family: 'Libre Caslon Text', serif;
-    font-size: 1.25rem;
-    color: var(--dark);
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(114,140,105,0.2);
-  }
-  .pd-pricing-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .pd-pricing-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.6rem 0;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    color: var(--dark);
-    border-bottom: 1px solid rgba(114,140,105,0.1);
-  }
-  .pd-pricing-list li:last-child {
-    border-bottom: none;
-  }
-  .pd-pricing-duration {
-    color: #728C69;
-    font-size: 0.85rem;
-    margin-left: 0.25rem;
-  }
-  .pd-pricing-amount {
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  @media (max-width: 900px) {
-    .pd-pricing-grid {
-      grid-template-columns: 1fr;
-    }
-    .pd-pricing-header h2 {
-      font-size: 1.75rem;
-    }
-  }
-</style>
-
 <section class="pd-detail-section">
   <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="pd-detail-inner reveal">
       <h2>About Lisseth Pabon Velez</h2>
-      <p>I am a dedicated and compassionate Registered Massage Therapist with a strong foundation in Physiotherapy and Kinesiology[cite: 2]. My education and clinical experience provide me with a deep understanding of rehabilitation, pain management, and movement[cite: 3]. This allows me to deliver personalized treatments that support each client's specific health and wellness goals[cite: 3].</p>
+      <p>I am a dedicated and compassionate Registered Massage Therapist with a strong foundation in Physiotherapy and Kinesiology. My education and clinical experience provide me with a deep understanding of rehabilitation, pain management, and movement. This allows me to deliver personalized treatments that support each client's specific health and wellness goals.</p>
       
-      <p>I take a highly client-centered approach, tailoring every treatment to individual needs while ensuring a comfortable, professional, and relaxing environment[cite: 5]. Whether you're recovering from an injury, managing chronic pain, reducing muscle tension, or simply looking to relax, I am committed to helping you feel your absolute best[cite: 7].</p>
+      <p>I take a highly client-centered approach, tailoring every treatment to individual needs while ensuring a comfortable, professional, and relaxing environment. Whether you're recovering from an injury, managing chronic pain, reducing muscle tension, or simply looking to relax, I am committed to helping you feel your absolute best.</p>
       
-      <p>Committed to ongoing professional development, I continually expand my knowledge and skills to provide safe, effective, and high-quality care[cite: 8]. I look forward to supporting you on your journey toward improved health, movement, and overall well-being[cite: 9].</p>
+      <p>Committed to ongoing professional development, I continually expand my knowledge and skills to provide safe, effective, and high-quality care. I look forward to supporting you on your journey toward improved health, movement, and overall well-being.</p>
 
       <h3 class="pd-help-heading">What Lisseth Can Help With:</h3>
       <ul class="pd-help-list">
-        <li>Relief from chronic pain and muscle tension [cite: 7, 11]</li>
-        <li>Stress reduction and deep relaxation [cite: 11]</li>
-        <li>Injury recovery and improved mobility [cite: 7, 11]</li>
-        <li>Pregnancy support (prenatal and postnatal discomfort) [cite: 31, 35]</li>
-        <li>Headaches and restricted movement [cite: 23]</li>
+        <li>Relief from chronic pain and muscle tension</li>
+        <li>Stress reduction and deep relaxation</li>
+        <li>Injury recovery and improved mobility</li>
+        <li>Pregnancy support (prenatal and postnatal discomfort)</li>
+        <li>Headaches and restricted movement</li>
       </ul>
 
       <h3 class="pd-approach-heading">Her Approach:</h3>
       <ul class="pd-approach-list">
-        <li>Customized therapeutic massage tailored to individual needs [cite: 10]</li>
-        <li>Integrating deep tissue, relaxation, hot stone therapy, and cupping [cite: 11]</li>
-        <li>Utilizing dynamic and static cupping for natural healing [cite: 6, 22]</li>
-        <li>Applying PNF stretching and lymphatic drainage techniques [cite: 6, 11]</li>
-        <li>Providing safe, specialized care for pregnancy and postpartum recovery [cite: 32, 35]</li>
+        <li>Customized therapeutic massage tailored to individual needs</li>
+        <li>Integrating deep tissue, relaxation, hot stone therapy, and cupping</li>
+        <li>Utilizing dynamic and static cupping for natural healing</li>
+        <li>Applying PNF stretching and lymphatic drainage techniques</li>
+        <li>Providing safe, specialized care for pregnancy and postpartum recovery</li>
       </ul>
     </div>
   </div>
@@ -298,7 +304,8 @@
       
       <a href="/service-massage-therapeutic.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/Sub services images/Standard Therapeutic Massage/16-9.webp" alt="Therapeutic Massage" class="pd-svc-img" />
+          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+          <img src="images/Sub services images/Standard Therapeutic Massage/16-9.webp" alt="Therapeutic Massage" class="pd-svc-img" loading="lazy" decoding="async" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Therapeutic Massage</h3>
@@ -308,7 +315,8 @@
 
       <a href="/service-hot-stone-massage.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/Sub services images/Hot Stone Massage/16-9.webp" alt="Hot Stone Massage" class="pd-svc-img" />
+          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+          <img src="images/Sub services images/Hot Stone Massage/16-9.webp" alt="Hot Stone Massage" class="pd-svc-img" loading="lazy" decoding="async" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Hot Stone Massage</h3>
@@ -318,7 +326,8 @@
 
       <a href="/service-acupuncture-cupping.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/Sub services images/Cupping therapy/16-9.webp" alt="Cupping Therapy" class="pd-svc-img" />
+          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+          <img src="images/Sub services images/Cupping therapy/16-9.webp" alt="Cupping Therapy" class="pd-svc-img" loading="lazy" decoding="async" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Cupping Therapy</h3>
@@ -328,7 +337,8 @@
 
       <a href="/service-prenatal-massage.html" class="pd-svc-card reveal">
         <div class="pd-svc-img-wrap">
-          <img src="images/Sub services images/Pre & Post Natal Massage/16-9.webp" alt="Prenatal & Postnatal Massage" class="pd-svc-img" />
+          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+          <img src="images/Sub services images/Pre & Post Natal Massage/16-9.webp" alt="Prenatal & Postnatal Massage" class="pd-svc-img" loading="lazy" decoding="async" />
         </div>
         <div class="pd-svc-body">
           <h3 class="pd-svc-title">Prenatal & Postnatal Massage</h3>
@@ -376,7 +386,8 @@
       <div class="sf-top">
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
           <a href="/" class="sf-logo">
-            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
           </a>
           <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
@@ -429,37 +440,39 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/#/staff_member/27" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book an appointment</span>
-  </a>
-</div>
+<!-- PERFORMANCE UPGRADE 3: DEFERRED SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
+<!-- PERFORMANCE UPGRADE 4: MOBILE GSAP OPTIMIZATION -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   gsap.registerPlugin(ScrollTrigger);
-  document.querySelectorAll('.pd-detail-section, .pd-booking-section').forEach(function (section) {
-    var bg = section.querySelector('.section-bg-parallax');
-    if (!bg) return;
-    gsap.fromTo(bg,
-      { y: -60 },
-      {
-        y: 60,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 3,
-          invalidateOnRefresh: true
+  
+  let mm = gsap.matchMedia();
+  mm.add("(min-width: 861px)", () => {
+    document.querySelectorAll('.pd-detail-section, .pd-booking-section').forEach(function (section) {
+      var bg = section.querySelector('.section-bg-parallax');
+      if (!bg) return;
+      gsap.fromTo(bg,
+        { y: -60 },
+        {
+          y: 60,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1, // Reduced scrub weight for CPU efficiency
+            invalidateOnRefresh: true
+          }
         }
-      }
-    );
+      );
+    });
   });
 });
 </script>
+
 </body>
 </html>
