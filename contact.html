@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <style>
-    /* FIXED NAVBAR (Consistent with other pages) */
+    /* FIXED NAVBAR */
     .navbar {
       position: fixed;
       top: 0;
@@ -29,67 +29,58 @@
     }
 
     /* CLEAN BACKGROUND OVERRIDES */
-    .cth-section, .cfaq-section, .follow-section, .visit-section, .jot-section {
+    .cth-section, .cfaq-section, .visit-section, .jot-section {
       background-color: #ffffff !important;
       position: relative;
-      overflow: hidden !important;
     }
     .cfaq-section, .jot-section {
       background-color: #f7faf8 !important; /* Soft alternating background */
     }
 
     /* Force text colors to be readable on light backgrounds */
-    .cth-title, .cfaq-title, .visit-heading, .follow-heading, .jot-title {
+    .cth-title, .cfaq-title, .visit-heading, .jot-title {
       color: #1e3528 !important;
     }
-    .cth-sub, .visit-top-desc, .follow-desc, .jot-desc {
+    .cth-sub, .visit-top-desc, .jot-desc {
       color: #4a4a4a !important;
     }
     .cth-form label { color: #1e3528; }
     .cth-inp { background-color: #f9f9f9; border: 1px solid #eaeaea; color: #1e3528; }
 
-    /* PARALLAX FIXES */
+    /* CSS-ONLY PARALLAX (Smooth & Lightweight) */
     .section-bg-parallax {
-      position: absolute; top: -60px; left: 0;
-      width: 100%; height: calc(100% + 120px); z-index: 0;
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; z-index: 0;
       pointer-events: none;
-      will-change: transform; /* GPU Acceleration */
+      background-attachment: fixed !important;
+      background-position: center !important;
+      background-size: cover !important;
     }
     .cth-section .section-bg-parallax {
       background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
-        url('images/underlay pic desktop/underlay pic 5.webp') center / cover no-repeat;
+        url('images/underlay pic desktop/underlay pic 5.webp');
     }
     .cfaq-section .section-bg-parallax {
       background: linear-gradient(rgba(247,250,248,0.92), rgba(247,250,248,0.92)),
-        url('images/underlay pic desktop/underlay pic 10.webp') center / cover no-repeat;
-    }
-    .follow-section .section-bg-parallax {
-      background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
-        url('images/underlay pic desktop/underlay pic 12.webp') center / cover no-repeat;
+        url('images/underlay pic desktop/underlay pic 10.webp');
     }
 
     .cth-section .cth-top,
     .cth-section .cth-body,
-    .cfaq-section .cfaq-inner,
-    .follow-section .follow-inner { position: relative; z-index: 1; }
+    .cfaq-section .cfaq-inner { position: relative; z-index: 1; }
 
+    /* Disable parallax on mobile for performance */
     @media (max-width: 860px) {
-      .cth-section .section-bg-parallax,
-      .cfaq-section .section-bg-parallax,
-      .follow-section .section-bg-parallax {
+      .section-bg-parallax {
         background-attachment: scroll !important;
       }
       .cth-section .section-bg-parallax {
         background: linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
-          url('images/mobile overlay pic/pexels-allecgomes-3628770 (1).webp') center / cover no-repeat;
+          url('images/mobile overlay pic/pexels-allecgomes-3628770 (1).webp');
       }
       .cfaq-section .section-bg-parallax {
         background: linear-gradient(rgba(247,250,248,0.90), rgba(247,250,248,0.90)),
-          url('images/mobile overlay pic/pexels-didsss-13214230.webp') center / cover no-repeat;
-      }
-      .follow-section .section-bg-parallax {
-        background: linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
-          url('images/mobile overlay pic/pexels-allecgomes-3628770 (1).webp') center / cover no-repeat;
+          url('images/mobile overlay pic/pexels-didsss-13214230.webp');
       }
     }
 
@@ -373,36 +364,6 @@
     </div>
   </section>
 
-  <!-- FOLLOW US SECTION -->
-  <section class="follow-section">
-    <div class="section-bg-parallax"></div>
-    <div class="follow-inner">
-
-      <!-- Left: 3 pill images -->
-      <div class="follow-pills">
-        <div class="follow-pill follow-pill--tall">
-          <img src="images/insta 1.webp" alt="VeraVita Clinic Instagram" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
-        </div>
-        <div class="follow-pill follow-pill--short">
-          <img src="images/insta 2.webp" alt="VeraVita Clinic Instagram" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
-        </div>
-        <div class="follow-pill follow-pill--tall">
-          <img src="images/insta 3.webp" alt="VeraVita Clinic Instagram" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
-        </div>
-      </div>
-
-      <!-- Right: text -->
-      <div class="follow-content">
-        <h2 class="follow-heading">Follow us on<br />Instagram</h2>
-        <p class="follow-desc">Stay inspired with wellness tips, behind-the-scenes moments, and the latest updates from our clinic — all on Instagram.</p>
-        <a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="follow-handle" style="color:#4a6b53;">
-          <i class="fa-brands fa-instagram"></i> @veravitaclinic
-        </a>
-      </div>
-
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer class="sf-footer">
     <div class="sf-fixed">
@@ -509,33 +470,6 @@
             { opacity: 1, y: 0, duration: 0.4, delay: 0.1, ease: 'power2.out' }
           );
         }
-      });
-    });
-
-    // Smart Mobile Parallax Optimization
-    document.addEventListener('DOMContentLoaded', function () {
-      gsap.registerPlugin(ScrollTrigger);
-      
-      let mm = gsap.matchMedia();
-      mm.add("(min-width: 861px)", () => {
-        document.querySelectorAll('.cth-section, .cfaq-section, .follow-section').forEach(function (section) {
-          var bg = section.querySelector('.section-bg-parallax');
-          if (!bg) return;
-          gsap.fromTo(bg,
-            { y: -60 },
-            {
-              y: 60,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: section,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 1, // Reduced scrub weight for better performance
-                invalidateOnRefresh: true
-              }
-            }
-          );
-        });
       });
     });
   </script>

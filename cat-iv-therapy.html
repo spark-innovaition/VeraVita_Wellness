@@ -45,8 +45,8 @@
   
   @media (max-width: 768px) {
     .cat-hero {
-      /* Swaps to mobile portrait image */
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%), url('images/Service Hero secion images/IV 19-6.webp') center/cover no-repeat;
+      /* Swaps to mobile portrait image - FIXED TYPO TO 9-16 */
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%), url('images/Service Hero secion images/IV 9-16.webp') center/cover no-repeat;
     }
   }
 
@@ -102,13 +102,19 @@
   .svc-section {
     background-color: #ffffff;
   }
-  #pricing {
+  .prac-grid-section {
     background-color: #f7faf8;
   }
+  #pricing {
+    background-color: #ffffff;
+  }
   
-  /* Ensure pricing text reads well on light background */
-  .price-table th, .price-table td, .svc-section-header h2, .svc-section-header p {
+  /* Ensure text reads well on light background */
+  .price-table th, .price-table td, .svc-section-header h2, .prac-name, .prac-role {
     color: #1e3528;
+  }
+  .svc-section-header p, .svc-cell-desc, .prac-desc {
+    color: #4a4a4a;
   }
 </style>
 </head>
@@ -231,6 +237,33 @@
 </div>
 </section>
 
+<!-- NEW LEAD PRACTITIONER SECTION -->
+<section class="prac-grid-section" id="practitioners" style="padding:4rem 0 5rem;">
+  <div class="container-medium">
+    <div class="svc-section-header reveal" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none">
+      <p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 0 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Lead Practitioner</p>
+      <h2>Meet Our <em>Doctor</em></h2>
+    </div>
+
+    <div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:450px;margin:0 auto">
+      <div class="prac-card reveal" style="text-align:center">
+        <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
+          <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+        </div>
+        <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
+          <h3 class="prac-name">Dr. Jill Nazar, ND</h3>
+          <span class="prac-role">Naturopathic Doctor & Founder</span>
+          <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Specializes in naturopathic medicine, chronic disease management, advanced functional lab testing, and personalized IV nutrient therapy.</p>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
+            <a href="/dr-jill-nazar.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://veravitanaturopathicclinic.janeapp.com/#/staff_member/1" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book with Dr. Nazar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="pricing" style="padding:4rem 0 6.5rem">
 <div class="container">
 <div class="svc-section-header reveal" style="margin-bottom:3rem; text-align:center;">
@@ -260,7 +293,7 @@
 </table>
 </div>
 <div class="reveal" style="margin-top:2.5rem;text-align:center">
-<a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/1" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+<a href="https://veravitanaturopathicclinic.janeapp.com/#/staff_member/1" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
 <span class="btn-ihb-blob"></span>
 <span class="btn-ihb-default">Book with Dr. Nazar</span>
 <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Dr. Nazar</span>
