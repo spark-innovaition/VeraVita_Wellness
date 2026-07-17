@@ -12,8 +12,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <link rel="stylesheet" href="css/styles.css?v=2" />
 
-<!-- Preload the new hero image for faster loading -->
-<link rel="preload" as="image" href="images/Service Hero secion images/Nathuropathy 16-9.webp" />
+<!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT PRELOADING & PRECONNECT -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+<link rel="preload" as="image" href="images/Service Hero secion images/Nathuropathy 16-9.webp" media="(min-width: 769px)" />
+<link rel="preload" as="image" href="images/Service Hero secion images/Nathuropathy 9-16.webp" media="(max-width: 768px)" />
 
 <style>
   /* FIXED NAVBAR (Consistent with Home/About) */
@@ -248,7 +250,8 @@
     <div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:450px;margin:0 auto">
       <div class="prac-card reveal" style="text-align:center">
         <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
-          <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" FOR SMOOTH SCROLLING -->
+          <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
         <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
           <h3 class="prac-name">Dr. Jill Nazar, ND</h3>
@@ -315,7 +318,8 @@
 <div class="sf-top">
 <div class="sf-brand sf-anim" style="--sf-delay:0s">
 <a href="/" class="sf-logo">
-<img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+<!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" -->
+<img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
 <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
 </a>
 <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
@@ -368,9 +372,10 @@
 </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
+<!-- PERFORMANCE UPGRADE 3: DEFER SCRIPTS TO ELIMINATE PARSE RENDERING BLOCKS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
 </body>
 </html>
