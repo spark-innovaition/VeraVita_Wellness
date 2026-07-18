@@ -259,7 +259,7 @@
       border-radius: 1.5rem;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
       background: #fff;
     }
     .team-card-large:hover {
@@ -305,24 +305,21 @@
       display: flex;
       gap: 1.5rem;
       overflow-x: auto;
-      scroll-snap-type: x mandatory;
       scrollbar-width: none;
       padding: 1rem 0 2rem 0;
     }
     .snap-track::-webkit-scrollbar { display: none; }
-    .snap-item { scroll-snap-align: center; flex-shrink: 0; }
+    .snap-item { flex-shrink: 0; }
 
     @media (max-width: 1024px) {
       .full-width-track {
         overflow-x: auto;
-        scroll-snap-type: x mandatory;
         padding: 1rem 5vw 3rem 5vw;
         scrollbar-width: none;
       }
       .full-width-track::-webkit-scrollbar { display: none; }
       .team-card-large {
         flex: 0 0 280px; 
-        scroll-snap-align: center;
       }
     }
 
@@ -401,7 +398,7 @@
 </header>
 
 <div class="hp-swap-wrap">
-<section class="hwnu-section fade-up">
+<section class="hwnu-section">
   <div class="container">
 
     <div class="hwnu-eyebrow">
@@ -429,7 +426,7 @@
   </div>
 </section>
 
-<section class="wcu-section fade-up">
+<section class="wcu-section">
   <div class="container">
 
     <div class="wcu-header">
@@ -440,8 +437,8 @@
       <h2 class="wcu-heading">Why choose VeraVita<br />for your health</h2>
     </div>
 
-    <div class="wcu-grid stagger-grid">
-      <div class="wcu-item stagger-item">
+    <div class="wcu-grid">
+      <div class="wcu-item">
         <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M24 38s-14-9-14-19a8 8 0 0 1 14-5.3A8 8 0 0 1 38 19c0 10-14 19-14 19z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M16 36c-3 2-5 3-5 3M32 36c3 2 5 3 5 3M24 44v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -450,7 +447,7 @@
         <h4 class="wcu-item-title">Patient-Centred Approach</h4>
         <p class="wcu-item-text">We tailor every treatment to fit your unique health needs, lifestyle, and goals — no one-size-fits-all solutions.</p>
       </div>
-      <div class="wcu-item stagger-item">
+      <div class="wcu-item">
         <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="24" cy="12" r="7" stroke="currentColor" stroke-width="1.8"/>
           <path d="M17 12c0 10 4 18 7 18s7-8 7-18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -461,7 +458,7 @@
         <h4 class="wcu-item-title">Advanced Diagnostic Tools</h4>
         <p class="wcu-item-text">State-of-the-art functional lab testing and technology ensures precise, early, and accurate detection.</p>
       </div>
-      <div class="wcu-item stagger-item">
+      <div class="wcu-item">
         <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M24 8l3.5 7 7.5 1.1-5.5 5.3 1.3 7.6L24 25.5l-6.8 3.5 1.3-7.6L13 16.1l7.5-1.1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M14 34l-2 8h24l-2-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -472,7 +469,7 @@
       </div>
     </div>
 
-    <div class="wcu-cert-card fade-up">
+    <div class="wcu-cert-card">
       <div class="wcu-cert-left">
         <h3 class="wcu-cert-title">Certified care you can rely on</h3>
         <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary" style="margin-top:1.5rem;">
@@ -504,7 +501,7 @@
 </section>
 </div>
 
-<section class="services-accord-section fade-up">
+<section class="services-accord-section">
   <div class="accord-video-overlay"></div>
 
   <div class="container" style="position:relative;z-index:1;">
@@ -614,7 +611,7 @@
 </section>
 
 <!-- SCROLL-SNAP TESTIMONIALS (Alternating Background) -->
-<section style="padding: 5rem 0; background-color: #f7faf8;" class="fade-up">
+<section style="padding: 5rem 0; background-color: #f7faf8;">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
       <div class="section-label">Patient Reviews</div>
@@ -675,7 +672,7 @@
 </section>
 
 <!-- FULL WIDTH EDITORIAL TEAM GALLERY (Fit 7 Layout) -->
-<section class="team-section fade-up">
+<section class="team-section">
   <div class="team-header-center">
     <div class="section-label">
       <i class="fa-solid fa-heart"></i> Here When You Need Us
@@ -689,50 +686,50 @@
     </a>
   </div>
   
-  <div class="full-width-track stagger-grid">
-    <div class="team-card-large stagger-item">
+  <div class="full-width-track">
+    <div class="team-card-large">
       <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" loading="lazy" decoding="async" />
       <div class="tc-info">
         <span class="tc-name">Dr. Jill Nazar</span>
         <span class="tc-title">Naturopathic Doctor</span>
       </div>
     </div>
-    <div class="team-card-large stagger-item">
+    <div class="team-card-large">
       <img src="images/Practitioner%20Main%20page/Dr.%20Viktoriia%20Taylor,%20DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" loading="lazy" decoding="async" />
       <div class="tc-info">
         <span class="tc-name">Dr. Viktoriia Taylor</span>
         <span class="tc-title">DTCM</span>
       </div>
     </div>
-    <div class="team-card-large stagger-item">
+    <div class="team-card-large">
       <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" loading="lazy" decoding="async" />
       <div class="tc-info">
         <span class="tc-name">Joseph Wei</span>
         <span class="tc-title">Acupuncturist</span>
       </div>
     </div>
-    <div class="team-card-large stagger-item">
+    <div class="team-card-large">
       <img src="images/Practitioner%20Main%20page/Jean-Wilson%20Raymond.webp" alt="Jean-Wilson Raymond, RMT" loading="lazy" decoding="async" />
       <div class="tc-info">
         <span class="tc-name">Jean-Wilson</span>
         <span class="tc-title">RMT</span>
       </div>
     </div>
-    <div class="team-card-large stagger-item">
+    <div class="team-card-large">
       <img src="images/Practitioner%20Main%20page/Lisseth%20Pabon%20Velez.webp" alt="Lisseth Pabon Velez, RMT" loading="lazy" decoding="async" />
       <div class="tc-info">
         <span class="tc-name">Lisseth Pabon</span>
         <span class="tc-title">RMT</span>
       </div>
     </div>
-    <div class="team-card-large stagger-item">
+    <div class="team-card-large">
       <img src="images/Practitioner%20Main%20page/Johnvel%20Sabturani.webp" alt="Johnvel Sabturani, RMT" loading="lazy" decoding="async" />
       <div class="tc-info">
         <span class="tc-name">Johnvel Sabturani</span>
         <span class="tc-title">RMT</span>
       </div>
     </div>
-    <div class="team-card-large stagger-item">
+    <div class="team-card-large">
       <img src="images/Practitioner%20Main%20page/Amy%20lutz%20Main%20page.webp" alt="Amy Lutz, MOMSc" loading="lazy" decoding="async" />
       <div class="tc-info">
         <span class="tc-name">Amy Lutz</span>

@@ -6,11 +6,17 @@
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
   <title>Tui Na Massage | VeraVita Naturopathic Clinic Calgary</title>
   <meta name="description" content="Traditional Chinese therapeutic massage using rhythmic compression and joint mobilisation to relieve tension, improve circulation, and restore energetic flow through the body." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- PERFORMANCE UPGRADE 1: SMART PRELOADING -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/Sub services images/Tui Na Massage/16-9.webp" media="(max-width: 767px)" />
+  <link rel="preload" as="image" href="images/Sub services images/Tui Na Massage/4-5.webp" media="(min-width: 768px)" />
 
   <style>
     /* Hero Image Ratio Fix */
@@ -40,7 +46,7 @@
       background:
         linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
         url('images/underlay pic desktop/underlay pic 28.webp') center / cover no-repeat;
-      will-change: transform;
+      will-change: transform; /* Hardware acceleration */
       pointer-events: none;
     }
 
@@ -130,7 +136,7 @@
       border: 1px solid rgba(255,255,255,0.2);
     }
 
-    /* Mobile Responsive Grid Fixes */
+    /* Mobile Responsive Grid Fixes & PERFORMANCE FIXES */
     @media (max-width: 860px) {
       .sd-hero-img-wrap {
         height: auto !important;
@@ -156,6 +162,13 @@
       }
       .sd-rel-overlay-title {
         font-size: 1.35rem;
+      }
+      /* PERFORMANCE UPGRADE: Completely remove background images behind text on mobile for buttery smooth scrolling */
+      .section-bg-parallax {
+        display: none !important;
+      }
+      .svc-acupuncture-tui-na .sd-body {
+        background-color: #f7faf8 !important; /* Fallback light background */
       }
     }
 
@@ -254,10 +267,11 @@
         <p class="reveal">Tui Na is a cornerstone of Traditional Chinese Medicine. At VeraVita, it is delivered as a complete therapeutic modality — not an add-on — with the same clinical rigour applied to all our TCM treatments.</p>
         
         <div class="sd-gallery reveal">
-          <div class="sd-gallery-item"><img src="images/Sub services images/Tui Na Massage/Image 1.webp" alt="Tui Na 1" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Tui Na Massage/Image 2.webp" alt="Tui Na 2" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Tui Na Massage/Image 3.webp" alt="Tui Na 3" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Tui Na Massage/Image 4.webp" alt="Tui Na 4" /></div>
+          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
+          <div class="sd-gallery-item"><img src="images/Sub services images/Tui Na Massage/Image 1.webp" alt="Tui Na 1" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Tui Na Massage/Image 2.webp" alt="Tui Na 2" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Tui Na Massage/Image 3.webp" alt="Tui Na 3" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Tui Na Massage/Image 4.webp" alt="Tui Na 4" loading="lazy" decoding="async" /></div>
         </div>
       </div>
       <aside class="sd-card reveal">
@@ -291,7 +305,8 @@
     
     <div class="sd-related-grid">
       <a href="/service-acupuncture-traditional" class="sd-rel-card reveal">
-        <img src="images/Sub services images/Traditional Acupuncture/16-9.webp" alt="Traditional Acupuncture" class="sd-rel-img" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
+        <img src="images/Sub services images/Traditional Acupuncture/16-9.webp" alt="Traditional Acupuncture" class="sd-rel-img" loading="lazy" decoding="async" />
         <div class="sd-rel-overlay-content">
           <h3 class="sd-rel-overlay-title">Traditional Acupuncture</h3>
           <p class="sd-rel-overlay-desc">Classical Chinese needling to restore balance and support innate healing capacity.</p>
@@ -299,7 +314,8 @@
         </div>
       </a>
       <a href="/service-acupuncture-cupping" class="sd-rel-card reveal">
-        <img src="images/Sub services images/Cupping therapy/16-9.webp" alt="Cupping Therapy" class="sd-rel-img" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
+        <img src="images/Sub services images/Cupping therapy/16-9.webp" alt="Cupping Therapy" class="sd-rel-img" loading="lazy" decoding="async" />
         <div class="sd-rel-overlay-content">
           <h3 class="sd-rel-overlay-title">Cupping Therapy</h3>
           <p class="sd-rel-overlay-desc">Traditional therapy to improve circulation, relieve tension, and accelerate recovery.</p>
@@ -307,7 +323,8 @@
         </div>
       </a>
       <a href="/service-massage-therapeutic" class="sd-rel-card reveal">
-        <img src="images/Sub services images/Standard Therapeutic Massage/16-9.webp" alt="Massage Therapy" class="sd-rel-img" />
+        <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
+        <img src="images/Sub services images/Standard Therapeutic Massage/16-9.webp" alt="Massage Therapy" class="sd-rel-img" loading="lazy" decoding="async" />
         <div class="sd-rel-overlay-content">
           <h3 class="sd-rel-overlay-title">Massage Therapy</h3>
           <p class="sd-rel-overlay-desc">Therapeutic techniques to relieve muscle tension and support wellness.</p>
@@ -324,7 +341,11 @@
     <div class="sf-body">
       <div class="sf-top">
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
-          <a href="/" class="sf-logo"><img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div></a>
+          <a href="/" class="sf-logo">
+            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
+          </a>
           <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social"><a href="https://www.facebook.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
         </div>
@@ -341,35 +362,39 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
+<!-- PERFORMANCE UPGRADE 3: DEFERRED SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
+<!-- PERFORMANCE UPGRADE 4: MOBILE GSAP OPTIMIZATION -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
-    var section = document.querySelector(".sd-body");
-    var bg = document.querySelector(".section-bg-parallax");
-    if (!section || !bg) return;
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 861px)", () => {
+      var section = document.querySelector(".sd-body");
+      var bg = document.querySelector(".section-bg-parallax");
+      if (!section || !bg) return;
 
-    gsap.fromTo(bg,
-      { y: -60 },
-      {
-        y: 60,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 3,
-          invalidateOnRefresh: true
+      gsap.fromTo(bg,
+        { y: -60 },
+        {
+          y: 60,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1, // Reduced scrub weight for CPU efficiency
+            invalidateOnRefresh: true
+          }
         }
-      }
-    );
+      );
+    });
   });
 </script>
 
-<div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
 </body>
 </html>

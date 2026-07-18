@@ -314,7 +314,11 @@ if (typeof gsap !== 'undefined') {
     const items = grid.querySelectorAll('.stagger-item');
     gsap.from(items, {
       scrollTrigger: { trigger: grid, start: 'top 85%', toggleActions: 'play none none none' },
-      y: 50, opacity: 0, duration: 0.7, ease: 'power3.out', stagger: 0.12
+      y: 20, /* CHANGE: Reduced from 50 to 20 for a shorter, subtler glide */
+      opacity: 0, 
+      duration: 1.2, /* CHANGE: Increased from 0.7 to 1.2 for a smoother fade */
+      ease: 'power2.out', /* CHANGE: Changed from power3 to power2 for a softer deceleration */
+      stagger: 0.15 /* CHANGE: Slightly increased stagger for better flow */
     });
   });
 
@@ -494,21 +498,6 @@ if (typeof gsap !== 'undefined') {
     tl.from(pdContent, { opacity: 0, x: -35, duration: 0.75 });
     if (pdPhoto) tl.from(pdPhoto, { opacity: 0, scale: 0.96, duration: 0.75 }, '-=0.45');
   })();
-
-  /* Contact page hero */
-  (function() {
-    const cthTop  = document.querySelector('.cth-top');
-    if (!cthTop) return;
-    const title   = cthTop.querySelector('.cth-title');
-    const sub     = cthTop.querySelector('.cth-sub');
-    const imgWrap = document.querySelector('.cth-img-wrap');
-    const form    = document.querySelector('.cth-form-wrap');
-    const tl = gsap.timeline({ delay: 0.1, defaults: { ease: 'power3.out' } });
-    if (title)   tl.from(title,   { opacity: 0, y: 30, duration: 0.65 });
-    if (sub)     tl.from(sub,     { opacity: 0, y: 20, duration: 0.55 }, '-=0.3');
-    if (imgWrap) tl.from(imgWrap, { opacity: 0, x: -40, duration: 0.7 }, '-=0.2');
-    if (form)    tl.from(form,    { opacity: 0, x: 40,  duration: 0.7 }, '-=0.6');
-  })();
 }
 
 /* ===========================
@@ -614,28 +603,6 @@ if (typeof gsap !== 'undefined') {
   });
 
   /* ============================================
-     HEADING CLIP REVEAL (for .heading-wrap elements)
-     ============================================ */
-  document.querySelectorAll('.heading-wrap').forEach(wrap => {
-    const inner = wrap.querySelector('.heading-inner');
-    if (!inner) return;
-    gsap.set(inner, { y: '100%', opacity: 0 });
-    ScrollTrigger.create({
-      trigger: wrap,
-      start: 'top 88%',
-      onEnter: () => {
-        gsap.to(inner, {
-          y: '0%',
-          opacity: 1,
-          duration: 0.9,
-          ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-        });
-      },
-      once: true
-    });
-  });
-
-  /* ============================================
      REVEAL CLASS (.reveal elements) — batched
      ============================================ */
   if (document.querySelector('.reveal')) {
@@ -707,53 +674,6 @@ if (typeof gsap !== 'undefined') {
     });
   });
 }
-
-/* ============================================
-   STICKY FOOTER — smooth fade-in animation
-   Triggers once when the footer placeholder
-   enters the viewport while scrolling down.
-   ============================================ */
-(function initStickyFooterAnim() {
-  const footer = document.querySelector('.sf-footer');
-  const fixed  = document.querySelector('.sf-fixed');
-  if (!footer || !fixed) return;
-
-  // Elements to stagger-animate inside the fixed panel
-  const brand  = fixed.querySelector('.sf-brand');
-  const cols   = fixed.querySelectorAll('.sf-col');
-  const bottom = fixed.querySelector('.sf-bottom');
-  const groups = [brand, ...cols, bottom].filter(Boolean);
-
-  // Hide immediately via GSAP inline styles (or plain JS)
-  if (typeof gsap !== 'undefined') {
-    gsap.set(groups, { opacity: 0, y: 28 });
-  }
-
-  let played = false;
-  function playAnim() {
-    if (played) return;
-    played = true;
-    if (typeof gsap !== 'undefined') {
-      gsap.to(groups, {
-        opacity: 1,
-        y: 0,
-        duration: 0.65,
-        ease: 'power2.out',
-        stagger: 0.1,
-      });
-    }
-  }
-
-  // Fire when the placeholder div enters the viewport
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { playAnim(); io.disconnect(); } });
-  }, { threshold: 0.01 });
-  io.observe(footer);
-
-  // Fallback: if already in view on load, play immediately
-  const rect = footer.getBoundingClientRect();
-  if (rect.top < window.innerHeight) playAnim();
-})();
 
 /* ============================================
    PAUSE BACKGROUND VIDEOS WHEN OFF-SCREEN

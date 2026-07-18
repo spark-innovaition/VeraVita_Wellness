@@ -6,18 +6,34 @@
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
   <title>Facial Acupuncture | VeraVita Naturopathic Clinic Calgary</title>
   <meta name="description" content="Natural facial rejuvenation through targeted needling — stimulates collagen, lifts facial muscles, and reduces fine lines without injectables for a refreshed, natural appearance." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
 
+  <!-- PERFORMANCE UPGRADE 1: SMART PRELOADING -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/Sub services images/Cosmetic Acupuncture/16-9.webp" media="(max-width: 767px)" />
+  <link rel="preload" as="image" href="images/Sub services images/Cosmetic Acupuncture/4-5.webp" media="(min-width: 768px)" />
+
   <style>
-    /* Override the static CSS background so we can use the parallax div instead */
+    /* Hero Image Ratio Fix */
+    @media (max-width: 767px) {
+      .sd-hero-img--desktop { display: none !important; }
+      .sd-hero-img--mobile { display: block !important; }
+    }
+    @media (min-width: 768px) {
+      .sd-hero-img--desktop { display: block !important; }
+      .sd-hero-img--mobile { display: none !important; }
+    }
+
+    /* Parallax background window logic */
     .svc-acupuncture-cosmetic .sd-body {
       background: transparent !important;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
     }
 
     .section-bg-parallax {
@@ -26,11 +42,11 @@
       left: 0;
       width: 100%;
       height: 100vh;
-      z-index: 0;
+      z-index: -1;
       background:
         linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
         url('images/underlay pic desktop/underlay pic 27.webp') center / cover no-repeat;
-      will-change: transform;
+      will-change: transform; /* Hardware acceleration */
       pointer-events: none;
     }
 
@@ -39,7 +55,87 @@
       z-index: 1;
     }
 
-    /* Fix mobile hero: reset fixed height so aspect-ratio 16/9 takes effect */
+    /* Aggressive Hide: Arrows and Navigation Dots */
+    .sd-rel-nav, .sd-rel-btn, .sd-related-header .fa-circle, .sd-related-header::before, .sd-related-header::after {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    /* Overlay Card Style Alignment */
+    .sd-rel-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      display: block;
+      aspect-ratio: 4/3;
+      background: #1e3528;
+      text-decoration: none;
+    }
+    
+    .sd-rel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .sd-rel-card:hover .sd-rel-img {
+      transform: scale(1.08);
+    }
+    
+    /* READABILITY FIX: Enhanced gradient mask */
+    .sd-rel-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0) 100%);
+      z-index: 1;
+    }
+
+    .sd-rel-overlay-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px;
+      z-index: 10;
+      color: white;
+    }
+
+    .sd-rel-overlay-title {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.6rem;
+      margin: 0 0 10px 0;
+      font-weight: 500;
+      color: #ffffff !important;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .sd-rel-overlay-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0 0 20px 0;
+      color: #ffffff !important;
+      opacity: 0.95;
+      max-width: 95%;
+    }
+
+    .sd-rel-overlay-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 10px 22px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Mobile Responsive Grid Fixes & PERFORMANCE FIXES */
     @media (max-width: 860px) {
       .sd-hero-img-wrap {
         height: auto !important;
@@ -47,21 +143,41 @@
         margin-left: 0 !important;
         margin-right: 0 !important;
       }
-      /* Fix Related Services: restore horizontal scroll instead of grid squish */
       .sd-related-grid {
         display: flex !important;
         overflow-x: auto !important;
-        overflow-y: hidden !important;
+        padding-bottom: 2rem;
+        gap: 1.2rem;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: 0.5rem;
       }
       .sd-rel-card {
         flex: 0 0 calc(85vw) !important;
         scroll-snap-align: start;
+        aspect-ratio: 1/1.1;
+      }
+      .sd-rel-overlay-content {
+        padding: 20px;
+      }
+      .sd-rel-overlay-title {
+        font-size: 1.35rem;
+      }
+      /* PERFORMANCE UPGRADE: Completely remove background images behind text on mobile for buttery smooth scrolling */
+      .section-bg-parallax {
+        display: none !important;
+      }
+      .svc-acupuncture-cosmetic .sd-body {
+        background-color: #f7faf8 !important; /* Fallback light background */
       }
     }
 
+    @media (min-width: 861px) {
+      .sd-related-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body class="svc-acupuncture-cosmetic">
@@ -151,10 +267,11 @@
         <p class="reveal">Facial Acupuncture works from within — addressing the underlying constitution while stimulating local collagen and circulation. Our expert practitioners combine systemic and facial needling for whole-body rejuvenation.</p>
 
         <div class="sd-gallery reveal">
-          <div class="sd-gallery-item"><img src="images/Sub services images/Cosmetic Acupuncture/Image 1.webp" alt="Facial Acupuncture gallery image 1" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Cosmetic Acupuncture/Image 2.webp" alt="Facial Acupuncture gallery image 2" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Cosmetic Acupuncture/Image 3.webp" alt="Facial Acupuncture gallery image 3" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Cosmetic Acupuncture/Image 4.webp" alt="Facial Acupuncture gallery image 4" /></div>
+          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
+          <div class="sd-gallery-item"><img src="images/Sub services images/Cosmetic Acupuncture/Image 1.webp" alt="Facial Acupuncture gallery image 1" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Cosmetic Acupuncture/Image 2.webp" alt="Facial Acupuncture gallery image 2" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Cosmetic Acupuncture/Image 3.webp" alt="Facial Acupuncture gallery image 3" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Cosmetic Acupuncture/Image 4.webp" alt="Facial Acupuncture gallery image 4" loading="lazy" decoding="async" /></div>
         </div>
       </div>
       <aside class="sd-card reveal">
@@ -198,7 +315,8 @@
     </div>
     <div class="sd-related-grid">
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap"><img src="images/massage therapy - services page.jpg" alt="Massage Therapy" class="sd-rel-img" /></div>
+        <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
+        <div class="sd-rel-img-wrap"><img src="images/massage therapy - services page.jpg" alt="Massage Therapy" class="sd-rel-img" loading="lazy" decoding="async" /></div>
         <div class="sd-rel-body">
           <h3 class="sd-rel-name">Massage Therapy</h3>
           <p class="sd-rel-desc">Therapeutic massage techniques to relieve muscle tension, improve circulation, and support recovery from injury or chronic pain.</p>
@@ -206,7 +324,8 @@
         </div>
       </div>
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap"><img src="images/fertility program - services page.png" alt="Fertility Program" class="sd-rel-img" /></div>
+        <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
+        <div class="sd-rel-img-wrap"><img src="images/fertility program - services page.png" alt="Fertility Program" class="sd-rel-img" loading="lazy" decoding="async" /></div>
         <div class="sd-rel-body">
           <h3 class="sd-rel-name">Fertility Program</h3>
           <p class="sd-rel-desc">Comprehensive naturopathic fertility support addressing hormonal balance, cycle regulation, and reproductive health optimisation.</p>
@@ -214,7 +333,8 @@
         </div>
       </div>
       <div class="sd-rel-card reveal">
-        <div class="sd-rel-img-wrap"><img src="images/osteopathy - services page.png" alt="Osteopathy" class="sd-rel-img" /></div>
+        <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
+        <div class="sd-rel-img-wrap"><img src="images/osteopathy - services page.png" alt="Osteopathy" class="sd-rel-img" loading="lazy" decoding="async" /></div>
         <div class="sd-rel-body">
           <h3 class="sd-rel-name">Osteopathy</h3>
           <p class="sd-rel-desc">Hands-on osteopathic manual therapy to improve mobility, relieve musculoskeletal pain, and restore the body's structural balance.</p>
@@ -231,7 +351,11 @@
     <div class="sf-body">
       <div class="sf-top">
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
-          <a href="/" class="sf-logo"><img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div></a>
+          <a href="/" class="sf-logo">
+            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
+          </a>
           <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social"><a href="https://www.facebook.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
         </div>
@@ -267,35 +391,39 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
+<!-- PERFORMANCE UPGRADE 3: DEFERRED SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
+<!-- PERFORMANCE UPGRADE 4: MOBILE GSAP OPTIMIZATION -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
-    var section = document.querySelector(".sd-body");
-    var bg = document.querySelector(".section-bg-parallax");
-    if (!section || !bg) return;
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 861px)", () => {
+      var section = document.querySelector(".sd-body");
+      var bg = document.querySelector(".section-bg-parallax");
+      if (!section || !bg) return;
 
-    gsap.fromTo(bg,
-      { y: -60 },
-      {
-        y: 60,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 3,
-          invalidateOnRefresh: true
+      gsap.fromTo(bg,
+        { y: -60 },
+        {
+          y: 60,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1, // Reduced scrub weight for CPU efficiency
+            invalidateOnRefresh: true
+          }
         }
-      }
-    );
+      );
+    });
   });
 </script>
 
-<div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
 </body>
 </html>
