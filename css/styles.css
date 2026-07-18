@@ -1,9 +1,7 @@
 /* ========================================
    VeraVita Clinic — Design System
-   Based on Curevo Webflow Template
+   Optimized for High-Performance Rendering
    ======================================== */
-
-/* Google Fonts loaded via <link> in HTML — no @import needed */
 
 /* ---- Variables ---- */
 :root {
@@ -2621,27 +2619,6 @@ ul.contact-info-list { padding: 0; margin: 0; }
     max-height: calc(100vh - 64px); overflow-y: auto;
   }
 
-  /* ---- Bottom booking bar (mobile only) ---- */
-  .mobile-book-bar {
-    display: flex;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 997;
-    padding: 0.75rem 1.25rem;
-    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-top: 1px solid var(--gray-5);
-    box-shadow: 0 -4px 24px rgba(38,51,45,0.10);
-  }
-  .mobile-book-btn {
-    width: 100%;
-    justify-content: center;
-    padding: 0.9rem 1.5rem;
-    font-size: 0.9375rem;
-  }
-
   /* ---- Mobile nav dropdown ---- */
   .nav-dropdown-menu,
   .nav-dropdown:hover .nav-dropdown-menu,
@@ -3006,9 +2983,6 @@ ul.contact-info-list { padding: 0; margin: 0; }
   .wcu-cert-card { flex-direction: column; align-items: flex-start; }
   .wcu-cert-right { flex-wrap: wrap; }
 }
-
-/* Mobile bottom booking bar — hidden on desktop */
-.mobile-book-bar { display: none; }
 
 /* ========================================
    SERVICES ACCORDION SECTION (dark)
@@ -3501,7 +3475,7 @@ ul.contact-info-list { padding: 0; margin: 0; }
 }
 .team-tooltip::after {
   content: '';
-  position: absolute; top: 100%; left: 50%;
+  position: absolute top: 100%; left: 50%;
   transform: translateX(-50%);
   border: 6px solid transparent; border-top-color: var(--dark);
 }
@@ -4755,7 +4729,7 @@ body { overflow-x: hidden; }
     }
   }
 
-  /* SERVICE PAGES */
+/* SERVICE PAGES */
   .svc-botox               { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-bharati-mahli-7865119-6483393.jpg'); }
   .svc-dermal-fillers      { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-cheeseburger-36452123.jpg'); }
   .svc-lab-testing         { --svc-underlay: url('../images/mobile%20overlay%20pic/pexels-chetanvlad-5457362.jpg'); }
@@ -5416,4 +5390,3 @@ body { overflow-x: hidden; }
   .ptab-cta { padding: 2rem 1.25rem; }
   .ptab-btn { font-size: 0.8rem; padding: 0.5rem 1rem; }
 }
-

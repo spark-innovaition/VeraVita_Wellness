@@ -13,8 +13,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- PERFORMANCE UPGRADE 1: PRECONNECT FOR FASTER SCRIPT FETCHING -->
+  <!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT HERO PRELOADING & PRECONNECT -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/Service page - Hero Mobile.webp" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/Service page - Hero desktop.webp" media="(min-width: 768px)" fetchpriority="high" />
 
   <style>
     /* PERFORMANCE & TAB SIZE OPTIMIZATIONS */
@@ -30,17 +32,30 @@
       transform: translate3d(0,0,0);
     }
 
-    .svc-hero-video {
+    /* NEW STATIC IMAGE HERO CSS */
+    .svc-hero-img {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      opacity: 0.7;
+      opacity: 0.8;
+      z-index: 0;
+    }
+    .svc-hero-img--desktop { display: block; }
+    .svc-hero-img--mobile { display: none; }
+    
+    .svc-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    
+    .svc-hero-content {
+      position: relative;
+      z-index: 2;
     }
 
     /* 3-Column Grid Fix: Solves "Too Wide" Tabs */
@@ -102,6 +117,9 @@
       }
       .svc-cell--hub:last-child { border-bottom: none; }
       .svc-hero { height: 70vh; }
+      
+      .svc-hero-img--desktop { display: none !important; }
+      .svc-hero-img--mobile { display: block !important; }
     }
   </style>
 </head>
@@ -113,7 +131,7 @@
         <a href="/" class="navbar-logo">
           <picture>
             <source media="(max-width: 860px)" srcset="images/Header - Mobile.png" />
-            <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+            <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" width="203" height="90" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
           </picture>
           <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
           <span class="logo-text" style="display:none;">VeraVita</span>
@@ -143,127 +161,121 @@
     </div>
   </nav>
 
-  <section class="svc-hero">
-    <video class="svc-hero-video" autoplay muted loop playsinline
-      data-src-desktop="images/main service page - desktop.mp4"
-      data-src-mobile="images/main service page - mobile.mp4">
-      <source src="images/main service page - desktop.mp4" type="video/mp4" />
-    </video>
-    <script>
-      (function() {
-        var v = document.currentScript.previousElementSibling;
-        var src = window.matchMedia('(max-width: 860px)').matches ? v.dataset.srcMobile : v.dataset.srcDesktop;
-        v.querySelector('source').src = src;
-        v.load();
-      })();
-    </script>
-    <div class="svc-hero-overlay"></div>
-    <div class="svc-hero-content reveal">
-      <p class="svc-hero-eyebrow">Naturopathic Medicine · Calgary</p>
-      <h1 class="svc-hero-heading">Treatments crafted<br /><em>for your well-being</em></h1>
-      <p class="svc-hero-sub">From naturopathic care to comprehensive naturopathic care — every service is personalised to help you feel your best, inside and out.</p>
-      <div class="svc-hero-btns">
-        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-          <span class="btn-ihb-blob"></span><span class="btn-ihb-default">Book Now</span>
-          <span class="btn-ihb-reveal"><i class="fa-solid fa-calendar"></i> Book Now</span>
-        </a>
-        <a href="#services-grid" class="btn-ihb btn-ihb--outline-light">
-          <span class="btn-ihb-blob"></span><span class="btn-ihb-default">All services</span>
-          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-down"></i> All services</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div id="services-grid">
-    <section class="svc-section" style="padding: 6rem 0">
-      <div class="container">
-        <div class="svc-section-header reveal">
-          <h2>Our Care<br /><em>Disciplines</em></h2>
-          <p>Specialist-led disciplines under one roof — each led by a dedicated practitioner, each built around a complete, personalised care experience.</p>
-        </div>
-
-        <div class="svc-grid svc-grid--hub stagger-grid">
-
-          <div class="svc-cell svc-cell--hub stagger-item">
-            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
-            <div class="svc-cell-img"><img src="images/nathuropathy - services page.png" alt="Naturopathic Medicine" loading="lazy" decoding="async" /></div>
-            <div class="svc-cell-body">
-              <span class="svc-cell-prac"><i class="fa-solid fa-leaf"></i> Dr. Jill Nazar, ND</span>
-              <h3 class="svc-cell-name">Naturopathic <em>Medicine</em></h3>
-              <p class="svc-cell-desc">Whole-body care addressing root causes through evidence-based natural medicine.</p>
-              <a href="/cat-naturopathic" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="svc-cell svc-cell--hub stagger-item">
-            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
-            <div class="svc-cell-img"><img src="images/IV therapy - services page.png" alt="IV Therapy" loading="lazy" decoding="async" /></div>
-            <div class="svc-cell-body">
-              <span class="svc-cell-prac"><i class="fa-solid fa-droplet"></i> Dr. Jill Nazar, ND</span>
-              <h3 class="svc-cell-name">Lab Testing &amp; <em>IV Therapy</em></h3>
-              <p class="svc-cell-desc">Functional lab testing and customised IV drips delivered directly for maximum absorption.</p>
-              <a href="/cat-iv-therapy" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="svc-cell svc-cell--hub stagger-item">
-            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
-            <div class="svc-cell-img"><img src="images/Accupuncture service tab.webp" alt="Acupuncture" loading="lazy" decoding="async" /></div>
-            <div class="svc-cell-body">
-              <span class="svc-cell-prac"><i class="fa-solid fa-hand-sparkles"></i> Leads: Dr. Viktoriia Taylor, DTCM & Joseph Wei</span>
-              <h3 class="svc-cell-name">Acupuncture <em>&amp; TCM</em></h3>
-              <p class="svc-cell-desc">Traditional and facial acupuncture — a complete Traditional Chinese Medicine practice.</p>
-              <a href="/cat-acupuncture" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="svc-cell svc-cell--hub stagger-item">
-            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
-            <div class="svc-cell-img"><img src="images/massage therapy - services page.jpg" alt="Massage Therapy" loading="lazy" decoding="async" /></div>
-            <div class="svc-cell-body">
-              <span class="svc-cell-prac"><i class="fa-solid fa-hand-holding-heart"></i> Jean-Wilson Raymond, RMT</span>
-              <h3 class="svc-cell-name">Massage <em>Therapy</em></h3>
-              <p class="svc-cell-desc">Therapeutic and prenatal massage program led by our Registered Massage Therapists.</p>
-              <a href="/cat-massage-therapy" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="svc-cell svc-cell--hub stagger-item">
-            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
-            <div class="svc-cell-img"><img src="images/osteopathy - services page.png" alt="Osteopathy" loading="lazy" decoding="async" /></div>
-            <div class="svc-cell-body">
-              <span class="svc-cell-prac"><i class="fa-solid fa-person-rays"></i> Amy Lutz, MOMSc</span>
-              <h3 class="svc-cell-name">Osteopathic <em>Manual Therapy</em></h3>
-              <p class="svc-cell-desc">Holistic structural integration and mobility restoration with a dedicated therapist.</p>
-              <a href="/cat-osteopathy" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-
+  <main id="main-content">
+    <section class="svc-hero">
+      <img src="images/Service page - Hero desktop.webp" alt="Services" class="svc-hero-img svc-hero-img--desktop" fetchpriority="high" />
+      <img src="images/Service page - Hero Mobile.webp" alt="Services" class="svc-hero-img svc-hero-img--mobile" fetchpriority="high" />
+      <div class="svc-hero-overlay"></div>
+      
+      <div class="svc-hero-content">
+        <p class="svc-hero-eyebrow">Naturopathic Medicine · Calgary</p>
+        <h1 class="svc-hero-heading">Treatments crafted<br /><em>for your well-being</em></h1>
+        <p class="svc-hero-sub">From naturopathic care to comprehensive manual therapies — every service is personalised to help you feel your best, inside and out.</p>
+        <div class="svc-hero-btns">
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span><span class="btn-ihb-default">Book Now</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-calendar"></i> Book Now</span>
+          </a>
+          <a href="#services-grid" class="btn-ihb btn-ihb--outline-light">
+            <span class="btn-ihb-blob"></span><span class="btn-ihb-default">All services</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-down"></i> All services</span>
+          </a>
         </div>
       </div>
     </section>
-  </div>
+
+    <div id="services-grid">
+      <section class="svc-section" style="padding: 6rem 0">
+        <div class="container">
+          <div class="svc-section-header">
+            <h2>Our Care<br /><em>Disciplines</em></h2>
+            <p>Specialist-led disciplines under one roof — each led by a dedicated practitioner, each built around a complete, personalised care experience.</p>
+          </div>
+
+          <div class="svc-grid svc-grid--hub">
+
+            <div class="svc-cell svc-cell--hub">
+              <div class="svc-cell-img"><img src="images/nathuropathy - services page.png" alt="Naturopathic Medicine" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" /></div>
+              <div class="svc-cell-body">
+                <span class="svc-cell-prac"><i class="fa-solid fa-leaf"></i> Dr. Jill Nazar, ND</span>
+                <h3 class="svc-cell-name">Naturopathic <em>Medicine</em></h3>
+                <p class="svc-cell-desc">Whole-body care addressing root causes through evidence-based natural medicine.</p>
+                <a href="/cat-naturopathic" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <div class="svc-cell svc-cell--hub">
+              <div class="svc-cell-img"><img src="images/IV therapy - services page.png" alt="IV Therapy" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" /></div>
+              <div class="svc-cell-body">
+                <span class="svc-cell-prac"><i class="fa-solid fa-droplet"></i> Dr. Jill Nazar, ND</span>
+                <h3 class="svc-cell-name">Lab Testing &amp; <em>IV Therapy</em></h3>
+                <p class="svc-cell-desc">Functional lab testing and customised IV drips delivered directly for maximum absorption.</p>
+                <a href="/cat-iv-therapy" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <div class="svc-cell svc-cell--hub">
+              <div class="svc-cell-img"><img src="images/Accupuncture service tab.webp" alt="Acupuncture" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" /></div>
+              <div class="svc-cell-body">
+                <span class="svc-cell-prac"><i class="fa-solid fa-hand-sparkles"></i> Leads: Dr. Viktoriia Taylor, DTCM & Joseph Wei</span>
+                <h3 class="svc-cell-name">Acupuncture <em>&amp; TCM</em></h3>
+                <p class="svc-cell-desc">Traditional and facial acupuncture — a complete Traditional Chinese Medicine practice.</p>
+                <a href="/cat-acupuncture" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <div class="svc-cell svc-cell--hub">
+              <div class="svc-cell-img"><img src="images/massage therapy - services page.jpg" alt="Massage Therapy" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" /></div>
+              <div class="svc-cell-body">
+                <span class="svc-cell-prac"><i class="fa-solid fa-hand-holding-heart"></i> Jean-Wilson Raymond, RMT</span>
+                <h3 class="svc-cell-name">Massage <em>Therapy</em></h3>
+                <p class="svc-cell-desc">Therapeutic and prenatal massage program led by our Registered Massage Therapists.</p>
+                <a href="/cat-massage-therapy" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <div class="svc-cell svc-cell--hub">
+              <div class="svc-cell-img"><img src="images/osteopathy - services page.png" alt="Osteopathy" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" /></div>
+              <div class="svc-cell-body">
+                <span class="svc-cell-prac"><i class="fa-solid fa-person-rays"></i> Amy Lutz, MOMSc</span>
+                <h3 class="svc-cell-name">Osteopathic <em>Manual Therapy</em></h3>
+                <p class="svc-cell-desc">Holistic structural integration and mobility restoration with a dedicated therapist.</p>
+                <a href="/cat-osteopathy" class="svc-cell-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
 
   <footer class="sf-footer">
     <div class="sf-fixed">
       <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
       <div class="sf-body">
         <div class="sf-top">
-          <div class="sf-brand sf-anim" style="--sf-delay:0s">
-            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC DECODING -->
-            <a href="/" class="sf-logo"><img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /></a>
+          <div class="sf-brand">
+            <a href="/" class="sf-logo">
+              <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
+            </a>
             <p class="sf-desc">Naturopathic Medicine in Calgary. Personalised, evidence-based care.</p>
+            <div class="sf-social">
+              <a href="https://www.facebook.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
           </div>
-          <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+          <div class="sf-col">
             <h3 class="sf-col-title">Pages</h3>
             <ul class="sf-links"><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/practitioners">Our Practitioners</a></li><li><a href="/faqs">FAQs</a></li><li><a href="/careers">Careers</a></li><li><a href="/pricing">Pricing</a></li></ul>
           </div>
-          <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+          <div class="sf-col">
             <h3 class="sf-col-title">Services</h3>
             <ul class="sf-links"><li><a href="/cat-naturopathic">Naturopathic Medicine</a></li><li><a href="/cat-iv-therapy">Testing &amp; IV Therapy</a></li><li><a href="/cat-acupuncture">Acupuncture &amp; TCM</a></li><li><a href="/cat-massage-therapy">Massage Therapy</a></li><li><a href="/cat-osteopathy">Osteopathy</a></li></ul>
           </div>
-          <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+          <div class="sf-col">
             <h3 class="sf-col-title">Contact</h3>
             <ul class="sf-links"><li><i class="fa-solid fa-phone"></i> (587) 585-2524</li><li><i class="fa-solid fa-envelope"></i> vnc@veravitaclinic.com</li><li><i class="fa-solid fa-location-dot"></i> <a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Unit 104 – 14505 Bannister Road SE, Calgary</a></li></ul>
             <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
