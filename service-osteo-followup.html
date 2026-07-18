@@ -6,11 +6,179 @@
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
   <title>Follow-Up Osteopathy Appointment | VeraVita Naturopathic Clinic Calgary</title>
   <meta name="description" content="Book a 30-minute follow-up osteopathy appointment with Amy Lutz, MOMSc. Continued osteopathic assessment and treatment to restore mobility and support healing. $90." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT HERO PRELOADING -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/Sub services images/Osteopathy Followup/16-9.webp" media="(max-width: 767px)" />
+  <link rel="preload" as="image" href="images/Sub services images/Osteopathy Followup/4-5.webp" media="(min-width: 768px)" />
+
+  <style>
+    /* Hero Image Ratio Fix */
+    @media (max-width: 767px) {
+      .sd-hero-img--desktop { display: none !important; }
+      .sd-hero-img--mobile { display: block !important; }
+    }
+    @media (min-width: 768px) {
+      .sd-hero-img--desktop { display: block !important; }
+      .sd-hero-img--mobile { display: none !important; }
+    }
+
+    /* Parallax background window logic */
+    .svc-osteopathy .sd-body {
+      background: transparent !important;
+      position: relative;
+      overflow: visible;
+    }
+
+    .section-bg-parallax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      background:
+        linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 25.webp') center / cover no-repeat;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    .sd-body .container-medium {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Aggressive Hide: Arrows and Navigation Dots */
+    .sd-rel-nav, .sd-rel-btn, .sd-related-header .fa-circle, .sd-related-header::before, .sd-related-header::after {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    /* Overlay Card Style Alignment */
+    .sd-rel-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      display: block;
+      aspect-ratio: 4/3;
+      background: #1e3528;
+      text-decoration: none;
+    }
+    
+    .sd-rel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .sd-rel-card:hover .sd-rel-img {
+      transform: scale(1.08);
+    }
+    
+    /* READABILITY FIX: Enhanced gradient mask */
+    .sd-rel-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0) 100%);
+      z-index: 1;
+    }
+
+    .sd-rel-overlay-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px;
+      z-index: 10;
+      color: white;
+    }
+
+    .sd-rel-overlay-title {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.6rem;
+      margin: 0 0 10px 0;
+      font-weight: 500;
+      color: #ffffff !important;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .sd-rel-overlay-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0 0 20px 0;
+      color: #ffffff !important;
+      opacity: 0.95;
+      max-width: 95%;
+    }
+
+    .sd-rel-overlay-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 10px 22px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Mobile Responsive Grid Fixes & PERFORMANCE FIXES */
+    @media (max-width: 860px) {
+      .sd-hero-img-wrap {
+        height: auto !important;
+        aspect-ratio: 16/9 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .sd-related-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        padding-bottom: 2rem;
+        gap: 1.2rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .sd-rel-card {
+        flex: 0 0 calc(85vw) !important;
+        scroll-snap-align: start;
+        aspect-ratio: 1/1.1;
+      }
+      .sd-rel-overlay-content {
+        padding: 20px;
+      }
+      .sd-rel-overlay-title {
+        font-size: 1.35rem;
+      }
+      /* PERFORMANCE UPGRADE 2: Strip heavy parallax layers entirely on mobile displays */
+      .section-bg-parallax {
+        display: none !important;
+      }
+      .svc-osteopathy .sd-body {
+        background-color: #f7faf8 !important;
+      }
+    }
+
+    @media (min-width: 861px) {
+      .sd-related-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body class="svc-osteopathy">
 
@@ -74,7 +242,7 @@
 <section class="sd-hero">
   <div class="container-medium">
     <div class="sd-hero-inner">
-      <div class="sd-hero-content reveal">
+      <div class="sd-hero-content">
         <div class="sd-hero-icon">
           <i class="fa-solid fa-arrows-rotate"></i>
         </div>
@@ -88,9 +256,9 @@
         </a>
       </div>
 
-      <div class="sd-hero-img-wrap reveal">
-        <img src="images/Sub services images/Osteopathy Followup/4-5.webp" alt="Osteopathy follow-up appointment" class="sd-hero-img sd-hero-img--desktop" />
-        <img src="images/Sub services images/Osteopathy Followup/16-9.webp" alt="Osteopathy follow-up appointment" class="sd-hero-img sd-hero-img--mobile" />
+      <div class="sd-hero-img-wrap">
+        <img src="images/Sub services images/Osteopathy Followup/4-5.webp" alt="Osteopathy follow-up appointment" class="sd-hero-img sd-hero-img--desktop" decoding="async" />
+        <img src="images/Sub services images/Osteopathy Followup/16-9.webp" alt="Osteopathy follow-up appointment" class="sd-hero-img sd-hero-img--mobile" decoding="async" />
       </div>
     </div>
   </div>
@@ -98,42 +266,43 @@
 
 <!-- BODY -->
 <section class="sd-body">
+  <div class="section-bg-parallax"></div>
   <div class="container-medium">
     <div class="sd-body-inner">
       <div class="sd-main">
-        <h3 class="reveal">What to Expect</h3>
-        <p class="reveal">Follow-up appointments build on the foundation established during your initial visit. Amy will reassess your body's response to previous treatment and continue working to restore balance, mobility, and ease of movement.</p>
-        <ul class="sd-bullet-list reveal">
+        <h3>What to Expect</h3>
+        <p>Follow-up appointments build on the foundation established during your initial visit. Amy will reassess your body's response to previous treatment and continue working to restore balance, mobility, and ease of movement.</p>
+        <ul class="sd-bullet-list">
           <li>Reassessment of your body's response since the last visit</li>
           <li>Continued hands-on osteopathic treatment</li>
           <li>Adjustments to your care plan based on progress</li>
           <li>Ongoing support for mobility, balance, and well-being</li>
         </ul>
 
-        <h3 class="reveal">Who It's For</h3>
-        <ul class="sd-bullet-list reveal">
+        <h3>Who It's For</h3>
+        <ul class="sd-bullet-list">
           <li>Existing patients continuing their osteopathic care plan</li>
           <li>Those with ongoing musculoskeletal concerns requiring continued treatment</li>
           <li>Individuals seeking maintenance care for long-term function and resilience</li>
           <li>Patients working through recovery from injuries or chronic conditions</li>
         </ul>
 
-        <h3 class="reveal">Why Ongoing Care Matters</h3>
-        <p class="reveal">The body's patterns of restriction and compensation often develop over time, and addressing them effectively requires more than a single session. Follow-up appointments allow Amy to work progressively through layers of restriction, supporting lasting change rather than temporary relief. Regular care helps maintain improved mobility and supports the body's ability to function efficiently over the long term.</p>
+        <h3>Why Ongoing Care Matters</h3>
+        <p>The body's patterns of restriction and compensation often develop over time, and addressing them effectively requires more than a single session. Follow-up appointments allow Amy to work progressively through layers of restriction, supporting lasting change rather than temporary relief. Regular care helps maintain improved mobility and supports the body's ability to function efficiently over the long term.</p>
 
         <!-- Gallery -->
-        <div class="sd-gallery reveal">
+        <div class="sd-gallery">
           <div class="sd-gallery-item">
-            <img src="images/Sub services images/Osteopathy Followup/Image 1.webp" alt="Osteopathy treatment 1" />
+            <img src="images/Sub services images/Osteopathy Followup/Image 1.webp" alt="Osteopathy treatment 1" loading="lazy" decoding="async" />
           </div>
           <div class="sd-gallery-item">
-            <img src="images/Sub services images/Osteopathy Followup/Image 2.webp" alt="Osteopathy treatment 2" />
+            <img src="images/Sub services images/Osteopathy Followup/Image 2.webp" alt="Osteopathy treatment 2" loading="lazy" decoding="async" />
           </div>
           <div class="sd-gallery-item">
-            <img src="images/Sub services images/Osteopathy Followup/Image 3.webp" alt="Osteopathy treatment 3" />
+            <img src="images/Sub services images/Osteopathy Followup/Image 3.webp" alt="Osteopathy treatment 3" loading="lazy" decoding="async" />
           </div>
           <div class="sd-gallery-item">
-            <img src="images/Sub services images/Osteopathy Followup/Image 4.webp" alt="Osteopathy treatment 4" />
+            <img src="images/Sub services images/Osteopathy Followup/Image 4.webp" alt="Osteopathy treatment 4" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -184,7 +353,11 @@
 
         <hr class="sd-card-divider" />
 
-        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="sd-card-btn">Book This Service</a>
+        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary sd-card-btn">
+          <span class="btn-ihb-blob"></span>
+          <span class="btn-ihb-default">Book This Service</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book This Service</span>
+        </a>
       </aside>
     </div>
   </div>
@@ -193,14 +366,14 @@
 <!-- RELATED SERVICES -->
 <section class="sd-related">
   <div class="container-medium">
-    <div class="sd-related-header reveal">
+    <div class="sd-related-header">
       <span class="section-label">Explore More</span>
       <h2>Related <em>Services</em></h2>
     </div>
     <div class="sd-related-grid">
-      <div class="sd-rel-card reveal">
+      <div class="sd-rel-card">
         <div class="sd-rel-img-wrap">
-          <img src="images/Sub services images/Osteopathy consultation/16-9.webp" alt="Consultation" class="sd-rel-img" />
+          <img src="images/Sub services images/Osteopathy consultation/16-9.webp" alt="Consultation" class="sd-rel-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" />
         </div>
         <div class="sd-rel-body">
           <h3 class="sd-rel-name">Consultation</h3>
@@ -208,9 +381,9 @@
           <a href="/service-osteo-consultation" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-      <div class="sd-rel-card reveal">
+      <div class="sd-rel-card">
         <div class="sd-rel-img-wrap">
-          <img src="images/Sub services images/Osteopathy Initial/16-9.webp" alt="Initial Appointment" class="sd-rel-img" />
+          <img src="images/Sub services images/Osteopathy Initial/16-9.webp" alt="Initial Appointment" class="sd-rel-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" />
         </div>
         <div class="sd-rel-body">
           <h3 class="sd-rel-name">Initial Appointment</h3>
@@ -218,9 +391,9 @@
           <a href="/service-osteo-initial" class="sd-rel-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-      <div class="sd-rel-card reveal">
+      <div class="sd-rel-card">
         <div class="sd-rel-img-wrap">
-          <img src="images/Massage therapy - service page/Amy Lutz 16-9.webp" alt="Amy Lutz, MOMSc" class="sd-rel-img" />
+          <img src="images/Massage therapy - service page/Amy Lutz 16-9.webp" alt="Amy Lutz, MOMSc" class="sd-rel-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
         </div>
         <div class="sd-rel-body">
           <h3 class="sd-rel-name">Meet Amy Lutz</h3>
@@ -238,9 +411,9 @@
     <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
     <div class="sf-body">
       <div class="sf-top">
-        <div class="sf-brand sf-anim" style="--sf-delay:0s">
+        <div class="sf-brand">
           <a href="/" class="sf-logo">
-            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
           </a>
           <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
@@ -250,7 +423,7 @@
             <a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           </div>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
             <li><a href="/">Home</a></li><li><a href="/services">Services</a></li>
@@ -259,7 +432,7 @@
             <li><a href="/faqs">FAQs</a></li><li><a href="/careers">Careers</a></li>
           </ul>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
             <li><a href="/cat-naturopathic">Naturopathic Medicine</a></li>
@@ -269,7 +442,7 @@
             <li><a href="/cat-osteopathy">Osteopathy</a></li>
           </ul>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
             <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
@@ -293,13 +466,39 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book an appointment</span>
-  </a>
-</div>
+<!-- PERFORMANCE UPGRADE 3: DEFERRED ANIMATION STACK SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
+
+<!-- PERFORMANCE UPGRADE 4: SMOOTH DESKTOP-ONLY MATCHEMEDIA PARALLAX ENGINE -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 861px)", () => {
+      var section = document.querySelector(".sd-body");
+      var bg = document.querySelector(".section-bg-parallax");
+      if (!section || !bg) return;
+
+      gsap.fromTo(bg,
+        { y: -60 },
+        {
+          y: 60,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1, /* Lightweight scrub logic saves rendering frame intervals */
+            invalidateOnRefresh: true
+          }
+        }
+      );
+    });
+  });
+</script>
+
 </body>
 </html>

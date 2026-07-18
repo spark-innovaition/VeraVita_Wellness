@@ -6,11 +6,17 @@
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
   <title>Hot Stone Massage — VeraVita Naturopathic Clinic</title>
   <meta name="description" content="Warm basalt stones used to melt deep muscle tension, improve circulation, and induce profound relaxation — a deeply therapeutic and restorative full-body experience." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT HERO PRELOADING -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/Sub services images/Hot Stone Massage/16-9.webp" media="(max-width: 767px)" />
+  <link rel="preload" as="image" href="images/Sub services images/Hot Stone Massage/4-5.webp" media="(min-width: 768px)" />
 
   <style>
     /* Hero Image Ratio Fix */
@@ -129,7 +135,7 @@
       border: 1px solid rgba(255,255,255,0.2);
     }
 
-    /* Mobile Responsive Grid Fixes */
+    /* Mobile Responsive Grid Fixes & PERFORMANCE FIXES */
     @media (max-width: 860px) {
       .sd-hero-img-wrap {
         height: auto !important;
@@ -149,6 +155,13 @@
         flex: 0 0 calc(85vw) !important;
         scroll-snap-align: start;
         aspect-ratio: 1/1.1;
+      }
+      /* PERFORMANCE UPGRADE 2: Strip heavy parallax layers entirely on mobile displays */
+      .section-bg-parallax {
+        display: none !important;
+      }
+      .svc-hot-stone-massage .sd-body {
+        background-color: #f7faf8 !important;
       }
     }
 
@@ -206,7 +219,7 @@
 <section class="sd-hero">
   <div class="container-medium">
     <div class="sd-hero-inner">
-      <div class="sd-hero-content reveal">
+      <div class="sd-hero-content">
         <div class="sd-hero-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
         <span class="sd-hero-label">Massage Therapy</span>
         <h1 class="sd-hero-title">Hot Stone<br /><em>Massage</em></h1>
@@ -216,9 +229,9 @@
           <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an Appointment</span>
         </a>
       </div>
-      <div class="sd-hero-img-wrap reveal">
-        <img src="images/Sub services images/Hot Stone Massage/4-5.webp" alt="Hot Stone Massage" class="sd-hero-img sd-hero-img--desktop" />
-        <img src="images/Sub services images/Hot Stone Massage/16-9.webp" alt="Hot Stone Massage" class="sd-hero-img sd-hero-img--mobile" />
+      <div class="sd-hero-img-wrap">
+        <img src="images/Sub services images/Hot Stone Massage/4-5.webp" alt="Hot Stone Massage" class="sd-hero-img sd-hero-img--desktop" decoding="async" />
+        <img src="images/Sub services images/Hot Stone Massage/16-9.webp" alt="Hot Stone Massage" class="sd-hero-img sd-hero-img--mobile" decoding="async" />
       </div>
     </div>
   </div>
@@ -229,8 +242,8 @@
   <div class="container-medium">
     <div class="sd-body-inner">
       <div class="sd-main">
-        <h3 class="reveal">What to Expect</h3>
-        <ul class="sd-bullet-list reveal">
+        <h3>What to Expect</h3>
+        <ul class="sd-bullet-list">
           <li>Placement of heated basalt stones on key energy and tension points</li>
           <li>Deep tissue and Swedish massage with stone-assisted gliding strokes</li>
           <li>Targeted relief for chronic back tension, shoulder stiffness, and fatigue</li>
@@ -238,25 +251,25 @@
           <li>Post-treatment hydration and restorative rest guidance</li>
         </ul>
 
-        <h3 class="reveal">Who It's For</h3>
-        <ul class="sd-bullet-list reveal">
+        <h3>Who It's For</h3>
+        <ul class="sd-bullet-list">
           <li>Clients with chronic muscle tension, stiffness, or systemic fatigue</li>
           <li>Those seeking a deeper, more restorative clinical relaxation experience</li>
           <li>Individuals with poor circulation or cold sensitivity seeking thermotherapy</li>
         </ul>
 
-        <h3 class="reveal">Why Hot Stone Massage</h3>
-        <p class="reveal">The application of therapeutic heat penetrates far deeper than hands alone — allowing our RMT to achieve faster, longer-lasting relief from deep muscle tension while delivering a profoundly calming clinical experience.</p>
+        <h3>Why Hot Stone Massage</h3>
+        <p>The application of therapeutic heat penetrates far deeper than hands alone — allowing our RMT to achieve faster, longer-lasting relief from deep muscle tension while delivering a profoundly calming clinical experience.</p>
         
-        <div class="sd-gallery reveal">
-          <div class="sd-gallery-item"><img src="images/Sub services images/Hot Stone Massage/Image 1.webp" alt="Hot Stone 1" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Hot Stone Massage/Image 2.webp" alt="Hot Stone 2" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Hot Stone Massage/Image 3.webp" alt="Hot Stone 3" /></div>
-          <div class="sd-gallery-item"><img src="images/Sub services images/Hot Stone Massage/Image 4.webp" alt="Hot Stone 4" /></div>
+        <div class="sd-gallery">
+          <div class="sd-gallery-item"><img src="images/Sub services images/Hot Stone Massage/Image 1.webp" alt="Hot Stone 1" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Hot Stone Massage/Image 2.webp" alt="Hot Stone 2" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Hot Stone Massage/Image 3.webp" alt="Hot Stone 3" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/Sub services images/Hot Stone Massage/Image 4.webp" alt="Hot Stone 4" loading="lazy" decoding="async" /></div>
         </div>
       </div>
 
-      <aside class="sd-card reveal">
+      <aside class="sd-card">
         <h3 class="sd-card-title">Session Details</h3>
         <p class="sd-card-intro">Full-body hot stone application and deep tissue work for profound relaxation.</p>
         <h4 class="sd-card-section-title">Session Overview</h4>
@@ -278,7 +291,7 @@
 
 <section class="sd-related">
   <div class="container-medium">
-    <div class="sd-related-header reveal">
+    <div class="sd-related-header">
       <div>
         <span class="section-label">EXPLORE MORE</span>
         <h2>Related <em>Services</em></h2>
@@ -286,16 +299,16 @@
     </div>
     
     <div class="sd-related-grid">
-      <a href="/service-massage-therapeutic" class="sd-rel-card reveal">
-        <img src="images/Sub services images/Standard Therapeutic Massage/16-9.webp" alt="Therapeutic Massage" class="sd-rel-img" />
+      <a href="/service-massage-therapeutic" class="sd-rel-card">
+        <img src="images/Sub services images/Standard Therapeutic Massage/16-9.webp" alt="Therapeutic Massage" class="sd-rel-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" />
         <div class="sd-rel-overlay-content">
           <h3 class="sd-rel-overlay-title">Therapeutic Massage</h3>
           <p class="sd-rel-overlay-desc">Clinical techniques to relieve muscle tension and support structural balance.</p>
           <span class="sd-rel-overlay-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
-      <a href="/service-lymphatic-drainage" class="sd-rel-card reveal">
-        <img src="images/Sub services images/Lymphatic Drainage/16-9.webp" alt="Lymphatic Drainage" class="sd-rel-img" />
+      <a href="/service-lymphatic-drainage" class="sd-rel-card">
+        <img src="images/Sub services images/Lymphatic Drainage/16-9.webp" alt="Lymphatic Drainage" class="sd-rel-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" />
         <div class="sd-rel-overlay-content">
           <h3 class="sd-rel-overlay-title">Lymphatic Drainage</h3>
           <p class="sd-rel-overlay-desc">Gentle rhythmic massage to stimulate flow and reduce clinical swelling.</p>
@@ -311,14 +324,17 @@
     <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
     <div class="sf-body">
       <div class="sf-top">
-        <div class="sf-brand sf-anim" style="--sf-delay:0s">
-          <a href="/" class="sf-logo"><img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div></a>
+        <div class="sf-brand">
+          <a href="/" class="sf-logo">
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
+          </a>
           <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social"><a href="https://www.facebook.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.1s"><h3 class="sf-col-title">Pages</h3><ul class="sf-links"><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/practitioners">Our Practitioners</a></li><li><a href="/faqs">FAQs</a></li><li><a href="/careers">Careers</a></li><li><a href="/pricing">Pricing</a></li></ul></div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.2s"><h3 class="sf-col-title">Services</h3><ul class="sf-links"><li><a href="/cat-naturopathic">Naturopathic Medicine</a></li><li><a href="/cat-iv-therapy">Testing &amp; IV Therapy</a></li><li><a href="/cat-acupuncture">Acupuncture &amp; TCM</a></li><li><a href="/cat-massage-therapy">Massage Therapy</a></li><li><a href="/cat-osteopathy">Osteopathy</a></li></ul></div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.3s"><h3 class="sf-col-title">Contact</h3><ul class="sf-links"><li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li><li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:vnc@veravitaclinic.com">vnc@veravitaclinic.com</a></li><li><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</a></li></ul><h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3><ul class="sf-links"><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/terms-of-service">Terms of Service</a></li><li><a href="/cookie-policy">Cookie Policy</a></li></ul></div>
+        <div class="sf-col"><h3 class="sf-col-title">Pages</h3><ul class="sf-links"><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/practitioners">Our Practitioners</a></li><li><a href="/faqs">FAQs</a></li><li><a href="/careers">Careers</a></li><li><a href="/pricing">Pricing</a></li></ul></div>
+        <div class="sf-col"><h3 class="sf-col-title">Services</h3><ul class="sf-links"><li><a href="/cat-naturopathic">Naturopathic Medicine</a></li><li><a href="/cat-iv-therapy">Testing &amp; IV Therapy</a></li><li><a href="/cat-acupuncture">Acupuncture &amp; TCM</a></li><li><a href="/cat-massage-therapy">Massage Therapy</a></li><li><a href="/cat-osteopathy">Osteopathy</a></li></ul></div>
+        <div class="sf-col"><h3 class="sf-col-title">Contact</h3><ul class="sf-links"><li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li><li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:vnc@veravitaclinic.com">vnc@veravitaclinic.com</a></li><li><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />    Calgary, AB T2X 3J3</a></li></ul><h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3><ul class="sf-links"><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/terms-of-service">Terms of Service</a></li><li><a href="/cookie-policy">Cookie Policy</a></li></ul></div>
       </div>
       <div class="sf-bottom">
         <p>&copy; 2026 VeraVita Naturopathic Clinic. All rights reserved.</p>
@@ -329,35 +345,39 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
+<!-- PERFORMANCE UPGRADE 3: DEFERRED ANIMATION STACK SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
+<!-- PERFORMANCE UPGRADE 4: SMOOTH DESKTOP-ONLY MATCHEMEDIA PARALLAX ENGINE -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
-    var section = document.querySelector(".sd-body");
-    var bg = document.querySelector(".section-bg-parallax");
-    if (!section || !bg) return;
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 861px)", () => {
+      var section = document.querySelector(".sd-body");
+      var bg = document.querySelector(".section-bg-parallax");
+      if (!section || !bg) return;
 
-    gsap.fromTo(bg,
-      { y: -60 },
-      {
-        y: 60,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 3,
-          invalidateOnRefresh: true
+      gsap.fromTo(bg,
+        { y: -60 },
+        {
+          y: 60,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1, /* Lightweight scrub logic saves rendering frame intervals */
+            invalidateOnRefresh: true
+          }
         }
-      }
-    );
+      );
+    });
   });
 </script>
 
-<div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
 </body>
 </html>
