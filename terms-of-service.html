@@ -12,6 +12,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT PRELOADING & PRECONNECT -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/Policy%20-%20Desktop.webp" media="(min-width: 769px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/Policy%20-%20Mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
+
+  <style>
+    /* FIXED NAVBAR (Consistent with Home/About) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+      width: 100%;
+    }
+
+    body {
+      padding-top: 80px; /* Prevents hero from hiding under fixed navbar */
+    }
+
+    /* EXTENDED HERO DISPLAY FOR OPTIMAL IMAGE VISIBILITY */
+    .legal-hero {
+      position: relative;
+      min-height: 50vh; 
+      display: flex;
+      align-items: center;
+      padding: 8rem 0; 
+      overflow: hidden;
+    }
+
+    .legal-hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .legal-hero .container-medium {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
 </head>
 <body>
 
@@ -76,12 +125,10 @@
 <main id="main-content">
   <!-- HERO -->
   <section class="legal-hero">
-    <video class="page-hero-video" autoplay muted loop playsinline
-        data-src-desktop="images/background video.mp4"
-        data-src-mobile="images/Background video - Mobile only.mp4">
-      <source src="images/background video.mp4" type="video/mp4" />
-      </video>
-      <script>(function(){var v=document.currentScript.previousElementSibling;v.querySelector("source").src=window.matchMedia("(max-width:860px)").matches?v.dataset.srcMobile:v.dataset.srcDesktop;v.load();})();</script>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/Policy%20-%20Mobile.webp" />
+      <img src="images/Policy%20-%20Desktop.webp" alt="VeraVita Clinic Legal Terms" class="legal-hero-bg" fetchpriority="high" />
+    </picture>
     <div class="page-hero-overlay"></div>
     <div class="container-medium">
       <span class="section-label">Legal</span>
@@ -95,89 +142,89 @@
     <div class="legal-container">
 
       <div class="legal-intro">
-        <p>Please read these Terms of Service ("Terms") carefully before using the VeraVita Naturopathic Clinic website or booking any of our clinical services. By accessing our website or engaging with our services, you agree to be bound by these Terms. If you do not agree, please do not use our website or services.</p>
+        <p>Please read these Terms of Service ("Terms") carefully before using the VeraVita Naturopathic Clinic website or booking any of our clinical services. <!--[cite: 13] --> By accessing our website or engaging with our services, you agree to be bound by these Terms. <!--[cite: 13] --> If you do not agree, please do not use our website or services. <!--[cite: 13] --></p>
       </div>
 
       <div class="legal-section">
         <h2>1. About VeraVita Naturopathic Clinic</h2>
-        <p>VeraVita Naturopathic Clinic is a naturopathic medicine clinic located in Calgary, Alberta, Canada. We offer a range of regulated and non-regulated health services delivered by licensed practitioners. Our clinic operates in compliance with applicable Alberta and federal healthcare legislation.</p>
+        <p>VeraVita Naturopathic Clinic is a naturopathic medicine clinic located in Calgary, Alberta, Canada. <!--[cite: 13] --> We offer a range of regulated and non-regulated health services delivered by licensed practitioners. <!--[cite: 13] --> Our clinic operates in compliance with applicable Alberta and federal healthcare legislation. <!--[cite: 13] --></p>
       </div>
 
       <div class="legal-section">
         <h2>2. Use of Our Website</h2>
-        <p>By using our website, you agree to:</p>
+        <p>By using our website, you agree to: <!--[cite: 13] --></p>
         <ul>
-          <li>Use the website for lawful purposes only</li>
-          <li>Not reproduce, distribute, or commercially exploit any content without our written consent</li>
-          <li>Not attempt to gain unauthorised access to any part of the website or its systems</li>
-          <li>Not use the website to transmit harmful, offensive, or unlawful content</li>
+          <li>Use the website for lawful purposes only <!--[cite: 13] --></li>
+          <li>Not reproduce, distribute, or commercially exploit any content without our written consent <!--[cite: 13] --></li>
+          <li>Not attempt to gain unauthorised access to any part of the website or its systems <!--[cite: 13] --></li>
+          <li>Not use the website to transmit harmful, offensive, or unlawful content <!--[cite: 13] --></li>
         </ul>
-        <p>We reserve the right to suspend or terminate access to the website for any user who violates these Terms.</p>
+        <p>We reserve the right to suspend or terminate access to the website for any user who violates these Terms. <!--[cite: 13] --></p>
       </div>
 
       <div class="legal-section">
         <h2>3. Appointments and Cancellations</h2>
         <h3>Booking</h3>
-        <p>Appointments may be booked through our website, by phone, or in person. Booking an appointment constitutes an agreement to attend the scheduled session or provide adequate notice of cancellation.</p>
+        <p>Appointments may be booked through our website, by phone, or in person. <!--[cite: 13] --> Booking an appointment constitutes an agreement to attend the scheduled session or provide adequate notice of cancellation. <!--[cite: 13] --></p>
         <h3>Cancellation Policy</h3>
         <ul>
-          <li>We require a minimum of <strong>24 hours' notice</strong> to cancel or reschedule an appointment</li>
-          <li>Cancellations made with less than 24 hours' notice may be subject to a cancellation fee</li>
-          <li>Repeated no-shows may result in a requirement to prepay for future appointments</li>
+          <li>We require a minimum of <strong>24 hours' notice</strong> to cancel or reschedule an appointment <!--[cite: 13] --></li>
+          <li>Cancellations made with less than 24 hours' notice may be subject to a cancellation fee <!--[cite: 13] --></li>
+          <li>Repeated no-shows may result in a requirement to prepay for future appointments <!--[cite: 13] --></li>
         </ul>
         <h3>Late Arrivals</h3>
-        <p>If you arrive late, your session may be shortened to avoid disruption for other patients. The full appointment fee may still apply.</p>
+        <p>If you arrive late, your session may be shortened to avoid disruption for other patients. <!--[cite: 13] --> The full appointment fee may still apply. <!--[cite: 13] --></p>
       </div>
 
       <div class="legal-section">
         <h2>4. Medical Disclaimer</h2>
-        <p>The information provided on this website is for general informational purposes only and does not constitute medical advice, diagnosis, or treatment. It is not a substitute for professional medical advice from a qualified healthcare provider.</p>
-        <p>Always consult with a licensed healthcare professional before making decisions about your health. Do not disregard professional medical advice or delay seeking it based on content found on this website.</p>
+        <p>The information provided on this website is for general informational purposes only and does not constitute medical advice, diagnosis, or treatment. <!--[cite: 13] --> It is not a substitute for professional medical advice from a qualified healthcare provider. <!--[cite: 13] --></p>
+        <p>Always consult with a licensed healthcare professional before making decisions about your health. <!--[cite: 13] --> Do not disregard professional medical advice or delay seeking it based on content found on this website. <!--[cite: 13] --></p>
       </div>
 
       <div class="legal-section">
         <h2>5. Fees and Payments</h2>
         <ul>
-          <li>Service fees are due at the time of the appointment unless other arrangements have been made in advance</li>
-          <li>We accept major credit cards, debit, and cash</li>
-          <li>VeraVita Naturopathic Clinic services may not be covered by provincial health insurance (Alberta Health Care); patients are responsible for verifying coverage with their extended health benefit plans</li>
-          <li>Receipts are provided for all services and may be submitted to extended health benefit providers</li>
+          <li>Service fees are due at the time of the appointment unless other arrangements have been made in advance <!--[cite: 13] --></li>
+          <li>We accept major credit cards, debit, and cash <!--[cite: 13] --></li>
+          <li>VeraVita Naturopathic Clinic services may not be covered by provincial health insurance (Alberta Health Care); patients are responsible for verifying coverage with their extended health benefit plans <!--[cite: 13] --></li>
+          <li>Receipts are provided for all services and may be submitted to extended health benefit providers <!--[cite: 13] --></li>
         </ul>
       </div>
 
       <div class="legal-section">
         <h2>6. Intellectual Property</h2>
-        <p>All content on this website — including text, images, logos, graphics, and design — is the property of VeraVita Naturopathic Clinic or its licensors and is protected by applicable copyright and intellectual property laws. You may not reproduce, modify, or distribute any content without our express written permission.</p>
+        <p>All content on this website — including text, images, logos, graphics, and design — is the property of VeraVita Naturopathic Clinic or its licensors and is protected by applicable copyright and intellectual property laws. <!--[cite: 13] --> You may not reproduce, modify, or distribute any content without our express written permission. <!--[cite: 13] --></p>
       </div>
 
       <div class="legal-section">
         <h2>7. Limitation of Liability</h2>
-        <p>To the maximum extent permitted by law, VeraVita Naturopathic Clinic shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of this website or our services. Our total liability to you for any claim shall not exceed the amount you paid for the specific service giving rise to the claim.</p>
+        <p>To the maximum extent permitted by law, VeraVita Naturopathic Clinic shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of this website or our services. <!--[cite: 13] --> Our total liability to you for any claim shall not exceed the amount you paid for the specific service giving rise to the claim. <!--[cite: 13] --></p>
       </div>
 
       <div class="legal-section">
         <h2>8. Third-Party Links</h2>
-        <p>Our website may contain links to third-party websites for your convenience. We do not endorse or control these websites and are not responsible for their content or privacy practices. Accessing third-party links is at your own risk.</p>
+        <p>Our website may contain links to third-party websites for your convenience. <!--[cite: 13] --> We do not endorse or control these websites and are not responsible for their content or privacy practices. <!--[cite: 13] --> Accessing third-party links is at your own risk. <!--[cite: 13] --></p>
       </div>
 
       <div class="legal-section">
         <h2>9. Governing Law</h2>
-        <p>These Terms are governed by and construed in accordance with the laws of the Province of Alberta and the federal laws of Canada applicable therein. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of Alberta.</p>
+        <p>These Terms are governed by and construed in accordance with the laws of the Province of Alberta and the federal laws of Canada applicable therein. <!--[cite: 13] --> Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of Alberta. <!--[cite: 13] --></p>
       </div>
 
       <div class="legal-section">
         <h2>10. Changes to These Terms</h2>
-        <p>We reserve the right to update these Terms at any time. Changes will be effective upon posting to this page with a revised "Last Updated" date. Your continued use of our website or services after any changes constitutes acceptance of the updated Terms.</p>
+        <p>We reserve the right to update these Terms at any time. <!--[cite: 13] --> Changes will be effective upon posting to this page with a revised "Last Updated" date. <!--[cite: 13] --> Your continued use of our website or services after any changes constitutes acceptance of the updated Terms. <!--[cite: 13] --></p>
       </div>
 
       <div class="legal-section">
         <h2>11. Contact Us</h2>
-        <p>If you have questions about these Terms of Service, please contact us:</p>
+        <p>If you have questions about these Terms of Service, please contact us: <!--[cite: 13] --></p>
         <div class="legal-contact-block">
-          <p><strong>VeraVita Naturopathic Clinic</strong></p>
-          <p><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Unit 104 – 14505 Bannister Road SE<br />Calgary, AB T2X 3J3</a></p>
-          <p>Email: <a href="mailto:vnc@veravitaclinic.com">vnc@veravitaclinic.com</a></p>
-          <p>Phone: (587) 585-2524</p>
+          <p><strong>VeraVita Naturopathic Clinic</strong> <!--[cite: 13] --></p>
+          <p><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Unit 104 – 14505 Bannister Road SE<br />Calgary, AB T2X 3J3</a> <!--[cite: 13] --></p>
+          <p>Email: <a href="mailto:vnc@veravitaclinic.com">vnc@veravitaclinic.com</a> <!--[cite: 13] --></p>
+          <p>Phone: (587) 585-2524 <!--[cite: 13] --></p>
         </div>
       </div>
 
@@ -206,7 +253,7 @@
               <span>VeraVita</span>
             </div>
           </a>
-          <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
+          <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care. <!--[cite: 13] --></p>
           <div class="sf-social">
             <a href="https://www.facebook.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -217,49 +264,49 @@
         <div class="sf-col">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/practitioners">Our Practitioners</a></li>
-            <li><a href="/faqs">FAQs</a></li>
-            <li><a href="/careers">Careers</a></li>
-            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/">Home</a></li> <!--[cite: 13] -->
+            <li><a href="/services">Services</a></li> <!--[cite: 13] -->
+            <li><a href="/about">About</a></li> <!--[cite: 13] -->
+            <li><a href="/contact">Contact</a></li> <!--[cite: 13] -->
+            <li><a href="/practitioners">Our Practitioners</a></li> <!--[cite: 13] -->
+            <li><a href="/faqs">FAQs</a></li> <!--[cite: 13] -->
+            <li><a href="/careers">Careers</a></li> <!--[cite: 13] -->
+            <li><a href="/pricing">Pricing</a></li> <!--[cite: 13] -->
           </ul>
         </div>
 
         <div class="sf-col">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
-            <li><a href="/cat-naturopathic">Naturopathic Medicine</a></li>
-            <li><a href="/cat-iv-therapy">Testing &amp; IV Therapy</a></li>
-            <li><a href="/cat-acupuncture">Acupuncture &amp; TCM</a></li>
-            <li><a href="/cat-massage-therapy">Massage Therapy</a></li>
-            <li><a href="/cat-osteopathy">Osteopathy</a></li>
+            <li><a href="/cat-naturopathic">Naturopathic Medicine</a></li> <!--[cite: 13] -->
+            <li><a href="/cat-iv-therapy">Testing &amp; IV Therapy</a></li> <!--[cite: 13] -->
+            <li><a href="/cat-acupuncture">Acupuncture &amp; TCM</a></li> <!--[cite: 13] -->
+            <li><a href="/cat-massage-therapy">Massage Therapy</a></li> <!--[cite: 13] -->
+            <li><a href="/cat-osteopathy">Osteopathy</a></li> <!--[cite: 13] -->
           </ul>
         </div>
 
         <div class="sf-col">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
-            <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
-            <li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:vnc@veravitaclinic.com">vnc@veravitaclinic.com</a></li>
-            <li><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</a></li>
+            <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li> <!--[cite: 13] -->
+            <li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:vnc@veravitaclinic.com">vnc@veravitaclinic.com</a></li> <!--[cite: 13] -->
+            <li><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />    Calgary, AB T2X 3J3</a></li> <!--[cite: 13] -->
           </ul>
           <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
           <ul class="sf-links">
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms-of-service">Terms of Service</a></li>
-            <li><a href="/cookie-policy">Cookie Policy</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li> <!--[cite: 13] -->
+            <li><a href="/terms-of-service">Terms of Service</a></li> <!--[cite: 13] -->
+            <li><a href="/cookie-policy">Cookie Policy</a></li> <!--[cite: 13] -->
           </ul>
         </div>
 
       </div>
 
       <div class="sf-bottom">
-        <p>&copy; 2026 VeraVita Naturopathic Clinic. All rights reserved.</p>
-        <p>Calgary, AB &middot; Naturopathic Medicine</p>
-        <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
+        <p>&copy; 2026 VeraVita Naturopathic Clinic. All rights reserved.</p> <!--[cite: 13] -->
+        <p>Calgary, AB &middot; Naturopathic Medicine</p> <!--[cite: 13] -->
+        <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p> <!--[cite: 13] -->
       </div>
     </div>
   </div>

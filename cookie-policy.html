@@ -11,6 +11,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT PRELOADING & PRECONNECT -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/Policy%20-%20Desktop.webp" media="(min-width: 769px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/Policy%20-%20Mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
+
+  <style>
+    /* FIXED NAVBAR (Consistent with Home/About) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+      width: 100%;
+    }
+
+    body {
+      padding-top: 80px; /* Prevents hero from hiding under fixed navbar */
+    }
+
+    /* EXTENDED HERO DISPLAY FOR OPTIMAL IMAGE VISIBILITY */
+    .legal-hero {
+      position: relative;
+      min-height: 50vh; 
+      display: flex;
+      align-items: center;
+      padding: 8rem 0; 
+      overflow: hidden;
+    }
+
+    .legal-hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .legal-hero .container-medium {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,7 +68,7 @@
   <div class="container">
     <div class="navbar-inner">
       <a href="/" class="navbar-logo">
-        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img"
+        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" width="203" height="90"
              onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         <div class="logo-icon" style="display:none;">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,8 +78,8 @@
         </div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
-            <ul class="navbar-nav">
-        <li><a href="/"          class="nav-link">Home</a></li>
+      <ul class="navbar-nav">
+        <li><a href="/" class="nav-link">Home</a></li>
         <li class="nav-dropdown">
           <a href="#" class="nav-link">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
           <div class="nav-dropdown-menu">
@@ -55,8 +104,8 @@
               <div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Amy Lutz, MOMSc</span></div>
             </a></div>
         </li>
-        <li><a href="/about"          class="nav-link">About</a></li>
-        <li><a href="/practitioners"  class="nav-link">Practitioners</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
+        <li><a href="/practitioners" class="nav-link">Practitioners</a></li>
         <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
       <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
@@ -71,130 +120,130 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="legal-hero">
-  <video class="page-hero-video" autoplay muted loop playsinline
-      data-src-desktop="images/background video.mp4"
-      data-src-mobile="images/Background video - Mobile only.mp4">
-    <source src="images/background video.mp4" type="video/mp4" />
-    </video>
-    <script>(function(){var v=document.currentScript.previousElementSibling;v.querySelector("source").src=window.matchMedia("(max-width:860px)").matches?v.dataset.srcMobile:v.dataset.srcDesktop;v.load();})();</script>
-  <div class="page-hero-overlay"></div>
-  <div class="container-medium">
-    <span class="section-label">Legal</span>
-    <h1 class="legal-hero-title">Cookie <em>Policy</em></h1>
-    <p class="legal-hero-sub">Last updated: March 2025</p>
-  </div>
-</section>
-
-<!-- CONTENT -->
-<section class="legal-body">
-  <div class="legal-container">
-
-    <div class="legal-intro reveal">
-      <p>This Cookie Policy explains how VeraVita Naturopathic Clinic ("we," "our," or "us") uses cookies and similar tracking technologies on our website. By continuing to use our website, you consent to our use of cookies as described in this policy.</p>
+<main id="main-content">
+  <!-- HERO -->
+  <section class="legal-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/Policy%20-%20Mobile.webp" />
+      <img src="images/Policy%20-%20Desktop.webp" alt="VeraVita Clinic Legal Policy" class="legal-hero-bg" fetchpriority="high" />
+    </picture>
+    <div class="page-hero-overlay"></div>
+    <div class="container-medium">
+      <span class="section-label">Legal</span>
+      <h1 class="legal-hero-title">Cookie <em>Policy</em></h1>
+      <p class="legal-hero-sub">Last updated: March 2025</p>
     </div>
+  </section>
 
-    <div class="legal-section reveal">
-      <h2>1. What Are Cookies?</h2>
-      <p>Cookies are small text files that are placed on your device (computer, tablet, or smartphone) when you visit a website. They allow the website to recognise your device, remember your preferences, and improve your browsing experience. Cookies cannot access other data on your device or execute programs.</p>
-    </div>
+  <!-- CONTENT -->
+  <section class="legal-body">
+    <div class="legal-container">
 
-    <div class="legal-section reveal">
-      <h2>2. Types of Cookies We Use</h2>
-
-      <h3>Strictly Necessary Cookies</h3>
-      <p>These cookies are essential for the website to function correctly. They enable core features such as navigation, security, and access to secure areas of the website. The website cannot function properly without these cookies, and they cannot be disabled.</p>
-      <ul>
-        <li>Session management cookies</li>
-        <li>Security and authentication cookies</li>
-        <li>Load balancing cookies</li>
-      </ul>
-
-      <h3>Performance &amp; Analytics Cookies</h3>
-      <p>These cookies collect anonymous information about how visitors use our website — such as which pages are visited most often and whether visitors receive error messages. The data helps us improve the website's performance and user experience. All information is aggregated and anonymised.</p>
-      <ul>
-        <li>Google Analytics (page views, session duration, traffic sources)</li>
-        <li>Heatmap and scroll-depth tracking tools</li>
-      </ul>
-
-      <h3>Functional Cookies</h3>
-      <p>These cookies allow the website to remember choices you make (such as your preferred language or region) and provide enhanced, personalised features. They may be set by us or by third-party providers whose services we use on our pages.</p>
-      <ul>
-        <li>Language and region preference cookies</li>
-        <li>Booking form state cookies</li>
-      </ul>
-
-      <h3>Marketing &amp; Targeting Cookies</h3>
-      <p>These cookies are used to deliver advertisements that are relevant to you and your interests. They also help us measure the effectiveness of our advertising campaigns. These cookies may be set by our advertising partners and share information with other organisations.</p>
-      <ul>
-        <li>Facebook Pixel</li>
-        <li>Google Ads remarketing cookies</li>
-      </ul>
-    </div>
-
-    <div class="legal-section reveal">
-      <h2>3. Third-Party Cookies</h2>
-      <p>Some cookies on our website are placed by third-party services. These third parties may set their own cookies when you visit our site. We do not control these cookies and recommend reviewing the respective third-party privacy policies:</p>
-      <ul>
-        <li><strong>Google Analytics</strong> — website analytics and performance measurement</li>
-        <li><strong>Google Fonts</strong> — font delivery service</li>
-        <li><strong>Font Awesome CDN</strong> — icon delivery service</li>
-        <li><strong>Lenis / GSAP CDN</strong> — animation library delivery</li>
-      </ul>
-    </div>
-
-    <div class="legal-section reveal">
-      <h2>4. How Long Do Cookies Last?</h2>
-      <p>Cookies can be either "session cookies" or "persistent cookies":</p>
-      <ul>
-        <li><strong>Session cookies</strong> are temporary and are deleted when you close your browser.</li>
-        <li><strong>Persistent cookies</strong> remain on your device for a set period (e.g., 30 days to 2 years) or until you delete them manually.</li>
-      </ul>
-      <p>Strictly necessary and functional cookies are typically session or short-lived cookies. Analytics and marketing cookies may persist for longer periods as specified by the third-party providers.</p>
-    </div>
-
-    <div class="legal-section reveal">
-      <h2>5. Managing Your Cookie Preferences</h2>
-      <p>You have several options for controlling cookies:</p>
-      <h3>Browser Settings</h3>
-      <p>Most web browsers allow you to control cookies through their settings. You can set your browser to refuse cookies, delete existing cookies, or alert you when a cookie is being placed. Please note that disabling certain cookies may affect the functionality of our website.</p>
-      <ul>
-        <li><strong>Google Chrome:</strong> Settings → Privacy and Security → Cookies</li>
-        <li><strong>Mozilla Firefox:</strong> Options → Privacy &amp; Security → Cookies</li>
-        <li><strong>Safari:</strong> Preferences → Privacy → Manage Website Data</li>
-        <li><strong>Microsoft Edge:</strong> Settings → Cookies and Site Permissions</li>
-      </ul>
-      <h3>Opt-Out Tools</h3>
-      <ul>
-        <li>Google Analytics opt-out: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a></li>
-        <li>Network Advertising Initiative opt-out: <a href="https://optout.networkadvertising.org" target="_blank" rel="noopener noreferrer">NAI Opt-Out Tool</a></li>
-      </ul>
-    </div>
-
-    <div class="legal-section reveal">
-      <h2>6. Cookies and Your Health Information</h2>
-      <p>We do not use cookies to collect, store, or process any personal health information. Any health-related information you provide through appointment booking forms is handled separately and in accordance with our Privacy Policy and applicable health privacy legislation.</p>
-    </div>
-
-    <div class="legal-section reveal">
-      <h2>7. Changes to This Cookie Policy</h2>
-      <p>We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our business practices. Any updates will be posted on this page with a revised "Last Updated" date. We encourage you to review this policy periodically.</p>
-    </div>
-
-    <div class="legal-section reveal">
-      <h2>8. Contact Us</h2>
-      <p>If you have questions about our use of cookies or this policy, please contact us:</p>
-      <div class="legal-contact-block">
-        <p><strong>VeraVita Naturopathic Clinic</strong></p>
-        <p><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Unit 104 – 14505 Bannister Road SE<br />Calgary, AB T2X 3J3</a></p>
-        <p>Email: <a href="mailto:vnc@veravitaclinic.com">vnc@veravitaclinic.com</a></p>
-        <p>Phone: (587) 585-2524</p>
+      <div class="legal-intro">
+        <p>This Cookie Policy explains how VeraVita Naturopathic Clinic ("we," "our," or "us") uses cookies and similar tracking technologies on our website. By continuing to use our website, you consent to our use of cookies as described in this policy.</p>
       </div>
-    </div>
 
-  </div>
-</section>
+      <div class="legal-section">
+        <h2>1. What Are Cookies?</h2>
+        <p>Cookies are small text files that are placed on your device (computer, tablet, or smartphone) when you visit a website. They allow the website to recognise your device, remember your preferences, and improve your browsing experience. Cookies cannot access other data on your device or execute programs.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>2. Types of Cookies We Use</h2>
+
+        <h3>Strictly Necessary Cookies</h3>
+        <p>These cookies are essential for the website to function correctly. They enable core features such as navigation, security, and access to secure areas of the website. The website cannot function properly without these cookies, and they cannot be disabled.</p>
+        <ul>
+          <li>Session management cookies</li>
+          <li>Security and authentication cookies</li>
+          <li>Load balancing cookies</li>
+        </ul>
+
+        <h3>Performance &amp; Analytics Cookies</h3>
+        <p>These cookies collect anonymous information about how visitors use our website — such as which pages are visited most often and whether visitors receive error messages. The data helps us improve the website's performance and user experience. All information is aggregated and anonymised.</p>
+        <ul>
+          <li>Google Analytics (page views, session duration, traffic sources)</li>
+          <li>Heatmap and scroll-depth tracking tools</li>
+        </ul>
+
+        <h3>Functional Cookies</h3>
+        <p>These cookies allow the website to remember choices you make (such as your preferred language or region) and provide enhanced, personalised features. They may be set by us or by third-party providers whose services we use on our pages.</p>
+        <ul>
+          <li>Language and region preference cookies</li>
+          <li>Booking form state cookies</li>
+        </ul>
+
+        <h3>Marketing &amp; Targeting Cookies</h3>
+        <p>These cookies are used to deliver advertisements that are relevant to you and your interests. They also help us measure the effectiveness of our advertising campaigns. These cookies may be set by our advertising partners and share information with other organisations.</p>
+        <ul>
+          <li>Facebook Pixel</li>
+          <li>Google Ads remarketing cookies</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>3. Third-Party Cookies</h2>
+        <p>Some cookies on our website are placed by third-party services. These third parties may set their own cookies when you visit our site. We do not control these cookies and recommend reviewing the respective third-party privacy policies:</p>
+        <ul>
+          <li><strong>Google Analytics</strong> — website analytics and performance measurement</li>
+          <li><strong>Google Fonts</strong> — font delivery service</li>
+          <li><strong>Font Awesome CDN</strong> — icon delivery service</li>
+          <li><strong>Lenis / GSAP CDN</strong> — animation library delivery</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>4. How Long Do Cookies Last?</h2>
+        <p>Cookies can be either "session cookies" or "persistent cookies":</p>
+        <ul>
+          <li><strong>Session cookies</strong> are temporary and are deleted when you close your browser.</li>
+          <li><strong>Persistent cookies</strong> remain on your device for a set period (e.g., 30 days to 2 years) or until you delete them manually.</li>
+        </ul>
+        <p>Strictly necessary and functional cookies are typically session or short-lived cookies. Analytics and marketing cookies may persist for longer periods as specified by the third-party providers.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>5. Managing Your Cookie Preferences</h2>
+        <p>You have several options for controlling cookies:</p>
+        <h3>Browser Settings</h3>
+        <p>Most web browsers allow you to control cookies through their settings. You can set your browser to refuse cookies, delete existing cookies, or alert you when a cookie is being placed. Please note that disabling certain cookies may affect the functionality of our website.</p>
+        <ul>
+          <li><strong>Google Chrome:</strong> Settings → Privacy and Security → Cookies</li>
+          <li><strong>Mozilla Firefox:</strong> Options → Privacy &amp; Security → Cookies</li>
+          <li><strong>Safari:</strong> Preferences → Privacy → Manage Website Data</li>
+          <li><strong>Microsoft Edge:</strong> Settings → Cookies and Site Permissions</li>
+        </ul>
+        <h3>Opt-Out Tools</h3>
+        <ul>
+          <li>Google Analytics opt-out: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a></li>
+          <li>Network Advertising Initiative opt-out: <a href="https://optout.networkadvertising.org" target="_blank" rel="noopener noreferrer">NAI Opt-Out Tool</a></li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>6. Cookies and Your Health Information</h2>
+        <p>We do not use cookies to collect, store, or process any personal health information. Any health-related information you provide through appointment booking forms is handled separately and in accordance with our Privacy Policy and applicable health privacy legislation.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>7. Changes to This Cookie Policy</h2>
+        <p>We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our business practices. Any updates will be posted on this page with a revised "Last Updated" date. We encourage you to review this policy periodically.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>8. Contact Us</h2>
+        <p>If you have questions about our use of cookies or this policy, please contact us:</p>
+        <div class="legal-contact-block">
+          <p><strong>VeraVita Naturopathic Clinic</strong></p>
+          <p><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Unit 104 – 14505 Bannister Road SE<br />Calgary, AB T2X 3J3</a></p>
+          <p>Email: <a href="mailto:vnc@veravitaclinic.com">vnc@veravitaclinic.com</a></p>
+          <p>Phone: (587) 585-2524</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="sf-footer">
@@ -208,9 +257,9 @@
     <div class="sf-body">
       <div class="sf-top">
 
-        <div class="sf-brand sf-anim" style="--sf-delay:0s">
+        <div class="sf-brand">
           <a href="/" class="sf-logo">
-            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img"
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy" decoding="async"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="sf-logo-fallback" style="display:none;">
               <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg>
@@ -225,21 +274,21 @@
           </div>
         </div>
 
-        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/practitioners">Our Practitioners</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/practitioners">Our Practitioners</a></li>
             <li><a href="/faqs">FAQs</a></li>
-            <li><a href="/careers">Careers</a></li>
+            <li><a href="/careers.html">Careers</a></li>
             <li><a href="/pricing">Pricing</a></li>
           </ul>
         </div>
 
-        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
             <li><a href="/cat-naturopathic">Naturopathic Medicine</a></li>
@@ -250,12 +299,12 @@
           </ul>
         </div>
 
-        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
             <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
             <li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:vnc@veravitaclinic.com">vnc@veravitaclinic.com</a></li>
-            <li><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB T2X 3J3</a></li>
+            <li><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z/data=!3m1!4b1!4m5!3m4!1s0x5371769bac7c5303:0xcc7e7b5f0db6e853!8m2!3d50.9239368!4d-114.0708499?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 – 14505 Bannister Road SE<br />    Calgary, AB T2X 3J3</a></li>
           </ul>
           <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
           <ul class="sf-links">
@@ -276,15 +325,9 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
-<!-- MOBILE BOTTOM BOOKING BAR -->
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book an appointment</span>
-  </a>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
 </body>
 </html>
