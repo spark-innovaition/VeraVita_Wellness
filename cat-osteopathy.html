@@ -14,8 +14,8 @@
 
   <!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT PRELOADING & PRECONNECT -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="preload" as="image" href="images/Service Hero secion images/Osteopathy 16-9.webp" media="(min-width: 769px)" />
-  <link rel="preload" as="image" href="images/Service Hero secion images/Osteopathy 9-16.webp" media="(max-width: 768px)" />
+  <link rel="preload" as="image" href="images/Service Hero secion images/Osteopathy 16-9.webp" media="(min-width: 769px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/Service Hero secion images/Osteopathy 9-16.webp" media="(max-width: 768px)" fetchpriority="high" />
 
   <style>
     /* FIXED NAVBAR (Consistent with Home/About) */
@@ -126,7 +126,7 @@
   <div class="container">
     <div class="navbar-inner">
       <a href="/" class="navbar-logo">
-        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" width="203" height="90" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
@@ -171,110 +171,112 @@
   </div>
 </nav>
 
-<section class="cat-hero">
-  <div class="container">
-    <div class="cat-hero-content">
-      <span class="section-label" style="color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem; display:block; margin-bottom:1rem;">Service Category</span>
-      <h1 class="cat-hero-title">Osteopathic <em>Manual Therapy</em></h1>
-      <p class="cat-hero-desc">A holistic, hands-on approach to structural health — restoring alignment, mobility, and balance throughout the musculoskeletal and fascial systems to support the body's natural capacity to heal.</p>
-      <div class="cat-hero-lead"><i class="fa-solid fa-person-rays"></i> Led by Amy Lutz, MOMSc — Manual Osteopathic Therapist</div>
-      <a href="#pricing" class="pricing-link"><i class="fa-solid fa-tag" style="font-size:0.8rem"></i> View Pricing <i class="fa-solid fa-arrow-down" style="font-size:0.75rem; margin-left:0.25rem;"></i></a>
+<main id="main-content">
+  <section class="cat-hero">
+    <div class="container">
+      <div class="cat-hero-content">
+        <span class="section-label" style="color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem; display:block; margin-bottom:1rem;">Service Category</span>
+        <h1 class="cat-hero-title">Osteopathic <em>Manual Therapy</em></h1>
+        <p class="cat-hero-desc">A holistic, hands-on approach to structural health — restoring alignment, mobility, and balance throughout the musculoskeletal and fascial systems to support the body's natural capacity to heal.</p>
+        <div class="cat-hero-lead"><i class="fa-solid fa-person-rays"></i> Led by Amy Lutz, MOMSc — Manual Osteopathic Therapist</div>
+        <a href="#pricing" class="pricing-link"><i class="fa-solid fa-tag" style="font-size:0.8rem"></i> View Pricing <i class="fa-solid fa-arrow-down" style="font-size:0.75rem; margin-left:0.25rem;"></i></a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="svc-section" style="padding:4rem 0 6rem">
-  <div class="container">
-    <div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
-      <h2>Select a <em>Service</em></h2>
-      <p style="color:#4a4a4a;">Choose a service below to learn more — the technique, conditions treated, and what to expect from your appointment.</p>
+  <section class="svc-section" style="padding:4rem 0 6rem">
+    <div class="container">
+      <div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
+        <h2>Select a <em>Service</em></h2>
+        <p style="color:#4a4a4a;">Choose a service below to learn more — the technique, conditions treated, and what to expect from your appointment.</p>
+      </div>
+      <div class="svc-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5)">
+
+        <a href="/service-osteo-consultation.html" class="svc-cell" style="text-decoration:none;color:inherit">
+          <div class="svc-cell-body">
+            <div class="svc-cell-icon"><i class="fa-solid fa-phone"></i></div>
+            <h3 class="svc-cell-name">Consultation</h3>
+            <p class="svc-cell-desc">A complimentary 15-minute phone call to discuss whether osteopathy is right for you. Ask questions, share concerns, and learn how osteopathic care can support your health goals — no charge, no commitment.</p>
+            <span class="svc-cell-link" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="/service-osteo-initial.html" class="svc-cell" style="text-decoration:none;color:inherit">
+          <div class="svc-cell-body">
+            <div class="svc-cell-icon"><i class="fa-solid fa-person-rays"></i></div>
+            <h3 class="svc-cell-name">Initial Appointment</h3>
+            <p class="svc-cell-desc">A comprehensive 45-minute session including a review of your health history, discussion of patient goals, a thorough osteopathic assessment, and initial hands-on treatment to begin addressing your concerns.</p>
+            <span class="svc-cell-link" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="/service-osteo-followup.html" class="svc-cell" style="text-decoration:none;color:inherit">
+          <div class="svc-cell-body">
+            <div class="svc-cell-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <h3 class="svc-cell-name">Follow-Up Appointment</h3>
+            <p class="svc-cell-desc">A focused 30-minute session providing continued osteopathic assessment and treatment — building on your initial visit to further restore mobility, balance, and support your body's ongoing healing process.</p>
+            <span class="svc-cell-link" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+      </div>
     </div>
-    <div class="svc-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5)">
+  </section>
 
-      <a href="/service-osteo-consultation.html" class="svc-cell" style="text-decoration:none;color:inherit">
-        <div class="svc-cell-body">
-          <div class="svc-cell-icon"><i class="fa-solid fa-phone"></i></div>
-          <h3 class="svc-cell-name">Consultation</h3>
-          <p class="svc-cell-desc">A complimentary 15-minute phone call to discuss whether osteopathy is right for you. Ask questions, share concerns, and learn how osteopathic care can support your health goals — no charge, no commitment.</p>
-          <span class="svc-cell-link" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
+  <!-- LEAD PRACTITIONER SECTION INTEGRATION -->
+  <section class="prac-grid-section" id="practitioners" style="padding:4rem 0 5rem;">
+    <div class="container-medium">
+      <div class="svc-section-header" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none">
+        <p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 0 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Lead Practitioner</p>
+        <h2>Meet Our <em>Practitioner</em></h2>
+      </div>
 
-      <a href="/service-osteo-initial.html" class="svc-cell" style="text-decoration:none;color:inherit">
-        <div class="svc-cell-body">
-          <div class="svc-cell-icon"><i class="fa-solid fa-person-rays"></i></div>
-          <h3 class="svc-cell-name">Initial Appointment</h3>
-          <p class="svc-cell-desc">A comprehensive 45-minute session including a review of your health history, discussion of patient goals, a thorough osteopathic assessment, and initial hands-on treatment to begin addressing your concerns.</p>
-          <span class="svc-cell-link" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-      <a href="/service-osteo-followup.html" class="svc-cell" style="text-decoration:none;color:inherit">
-        <div class="svc-cell-body">
-          <div class="svc-cell-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
-          <h3 class="svc-cell-name">Follow-Up Appointment</h3>
-          <p class="svc-cell-desc">A focused 30-minute session providing continued osteopathic assessment and treatment — building on your initial visit to further restore mobility, balance, and support your body's ongoing healing process.</p>
-          <span class="svc-cell-link" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- LEAD PRACTITIONER SECTION INTEGRATION -->
-<section class="prac-grid-section" id="practitioners" style="padding:4rem 0 5rem;">
-  <div class="container-medium">
-    <div class="svc-section-header" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none">
-      <p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 0 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Lead Practitioner</p>
-      <h2>Meet Our <em>Practitioner</em></h2>
-    </div>
-
-    <div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:450px;margin:0 auto">
-      <div class="prac-card" style="text-align:center">
-        <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
-          <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        </div>
-        <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
-          <h3 class="prac-name">Amy Lutz, MOMSc</h3>
-          <span class="prac-role">Manual Osteopathic Therapist</span>
-          <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Specializes in classical osteopathic manual therapy, full-body alignment, nervous system equilibrium, mechanical mobility restrictions, and pediatric osteopathy.</p>
-          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
-            <a href="/amy-lutz.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/15" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book with Amy</a>
+      <div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:450px;margin:0 auto">
+        <div class="prac-card" style="text-align:center">
+          <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
+            <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          </div>
+          <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
+            <h3 class="prac-name">Amy Lutz, MOMSc</h3>
+            <span class="prac-role">Manual Osteopathic Therapist</span>
+            <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Specializes in classical osteopathic manual therapy, full-body alignment, nervous system equilibrium, mechanical mobility restrictions, and pediatric osteopathy.</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
+              <a href="/amy-lutz.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/15" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book with Amy</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="pricing" style="padding:4rem 0 6.5rem">
-  <div class="container">
-    <div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
-      <p class="section-tag" style="margin-bottom:0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
-      <h2>Service <em>Pricing</em></h2>
-      <p style="color:#4a4a4a;">Osteopathic services with Amy Lutz, MOMSc. A free consultation is available to discuss whether osteopathy is right for you.</p>
+  <section id="pricing" style="padding:4rem 0 6.5rem">
+    <div class="container">
+      <div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
+        <p class="section-tag" style="margin-bottom:0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
+        <h2>Service <em>Pricing</em></h2>
+        <p style="color:#4a4a4a;">Osteopathic services with Amy Lutz, MOMSc. A free consultation is available to discuss whether osteopathy is right for you.</p>
+      </div>
+      <div class="price-table-wrap">
+        <table class="price-table">
+          <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>Initial Appointment</td><td class="td-dur">45 min</td><td class="td-price">$110.00</td></tr>
+            <tr><td>Follow-Up Appointment</td><td class="td-dur">30 min</td><td class="td-price">$90.00</td></tr>
+            <tr><td>Consultation</td><td class="td-dur">15 min</td><td class="td-price td-consult">Free</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:2.5rem;text-align:center">
+        <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/15" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+          <span class="btn-ihb-blob"></span>
+          <span class="btn-ihb-default">Book with Amy Lutz</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Amy Lutz</span>
+        </a>
+      </div>
     </div>
-    <div class="price-table-wrap">
-      <table class="price-table">
-        <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
-        <tbody>
-          <tr><td>Initial Appointment</td><td class="td-dur">45 min</td><td class="td-price">$110.00</td></tr>
-          <tr><td>Follow-Up Appointment</td><td class="td-dur">30 min</td><td class="td-price">$90.00</td></tr>
-          <tr><td>Consultation</td><td class="td-dur">15 min</td><td class="td-price td-consult">Free</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div style="margin-top:2.5rem;text-align:center">
-      <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/15" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-        <span class="btn-ihb-blob"></span>
-        <span class="btn-ihb-default">Book with Amy Lutz</span>
-        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Amy Lutz</span>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer class="sf-footer">
   <div class="sf-fixed">
@@ -283,7 +285,7 @@
       <div class="sf-top">
         <div class="sf-brand">
           <a href="/" class="sf-logo">
-            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
           </a>
           <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
@@ -299,7 +301,7 @@
             <li><a href="/">Home</a></li><li><a href="/services.html">Services</a></li>
             <li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li>
             <li><a href="/practitioners.html">Our Practitioners</a></li><li><a href="/pricing.html">Pricing</a></li>
-            <li><a href="/faqs.html">FAQs</a></li><li><a href="/careers">Careers</a></li>
+            <li><a href="/faqs.html">FAQs</a></li><li><a href="/careers.html">Careers</a></li>
           </ul>
         </div>
         <div class="sf-col">
@@ -322,8 +324,8 @@
           <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
           <ul class="sf-links">
             <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="/terms-of-service">Terms of Service</a></li>
-            <li><a href="/cookie-policy">Cookie Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="/cookie-policy.html">Cookie Policy</a></li>
           </ul>
         </div>
       </div>

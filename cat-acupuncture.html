@@ -14,8 +14,8 @@
 
 <!-- UPGRADE 1: SMART DEVICE-SPLIT PRELOADING & PRECONNECT -->
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-<link rel="preload" as="image" href="images/Service Hero secion images/Accupuncture 16-9.webp" media="(min-width: 769px)" />
-<link rel="preload" as="image" href="images/Service Hero secion images/Accupuncture 9-16.webp" media="(max-width: 768px)" />
+<link rel="preload" as="image" href="images/Service Hero secion images/Accupuncture 16-9.webp" media="(min-width: 769px)" fetchpriority="high" />
+<link rel="preload" as="image" href="images/Service Hero secion images/Accupuncture 9-16.webp" media="(max-width: 768px)" fetchpriority="high" />
 
 <style>
   /* FIXED NAVBAR (Consistent with Home/About) */
@@ -126,7 +126,7 @@
   <div class="container">
     <div class="navbar-inner">
       <a href="/" class="navbar-logo">
-        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" width="203" height="90" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
@@ -171,183 +171,185 @@
   </div>
 </nav>
 
-<section class="cat-hero">
+<main id="main-content">
+  <section class="cat-hero">
+    <div class="container">
+      <div class="cat-hero-content">
+        <span class="section-label" style="color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem; display:block; margin-bottom:1rem;">Service Category</span>
+        <h1 class="cat-hero-title">Acupuncture <em>& TCM</em></h1>
+        <p class="cat-hero-desc">A complete Traditional Chinese Medicine practice — classical needling, facial acupuncture, therapeutic Tui Na bodywork, moxibustion, and paediatric care grounded in centuries of clinical wisdom.</p>
+        <div class="cat-hero-lead"><i class="fa-solid fa-hand-sparkles"></i> Leads: Dr. Viktoriia Taylor, DTCM & Joseph Wei</div>
+        <a href="#pricing" class="pricing-link"><i class="fa-solid fa-tag" style="font-size:0.8rem"></i> View Pricing <i class="fa-solid fa-arrow-down" style="font-size:0.75rem; margin-left:0.25rem;"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-section" style="padding:4rem 0 6rem">
   <div class="container">
-    <div class="cat-hero-content">
-      <span class="section-label" style="color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem; display:block; margin-bottom:1rem;">Service Category</span>
-      <h1 class="cat-hero-title">Acupuncture <em>& TCM</em></h1>
-      <p class="cat-hero-desc">A complete Traditional Chinese Medicine practice — classical needling, facial acupuncture, therapeutic Tui Na bodywork, moxibustion, and paediatric care grounded in centuries of clinical wisdom.</p>
-      <div class="cat-hero-lead"><i class="fa-solid fa-hand-sparkles"></i> Leads: Dr. Viktoriia Taylor, DTCM & Joseph Wei</div>
-      <a href="#pricing" class="pricing-link"><i class="fa-solid fa-tag" style="font-size:0.8rem"></i> View Pricing <i class="fa-solid fa-arrow-down" style="font-size:0.75rem; margin-left:0.25rem;"></i></a>
-    </div>
+  <div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
+  <h2>Select a <em>Service</em></h2>
+  <p style="color:#4a4a4a;">Choose a service below to learn more — the technique, conditions treated, and what to expect from your appointment.</p>
   </div>
-</section>
+  <div class="svc-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5)">
 
-<section class="svc-section" style="padding:4rem 0 6rem">
-<div class="container">
-<div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
-<h2>Select a <em>Service</em></h2>
-<p style="color:#4a4a4a;">Choose a service below to learn more — the technique, conditions treated, and what to expect from your appointment.</p>
-</div>
-<div class="svc-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5)">
+    <a href="/service-acupuncture-traditional.html" class="svc-cell" style="text-decoration:none;color:inherit">
+      <div class="svc-cell-body">
+        <div class="svc-cell-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+        <h3 class="svc-cell-name" style="color:#1e3528;">Traditional Acupuncture</h3>
+        <p class="svc-cell-desc">Classical Chinese needling to restore energetic balance, relieve pain, reduce stress, improve sleep, and support the body's innate healing capacity — safe, effective, and deeply restorative.</p>
+        <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
 
-  <a href="/service-acupuncture-traditional.html" class="svc-cell" style="text-decoration:none;color:inherit">
-    <div class="svc-cell-body">
-      <div class="svc-cell-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
-      <h3 class="svc-cell-name" style="color:#1e3528;">Traditional Acupuncture</h3>
-      <p class="svc-cell-desc">Classical Chinese needling to restore energetic balance, relieve pain, reduce stress, improve sleep, and support the body's innate healing capacity — safe, effective, and deeply restorative.</p>
-      <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-    </div>
-  </a>
+    <a href="/service-acupuncture-cosmetic.html" class="svc-cell" style="text-decoration:none;color:inherit">
+      <div class="svc-cell-body">
+        <div class="svc-cell-icon"><i class="fa-solid fa-face-smile"></i></div>
+        <h3 class="svc-cell-name" style="color:#1e3528;">Facial Acupuncture</h3>
+        <p class="svc-cell-desc">Natural facial rejuvenation through targeted needling — stimulates collagen, lifts facial muscles, and reduces fine lines without injectables for a refreshed, natural appearance.</p>
+        <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
 
-  <a href="/service-acupuncture-cosmetic.html" class="svc-cell" style="text-decoration:none;color:inherit">
-    <div class="svc-cell-body">
-      <div class="svc-cell-icon"><i class="fa-solid fa-face-smile"></i></div>
-      <h3 class="svc-cell-name" style="color:#1e3528;">Facial Acupuncture</h3>
-      <p class="svc-cell-desc">Natural facial rejuvenation through targeted needling — stimulates collagen, lifts facial muscles, and reduces fine lines without injectables for a refreshed, natural appearance.</p>
-      <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-    </div>
-  </a>
+    <a href="/service-acupuncture-tui-na.html" class="svc-cell" style="text-decoration:none;color:inherit">
+      <div class="svc-cell-body">
+        <div class="svc-cell-icon"><i class="fa-solid fa-hands"></i></div>
+        <h3 class="svc-cell-name" style="color:#1e3528;">Tui Na Massage</h3>
+        <p class="svc-cell-desc">Traditional Chinese therapeutic massage using rhythmic compression and joint mobilisation to relieve tension, improve circulation, and restore energetic flow through the body.</p>
+        <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+    
+    <a href="/service-acupuncture-cupping.html" class="svc-cell" style="text-decoration:none;color:inherit">
+      <div class="svc-cell-body">
+        <div class="svc-cell-icon"><i class="fa-solid fa-circle"></i></div>
+        <h3 class="svc-cell-name" style="color:#1e3528;">Cupping & Moxibustion</h3>
+        <p class="svc-cell-desc">Ancient therapies including suction cupping for myofascial release and moxibustion (heat therapy) to support circulation, pain relief, and energetic balance alongside traditional protocols.</p>
+        <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
 
-  <a href="/service-acupuncture-tui-na.html" class="svc-cell" style="text-decoration:none;color:inherit">
-    <div class="svc-cell-body">
-      <div class="svc-cell-icon"><i class="fa-solid fa-hands"></i></div>
-      <h3 class="svc-cell-name" style="color:#1e3528;">Tui Na Massage</h3>
-      <p class="svc-cell-desc">Traditional Chinese therapeutic massage using rhythmic compression and joint mobilisation to relieve tension, improve circulation, and restore energetic flow through the body.</p>
-      <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-    </div>
-  </a>
-  
-  <a href="/service-acupuncture-cupping.html" class="svc-cell" style="text-decoration:none;color:inherit">
-    <div class="svc-cell-body">
-      <div class="svc-cell-icon"><i class="fa-solid fa-circle"></i></div>
-      <h3 class="svc-cell-name" style="color:#1e3528;">Cupping & Moxibustion</h3>
-      <p class="svc-cell-desc">Ancient therapies including suction cupping for myofascial release and moxibustion (heat therapy) to support circulation, pain relief, and energetic balance alongside traditional protocols.</p>
-      <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-    </div>
-  </a>
+    <a href="/service-acupuncture-childrens.html" class="svc-cell" style="text-decoration:none;color:inherit">
+      <div class="svc-cell-body">
+        <div class="svc-cell-icon"><i class="fa-solid fa-child-reaching"></i></div>
+        <h3 class="svc-cell-name" style="color:#1e3528;">Children's Needleless Acupuncture</h3>
+        <p class="svc-cell-desc">Gentle, non-invasive acupressure and ear seed techniques for children (0–9 yrs) to support immunity, digestion, sleep, and overall wellbeing in a safe, child-friendly environment.</p>
+        <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+    
+    <a href="/service-herbal-medicine.html" class="svc-cell" style="text-decoration:none;color:inherit">
+      <div class="svc-cell-body">
+        <div class="svc-cell-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+        <h3 class="svc-cell-name" style="color:#1e3528;">Herbal Medicine Consultations</h3>
+        <p class="svc-cell-desc">Personalized consultations to create targeted herbal formulas that complement your acupuncture treatments, supporting internal balance, women's health, and chronic conditions.</p>
+        <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
 
-  <a href="/service-acupuncture-childrens.html" class="svc-cell" style="text-decoration:none;color:inherit">
-    <div class="svc-cell-body">
-      <div class="svc-cell-icon"><i class="fa-solid fa-child-reaching"></i></div>
-      <h3 class="svc-cell-name" style="color:#1e3528;">Children's Needleless Acupuncture</h3>
-      <p class="svc-cell-desc">Gentle, non-invasive acupressure and ear seed techniques for children (0–9 yrs) to support immunity, digestion, sleep, and overall wellbeing in a safe, child-friendly environment.</p>
-      <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-    </div>
-  </a>
-  
-  <a href="/service-herbal-medicine.html" class="svc-cell" style="text-decoration:none;color:inherit">
-    <div class="svc-cell-body">
-      <div class="svc-cell-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
-      <h3 class="svc-cell-name" style="color:#1e3528;">Herbal Medicine Consultations</h3>
-      <p class="svc-cell-desc">Personalized consultations to create targeted herbal formulas that complement your acupuncture treatments, supporting internal balance, women's health, and chronic conditions.</p>
-      <span class="svc-cell-cta" style="color:#1e3528; font-weight:500;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-    </div>
-  </a>
+  </div>
+  </div>
+  </section>
 
-</div>
-</div>
-</section>
+  <section class="prac-grid-section" id="practitioners" style="padding:4rem 0 5rem;">
+  <div class="container-medium">
+  <div class="svc-section-header" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none">
+  <p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 0 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Lead Practitioners</p>
+  <h2>Meet Our <em>Acupuncturists</em></h2>
+  </div>
 
-<section class="prac-grid-section" id="practitioners" style="padding:4rem 0 5rem;">
-<div class="container-medium">
-<div class="svc-section-header" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none">
-<p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 0 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Lead Practitioners</p>
-<h2>Meet Our <em>Acupuncturists</em></h2>
-</div>
+  <div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:900px;margin:0 auto">
 
-<div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:900px;margin:0 auto">
-
-  <div class="prac-card" style="text-align:center">
-    <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%">
-      <!-- UPGRADE 2: ADDED DECODING="ASYNC" FOR STUTTER-FREE SCROLLING -->
-      <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-    </div>
-    <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
-      <h3 class="prac-name">Dr. Viktoriia Taylor, DTCM</h3>
-      <span class="prac-role">Registered Doctor of Acupuncture & TCM</span>
-      <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Former Western Medical Doctor with 10+ years of medical experience, now practising the full spectrum of Traditional Chinese Medicine. Offers traditional acupuncture, facial acupuncture, herbal consultations, and gentle paediatric care for children aged 0–9.</p>
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
-        <a href="/dr-viktoriia-taylor.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-        <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/8" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book with Dr. Taylor</a>
+    <div class="prac-card" style="text-align:center">
+      <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%">
+        <!-- UPGRADE 2: ADDED DECODING="ASYNC" FOR STUTTER-FREE SCROLLING -->
+        <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+      </div>
+      <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
+        <h3 class="prac-name">Dr. Viktoriia Taylor, DTCM</h3>
+        <span class="prac-role">Registered Doctor of Acupuncture & TCM</span>
+        <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Former Western Medical Doctor with 10+ years of medical experience, now practising the full spectrum of Traditional Chinese Medicine. Offers traditional acupuncture, facial acupuncture, herbal consultations, and gentle paediatric care for children aged 0–9.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
+          <a href="/dr-viktoriia-taylor.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/8" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book with Dr. Taylor</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="prac-card" style="text-align:center">
-    <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
-      <!-- UPGRADE 2: ADDED DECODING="ASYNC" FOR STUTTER-FREE SCROLLING -->
-      <img src="images/Practitioner Main page/Joseph Wei.webp" alt="Joseph Wei" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-    </div>
-    <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
-      <h3 class="prac-name">Joseph Wei</h3>
-      <span class="prac-role">Registered Acupuncturist</span>
-      <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Dedicated practitioner with over 20 years of clinical experience offering comprehensive TCM treatments. Focuses on restoring energetic balance, managing chronic pain, and promoting healing through precise acupuncture, Tui Na therapy, and Moxibustion.</p>
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
-        <a href="/joseph-wei.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book with Joseph</a>
+    <div class="prac-card" style="text-align:center">
+      <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
+        <!-- UPGRADE 2: ADDED DECODING="ASYNC" FOR STUTTER-FREE SCROLLING -->
+        <img src="images/Practitioner Main page/Joseph Wei.webp" alt="Joseph Wei" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+      </div>
+      <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
+        <h3 class="prac-name">Joseph Wei</h3>
+        <span class="prac-role">Registered Acupuncturist</span>
+        <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Dedicated practitioner with over 20 years of clinical experience offering comprehensive TCM treatments. Focuses on restoring energetic balance, managing chronic pain, and promoting healing through precise acupuncture, Tui Na therapy, and Moxibustion.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
+          <a href="/joseph-wei.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book with Joseph</a>
+        </div>
       </div>
     </div>
+
+  </div>
+  </div>
+  </section>
+
+  <section id="pricing" style="padding:4rem 0 6.5rem">
+  <div class="container">
+  <div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
+  <p class="section-tag" style="margin-bottom:0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
+  <h2>Service <em>Pricing</em></h2>
+  <p style="color:#4a4a4a;">All prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" style="color:#4a6b53; font-weight:600;">booking portal</a> for current rates and availability.</p>
   </div>
 
-</div>
-</div>
-</section>
+  <div class="price-table-wrap">
+  <table class="price-table">
+  <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
+  <tbody>
+  <tr><td>Initial Acupuncture Consultation & Treatment (Dr. Taylor)</td><td class="td-dur">60 min</td><td class="td-price">$150.00</td></tr>
+  <tr><td>Initial Acupuncture Consultation & Treatment (Joseph Wei)</td><td class="td-dur">60 min</td><td class="td-price">$100.00</td></tr>
+  <tr><td>Initial Acupuncture Consultation & Treatment (Joseph Wei)</td><td class="td-dur">75 min</td><td class="td-price">$120.00</td></tr>
+  <tr><td>Follow-Up Acupuncture Treatment (Dr. Taylor)</td><td class="td-dur">60 min</td><td class="td-price">$105.00</td></tr>
+  <tr><td>Follow-Up Acupuncture Treatment (Joseph Wei)</td><td class="td-dur">60 min</td><td class="td-price">$100.00</td></tr>
+  <tr><td>Combination Treatment (Dr. Taylor)</td><td class="td-dur">75 min</td><td class="td-price">$140.00</td></tr>
+  <tr><td>Acupuncture + TuiNa Therapy (Joseph Wei)</td><td class="td-dur">60 min</td><td class="td-price">$100.00</td></tr>
+  <tr><td>Moxa + Acupuncture (Joseph Wei)</td><td class="td-dur">60 min</td><td class="td-price">$100.00</td></tr>
+  <tr><td>Acupuncture Facial — Initial (Dr. Taylor)</td><td class="td-dur">60 min</td><td class="td-price">$160.00</td></tr>
+  <tr><td>Acupuncture Facial — Follow-Up (Dr. Taylor)</td><td class="td-dur">60 min</td><td class="td-price">$135.00</td></tr>
+  <tr><td>Consultation for Herbal Treatment (Dr. Taylor)</td><td class="td-dur">30 min</td><td class="td-price">$75.00</td></tr>
+  <tr><td>Herbal Follow-Up (Dr. Taylor)</td><td class="td-dur">15 min</td><td class="td-price">$50.00</td></tr>
+  <tr><td>Acupressure & Seed for Children (0–9 yrs) — Initial</td><td class="td-dur">30 min</td><td class="td-price">$85.00</td></tr>
+  <tr><td>Acupressure & Seed for Children (0–9 yrs) — Follow-Up</td><td class="td-dur">30 min</td><td class="td-price">$75.00</td></tr>
+  </tbody>
+  </table>
+  </div>
 
-<section id="pricing" style="padding:4rem 0 6.5rem">
-<div class="container">
-<div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
-<p class="section-tag" style="margin-bottom:0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
-<h2>Service <em>Pricing</em></h2>
-<p style="color:#4a4a4a;">All prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" style="color:#4a6b53; font-weight:600;">booking portal</a> for current rates and availability.</p>
-</div>
+  <div style="margin-top:2.5rem;text-align:center; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+  <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/8" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+  <span class="btn-ihb-blob"></span>
+  <span class="btn-ihb-default">Book with Dr. Taylor</span>
+  <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Dr. Taylor</span>
+  </a>
+  <a href="https://veravitanaturopathicclinic.janeapp.com/#/staff_member/24" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+  <span class="btn-ihb-blob"></span>
+  <span class="btn-ihb-default">Book with Joseph Wei</span>
+  <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Joseph Wei</span>
+  </a>
+  </div>
 
-<div class="price-table-wrap">
-<table class="price-table">
-<thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
-<tbody>
-<tr><td>Initial Acupuncture Consultation & Treatment (Dr. Taylor)</td><td class="td-dur">60 min</td><td class="td-price">$150.00</td></tr>
-<tr><td>Initial Acupuncture Consultation & Treatment (Joseph Wei)</td><td class="td-dur">60 min</td><td class="td-price">$100.00</td></tr>
-<tr><td>Initial Acupuncture Consultation & Treatment (Joseph Wei)</td><td class="td-dur">75 min</td><td class="td-price">$120.00</td></tr>
-<tr><td>Follow-Up Acupuncture Treatment (Dr. Taylor)</td><td class="td-dur">60 min</td><td class="td-price">$105.00</td></tr>
-<tr><td>Follow-Up Acupuncture Treatment (Joseph Wei)</td><td class="td-dur">60 min</td><td class="td-price">$100.00</td></tr>
-<tr><td>Combination Treatment (Dr. Taylor)</td><td class="td-dur">75 min</td><td class="td-price">$140.00</td></tr>
-<tr><td>Acupuncture + TuiNa Therapy (Joseph Wei)</td><td class="td-dur">60 min</td><td class="td-price">$100.00</td></tr>
-<tr><td>Moxa + Acupuncture (Joseph Wei)</td><td class="td-dur">60 min</td><td class="td-price">$100.00</td></tr>
-<tr><td>Acupuncture Facial — Initial (Dr. Taylor)</td><td class="td-dur">60 min</td><td class="td-price">$160.00</td></tr>
-<tr><td>Acupuncture Facial — Follow-Up (Dr. Taylor)</td><td class="td-dur">60 min</td><td class="td-price">$135.00</td></tr>
-<tr><td>Consultation for Herbal Treatment (Dr. Taylor)</td><td class="td-dur">30 min</td><td class="td-price">$75.00</td></tr>
-<tr><td>Herbal Follow-Up (Dr. Taylor)</td><td class="td-dur">15 min</td><td class="td-price">$50.00</td></tr>
-<tr><td>Acupressure & Seed for Children (0–9 yrs) — Initial</td><td class="td-dur">30 min</td><td class="td-price">$85.00</td></tr>
-<tr><td>Acupressure & Seed for Children (0–9 yrs) — Follow-Up</td><td class="td-dur">30 min</td><td class="td-price">$75.00</td></tr>
-</tbody>
-</table>
-</div>
-
-<div style="margin-top:2.5rem;text-align:center; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-<a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/8" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-<span class="btn-ihb-blob"></span>
-<span class="btn-ihb-default">Book with Dr. Taylor</span>
-<span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Dr. Taylor</span>
-</a>
-<a href="https://veravitanaturopathicclinic.janeapp.com/#/staff_member/24" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-<span class="btn-ihb-blob"></span>
-<span class="btn-ihb-default">Book with Joseph Wei</span>
-<span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Joseph Wei</span>
-</a>
-</div>
-
-</div>
-</section>
+  </div>
+  </section>
+</main>
 
 <footer class="sf-footer">
 <div class="sf-fixed">
 <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
 <div class="sf-body">
 <div class="sf-top">
-<div class="sf-brand sf-anim" style="--sf-delay:0s">
+<div class="sf-brand">
 <a href="/" class="sf-logo">
-<img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+<img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
 <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
 </a>
 <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
@@ -357,7 +359,7 @@
 <a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
 </div>
 </div>
-<div class="sf-col sf-anim" style="--sf-delay:0.1s">
+<div class="sf-col">
 <h3 class="sf-col-title">Pages</h3>
 <ul class="sf-links">
 <li><a href="/">Home</a></li><li><a href="/services.html">Services</a></li>
@@ -366,7 +368,7 @@
 <li><a href="/faqs.html">FAQs</a></li><li><a href="/careers.html">Careers</a></li>
 </ul>
 </div>
-<div class="sf-col sf-anim" style="--sf-delay:0.2s">
+<div class="sf-col">
 <h3 class="sf-col-title">Services</h3>
 <ul class="sf-links">
 <li><a href="/cat-naturopathic.html">Naturopathic Medicine</a></li>
@@ -376,7 +378,7 @@
 <li><a href="/cat-osteopathy.html">Osteopathy</a></li>
 </ul>
 </div>
-<div class="sf-col sf-anim" style="--sf-delay:0.3s">
+<div class="sf-col">
 <h3 class="sf-col-title">Contact</h3>
 <ul class="sf-links">
 <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>

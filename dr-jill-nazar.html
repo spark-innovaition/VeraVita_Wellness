@@ -15,7 +15,7 @@
 
   <!-- PERFORMANCE UPGRADE 1: PRECONNECT & HERO IMAGE PRELOAD -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="preload" as="image" href="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" />
+  <link rel="preload" as="image" href="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" fetchpriority="high" />
 
   <style>
     /* ====================================================
@@ -62,7 +62,7 @@
   <div class="container">
     <div class="navbar-inner">
       <a href="/" class="navbar-logo">
-        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" width="203" height="90" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
@@ -91,171 +91,173 @@
   </div>
 </nav>
 
-<div class="pd-back">
-  <div class="container-medium">
-    <a href="/practitioners" class="pd-back-link">
-      <i class="fa-solid fa-arrow-left"></i> Back to All Practitioners
-    </a>
+<main id="main-content">
+  <div class="pd-back">
+    <div class="container-medium">
+      <a href="/practitioners" class="pd-back-link">
+        <i class="fa-solid fa-arrow-left"></i> Back to All Practitioners
+      </a>
+    </div>
   </div>
-</div>
 
-<section class="pd-hero">
-  <div class="container-medium">
-    <div class="pd-hero-inner">
-      <div class="pd-hero-content">
-        <span class="pd-label">Founder &amp; Expert Practitioner</span>
-        <h1 class="pd-name">Dr. Jill<br /><em>Nazar, ND</em></h1>
-        <p class="pd-specialty">Founder &amp; Naturopathic Doctor</p>
-        <p class="pd-short-bio">Dr. Jill Nazar is a licensed naturopathic doctor, a graduate of the Canadian College of Naturopathic Medicine in Toronto, and the founder of VeraVita Naturopathic Clinic. A former Pediatric and Neonatology Medical Doctor with over a decade of practice, she brings a uniquely integrated perspective to whole-body, evidence-informed naturopathic care.</p>
+  <section class="pd-hero">
+    <div class="container-medium">
+      <div class="pd-hero-inner">
+        <div class="pd-hero-content">
+          <span class="pd-label">Founder &amp; Expert Practitioner</span>
+          <h1 class="pd-name">Dr. Jill<br /><em>Nazar, ND</em></h1>
+          <p class="pd-specialty">Founder &amp; Naturopathic Doctor</p>
+          <p class="pd-short-bio">Dr. Jill Nazar is a licensed naturopathic doctor, a graduate of the Canadian College of Naturopathic Medicine in Toronto, and the founder of VeraVita Naturopathic Clinic. A former Pediatric and Neonatology Medical Doctor with over a decade of practice, she brings a uniquely integrated perspective to whole-body, evidence-informed naturopathic care.</p>
 
-        <div class="pd-meta-grid">
-          <div class="pd-meta-block">
-            <h4>Areas of Expertise</h4>
-            <ul class="pd-expertise-list">
-              <li>Traditional Chinese Medicine &amp; Acupuncture</li>
-              <li>Botanical Medicine &amp; Homeopathy</li>
-              <li>IV Nutrient Therapy</li>
-              <li>Pediatric &amp; Family Health</li>
-              <li>Hormonal &amp; Endocrine Health</li>
-              <li>Skin &amp; Dermatological Conditions</li>
-            </ul>
+          <div class="pd-meta-grid">
+            <div class="pd-meta-block">
+              <h4>Areas of Expertise</h4>
+              <ul class="pd-expertise-list">
+                <li>Traditional Chinese Medicine &amp; Acupuncture</li>
+                <li>Botanical Medicine &amp; Homeopathy</li>
+                <li>IV Nutrient Therapy</li>
+                <li>Pediatric &amp; Family Health</li>
+                <li>Hormonal &amp; Endocrine Health</li>
+                <li>Skin &amp; Dermatological Conditions</li>
+              </ul>
+            </div>
+            <div class="pd-meta-block">
+              <h4>Credentials &amp; Education</h4>
+              <ul class="pd-cred-list">
+                <li>ND — Canadian College of Naturopathic Medicine, Toronto</li>
+                <li>Former MD — Pediatrics &amp; Neonatology</li>
+                <li>Member, College of Naturopathic Doctors of Alberta (CNDA)</li>
+                <li>Member, Canadian Association of Naturopathic Doctors (CAND)</li>
+                <li>Member, Alberta Association of Naturopathic Doctors (AAND)</li>
+              </ul>
+            </div>
           </div>
-          <div class="pd-meta-block">
-            <h4>Credentials &amp; Education</h4>
-            <ul class="pd-cred-list">
-              <li>ND — Canadian College of Naturopathic Medicine, Toronto</li>
-              <li>Former MD — Pediatrics &amp; Neonatology</li>
-              <li>Member, College of Naturopathic Doctors of Alberta (CNDA)</li>
-              <li>Member, Canadian Association of Naturopathic Doctors (CAND)</li>
-              <li>Member, Alberta Association of Naturopathic Doctors (AAND)</li>
-            </ul>
-          </div>
+
+          <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/1" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book with Dr. Nazar</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Dr. Nazar</span>
+          </a>
         </div>
 
-        <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/1" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-          <span class="btn-ihb-blob"></span>
-          <span class="btn-ihb-default">Book with Dr. Nazar</span>
-          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Dr. Nazar</span>
-        </a>
-      </div>
-
-      <div class="pd-photo-wrap">
-        <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="pd-photo" decoding="async" />
+        <div class="pd-photo-wrap">
+          <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="pd-photo" fetchpriority="high" decoding="async" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="pd-detail-section">
-  <div class="section-bg-parallax"></div>
-  <div class="container-medium">
-    <div class="pd-detail-inner">
-      <h2>About Dr. Nazar</h2>
-      <p>Dr. Jill Nazar is a licensed naturopathic doctor and a graduate of the Canadian College of Naturopathic Medicine (CCNM) in Toronto, ON. She is dedicated to helping her patients take an active role in their health journey through personalised, integrative care. With a focus on whole-body wellness, Dr. Nazar blends modern science with traditional healing methods to support her patients in achieving long-term balance and vitality.</p>
-      <p>Before becoming a naturopathic doctor, Dr. Nazar spent over a decade practising as a Medical Doctor in Central Asia, specialising in Pediatrics and Neonatology. Her work centred on general health, nutrition-related conditions, and weight management. After immigrating to Canada, she expanded on her medical expertise by transitioning into naturopathic medicine — bringing the best of both disciplines to her patients at VeraVita.</p>
-      <p>During her clinical internship at the Robert Schad Naturopathic Clinic, she also worked with diverse patient populations at the Flemingdon Community Health Centre, gaining valuable experience treating a wide range of health concerns across all ages. She is a proud member of the College of Naturopathic Doctors of Alberta (CNDA), the Canadian Association of Naturopathic Doctors (CAND), and the Alberta Association of Naturopathic Doctors (AAND).</p>
+  <section class="pd-detail-section">
+    <div class="section-bg-parallax"></div>
+    <div class="container-medium">
+      <div class="pd-detail-inner">
+        <h2>About Dr. Nazar</h2>
+        <p>Dr. Jill Nazar is a licensed naturopathic doctor and a graduate of the Canadian College of Naturopathic Medicine (CCNM) in Toronto, ON. She is dedicated to helping her patients take an active role in their health journey through personalised, integrative care. With a focus on whole-body wellness, Dr. Nazar blends modern science with traditional healing methods to support her patients in achieving long-term balance and vitality.</p>
+        <p>Before becoming a naturopathic doctor, Dr. Nazar spent over a decade practising as a Medical Doctor in Central Asia, specialising in Pediatrics and Neonatology. Her work centred on general health, nutrition-related conditions, and weight management. After immigrating to Canada, she expanded on her medical expertise by transitioning into naturopathic medicine — bringing the best of both disciplines to her patients at VeraVita.</p>
+        <p>During her clinical internship at the Robert Schad Naturopathic Clinic, she also worked with diverse patient populations at the Flemingdon Community Health Centre, gaining valuable experience treating a wide range of health concerns across all ages. She is a proud member of the College of Naturopathic Doctors of Alberta (CNDA), the Canadian Association of Naturopathic Doctors (CAND), and the Alberta Association of Naturopathic Doctors (AAND).</p>
 
-      <h3 class="pd-help-heading">What Dr. Nazar Can Help With:</h3>
-      <ul class="pd-help-list">
-        <li>Skin and dermatological conditions</li>
-        <li>Endocrine health and hormonal imbalances</li>
-        <li>Pediatric care — from infancy through adolescence</li>
-        <li>Diabetes management and blood sugar regulation</li>
-        <li>Digestive and gastrointestinal issues</li>
-        <li>Nutrition and sustainable weight support</li>
-        <li>Chronic fatigue and fibromyalgia</li>
-      </ul>
+        <h3 class="pd-help-heading">What Dr. Nazar Can Help With:</h3>
+        <ul class="pd-help-list">
+          <li>Skin and dermatological conditions</li>
+          <li>Endocrine health and hormonal imbalances</li>
+          <li>Pediatric care — from infancy through adolescence</li>
+          <li>Diabetes management and blood sugar regulation</li>
+          <li>Digestive and gastrointestinal issues</li>
+          <li>Nutrition and sustainable weight support</li>
+          <li>Chronic fatigue and fibromyalgia</li>
+        </ul>
 
-      <h3 class="pd-approach-heading">Her Approach:</h3>
-      <ul class="pd-approach-list">
-        <li>Comprehensive initial consultations covering the full health history</li>
-        <li>Traditional Chinese Medicine, Acupuncture, and Botanical Medicine</li>
-        <li>Homeopathy and clinical nutrition guidance</li>
-        <li>Intramuscular vitamin injections and IV Nutrient Therapy</li>
-        <li>Personalised treatment plans with clear, measurable milestones</li>
-        <li>Compassionate, education-first care — empowering each patient with knowledge</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="pd-services-section">
-  <div class="container-medium">
-    <div class="pd-services-header">
-      <span class="section-label">Related Services</span>
-      <h2>Dr. Nazar's<br /><em>Speciality Areas</em></h2>
-    </div>
-    <div class="pd-services-grid">
-      <a href="/service-naturopathic-care" class="pd-svc-card">
-        <div class="pd-svc-img-wrap">
-          <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
-          <img src="images/Nathuropathy service/Hero section 16-9.png" alt="Naturopathic Care" class="pd-svc-img" loading="lazy" decoding="async" />
-        </div>
-        <div class="pd-svc-body">
-          <h3 class="pd-svc-title">Naturopathic Care</h3>
-          <p class="pd-svc-desc">Comprehensive assessments and evidence-informed therapies addressing root causes of chronic illness.</p>
-        </div>
-      </a>
-      <a href="/service-iv-therapy" class="pd-svc-card">
-        <div class="pd-svc-img-wrap">
-          <img src="images/IV Therapy/IV therapy 16-9.png" alt="IV Therapy" class="pd-svc-img" loading="lazy" decoding="async" />
-        </div>
-        <div class="pd-svc-body">
-          <h3 class="pd-svc-title">IV Nutrient Therapy</h3>
-          <p class="pd-svc-desc">Targeted vitamin and mineral infusions to rapidly restore systemic energy and cellular function.</p>
-        </div>
-      </a>
-      <a href="/service-fatigue-treatment" class="pd-svc-card">
-        <div class="pd-svc-img-wrap">
-          <img src="images/Fatigue service/fatigue 16-9.png" alt="Fatigue Treatment" class="pd-svc-img" loading="lazy" decoding="async" />
-        </div>
-        <div class="pd-svc-body">
-          <h3 class="pd-svc-title">Fatigue Treatment</h3>
-          <p class="pd-svc-desc">In-depth clinical evaluation to uncover the hormonal imbalances driving persistent low energy.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="pd-booking-section">
-  <div class="section-bg-parallax"></div>
-  <div class="container-medium">
-    <div class="pd-booking-inner">
-      <div>
-        <span class="section-label">Book a Visit</span>
-        <h2 class="pd-booking-heading">Ready to Book<br /><em>Your Appointment?</em></h2>
-        <p class="pd-booking-sub">We use Jane App for seamless online booking — choose your preferred time, service, and practitioner in just a few clicks.</p>
-        <ul class="pd-booking-perks">
-          <li><i class="fa-solid fa-circle-check"></i> Real-time availability</li>
-          <li><i class="fa-solid fa-circle-check"></i> Instant confirmation</li>
-          <li><i class="fa-solid fa-circle-check"></i> Easy rescheduling &amp; reminders</li>
+        <h3 class="pd-approach-heading">Her Approach:</h3>
+        <ul class="pd-approach-list">
+          <li>Comprehensive initial consultations covering the full health history</li>
+          <li>Traditional Chinese Medicine, Acupuncture, and Botanical Medicine</li>
+          <li>Homeopathy and clinical nutrition guidance</li>
+          <li>Intramuscular vitamin injections and IV Nutrient Therapy</li>
+          <li>Personalised treatment plans with clear, measurable milestones</li>
+          <li>Compassionate, education-first care — empowering each patient with knowledge</li>
         </ul>
       </div>
-      <div class="pd-jane-card">
-        <div class="pd-jane-icon"><i class="fa-solid fa-calendar-check"></i></div>
-        <h3 class="pd-jane-title">Book with Dr. Nazar</h3>
-        <p class="pd-jane-desc">Select your service, date, and time directly through our secure booking portal.</p>
-        <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/1" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary pd-jane-btn">
-          <span class="btn-ihb-blob"></span>
-          <span class="btn-ihb-default">Open Booking Portal</span>
-          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Open Booking Portal</span>
+    </div>
+  </section>
+
+  <section class="pd-services-section">
+    <div class="container-medium">
+      <div class="pd-services-header">
+        <span class="section-label">Related Services</span>
+        <h2>Dr. Nazar's<br /><em>Speciality Areas</em></h2>
+      </div>
+      <div class="pd-services-grid">
+        <a href="/service-naturopathic-care" class="pd-svc-card">
+          <div class="pd-svc-img-wrap">
+            <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
+            <img src="images/Nathuropathy service/Hero section 16-9.png" alt="Naturopathic Care" class="pd-svc-img" loading="lazy" decoding="async" />
+          </div>
+          <div class="pd-svc-body">
+            <h3 class="pd-svc-title">Naturopathic Care</h3>
+            <p class="pd-svc-desc">Comprehensive assessments and evidence-informed therapies addressing root causes of chronic illness.</p>
+          </div>
         </a>
-        <p class="pd-jane-note"><i class="fa-solid fa-lock"></i> Secure &nbsp;&middot;&nbsp; Powered by Jane App</p>
+        <a href="/service-iv-therapy" class="pd-svc-card">
+          <div class="pd-svc-img-wrap">
+            <img src="images/IV Therapy/IV therapy 16-9.png" alt="IV Therapy" class="pd-svc-img" loading="lazy" decoding="async" />
+          </div>
+          <div class="pd-svc-body">
+            <h3 class="pd-svc-title">IV Nutrient Therapy</h3>
+            <p class="pd-svc-desc">Targeted vitamin and mineral infusions to rapidly restore systemic energy and cellular function.</p>
+          </div>
+        </a>
+        <a href="/service-fatigue-treatment" class="pd-svc-card">
+          <div class="pd-svc-img-wrap">
+            <img src="images/Fatigue service/fatigue 16-9.png" alt="Fatigue Treatment" class="pd-svc-img" loading="lazy" decoding="async" />
+          </div>
+          <div class="pd-svc-body">
+            <h3 class="pd-svc-title">Fatigue Treatment</h3>
+            <p class="pd-svc-desc">In-depth clinical evaluation to uncover the hormonal imbalances driving persistent low energy.</p>
+          </div>
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="pd-booking-section">
+    <div class="section-bg-parallax"></div>
+    <div class="container-medium">
+      <div class="pd-booking-inner">
+        <div>
+          <span class="section-label">Book a Visit</span>
+          <h2 class="pd-booking-heading">Ready to Book<br /><em>Your Appointment?</em></h2>
+          <p class="pd-booking-sub">We use Jane App for seamless online booking — choose your preferred time, service, and practitioner in just a few clicks.</p>
+          <ul class="pd-booking-perks">
+            <li><i class="fa-solid fa-circle-check"></i> Real-time availability</li>
+            <li><i class="fa-solid fa-circle-check"></i> Instant confirmation</li>
+            <li><i class="fa-solid fa-circle-check"></i> Easy rescheduling &amp; reminders</li>
+          </ul>
+        </div>
+        <div class="pd-jane-card">
+          <div class="pd-jane-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3 class="pd-jane-title">Book with Dr. Nazar</h3>
+          <p class="pd-jane-desc">Select your service, date, and time directly through our secure booking portal.</p>
+          <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/1" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary pd-jane-btn">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Open Booking Portal</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Open Booking Portal</span>
+          </a>
+          <p class="pd-jane-note"><i class="fa-solid fa-lock"></i> Secure &nbsp;&middot;&nbsp; Powered by Jane App</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer class="sf-footer">
   <div class="sf-fixed">
     <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
     <div class="sf-body">
       <div class="sf-top">
-        <div class="sf-brand sf-anim" style="--sf-delay:0s">
+        <div class="sf-brand">
           <a href="/" class="sf-logo">
             <!-- PERFORMANCE UPGRADE 2: ADDED LAZY & ASYNC -->
-            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
           </a>
           <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
@@ -265,7 +267,7 @@
             <a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           </div>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
             <li><a href="/">Home</a></li><li><a href="/services">Services</a></li>
@@ -274,7 +276,7 @@
             <li><a href="/faqs">FAQs</a></li><li><a href="/careers">Careers</a></li>
           </ul>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
             <li><a href="/cat-naturopathic">Naturopathic Medicine</a></li>
@@ -284,7 +286,7 @@
             <li><a href="/cat-osteopathy">Osteopathy</a></li>
           </ul>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
             <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
@@ -316,6 +318,7 @@
 <!-- PERFORMANCE UPGRADE 4: MOBILE GSAP OPTIMIZATION -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
   
   let mm = gsap.matchMedia();

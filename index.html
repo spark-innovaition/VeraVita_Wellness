@@ -18,8 +18,8 @@
   
   <!-- PERFORMANCE UPGRADE 2: SMART DEVICE-SPLIT PRELOADING WITH FETCHPRIORITY -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="preload" as="image" href="images/Home page/Desktop 21-9 - Home page hero.webp" media="(min-width: 769px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="images/Home page/Mobile - Home page hero.webp" media="(max-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/Home%20page/Desktop%2021-9%20-%20Home%20page%20hero.webp" media="(min-width: 769px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/Home%20page/Mobile%20-%20Home%20page%20hero.webp" media="(max-width: 768px)" fetchpriority="high" />
   
   <style>
     /* SOFT FADE-IN ON LOAD */
@@ -66,8 +66,6 @@
       object-position: top center;
       z-index: 1;
     }
-    .hero-bg-img--desktop { display: block; }
-    .hero-bg-img--mobile { display: none; }
 
     .hero-gradient-overlay {
       position: absolute;
@@ -80,8 +78,6 @@
       .ph-standard-hero {
         height: 90vh;
       }
-      .hero-bg-img--desktop { display: none !important; }
-      .hero-bg-img--mobile { display: block !important; }
       .hero-gradient-overlay {
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.95));
       }
@@ -364,8 +360,10 @@
   <div class="container">
     <div class="navbar-inner">
       <a href="/" class="navbar-logo">
-        <!-- PERFORMANCE UPGRADE 4: EXPLICIT LOGO DIMENSIONS PLACED TO PREVENT CORES CLS -->
-        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" width="203" height="90" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <picture>
+          <source media="(max-width: 860px)" srcset="images/Header%20-%20Mobile.png" />
+          <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" width="203" height="90" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        </picture>
         <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
@@ -410,13 +408,13 @@
   </div>
 </nav>
 
-<!-- PERFORMANCE UPGRADE 5: SEMANTIC LANDMARK INJECTED TO ADDRESS BEST PRACTICES AUDIT -->
 <main id="main-content">
 
-  <!-- EDITORIAL HERO SECTION RE-ARCHITECTED FOR INSTANT NODE DISCOVERY -->
   <header class="ph-standard-hero">
-    <img src="images/Home page/Desktop 21-9 - Home page hero.webp" alt="" class="hero-bg-img hero-bg-img--desktop" fetchpriority="high" />
-    <img src="images/Home page/Mobile - Home page hero.webp" alt="" class="hero-bg-img hero-bg-img--mobile" fetchpriority="high" />
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/Home%20page/Mobile%20-%20Home%20page%20hero.webp" />
+      <img src="images/Home%20page/Desktop%2021-9%20-%20Home%20page%20hero.webp" alt="Naturopathic Medicine Calgary" class="hero-bg-img" fetchpriority="high" />
+    </picture>
     <div class="hero-gradient-overlay"></div>
     
     <div class="container hero-content fade-in-load">
@@ -440,11 +438,10 @@
         </div>
         <p class="hwnu-statement">At VeraVita, we believe healthcare is more than just treating symptoms — it's a commitment to improving lives. With a team of compassionate experts and state-of-the-art facilities.</p>
 
-        <!-- BENTO GRID (WITH BOUNDED EXPLICIT DIMENSIONS) -->
         <div class="bento-grid">
-          <div class="bento-item"><img src="images/Home page - marquee/pexels-rdne-8312830.webp" alt="Clinic Office" width="656" height="438" loading="lazy" decoding="async" /></div>
-          <div class="bento-item"><img src="images/Home page - marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" width="656" height="438" loading="lazy" decoding="async" /></div>
-          <div class="bento-item"><img src="images/Home page - marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" width="656" height="438" loading="lazy" decoding="async" /></div>
+          <div class="bento-item"><img src="images/Home%20page%20-%20marquee/pexels-rdne-8312830.webp" alt="Clinic Office" width="656" height="438" loading="lazy" decoding="async" /></div>
+          <div class="bento-item"><img src="images/Home%20page%20-%20marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" width="656" height="438" loading="lazy" decoding="async" /></div>
+          <div class="bento-item"><img src="images/Home%20page%20-%20marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" width="656" height="438" loading="lazy" decoding="async" /></div>
         </div>
 
         <div class="hwnu-cta-wrap" style="margin-top: 3rem;">
@@ -474,7 +471,6 @@
               <path d="M16 36c-3 2-5 3-5 3M32 36c3 2 5 3 5 3M24 44v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
               <path d="M18 26c2 3 4 5 6 6 2-1 4-3 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
-            <!-- PERFORMANCE UPGRADE 6: SEQUENTIAL HEADINGS REMEDIED FOR ACCESSIBILITY -->
             <h3 class="wcu-item-title">Patient-Centred Approach</h3>
             <p class="wcu-item-text">We tailor every treatment to fit your unique health needs, lifestyle, and goals — no one-size-fits-all solutions.</p>
           </div>
@@ -541,7 +537,7 @@
           <div class="accord-list">
 
             <div class="accord-item">
-              <button class="accord-trigger" data-image="images/Treatments/Nathuropathic care.webp" data-name="Naturopathic Medicine" data-link="cat-naturopathic.html">
+              <button class="accord-trigger" data-image="images/Treatments/Nathuropathic%20care.webp" data-name="Naturopathic Medicine" data-link="cat-naturopathic.html">
                 <span class="accord-num">01</span>
                 <span class="accord-label">Naturopathic Medicine</span>
                 <span class="accord-svc-icon"><i class="fa-solid fa-leaf"></i></span>
@@ -556,7 +552,7 @@
             </div>
 
             <div class="accord-item">
-              <button class="accord-trigger" data-image="images/Treatments/IV therapy.webp" data-name="Testing & IV Therapy" data-link="cat-iv-therapy.html">
+              <button class="accord-trigger" data-image="images/Treatments/IV%20therapy.webp" data-name="Testing & IV Therapy" data-link="cat-iv-therapy.html">
                 <span class="accord-num">02</span>
                 <span class="accord-label">Testing & IV Therapy</span>
                 <span class="accord-svc-icon"><i class="fa-solid fa-droplet"></i></span>
@@ -586,7 +582,7 @@
             </div>
 
             <div class="accord-item">
-             <button class="accord-trigger" data-image="images/Treatments/massage therapy.webp" data-name="Massage Therapy" data-link="cat-massage-therapy.html">
+             <button class="accord-trigger" data-image="images/Treatments/massage%20therapy.webp" data-name="Massage Therapy" data-link="cat-massage-therapy.html">
                 <span class="accord-num">04</span>
                 <span class="accord-label">Massage Therapy</span>
                 <span class="accord-svc-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
@@ -625,7 +621,7 @@
 
         <div class="services-accord-img">
           <div class="accord-img-card">
-            <img id="accord-preview" src="images/Treatments/Nathuropathic care.webp" alt="Service Preview" class="accord-img" width="400" height="533" loading="lazy" decoding="async" />
+            <img id="accord-preview" src="images/Treatments/Nathuropathic%20care.webp" alt="Service Preview" class="accord-img" width="400" height="533" loading="lazy" decoding="async" />
             <div class="accord-img-footer">
               <span class="accord-img-name" id="accord-preview-name">Naturopathic Medicine</span>
               <a href="/cat-naturopathic.html" class="accord-img-link" id="accord-preview-link">
@@ -650,7 +646,7 @@
           <div style="color: #eab308; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
           <p class="testi-quote">"Highly recommend Veravita Naturopathic Clinic! Dr. Jill Navar is knowledgeable, caring, and takes the time to understand your concerns... Excellent care!"</p>
           <div class="testi-author">
-            <img src="images/Review images/Review 1.webp" alt="Liberty Bustos" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+            <img src="images/Review%20images/Review%201.webp" alt="Liberty Bustos" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
             <div class="testi-author-info">
               <strong>Liberty Bustos</strong>
               <span>Google Review</span>
@@ -661,7 +657,7 @@
           <div style="color: #eab308; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
           <p class="testi-quote">"Dr. Jill was such a sweetheart! She made the whole cozy vibe even more comfortable. It's very easy to communicate with all the doctors. I highly recommend this place!"</p>
           <div class="testi-author">
-            <img src="images/Review images/Review 2.webp" alt="Oksana Meheriuk" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+            <img src="images/Review%20images/Review%202.webp" alt="Oksana Meheriuk" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
             <div class="testi-author-info">
               <strong>Oksana Meheriuk</strong>
               <span>Google Review</span>
@@ -672,7 +668,7 @@
           <div style="color: #eab308; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
           <p class="testi-quote">"Dr. Jill is both friendly and highly professional. She sets realistic goals that are easy to achieve. I highly recommend her practice to anyone."</p>
           <div class="testi-author">
-            <img src="images/Review images/Review 4.webp" alt="Anu Rajappan" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+            <img src="images/Review%20images/Review%204.webp" alt="Anu Rajappan" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
             <div class="testi-author-info">
               <strong>Anu Rajappan</strong>
               <span>Google Review</span>
@@ -683,7 +679,7 @@
           <div style="color: #eab308; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
           <p class="testi-quote">"She is knowledgeable, attentive, and truly takes the time to listen. I always feel supported and cared for during my appointments."</p>
           <div class="testi-author">
-            <img src="images/Review images/Review 5.webp" alt="Anna" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+            <img src="images/Review%20images/Review%205.webp" alt="Anna" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
             <div class="testi-author-info">
               <strong>Anna</strong>
               <span>Google Review</span>
@@ -831,6 +827,7 @@
       </div>
       <div class="sf-bottom">
         <p>© 2026 VeraVita Naturopathic Clinic. All rights reserved.</p>
+        <p>Calgary, AB · Naturopathic Medicine</p>
         <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
       </div>
     </div>

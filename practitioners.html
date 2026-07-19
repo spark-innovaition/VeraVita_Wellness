@@ -6,18 +6,17 @@
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
   <title>Our Practitioners | VeraVita Naturopathic Clinic Calgary</title>
   <meta name="description" content="Meet the expert licensed naturopathic doctors and wellness practitioners at VeraVita Naturopathic Clinic in Calgary." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
   
-  <!-- Preconnect to CDN for faster asset fetching -->
+  <!-- PERFORMANCE UPGRADE 1: SMART PRELOAD & PRECONNECT ENGINE -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-
-  <!-- Smart Preload: Only loads the exact image needed for the user's specific device -->
-  <link rel="preload" as="image" href="images/Practitioner Hero - Desktop.webp" media="(min-width: 769px)" />
-  <link rel="preload" as="image" href="images/Practitioner Hero - Mobile.webp" media="(max-width: 768px)" />
+  <link rel="preload" as="image" href="images/Practitioner Hero - Desktop.webp" media="(min-width: 769px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/Practitioner Hero - Mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
 
   <style>
     /* FIXED NAVBAR */
@@ -155,7 +154,7 @@
   <div class="container">
     <div class="navbar-inner">
       <a href="/" class="navbar-logo">
-        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img"
+        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" width="203" height="90"
              onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         <div class="logo-icon" style="display:none;">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -208,157 +207,159 @@
   </div>
 </nav>
 
-<section class="prac-hero">
-  <div class="container-medium">
-    <span class="section-label">Medical Professionals</span>
-    <h1 class="prac-hero-title">Meet Our<br /><em>Practitioners</em></h1>
-    <p class="prac-hero-sub">At VeraVita, our team of licensed naturopathic doctors and wellness specialists bring deep expertise and genuine care to every patient. We combine evidence-based medicine with holistic, personalised approaches to help you thrive.</p>
-  </div>
-</section>
-
-<section class="prac-grid-section">
-  <div class="container-medium">
-    <div class="prac-grid">
-
-      <div class="prac-card">
-        <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        </div>
-        <div class="prac-info">
-          <h3 class="prac-name">Dr. Jill Nazar, ND</h3>
-          <span class="prac-role">Founder & Naturopathic Doctor</span>
-          <p class="prac-desc">Former Pediatric Medical Doctor with over a decade of experience, now leading VeraVita's naturopathic programs with a whole-body, evidence-informed approach.</p>
-          <a href="/dr-jill-nazar.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="prac-card">
-        <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        </div>
-        <div class="prac-info">
-          <h3 class="prac-name">Dr. Viktoriia Taylor, DTCM</h3>
-          <span class="prac-role">Registered Dr. of Acupuncture</span>
-          <p class="prac-desc">Former Western Medical Doctor in Ukraine with 10+ years of knowledge, now practising the full spectrum of Traditional Chinese Medicine and acupuncture at VeraVita.</p>
-          <a href="/dr-viktoriia-taylor.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="prac-card">
-        <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Joseph Wei.webp" alt="Joseph Wei" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        </div>
-        <div class="prac-info">
-          <h3 class="prac-name">Joseph Wei</h3>
-          <span class="prac-role">Registered Acupuncturist</span>
-          <p class="prac-desc">Over 20 years of clinical experience blending Traditional Chinese Medicine and modern diagnostics for comprehensive pain management and holistic wellness.</p>
-          <a href="/joseph-wei.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="prac-card">
-        <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        </div>
-        <div class="prac-info">
-          <h3 class="prac-name">Jean-Wilson Raymond</h3>
-          <span class="prac-role">Registered Massage Therapist (RMT)</span>
-          <p class="prac-desc">Offering a bespoke approach to bodywork — specialising in deep tissue, relaxation, hot stone therapy, cupping, lymphatic drainage, sports massage, and prenatal care.</p>
-          <a href="/jean-wilson-raymond.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="prac-card">
-        <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Lisseth Pabon Velez.webp" alt="Lisseth Pabon Velez, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        </div>
-        <div class="prac-info">
-          <h3 class="prac-name">Lisseth Pabon Velez</h3>
-          <span class="prac-role">Registered Massage Therapist (RMT)</span>
-          <p class="prac-desc">A dedicated practitioner with a background in Physiotherapy, integrating advanced techniques like cupping therapy, hot stone cupping, and pre/postnatal care to support recovery.</p>
-          <a href="/lisseth-pabon-velez.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="prac-card">
-        <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        </div>
-        <div class="prac-info">
-          <h3 class="prac-name">Johnvel Sabturani</h3>
-          <span class="prac-role">Registered Massage Therapist (RMT)</span>
-          <p class="prac-desc">Dedicated to helping clients reduce pain and improve mobility through personalized treatments incorporating deep tissue, hot stone therapy, sports massage, and assisted stretching.</p>
-          <a href="/johnvel-sabturani.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="prac-card">
-        <div class="prac-photo-wrap">
-          <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        </div>
-        <div class="prac-info">
-          <h3 class="prac-name">Amy Lutz, MOMSc</h3>
-          <span class="prac-role">Manual Osteopathic Therapist</span>
-          <p class="prac-desc">With 12 years of nursing experience and 4,200 hours of osteopathic training, Amy offers gentle, hands-on care to restore balance, improve mobility, and support the body's natural healing.</p>
-          <a href="/amy-lutz.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-
+<main id="main-content">
+  <section class="prac-hero">
+    <div class="container-medium">
+      <span class="section-label">Medical Professionals</span>
+      <h1 class="prac-hero-title">Meet Our<br /><em>Practitioners</em></h1>
+      <p class="prac-hero-sub">At VeraVita, our team of licensed naturopathic doctors and wellness specialists bring deep expertise and genuine care to every patient. We combine evidence-based medicine with holistic, personalised approaches to help you thrive.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="prac-cta-section">
-  <div class="section-bg-parallax"></div>
-  <div class="prac-cta-inner container-medium">
-    <div class="prac-cta-content">
-      <span class="section-label">Get Started</span>
-      <h2 class="prac-cta-title">Ready to Experience<br /><em>Exceptional Care?</em></h2>
-      <p class="prac-cta-sub">Our practitioners are here to guide your wellness journey — from your first consultation to lasting results.</p>
-      <div class="prac-cta-btns">
-        <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+  <section class="prac-grid-section">
+    <div class="container-medium">
+      <div class="prac-grid">
+
+        <div class="prac-card">
+          <div class="prac-photo-wrap">
+            <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          </div>
+          <div class="prac-info">
+            <h3 class="prac-name">Dr. Jill Nazar, ND</h3>
+            <span class="prac-role">Founder & Naturopathic Doctor</span>
+            <p class="prac-desc">Former Pediatric Medical Doctor with over a decade of experience, now leading VeraVita's naturopathic programs with a whole-body, evidence-informed approach.</p>
+            <a href="/dr-jill-nazar.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="prac-card">
+          <div class="prac-photo-wrap">
+            <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          </div>
+          <div class="prac-info">
+            <h3 class="prac-name">Dr. Viktoriia Taylor, DTCM</h3>
+            <span class="prac-role">Registered Dr. of Acupuncture</span>
+            <p class="prac-desc">Former Western Medical Doctor in Ukraine with 10+ years of knowledge, now practising the full spectrum of Traditional Chinese Medicine and acupuncture at VeraVita.</p>
+            <a href="/dr-viktoriia-taylor.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="prac-card">
+          <div class="prac-photo-wrap">
+            <img src="images/Practitioner Main page/Joseph Wei.webp" alt="Joseph Wei" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          </div>
+          <div class="prac-info">
+            <h3 class="prac-name">Joseph Wei</h3>
+            <span class="prac-role">Registered Acupuncturist</span>
+            <p class="prac-desc">Over 20 years of clinical experience blending Traditional Chinese Medicine and modern diagnostics for comprehensive pain management and holistic wellness.</p>
+            <a href="/joseph-wei.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="prac-card">
+          <div class="prac-photo-wrap">
+            <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          </div>
+          <div class="prac-info">
+            <h3 class="prac-name">Jean-Wilson Raymond</h3>
+            <span class="prac-role">Registered Massage Therapist (RMT)</span>
+            <p class="prac-desc">Offering a bespoke approach to bodywork — specialising in deep tissue, relaxation, hot stone therapy, cupping, lymphatic drainage, sports massage, and prenatal care.</p>
+            <a href="/jean-wilson-raymond.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="prac-card">
+          <div class="prac-photo-wrap">
+            <img src="images/Practitioner Main page/Lisseth Pabon Velez.webp" alt="Lisseth Pabon Velez, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          </div>
+          <div class="prac-info">
+            <h3 class="prac-name">Lisseth Pabon Velez</h3>
+            <span class="prac-role">Registered Massage Therapist (RMT)</span>
+            <p class="prac-desc">A dedicated practitioner with a background in Physiotherapy, integrating advanced techniques like cupping therapy, hot stone cupping, and pre/postnatal care to support recovery.</p>
+            <a href="/lisseth-pabon-velez.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="prac-card">
+          <div class="prac-photo-wrap">
+            <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          </div>
+          <div class="prac-info">
+            <h3 class="prac-name">Johnvel Sabturani</h3>
+            <span class="prac-role">Registered Massage Therapist (RMT)</span>
+            <p class="prac-desc">Dedicated to helping clients reduce pain and improve mobility through personalized treatments incorporating deep tissue, hot stone therapy, sports massage, and assisted stretching.</p>
+            <a href="/johnvel-sabturani.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="prac-card">
+          <div class="prac-photo-wrap">
+            <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          </div>
+          <div class="prac-info">
+            <h3 class="prac-name">Amy Lutz, MOMSc</h3>
+            <span class="prac-role">Manual Osteopathic Therapist</span>
+            <p class="prac-desc">With 12 years of nursing experience and 4,200 hours of osteopathic training, Amy offers gentle, hands-on care to restore balance, improve mobility, and support the body's natural healing.</p>
+            <a href="/amy-lutz.html" class="prac-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="prac-cta-section">
+    <div class="section-bg-parallax"></div>
+    <div class="prac-cta-inner container-medium">
+      <div class="prac-cta-content">
+        <span class="section-label">Get Started</span>
+        <h2 class="prac-cta-title">Ready to Experience<br /><em>Exceptional Care?</em></h2>
+        <p class="prac-cta-sub">Our practitioners are here to guide your wellness journey — from your first consultation to lasting results.</p>
+        <div class="prac-cta-btns">
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book an Appointment</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an Appointment</span>
+          </a>
+          <a href="/services.html" class="btn btn-outline">Explore Services</a>
+        </div>
+      </div>
+      <div class="prac-cta-img-wrap">
+        <img src="images/exceptional care.jpg" alt="Exceptional care at VeraVita" class="prac-cta-img" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN OUR TEAM SECTION -->
+  <section class="jot-section">
+    <div class="jot-inner">
+
+      <!-- Left: Replaced Video with Image -->
+      <div class="jot-image-wrap">
+        <img src="images/careers.webp" alt="Join the VeraVita Clinic Team" loading="lazy" decoding="async" />
+      </div>
+
+      <!-- Right: Content -->
+      <div class="jot-content">
+        <span class="section-label" style="color: #4a6b53;"><i class="fa-solid fa-seedling"></i> &nbsp;Careers</span>
+        <h2 class="jot-title">Interested in<br /><em>joining us?</em></h2>
+        <p class="jot-desc">We don't have any open roles at the moment, but we welcome introductions from passionate practitioners and support staff who share our commitment to holistic, patient-centred care. Send us your CV and we'll reach out when a suitable opportunity opens up.</p>
+        <ul class="jot-perks" style="color: #1e3528;">
+          <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Collaborative & supportive clinic culture</li>
+          <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Competitive compensation & benefits</li>
+          <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Ongoing professional development</li>
+          <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Beautiful, modern Calgary clinic</li>
+        </ul>
+        <a href="/careers.html" class="btn-ihb btn-ihb--primary">
           <span class="btn-ihb-blob"></span>
-          <span class="btn-ihb-default">Book an Appointment</span>
-          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an Appointment</span>
+          <span class="btn-ihb-default">Learn more</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Learn more</span>
         </a>
-        <a href="/services.html" class="btn btn-outline">Explore Services</a>
       </div>
-    </div>
-    <div class="prac-cta-img-wrap">
-      <img src="images/exceptional care.jpg" alt="Exceptional care at VeraVita" class="prac-cta-img" loading="lazy" decoding="async" />
-    </div>
-  </div>
-</section>
 
-<!-- JOIN OUR TEAM SECTION -->
-<section class="jot-section">
-  <div class="jot-inner">
-
-    <!-- Left: Replaced Video with Image -->
-    <div class="jot-image-wrap">
-      <img src="images/careers.webp" alt="Join the VeraVita Clinic Team" loading="lazy" decoding="async" />
     </div>
-
-    <!-- Right: Content -->
-    <div class="jot-content">
-      <span class="section-label" style="color: #4a6b53;"><i class="fa-solid fa-seedling"></i> &nbsp;Careers</span>
-      <h2 class="jot-title">Interested in<br /><em>joining us?</em></h2>
-      <p class="jot-desc">We don't have any open roles at the moment, but we welcome introductions from passionate practitioners and support staff who share our commitment to holistic, patient-centred care. Send us your CV and we'll reach out when a suitable opportunity opens up.</p>
-      <ul class="jot-perks" style="color: #1e3528;">
-        <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Collaborative & supportive clinic culture</li>
-        <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Competitive compensation & benefits</li>
-        <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Ongoing professional development</li>
-        <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Beautiful, modern Calgary clinic</li>
-      </ul>
-      <a href="/careers.html" class="btn-ihb btn-ihb--primary">
-        <span class="btn-ihb-blob"></span>
-        <span class="btn-ihb-default">Learn more</span>
-        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Learn more</span>
-      </a>
-    </div>
-
-  </div>
-</section>
+  </section>
+</main>
 
 <footer class="sf-footer">
   <div class="sf-fixed">
@@ -371,9 +372,9 @@
     <div class="sf-body">
       <div class="sf-top">
 
-        <div class="sf-brand sf-anim" style="--sf-delay:0s">
+        <div class="sf-brand">
           <a href="/" class="sf-logo">
-            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img"
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy" decoding="async"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="sf-logo-fallback" style="display:none;">
               <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg>
@@ -388,7 +389,7 @@
           </div>
         </div>
 
-        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
             <li><a href="/">Home</a></li>
@@ -402,7 +403,7 @@
           </ul>
         </div>
 
-        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
             <li><a href="/cat-naturopathic.html">Naturopathic Medicine</a></li>
@@ -413,7 +414,7 @@
           </ul>
         </div>
 
-        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
             <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
@@ -446,6 +447,7 @@
 <script>
 // Smart Mobile Parallax Optimization
 document.addEventListener('DOMContentLoaded', function () {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
   
   let mm = gsap.matchMedia();

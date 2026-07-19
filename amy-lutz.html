@@ -11,6 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT PRELOADING & PRECONNECT -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/underlay%20pic%20desktop/underlay%20pic%2022.webp" media="(min-width: 769px)" fetchpriority="high" />
+
 </head>
 <body class="amy-lutz">
 
@@ -19,7 +24,7 @@
   <div class="container">
     <div class="navbar-inner">
       <a href="/" class="navbar-logo">
-        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" width="203" height="90" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
         <span class="logo-text" style="display:none;">VeraVita</span>
       </a>
@@ -63,293 +68,299 @@
   </div>
 </nav>
 
-<!-- BACK LINK -->
-<div class="pd-back">
-  <div class="container-medium">
-    <a href="/practitioners" class="pd-back-link">
-      <i class="fa-solid fa-arrow-left"></i> Back to All Practitioners
-    </a>
-  </div>
-</div>
-
-<!-- HERO -->
-<section class="pd-hero">
-  <div class="container-medium">
-    <div class="pd-hero-inner">
-      <div class="pd-hero-content">
-        <span class="pd-label">Expert Practitioner</span>
-        <h1 class="pd-name">Amy <em>Lutz</em>, MOMSc</h1>
-        <p class="pd-specialty">Manual Osteopathic Therapist</p>
-        <p class="pd-short-bio">Amy Lutz brings over 12 years of nursing experience and a comprehensive 4,200-hour osteopathic education to VeraVita. Trained at the Canadian Academy of Osteopathy, she offers gentle, hands-on care rooted in classical osteopathic principles — helping restore balance, improve mobility, and support the body's natural ability to heal.</p>
-
-        <div class="pd-meta-grid">
-          <div class="pd-meta-block">
-            <h4>Areas of Expertise</h4>
-            <ul class="pd-expertise-list">
-              <li>Musculoskeletal Pain &amp; Joint Restrictions</li>
-              <li>Headaches &amp; Migraines</li>
-              <li>Acute &amp; Chronic Injury Recovery</li>
-              <li>Mobility &amp; Balance Restoration</li>
-              <li>Digestive Health Support</li>
-            </ul>
-          </div>
-          <div class="pd-meta-block">
-            <h4>Credentials &amp; Education</h4>
-            <ul class="pd-cred-list">
-              <li>M.OMSc (Master in Practice of Osteopathic Manipulative Sciences) — Canadian Academy of Osteopathy</li>
-              <li>4,200 Hours of Osteopathic Training (WHO Type 1 Program)</li>
-              <li>Member of OSTCAN</li>
-              <li>12 Years of Nursing Experience — Orthopedic Care</li>
-            </ul>
-          </div>
-        </div>
-
-        <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/15" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
-          <span class="btn-ihb-blob"></span>
-          <span class="btn-ihb-default">Book with Amy Lutz</span>
-          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Amy Lutz</span>
-        </a>
-      </div>
-
-      <div class="pd-photo-wrap">
-        <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="pd-photo" decoding="async" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PARALLAX OVERRIDE -->
-<style>
-  .amy-lutz .pd-detail-section,
-  .amy-lutz .pd-booking-section {
-    background: transparent !important;
-    position: relative;
-    overflow: hidden;
-  }
-  .amy-lutz .pd-services-section {
-    background: var(--white) !important;
-  }
-  .amy-lutz .pd-pricing-section {
-    background: var(--white) !important;
-  }
-  .section-bg-parallax {
-    position: absolute; top: -60px; left: 0;
-    width: 100%; height: calc(100% + 120px); z-index: 0;
-    pointer-events: none;
-  }
-  .pd-detail-section .section-bg-parallax {
-    background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-      url('images/underlay pic desktop/underlay pic 22.webp') center / cover no-repeat;
-  }
-  .pd-booking-section .section-bg-parallax {
-    background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-      url('images/underlay pic desktop/underlay pic 23.webp') center / cover no-repeat;
-  }
-  .pd-detail-section .container-medium,
-  .pd-booking-section .container-medium { position: relative; z-index: 1; }
-
-  /* PRICING TABLE */
-  .pd-pricing-section {
-    padding: 5rem 0;
-  }
-  .pd-pricing-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  .pd-pricing-header h2 {
-    font-family: 'Libre Caslon Text', serif;
-    font-size: 2.2rem;
-    color: var(--dark);
-    margin-top: 0.75rem;
-  }
-  .pd-pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .pd-pricing-card {
-    background: var(--gray-6, #eaf2ea);
-    border-radius: 1rem;
-    padding: 2rem;
-  }
-  .pd-pricing-card h3 {
-    font-family: 'Libre Caslon Text', serif;
-    font-size: 1.25rem;
-    color: var(--dark);
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(114,140,105,0.2);
-  }
-  .pd-pricing-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .pd-pricing-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.6rem 0;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    color: var(--dark);
-    border-bottom: 1px solid rgba(114,140,105,0.1);
-  }
-  .pd-pricing-list li:last-child {
-    border-bottom: none;
-  }
-  .pd-pricing-duration {
-    color: #728C69;
-    font-size: 0.85rem;
-    margin-left: 0.25rem;
-  }
-  .pd-pricing-amount {
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  @media (max-width: 640px) {
-    .pd-pricing-grid {
-      grid-template-columns: 1fr;
-    }
-    .pd-pricing-header h2 {
-      font-size: 1.75rem;
-    }
-  }
-</style>
-
-<!-- DETAIL -->
-<section class="pd-detail-section">
-  <div class="section-bg-parallax"></div>
-  <div class="container-medium">
-    <div class="pd-detail-inner">
-      <h2>About Amy Lutz</h2>
-      <p>My path to manual osteopathy began after a 12-year career in nursing, where I worked closely with orthopedic patients. During that time, I built a strong foundation in anatomy, physiology, and patient care, while developing a deep respect for the body's ability to adapt and recover.</p>
-      <p>I was drawn to osteopathy as a way to support healing more fully, combining clinical knowledge with a hands-on approach that considers the body as a whole. Wanting a comprehensive and principles-based education, I completed a four-year, 4,200-hour program at the Canadian Academy of Osteopathy. This Type 1 program meets the highest international training standards recognized by the World Health Organization.</p>
-      <p>Through this training, I developed a strong understanding of classical osteopathic principles and how supporting structure and movement can help the body function more efficiently and heal more naturally.</p>
-      <p>In practice, I aim to create a calm, supportive space where care is tailored to each individual. My focus is on improving mobility, restoring balance, and helping the body move with greater ease, while recognizing how closely physical structure, movement, and overall well-being are connected.</p>
-
-      <h3 class="pd-help-heading">Why Osteopathy:</h3>
-      <p>Osteopathy is rooted in the understanding that the body is constantly adapting and functioning as a connected whole. When movement is restricted or balance is disrupted, it can affect how the body functions over time. Supporting the body's structure allows it to operate more efficiently and respond more effectively to the demands placed on it.</p>
-      <p>This approach is guided by the belief that the body has an inherent ability to regulate and heal when given the right conditions. Rather than focusing only on symptom relief, treatment aims to address underlying patterns in a way that supports long-term function and resilience.</p>
-
-      <h3 class="pd-help-heading">What Amy Can Help With:</h3>
-      <ul class="pd-help-list">
-        <li>Musculoskeletal pain and joint restrictions</li>
-        <li>Headaches and migraines</li>
-        <li>Acute and chronic injuries</li>
-        <li>Digestive issues</li>
-        <li>Mobility and balance concerns</li>
-        <li>Overall well-being and resilience</li>
-      </ul>
-
-      <h3 class="pd-approach-heading">About Osteopathy:</h3>
-      <ul class="pd-approach-list">
-        <li>A gentle, hands-on form of manual therapy that works with the body as an interconnected system</li>
-        <li>Looks at patterns of restriction, compensation, and imbalance affecting movement and function</li>
-        <li>Designed to gradually release these patterns and support the natural motion of tissues</li>
-        <li>Improves mobility and balance to facilitate the flow of nerves, blood, and lymphatic fluid</li>
-        <li>Supports more efficient function and a greater sense of ease in movement and overall well-being</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES & PRICING -->
-<section class="pd-pricing-section">
-  <div class="container-medium">
-    <div class="pd-pricing-header">
-      <span class="section-label">Services &amp; Pricing</span>
-      <h2>Amy Lutz's<br /><em>Treatment Menu</em></h2>
-    </div>
-    <div class="pd-pricing-grid">
-      <div class="pd-pricing-card">
-        <h3>Consultation</h3>
-        <ul class="pd-pricing-list">
-          <li><span>Consultation <span class="pd-pricing-duration">15 min</span></span> <span class="pd-pricing-amount" style="margin-left:1rem">Free</span></li>
-        </ul>
-        <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:#555; margin-top:0.75rem; line-height:1.5;">Discuss whether osteopathy is right for you. Ask questions and address any concerns.</p>
-      </div>
-      <div class="pd-pricing-card">
-        <h3>Initial Appointment</h3>
-        <ul class="pd-pricing-list">
-          <li><span>Initial Appointment <span class="pd-pricing-duration">45 min</span></span> <span class="pd-pricing-amount">$110</span></li>
-        </ul>
-        <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:#555; margin-top:0.75rem; line-height:1.5;">Review of health history, discussion of goals, thorough osteopathic assessment and initial treatment.</p>
-      </div>
-      <div class="pd-pricing-card">
-        <h3>Follow-Up Appointment</h3>
-        <ul class="pd-pricing-list">
-          <li><span>Follow-Up Appointment <span class="pd-pricing-duration">30 min</span></span> <span class="pd-pricing-amount">$90</span></li>
-        </ul>
-        <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:#555; margin-top:0.75rem; line-height:1.5;">Osteopathic assessment and treatment provided.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RELATED SERVICES -->
-<section class="pd-services-section">
-  <div class="container-medium">
-    <div class="pd-services-header">
-      <span class="section-label">Related Services</span>
-      <h2>Amy Lutz's<br /><em>Speciality Areas</em></h2>
-    </div>
-    <div class="pd-services-grid">
-      <a href="/cat-osteopathy" class="pd-svc-card">
-        <div class="pd-svc-img-wrap">
-          <img src="images/Sub services images/Osteopathy Initial/16-9.webp" alt="Osteopathy" class="pd-svc-img" />
-        </div>
-        <div class="pd-svc-body">
-          <h3 class="pd-svc-title">Osteopathy</h3>
-          <p class="pd-svc-desc">Gentle, hands-on manual therapy that works with the body as an interconnected system to restore balance, improve mobility, and support natural healing.</p>
-        </div>
+<main id="main-content">
+  <!-- BACK LINK -->
+  <div class="pd-back">
+    <div class="container-medium">
+      <a href="/practitioners" class="pd-back-link">
+        <i class="fa-solid fa-arrow-left"></i> Back to All Practitioners
       </a>
     </div>
   </div>
-</section>
 
-<!-- BOOKING -->
-<section class="pd-booking-section">
-  <div class="section-bg-parallax"></div>
-  <div class="container-medium">
-    <div class="pd-booking-inner">
-      <div>
-        <span class="section-label">Book a Visit</span>
-        <h2 class="pd-booking-heading">Ready to Book<br /><em>Your Appointment?</em></h2>
-        <p class="pd-booking-sub">We use Jane App for seamless online booking — choose your preferred time, service, and practitioner in just a few clicks.</p>
-        <ul class="pd-booking-perks">
-          <li><i class="fa-solid fa-circle-check"></i> Real-time availability</li>
-          <li><i class="fa-solid fa-circle-check"></i> Instant confirmation</li>
-          <li><i class="fa-solid fa-circle-check"></i> Easy rescheduling &amp; reminders</li>
-        </ul>
-      </div>
-      <div class="pd-jane-card">
-        <div class="pd-jane-icon"><i class="fa-solid fa-calendar-check"></i></div>
-        <h3 class="pd-jane-title">Book with Amy Lutz</h3>
-        <p class="pd-jane-desc">Select your service, date, and time directly through our secure booking portal.</p>
-        <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/15" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary pd-jane-btn">
-          <span class="btn-ihb-blob"></span>
-          <span class="btn-ihb-default">Open Booking Portal</span>
-          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Open Booking Portal</span>
-        </a>
-        <p class="pd-jane-note"><i class="fa-solid fa-lock"></i> Secure &nbsp;&middot;&nbsp; Powered by Jane App</p>
+  <!-- HERO -->
+  <section class="pd-hero">
+    <div class="container-medium">
+      <div class="pd-hero-inner">
+        <div class="pd-hero-content">
+          <span class="pd-label">Expert Practitioner</span>
+          <h1 class="pd-name">Amy <em>Lutz</em>, MOMSc</h1>
+          <p class="pd-specialty">Manual Osteopathic Therapist</p>
+          <p class="pd-short-bio">Amy Lutz brings over 12 years of nursing experience and a comprehensive 4,200-hour osteopathic education to VeraVita. Trained at the Canadian Academy of Osteopathy, she offers gentle, hands-on care rooted in classical osteopathic principles — helping restore balance, improve mobility, and support the body's natural ability to heal.</p>
+
+          <div class="pd-meta-grid">
+            <div class="pd-meta-block">
+              <h4>Areas of Expertise</h4>
+              <ul class="pd-expertise-list">
+                <li>Musculoskeletal Pain &amp; Joint Restrictions</li>
+                <li>Headaches &amp; Migraines</li>
+                <li>Acute &amp; Chronic Injury Recovery</li>
+                <li>Mobility &amp; Balance Restoration</li>
+                <li>Digestive Health Support</li>
+              </ul>
+            </div>
+            <div class="pd-meta-block">
+              <h4>Credentials &amp; Education</h4>
+              <ul class="pd-cred-list">
+                <li>M.OMSc (Master in Practice of Osteopathic Manipulative Sciences) — Canadian Academy of Osteopathy</li>
+                <li>4,200 Hours of Osteopathic Training (WHO Type 1 Program)</li>
+                <li>Member of OSTCAN</li>
+                <li>12 Years of Nursing Experience — Orthopedic Care</li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/15" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book with Amy Lutz</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Amy Lutz</span>
+          </a>
+        </div>
+
+        <div class="pd-photo-wrap">
+          <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="pd-photo" fetchpriority="high" decoding="async" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- PARALLAX OVERRIDE -->
+  <style>
+    .amy-lutz .pd-detail-section,
+    .amy-lutz .pd-booking-section {
+      background: transparent !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .amy-lutz .pd-services-section {
+      background: var(--white) !important;
+    }
+    .amy-lutz .pd-pricing-section {
+      background: var(--white) !important;
+    }
+    .section-bg-parallax {
+      position: absolute; top: -60px; left: 0;
+      width: 100%; height: calc(100% + 120px); z-index: 0;
+      pointer-events: none;
+    }
+    .pd-detail-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 22.webp') center / cover no-repeat;
+    }
+    .pd-booking-section .section-bg-parallax {
+      background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
+        url('images/underlay pic desktop/underlay pic 23.webp') center / cover no-repeat;
+    }
+    .pd-detail-section .container-medium,
+    .pd-booking-section .container-medium { position: relative; z-index: 1; }
+
+    /* PRICING TABLE */
+    .pd-pricing-section {
+      padding: 5rem 0;
+    }
+    .pd-pricing-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .pd-pricing-header h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin-top: 0.75rem;
+    }
+    .pd-pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .pd-pricing-card {
+      background: var(--gray-6, #eaf2ea);
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+    .pd-pricing-card h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.25rem;
+      color: var(--dark);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(114,140,105,0.2);
+    }
+    .pd-pricing-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .pd-pricing-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--dark);
+      border-bottom: 1px solid rgba(114,140,105,0.1);
+    }
+    .pd-pricing-list li:last-child {
+      border-bottom: none;
+    }
+    .pd-pricing-duration {
+      color: #728C69;
+      font-size: 0.85rem;
+      margin-left: 0.25rem;
+    }
+    .pd-pricing-amount {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .pd-pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      .pd-pricing-header h2 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+
+  <!-- DETAIL -->
+  <section class="pd-detail-section">
+    <div class="section-bg-parallax"></div>
+    <div class="container-medium">
+      <div class="pd-detail-inner">
+        <h2>About Amy Lutz</h2>
+        <p>My path to manual osteopathy began after a 12-year career in nursing, where I worked closely with orthopedic patients. During that time, I built a strong foundation in anatomy, physiology, and patient care, while developing a deep respect for the body's ability to adapt and recover.</p>
+        <p>I was drawn to osteopathy as a way to support healing more fully, combining clinical knowledge with a hands-on approach that considers the body as a whole. Wanting a comprehensive and principles-based education, I completed a four-year, 4,200-hour program at the Canadian Academy of Osteopathy. This Type 1 program meets the highest international training standards recognized by the World Health Organization.</p>
+        <p>Through this training, I developed a strong understanding of classical osteopathic principles and how supporting structure and movement can help the body function more efficiently and heal more naturally.</p>
+        <p>In practice, I aim to create a calm, supportive space where care is tailored to each individual. My focus is on improving mobility, restoring balance, and helping the body move with greater ease, while recognizing how closely physical structure, movement, and overall well-being are connected.</p>
+
+        <h3 class="pd-help-heading">Why Osteopathy:</h3>
+        <p>Osteopathy is rooted in the understanding that the body is constantly adapting and functioning as a connected whole. When movement is restricted or balance is disrupted, it can affect how the body functions over time. Supporting the body's structure allows it to operate more efficiently and respond more effectively to the demands placed on it.</p>
+        <p>This approach is guided by the belief that the body has an inherent ability to regulate and heal when given the right conditions. Rather than focusing only on symptom relief, treatment aims to address underlying patterns in a way that supports long-term function and resilience.</p>
+
+        <h3 class="pd-help-heading">What Amy Can Help With:</h3>
+        <ul class="pd-help-list">
+          <li>Musculoskeletal pain and joint restrictions</li>
+          <li>Headaches and migraines</li>
+          <li>Acute and chronic injuries</li>
+          <li>Digestive issues</li>
+          <li>Mobility and balance concerns</li>
+          <li>Overall well-being and resilience</li>
+        </ul>
+
+        <h3 class="pd-approach-heading">About Osteopathy:</h3>
+        <ul class="pd-approach-list">
+          <li>A gentle, hands-on form of manual therapy that works with the body as an interconnected system</li>
+          <li>Looks at patterns of restriction, compensation, and imbalance affecting movement and function</li>
+          <li>Designed to gradually release these patterns and support the natural motion of tissues</li>
+          <li>Improves mobility and balance to facilitate the flow of nerves, blood, and lymphatic fluid</li>
+          <li>Supports more efficient function and a greater sense of ease in movement and overall well-being</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES & PRICING -->
+  <section class="pd-pricing-section">
+    <div class="container-medium">
+      <div class="pd-pricing-header">
+        <span class="section-label">Services &amp; Pricing</span>
+        <h2>Amy Lutz's<br /><em>Treatment Menu</em></h2>
+      </div>
+      <div class="pd-pricing-grid">
+        <div class="pd-pricing-card">
+          <h3>Consultation</h3>
+          <ul class="pd-pricing-list">
+            <li><span>Consultation <span class="pd-pricing-duration">15 min</span></span> <span class="pd-pricing-amount" style="margin-left:1rem">Free</span></li>
+          </ul>
+          <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:#555; margin-top:0.75rem; line-height:1.5;">Discuss whether osteopathy is right for you. Ask questions and address any concerns.</p>
+        </div>
+        <div class="pd-pricing-card">
+          <h3>Initial Appointment</h3>
+          <ul class="pd-pricing-list">
+            <li><span>Initial Appointment <span class="pd-pricing-duration">45 min</span></span> <span class="pd-pricing-amount">$110</span></li>
+          </ul>
+          <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:#555; margin-top:0.75rem; line-height:1.5;">Review of health history, discussion of goals, thorough osteopathic assessment and initial treatment.</p>
+        </div>
+        <div class="pd-pricing-card">
+          <h3>Follow-Up Appointment</h3>
+          <ul class="pd-pricing-list">
+            <li><span>Follow-Up Appointment <span class="pd-pricing-duration">30 min</span></span> <span class="pd-pricing-amount">$90</span></li>
+          </ul>
+          <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:#555; margin-top:0.75rem; line-height:1.5;">Osteopathic assessment and treatment provided.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SERVICES -->
+  <section class="pd-services-section">
+    <div class="container-medium">
+      <div class="pd-services-header">
+        <span class="section-label">Related Services</span>
+        <h2>Amy Lutz's<br /><em>Speciality Areas</em></h2>
+      </div>
+      <div class="pd-services-grid">
+        <a href="/cat-osteopathy" class="pd-svc-card">
+          <div class="pd-svc-img-wrap">
+            <img src="images/Sub services images/Osteopathy Initial/16-9.webp" alt="Osteopathy" class="pd-svc-img" loading="lazy" decoding="async" />
+          </div>
+          <div class="pd-svc-body">
+            <h3 class="pd-svc-title">Osteopathy</h3>
+            <p class="pd-svc-desc">Gentle, hands-on manual therapy that works with the body as an interconnected system to restore balance, improve mobility, and support natural healing.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="pd-booking-section">
+    <div class="section-bg-parallax"></div>
+    <div class="container-medium">
+      <div class="pd-booking-inner">
+        <div>
+          <span class="section-label">Book a Visit</span>
+          <h2 class="pd-booking-heading">Ready to Book<br /><em>Your Appointment?</em></h2>
+          <p class="pd-booking-sub">We use Jane App for seamless online booking — choose your preferred time, service, and practitioner in just a few clicks.</p>
+          <ul class="pd-booking-perks">
+            <li><i class="fa-solid fa-circle-check"></i> Real-time availability</li>
+            <li><i class="fa-solid fa-circle-check"></i> Instant confirmation</li>
+            <li><i class="fa-solid fa-circle-check"></i> Easy rescheduling &amp; reminders</li>
+          </ul>
+        </div>
+        <div class="pd-jane-card">
+          <div class="pd-jane-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3 class="pd-jane-title">Book with Amy Lutz</h3>
+          <p class="pd-jane-desc">Select your service, date, and time directly through our secure booking portal.</p>
+          <a href="https://veravitanaturopathicclinic.janeapp.com/locations/veravita-naturopathic-clinic/book#/staff_member/15" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary pd-jane-btn">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Open Booking Portal</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Open Booking Portal</span>
+          </a>
+          <p class="pd-jane-note"><i class="fa-solid fa-lock"></i> Secure &nbsp;&middot;&nbsp; Powered by Jane App</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="sf-footer">
   <div class="sf-fixed">
-    <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
+    <div class="sf-deco" aria-hidden="true">
+      <div class="sf-deco-1"></div>
+      <div class="sf-deco-2"></div>
+      <div class="sf-deco-3"></div>
+    </div>
     <div class="sf-body">
       <div class="sf-top">
-        <div class="sf-brand sf-anim" style="--sf-delay:0s">
+        <div class="sf-brand">
           <a href="/" class="sf-logo">
-            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
           </a>
           <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
@@ -359,7 +370,7 @@
             <a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           </div>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Pages</h3>
           <ul class="sf-links">
             <li><a href="/">Home</a></li><li><a href="/services">Services</a></li>
@@ -368,7 +379,7 @@
             <li><a href="/faqs">FAQs</a></li><li><a href="/careers">Careers</a></li>
           </ul>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Services</h3>
           <ul class="sf-links">
             <li><a href="/cat-naturopathic">Naturopathic Medicine</a></li>
@@ -378,7 +389,7 @@
             <li><a href="/cat-osteopathy">Osteopathy</a></li>
           </ul>
         </div>
-        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+        <div class="sf-col">
           <h3 class="sf-col-title">Contact</h3>
           <ul class="sf-links">
             <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li>
@@ -402,35 +413,35 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/main.js"></script>
-<div class="mobile-book-bar">
-  <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn">
-    <span class="btn-ihb-default">Book an appointment</span>
-  </a>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
-  document.querySelectorAll('.pd-detail-section, .pd-booking-section').forEach(function (section) {
-    var bg = section.querySelector('.section-bg-parallax');
-    if (!bg) return;
-    gsap.fromTo(bg,
-      { y: -60 },
-      {
-        y: 60,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 3,
-          invalidateOnRefresh: true
+
+  let mm = gsap.matchMedia();
+  mm.add("(min-width: 861px)", () => {
+    document.querySelectorAll('.pd-detail-section, .pd-booking-section').forEach(function (section) {
+      var bg = section.querySelector('.section-bg-parallax');
+      if (!bg) return;
+      gsap.fromTo(bg,
+        { y: -60 },
+        {
+          y: 60,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1, // Optimized scrub value for CPU relief
+            invalidateOnRefresh: true
+          }
         }
-      }
-    );
+      );
+    });
   });
 });
 </script>
