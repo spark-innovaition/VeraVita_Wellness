@@ -48,7 +48,7 @@
               </a>
               <a href="/cat-massage-therapy.html" class="nav-dd-item">
                 <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Leads: Jean-Wilson, Lisseth & Johnvel</span></div>
+                <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Leads: Jean-Wilson & Johnvel</span></div>
               </a>
               <a href="/cat-osteopathy.html" class="nav-dd-item">
                 <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
