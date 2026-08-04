@@ -4,8 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
-<title>Naturopathic Medicine Services | VeraVita Naturopathic Clinic Calgary</title>
-<meta name="description" content="Explore VeraVita's full naturopathic medicine services led by Dr. Jill Nazar, ND — naturopathic care, fatigue treatment, fertility, weight loss, and pediatric health in Calgary." />
+
+<!-- SEO UPGRADES: METADATA -->
+<title>Naturopathic Medicine in Calgary | Naturopathic Doctors Near Me</title>
+<meta name="description" content="Expert naturopathic doctor in Calgary treating fatigue, hormone imbalance, fertility, and weight concerns. Top-Rated root-cause care with Dr. Jill Nazar, ND. Book now." />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
@@ -18,7 +21,7 @@
 <link rel="preload" as="image" href="images/Service%20Hero%20secion%20images/Nathuropathy%209-16.webp" media="(max-width: 768px)" fetchpriority="high" />
 
 <style>
-  /* FIXED NAVBAR (Consistent with Home/About) */
+  /* FIXED NAVBAR */
   .navbar {
     position: fixed;
     top: 0;
@@ -31,7 +34,21 @@
   }
 
   body {
-    padding-top: 80px; /* Prevents hero from hiding under the fixed navbar */
+    padding-top: 80px; 
+  }
+
+  /* INLINE TEXT LINKS (Clean bold green, underline on hover only) */
+  .text-link {
+    color: #2b5c43;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+  .text-link:hover {
+    color: #1e3528;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
   }
 
   /* CLEAN & LIGHT CATEGORY HERO */
@@ -41,13 +58,11 @@
     display: flex;
     align-items: center;
     padding: 4rem 0;
-    /* Uses desktop image by default with a soft gradient for text readability */
     background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 100%), url('images/Service Hero secion images/Nathuropathy 16-9.webp') center/cover no-repeat;
   }
   
   @media (max-width: 768px) {
     .cat-hero {
-      /* Swaps to mobile portrait image */
       background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%), url('images/Service Hero secion images/Nathuropathy 9-16.webp') center/cover no-repeat;
     }
   }
@@ -55,7 +70,7 @@
   .cat-hero-content {
     position: relative;
     z-index: 2;
-    max-width: 650px;
+    max-width: 750px;
   }
 
   .cat-hero-title {
@@ -69,14 +84,7 @@
   .cat-hero-desc {
     color: #4a4a4a;
     font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
-  .cat-hero-lead {
-    color: #4a6b53;
-    font-weight: 500;
-    font-size: 0.95rem;
+    line-height: 1.7;
     margin-bottom: 1.5rem;
   }
 
@@ -93,6 +101,7 @@
     text-decoration: none; 
     transition: all 0.3s ease;
     background: transparent;
+    margin-top: 0.5rem;
   }
 
   .pricing-link:hover {
@@ -100,23 +109,101 @@
     color: #ffffff;
   }
 
-  /* ALTERNATING SECTION BACKGROUNDS */
-  .svc-section {
+  /* NEW STRUCTURED INTRO SECTION WITH ELEVATED CARDS */
+  .intro-section {
+    padding: 6rem 0;
     background-color: #ffffff;
   }
-  .prac-grid-section {
-    background-color: #f7faf8;
+  .intro-top {
+    max-width: 850px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
   }
-  #pricing {
-    background-color: #ffffff;
+  .intro-top h2 {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #1e3528;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  .intro-top p {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 768px) {
+    .intro-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   
-  /* Ensure text reads well on light background */
+  /* ELEVATED INTRO CARD WITH CENTERING */
+  .intro-card {
+    background: #f7faf8;
+    border-radius: 1.5rem;
+    padding: 3.5rem 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    border: 1px solid rgba(114, 140, 105, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .intro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+  .intro-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background-color: rgba(114, 140, 105, 0.1);
+    color: #4a6b53;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .intro-card h3 {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 1.75rem;
+    color: #1e3528;
+    margin-bottom: 1.25rem;
+    line-height: 1.3;
+  }
+  .intro-card p {
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  /* ALTERNATING SECTION BACKGROUNDS */
+  .svc-section { background-color: #f7faf8; padding: 5rem 0 6rem; }
+  .prac-grid-section { background-color: #ffffff; padding: 5rem 0; }
+  #pricing { background-color: #f7faf8; padding: 5rem 0 6.5rem; }
+  
   .price-table th, .price-table td, .svc-section-header h2, .prac-name, .prac-role {
     color: #1e3528;
   }
   .svc-section-header p, .svc-cell-desc, .prac-desc {
     color: #4a4a4a;
+  }
+
+  /* CENTRALLY ALIGNED SERVICE CARDS */
+  .svc-cell-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 </style>
 </head>
@@ -175,27 +262,56 @@
   <div class="container">
   <div class="cat-hero-content">
   <span class="section-label" style="color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem; display:block; margin-bottom:1rem;">Service Category</span>
-  <h1 class="cat-hero-title">Naturopathic <em>Medicine</em></h1>
-  <p class="cat-hero-desc">Evidence-based natural medicine addressing the root causes of chronic illness — from fatigue and hormonal imbalance to fertility, weight management, and children's health.</p>
-  <div class="cat-hero-lead"><i class="fa-solid fa-leaf"></i> Led by Dr. Jill Nazar, ND &mdash; Naturopathic Doctor &amp; Founder</div>
+  <h1 class="cat-hero-title">Naturopathic Medicine<br /><em>in Calgary, AB</em></h1> <!--[cite: 8] -->
+  <p class="cat-hero-desc">VeraVita's Naturopathic Doctor in Calgary, <a href="/dr-jill-nazar.html" class="text-link">Dr. Jill Nazar, ND</a>, treats the root causes of fatigue, hormonal imbalance, fertility challenges, weight gain, and pediatric health concerns using functional lab testing and personalized natural medicine. Pair your visit with <a href="/cat-iv-therapy.html" class="text-link">IV Therapy</a> or <a href="/cat-acupuncture.html" class="text-link">Acupuncture</a> for a fully integrated approach. Serving Calgary and surrounding communities.</p> <!--[cite: 8] -->
   <a href="#pricing" class="pricing-link"><i class="fa-solid fa-tag" style="font-size:0.8rem"></i> View Pricing <i class="fa-solid fa-arrow-down" style="font-size:0.75rem; margin-left:0.25rem;"></i></a>
   </div>
   </div>
   </section>
 
-  <section class="svc-section" style="padding:4rem 0 6rem">
+  <!-- ELEVATED & CENTERED INTRO SECTION -->
+  <section class="intro-section">
+    <div class="container">
+      
+      <!-- Primary Intro Block -->
+      <div class="intro-top">
+        <h2>What Is <em>Naturopathic Medicine?</em></h2> <!--[cite: 8] -->
+        <p>Naturopathic medicine is evidence-based natural medicine that treats the root causes of chronic illness rather than masking symptoms. It draws on <a href="/service-lab-testing.html" class="text-link">functional lab testing</a>, nutrition, botanical medicine, and lifestyle strategies to address conditions conventional care often overlooks — from unexplained fatigue and hormonal imbalance to fertility and children's health. <!--[cite: 8] --></p>
+        <p>As a naturopathic doctor in Calgary, <a href="/dr-jill-nazar.html" class="text-link">Dr. Jill Nazar, ND</a>, combines this whole-body approach with modern diagnostics for precise, personalized care. <!--[cite: 8] --></p>
+      </div>
+
+      <!-- 2-Column Details Grid -->
+      <div class="intro-grid">
+        <div class="intro-card">
+          <div class="intro-card-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <h3>Naturopathic Doctor in Calgary:<br /><em>Our Approach</em></h3> <!--[cite: 8] -->
+          <p>Every naturopathic visit at VeraVita begins with a comprehensive assessment — your health history, current symptoms, lifestyle, and goals. From there, Dr. Nazar builds a personalized treatment plan that may include <a href="/service-lab-testing.html" class="text-link">functional lab testing</a>, targeted supplementation, dietary strategies, and, where appropriate, <a href="/cat-iv-therapy.html" class="text-link">IV nutrient therapy</a>. This Expert, patient-centred process ensures your plan addresses the actual driver of your symptoms, not just the symptoms themselves. <!--[cite: 8] --></p>
+        </div>
+        
+        <div class="intro-card">
+          <div class="intro-card-icon"><i class="fa-solid fa-user-check"></i></div>
+          <h3>Who Is a Candidate for<br /><em>Naturopathic Medicine?</em></h3> <!--[cite: 8] -->
+          <p>Naturopathic medicine is well suited for anyone dealing with chronic fatigue, hormonal imbalance, digestive concerns, unexplained weight changes, fertility challenges, or a child's ongoing health issue that hasn't been fully resolved through conventional care alone. It's also a strong fit for patients who want a deeper, root-cause investigation into their symptoms using <a href="/service-lab-testing.html" class="text-link">functional lab testing</a>. <!--[cite: 8] --></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="svc-section">
   <div class="container">
-  <div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
-  <h2>Select a <em>Service</em></h2>
+  <!-- FORCED FLEX CENTERING TO PREVENT LEFT-ALIGNMENT BUGS -->
+  <div class="svc-section-header" style="margin: 0 auto 3rem auto; text-align: center; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
+  <h2>Naturopathic Services <em>We Offer</em></h2> <!--[cite: 8] -->
   <p style="color:#4a4a4a;">Choose a service below to learn more — what it treats, what to expect, and how to book.</p>
   </div>
-  <div class="svc-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5)">
+  <div class="svc-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5); background-color: #fff;">
 
   <div class="svc-cell">
   <div class="svc-cell-body">
   <div class="svc-cell-icon"><i class="fa-solid fa-leaf"></i></div>
-  <h3 class="svc-cell-name">Naturopathic Care</h3>
-  <p class="svc-cell-desc">Comprehensive whole-body assessments and personalised treatment plans — addressing the root causes of complex, chronic health conditions using evidence-based natural medicine.</p>
+  <h3 class="svc-cell-name">Naturopathic Care</h3> <!--[cite: 8] -->
+  <p class="svc-cell-desc">Comprehensive assessments and personalized treatment plans for chronic, complex conditions.</p> <!--[cite: 8] -->
   <a href="/service-naturopathic-care.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
   </div>
   </div>
@@ -203,8 +319,8 @@
   <div class="svc-cell">
   <div class="svc-cell-body">
   <div class="svc-cell-icon"><i class="fa-solid fa-battery-half"></i></div>
-  <h3 class="svc-cell-name">Fatigue Treatment</h3>
-  <p class="svc-cell-desc">In-depth evaluation of hormonal imbalances, nutrient deficiencies, thyroid function, and adrenal health to restore your energy and vitality for the long term.</p>
+  <h3 class="svc-cell-name">Fatigue Treatment</h3> <!--[cite: 8] -->
+  <p class="svc-cell-desc">Hormonal, thyroid, and adrenal evaluation to restore lasting energy.</p> <!--[cite: 8] -->
   <a href="/service-fatigue-treatment.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
   </div>
   </div>
@@ -212,8 +328,8 @@
   <div class="svc-cell">
   <div class="svc-cell-body">
   <div class="svc-cell-icon"><i class="fa-solid fa-heart"></i></div>
-  <h3 class="svc-cell-name">Personalised Vitality &amp; Wellness</h3>
-  <p class="svc-cell-desc">Tailored lifestyle and nutritional support for couples and individuals. Optimize your wellness journey through hormonal balance and holistic care.</p>
+  <h3 class="svc-cell-name">Personalized Vitality &amp; Wellness</h3> <!--[cite: 8] -->
+  <p class="svc-cell-desc">Hormonal balance and lifestyle support for couples and individuals.</p> <!--[cite: 8] -->
   <a href="/service-fertility-program.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
   </div>
   </div>
@@ -221,8 +337,8 @@
   <div class="svc-cell">
   <div class="svc-cell-body">
   <div class="svc-cell-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-  <h3 class="svc-cell-name">Weight Loss Program</h3>
-  <p class="svc-cell-desc">Medically guided, sustainable weight management addressing the metabolic, hormonal, and lifestyle drivers of weight gain — not just calorie restriction.</p>
+  <h3 class="svc-cell-name">Weight Loss Program</h3> <!--[cite: 8] -->
+  <p class="svc-cell-desc">Medically guided, sustainable weight management.</p> <!--[cite: 8] -->
   <a href="/service-weight-loss.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
   </div>
   </div>
@@ -230,8 +346,8 @@
   <div class="svc-cell">
   <div class="svc-cell-body">
   <div class="svc-cell-icon"><i class="fa-solid fa-child"></i></div>
-  <h3 class="svc-cell-name">Pediatric Care</h3>
-  <p class="svc-cell-desc">Gentle, evidence-based naturopathic care for children — supporting immune health, digestion, developmental wellness, and allergies from infancy through adolescence.</p>
+  <h3 class="svc-cell-name">Pediatric Care</h3> <!--[cite: 8] -->
+  <p class="svc-cell-desc">Gentle naturopathic support for children's immune health and development.</p> <!--[cite: 8] -->
   <a href="/service-pediatric-care.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
   </div>
   </div>
@@ -241,15 +357,15 @@
   </section>
 
   <!-- LEAD PRACTITIONER SECTION -->
-  <section class="prac-grid-section" id="practitioners" style="padding:4rem 0 5rem;">
+  <section class="prac-grid-section" id="practitioners">
     <div class="container-medium">
-      <div class="svc-section-header" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none">
-        <p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 0 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Lead Practitioner</p>
-        <h2>Meet Our <em>Doctor</em></h2>
+      <div class="svc-section-header" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none; display: flex; flex-direction: column; align-items: center;">
+        <p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 auto 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem; width:fit-content;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Lead Practitioner</p>
+        <h2>Meet <em>Dr. Jill Nazar, ND</em></h2> <!--[cite: 8] -->
       </div>
 
-      <div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:450px;margin:0 auto">
-        <div class="prac-card" style="text-align:center">
+      <div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:550px;margin:0 auto">
+        <div class="prac-card" style="text-align:center; background:#f7faf8; border:1px solid rgba(0,0,0,0.03);">
           <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
             <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" FOR SMOOTH SCROLLING -->
             <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
@@ -257,9 +373,9 @@
           <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
             <h3 class="prac-name">Dr. Jill Nazar, ND</h3>
             <span class="prac-role">Naturopathic Doctor & Founder</span>
-            <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Specializes in naturopathic medicine, chronic disease management, advanced functional lab testing, and personalized IV nutrient therapy.</p>
-            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
-              <a href="/dr-jill-nazar.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+            <p class="prac-desc" style="font-size:1.05rem; margin-top:1rem; line-height:1.6; color:#4a4a4a;">Dr. Jill Nazar, ND, is the founder and lead naturopathic doctor at VeraVita, specializing in <a href="/service-naturopathic-care.html" class="text-link">Naturopathic Care</a>, chronic disease management, advanced <a href="/service-lab-testing.html" class="text-link">functional lab testing</a>, and personalized <a href="/cat-iv-therapy.html" class="text-link">IV nutrient therapy</a>. Her patient-centred approach has made her one of the most trusted naturopathic doctors in Calgary.</p> <!--[cite: 8] -->
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem">
+              <a href="/dr-jill-nazar.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:600;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
               <a href="https://veravitanaturopathicclinic.janeapp.com/#/staff_member/1" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book with Dr. Nazar</a>
             </div>
           </div>
@@ -268,37 +384,24 @@
     </div>
   </section>
 
-  <section id="pricing" style="padding:4rem 0 6.5rem">
+  <section id="pricing">
   <div class="container">
-  <div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
-  <p class="section-tag" style="margin-bottom:0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
-  <h2>Service <em>Pricing</em></h2>
-  <p style="color:#4a4a4a;">All prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" style="color:#4a6b53; font-weight:600;">booking portal</a> for current rates and availability.</p>
+  <div class="svc-section-header" style="margin: 0 auto 3rem auto; text-align: center; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
+  <p class="section-tag" style="display:flex;justify-content:center;align-items:center;margin:0 auto 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem; width:fit-content;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
+  <h2>Naturopathic Medicine<br /><em>Pricing in Calgary</em></h2> <!--[cite: 8] -->
+  <p style="color:#4a4a4a; font-size:1.05rem;">Prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">booking portal</a> for current rates and availability.</p> <!--[cite: 8] -->
   </div>
-  <div class="price-table-wrap">
+  <div class="price-table-wrap" style="background:#fff;">
   <table class="price-table">
   <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
   <tbody>
-  <tr><td>Naturopathic Initial Consultation</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr>
-  <tr><td>Initial Consultation</td><td class="td-dur">75 min</td><td class="td-price">$250.00</td></tr>
-  <tr><td>Telemedicine (Video / Phone)</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr>
-  <tr><td>Naturopathic Pediatric Consult (under 12 yrs)</td><td class="td-dur">60 min</td><td class="td-price">$180.00</td></tr>
-  <tr><td>Naturopathic Follow-Up</td><td class="td-dur">15 min</td><td class="td-price">$50.00</td></tr>
-  <tr><td>Naturopathic Follow-Up</td><td class="td-dur">20 min</td><td class="td-price">$80.00</td></tr>
-  <tr><td>Naturopathic Follow-Up</td><td class="td-dur">25 min</td><td class="td-price">$95.00</td></tr>
-  <tr><td>Naturopathic Follow-Up</td><td class="td-dur">30 min</td><td class="td-price">$130.00</td></tr>
-  <tr><td>Naturopathic Follow-Up</td><td class="td-dur">40 min</td><td class="td-price">$160.00</td></tr>
-  <tr><td>Naturopathic Follow-Up</td><td class="td-dur">45 min</td><td class="td-price">$170.00</td></tr>
-  <tr><td>Naturopathic Follow-Up</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr>
-  <tr><td>Quick Consultation</td><td class="td-dur">30 min</td><td class="td-price">$135.00</td></tr>
-  <tr><td>Initial IV</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr>
-  <tr><td>IV Therapy</td><td class="td-dur">70 min</td><td class="td-price">$250.00</td></tr>
-  <tr><td>Fatigue Injection</td><td class="td-dur">15 min</td><td class="td-price">$65.00</td></tr>
-  <tr><td>Weight Loss Injection</td><td class="td-dur">15 min</td><td class="td-price">$65.00</td></tr>
-  <tr><td>Food Sensitivity Test Follow-Up</td><td class="td-dur">15 min</td><td class="td-price">$30.00</td></tr>
-  <tr><td>Lab Test Visit (existing patients only)</td><td class="td-dur">15 min</td><td class="td-price td-consult">Provided by Dr. Jill Nazar, ND</td></tr>
-  <tr><td>Meet and Greet</td><td class="td-dur">10 min</td><td class="td-price td-consult">Free</td></tr>
-  <tr><td>Meet and Greet (Video)</td><td class="td-dur">15 min</td><td class="td-price td-consult">Free</td></tr>
+  <tr><td>Naturopathic Initial Consultation</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Initial Consultation</td><td class="td-dur">75 min</td><td class="td-price">$250.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Telemedicine (Video / Phone)</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Naturopathic Pediatric Consult (under 12 yrs)</td><td class="td-dur">60 min</td><td class="td-price">$180.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Naturopathic Follow-Up</td><td class="td-dur">15–60 min</td><td class="td-price">$50.00 – $220.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Quick Consultation</td><td class="td-dur">30 min</td><td class="td-price">$135.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Meet and Greet (In-person / Video)</td><td class="td-dur">10–15 min</td><td class="td-price td-consult">Free</td></tr> <!--[cite: 8] -->
   </tbody>
   </table>
   </div>

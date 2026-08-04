@@ -4,8 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
-  <title>About Us | VeraVita Naturopathic Clinic Calgary</title>
-  <meta name="description" content="Learn about VeraVita Naturopathic Clinic — our mission, values, journey, and the team of licensed naturopathic doctors and wellness practitioners serving Calgary." />
+  
+  <!-- SEO UPGRADES: METADATA -->
+  <title>About Naturopathic Clinic in Calgary | Naturopathic Doctors Near Me</title>
+  <meta name="description" content="Meet the Top-Rated team behind VeraVita Naturopathic Clinic in Calgary. Learn our story, our patient-centred philosophy, and our approach to root-cause care." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
@@ -14,12 +17,12 @@
 
   <!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT PRELOADING & PRECONNECT -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="preload" as="image" href="images/About page hero - Desktop.webp" media="(min-width: 769px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="images/About page hero - Mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/About%20page%20hero%20-%20Desktop.webp" media="(min-width: 769px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/About%20page%20hero%20-%20Mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
 
   <style>
     /* ====================================================
-       FIXED NAVBAR (Consistent with Home Page)
+       FIXED NAVBAR
        ==================================================== */
     .navbar {
       position: fixed;
@@ -33,23 +36,44 @@
     }
 
     body {
-      padding-top: 80px; /* Prevents hero from hiding under the fixed navbar */
+      padding-top: 80px; 
+    }
+
+    /* INLINE TEXT LINKS (Underlined by default, green) */
+    .text-link {
+      color: #2b5c43;
+      text-decoration: underline;
+      text-decoration-color: rgba(43, 92, 67, 0.4);
+      text-underline-offset: 3px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .text-link:hover {
+      color: #1e3528;
+      text-decoration-color: #1e3528;
+    }
+
+    /* REMOVE UNDERLINES FROM HERO/H1 SECTION */
+    .hs-subtitle .text-link {
+      text-decoration: none;
+    }
+    .hs-subtitle .text-link:hover {
+      text-decoration: underline;
+      text-decoration-color: #1e3528;
     }
 
     /* ====================================================
        HERO SECTION IMAGES
        ==================================================== */
     .hs-right {
-      background-image: url('images/About page hero - Desktop.webp');
+      background-image: url('images/About%20page%20hero%20-%20Desktop.webp');
       background-size: cover;
-      /* Anchors the image to the right edge so the logo never crops */
       background-position: right center; 
     }
     
     @media (max-width: 768px) {
       .hs-right {
-        background-image: url('images/About page hero - Mobile.webp');
-        /* Keeps mobile centered since it uses a different vertical layout */
+        background-image: url('images/About%20page%20hero%20-%20Mobile.webp');
         background-position: center; 
       }
     }
@@ -73,28 +97,24 @@
       height: calc(100% + 120px);
       z-index: 0;
       pointer-events: none;
-      
-      /* GPU ACCELERATION FOR SMOOTH SCROLLING */
       will-change: transform; 
     }
 
-    /* Assign unique background images to each section */
     .about-statement-section .section-bg-parallax {
       background: linear-gradient(rgba(234,242,234,0.92), rgba(234,242,234,0.92)),
-                  url('images/underlay pic desktop/Underlay pic 2.webp') center / cover no-repeat;
+                  url('images/underlay%20pic%20desktop/Underlay%20pic%202.webp') center / cover no-repeat;
     }
 
     .timeline-section .section-bg-parallax {
       background: linear-gradient(rgba(234,242,234,0.92), rgba(234,242,234,0.92)),
-                  url('images/underlay pic desktop/underlay pic 5.webp') center / cover no-repeat;
+                  url('images/underlay%20pic%20desktop/underlay%20pic%205.webp') center / cover no-repeat;
     }
 
     .tmd-section .section-bg-parallax {
       background: linear-gradient(rgba(234,242,234,0.92), rgba(234,242,234,0.92)),
-                  url('images/underlay pic desktop/underlay pic 8.webp') center / cover no-repeat;
+                  url('images/underlay%20pic%20desktop/underlay%20pic%208.webp') center / cover no-repeat;
     }
 
-    /* Ensure content stays above the parallax */
     .about-statement-section .container,
     .timeline-section .container,
     .tmd-section .container {
@@ -105,15 +125,15 @@
     @media (max-width: 860px) {
       .about-statement-section .section-bg-parallax {
         background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-          url('images/mobile overlay pic/pexels-alinaskazka-27806125.webp') center / cover no-repeat;
+          url('images/mobile%20overlay%20pic/pexels-alinaskazka-27806125.webp') center / cover no-repeat;
       }
       .timeline-section .section-bg-parallax {
         background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-          url('images/mobile overlay pic/pexels-karola-g-5978610.webp') center / cover no-repeat;
+          url('images/mobile%20overlay%20pic/pexels-karola-g-5978610.webp') center / cover no-repeat;
       }
       .tmd-section .section-bg-parallax {
         background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)),
-          url('images/mobile overlay pic/pexels-felipealves-9297361.webp') center / cover no-repeat;
+          url('images/mobile%20overlay%20pic/pexels-felipealves-9297361.webp') center / cover no-repeat;
       }
     }
   </style>
@@ -180,9 +200,9 @@
       </header>
 
       <div class="hs-main">
-        <h1 class="hs-title">Healing the whole<br /><em>person, naturally</em></h1>
+        <h1 class="hs-title" style="font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.1;">About our Naturopathic<br /><em>Care in Calgary</em></h1> <!--[cite: 13] -->
         <div class="hs-divider"></div>
-        <p class="hs-subtitle">Founded to bridge naturopathic wisdom and modern medicine — compassionate, personalised care tailored to you.</p>
+        <p class="hs-subtitle" style="line-height: 1.6;">VeraVita Naturopathic Clinic is a Calgary-based integrative wellness clinic combining <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a>, <a href="/cat-iv-therapy.html" class="text-link">IV Therapy</a>, <a href="/cat-acupuncture.html" class="text-link">Acupuncture</a>, <a href="/cat-massage-therapy.html" class="text-link">Massage Therapy</a>, and <a href="/cat-osteopathy.html" class="text-link">Osteopathy</a> under one roof. Our Expert practitioners focus on root-cause, evidence-based care. Meet our <a href="/practitioners.html" class="text-link">Practitioners</a> or <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">book an appointment</a> to experience patient-centred wellness care in Calgary.</p> <!--[cite: 13] -->
       </div>
 
       <footer class="hs-footer">
@@ -240,7 +260,7 @@
     <div class="container">
       <div class="asc-card asc-card--white asc-card--mission">
         <picture>
-          <img src="images/background 4K.png" alt="Our mission" class="asc-card-img" loading="lazy" decoding="async" />
+          <img src="images/background%204K.png" alt="Our mission" class="asc-card-img" loading="lazy" decoding="async" />
         </picture>
         <div class="asc-card-body">
           <h3 class="asc-card-title">Our mission</h3>
@@ -260,7 +280,7 @@
             <span class="asc-value-tag"><i class="fa-solid fa-circle-check"></i> Accessibility</span>
           </div>
         </div>
-        <img src="images/core values.png" alt="Our values" class="asc-card-img" loading="lazy" decoding="async" />
+        <img src="images/core%20values.png" alt="Our values" class="asc-card-img" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
@@ -284,7 +304,7 @@
   </section>
 
   <section class="about-cta-video-section" style="position: relative; overflow: hidden; background-color: #1e3528; display: flex; align-items: center; justify-content: center; min-height: 60vh;">
-    <img src="images/Expert care.webp" alt="Expert care you can trust" loading="lazy" decoding="async" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.4;" />
+    <img src="images/Expert%20care.webp" alt="Expert care you can trust" loading="lazy" decoding="async" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.4;" />
     
     <div class="about-cta-overlay" style="position: relative; z-index: 1; text-align: center; padding: 4rem 20px; width: 100%;">
       <p class="about-cta-label" style="color: #b0c4b1 !important; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 1rem;">
@@ -328,7 +348,7 @@
         </div>
 
         <a href="/dr-jill-nazar.html" class="tmd-card">
-          <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           <div class="tmd-card-overlay">
             <h4>Dr. Jill Nazar, ND</h4>
             <span>Naturopathic Doctor</span>
@@ -338,7 +358,7 @@
         </a>
 
         <a href="/dr-viktoriia-taylor.html" class="tmd-card">
-          <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner%20Main%20page/Dr.%20Viktoriia%20Taylor,%20DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           <div class="tmd-card-overlay">
             <h4>Dr. Viktoriia Taylor, DTCM</h4>
             <span>Registered Dr. of Acupuncture</span>
@@ -362,7 +382,7 @@
         </a>
 
         <a href="/jean-wilson-raymond.html" class="tmd-card">
-          <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner%20Main%20page/Jean-Wilson%20Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           <div class="tmd-card-overlay">
             <h4>Jean-Wilson Raymond</h4>
             <span>Registered Massage Therapist</span>
@@ -372,7 +392,7 @@
         </a>
 
         <a href="/johnvel-sabturani.html" class="tmd-card">
-          <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner%20Main%20page/Johnvel%20Sabturani.webp" alt="Johnvel Sabturani, RMT" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           <div class="tmd-card-overlay">
             <h4>Johnvel Sabturani</h4>
             <span>Registered Massage Therapist</span>
@@ -382,7 +402,7 @@
         </a>
 
         <a href="/amy-lutz.html" class="tmd-card">
-          <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+          <img src="images/Practitioner%20Main%20page/Amy%20lutz%20Main%20page.webp" alt="Amy Lutz, MOMSc" class="tmd-card-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           <div class="tmd-card-overlay">
             <h4>Amy Lutz</h4>
             <span>Manual Osteopathic Therapist</span>

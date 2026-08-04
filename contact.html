@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
-  <title>Contact Us | VeraVita Naturopathic Clinic Calgary</title>
-  <meta name="description" content="Get in touch with VeraVita Naturopathic Clinic in Calgary. Contact us by phone, email, or fill out our contact form to start your wellness journey today." />
+  
+  <!-- SEO UPGRADES: METADATA -->
+  <title>Contact Naturopathic Clinic in Calgary | Book Naturopathic Doctor Near Me</title>
+  <meta name="description" content="Contact VeraVita Naturopathic Clinic in Calgary to book naturopathic medicine, IV therapy, acupuncture, massage, or osteopathy. Call, email, or book online now." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,6 +33,20 @@
 
     body {
       padding-top: 80px; 
+    }
+
+    /* INLINE TEXT LINKS (Clean bold green, underline on hover only) */
+    .text-link {
+      color: #2b5c43;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+    .text-link:hover {
+      color: #1e3528;
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 3px;
     }
 
     /* CLEAN BACKGROUND OVERRIDES */
@@ -63,11 +79,11 @@
     }
     .cth-section .section-bg-parallax {
       background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
-        url('images/underlay pic desktop/underlay pic 5.webp');
+        url('images/underlay%20pic%20desktop/underlay%20pic%205.webp');
     }
     .cfaq-section .section-bg-parallax {
       background: linear-gradient(rgba(247,250,248,0.92), rgba(247,250,248,0.92)),
-        url('images/underlay pic desktop/underlay pic 10.webp');
+        url('images/underlay%20pic%20desktop/underlay%20pic%2010.webp');
     }
 
     .cth-section .cth-top,
@@ -81,11 +97,11 @@
       }
       .cth-section .section-bg-parallax {
         background: linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
-          url('images/mobile overlay pic/pexels-allecgomes-3628770 (1).webp');
+          url('images/mobile%20overlay%20pic/pexels-allecgomes-3628770%20(1).webp');
       }
       .cfaq-section .section-bg-parallax {
         background: linear-gradient(rgba(247,250,248,0.90), rgba(247,250,248,0.90)),
-          url('images/mobile overlay pic/pexels-didsss-13214230.webp');
+          url('images/mobile%20overlay%20pic/pexels-didsss-13214230.webp');
       }
     }
 
@@ -117,7 +133,7 @@
       <div class="navbar-inner">
         <a href="/" class="navbar-logo">
           <picture>
-          <source media="(max-width: 860px)" srcset="images/Header - Mobile.png" />
+          <source media="(max-width: 860px)" srcset="images/Header%20-%20Mobile.png" />
           <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" width="203" height="90" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
         </picture>
           <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg></div>
@@ -170,9 +186,9 @@
       <div class="section-bg-parallax"></div>
 
       <!-- Top: Heading -->
-      <div class="cth-top">
-        <h1 class="cth-title">Get in touch!</h1>
-        <p class="cth-sub">Have questions about our services or ready to book your first visit?<br />Our friendly team is here and happy to help.</p>
+      <div class="cth-top" style="max-width: 850px; margin: 0 auto 3rem auto; text-align: center; padding: 0 20px;">
+        <h1 class="cth-title" style="font-family: 'Libre Caslon Text', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: #1e3528; margin-bottom: 1rem; line-height: 1.1;">Contact our Naturopathic<br /><em>Clinic in Calgary</em></h1> <!--[cite: 9] -->
+        <p class="cth-sub" style="font-size: 1.1rem; line-height: 1.7; color: #4a4a4a;">Reach VeraVita Naturopathic Clinic in Calgary at Unit 104, 14505 Bannister Road SE, by phone at (587) 585-2524, or by email at vnc@veravitaclinic.com. Book <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a>, <a href="/cat-iv-therapy.html" class="text-link">IV Therapy</a>, <a href="/cat-acupuncture.html" class="text-link">Acupuncture</a>, <a href="/cat-massage-therapy.html" class="text-link">Massage Therapy</a>, or <a href="/cat-osteopathy.html" class="text-link">Osteopathy</a> online. Our Expert Calgary team is ready to help.</p> <!--[cite: 9] -->
       </div>
 
       <!-- Body: Image + Form -->
@@ -285,51 +301,71 @@
 
           <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
             <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
-              <span>How do I book an appointment at VeraVita?</span>
+              <span>What does a naturopathic doctor treat?</span> <!--[cite: 9] -->
               <span class="cfaq-icon">+</span>
             </button>
             <div class="cfaq-a">
-              <p style="color:#4a4a4a;">You can book online using our booking form, call us at (587) 585-2524, or send us an email at vnc@veravitaclinic.com. We confirm all appointments within one business day.</p>
+              <p style="color:#4a4a4a;"><a href="/cat-naturopathic.html" class="text-link">Naturopathic doctors</a> treat chronic fatigue, hormonal imbalance, digestive issues, weight concerns, fertility challenges, and pediatric health conditions using <a href="/service-lab-testing.html" class="text-link">functional lab testing</a>, nutrition, and natural medicine focused on root causes.</p> <!--[cite: 9] -->
             </div>
           </div>
 
           <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
             <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
-              <span>Do I need a referral to see a naturopathic doctor?</span>
+              <span>How is naturopathic medicine different from conventional medicine?</span> <!--[cite: 9] -->
               <span class="cfaq-icon">+</span>
             </button>
             <div class="cfaq-a">
-              <p style="color:#4a4a4a;">No referral is needed. You can book directly with any of our naturopathic doctors. If you have existing lab results or medical history, bringing those along helps us provide better care from your very first visit.</p>
+              <p style="color:#4a4a4a;"><a href="/cat-naturopathic.html" class="text-link">Naturopathic medicine</a> focuses on identifying and addressing the underlying cause of a condition using natural, evidence-based therapies, while working alongside conventional care rather than replacing it when needed.</p> <!--[cite: 9] -->
             </div>
           </div>
 
           <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
             <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
-              <span>What insurance plans do you accept?</span>
+              <span>Do you offer IV therapy in Calgary?</span> <!--[cite: 9] -->
               <span class="cfaq-icon">+</span>
             </button>
             <div class="cfaq-a">
-              <p style="color:#4a4a4a;">Many extended health benefit plans in Alberta cover naturopathic services. We recommend checking with your insurer before your visit. We provide detailed receipts for all services to support reimbursement claims.</p>
+              <p style="color:#4a4a4a;">Yes. VeraVita offers a full range of <a href="/cat-iv-therapy.html" class="text-link">IV Therapy in Calgary</a>, including <a href="/service-nad-iv.html" class="text-link">NAD+ infusions</a>, <a href="/service-iv-therapy.html" class="text-link">Myers' Cocktail</a>, high-dose Vitamin C, and <a href="/service-vitamin-injections.html" class="text-link">vitamin injections</a> tailored to your lab results and goals.</p> <!--[cite: 9] -->
             </div>
           </div>
 
           <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
             <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
-              <span>What should I expect during my first visit?</span>
+              <span>Is acupuncture covered by insurance in Calgary?</span> <!--[cite: 9] -->
               <span class="cfaq-icon">+</span>
             </button>
             <div class="cfaq-a">
-              <p style="color:#4a4a4a;">Your first appointment is a comprehensive 60–90 minute consultation. We'll review your full health history, lifestyle, and goals, then build a personalised treatment plan. Please bring any recent lab results and a list of current medications.</p>
+              <p style="color:#4a4a4a;">Many extended health plans cover <a href="/cat-acupuncture.html" class="text-link">acupuncture</a> treatment. We recommend checking your specific plan for coverage details and direct billing options before your visit.</p> <!--[cite: 9] -->
             </div>
           </div>
 
           <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
             <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
-              <span>Do you offer virtual or telehealth consultations?</span>
+              <span>What should I expect at my first visit?</span> <!--[cite: 9] -->
               <span class="cfaq-icon">+</span>
             </button>
             <div class="cfaq-a">
-              <p style="color:#4a4a4a;">Yes. We offer secure video consultations for follow-up appointments, general health questions, and select initial consultations. Contact us to check eligibility for your specific concern.</p>
+              <p style="color:#4a4a4a;">Your first visit includes a detailed health history review, discussion of your goals, and — depending on the service — a physical assessment or treatment plan. Initial <a href="/cat-naturopathic.html" class="text-link">naturopathic consultations</a> typically run 60–75 minutes.</p> <!--[cite: 9] -->
+            </div>
+          </div>
+
+          <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
+            <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
+              <span>Do you treat children?</span> <!--[cite: 9] -->
+              <span class="cfaq-icon">+</span>
+            </button>
+            <div class="cfaq-a">
+              <p style="color:#4a4a4a;">Yes. We offer <a href="/service-pediatric-care.html" class="text-link">Pediatric Naturopathic Care</a> and <a href="/service-acupuncture-childrens.html" class="text-link">Children's Needleless Acupuncture</a> for children from infancy through adolescence, using gentle, age-appropriate techniques.</p> <!--[cite: 9] -->
+            </div>
+          </div>
+
+          <div class="cfaq-item" style="border-bottom: 1px solid #eaeaea;">
+            <button class="cfaq-q" aria-expanded="false" style="color:#1e3528;">
+              <span>How much does a naturopathic consultation cost in Calgary?</span> <!--[cite: 9] -->
+              <span class="cfaq-icon">+</span>
+            </button>
+            <div class="cfaq-a">
+              <p style="color:#4a4a4a;">A 60-minute <a href="/cat-naturopathic.html" class="text-link">Initial Naturopathic Consultation</a> at VeraVita is $220 CAD. Follow-up visits range from $50 to $220 depending on length. See our full <a href="/pricing.html" class="text-link">pricing</a> for details.</p> <!--[cite: 9] -->
             </div>
           </div>
 
@@ -343,7 +379,7 @@
 
         <!-- Top row -->
         <div class="visit-top">
-          <h2 class="visit-heading">Visit us and enjoy</h2>
+          <h2 class="visit-heading">Visit Our Calgary Clinic</h2>
           <p class="visit-top-desc">Come experience naturopathic medicine in a calm, welcoming environment designed around your comfort and care.</p>
         </div>
 
@@ -364,7 +400,7 @@
             </ul>
           </div>
           <div class="visit-img-wrap">
-            <img src="images/building image.webp" alt="VeraVita Naturopathic Clinic Calgary" class="visit-img" loading="lazy" decoding="async" />
+            <img src="images/building%20image.webp" alt="VeraVita Naturopathic Clinic Calgary" class="visit-img" loading="lazy" decoding="async" />
           </div>
         </div>
 

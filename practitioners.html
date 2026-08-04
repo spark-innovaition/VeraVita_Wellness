@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
-  <title>Our Practitioners | VeraVita Naturopathic Clinic Calgary</title>
-  <meta name="description" content="Meet the expert licensed naturopathic doctors and wellness practitioners at VeraVita Naturopathic Clinic in Calgary." />
+  
+  <!-- SEO UPGRADES: METADATA -->
+  <title>Naturopathic Practitioners in Calgary | Naturopathic Clinic Team in Calgary</title>
+  <meta name="description" content="Meet VeraVita's Top-Rated Calgary practitioners — naturopathic doctors, acupuncturists, RMTs, and an osteopathic therapist delivering Expert, personalized care." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,8 +17,8 @@
   
   <!-- PERFORMANCE UPGRADE 1: SMART PRELOAD & PRECONNECT ENGINE -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="preload" as="image" href="images/Practitioner Hero - Desktop.webp" media="(min-width: 769px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="images/Practitioner Hero - Mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/Practitioner%20Hero%20-%20Desktop.webp" media="(min-width: 769px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/Practitioner%20Hero%20-%20Mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
 
   <style>
     /* FIXED NAVBAR */
@@ -35,6 +37,33 @@
       padding-top: 80px; 
     }
 
+    /* INLINE TEXT LINKS (Clean bold green, underline on hover only) */
+    .text-link {
+      color: #2b5c43;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+    .text-link:hover {
+      color: #1e3528;
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 3px;
+    }
+
+    /* FIX: HIGH-CONTRAST LINKS FOR DARK HERO OVERLAY (No messy underlines) */
+    .prac-hero-sub .text-link {
+      color: #a4cfae; /* Distinct bright sage green */
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .prac-hero-sub .text-link:hover {
+      color: #ffffff;
+      text-decoration: underline;
+      text-decoration-color: #ffffff;
+      text-underline-offset: 3px;
+    }
+
     /* CINEMATIC HERO (Centered with Dark Overlay & White Text) */
     .prac-hero {
       position: relative;
@@ -45,13 +74,13 @@
       text-align: center;
       padding: 4rem 20px;
       /* Dark green overlay pushes the photo back so white text pops */
-      background: linear-gradient(rgba(30, 53, 40, 0.65), rgba(30, 53, 40, 0.65)), url('images/Practitioner Hero - Desktop.webp') center/cover no-repeat;
+      background: linear-gradient(rgba(30, 53, 40, 0.65), rgba(30, 53, 40, 0.65)), url('images/Practitioner%20Hero%20-%20Desktop.webp') center/cover no-repeat;
       background-attachment: fixed;
     }
     
     @media (max-width: 768px) {
       .prac-hero {
-        background: linear-gradient(rgba(30, 53, 40, 0.65), rgba(30, 53, 40, 0.65)), url('images/Practitioner Hero - Mobile.webp') center/cover no-repeat;
+        background: linear-gradient(rgba(30, 53, 40, 0.65), rgba(30, 53, 40, 0.65)), url('images/Practitioner%20Hero%20-%20Mobile.webp') center/cover no-repeat;
         background-attachment: scroll;
       }
     }
@@ -84,7 +113,7 @@
       color: rgba(255, 255, 255, 0.9); /* Soft white */
       font-size: 1.1rem;
       line-height: 1.6;
-      max-width: 700px;
+      max-width: 850px;
       margin: 0 auto;
     }
 
@@ -112,7 +141,7 @@
       pointer-events: none;
       will-change: transform; /* GPU Acceleration */
       background: linear-gradient(rgba(247,250,248,0.95), rgba(247,250,248,0.95)),
-        url('images/underlay pic desktop/Underlay pic 2.webp') center / cover no-repeat;
+        url('images/underlay%20pic%20desktop/Underlay%20pic%202.webp') center / cover no-repeat;
     }
     .prac-cta-section .prac-cta-inner { position: relative; z-index: 1; }
 
@@ -125,7 +154,7 @@
       .prac-cta-section .section-bg-parallax {
         background-attachment: scroll !important;
         background: linear-gradient(rgba(247,250,248,0.95), rgba(247,250,248,0.95)),
-          url('images/mobile overlay pic/pexels-ameliacui-11983527.webp') center / cover no-repeat;
+          url('images/mobile%20overlay%20pic/pexels-ameliacui-11983527.webp') center / cover no-repeat;
       }
     }
 
@@ -211,8 +240,8 @@
   <section class="prac-hero">
     <div class="container-medium">
       <span class="section-label">Medical Professionals</span>
-      <h1 class="prac-hero-title">Meet Our<br /><em>Practitioners</em></h1>
-      <p class="prac-hero-sub">At VeraVita, our team of licensed naturopathic doctors and wellness specialists bring deep expertise and genuine care to every patient. We combine evidence-based medicine with holistic, personalised approaches to help you thrive.</p>
+      <h1 class="prac-hero-title">Our Practitioners<br /><em>in Calgary</em></h1> <!--[cite: 11] -->
+      <p class="prac-hero-sub">VeraVita's Calgary practitioners include <a href="/dr-jill-nazar.html" class="text-link">Dr. Jill Nazar, ND</a> (<a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> and <a href="/cat-iv-therapy.html" class="text-link">IV Therapy</a>), <a href="/dr-viktoriia-taylor.html" class="text-link">Dr. Viktoriia Taylor, DTCM</a>, and <a href="/joseph-wei.html" class="text-link">Joseph Wei</a> (<a href="/cat-acupuncture.html" class="text-link">Acupuncture</a>), <a href="/jean-wilson-raymond.html" class="text-link">Jean-Wilson Raymond</a> and <a href="/johnvel-sabturani.html" class="text-link">Johnvel Sabturani, RMT</a> (<a href="/cat-massage-therapy.html" class="text-link">Massage Therapy</a>), and <a href="/amy-lutz.html" class="text-link">Amy Lutz, MOMSc</a> (<a href="/cat-osteopathy.html" class="text-link">Osteopathy</a>). View individual profiles or <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">book an appointment</a> today.</p> <!--[cite: 11] -->
     </div>
   </section>
 
@@ -222,7 +251,7 @@
 
         <div class="prac-card">
           <div class="prac-photo-wrap">
-            <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+            <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           </div>
           <div class="prac-info">
             <h3 class="prac-name">Dr. Jill Nazar, ND</h3>
@@ -234,7 +263,7 @@
 
         <div class="prac-card">
           <div class="prac-photo-wrap">
-            <img src="images/Practitioner Main page/Dr. Viktoriia Taylor, DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+            <img src="images/Practitioner%20Main%20page/Dr.%20Viktoriia%20Taylor,%20DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           </div>
           <div class="prac-info">
             <h3 class="prac-name">Dr. Viktoriia Taylor, DTCM</h3>
@@ -246,7 +275,7 @@
 
         <div class="prac-card">
           <div class="prac-photo-wrap">
-            <img src="images/Practitioner Main page/Joseph Wei.webp" alt="Joseph Wei" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+            <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           </div>
           <div class="prac-info">
             <h3 class="prac-name">Joseph Wei</h3>
@@ -258,7 +287,7 @@
 
         <div class="prac-card">
           <div class="prac-photo-wrap">
-            <img src="images/Practitioner Main page/Jean-Wilson Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+            <img src="images/Practitioner%20Main%20page/Jean-Wilson%20Raymond.webp" alt="Jean-Wilson Raymond, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           </div>
           <div class="prac-info">
             <h3 class="prac-name">Jean-Wilson Raymond</h3>
@@ -270,7 +299,7 @@
 
         <div class="prac-card">
           <div class="prac-photo-wrap">
-            <img src="images/Practitioner Main page/Johnvel Sabturani.webp" alt="Johnvel Sabturani, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+            <img src="images/Practitioner%20Main%20page/Johnvel%20Sabturani.webp" alt="Johnvel Sabturani, RMT" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           </div>
           <div class="prac-info">
             <h3 class="prac-name">Johnvel Sabturani</h3>
@@ -282,7 +311,7 @@
 
         <div class="prac-card">
           <div class="prac-photo-wrap">
-            <img src="images/Practitioner Main page/Amy lutz Main page.webp" alt="Amy Lutz, MOMSc" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+            <img src="images/Practitioner%20Main%20page/Amy%20lutz%20Main%20page.webp" alt="Amy Lutz, MOMSc" class="prac-photo" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           </div>
           <div class="prac-info">
             <h3 class="prac-name">Amy Lutz, MOMSc</h3>
@@ -313,7 +342,7 @@
         </div>
       </div>
       <div class="prac-cta-img-wrap">
-        <img src="images/exceptional care.jpg" alt="Exceptional care at VeraVita" class="prac-cta-img" loading="lazy" decoding="async" />
+        <img src="images/exceptional%20care.jpg" alt="Exceptional care at VeraVita" class="prac-cta-img" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>

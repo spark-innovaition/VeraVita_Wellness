@@ -4,8 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
-<title>Lab Testing & IV Therapy Services | VeraVita Naturopathic Clinic Calgary</title>
-<meta name="description" content="Explore VeraVita's functional lab testing and IV therapy services led by Dr. Jill Nazar, ND — food sensitivity panels, NAD+ infusions, vitamin injections, and personalized IV drips in Calgary." />
+
+<!-- SEO UPGRADES: METADATA -->
+<title>Vitamin IV Therapy in Calgary | IV Therapy Near Me</title>
+<meta name="description" content="Expert IV therapy in Calgary featuring NAD+, Myers' Cocktail, and vitamin injections. Top-Rated functional lab testing and IV drips tailored to your goals. Book today." />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
@@ -14,8 +17,8 @@
 
 <!-- PERFORMANCE UPGRADE 1: SMART DEVICE-SPLIT PRELOADING & PRECONNECT -->
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-<link rel="preload" as="image" href="images/Service Hero secion images/IV 16-9.webp" media="(min-width: 769px)" fetchpriority="high" />
-<link rel="preload" as="image" href="images/Service Hero secion images/IV 9-16.webp" media="(max-width: 768px)" fetchpriority="high" />
+<link rel="preload" as="image" href="images/Service%20Hero%20secion%20images/IV%2016-9.webp" media="(min-width: 769px)" fetchpriority="high" />
+<link rel="preload" as="image" href="images/Service%20Hero%20secion%20images/IV%209-16.webp" media="(max-width: 768px)" fetchpriority="high" />
 
 <style>
   /* FIXED NAVBAR (Consistent with Home/About) */
@@ -34,6 +37,20 @@
     padding-top: 80px; /* Prevents hero from hiding under the fixed navbar */
   }
 
+  /* INLINE TEXT LINKS (Clean bold green, underline on hover only) */
+  .text-link {
+    color: #2b5c43;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+  .text-link:hover {
+    color: #1e3528;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+
   /* CLEAN & LIGHT CATEGORY HERO */
   .cat-hero {
     position: relative;
@@ -41,13 +58,11 @@
     display: flex;
     align-items: center;
     padding: 4rem 0;
-    /* Uses desktop image by default with a soft gradient for text readability */
     background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 100%), url('images/Service Hero secion images/IV 16-9.webp') center/cover no-repeat;
   }
   
   @media (max-width: 768px) {
     .cat-hero {
-      /* Swaps to mobile portrait image - FIXED TYPO TO 9-16 */
       background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%), url('images/Service Hero secion images/IV 9-16.webp') center/cover no-repeat;
     }
   }
@@ -55,7 +70,7 @@
   .cat-hero-content {
     position: relative;
     z-index: 2;
-    max-width: 650px;
+    max-width: 700px;
   }
 
   .cat-hero-title {
@@ -100,16 +115,86 @@
     color: #ffffff;
   }
 
+  /* STRUCTURED INTRO SECTION WITH ELEVATED CARDS */
+  .intro-section {
+    padding: 6rem 0;
+    background-color: #ffffff;
+  }
+  .intro-top {
+    max-width: 850px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+  }
+  .intro-top h2 {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #1e3528;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  .intro-top p {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 768px) {
+    .intro-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .intro-card {
+    background: #f7faf8;
+    border-radius: 1.5rem;
+    padding: 3.5rem 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    border: 1px solid rgba(114, 140, 105, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .intro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+  .intro-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background-color: rgba(114, 140, 105, 0.1);
+    color: #4a6b53;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .intro-card h3 {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 1.75rem;
+    color: #1e3528;
+    margin-bottom: 1.25rem;
+    line-height: 1.3;
+  }
+  .intro-card p {
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
   /* ALTERNATING SECTION BACKGROUNDS */
-  .svc-section {
-    background-color: #ffffff;
-  }
-  .prac-grid-section {
-    background-color: #f7faf8;
-  }
-  #pricing {
-    background-color: #ffffff;
-  }
+  .svc-section { background-color: #f7faf8; padding: 5rem 0 6rem; }
+  .prac-grid-section { background-color: #ffffff; padding: 5rem 0; }
+  #pricing { background-color: #f7faf8; padding: 5rem 0 6.5rem; }
   
   /* Ensure text reads well on light background */
   .price-table th, .price-table td, .svc-section-header h2, .prac-name, .prac-role {
@@ -117,6 +202,14 @@
   }
   .svc-section-header p, .svc-cell-desc, .prac-desc {
     color: #4a4a4a;
+  }
+
+  /* CENTRALLY ALIGNED SERVICE CARDS */
+  .svc-cell-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 </style>
 </head>
@@ -175,27 +268,56 @@
   <div class="container">
   <div class="cat-hero-content">
   <span class="section-label" style="color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem; display:block; margin-bottom:1rem;">Service Category</span>
-  <h1 class="cat-hero-title">Lab Testing & <em>IV Therapy</em></h1>
-  <p class="cat-hero-desc">Functional diagnostics and intravenous nutrient therapy — uncovering hidden deficiencies and delivering targeted nutrients directly to your cells for rapid, measurable results.</p>
+  <h1 class="cat-hero-title">IV Therapy<br /><em>in Calgary, AB</em></h1> <!--[cite: 8] -->
+  <p class="cat-hero-desc">VeraVita offers IV Therapy in Calgary including NAD+ infusions, Myers' Cocktail drips, high-dose Vitamin C, and vitamin B12 injections — delivering nutrients directly into the bloodstream for rapid absorption. Every IV is guided by <a href="/service-lab-testing.html" class="text-link">Functional Lab Testing</a> and personalized to your goals. Combine treatment with <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> for complete root-cause care. Serving Calgary and area.</p> <!--[cite: 8] -->
   <div class="cat-hero-lead"><i class="fa-solid fa-droplet"></i> Led by Dr. Jill Nazar, ND — Naturopathic Doctor & Founder</div>
   <a href="#pricing" class="pricing-link"><i class="fa-solid fa-tag" style="font-size:0.8rem"></i> View Pricing <i class="fa-solid fa-arrow-down" style="font-size:0.75rem; margin-left:0.25rem;"></i></a>
   </div>
   </div>
   </section>
 
-  <section class="svc-section" style="padding:4rem 0 6rem">
+  <!-- ELEVATED & CENTERED INTRO SECTION -->
+  <section class="intro-section">
+    <div class="container">
+      
+      <!-- Primary Intro Block -->
+      <div class="intro-top">
+        <h2>What Is <em>IV Therapy?</em></h2> <!--[cite: 8] -->
+        <p>IV therapy is the delivery of vitamins, minerals, and other nutrients directly into the bloodstream through an intravenous drip, bypassing the digestive system entirely. Because nutrients reach your cells immediately at full concentration, patients often notice benefits — more energy, sharper focus, faster recovery — within an hour of treatment. <!--[cite: 8] --></p>
+        <p>It's one of the most direct ways to correct nutrient deficiencies identified through <a href="/service-lab-testing.html" class="text-link">Functional Lab Testing</a> and support the body during illness, stress, or high physical demand. <!--[cite: 8] --></p>
+      </div>
+
+      <!-- 2-Column Details Grid -->
+      <div class="intro-grid">
+        <div class="intro-card">
+          <div class="intro-card-icon"><i class="fa-solid fa-vial"></i></div>
+          <h3>IV Therapy in Calgary:<br /><em>How It Works</em></h3> <!--[cite: 8] -->
+          <p>At VeraVita, IV therapy is never one-size-fits-all. Dr. Jill Nazar, ND, uses <a href="/service-lab-testing.html" class="text-link">functional lab testing</a> to identify your specific deficiencies and health goals before formulating your IV. Whether you need a <a href="/service-iv-therapy.html" class="text-link">Personalized IV Therapy</a> energy-boosting Myers' Cocktail, a high-dose <a href="/service-nad-iv.html" class="text-link">NAD+ infusion</a>, or an immune-support drip, every formula is built around your bloodwork, not a generic menu. <!--[cite: 8] --></p>
+        </div>
+        
+        <div class="intro-card">
+          <div class="intro-card-icon"><i class="fa-solid fa-shield-heart"></i></div>
+          <h3>Who Can Benefit From<br /><em>IV Therapy?</em></h3> <!--[cite: 8] -->
+          <p>IV therapy in Calgary is popular among patients managing chronic fatigue, frequent illness, poor nutrient absorption, high stress, athletic recovery needs, or age-related decline in cellular energy. It's also frequently used as a complement to a broader <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> treatment plan. <!--[cite: 8] --></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="svc-section">
   <div class="container">
-  <div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
-  <h2>Select a <em>Service</em></h2>
+  <div class="svc-section-header" style="margin: 0 auto 3rem auto; text-align: center; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
+  <h2>Types of IV Therapy and<br /><em>Vitamin Injections We Offer</em></h2> <!--[cite: 8] -->
   <p style="color:#4a4a4a;">Choose a service below to learn more — what it involves, key benefits, and how to book.</p>
   </div>
-  <div class="svc-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5)">
+  <div class="svc-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5); background-color: #fff;">
 
     <div class="svc-cell">
       <div class="svc-cell-body">
         <div class="svc-cell-icon"><i class="fa-solid fa-flask"></i></div>
-        <h3 class="svc-cell-name">Functional Lab Testing</h3>
-        <p class="svc-cell-desc">Advanced blood panels and specialty diagnostics that go beyond standard tests — uncovering hormonal imbalances, nutrient deficiencies, and metabolic markers to guide targeted treatment.</p>
+        <h3 class="svc-cell-name">Functional Lab Testing</h3> <!--[cite: 8] -->
+        <p class="svc-cell-desc">Advanced panels uncovering hormonal, nutrient, and metabolic imbalances.</p> <!--[cite: 8] -->
         <a href="/service-lab-testing.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -203,8 +325,8 @@
     <div class="svc-cell">
       <div class="svc-cell-body">
         <div class="svc-cell-icon"><i class="fa-solid fa-wheat-awn-circle-exclamation"></i></div>
-        <h3 class="svc-cell-name">Food Sensitivity Testing</h3>
-        <p class="svc-cell-desc">Identify delayed immune reactions to specific foods that may be contributing to chronic inflammation, fatigue, digestive issues, skin conditions, and more.</p>
+        <h3 class="svc-cell-name">Food Sensitivity Testing</h3> <!--[cite: 8] -->
+        <p class="svc-cell-desc">Identifying delayed immune reactions behind chronic symptoms.</p> <!--[cite: 8] -->
         <a href="/service-food-sensitivity.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -212,8 +334,8 @@
     <div class="svc-cell">
       <div class="svc-cell-body">
         <div class="svc-cell-icon"><i class="fa-solid fa-dna"></i></div>
-        <h3 class="svc-cell-name">NAD⁺ IV Therapy</h3>
-        <p class="svc-cell-desc">High-dose NAD⁺ infusions to support cellular energy, cognitive clarity, anti-aging, and recovery from chronic illness — one of the most powerful intravenous therapies available.</p>
+        <h3 class="svc-cell-name">NAD⁺ IV Therapy</h3> <!--[cite: 8] -->
+        <p class="svc-cell-desc">High-dose infusions for cellular energy, cognitive clarity, and recovery.</p> <!--[cite: 8] -->
         <a href="/service-nad-iv.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -221,8 +343,8 @@
     <div class="svc-cell">
       <div class="svc-cell-body">
         <div class="svc-cell-icon"><i class="fa-solid fa-droplet"></i></div>
-        <h3 class="svc-cell-name">Personalized IV Therapy</h3>
-        <p class="svc-cell-desc">Custom intravenous infusions — Myers' Cocktail, high-dose Vitamin C, immune boosters — formulated around your lab results and health goals for maximum therapeutic effect.</p>
+        <h3 class="svc-cell-name">Personalized IV Therapy</h3> <!--[cite: 8] -->
+        <p class="svc-cell-desc">Myers' Cocktail, high-dose Vitamin C, and immune-boosting drips.</p> <!--[cite: 8] -->
         <a href="/service-iv-therapy.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -230,8 +352,8 @@
     <div class="svc-cell">
       <div class="svc-cell-body">
         <div class="svc-cell-icon"><i class="fa-solid fa-syringe"></i></div>
-        <h3 class="svc-cell-name">Vitamin Injections</h3>
-        <p class="svc-cell-desc">Targeted intramuscular injections — B12, B-complex, vitamin D, amino acids — for rapid absorption and immediate therapeutic effect without the time of a full IV drip.</p>
+        <h3 class="svc-cell-name">Vitamin Injections</h3> <!--[cite: 8] -->
+        <p class="svc-cell-desc">B12, B-complex, and vitamin D shots for rapid absorption.</p> <!--[cite: 8] -->
         <a href="/service-vitamin-injections.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -241,25 +363,24 @@
   </section>
 
   <!-- LEAD PRACTITIONER SECTION -->
-  <section class="prac-grid-section" id="practitioners" style="padding:4rem 0 5rem;">
+  <section class="prac-grid-section" id="practitioners">
     <div class="container-medium">
-      <div class="svc-section-header" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none">
-        <p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 0 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Lead Practitioner</p>
-        <h2>Meet Our <em>Doctor</em></h2>
+      <div class="svc-section-header" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none; display: flex; flex-direction: column; align-items: center;">
+        <p class="section-tag" style="display:flex;justify-content:center;align-items:center;gap:0.4rem;margin:0 auto 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem; width:fit-content;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i>Lead Practitioner</p>
+        <h2>Meet <em>Dr. Jill Nazar, ND</em></h2>
       </div>
 
-      <div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:450px;margin:0 auto">
-        <div class="prac-card" style="text-align:center">
+      <div class="prac-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;max-width:550px;margin:0 auto">
+        <div class="prac-card" style="text-align:center; background:#f7faf8; border:1px solid rgba(0,0,0,0.03);">
           <div class="prac-photo-wrap" style="aspect-ratio:1/1;max-width:240px;margin:0 auto;border-radius:50%;overflow:hidden;">
-            <!-- PERFORMANCE UPGRADE 2: ADDED DECODING="ASYNC" FOR SMOOTH SCROLLING -->
             <img src="images/Practitioner Main page/Dr. Jill Nazar, ND.webp" alt="Dr. Jill Nazar, ND" class="prac-photo" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
           </div>
           <div class="prac-info" style="align-items:center; padding-top: 1.5rem;">
             <h3 class="prac-name">Dr. Jill Nazar, ND</h3>
             <span class="prac-role">Naturopathic Doctor & Founder</span>
-            <p class="prac-desc" style="font-size:0.95rem; margin-top:0.5rem;">Specializes in naturopathic medicine, chronic disease management, advanced functional lab testing, and personalized IV nutrient therapy.</p>
-            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem">
-              <a href="/dr-jill-nazar.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:500;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+            <p class="prac-desc" style="font-size:1.05rem; margin-top:1rem; line-height:1.6; color:#4a4a4a;">Dr. Jill Nazar, ND, is the founder and lead naturopathic doctor at VeraVita, specializing in <a href="/service-naturopathic-care.html" class="text-link">Naturopathic Care</a>, chronic disease management, advanced <a href="/service-lab-testing.html" class="text-link">functional lab testing</a>, and personalized <a href="/cat-iv-therapy.html" class="text-link">IV nutrient therapy</a>.</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem">
+              <a href="/dr-jill-nazar.html" class="prac-link" style="color:#1e3528; text-decoration:none; font-weight:600;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
               <a href="https://veravitanaturopathicclinic.janeapp.com/#/staff_member/1" target="_blank" rel="noopener" class="prac-link" style="color:#4a6b53; font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Book with Dr. Nazar</a>
             </div>
           </div>
@@ -268,31 +389,25 @@
     </div>
   </section>
 
-  <section id="pricing" style="padding:4rem 0 6.5rem">
+  <section id="pricing">
   <div class="container">
-  <div class="svc-section-header" style="margin-bottom:3rem; text-align:center;">
-  <p class="section-tag" style="margin-bottom:0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
-  <h2>Service <em>Pricing</em></h2>
-  <p style="color:#4a4a4a;">All prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" style="color:#4a6b53; font-weight:600;">booking portal</a> for current rates and availability.</p>
+  <div class="svc-section-header" style="margin: 0 auto 3rem auto; text-align: center; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
+  <p class="section-tag" style="display:flex;justify-content:center;align-items:center;margin:0 auto 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem; width:fit-content;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
+  <h2>IV Therapy<br /><em>Pricing in Calgary</em></h2> <!--[cite: 8] -->
+  <p style="color:#4a4a4a; font-size:1.05rem;">Prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">booking portal</a> for current rates and availability.</p> <!--[cite: 8] -->
   </div>
-  <div class="price-table-wrap">
+  <div class="price-table-wrap" style="background:#fff;">
   <table class="price-table">
   <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
   <tbody>
-  <tr><td>Initial IV</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr>
-  <tr><td>Naturopathic Intravenous Adapted Treatment</td><td class="td-dur">—</td><td class="td-price">$280.00</td></tr>
-  <tr><td>IV Therapy</td><td class="td-dur">75 min</td><td class="td-price">$260.00</td></tr>
-  <tr><td>IV Therapy</td><td class="td-dur">70 min</td><td class="td-price">$250.00</td></tr>
-  <tr><td>Naturopathic Intravenous Treatment</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr>
-  <tr><td>MultiVitamin + Glutathione IV</td><td class="td-dur">60 min</td><td class="td-price">$210.00</td></tr>
-  <tr><td>Naturopathic Intravenous Multivitamin</td><td class="td-dur">60 min</td><td class="td-price">$200.00</td></tr>
-  <tr><td>IV Treatment</td><td class="td-dur">45 min</td><td class="td-price">$190.00</td></tr>
-  <tr><td>Glutathione and Vit C IV</td><td class="td-dur">30 min</td><td class="td-price">$140.00</td></tr>
-  <tr><td>Vitamin Injection Follow-Up</td><td class="td-dur">15 min</td><td class="td-price">$65.00</td></tr>
-  <tr><td>NAD IM</td><td class="td-dur">15 min</td><td class="td-price">$65.00</td></tr>
-  <tr><td>Migraine Injection</td><td class="td-dur">15 min</td><td class="td-price">$50.00</td></tr>
-  <tr><td>Vitamin B12</td><td class="td-dur">15 min</td><td class="td-price">$50.00</td></tr>
-  <tr><td>Vitamin D3</td><td class="td-dur">15 min</td><td class="td-price">$45.00</td></tr>
+  <tr><td>Initial IV</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr> <!--[cite: 8] -->
+  <tr><td>IV Therapy</td><td class="td-dur">70–75 min</td><td class="td-price">$250.00 – $260.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Naturopathic Intravenous Treatment</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr> <!--[cite: 8] -->
+  <tr><td>MultiVitamin + Glutathione IV</td><td class="td-dur">60 min</td><td class="td-price">$210.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Glutathione and Vit C IV</td><td class="td-dur">30 min</td><td class="td-price">$140.00</td></tr> <!--[cite: 8] -->
+  <tr><td>NAD IM Injection</td><td class="td-dur">15 min</td><td class="td-price">$65.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Vitamin B12 Injection</td><td class="td-dur">15 min</td><td class="td-price">$50.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Vitamin D3 Injection</td><td class="td-dur">15 min</td><td class="td-price">$45.00</td></tr> <!--[cite: 8] -->
   </tbody>
   </table>
   </div>
@@ -367,7 +482,6 @@
 </div>
 </footer>
 
-<!-- UPGRADE 3: ADDED DEFER ATTRIBUTE TO PREVENT RENDERING BLOCKS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="js/main.js" defer></script>

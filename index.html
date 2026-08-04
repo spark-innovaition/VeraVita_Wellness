@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
-  <title>VeraVita Naturopathic Clinic | Naturopathic Medicine Calgary</title>
-  <meta name="description" content="VeraVita Naturopathic Clinic offers personalized naturopathic medicine in Calgary. Elevated care, renewed confidence." />
+  
+  <!-- SEO UPGRADES: METADATA -->
+  <title>Naturopathic Doctors in Calgary, AB | Calgary Naturopath Near Me</title>
+  <meta name="description" content="Expert naturopathic clinic in Calgary offering IV therapy, acupuncture, massage, and osteopathy. Top-Rated Calgary practitioners deliver root-cause care. Book today." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,6 +23,26 @@
   <link rel="preload" as="image" href="images/Home%20page/Desktop%2021-9%20-%20Home%20page%20hero.webp" media="(min-width: 769px)" fetchpriority="high" />
   <link rel="preload" as="image" href="images/Home%20page/Mobile%20-%20Home%20page%20hero.webp" media="(max-width: 768px)" fetchpriority="high" />
   
+  <!-- SEO UPGRADE: FAQ SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What does a naturopathic doctor treat?", "acceptedAnswer": { "@type": "Answer", "text": "Naturopathic doctors treat chronic fatigue, hormonal imbalance, digestive issues, weight concerns, fertility challenges, and pediatric health conditions using functional lab testing, nutrition, and natural medicine focused on root causes." } },
+      { "@type": "Question", "name": "How is naturopathic medicine different from conventional medicine?", "acceptedAnswer": { "@type": "Answer", "text": "Naturopathic medicine focuses on identifying and addressing the underlying cause of a condition using natural, evidence-based therapies, while working alongside conventional care rather than replacing it when needed." } },
+      { "@type": "Question", "name": "Do you offer IV therapy in Calgary?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. VeraVita offers a full range of IV Therapy in Calgary, including NAD+ infusions, Myers' Cocktail, high-dose Vitamin C, and vitamin injections tailored to your lab results and goals." } },
+      { "@type": "Question", "name": "Is acupuncture covered by insurance in Calgary?", "acceptedAnswer": { "@type": "Answer", "text": "Many extended health plans cover acupuncture treatment. We recommend checking your specific plan for coverage details and direct billing options before your visit." } },
+      { "@type": "Question", "name": "What should I expect at my first visit?", "acceptedAnswer": { "@type": "Answer", "text": "Your first visit includes a detailed health history review, discussion of your goals, and — depending on the service — a physical assessment or treatment plan. Initial naturopathic consultations typically run 60–75 minutes." } },
+      { "@type": "Question", "name": "Do you treat children?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We offer Pediatric Naturopathic Care and Children's Needleless Acupuncture for children from infancy through adolescence, using gentle, age-appropriate techniques." } },
+      { "@type": "Question", "name": "How much does a naturopathic consultation cost in Calgary?", "acceptedAnswer": { "@type": "Answer", "text": "A 60-minute Initial Naturopathic Consultation at VeraVita is $220 CAD. Follow-up visits range from $50 to $220 depending on length. See our full pricing for details." } },
+      { "@type": "Question", "name": "Where is VeraVita located?", "acceptedAnswer": { "@type": "Answer", "text": "VeraVita Naturopathic Clinic is located at Unit 104, 14505 Bannister Road SE, Calgary, AB T2X 3J3, serving patients throughout Calgary and nearby communities." } },
+      { "@type": "Question", "name": "Do you offer virtual or telemedicine appointments?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Telemedicine naturopathic consultations are available by video or phone for patients who cannot visit the clinic in person." } },
+      { "@type": "Question", "name": "How do I book an appointment?", "acceptedAnswer": { "@type": "Answer", "text": "You can book an appointment online in minutes, or contact our Calgary clinic directly by phone or email." } }
+    ]
+  }
+  </script>
+
   <style>
     /* SOFT FADE-IN ON LOAD */
     @keyframes subtleFade {
@@ -29,6 +51,20 @@
     }
     .fade-in-load {
       animation: subtleFade 1s ease-out forwards;
+    }
+
+    /* INLINE TEXT LINKS (Clean bold green, underline on hover only) */
+    .text-link {
+      color: #2b5c43;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+    .text-link:hover {
+      color: #1e3528;
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 3px;
     }
 
     /* FIXED NAVBAR (Allows image to slide underneath) */
@@ -43,7 +79,7 @@
       width: 100%;
     }
 
-    /* PERFORMANCE UPGRADE 3: HIGH-PERFORMANCE SEMANTIC HERO IMAGE ARCHITECTURE */
+    /* HIGH-PERFORMANCE SEMANTIC HERO IMAGE ARCHITECTURE */
     .ph-standard-hero {
       position: relative; 
       height: 100vh; 
@@ -70,7 +106,7 @@
     .hero-gradient-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9));
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.98));
       z-index: 2;
     }
 
@@ -79,14 +115,14 @@
         height: 90vh;
       }
       .hero-gradient-overlay {
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.95));
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.98));
       }
     }
     
     .ph-standard-hero .hero-content {
       position: relative;
       z-index: 3; 
-      max-width: 800px;
+      max-width: 1000px;
       padding: 0 20px;
       color: #1e3528;
     }
@@ -108,21 +144,62 @@
     }
     .ph-standard-hero .hero-sub {
       font-family: 'DM Sans', sans-serif; 
-      font-size: clamp(1rem, 2vw, 1.125rem);
+      font-size: clamp(1.05rem, 2vw, 1.15rem);
       margin-bottom: 2rem;
-      opacity: 0.85;
-      color: #333333;
+      color: #222;
+      line-height: 1.7;
     }
 
-    /* ALTERNATING SECTION BACKGROUNDS */
+    /* NEW SPLIT INTRO SECTION */
     .hwnu-section {
       background-color: #ffffff; 
-      padding: 5rem 0;
+      padding: 6rem 0 5rem 0;
     }
-    
-    .wcu-section {
-      background-color: #f7faf8; 
-      padding: 5rem 0;
+    .split-intro {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    @media (min-width: 860px) {
+      .split-intro {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: stretch;
+      }
+    }
+    .split-intro-left h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      line-height: 1.2;
+      color: #1e3528;
+      margin-bottom: 1.5rem;
+    }
+    .split-intro-left p {
+      font-size: 1.05rem;
+      color: #4a4a4a;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .split-intro-right {
+      background: #f7faf8;
+      border-radius: 1.5rem;
+      padding: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .split-intro-right h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.75rem;
+      color: #1e3528;
+      margin-bottom: 1rem;
+    }
+    .split-intro-right p {
+      font-size: 1.05rem;
+      color: #4a4a4a;
+      line-height: 1.7;
     }
 
     /* BENTO GRID */
@@ -130,7 +207,6 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
-      margin-top: 3rem;
     }
     .bento-item {
       width: 100%;
@@ -159,7 +235,11 @@
       .bento-item:nth-child(3) { grid-column: span 1; grid-row: span 1; height: 100%; }
     }
 
-    /* MICRO-INTERACTIONS (Cards) */
+    /* WHY CHOOSE US SECTION */
+    .wcu-section {
+      background-color: #f7faf8; 
+      padding: 6rem 0;
+    }
     .wcu-item {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border-radius: 1rem;
@@ -172,61 +252,24 @@
       background: #fff;
     }
 
-    /* TESTIMONIAL CARDS */
-    .testi-card {
-      width: 320px;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid rgba(0,0,0,0.05);
-    }
-    .testi-quote { font-style: italic; color: #4a4a4a; margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
-    .testi-author { display: flex; align-items: center; gap: 1rem; }
-    .testi-author img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
-    .testi-author-info strong { display: block; font-size: 0.95rem; color: #1e3528; }
-    .testi-author-info span { font-size: 0.8rem; color: #666; }
-
-    /* CLEAN SERVICES ACCORDION BACKGROUND */
+    /* SERVICES ACCORDION */
     .services-accord-section {
       position: relative;
       background: #ffffff; 
       padding: 5rem 0;
       border-top: 1px solid #eaeaea;
     }
-    .accord-video-overlay {
-      display: none;
-    }
+    .accord-video-overlay { display: none; }
     .services-accord-content .section-label,
     .services-accord-content .heading-wrap {
       color: #1e3528 !important; 
     }
+    .accord-trigger { border-bottom: 1px solid #eaeaea !important; }
+    .accord-label, .accord-num, .accord-icon, .accord-svc-icon { color: #1e3528 !important; }
+    .accord-body-inner p { color: #4a4a4a !important; }
+    .accord-learn { color: #4a6b53 !important; }
 
-    /* OVERRIDE ACCORDION COLORS FOR LIGHT BACKGROUND */
-    .accord-trigger {
-      border-bottom: 1px solid #eaeaea !important;
-    }
-    .accord-label, .accord-num, .accord-icon, .accord-svc-icon {
-      color: #1e3528 !important;
-    }
-    .accord-body-inner p {
-      color: #4a4a4a !important;
-    }
-    .accord-learn {
-      color: #4a6b53 !important;
-    }
-
-    /* Desktop-only swap: Our Promise before Here when you need us */
-    .hp-swap-wrap { display: flex; flex-direction: column; }
-    @media (min-width: 861px) {
-      .hp-swap-wrap .hwnu-section { order: 1; }
-      .hp-swap-wrap .wcu-section { order: 2; }
-    }
-
-    /* CLEAN TEAM SECTION */
+    /* TEAM SECTION */
     .team-section {
       padding: 6rem 0 7rem 0;
       background-color: #ffffff; 
@@ -234,7 +277,7 @@
     }
     .team-header-center {
       text-align: center;
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto 3.5rem auto;
       padding: 0 20px;
     }
@@ -263,7 +306,6 @@
       margin-bottom: 2.5rem;
       line-height: 1.6;
     }
-    
     .full-width-track {
       display: flex;
       gap: 1vw; 
@@ -272,7 +314,6 @@
       max-width: 1600px; 
       margin: 0 auto;
     }
-    
     .team-card-large {
       position: relative;
       flex: 1 1 0; 
@@ -321,6 +362,17 @@
       letter-spacing: 0.05em;
       opacity: 0.9;
     }
+    @media (max-width: 1024px) {
+      .full-width-track {
+        overflow-x: auto;
+        padding: 1rem 5vw 3rem 5vw;
+        scrollbar-width: none;
+      }
+      .full-width-track::-webkit-scrollbar { display: none; }
+      .team-card-large {
+        flex: 0 0 280px; 
+      }
+    }
 
     /* SCROLL-SNAP FOR TESTIMONIALS */
     .snap-track {
@@ -332,17 +384,80 @@
     }
     .snap-track::-webkit-scrollbar { display: none; }
     .snap-item { flex-shrink: 0; }
+    .testi-card {
+      width: 320px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .testi-quote { font-style: italic; color: #4a4a4a; margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+    .testi-author { display: flex; align-items: center; gap: 1rem; }
+    .testi-author img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+    .testi-author-info strong { display: block; font-size: 0.95rem; color: #1e3528; }
+    .testi-author-info span { font-size: 0.8rem; color: #666; }
 
-    @media (max-width: 1024px) {
-      .full-width-track {
-        overflow-x: auto;
-        padding: 1rem 5vw 3rem 5vw;
-        scrollbar-width: none;
-      }
-      .full-width-track::-webkit-scrollbar { display: none; }
-      .team-card-large {
-        flex: 0 0 280px; 
-      }
+    /* HOMEPAGE FAQ SECTION */
+    .hp-faq-section {
+      background-color: #f7faf8;
+      padding: 5rem 0 7rem 0;
+    }
+    .hp-faq-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+    }
+    .hp-faq-header h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #1e3528;
+      margin-bottom: 1rem;
+    }
+    .hp-faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hp-faq-item {
+      border-bottom: 1px solid rgba(114, 140, 105, 0.2);
+    }
+    .hp-faq-trigger {
+      width: 100%;
+      text-align: left;
+      padding: 1.5rem 0;
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #1e3528;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .hp-faq-trigger .fa-plus {
+      color: #4a6b53;
+      transition: transform 0.3s ease;
+    }
+    .hp-faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .hp-faq-body-inner {
+      padding-bottom: 1.5rem;
+      color: #4a4a4a;
+      line-height: 1.6;
+    }
+    .hp-faq-item.open .hp-faq-body {
+      max-height: 500px;
+    }
+    .hp-faq-item.open .fa-plus {
+      transform: rotate(45deg);
     }
 
     .navbar-nav.open {
@@ -419,8 +534,10 @@
     
     <div class="container hero-content fade-in-load">
       <p class="hero-eyebrow">Naturopathic Medicine · Calgary</p>
-      <h1 class="hero-heading">Elevated care,<br /><em>renewed confidence</em></h1>
-      <p class="hero-sub">At VeraVita, we believe true wellness is more than treating symptoms — it's about uncovering root causes, restoring balance, and helping you feel your absolute best, inside and out.</p>
+      <h1 class="hero-heading">Naturopathic Clinic<br /><em>in Calgary, AB</em></h1> <!--[cite: 12] -->
+      <p class="hero-sub" style="max-width: 850px; margin-left: auto; margin-right: auto;">
+        VeraVita Naturopathic Clinic in Calgary provides root-cause, evidence-based care combining <a href="/cat-naturopathic.html" class="text-link">naturopathic medicine</a>, <a href="/cat-iv-therapy.html" class="text-link">IV therapy</a>, <a href="/cat-acupuncture.html" class="text-link">acupuncture</a>, <a href="/cat-massage-therapy.html" class="text-link">massage therapy</a>, and <a href="/cat-osteopathy.html" class="text-link">osteopathy</a>. Our Expert Calgary practitioners build personalized treatment plans using <a href="/service-lab-testing.html" class="text-link">functional lab testing</a> and integrative therapies. Explore our <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> services or book <a href="/cat-iv-therapy.html" class="text-link">IV Therapy</a> to start restoring your energy, hormones, and overall wellness. Serving Calgary, Airdrie, and Okotoks patients. <!--[cite: 12] -->
+      </p>
       <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
         <span class="btn-ihb-blob"></span>
         <span class="btn-ihb-default">Book an appointment</span>
@@ -429,138 +546,72 @@
     </div>
   </header>
 
-  <div class="hp-swap-wrap">
-    <section class="hwnu-section">
-      <div class="container">
-        <div class="hwnu-eyebrow">
-          <i class="fa-solid fa-heart-pulse"></i>
-          <span>Here when you need us</span>
+  <!-- SPLIT INTRO SECTION (Replaces "Wall of Text") -->
+  <section class="hwnu-section">
+    <div class="container">
+      
+      <div class="split-intro">
+        <div class="split-intro-left">
+          <div class="hwnu-eyebrow" style="margin-bottom: 1rem; color: #4a6b53; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">
+            <i class="fa-solid fa-heart-pulse" style="margin-right: 0.5rem;"></i> Here When You Need Us
+          </div>
+          <h2>Naturopathic Clinic in Calgary<br /><em>Built Around You</em></h2> <!--[cite: 12] -->
+          <p>At VeraVita Naturopathic Clinic, we believe true wellness goes beyond treating symptoms. Located on Bannister Road SE in Calgary, our team uncovers the root causes of chronic health concerns and builds personalized care plans that restore balance, energy, and confidence. <!--[cite: 12] --></p>
+          <p>As an Expert naturopathic clinic in Calgary, we combine traditional healing wisdom with modern <a href="/service-lab-testing.html" class="text-link">functional lab testing</a>, so every recommendation is backed by evidence and tailored to you, not a generic protocol. <a href="/about.html" class="text-link">Learn more about our clinic</a> or <a href="/services.html" class="text-link">explore our full range of services</a>. <!--[cite: 12] --></p>
         </div>
-        <p class="hwnu-statement">At VeraVita, we believe healthcare is more than just treating symptoms — it's a commitment to improving lives. With a team of compassionate experts and state-of-the-art facilities.</p>
-
-        <div class="bento-grid">
-          <div class="bento-item"><img src="images/Home%20page%20-%20marquee/pexels-rdne-8312830.webp" alt="Clinic Office" width="656" height="438" loading="lazy" decoding="async" /></div>
-          <div class="bento-item"><img src="images/Home%20page%20-%20marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" width="656" height="438" loading="lazy" decoding="async" /></div>
-          <div class="bento-item"><img src="images/Home%20page%20-%20marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" width="656" height="438" loading="lazy" decoding="async" /></div>
-        </div>
-
-        <div class="hwnu-cta-wrap" style="margin-top: 3rem;">
-          <a href="/about.html" class="btn-ihb btn-ihb--primary">
-            <span class="btn-ihb-blob"></span>
-            <span class="btn-ihb-default">More about VeraVita</span>
-            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> More about VeraVita</span>
-          </a>
+        
+        <div class="split-intro-right">
+          <h3>What Is Naturopathic Medicine?</h3> <!--[cite: 12] -->
+          <p>Naturopathic medicine is a form of primary healthcare that treats the whole person — physical, hormonal, and emotional — rather than isolated symptoms. Naturopathic doctors use in-depth health assessments, advanced functional lab testing, nutrition, botanical medicine, and IV nutrient therapy to identify what's actually driving fatigue, hormonal imbalance, digestive issues, and weight concerns. <!--[cite: 12] --></p>
+          <p style="margin-top: 1rem;">At VeraVita, our <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine program</a> is led by <a href="/dr-jill-nazar.html" class="text-link">Dr. Jill Nazar, ND</a>, and designed around your unique biochemistry and lifestyle. <!--[cite: 12] --></p>
         </div>
       </div>
-    </section>
 
-    <section class="wcu-section">
-      <div class="container">
-        <div class="wcu-header">
-          <div class="wcu-eyebrow">
-            <i class="fa-solid fa-heart-pulse"></i>
-            <span>Our Promise</span>
-          </div>
-          <h2 class="wcu-heading">Why choose VeraVita<br />for your health</h2>
-        </div>
-
-        <div class="wcu-grid">
-          <div class="wcu-item">
-            <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 38s-14-9-14-19a8 8 0 0 1 14-5.3A8 8 0 0 1 38 19c0 10-14 19-14 19z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M16 36c-3 2-5 3-5 3M32 36c3 2 5 3 5 3M24 44v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M18 26c2 3 4 5 6 6 2-1 4-3 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-            <h3 class="wcu-item-title">Patient-Centred Approach</h3>
-            <p class="wcu-item-text">We tailor every treatment to fit your unique health needs, lifestyle, and goals — no one-size-fits-all solutions.</p>
-          </div>
-          <div class="wcu-item">
-            <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="12" r="7" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M17 12c0 10 4 18 7 18s7-8 7-18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M24 30v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <circle cx="30" cy="38" r="4" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M10 36h6M32 38h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-            <h3 class="wcu-item-title">Advanced Diagnostic Tools</h3>
-            <p class="wcu-item-text">State-of-the-art functional lab testing and technology ensures precise, early, and accurate detection.</p>
-          </div>
-          <div class="wcu-item">
-            <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 8l3.5 7 7.5 1.1-5.5 5.3 1.3 7.6L24 25.5l-6.8 3.5 1.3-7.6L13 16.1l7.5-1.1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M14 34l-2 8h24l-2-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M18 34h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-            <h3 class="wcu-item-title">Safety & Hygiene Standards</h3>
-            <p class="wcu-item-text">Strict clinical protocols to ensure your health and safety are always protected at every visit.</p>
-          </div>
-        </div>
-
-        <div class="wcu-cert-card">
-          <div class="wcu-cert-left">
-            <h3 class="wcu-cert-title">Certified care you can rely on</h3>
-            <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary" style="margin-top:1.5rem;">
-              <span class="btn-ihb-blob"></span>
-              <span class="btn-ihb-default">Book an appointment</span>
-              <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
-            </a>
-          </div>
-          <div class="wcu-cert-right">
-            <div class="wcu-cert-badge">
-              <i class="fa-solid fa-certificate wcu-cert-icon"></i>
-              <div>
-                <div class="wcu-cert-badge-title">Certified Practitioners</div>
-                <div class="wcu-cert-badge-sub">Licensed & Regulated</div>
-              </div>
-            </div>
-            <div class="wcu-cert-divider"></div>
-            <div class="wcu-cert-badge">
-              <i class="fa-solid fa-shield-halved wcu-cert-icon"></i>
-              <div>
-                <div class="wcu-cert-badge-title">Evidence-Based Care</div>
-                <div class="wcu-cert-badge-sub">Clinically Verified</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="bento-grid">
+        <div class="bento-item"><img src="images/Home%20page%20-%20marquee/pexels-rdne-8312830.webp" alt="Clinic Office" width="656" height="438" loading="lazy" decoding="async" /></div>
+        <div class="bento-item"><img src="images/Home%20page%20-%20marquee/pexels-gustavo-fring-7447001.webp" alt="Therapy" width="656" height="438" loading="lazy" decoding="async" /></div>
+        <div class="bento-item"><img src="images/Home%20page%20-%20marquee/pexels-thirdman-5922094.webp" alt="Clinic Interior" width="656" height="438" loading="lazy" decoding="async" /></div>
       </div>
-    </section>
-  </div>
 
+    </div>
+  </section>
+
+  <!-- SERVICES ACCORDION -->
   <section class="services-accord-section">
     <div class="accord-video-overlay"></div>
     <div class="container" style="position:relative;z-index:1;">
       <div class="services-accord-inner">
         <div class="services-accord-content">
           <div class="section-label">What We Offer</div>
-          <h2 class="heading-wrap"><span class="heading-inner">Treatments centred<br />around your needs</span></h2>
+          <h2 class="heading-wrap"><span class="heading-inner">Our Calgary<br /><em>Wellness Services</em></span></h2> <!--[cite: 12] -->
+          <p style="color: #4a4a4a; margin-bottom: 2rem; font-size: 1.05rem;">VeraVita brings five integrative disciplines together under one roof, so your care team can coordinate across specialties instead of working in isolation. <!--[cite: 12] --></p>
+          
           <div class="accord-list">
-
             <div class="accord-item">
               <button class="accord-trigger" data-image="images/Treatments/Nathuropathic%20care.webp" data-name="Naturopathic Medicine" data-link="cat-naturopathic.html">
                 <span class="accord-num">01</span>
-                <span class="accord-label">Naturopathic Medicine</span>
+                <span class="accord-label">Naturopathic Medicine</span> <!--[cite: 12] -->
                 <span class="accord-svc-icon"><i class="fa-solid fa-leaf"></i></span>
                 <i class="fa-solid fa-plus accord-icon"></i>
               </button>
               <div class="accord-body">
                 <div class="accord-body-inner">
-                  <p>Root-cause, whole-body naturopathic medicine including comprehensive health assessments, functional lab testing, and personalised wellness protocols tailored to you.</p>
+                  <p>Root-cause assessments, fatigue and hormone treatment, fertility support, weight loss, and pediatric care. <!--[cite: 12] --></p>
                   <a href="/cat-naturopathic.html" class="accord-learn">Explore service <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
               </div>
             </div>
 
             <div class="accord-item">
-              <button class="accord-trigger" data-image="images/Treatments/IV%20therapy.webp" data-name="Testing & IV Therapy" data-link="cat-iv-therapy.html">
+              <button class="accord-trigger" data-image="images/Treatments/IV%20therapy.webp" data-name="Lab Testing & IV Therapy" data-link="cat-iv-therapy.html">
                 <span class="accord-num">02</span>
-                <span class="accord-label">Testing & IV Therapy</span>
+                <span class="accord-label">Lab Testing & IV Therapy</span> <!--[cite: 12] -->
                 <span class="accord-svc-icon"><i class="fa-solid fa-droplet"></i></span>
                 <i class="fa-solid fa-plus accord-icon"></i>
               </button>
               <div class="accord-body">
                 <div class="accord-body-inner">
-                  <p>Customised IV nutrient infusions, vitamin injections, and advanced functional lab testing — delivering vitamins, minerals, and antioxidants directly into the bloodstream for rapid, lasting results.</p>
+                  <p>Functional lab panels, NAD+ IV therapy, personalized IV drips, and vitamin injections. <!--[cite: 12] --></p>
                   <a href="/cat-iv-therapy.html" class="accord-learn">Explore service <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
               </div>
@@ -569,13 +620,13 @@
             <div class="accord-item">
               <button class="accord-trigger" data-image="images/Treatments/acupunture.webp" data-name="Acupuncture & TCM" data-link="cat-acupuncture.html">
                 <span class="accord-num">03</span>
-                <span class="accord-label">Acupuncture & TCM</span>
+                <span class="accord-label">Acupuncture & TCM</span> <!--[cite: 12] -->
                 <span class="accord-svc-icon"><i class="fa-solid fa-hand-sparkles"></i></span>
                 <i class="fa-solid fa-plus accord-icon"></i>
               </button>
               <div class="accord-body">
                 <div class="accord-body-inner">
-                  <p>Traditional and contemporary acupuncture, cupping, and Traditional Chinese Medicine to support pain management, hormonal balance, stress relief, and nervous system regulation.</p>
+                  <p>Traditional and facial acupuncture, Tui Na massage, cupping, and children's needleless acupuncture. <!--[cite: 12] --></p>
                   <a href="/cat-acupuncture.html" class="accord-learn">Explore service <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
               </div>
@@ -584,13 +635,13 @@
             <div class="accord-item">
              <button class="accord-trigger" data-image="images/Treatments/massage%20therapy.webp" data-name="Massage Therapy" data-link="cat-massage-therapy.html">
                 <span class="accord-num">04</span>
-                <span class="accord-label">Massage Therapy</span>
+                <span class="accord-label">Massage Therapy</span> <!--[cite: 12] -->
                 <span class="accord-svc-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
                 <i class="fa-solid fa-plus accord-icon"></i>
               </button>
               <div class="accord-body">
                 <div class="accord-body-inner">
-                  <p>Registered massage therapy for pain relief, stress reduction, injury recovery, and relaxation — tailored to your body's specific needs by experienced RMTs.</p>
+                  <p>Therapeutic massage, lymphatic drainage, hot stone massage, and prenatal massage from Registered Massage Therapists. <!--[cite: 12] --></p>
                   <a href="/cat-massage-therapy.html" class="accord-learn">Explore service <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                </div>
@@ -599,13 +650,13 @@
             <div class="accord-item">
               <button class="accord-trigger" data-image="images/Treatments/osteopathy.webp" data-name="Osteopathy" data-link="cat-osteopathy.html">
                 <span class="accord-num">05</span>
-                <span class="accord-label">Osteopathy</span>
+                <span class="accord-label">Osteopathy</span> <!--[cite: 12] -->
                 <span class="accord-svc-icon"><i class="fa-solid fa-person-rays"></i></span>
                 <i class="fa-solid fa-plus accord-icon"></i>
               </button>
               <div class="accord-body">
                 <div class="accord-body-inner">
-                  <p>Hands-on osteopathic manual therapy to restore mobility, reduce pain, and improve overall body function — addressing musculoskeletal issues at their root.</p>
+                  <p>Hands-on osteopathic manual therapy for structural alignment and mobility. <!--[cite: 12] --></p>
                   <a href="/cat-osteopathy.html" class="accord-learn">Explore service <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
               </div>
@@ -614,8 +665,8 @@
 
           <a href="/services.html" class="btn-ihb btn-ihb--primary" style="margin-top:2.5rem;">
             <span class="btn-ihb-blob"></span>
-            <span class="btn-ihb-default">View all services</span>
-            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> View all services</span>
+            <span class="btn-ihb-default">Explore our full range of services</span> <!--[cite: 12] -->
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Explore our full range of services</span> <!--[cite: 12] -->
           </a>
         </div>
 
@@ -634,11 +685,148 @@
     </div>
   </section>
 
-  <section style="padding: 5rem 0; background-color: #f7faf8;">
+  <!-- WHY CHOOSE US (Moved ABOVE the Team Section per request) -->
+  <section class="wcu-section">
+    <div class="container">
+      <div class="wcu-header">
+        <div class="wcu-eyebrow">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <span>Our Promise</span>
+        </div>
+        <h2 class="wcu-heading">Why Choose VeraVita for<br /><em>Naturopathic Care in Calgary?</em></h2> <!--[cite: 12] -->
+      </div>
+      <p style="color: #4a4a4a; line-height: 1.6; max-width: 800px; margin-bottom: 3rem; font-size: 1.05rem;">Patients choose VeraVita because every visit is built around measurable, patient-centred results, not one-size-fits-all treatment. Whether you're booking <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a>, <a href="/cat-iv-therapy.html" class="text-link">IV Therapy</a>, or <a href="/cat-osteopathy.html" class="text-link">Osteopathy</a>, the same evidence-based standards apply. <!--[cite: 12] --></p>
+
+      <div class="wcu-grid">
+        <div class="wcu-item">
+          <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 38s-14-9-14-19a8 8 0 0 1 14-5.3A8 8 0 0 1 38 19c0 10-14 19-14 19z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 36c-3 2-5 3-5 3M32 36c3 2 5 3 5 3M24 44v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M18 26c2 3 4 5 6 6 2-1 4-3 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <h3 class="wcu-item-title">Patient-Centred Approach</h3> <!--[cite: 12] -->
+          <p class="wcu-item-text">Every treatment plan is tailored to your unique health needs, lifestyle, and goals. <!--[cite: 12] --></p>
+        </div>
+        <div class="wcu-item">
+          <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="12" r="7" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M17 12c0 10 4 18 7 18s7-8 7-18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M24 30v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="30" cy="38" r="4" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M10 36h6M32 38h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <h3 class="wcu-item-title">Advanced Diagnostic Tools</h3> <!--[cite: 12] -->
+          <p class="wcu-item-text"><a href="/service-lab-testing.html" class="text-link">Functional lab testing</a> and technology for precise, early, and accurate detection. <!--[cite: 12] --></p>
+        </div>
+        <div class="wcu-item">
+          <svg class="wcu-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 8l3.5 7 7.5 1.1-5.5 5.3 1.3 7.6L24 25.5l-6.8 3.5 1.3-7.6L13 16.1l7.5-1.1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 34l-2 8h24l-2-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 34h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <h3 class="wcu-item-title">Safety & Hygiene Standards</h3> <!--[cite: 12] -->
+          <p class="wcu-item-text">Strict clinical protocols protect your health and safety at every visit. <!--[cite: 12] --></p>
+        </div>
+      </div>
+
+      <div class="wcu-cert-card">
+        <div class="wcu-cert-left">
+          <h3 class="wcu-cert-title">Certified care you can rely on</h3>
+          <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary" style="margin-top:1.5rem;">
+            <span class="btn-ihb-blob"></span>
+            <span class="btn-ihb-default">Book an appointment</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+          </a>
+        </div>
+        <div class="wcu-cert-right">
+          <div class="wcu-cert-badge">
+            <i class="fa-solid fa-certificate wcu-cert-icon"></i>
+            <div>
+              <div class="wcu-cert-badge-title">Certified Practitioners</div>
+              <div class="wcu-cert-badge-sub">Licensed & Regulated</div>
+            </div>
+          </div>
+          <div class="wcu-cert-divider"></div>
+          <div class="wcu-cert-badge">
+            <i class="fa-solid fa-shield-halved wcu-cert-icon"></i>
+            <div>
+              <div class="wcu-cert-badge-title">Evidence-Based Care</div> <!--[cite: 12] -->
+              <div class="wcu-cert-badge-sub">Clinically Verified</div> <!--[cite: 12] -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM SECTION -->
+  <section class="team-section">
+    <div class="team-header-center">
+      <div class="section-label">
+        <i class="fa-solid fa-heart"></i> Top-Rated Care
+      </div>
+      <h2>Meet Our Expert<br /><em>Calgary Practitioners</em></h2> <!--[cite: 12] -->
+      <p>Our team includes <a href="/dr-jill-nazar.html" class="text-link">Dr. Jill Nazar, ND</a> (<a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> and <a href="/cat-iv-therapy.html" class="text-link">IV Therapy</a>), <a href="/dr-viktoriia-taylor.html" class="text-link">Dr. Viktoriia Taylor, DTCM</a>, and <a href="/joseph-wei.html" class="text-link">Joseph Wei</a> (<a href="/cat-acupuncture.html" class="text-link">Acupuncture and TCM</a>), <a href="/jean-wilson-raymond.html" class="text-link">Jean-Wilson Raymond</a> and <a href="/johnvel-sabturani.html" class="text-link">Johnvel Sabturani, RMT</a> (<a href="/cat-massage-therapy.html" class="text-link">Massage Therapy</a>), and <a href="/amy-lutz.html" class="text-link">Amy Lutz, MOMSc</a> (<a href="/cat-osteopathy.html" class="text-link">Osteopathy</a>). Each practitioner brings years of specialized training and a compassionate, whole-person approach to care. Meet the full team on our <a href="/practitioners.html" class="text-link">Practitioners page</a>. <!--[cite: 12] --></p>
+      <a href="/practitioners.html" class="btn-ihb btn-ihb--primary">
+        <span class="btn-ihb-blob"></span>
+        <span class="btn-ihb-default">Meet the full team</span> <!--[cite: 12] -->
+        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Meet the full team</span> <!--[cite: 12] -->
+      </a>
+    </div>
+    
+    <div class="full-width-track">
+      <div class="team-card-large">
+        <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <div class="tc-info">
+          <span class="tc-name">Dr. Jill Nazar</span>
+          <span class="tc-title">Naturopathic Doctor</span>
+        </div>
+      </div>
+      <div class="team-card-large">
+        <img src="images/Practitioner%20Main%20page/Dr.%20Viktoriia%20Taylor,%20DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <div class="tc-info">
+          <span class="tc-name">Dr. Viktoriia Taylor</span>
+          <span class="tc-title">DTCM</span>
+        </div>
+      </div>
+      <div class="team-card-large">
+        <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <div class="tc-info">
+          <span class="tc-name">Joseph Wei</span>
+          <span class="tc-title">Acupuncturist</span>
+        </div>
+      </div>
+      <div class="team-card-large">
+        <img src="images/Practitioner%20Main%20page/Jean-Wilson%20Raymond.webp" alt="Jean-Wilson Raymond, RMT" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <div class="tc-info">
+          <span class="tc-name">Jean-Wilson</span>
+          <span class="tc-title">RMT</span>
+        </div>
+      </div>
+      <div class="team-card-large">
+        <img src="images/Practitioner%20Main%20page/Johnvel%20Sabturani.webp" alt="Johnvel Sabturani, RMT" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <div class="tc-info">
+          <span class="tc-name">Johnvel Sabturani</span>
+          <span class="tc-title">RMT</span>
+        </div>
+      </div>
+      <div class="team-card-large">
+        <img src="images/Practitioner%20Main%20page/Amy%20lutz%20Main%20page.webp" alt="Amy Lutz, MOMSc" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
+        <div class="tc-info">
+          <span class="tc-name">Amy Lutz</span>
+          <span class="tc-title">MOMSc</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section style="padding: 5rem 0; background-color: #ffffff;">
     <div class="container">
       <div style="text-align: center; margin-bottom: 3rem;">
         <div class="section-label">Patient Reviews</div>
-        <h2 class="heading-wrap"><span class="heading-inner">Real patients,<br /><em>real results</em></span></h2>
+        <h2 class="heading-wrap"><span class="heading-inner">What Our Calgary<br /><em>Patients Say</em></span></h2> <!--[cite: 12] -->
+        <p style="color: #4a4a4a; line-height: 1.6; max-width: 800px; margin: 1rem auto 0 auto; font-size: 1.05rem;">Patients consistently highlight how knowledgeable, caring, and thorough <a href="/dr-jill-nazar.html" class="text-link">Dr. Jill Nazar</a> is, from taking the time to understand health concerns to setting realistic, achievable goals. Google reviewers also note the clinic's warm, welcoming atmosphere and clear communication throughout treatment. Read more patient experiences or <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">book an appointment</a> to see the VeraVita difference for yourself. <!--[cite: 12] --></p>
       </div>
 
       <div class="snap-track">
@@ -694,62 +882,137 @@
     </div>
   </section>
 
-  <section class="team-section">
-    <div class="team-header-center">
-      <div class="section-label">
-        <i class="fa-solid fa-heart"></i> Here When You Need Us
+  <!-- SEO UPGRADE: HOMEPAGE FAQ SECTION -->
+  <section class="hp-faq-section">
+    <div class="container">
+      <div class="hp-faq-header">
+        <div class="section-label">Common Inquiries</div>
+        <h2>Frequently Asked Questions</h2> <!--[cite: 12] -->
+        <p style="color: #4a4a4a; font-size: 1.05rem;">Find answers about VeraVita's Calgary naturopathic services.</p> <!--[cite: 12] -->
       </div>
-      <h2>Caring professionals,<br /><em>Advanced solutions</em></h2>
-      <p>Each practitioner brings years of experience, specialised knowledge, and a compassionate approach to help you achieve optimal health.</p>
-      <a href="/about.html" class="btn-ihb btn-ihb--primary">
-        <span class="btn-ihb-blob"></span>
-        <span class="btn-ihb-default">Meet our entire team</span>
-        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Meet our entire team</span>
-      </a>
-    </div>
-    
-    <div class="full-width-track">
-      <div class="team-card-large">
-        <img src="images/Practitioner%20Main%20page/Dr.%20Jill%20Nazar,%20ND.webp" alt="Dr. Jill Nazar, ND" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        <div class="tc-info">
-          <span class="tc-name">Dr. Jill Nazar</span>
-          <span class="tc-title">Naturopathic Doctor</span>
+      
+      <div class="hp-faq-list">
+        
+        <div class="hp-faq-item">
+          <button class="hp-faq-trigger">
+            <span>What does a naturopathic doctor treat?</span> <!--[cite: 12] -->
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="hp-faq-body">
+            <div class="hp-faq-body-inner">
+              <a href="/cat-naturopathic.html" class="text-link">Naturopathic doctors</a> treat chronic fatigue, hormonal imbalance, digestive issues, weight concerns, fertility challenges, and pediatric health conditions using <a href="/service-lab-testing.html" class="text-link">functional lab testing</a>, nutrition, and natural medicine focused on root causes. <!--[cite: 12] -->
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="team-card-large">
-        <img src="images/Practitioner%20Main%20page/Dr.%20Viktoriia%20Taylor,%20DTCM.webp" alt="Dr. Viktoriia Taylor, DTCM" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        <div class="tc-info">
-          <span class="tc-name">Dr. Viktoriia Taylor</span>
-          <span class="tc-title">DTCM</span>
+
+        <div class="hp-faq-item">
+          <button class="hp-faq-trigger">
+            <span>How is naturopathic medicine different from conventional medicine?</span> <!--[cite: 12] -->
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="hp-faq-body">
+            <div class="hp-faq-body-inner">
+              <a href="/cat-naturopathic.html" class="text-link">Naturopathic medicine</a> focuses on identifying and addressing the underlying cause of a condition using natural, evidence-based therapies, while working alongside conventional care rather than replacing it when needed. <!--[cite: 12] -->
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="team-card-large">
-        <img src="images/Practitioner%20Main%20page/Joseph%20Wei.webp" alt="Joseph Wei" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        <div class="tc-info">
-          <span class="tc-name">Joseph Wei</span>
-          <span class="tc-title">Acupuncturist</span>
+
+        <div class="hp-faq-item">
+          <button class="hp-faq-trigger">
+            <span>Do you offer IV therapy in Calgary?</span> <!--[cite: 12] -->
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="hp-faq-body">
+            <div class="hp-faq-body-inner">
+              Yes. VeraVita offers a full range of <a href="/cat-iv-therapy.html" class="text-link">IV Therapy in Calgary</a>, including <a href="/service-nad-iv.html" class="text-link">NAD+ infusions</a>, <a href="/service-iv-therapy.html" class="text-link">Myers' Cocktail</a>, high-dose Vitamin C, and <a href="/service-vitamin-injections.html" class="text-link">vitamin injections</a> tailored to your lab results and goals. <!--[cite: 12] -->
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="team-card-large">
-        <img src="images/Practitioner%20Main%20page/Jean-Wilson%20Raymond.webp" alt="Jean-Wilson Raymond, RMT" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        <div class="tc-info">
-          <span class="tc-name">Jean-Wilson</span>
-          <span class="tc-title">RMT</span>
+
+        <div class="hp-faq-item">
+          <button class="hp-faq-trigger">
+            <span>Is acupuncture covered by insurance in Calgary?</span> <!--[cite: 12] -->
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="hp-faq-body">
+            <div class="hp-faq-body-inner">
+              Many extended health plans cover <a href="/cat-acupuncture.html" class="text-link">acupuncture</a> treatment. We recommend checking your specific plan for coverage details and direct billing options before your visit. <!--[cite: 12] -->
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="team-card-large">
-        <img src="images/Practitioner%20Main%20page/Johnvel%20Sabturani.webp" alt="Johnvel Sabturani, RMT" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        <div class="tc-info">
-          <span class="tc-name">Johnvel Sabturani</span>
-          <span class="tc-title">RMT</span>
+
+        <div class="hp-faq-item">
+          <button class="hp-faq-trigger">
+            <span>What should I expect at my first visit?</span> <!--[cite: 12] -->
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="hp-faq-body">
+            <div class="hp-faq-body-inner">
+              Your first visit includes a detailed health history review, discussion of your goals, and — depending on the service — a physical assessment or treatment plan. Initial <a href="/cat-naturopathic.html" class="text-link">naturopathic consultations</a> typically run 60–75 minutes. <!--[cite: 12] -->
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="team-card-large">
-        <img src="images/Practitioner%20Main%20page/Amy%20lutz%20Main%20page.webp" alt="Amy Lutz, MOMSc" loading="lazy" decoding="async" onerror="this.src='images/placeholder-practitioner.webp'" />
-        <div class="tc-info">
-          <span class="tc-name">Amy Lutz</span>
-          <span class="tc-title">MOMSc</span>
+
+        <div class="hp-faq-item">
+          <button class="hp-faq-trigger">
+            <span>Do you treat children?</span> <!--[cite: 12] -->
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="hp-faq-body">
+            <div class="hp-faq-body-inner">
+              Yes. We offer <a href="/service-pediatric-care.html" class="text-link">Pediatric Naturopathic Care</a> and <a href="/service-acupuncture-childrens.html" class="text-link">Children's Needleless Acupuncture</a> for children from infancy through adolescence, using gentle, age-appropriate techniques. <!--[cite: 12] -->
+            </div>
+          </div>
         </div>
+
+        <div class="hp-faq-item">
+          <button class="hp-faq-trigger">
+            <span>How much does a naturopathic consultation cost in Calgary?</span> <!--[cite: 12] -->
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="hp-faq-body">
+            <div class="hp-faq-body-inner">
+              A 60-minute <a href="/cat-naturopathic.html" class="text-link">Initial Naturopathic Consultation</a> at VeraVita is $220 CAD. Follow-up visits range from $50 to $220 depending on length. See our full <a href="/pricing.html" class="text-link">pricing</a> for details. <!--[cite: 12] -->
+            </div>
+          </div>
+        </div>
+
+        <div class="hp-faq-item">
+          <button class="hp-faq-trigger">
+            <span>Where is VeraVita located?</span> <!--[cite: 12] -->
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="hp-faq-body">
+            <div class="hp-faq-body-inner">
+              <a href="/about.html" class="text-link">VeraVita Naturopathic Clinic</a> is located at Unit 104, 14505 Bannister Road SE, Calgary, AB T2X 3J3, serving patients throughout Calgary and nearby communities. <!--[cite: 12] -->
+            </div>
+          </div>
+        </div>
+
+        <div class="hp-faq-item">
+          <button class="hp-faq-trigger">
+            <span>Do you offer virtual or telemedicine appointments?</span> <!--[cite: 12] -->
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="hp-faq-body">
+            <div class="hp-faq-body-inner">
+              Yes. <a href="/cat-naturopathic.html" class="text-link">Telemedicine naturopathic consultations</a> are available by video or phone for patients who cannot visit the clinic in person. <!--[cite: 12] -->
+            </div>
+          </div>
+        </div>
+
+        <div class="hp-faq-item">
+          <button class="hp-faq-trigger">
+            <span>How do I book an appointment?</span> <!--[cite: 12] -->
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="hp-faq-body">
+            <div class="hp-faq-body-inner">
+              You can <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">book an appointment online</a> in minutes, or contact our Calgary clinic directly by phone or email. <!--[cite: 12] -->
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -758,20 +1021,13 @@
 
 <footer class="sf-footer">
   <div class="sf-fixed">
-    <div class="sf-deco" aria-hidden="true">
-      <div class="sf-deco-1"></div>
-      <div class="sf-deco-2"></div>
-      <div class="sf-deco-3"></div>
-    </div>
+    <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
     <div class="sf-body">
       <div class="sf-top">
         <div class="sf-brand">
           <a href="/" class="sf-logo">
             <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="sf-logo-fallback" style="display:none;">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg>
-              <span>VeraVita</span>
-            </div>
+            <div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div>
           </a>
           <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
           <div class="sf-social">
@@ -832,7 +1088,7 @@
 <script src="js/main.js" defer></script>
 
 <script>
-/* Simple Accordion Logic */
+/* Simple Accordion Logic & FAQ Logic */
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.accord-trigger').forEach(function(btn) {
     btn.addEventListener('click', function() {
@@ -854,6 +1110,13 @@ document.addEventListener('DOMContentLoaded', function() {
           preview.style.opacity = '1';
         }, 200);
       }
+    });
+  });
+
+  document.querySelectorAll('.hp-faq-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.parentElement;
+      item.classList.toggle('open');
     });
   });
 });
