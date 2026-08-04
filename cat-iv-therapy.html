@@ -58,12 +58,12 @@
     display: flex;
     align-items: center;
     padding: 4rem 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 100%), url('images/Service Hero secion images/IV 16-9.webp') center/cover no-repeat;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 100%), url('images/Service%20Hero%20secion%20images/IV%2016-9.webp') center/cover no-repeat;
   }
   
   @media (max-width: 768px) {
     .cat-hero {
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%), url('images/Service Hero secion images/IV 9-16.webp') center/cover no-repeat;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%), url('images/Service%20Hero%20secion%20images/IV%209-16.webp') center/cover no-repeat;
     }
   }
 
@@ -140,13 +140,8 @@
   }
   .intro-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-  }
-  @media (min-width: 768px) {
-    .intro-grid {
-      grid-template-columns: 1fr 1fr;
-    }
   }
   
   .intro-card {
@@ -179,7 +174,7 @@
   }
   .intro-card h3 {
     font-family: 'Libre Caslon Text', serif;
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     color: #1e3528;
     margin-bottom: 1.25rem;
     line-height: 1.3;
@@ -268,8 +263,8 @@
   <div class="container">
   <div class="cat-hero-content">
   <span class="section-label" style="color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem; display:block; margin-bottom:1rem;">Service Category</span>
-  <h1 class="cat-hero-title">IV Therapy<br /><em>in Calgary, AB</em></h1> <!--[cite: 8] -->
-  <p class="cat-hero-desc">VeraVita offers IV Therapy in Calgary including NAD+ infusions, Myers' Cocktail drips, high-dose Vitamin C, and vitamin B12 injections — delivering nutrients directly into the bloodstream for rapid absorption. Every IV is guided by <a href="/service-lab-testing.html" class="text-link">Functional Lab Testing</a> and personalized to your goals. Combine treatment with <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> for complete root-cause care. Serving Calgary and area.</p> <!--[cite: 8] -->
+  <h1 class="cat-hero-title">IV Therapy<br /><em>in Calgary, AB</em></h1> 
+  <p class="cat-hero-desc">VeraVita offers IV Therapy in Calgary including NAD+ infusions, Myers' Cocktail drips, high-dose Vitamin C, and vitamin B12 injections — delivering nutrients directly into the bloodstream for rapid absorption. Every IV is guided by <a href="/service-lab-testing.html" class="text-link">Functional Lab Testing</a> and personalized to your goals. Combine treatment with <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> for complete root-cause care. Serving Calgary and area.</p> 
   <div class="cat-hero-lead"><i class="fa-solid fa-droplet"></i> Led by Dr. Jill Nazar, ND — Naturopathic Doctor & Founder</div>
   <a href="#pricing" class="pricing-link"><i class="fa-solid fa-tag" style="font-size:0.8rem"></i> View Pricing <i class="fa-solid fa-arrow-down" style="font-size:0.75rem; margin-left:0.25rem;"></i></a>
   </div>
@@ -282,23 +277,29 @@
       
       <!-- Primary Intro Block -->
       <div class="intro-top">
-        <h2>What Is <em>IV Therapy?</em></h2> <!--[cite: 8] -->
-        <p>IV therapy is the delivery of vitamins, minerals, and other nutrients directly into the bloodstream through an intravenous drip, bypassing the digestive system entirely. Because nutrients reach your cells immediately at full concentration, patients often notice benefits — more energy, sharper focus, faster recovery — within an hour of treatment. <!--[cite: 8] --></p>
-        <p>It's one of the most direct ways to correct nutrient deficiencies identified through <a href="/service-lab-testing.html" class="text-link">Functional Lab Testing</a> and support the body during illness, stress, or high physical demand. <!--[cite: 8] --></p>
+        <h2>What Is <em>IV Therapy?</em></h2> 
+        <p>IV therapy is the delivery of vitamins, minerals, and other nutrients directly into the bloodstream through an intravenous drip, bypassing the digestive system entirely. Because nutrients reach your cells immediately at full concentration, patients often notice benefits — more energy, sharper focus, faster recovery — within an hour of treatment.</p> 
+        <p>It's one of the most direct ways to correct nutrient deficiencies identified through <a href="/service-lab-testing.html" class="text-link">Functional Lab Testing</a> and support the body during illness, stress, or high physical demand.</p> 
       </div>
 
-      <!-- 2-Column Details Grid -->
+      <!-- Details Grid -->
       <div class="intro-grid">
         <div class="intro-card">
           <div class="intro-card-icon"><i class="fa-solid fa-vial"></i></div>
-          <h3>IV Therapy in Calgary:<br /><em>How It Works</em></h3> <!--[cite: 8] -->
-          <p>At VeraVita, IV therapy is never one-size-fits-all. Dr. Jill Nazar, ND, uses <a href="/service-lab-testing.html" class="text-link">functional lab testing</a> to identify your specific deficiencies and health goals before formulating your IV. Whether you need a <a href="/service-iv-therapy.html" class="text-link">Personalized IV Therapy</a> energy-boosting Myers' Cocktail, a high-dose <a href="/service-nad-iv.html" class="text-link">NAD+ infusion</a>, or an immune-support drip, every formula is built around your bloodwork, not a generic menu. <!--[cite: 8] --></p>
+          <h3>IV Therapy in Calgary:<br /><em>How It Works</em></h3> 
+          <p>At VeraVita, IV therapy is never one-size-fits-all. <a href="/dr-jill-nazar.html" class="text-link">Dr. Jill Nazar, ND</a>, uses <a href="/service-lab-testing.html" class="text-link">functional lab testing</a> to identify your specific deficiencies and health goals before formulating your IV. Whether you need a <a href="/service-iv-therapy.html" class="text-link">Personalized IV Therapy</a> energy-boosting Myers' Cocktail, a high-dose <a href="/service-nad-iv.html" class="text-link">NAD+ infusion</a>, or an immune-support drip, every formula is built around your bloodwork, not a generic menu.</p> 
         </div>
         
         <div class="intro-card">
           <div class="intro-card-icon"><i class="fa-solid fa-shield-heart"></i></div>
-          <h3>Who Can Benefit From<br /><em>IV Therapy?</em></h3> <!--[cite: 8] -->
-          <p>IV therapy in Calgary is popular among patients managing chronic fatigue, frequent illness, poor nutrient absorption, high stress, athletic recovery needs, or age-related decline in cellular energy. It's also frequently used as a complement to a broader <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> treatment plan. <!--[cite: 8] --></p>
+          <h3>Who Can Benefit From<br /><em>IV Therapy?</em></h3> 
+          <p>IV therapy in Calgary is popular among patients managing chronic fatigue, frequent illness, poor nutrient absorption, high stress, athletic recovery needs, or age-related decline in cellular energy. It's also frequently used as a complement to a broader <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> treatment plan.</p> 
+        </div>
+
+        <div class="intro-card">
+          <div class="intro-card-icon"><i class="fa-solid fa-notes-medical"></i></div>
+          <h3>Is IV Therapy<br /><em>Safe?</em></h3> 
+          <p>IV therapy is generally safe when administered by trained naturopathic doctors in a clinical setting, as it is at VeraVita. Before your first IV, our team reviews your health history — often alongside a <a href="/service-naturopathic-care.html" class="text-link">Naturopathic Care</a> consultation — to ensure the treatment is appropriate for you, particularly if you have chronic liver, heart, or kidney conditions.</p> 
         </div>
       </div>
 
@@ -308,7 +309,7 @@
   <section class="svc-section">
   <div class="container">
   <div class="svc-section-header" style="margin: 0 auto 3rem auto; text-align: center; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
-  <h2>Types of IV Therapy and<br /><em>Vitamin Injections We Offer</em></h2> <!--[cite: 8] -->
+  <h2>Types of IV Therapy and<br /><em>Vitamin Injections We Offer</em></h2> 
   <p style="color:#4a4a4a;">Choose a service below to learn more — what it involves, key benefits, and how to book.</p>
   </div>
   <div class="svc-grid" style="border-top:1px solid var(--gray-5);border-left:1px solid var(--gray-5); background-color: #fff;">
@@ -316,8 +317,8 @@
     <div class="svc-cell">
       <div class="svc-cell-body">
         <div class="svc-cell-icon"><i class="fa-solid fa-flask"></i></div>
-        <h3 class="svc-cell-name">Functional Lab Testing</h3> <!--[cite: 8] -->
-        <p class="svc-cell-desc">Advanced panels uncovering hormonal, nutrient, and metabolic imbalances.</p> <!--[cite: 8] -->
+        <h3 class="svc-cell-name">Functional Lab Testing</h3> 
+        <p class="svc-cell-desc">Advanced panels uncovering hormonal, nutrient, and metabolic imbalances.</p> 
         <a href="/service-lab-testing.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -325,8 +326,8 @@
     <div class="svc-cell">
       <div class="svc-cell-body">
         <div class="svc-cell-icon"><i class="fa-solid fa-wheat-awn-circle-exclamation"></i></div>
-        <h3 class="svc-cell-name">Food Sensitivity Testing</h3> <!--[cite: 8] -->
-        <p class="svc-cell-desc">Identifying delayed immune reactions behind chronic symptoms.</p> <!--[cite: 8] -->
+        <h3 class="svc-cell-name">Food Sensitivity Testing</h3> 
+        <p class="svc-cell-desc">Identifying delayed immune reactions behind chronic symptoms.</p> 
         <a href="/service-food-sensitivity.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -334,8 +335,8 @@
     <div class="svc-cell">
       <div class="svc-cell-body">
         <div class="svc-cell-icon"><i class="fa-solid fa-dna"></i></div>
-        <h3 class="svc-cell-name">NAD⁺ IV Therapy</h3> <!--[cite: 8] -->
-        <p class="svc-cell-desc">High-dose infusions for cellular energy, cognitive clarity, and recovery.</p> <!--[cite: 8] -->
+        <h3 class="svc-cell-name">NAD⁺ IV Therapy</h3> 
+        <p class="svc-cell-desc">High-dose infusions for cellular energy, cognitive clarity, and recovery.</p> 
         <a href="/service-nad-iv.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -343,8 +344,8 @@
     <div class="svc-cell">
       <div class="svc-cell-body">
         <div class="svc-cell-icon"><i class="fa-solid fa-droplet"></i></div>
-        <h3 class="svc-cell-name">Personalized IV Therapy</h3> <!--[cite: 8] -->
-        <p class="svc-cell-desc">Myers' Cocktail, high-dose Vitamin C, and immune-boosting drips.</p> <!--[cite: 8] -->
+        <h3 class="svc-cell-name">Personalized IV Therapy</h3> 
+        <p class="svc-cell-desc">Myers' Cocktail, high-dose Vitamin C, and immune-boosting drips.</p> 
         <a href="/service-iv-therapy.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -352,8 +353,8 @@
     <div class="svc-cell">
       <div class="svc-cell-body">
         <div class="svc-cell-icon"><i class="fa-solid fa-syringe"></i></div>
-        <h3 class="svc-cell-name">Vitamin Injections</h3> <!--[cite: 8] -->
-        <p class="svc-cell-desc">B12, B-complex, and vitamin D shots for rapid absorption.</p> <!--[cite: 8] -->
+        <h3 class="svc-cell-name">Vitamin Injections</h3> 
+        <p class="svc-cell-desc">B12, B-complex, and vitamin D shots for rapid absorption.</p> 
         <a href="/service-vitamin-injections.html" class="svc-cell-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
@@ -393,21 +394,21 @@
   <div class="container">
   <div class="svc-section-header" style="margin: 0 auto 3rem auto; text-align: center; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
   <p class="section-tag" style="display:flex;justify-content:center;align-items:center;margin:0 auto 0.75rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem; width:fit-content;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
-  <h2>IV Therapy<br /><em>Pricing in Calgary</em></h2> <!--[cite: 8] -->
-  <p style="color:#4a4a4a; font-size:1.05rem;">Prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">booking portal</a> for current rates and availability.</p> <!--[cite: 8] -->
+  <h2>IV Therapy<br /><em>Pricing in Calgary</em></h2> 
+  <p style="color:#4a4a4a; font-size:1.05rem;">Prices are in CAD. Refer to our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">booking portal</a> for current rates and availability.</p> 
   </div>
   <div class="price-table-wrap" style="background:#fff;">
   <table class="price-table">
   <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
   <tbody>
-  <tr><td>Initial IV</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr> <!--[cite: 8] -->
-  <tr><td>IV Therapy</td><td class="td-dur">70–75 min</td><td class="td-price">$250.00 – $260.00</td></tr> <!--[cite: 8] -->
-  <tr><td>Naturopathic Intravenous Treatment</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr> <!--[cite: 8] -->
-  <tr><td>MultiVitamin + Glutathione IV</td><td class="td-dur">60 min</td><td class="td-price">$210.00</td></tr> <!--[cite: 8] -->
-  <tr><td>Glutathione and Vit C IV</td><td class="td-dur">30 min</td><td class="td-price">$140.00</td></tr> <!--[cite: 8] -->
-  <tr><td>NAD IM Injection</td><td class="td-dur">15 min</td><td class="td-price">$65.00</td></tr> <!--[cite: 8] -->
-  <tr><td>Vitamin B12 Injection</td><td class="td-dur">15 min</td><td class="td-price">$50.00</td></tr> <!--[cite: 8] -->
-  <tr><td>Vitamin D3 Injection</td><td class="td-dur">15 min</td><td class="td-price">$45.00</td></tr> <!--[cite: 8] -->
+  <tr><td>Initial IV</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr> 
+  <tr><td>IV Therapy</td><td class="td-dur">70–75 min</td><td class="td-price">$250.00 – $260.00</td></tr> 
+  <tr><td>Naturopathic Intravenous Treatment</td><td class="td-dur">60 min</td><td class="td-price">$220.00</td></tr> 
+  <tr><td>MultiVitamin + Glutathione IV</td><td class="td-dur">60 min</td><td class="td-price">$210.00</td></tr> 
+  <tr><td>Glutathione and Vit C IV</td><td class="td-dur">30 min</td><td class="td-price">$140.00</td></tr> 
+  <tr><td>NAD IM Injection</td><td class="td-dur">15 min</td><td class="td-price">$65.00</td></tr> 
+  <tr><td>Vitamin B12 Injection</td><td class="td-dur">15 min</td><td class="td-price">$50.00</td></tr> 
+  <tr><td>Vitamin D3 Injection</td><td class="td-dur">15 min</td><td class="td-price">$45.00</td></tr> 
   </tbody>
   </table>
   </div>
@@ -482,6 +483,7 @@
 </div>
 </footer>
 
+<!-- UPGRADE 3: ADDED DEFER ATTRIBUTE TO PREVENT RENDERING BLOCKS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="js/main.js" defer></script>
