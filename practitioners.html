@@ -73,7 +73,6 @@
       justify-content: center;
       text-align: center;
       padding: 4rem 20px;
-      /* Dark green overlay pushes the photo back so white text pops */
       background: linear-gradient(rgba(30, 53, 40, 0.65), rgba(30, 53, 40, 0.65)), url('images/Practitioner%20Hero%20-%20Desktop.webp') center/cover no-repeat;
       background-attachment: fixed;
     }
@@ -91,7 +90,7 @@
     }
 
     .prac-hero .section-label {
-      color: #b0c4b1; /* Light sage green */
+      color: #b0c4b1; 
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -101,16 +100,16 @@
     }
 
     .prac-hero-title {
-      color: #ffffff; /* Pure white text */
+      color: #ffffff; 
       font-family: 'Libre Caslon Text', serif;
       font-size: clamp(2.5rem, 6vw, 4.5rem);
       line-height: 1.1;
       margin-bottom: 1.5rem;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Soft shadow for extra separation */
+      text-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
     .prac-hero-sub {
-      color: rgba(255, 255, 255, 0.9); /* Soft white */
+      color: rgba(255, 255, 255, 0.9); 
       font-size: 1.1rem;
       line-height: 1.6;
       max-width: 850px;
@@ -119,7 +118,7 @@
 
     /* ALTERNATING SECTION BACKGROUNDS */
     .prac-grid-section { background-color: #ffffff; padding: 5rem 0; }
-    .jot-section { background-color: #ffffff !important; } /* White to alternate after CTA */
+    .jot-section { background-color: #ffffff !important; } 
 
     /* OVERRIDES FOR LEGIBILITY ON LIGHT BACKGROUNDS */
     .prac-name { color: #1e3528; }
@@ -139,13 +138,12 @@
       position: absolute; top: -60px; left: 0;
       width: 100%; height: calc(100% + 120px); z-index: 0;
       pointer-events: none;
-      will-change: transform; /* GPU Acceleration */
+      will-change: transform; 
       background: linear-gradient(rgba(247,250,248,0.95), rgba(247,250,248,0.95)),
         url('images/underlay%20pic%20desktop/Underlay%20pic%202.webp') center / cover no-repeat;
     }
     .prac-cta-section .prac-cta-inner { position: relative; z-index: 1; }
 
-    /* Fix CTA text colors */
     .prac-cta-section .section-label { color: #4a6b53; }
     .prac-cta-title { color: #1e3528; }
     .prac-cta-sub { color: #4a4a4a; }
@@ -347,11 +345,11 @@
     </div>
   </section>
 
-  <!-- JOIN OUR TEAM SECTION -->
+  <!-- JOIN OUR TEAM SECTION (Updated for active hiring) -->
   <section class="jot-section">
     <div class="jot-inner">
 
-      <!-- Left: Replaced Video with Image -->
+      <!-- Left: Image -->
       <div class="jot-image-wrap">
         <img src="images/careers.webp" alt="Join the VeraVita Clinic Team" loading="lazy" decoding="async" />
       </div>
@@ -360,7 +358,7 @@
       <div class="jot-content">
         <span class="section-label" style="color: #4a6b53;"><i class="fa-solid fa-seedling"></i> &nbsp;Careers</span>
         <h2 class="jot-title">Interested in<br /><em>joining us?</em></h2>
-        <p class="jot-desc">We don't have any open roles at the moment, but we welcome introductions from passionate practitioners and support staff who share our commitment to holistic, patient-centred care. Send us your CV and we'll reach out when a suitable opportunity opens up.</p>
+        <p class="jot-desc">We are actively looking for <strong>Naturopathic Doctors, Chiropractors, Registered Massage Therapists (RMTs), Osteopaths, Acupuncturists, and Nurse Practitioners</strong> to join our growing expert team. Other clinical and administrative positions are also open!</p>
         <ul class="jot-perks" style="color: #1e3528;">
           <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Collaborative & supportive clinic culture</li>
           <li><i class="fa-solid fa-check" style="color:#4a6b53"></i> Competitive compensation & benefits</li>
@@ -369,8 +367,8 @@
         </ul>
         <a href="/careers.html" class="btn-ihb btn-ihb--primary">
           <span class="btn-ihb-blob"></span>
-          <span class="btn-ihb-default">Learn more</span>
-          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Learn more</span>
+          <span class="btn-ihb-default">Apply Now</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Apply Now</span>
         </a>
       </div>
 
@@ -481,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function () {
           trigger: section,
           start: 'top bottom',
           end: 'bottom top',
-          scrub: 1, // Optimized scrub weight
+          scrub: 1, 
           invalidateOnRefresh: true
         }
       }
