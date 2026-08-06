@@ -131,6 +131,46 @@
       text-align: center;
       margin-bottom: 1rem;
     }
+
+    /* VISUAL PILLS FOR CAREER POSITIONS */
+    .role-pills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem auto 2.5rem auto;
+      max-width: 900px;
+    }
+    .role-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.5rem;
+      background: #f7faf8;
+      border: 1px solid rgba(114, 140, 105, 0.2);
+      border-radius: 2rem;
+      color: #1e3528;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    .role-pill i {
+      color: #4a6b53;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    .role-pill:hover {
+      background: #4a6b53;
+      color: #ffffff;
+      border-color: #4a6b53;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+    .role-pill:hover i {
+      color: #ffffff;
+    }
   </style>
 </head>
 <body>
@@ -192,27 +232,38 @@
         <img src="images/Career%20page%20-%20Hero%20section%20desktop.webp" alt="VeraVita Clinic Careers Background" class="careers-hero-bg" fetchpriority="high" />
       </picture>
       <div class="careers-hero-overlay"></div>
-      <!-- OVERRIDE CONTAINER STYLES TO FORCE FLEX CENTERING -->
       <div class="container" style="position: relative; z-index: 2; width: 100%; display: flex; justify-content: center; align-items: center;">
         <div class="careers-hero-inner">
           <span class="section-label">Careers at VeraVita</span>
-          <h1>Careers at Our Naturopathic<br /><em>Clinic in Calgary</em></h1> <!--[cite: 6] -->
-          <p class="careers-hero-desc">VeraVita Naturopathic Clinic in Calgary welcomes Expert practitioners across <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a>, <a href="/cat-acupuncture.html" class="text-link">Acupuncture</a>, <a href="/cat-massage-therapy.html" class="text-link">Massage Therapy</a>, and <a href="/cat-osteopathy.html" class="text-link">Osteopathy</a> to join our collaborative, patient-centred team. Explore current openings and learn what makes VeraVita a Top-Rated place to grow your practice. <a href="/contact.html" class="text-link">Contact us</a> to inquire about career opportunities today. <!--[cite: 6] --></p>
+          <h1>Careers at Our Naturopathic<br /><em>Clinic in Calgary</em></h1>
+          <p class="careers-hero-desc">VeraVita Naturopathic Clinic in Calgary welcomes Expert practitioners across <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a>, <a href="/cat-acupuncture.html" class="text-link">Acupuncture</a>, <a href="/cat-massage-therapy.html" class="text-link">Massage Therapy</a>, and <a href="/cat-osteopathy.html" class="text-link">Osteopathy</a> to join our collaborative, patient-centred team. Explore current openings and learn what makes VeraVita a Top-Rated place to grow your practice. <a href="/contact.html" class="text-link">Contact us</a> to inquire about career opportunities today.</p>
         </div>
       </div>
     </section>
 
-    <!-- OPEN POSITIONS -->
+    <!-- OPEN POSITIONS WITH VISUAL TABS/PILLS -->
     <section class="careers-positions" style="padding: 6rem 0;">
       <div class="container">
-        <div class="careers-section-head reveal" style="text-align:center;max-width:850px;margin:0 auto">
+        <div class="careers-section-head reveal" style="text-align:center;max-width:950px;margin:0 auto">
           <span class="section-label" style="color: #4a6b53; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem;">Open Positions</span>
-          <h2 style="color: #1e3528; font-family: 'Libre Caslon Text', serif; font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1.5rem;">No positions <em>open at this time</em></h2>
-          <p style="font-size: 1.05rem; color: #4a4a4a; line-height: 1.7; margin-bottom: 1.5rem;">We're not actively hiring right now. If you'd like to be considered for future openings, please send us a general application and we'll keep it on file.</p>
-          <a href="mailto:vnc@veravitaclinic.com?subject=General Application – VeraVita" class="btn-ihb btn-ihb--primary" style="margin-top:1.5rem">
+          <h2 style="color: #1e3528; font-family: 'Libre Caslon Text', serif; font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1.5rem;">We are currently <em>hiring</em></h2>
+          <p style="font-size: 1.05rem; color: #4a4a4a; line-height: 1.7;">We are actively looking to expand our expert team. If you specialize in any of the following fields, we'd love to hear from you!</p>
+          
+          <div class="role-pills-wrap">
+            <div class="role-pill"><i class="fa-solid fa-leaf"></i> Naturopathic Doctors</div>
+            <div class="role-pill"><i class="fa-solid fa-bone"></i> Chiropractors</div>
+            <div class="role-pill"><i class="fa-solid fa-hands"></i> Registered Massage Therapists</div>
+            <div class="role-pill"><i class="fa-solid fa-person-rays"></i> Osteopaths</div>
+            <div class="role-pill"><i class="fa-solid fa-hand-sparkles"></i> Acupuncturists</div>
+            <div class="role-pill"><i class="fa-solid fa-user-nurse"></i> Nurse Practitioners</div>
+          </div>
+
+          <p style="font-size: 1.05rem; color: #4a4a4a; line-height: 1.7; margin-bottom: 2rem;">Other clinical and administrative positions are also open. Even if you don't see your role above, feel free to introduce yourself.</p>
+
+          <a href="mailto:vnc@veravitaclinic.com?subject=Job Application – VeraVita" class="btn-ihb btn-ihb--primary">
             <span class="btn-ihb-blob"></span>
-            <span class="btn-ihb-default">Send a general application</span>
-            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Send a general application</span>
+            <span class="btn-ihb-default">Apply Now</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Apply Now</span>
           </a>
         </div>
       </div>
@@ -221,13 +272,17 @@
     <!-- WHY VERAVITA -->
     <section class="careers-why" style="background: #f7faf8; padding: 6rem 0;">
       <div class="container">
-        <div class="careers-why-inner">
-          <div class="careers-why-text reveal" style="text-align: center; max-width: 800px; margin: 0 auto 4rem auto;">
-            <span class="section-label" style="color: #4a6b53; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem;">Why VeraVita</span>
+        <div class="careers-why-inner" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
+          
+          <div class="careers-why-text reveal" style="flex: 1 1 400px; text-align: center; margin: 0;">
+            <div style="margin-bottom: 1.5rem;">
+              <span class="section-label" style="color: #4a6b53; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem;">Why VeraVita</span>
+            </div>
             <h2 style="color: #1e3528; font-family: 'Libre Caslon Text', serif; font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1.5rem;">A place where great practitioners <em>thrive</em></h2>
-            <p style="font-size: 1.05rem; color: #4a4a4a; line-height: 1.7;">We've built an environment where practitioners are supported, respected, and given the tools to do their best work — so patients get the best possible care.</p>
+            <p style="font-size: 1.05rem; color: #4a4a4a; line-height: 1.7; max-width: 500px; margin: 0 auto;">We've built an environment where practitioners are supported, respected, and given the tools to do their best work — so patients get the best possible care.</p>
           </div>
-          <div class="careers-why-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+          
+          <div class="careers-why-grid" style="flex: 1 1 500px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
             <div class="careers-perk reveal" style="background: #fff; padding: 2.5rem; border-radius: 1rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
               <div class="careers-perk-icon" style="font-size: 2rem; color: #4a6b53; margin-bottom: 1.5rem;"><i class="fa-solid fa-people-group"></i></div>
               <h4 style="color: #1e3528; font-family: 'Libre Caslon Text', serif; font-size: 1.25rem; margin-bottom: 1rem;">Collaborative Team</h4>
@@ -249,20 +304,21 @@
               <p style="color: #4a4a4a; line-height: 1.6;">Work from a beautifully designed, fully-equipped clinic in the heart of Calgary with a warm, welcoming atmosphere.</p>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
 
     <!-- STAY IN TOUCH -->
-    <section class="careers-cta" style="padding: 6rem 0;">
+    <section class="careers-cta" style="padding: 6rem 0; background-color: #1e3528;">
       <div class="container">
         <div class="careers-cta-inner reveal" style="text-align: center; max-width: 700px; margin: 0 auto;">
-          <h2 style="color: #1e3528; font-family: 'Libre Caslon Text', serif; font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1.5rem;">Stay in touch</h2>
-          <p style="font-size: 1.05rem; color: #4a4a4a; line-height: 1.7; margin-bottom: 2rem;">We'll update this page as soon as we have open roles. In the meantime, we welcome your CV and a short intro — we'll reach out when a suitable opportunity opens up.</p>
-          <a href="mailto:vnc@veravitaclinic.com?subject=General Application – VeraVita" class="btn-ihb btn-ihb--primary">
+          <h2 style="color: #ffffff; font-family: 'Libre Caslon Text', serif; font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1.5rem;">Join our team</h2>
+          <p style="font-size: 1.05rem; color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin-bottom: 2rem;">If you are a Naturopathic Doctor, Chiropractor, RMT, Osteopath, Acupuncturist, Nurse Practitioner, or hold another clinical or administrative role, we welcome your CV and a short intro.</p>
+          <a href="mailto:vnc@veravitaclinic.com?subject=Job Application – VeraVita" class="btn-ihb btn-ihb--primary">
             <span class="btn-ihb-blob"></span>
-            <span class="btn-ihb-default">Send a general application</span>
-            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Send a general application</span>
+            <span class="btn-ihb-default">Send your application</span>
+            <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Send your application</span>
           </a>
         </div>
       </div>
@@ -280,6 +336,7 @@
 
       <div class="sf-body">
         <div class="sf-top">
+
           <div class="sf-brand">
             <a href="/" class="sf-logo">
               <img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" width="203" height="90" loading="lazy" decoding="async"
@@ -336,6 +393,7 @@
               <li><a href="/cookie-policy.html">Cookie Policy</a></li>
             </ul>
           </div>
+
         </div>
 
         <div class="sf-bottom">
