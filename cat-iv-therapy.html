@@ -186,22 +186,18 @@
     margin-bottom: 0;
   }
 
-  /* PREMIUM PATIENT JOURNEY SECTION */
+  /* PREMIUM INTERACTIVE TABS JOURNEY SECTION */
   .journey-section {
-    padding: 7rem 0 10rem 0;
+    padding: 7rem 0 8rem 0;
     background-color: #fafcfb; 
     background-image: radial-gradient(#d5e0d7 1.5px, transparent 1.5px);
     background-size: 32px 32px;
     border-top: 1px solid #eaeaea;
-    position: relative;
-    overflow: hidden;
   }
   .journey-header {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 5rem;
-    position: relative;
-    z-index: 2;
+    margin: 0 auto 4rem;
   }
   .journey-header h2 {
     font-family: 'Libre Caslon Text', serif;
@@ -215,105 +211,159 @@
     font-size: 1.1rem;
     line-height: 1.6;
   }
-  .journey-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  .journey-tabs-container {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    align-items: start;
-    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
   }
-  
-  /* The Background Connecting Line (Desktop Only) */
-  @media (min-width: 1024px) {
-    .journey-grid::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 5%;
-      right: 5%;
-      height: 2px;
-      background: repeating-linear-gradient(to right, rgba(114, 140, 105, 0.4) 0, rgba(114, 140, 105, 0.4) 10px, transparent 10px, transparent 20px);
-      z-index: 0;
-      transform: translateY(-50%);
-    }
-    .journey-card.stagger-down {
-      margin-top: 4rem;
+
+  /* Desktop Flex Layout */
+  @media (min-width: 860px) {
+    .journey-tabs-container {
+      flex-direction: row;
+      gap: 3rem;
+      align-items: flex-start;
     }
   }
 
-  .journey-card {
+  /* Tab Navigation Sidebar */
+  .journey-tabs-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 0 0 320px;
+  }
+  
+  /* Mobile Tab Navigation Scroll */
+  @media (max-width: 859px) {
+    .journey-tabs-nav {
+      flex-direction: row;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      margin: 0 -20px;
+      padding: 0 20px 20px 20px; /* Padding for shadow clearance */
+    }
+    .journey-tab-btn {
+      flex: 0 0 85%;
+      scroll-snap-align: center;
+    }
+  }
+
+  .journey-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border: 1px solid rgba(114, 140, 105, 0.2);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  }
+  .journey-tab-btn:focus {
+    outline: none;
+  }
+  .journey-tab-btn.active {
+    background: #4a6b53;
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(74, 107, 83, 0.25);
+    border-color: #4a6b53;
+  }
+  @media (min-width: 860px) {
+    .journey-tab-btn:hover:not(.active) {
+      border-color: #4a6b53;
+      transform: translateX(5px);
+    }
+  }
+
+  .journey-tab-icon {
+    font-size: 1.5rem;
+    color: #4a6b53;
+    transition: color 0.3s ease;
+  }
+  .journey-tab-btn.active .journey-tab-icon {
+    color: #ffffff;
+  }
+
+  .journey-tab-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .journey-tab-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1e3528;
+    transition: color 0.3s ease;
+  }
+  .journey-tab-btn.active .journey-tab-title {
+    color: #ffffff;
+  }
+  .journey-tab-subtitle {
+    font-size: 0.85rem;
+    color: #4a4a4a;
+    margin-top: 0.2rem;
+    transition: color 0.3s ease;
+  }
+  .journey-tab-btn.active .journey-tab-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* Tab Content Area */
+  .journey-tabs-content {
+    flex: 1;
     background: #ffffff;
     border-radius: 1.5rem;
-    padding: 3rem 2rem 2.5rem 2rem;
+    padding: 3rem 2.5rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
     border: 1px solid rgba(114, 140, 105, 0.1);
     position: relative;
     overflow: hidden;
-    z-index: 1;
-    height: 100%;
-    /* Set initial state for GSAP animation */
-    opacity: 0;
-    transform: translateY(30px);
   }
-  
-  .journey-card::before {
+  .journey-tabs-content::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 6px;
     background: linear-gradient(90deg, #4a6b53, #a4cfae);
   }
-  
-  /* Gradient Watermark Numbers */
-  .journey-card::after {
-    content: attr(data-step);
-    position: absolute;
-    top: -15px;
-    right: -5px;
-    font-family: 'Libre Caslon Text', serif;
-    font-size: 12rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #4a6b53, #a4cfae);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0.05;
-    z-index: -1;
-    line-height: 1;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    pointer-events: none;
+
+  .journey-panel {
+    display: none;
+    animation: fadeInTab 0.5s ease forwards;
+  }
+  .journey-panel.active {
+    display: block;
   }
 
-  .journey-card:hover {
-    transform: translateY(-10px) !important; /* Overrides GSAP inline transform */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    border-color: rgba(74, 107, 83, 0.3);
-  }
-  .journey-card:hover::after {
-    opacity: 0.12;
-    transform: scale(1.05);
+  @keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  .journey-step-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(114, 140, 105, 0.08);
-    color: #4a6b53;
-    padding: 0.5rem 1.25rem;
-    border-radius: 2rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 2rem;
-  }
-  .journey-card h3 {
+  .journey-panel h3 {
     font-family: 'Libre Caslon Text', serif;
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: #1e3528;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(114, 140, 105, 0.15);
+    padding-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
+  .journey-panel h3 i {
+    color: #4a6b53;
+    font-size: 1.6rem;
+  }
+
   .journey-list {
     list-style: none;
     padding: 0;
@@ -321,9 +371,9 @@
   }
   .journey-list li {
     position: relative;
-    padding-left: 1.75rem;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
     color: #4a4a4a;
     line-height: 1.6;
   }
@@ -336,9 +386,9 @@
     font-weight: 900;
     position: absolute;
     left: 0;
-    top: 3px;
+    top: 4px;
     color: #4a6b53;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   /* ALTERNATING SECTION BACKGROUNDS */
@@ -406,8 +456,8 @@
   <div class="container">
   <div class="cat-hero-content">
   <div style="margin-bottom:1rem;">
-    <!-- FIX: inline-flex + gap forces the ::before dot to space out perfectly -->
-    <span class="section-label" style="display:inline-flex; align-items:center; gap:0.5rem; color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem;">Service Category</span>
+    <!-- Corrected Label Display -->
+    <span class="section-label" style="display:inline-flex; align-items:center; gap:0.5rem; color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem;"><span style="display:none;"></span> Service Category</span>
   </div>
   <h1 class="cat-hero-title">IV Therapy<br /><em>in Calgary, AB</em></h1> 
   <p class="cat-hero-desc">VeraVita offers IV Therapy in Calgary including NAD+ infusions, Myers' Cocktail drips, high-dose Vitamin C, and vitamin B12 injections — delivering nutrients directly into the bloodstream for rapid absorption. Every IV is guided by <a href="/service-lab-testing.html" class="text-link">Functional Lab Testing</a> and personalized to your goals. Combine treatment with <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> for complete root-cause care. Serving Calgary and area.</p> 
@@ -510,7 +560,7 @@
     <div class="container-medium">
       <div class="svc-section-header" style="margin:0 auto 2.75rem;text-align:center;max-width:780px;padding-bottom:0;border:none; display: flex; flex-direction: column; align-items: center;">
         <div style="margin-bottom: 0.75rem; display: flex; justify-content: center;">
-          <p class="section-tag" style="display:inline-flex; align-items:center; gap:0.5rem; margin:0; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i> Lead Practitioner</p>
+          <span class="section-label" style="display:inline-flex; align-items:center; gap:0.5rem; margin:0; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;"><i class="fa-solid fa-user-doctor" style="font-size:0.7rem"></i> Lead Practitioner</span>
         </div>
         <h2>Meet <em>Dr. Jill Nazar, ND</em></h2>
       </div>
@@ -534,71 +584,108 @@
     </div>
   </section>
 
-  <!-- NEXT-LEVEL VISUAL PATIENT JOURNEY SECTION -->
+  <!-- NEW INTERACTIVE TABBED JOURNEY SECTION -->
   <section class="journey-section">
     <div class="container">
       <div class="journey-header">
         <div style="margin-bottom: 1rem; display: flex; justify-content: center;">
-          <!-- FIX: inline-flex + gap forces the ::before dot to space out perfectly -->
           <span class="section-label" style="display:inline-flex; align-items:center; gap:0.5rem; color:#4a6b53; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; font-size:0.85rem;">Patient Guide</span>
         </div>
         <h2>Your IV Therapy <em>Journey</em></h2>
-        <p>Everything you need to know to ensure a safe, comfortable, and effective infusion experience at VeraVita.</p>
+        <p>To help ensure your IV treatment is safe and comfortable, please review the following instructions before, during, and after your appointment.</p>
       </div>
 
-      <div class="journey-grid">
+      <div class="journey-tabs-container">
         
-        <!-- Card 1: Before -->
-        <div class="journey-card" data-step="1">
-          <div class="journey-step-tag"><i class="fa-solid fa-clipboard-list"></i> Before</div>
-          <h3>Before Your Session</h3>
-          <ul class="journey-list">
-            <li>Eat a meal beforehand to maintain stable blood sugar levels.</li>
-            <li>Drink roughly 1L (4 cups) of water prior to your visit.</li>
-            <li>Provide a urine sample if this is your first IV treatment.</li>
-            <li>Wear comfortable, loose-fitting clothing that allows arm access.</li>
-            <li>Avoid strenuous exercise directly before your appointment.</li>
-            <li>Bring recent bloodwork and a list of current medications.</li>
-          </ul>
+        <!-- Tab Navigation -->
+        <div class="journey-tabs-nav">
+          <button class="journey-tab-btn active" data-target="tab-before">
+            <div class="journey-tab-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+            <div class="journey-tab-text">
+              <span class="journey-tab-title">Step 1: Before</span>
+              <span class="journey-tab-subtitle">How to prepare</span>
+            </div>
+          </button>
+          
+          <button class="journey-tab-btn" data-target="tab-during">
+            <div class="journey-tab-icon"><i class="fa-solid fa-couch"></i></div>
+            <div class="journey-tab-text">
+              <span class="journey-tab-title">Step 2: During</span>
+              <span class="journey-tab-subtitle">What to expect</span>
+            </div>
+          </button>
+          
+          <button class="journey-tab-btn" data-target="tab-after">
+            <div class="journey-tab-icon"><i class="fa-solid fa-glass-water"></i></div>
+            <div class="journey-tab-text">
+              <span class="journey-tab-title">Step 3: After</span>
+              <span class="journey-tab-subtitle">Post-treatment care</span>
+            </div>
+          </button>
+          
+          <button class="journey-tab-btn" data-target="tab-support">
+            <div class="journey-tab-icon"><i class="fa-solid fa-headset"></i></div>
+            <div class="journey-tab-text">
+              <span class="journey-tab-title">Step 4: Support</span>
+              <span class="journey-tab-subtitle">If you have concerns</span>
+            </div>
+          </button>
         </div>
 
-        <!-- Card 2: During -->
-        <div class="journey-card stagger-down" data-step="2">
-          <div class="journey-step-tag"><i class="fa-solid fa-couch"></i> During</div>
-          <h3>During Your Infusion</h3>
-          <ul class="journey-list">
-            <li>Drink 1-2 cups of water during the treatment.</li>
-            <li>Keep your legs uncrossed to maintain healthy circulation.</li>
-            <li>Keep your IV arm still; do not adjust the equipment yourself.</li>
-            <li>Bring a book, tablet, or phone to enjoy during the session.</li>
-            <li>Tell your practitioner or use the safety bell immediately if you feel unwell, dizzy, or nauseous.</li>
-          </ul>
-        </div>
+        <!-- Tab Content Panels -->
+        <div class="journey-tabs-content">
+          
+          <!-- Panel 1 -->
+          <div class="journey-panel active" id="tab-before">
+            <h3><i class="fa-solid fa-clipboard-list"></i> Before Your Treatment</h3>
+            <ul class="journey-list">
+              <li><strong>Eat a meal before your appointment.</strong> This can help maintain stable blood sugar levels during your treatment.</li>
+              <li><strong>Hydrate well.</strong> Drink at least 1 L (approximately 4 cups) of water before your appointment, unless you have been advised to restrict your fluid intake.</li>
+              <li><strong>First IV treatment:</strong> If this is your first IV treatment with us, please obtain a urine sample cup from our front desk and provide a urine sample. A urine dipstick may be performed as part of your initial assessment.</li>
+              <li><strong>Bring a snack.</strong> We recommend bringing a snack in case you need something to eat during or after your treatment. Protein bars may also be available for purchase at the clinic.</li>
+              <li><strong>Bring recent relevant bloodwork</strong> or other medical information that may be helpful for your practitioner.</li>
+              <li><strong>Wear comfortable, loose-fitting clothing.</strong> Avoid tight belts, scarves, shapewear, or other clothing that may restrict circulation or make access to your arm difficult.</li>
+              <li><strong>Avoid strenuous exercise before your appointment.</strong> Please allow yourself time to arrive and rest before your treatment, as physical activity can temporarily affect your blood pressure and other vital signs. If possible, use the elevator rather than taking the stairs immediately before your appointment.</li>
+              <li><strong>Tell your practitioner about your medications and supplements.</strong> Please advise us of all current prescription medications, over-the-counter medications, supplements, and any recent changes in dosage.</li>
+            </ul>
+          </div>
 
-        <!-- Card 3: After -->
-        <div class="journey-card" data-step="3">
-          <div class="journey-step-tag"><i class="fa-solid fa-glass-water"></i> After</div>
-          <h3>After Your Treatment</h3>
-          <ul class="journey-list">
-            <li>Drink an additional 2-4 glasses of water unless directed otherwise.</li>
-            <li>Eat a meal to help maintain your energy levels.</li>
-            <li>Monitor the IV insertion site closely.</li>
-            <li>Contact the clinic if the site becomes hot, red, swollen, or painful.</li>
-          </ul>
-        </div>
+          <!-- Panel 2 -->
+          <div class="journey-panel" id="tab-during">
+            <h3><i class="fa-solid fa-couch"></i> During Your Treatment</h3>
+            <ul class="journey-list">
+              <li><strong>Stay hydrated.</strong> Bring a water bottle with you. You may be advised to drink approximately 1-2 cups of water during your treatment. Water and tea are also available at the clinic.</li>
+              <li><strong>Keep your legs uncrossed</strong> during your treatment to help maintain comfortable circulation.</li>
+              <li><strong>Remain awake and responsive</strong> throughout your treatment so our team can monitor how you are feeling.</li>
+              <li><strong>You are welcome to bring a book,</strong> tablet, smartphone, or other quiet activity to enjoy during your treatment.</li>
+              <li><strong>Tell us immediately if you feel unwell.</strong> Notify your practitioner right away if you experience pain, discomfort, heart palpitations, headache, nausea, cramping, dizziness, difficulty breathing, or any other unusual symptoms. If you need immediate assistance, use the safety bell to alert our team.</li>
+              <li><strong>Keep the arm with the IV as still as possible.</strong> Avoid unnecessary movement of the arm with the IV line.</li>
+              <li><strong>Do not adjust the IV equipment.</strong> Do not change the drip rate, move the IV bag, or manipulate the IV tubing. Our clinical team will make any necessary adjustments.</li>
+            </ul>
+          </div>
 
-        <!-- Card 4: Support -->
-        <div class="journey-card stagger-down" data-step="4">
-          <div class="journey-step-tag"><i class="fa-solid fa-headset"></i> Support</div>
-          <h3>Questions & Support</h3>
-          <ul class="journey-list">
-            <li>Contact the clinic directly for any immediate non-urgent concerns.</li>
-            <li>Call Alberta Health Link at 811 for after-hours health advice.</li>
-            <li>Call 911 immediately if you experience severe symptoms like chest pain or difficulty breathing.</li>
-            <li>Always seek medical advice rather than waiting if you are unsure.</li>
-          </ul>
-        </div>
+          <!-- Panel 3 -->
+          <div class="journey-panel" id="tab-after">
+            <h3><i class="fa-solid fa-glass-water"></i> After Your Treatment</h3>
+            <ul class="journey-list">
+              <li><strong>Continue to hydrate.</strong> Unless otherwise directed by your practitioner, drink approximately 2-4 additional glasses of water after your treatment.</li>
+              <li><strong>Eat a meal after your treatment</strong> to help maintain your energy and blood sugar levels.</li>
+              <li><strong>Monitor your IV insertion site.</strong> Contact the clinic if the area becomes increasingly hot, red, swollen, itchy, painful, or if you develop a rash or fever.</li>
+            </ul>
+          </div>
 
+          <!-- Panel 4 -->
+          <div class="journey-panel" id="tab-support">
+            <h3><i class="fa-solid fa-headset"></i> If You Have Concerns</h3>
+            <ul class="journey-list">
+              <li><strong>Please contact the clinic as soon as possible</strong> if you have concerns following your IV treatment.</li>
+              <li><strong>If you experience severe symptoms,</strong> significant difficulty breathing, chest pain, loss of consciousness, or another medical emergency, call 911 or seek emergency medical care immediately.</li>
+              <li><strong>For non-emergency health advice after clinic hours,</strong> you can contact Alberta Health Link at 811.</li>
+              <li><strong>If you are unsure whether a symptom is concerning,</strong> please seek medical advice rather than waiting for your next appointment.</li>
+            </ul>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -607,7 +694,6 @@
   <div class="container">
   <div class="svc-section-header" style="margin: 0 auto 3rem auto; text-align: center; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
   <div style="margin-bottom: 0.75rem; display: flex; justify-content: center;">
-    <!-- FIX: inline-flex + gap forces the ::before dot to space out perfectly -->
     <span class="section-label" style="display:inline-flex; align-items:center; gap:0.5rem; color:#4a6b53; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;">Pricing</span>
   </div>
   <h2>IV Therapy<br /><em>Pricing in Calgary</em></h2> 
@@ -705,30 +791,23 @@
 <script src="js/main.js" defer></script>
 
 <script>
-  // Advanced Scroll Animations for Journey Cards
+  // Tab Navigation Logic
   document.addEventListener('DOMContentLoaded', function() {
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-      
-      // Animate the cards floating up
-      gsap.to('.journey-card', {
-        scrollTrigger: {
-          trigger: '.journey-section',
-          start: 'top 75%',
-        },
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out'
+    const tabBtns = document.querySelectorAll('.journey-tab-btn');
+    const tabPanels = document.querySelectorAll('.journey-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to clicked
+        btn.classList.add('active');
+        const target = btn.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
       });
-    } else {
-      // Fallback if GSAP fails to load
-      document.querySelectorAll('.journey-card').forEach(function(card) {
-        card.style.opacity = '1';
-        card.style.transform = 'none';
-      });
-    }
+    });
   });
 </script>
 
