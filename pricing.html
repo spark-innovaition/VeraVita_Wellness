@@ -35,7 +35,7 @@
       padding-top: 80px; 
     }
 
-    /* INLINE TEXT LINKS (Clean bold green, underline on hover only) */
+    /* INLINE TEXT LINKS */
     .text-link {
       color: #2b5c43;
       text-decoration: none;
@@ -47,6 +47,11 @@
       text-decoration: underline;
       text-decoration-thickness: 1.5px;
       text-underline-offset: 3px;
+    }
+
+    /* MERGED PRICING CONTAINER OVERRIDES */
+    .ptab-section {
+      padding-top: 3rem !important;
     }
   </style>
 
@@ -104,7 +109,7 @@
             </a>
             <a href="/cat-massage-therapy.html" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Leads: Jean-Wilson & Johnvel</span></div>
+              <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Registered Massage Therapy</span></div>
             </a>
             <a href="/cat-osteopathy.html" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
@@ -126,18 +131,17 @@
 </nav>
 
 <main id="main-content">
-  <!-- PERFECTLY CENTERED PRICING HERO -->
-  <section class="ptab-hero" style="padding: 6rem 0 3rem 0;">
-    <div class="container" style="text-align: center; max-width: 950px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
-      <p class="section-tag" style="margin-bottom:1rem; display: flex; justify-content: center; align-items: center; color: #4a6b53; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
-      <h1 style="font-family: 'Libre Caslon Text', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; color: #1e3528;">Naturopathic Clinic Pricing<br /><em>in Calgary</em></h1> <!--[cite: 10] -->
-      <p style="color: #4a4a4a; font-size: 1.1rem; line-height: 1.7; max-width: 850px;">VeraVita's Calgary pricing covers <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> consultations, <a href="/cat-iv-therapy.html" class="text-link">IV Therapy</a> and vitamin injections, <a href="/cat-acupuncture.html" class="text-link">Acupuncture</a>, <a href="/cat-massage-therapy.html" class="text-link">Massage Therapy</a>, and <a href="/cat-osteopathy.html" class="text-link">Osteopathy</a> sessions. All prices are listed in CAD, with a free consultation available for osteopathy. Review full pricing below or book directly through our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">online portal</a> today.</p> <!--[cite: 10] -->
-    </div>
-  </section>
-
-  <section class="ptab-section">
+  <section class="ptab-section" style="padding: 4rem 0 5rem 0;">
     <div class="container">
 
+      <!-- SINGLE INTEGRATED HERO HEADER -->
+      <div style="text-align: center; max-width: 850px; margin: 0 auto 3rem auto;">
+        <p class="section-tag" style="margin-bottom: 0.75rem; display: flex; justify-content: center; align-items: center; color: #4a6b53; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
+        <h1 style="font-family: 'Libre Caslon Text', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.25rem; color: #1e3528;">Naturopathic Clinic Pricing<br /><em>in Calgary</em></h1> 
+        <p style="color: #4a4a4a; font-size: 1.05rem; line-height: 1.7;">VeraVita's Calgary pricing covers <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> consultations, <a href="/cat-iv-therapy.html" class="text-link">IV Therapy</a> and vitamin injections, <a href="/cat-acupuncture.html" class="text-link">Acupuncture</a>, <a href="/cat-massage-therapy.html" class="text-link">Massage Therapy</a>, and <a href="/cat-osteopathy.html" class="text-link">Osteopathy</a> sessions. All prices are listed in CAD. Review full pricing below or book directly through our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">online portal</a> today.</p> 
+      </div>
+
+      <!-- INTERACTIVE TAB CONTROLS -->
       <div class="ptab-nav" role="tablist">
         <button class="ptab-btn active" data-tab="naturopathic" role="tab">Naturopathic</button>
         <button class="ptab-btn" data-tab="iv-therapy" role="tab">IV Therapy</button>
@@ -543,8 +547,7 @@
           <div class="ptab-panel-hd">
             <h2><em>Massage</em> Therapy</h2>
             <div class="ptab-badge" style="display:flex; flex-direction:column; gap:0.5rem; align-items:flex-end;">
-              <div><i class="fa-solid fa-hand-holding-heart" style="color:var(--primary);margin-right:0.4rem"></i><span>Jean-Wilson Raymond, RMT</span></div>
-              <div><i class="fa-solid fa-hand-holding-heart" style="color:var(--primary);margin-right:0.4rem"></i><span>Johnvel Sabturani, RMT</span></div>
+              <div><i class="fa-solid fa-hand-holding-heart" style="color:var(--primary);margin-right:0.4rem"></i><span>Registered Massage Therapy</span></div>
             </div>
           </div>
           <div class="ptab-grid">
@@ -571,7 +574,7 @@
             </div>
             <div class="ptab-item">
               <div class="ptab-item-row">
-                <span class="ptab-item-name">Massage (Jean-Wilson only)</span>
+                <span class="ptab-item-name">Massage</span>
                 <span class="ptab-item-price">$190.00</span>
               </div>
               <div class="ptab-item-dur">120 min</div>
@@ -606,14 +609,14 @@
             </div>
             <div class="ptab-item">
               <div class="ptab-item-row">
-                <span class="ptab-item-name">Lymphatic Massage (Jean-Wilson only)</span>
+                <span class="ptab-item-name">Lymphatic Massage</span>
                 <span class="ptab-item-price">$120.00</span>
               </div>
               <div class="ptab-item-dur">60 min</div>
             </div>
             <div class="ptab-item">
               <div class="ptab-item-row">
-                <span class="ptab-item-name">Lymphatic Massage (Jean-Wilson only)</span>
+                <span class="ptab-item-name">Lymphatic Massage</span>
                 <span class="ptab-item-price">$160.00</span>
               </div>
               <div class="ptab-item-dur">90 min</div>
