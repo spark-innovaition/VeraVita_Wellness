@@ -44,11 +44,11 @@
               </a>
               <a href="/cat-acupuncture.html" class="nav-dd-item">
                 <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
-                <div class="nav-dd-text"><strong>Acupuncture & TCM</strong><span>Leads: Dr. Viktoriia Taylor & Joseph Wei</span></div>
+                <div class="nav-dd-text"><strong>Acupuncture & TCM</strong><span>Leads: Dr. Viktoriia Taylor & Dr. Joseph Wei</span></div>
               </a>
               <a href="/cat-massage-therapy.html" class="nav-dd-item">
                 <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Registered Massage Therapy</span></div>
+                <div class="nav-dd-text"><strong>Massage Therapy</strong><span>Lead: Jianing Chen, RMT</span></div>
               </a>
               <a href="/cat-osteopathy.html" class="nav-dd-item">
                 <div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div>
