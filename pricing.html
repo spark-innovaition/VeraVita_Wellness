@@ -49,9 +49,18 @@
       text-underline-offset: 3px;
     }
 
-    /* MERGED PRICING CONTAINER OVERRIDES */
+    /* PRICING SECTION OVERRIDES FOR CLEANER LAYOUT */
     .ptab-section {
-      padding-top: 3rem !important;
+      padding-top: 4rem !important;
+      padding-bottom: 5rem !important;
+    }
+    .pricing-hero-header {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 3rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   </style>
 
@@ -105,7 +114,7 @@
             </a>
             <a href="/cat-acupuncture.html" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
-              <div class="nav-dd-text"><strong>Acupuncture & TCM</strong><span>Leads: Dr. Taylor & Joseph Wei</span></div>
+              <div class="nav-dd-text"><strong>Acupuncture & TCM</strong><span>Leads: Dr. Taylor, J. Wei, J. Chen</span></div>
             </a>
             <a href="/cat-massage-therapy.html" class="nav-dd-item">
               <div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
@@ -131,11 +140,12 @@
 </nav>
 
 <main id="main-content">
-  <section class="ptab-section" style="padding: 4rem 0 5rem 0;">
+  
+  <section class="ptab-section">
     <div class="container">
 
-      <!-- SINGLE INTEGRATED HERO HEADER -->
-      <div style="text-align: center; max-width: 850px; margin: 0 auto 3rem auto;">
+      <!-- INTEGRATED PRICING HERO HEADER -->
+      <div class="pricing-hero-header">
         <p class="section-tag" style="margin-bottom: 0.75rem; display: flex; justify-content: center; align-items: center; color: #4a6b53; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem;"><i class="fa-solid fa-tag" style="margin-right:0.35rem;font-size:0.7rem"></i>Pricing</p>
         <h1 style="font-family: 'Libre Caslon Text', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.25rem; color: #1e3528;">Naturopathic Clinic Pricing<br /><em>in Calgary</em></h1> 
         <p style="color: #4a4a4a; font-size: 1.05rem; line-height: 1.7;">VeraVita's Calgary pricing covers <a href="/cat-naturopathic.html" class="text-link">Naturopathic Medicine</a> consultations, <a href="/cat-iv-therapy.html" class="text-link">IV Therapy</a> and vitamin injections, <a href="/cat-acupuncture.html" class="text-link">Acupuncture</a>, <a href="/cat-massage-therapy.html" class="text-link">Massage Therapy</a>, and <a href="/cat-osteopathy.html" class="text-link">Osteopathy</a> sessions. All prices are listed in CAD. Review full pricing below or book directly through our <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="text-link">online portal</a> today.</p> 
@@ -423,6 +433,7 @@
             <div class="ptab-badge" style="display:flex; flex-direction:column; gap:0.5rem; align-items:flex-end;">
               <div><i class="fa-solid fa-hand-sparkles" style="color:var(--primary);margin-right:0.4rem"></i><span>Dr. Viktoriia Taylor, DTCM</span></div>
               <div><i class="fa-solid fa-hand-sparkles" style="color:var(--primary);margin-right:0.4rem"></i><span>Joseph Wei, Dr. Ac.</span></div>
+              <div><i class="fa-solid fa-hand-sparkles" style="color:var(--primary);margin-right:0.4rem"></i><span>Jianing Chen, R.Ac, TCMP</span></div>
             </div>
           </div>
           <div class="ptab-grid">
@@ -435,7 +446,7 @@
             </div>
             <div class="ptab-item">
               <div class="ptab-item-row">
-                <span class="ptab-item-name">Initial Acupuncture Consultation & Treatment (Joseph Wei)</span>
+                <span class="ptab-item-name">Initial Acupuncture Consult & Treatment (J. Wei & J. Chen)</span>
                 <span class="ptab-item-price">$100.00</span>
               </div>
               <div class="ptab-item-dur">60 min</div>
@@ -456,7 +467,7 @@
             </div>
             <div class="ptab-item">
               <div class="ptab-item-row">
-                <span class="ptab-item-name">Follow-Up Acupuncture Treatment (Joseph Wei)</span>
+                <span class="ptab-item-name">Follow-Up Acupuncture Treatment (J. Wei & J. Chen)</span>
                 <span class="ptab-item-price">$100.00</span>
               </div>
               <div class="ptab-item-dur">60 min</div>
@@ -470,7 +481,7 @@
             </div>
             <div class="ptab-item">
               <div class="ptab-item-row">
-                <span class="ptab-item-name">Acupuncture + TuiNa Therapy (Joseph Wei)</span>
+                <span class="ptab-item-name">Acupuncture + TuiNa Therapy (J. Wei & J. Chen)</span>
                 <span class="ptab-item-price">$100.00</span>
               </div>
               <div class="ptab-item-dur">60 min</div>
@@ -536,6 +547,11 @@
               <span class="btn-ihb-default">Book with Joseph Wei</span>
               <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Joseph Wei</span>
             </a>
+            <a href="https://veravitanaturopathicclinic.janeapp.com/" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+              <span class="btn-ihb-blob"></span>
+              <span class="btn-ihb-default">Book with Jianing Chen</span>
+              <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book with Jianing Chen</span>
+            </a>
           </div>
         </div>
 
@@ -590,20 +606,6 @@
               <div class="ptab-item-row">
                 <span class="ptab-item-name">Prenatal / Postnatal Massage</span>
                 <span class="ptab-item-price">$150.00</span>
-              </div>
-              <div class="ptab-item-dur">90 min</div>
-            </div>
-            <div class="ptab-item">
-              <div class="ptab-item-row">
-                <span class="ptab-item-name">Hot Stone Massage</span>
-                <span class="ptab-item-price">$135.00</span>
-              </div>
-              <div class="ptab-item-dur">60 min</div>
-            </div>
-            <div class="ptab-item">
-              <div class="ptab-item-row">
-                <span class="ptab-item-name">Hot Stone Massage</span>
-                <span class="ptab-item-price">$160.00</span>
               </div>
               <div class="ptab-item-dur">90 min</div>
             </div>
