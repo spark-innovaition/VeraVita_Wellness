@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/Logo/favicon.png" />
+  <title>Paediatric Osteopathy | VeraVita Clinic Calgary</title>
+  <meta name="description" content="Gentle, highly specific osteopathic treatment adapted for infants, children, and adolescents — addressing birth-related strain, colic, plagiocephaly, and developmental concerns with exceptionally light-touch techniques." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="images/osteopathy service/osteopathy 16-9.png" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/osteopathy service/osteopathy 4-5.png" media="(min-width: 768px)" fetchpriority="high" />
+
+  <style>
+    @media (max-width: 767px) { .sd-hero-img--desktop { display: none !important; } .sd-hero-img--mobile { display: block !important; } }
+    @media (min-width: 768px) { .sd-hero-img--desktop { display: block !important; } .sd-hero-img--mobile { display: none !important; } }
+    
+    .svc-paediatric-osteopathy .sd-body { background: transparent !important; position: relative; overflow: visible; }
+    .section-bg-parallax { position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; background: linear-gradient(rgba(234,242,234,0.90), rgba(234,242,234,0.90)), url('images/underlay pic desktop/underlay pic 53.webp') center / cover no-repeat; will-change: transform; pointer-events: none; }
+    .sd-body .container-medium { position: relative; z-index: 1; }
+
+    .sd-rel-card { position: relative; overflow: hidden; border-radius: 24px; display: block; aspect-ratio: 4/3; background: #1e3528; text-decoration: none; }
+    .sd-rel-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+    .sd-rel-card:hover .sd-rel-img { transform: scale(1.08); }
+    .sd-rel-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0) 100%); z-index: 1; }
+    .sd-rel-overlay-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; z-index: 10; color: white; }
+    .sd-rel-overlay-title { font-family: 'Libre Caslon Text', serif; font-size: 1.6rem; margin: 0 0 10px 0; font-weight: 500; color: #ffffff !important; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    .sd-rel-overlay-desc { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; line-height: 1.5; margin: 0 0 20px 0; color: #ffffff !important; opacity: 0.95; max-width: 95%; }
+    .sd-rel-overlay-link { display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); padding: 10px 22px; border-radius: 30px; color: white; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.2); }
+
+    @media (max-width: 860px) {
+      .sd-hero-img-wrap { height: auto !important; aspect-ratio: 16/9 !important; margin-left: 0 !important; margin-right: 0 !important; }
+      .sd-related-grid { display: flex !important; overflow-x: auto !important; padding-bottom: 2rem; gap: 1.2rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+      .sd-rel-card { flex: 0 0 calc(85vw) !important; scroll-snap-align: start; aspect-ratio: 1/1.1; }
+      .section-bg-parallax { display: none !important; }
+      .svc-paediatric-osteopathy .sd-body { background-color: #f7faf8 !important; }
+    }
+    @media (min-width: 861px) { .sd-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
+  </style>
+</head>
+<body class="svc-paediatric-osteopathy">
+
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo">
+        <img src="images/Logo/logo.png" alt="VeraVita" class="logo-img" onerror="this.style.display='none'; var nx=this.nextElementSibling; nx.style.display='flex'; nx.nextElementSibling.style.display='inline';" />
+        <div class="logo-icon" style="display:none;"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/><circle cx="12" cy="7" r="1.5" fill="#1e3528"/></svg></div>
+        <span class="logo-text" style="display:none;">VeraVita</span>
+      </a>
+      <ul class="navbar-nav">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link active">Services <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;opacity:0.7;margin-left:0.1rem"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="cat-naturopathic.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-leaf"></i></div><div class="nav-dd-text"><strong>Naturopathic Medicine</strong><span>Lead: Dr. Jill Nazar, ND</span></div></a>
+            <a href="cat-iv-therapy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-droplet"></i></div><div class="nav-dd-text"><strong>Testing &amp; IV Therapy</strong><span>Lead: Dr. Jill Nazar, ND</span></div></a>
+            <a href="cat-acupuncture.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-hand-sparkles"></i></div><div class="nav-dd-text"><strong>Acupuncture &amp; TCM</strong><span>Leads: Dr. Taylor & Joseph Wei</span></div></a>
+            <a href="cat-massage-therapy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><div class="nav-dd-text"><strong>Massage Therapy</strong><span>Registered Massage Therapy</span></div></a>
+            <a href="cat-osteopathy.html" class="nav-dd-item"><div class="nav-dd-icon"><i class="fa-solid fa-person-rays"></i></div><div class="nav-dd-text"><strong>Osteopathy</strong><span>Lead: Amy Lutz, MOMSc</span></div></a>
+          </div>
+        </li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="practitioners.html" class="nav-link">Practitioners</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="https://veravitanaturopathicclinic.janeapp.com/?utm_source=website&utm_medium=organic&utm_campaign=nav_book" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+        <span class="btn-ihb-blob"></span>
+        <span class="btn-ihb-default">Book an appointment</span>
+        <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an appointment</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="sd-back">
+  <div class="container-medium">
+    <a href="cat-osteopathy.html" class="sd-back-link"><i class="fa-solid fa-arrow-left"></i> Back to Osteopathy</a>
+  </div>
+</div>
+
+<section class="sd-hero">
+  <div class="container-medium">
+    <div class="sd-hero-inner">
+      <div class="sd-hero-content">
+        <div class="sd-hero-icon"><i class="fa-solid fa-baby"></i></div>
+        <span class="sd-hero-label">Osteopathy</span>
+        <h1 class="sd-hero-title">Paediatric<br /><em>Osteopathy</em></h1>
+        <p class="sd-hero-intro">Gentle, highly specific osteopathic treatment adapted for infants, children, and adolescents &mdash; addressing birth-related strain, colic, plagiocephaly, and developmental concerns with exceptionally light-touch techniques.</p>
+        <a href="https://veravitanaturopathicclinic.janeapp.com/?utm_source=website&utm_medium=organic&utm_campaign=paediatric-osteopathy" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary">
+          <span class="btn-ihb-blob"></span>
+          <span class="btn-ihb-default">Book an Appointment</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book an Appointment</span>
+        </a>
+      </div>
+      <div class="sd-hero-img-wrap">
+        <img src="images/osteopathy service/osteopathy 4-5.png" alt="Paediatric Osteopathy" class="sd-hero-img sd-hero-img--desktop" />
+        <img src="images/osteopathy service/osteopathy 16-9.png" alt="Paediatric Osteopathy" class="sd-hero-img sd-hero-img--mobile" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sd-body">
+  <div class="section-bg-parallax"></div>
+  <div class="container-medium">
+    <div class="sd-body-inner">
+      <div class="sd-main">
+        <h3>What to Expect</h3>
+        <ul class="sd-bullet-list">
+          <li>Detailed intake with parents covering birth history and presenting concerns</li>
+          <li>Extremely gentle, light-touch cranial and structural assessment</li>
+          <li>Non-manipulative osteopathic techniques adapted for the child&#8217;s age</li>
+          <li>Treatment of strain patterns, restrictions, and asymmetries</li>
+          <li>Parent guidance on positioning, feeding support, and home care</li>
+        </ul>
+        <h3>Who It&#8217;s For</h3>
+        <ul class="sd-bullet-list">
+          <li>Newborns and infants with colic, feeding difficulties, or birth-related strain</li>
+          <li>Children with plagiocephaly, developmental delays, or postural concerns</li>
+          <li>Adolescents with growing pains, scoliosis, or sports injuries</li>
+        </ul>
+        <h3>Why VeraVita</h3>
+        <p>Paediatric osteopathy requires specialist training and extraordinary gentleness &mdash; our practitioner brings both, offering parents a safe, evidence-informed approach to their child&#8217;s structural health from the earliest stages of life.</p>
+        <div class="sd-gallery">
+          <div class="sd-gallery-item"><img src="images/osteopathy service/osteopathy 1.png" alt="Paediatric Osteopathy 1" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/osteopathy service/osteopathy 2.png" alt="Paediatric Osteopathy 2" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/osteopathy service/osteopathy 3.png" alt="Paediatric Osteopathy 3" loading="lazy" decoding="async" /></div>
+          <div class="sd-gallery-item"><img src="images/osteopathy service/osteopathy 4.png" alt="Paediatric Osteopathy 4" loading="lazy" decoding="async" /></div>
+        </div>
+      </div>
+      <aside class="sd-card">
+        <h4 class="sd-card-title">Session Details</h4>
+        <p class="sd-card-intro">Specialist osteopathic treatment for infants, children, and adolescents &mdash; using extraordinarily gentle, non-manipulative techniques safe from the earliest stages of life.</p>
+        <h5 class="sd-card-section-title">Session Overview</h5>
+        <ul class="sd-overview-list">
+          <li class="sd-overview-item"><div class="sd-overview-icon"><i class="fa-solid fa-clock"></i></div><div><span class="sd-overview-label">Duration</span><span class="sd-overview-value">30&#8211;45 min</span></div></li>
+          <li class="sd-overview-item"><div class="sd-overview-icon"><i class="fa-solid fa-user"></i></div><div><span class="sd-overview-label">Session Type</span><span class="sd-overview-value">1-on-1 private</span></div></li>
+          <li class="sd-overview-item"><div class="sd-overview-icon"><i class="fa-solid fa-list-check"></i></div><div><span class="sd-overview-label">Includes</span><span class="sd-overview-value">Paediatric intake, light-touch osteopathic treatment, parent guidance</span></div></li>
+        </ul>
+        <hr class="sd-card-divider" />
+        <a href="https://veravitanaturopathicclinic.janeapp.com/?utm_source=website&utm_medium=organic&utm_campaign=paediatric-osteopathy" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary sd-card-btn">
+          <span class="btn-ihb-blob"></span><span class="btn-ihb-default">Book This Session</span>
+          <span class="btn-ihb-reveal"><i class="fa-solid fa-arrow-right"></i> Book This Session</span>
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sd-related">
+  <div class="container-medium">
+    <div class="sd-related-header">
+      <span class="section-label">Explore More</span>
+      <h2>Related <em>Services</em></h2>
+    </div>
+    <div class="sd-related-grid">
+      <div class="sd-rel-card">
+        <img src="images/osteopathy - services page.png" alt="Osteopathic Manual Therapy" class="sd-rel-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" />
+        <div class="sd-rel-overlay-content">
+          <h3 class="sd-rel-overlay-title">Osteopathic Manual Therapy</h3>
+          <p class="sd-rel-overlay-desc">Hands-on soft tissue manipulation, joint mobilisation, and myofascial release.</p>
+          <a href="service-osteopathic-manual.html" class="sd-rel-overlay-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="sd-rel-card">
+        <img src="images/Acupunture service/Acupunture 4-5.png" alt="Children&#8217;s Needleless Acupuncture" class="sd-rel-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" />
+        <div class="sd-rel-overlay-content">
+          <h3 class="sd-rel-overlay-title">Children&#8217;s Needleless Acupuncture</h3>
+          <p class="sd-rel-overlay-desc">Gentle, non-invasive acupuncture for children using laser, Shonishin tools, and acupressure.</p>
+          <a href="service-childrens-acupuncture.html" class="sd-rel-overlay-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="sd-rel-card">
+        <img src="images/massage therapy - services page.jpg" alt="Paediatric Massage" class="sd-rel-img" loading="lazy" decoding="async" onerror="this.src='images/placeholder-service.webp'" />
+        <div class="sd-rel-overlay-content">
+          <h3 class="sd-rel-overlay-title">Paediatric Massage</h3>
+          <p class="sd-rel-overlay-desc">Gentle therapeutic massage for children supporting growing bodies in a nurturing environment.</p>
+          <a href="service-paediatric-massage.html" class="sd-rel-overlay-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="sf-footer">
+  <div class="sf-fixed">
+    <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
+    <div class="sf-body">
+      <div class="sf-top">
+        <div class="sf-brand sf-anim" style="--sf-delay:0s">
+          <a href="/" class="sf-logo"><img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div></a>
+          <p class="sf-desc">Naturopathic Medicine in Calgary. Committed to helping you achieve lasting wellness through personalised, evidence-based care.</p>
+          <div class="sf-social"><a href="https://www.facebook.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/veravitaclinic/" target="_blank" rel="noopener" class="sf-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/@veravitaclinic" target="_blank" rel="noopener" class="sf-social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
+        </div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.1s">
+          <h3 class="sf-col-title">Pages</h3>
+          <ul class="sf-links">
+            <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="practitioners.html">Our Practitioners</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="careers.html">Careers</a></li><li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.2s">
+          <h3 class="sf-col-title">Services</h3>
+          <ul class="sf-links">
+            <li><a href="cat-naturopathic.html">Naturopathic Medicine</a></li><li><a href="cat-iv-therapy.html">Testing &amp; IV Therapy</a></li><li><a href="cat-acupuncture.html">Acupuncture &amp; TCM</a></li><li><a href="cat-massage-therapy.html">Massage Therapy</a></li><li><a href="cat-osteopathy.html">Osteopathy</a></li>
+          </ul>
+        </div>
+        <div class="sf-col sf-anim" style="--sf-delay:0.3s">
+          <h3 class="sf-col-title">Contact</h3>
+          <ul class="sf-links">
+            <li><i class="fa-solid fa-phone sf-contact-icon"></i> <a href="tel:+15875852524">(587) 585-2524</a></li><li><i class="fa-solid fa-envelope sf-contact-icon"></i> <a href="mailto:vnc@veravitaclinic.com">vnc@veravitaclinic.com</a></li><li><a href="https://www.google.com/maps/place/300,+14505+Bannister+Rd+SE+%23104,+Calgary,+AB+T2X+3J3/@50.9239402,-114.0734248,17z" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot sf-contact-icon"></i> Unit 104 - 14505 Bannister Road SE<br />&nbsp;&nbsp;&nbsp;&nbsp;Calgary, AB, T2X 3J3</a></li>
+          </ul>
+          <h3 class="sf-col-title" style="margin-top:1.5rem">Legal</h3>
+          <ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul>
+        </div>
+      </div>
+      <div class="sf-bottom">
+        <p>&copy; 2026 VeraVita Naturopathic Clinic. All rights reserved.</p>
+        <p>Calgary, AB &middot; Naturopathic Medicine</p>
+        <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
+      </div>
+      <div class="sf-disclaimer" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); font-size: 0.85rem; color: #4a4a4a; text-align: center;">
+        <p><strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and does not substitute for professional medical advice, diagnosis, or treatment. Always consult with a licensed healthcare practitioner before beginning any new treatment or protocol.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 861px)", () => {
+      var section = document.querySelector(".sd-body");
+      var bg = document.querySelector(".section-bg-parallax");
+      if (!section || !bg) return;
+      gsap.fromTo(bg, { y: -60 }, { y: 60, ease: "none", scrollTrigger: { trigger: section, start: "top bottom", end: "bottom top", scrub: 1, invalidateOnRefresh: true } });
+    });
+  });
+</script>
+<div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/?utm_source=website&utm_medium=organic&utm_campaign=mobile_footer_book" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
+</body>
+</html>
