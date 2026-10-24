@@ -190,10 +190,10 @@
   </div>
 </section>
 
-<footer class="sf-footer">
-  <div class="sf-fixed">
+<footer class="sf-footer" style="padding-bottom: 0 !important; min-height: auto !important; height: auto !important;">
+  <div class="sf-fixed" style="position: relative !important; padding-bottom: 0.5rem !important; min-height: auto !important; height: auto !important;">
     <div class="sf-deco" aria-hidden="true"><div class="sf-deco-1"></div><div class="sf-deco-2"></div><div class="sf-deco-3"></div></div>
-    <div class="sf-body">
+    <div class="sf-body" style="padding-bottom: 0 !important;">
       <div class="sf-top">
         <div class="sf-brand sf-anim" style="--sf-delay:0s">
           <a href="/" class="sf-logo"><img src="images/Logo/logo.png" alt="VeraVita" class="sf-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="sf-logo-fallback" style="display:none;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 3 7 5 7 7.5c0 3.5 3.5 7 5 9.5 1.5-2.5 5-6 5-9.5C17 5 14.5 3 12 3Z" fill="#728C69"/></svg><span>VeraVita</span></div></a>
@@ -221,13 +221,21 @@
           <ul class="sf-links"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul>
         </div>
       </div>
-      <div class="sf-bottom">
+      
+      <!-- REFINED CLINICAL DISCLAIMER BADGE -->
+      <div class="sf-disclaimer" style="margin: 0.75rem auto 0.25rem auto; max-width: 940px; padding: 0.5rem 1.25rem; background: rgba(255, 255, 255, 0.65); border: 1px solid rgba(43, 92, 67, 0.15); border-radius: 8px; font-size: 0.74rem; line-height: 1.4; color: #5a6e60; text-align: center; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <p style="margin: 0;">
+          <strong style="color: #2b5c43; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7rem; display: inline-flex; align-items: center; margin-right: 0.35rem;">
+            <i class="fa-solid fa-shield-heart" style="margin-right: 0.35rem; color: #4a6b53; font-size: 0.8rem;"></i>Medical Disclaimer:
+          </strong>
+          The information provided on this website is for educational purposes only and does not substitute for professional medical advice, diagnosis, or treatment. Always consult with a licensed healthcare practitioner before beginning any new treatment or protocol.
+        </p>
+      </div>
+
+      <div class="sf-bottom" style="margin-top: 0.5rem !important; padding-top: 0.75rem !important; padding-bottom: 0.75rem !important;">
         <p>&copy; 2026 VeraVita Naturopathic Clinic. All rights reserved.</p>
         <p>Calgary, AB &middot; Naturopathic Medicine</p>
         <p class="sf-powered">Powered by <a href="https://innovaition.ca/" target="_blank" rel="noopener noreferrer">Innovaition</a></p>
-      </div>
-      <div class="sf-disclaimer" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); font-size: 0.85rem; color: #4a4a4a; text-align: center;">
-        <p><strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and does not substitute for professional medical advice, diagnosis, or treatment. Always consult with a licensed healthcare practitioner before beginning any new treatment or protocol.</p>
       </div>
     </div>
   </div>
@@ -248,6 +256,7 @@
     });
   });
 </script>
+<style>@media (min-width: 769px) { .mobile-book-bar { display: none !important; } }</style>
 <div class="mobile-book-bar"><a href="https://veravitanaturopathicclinic.janeapp.com/?utm_source=website&utm_medium=organic&utm_campaign=mobile_footer_book" target="_blank" rel="noopener" class="btn-ihb btn-ihb--primary mobile-book-btn"><span class="btn-ihb-default">Book an appointment</span></a></div>
 </body>
 </html>
